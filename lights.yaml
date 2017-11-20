@@ -1,0 +1,228 @@
+# Generated with
+# for x in range(1,38):
+#   print("\n- platform: mqtt\n    name: \"Light"+str(x).zfill(3)+"\"\n    state_topic: \"stat/i3/inside/lights/"+str(x).zfill(3)+"/POWER\"\n    command_topic: \"cmnd/i3/inside/lights/"+str(x).zfill(3)+"/POWER\"")
+
+- platform: mqtt
+  name: "Light001"
+  state_topic: "stat/i3/inside/lights/001/POWER"
+  command_topic: "cmnd/i3/inside/lights/001/POWER"
+
+- platform: mqtt
+  name: "Light002"
+  state_topic: "stat/i3/inside/lights/002/POWER"
+  command_topic: "cmnd/i3/inside/lights/002/POWER"
+
+- platform: mqtt
+  name: "Light003"
+  state_topic: "stat/i3/inside/lights/003/POWER"
+  command_topic: "cmnd/i3/inside/lights/003/POWER"
+
+- platform: mqtt
+  name: "Light004"
+  state_topic: "stat/i3/inside/lights/004/POWER"
+  command_topic: "cmnd/i3/inside/lights/004/POWER"
+
+- platform: mqtt
+  name: "Light005"
+  state_topic: "stat/i3/inside/lights/005/POWER"
+  command_topic: "cmnd/i3/inside/lights/005/POWER"
+
+- platform: mqtt
+  name: "Light006"
+  state_topic: "stat/i3/inside/lights/006/POWER"
+  command_topic: "cmnd/i3/inside/lights/006/POWER"
+
+- platform: mqtt
+  name: "Light007"
+  state_topic: "stat/i3/inside/lights/007/POWER"
+  command_topic: "cmnd/i3/inside/lights/007/POWER"
+
+- platform: mqtt
+  name: "Light008"
+  state_topic: "stat/i3/inside/lights/008/POWER"
+  command_topic: "cmnd/i3/inside/lights/008/POWER"
+
+- platform: mqtt
+  name: "Light009"
+  state_topic: "stat/i3/inside/lights/009/POWER"
+  command_topic: "cmnd/i3/inside/lights/009/POWER"
+
+- platform: mqtt
+  name: "Light010"
+  state_topic: "stat/i3/inside/lights/010/POWER"
+  command_topic: "cmnd/i3/inside/lights/010/POWER"
+
+- platform: mqtt
+  name: "Light011"
+  state_topic: "stat/i3/inside/lights/011/POWER"
+  command_topic: "cmnd/i3/inside/lights/011/POWER"
+
+- platform: mqtt
+  name: "Light012"
+  state_topic: "stat/i3/inside/lights/012/POWER"
+  command_topic: "cmnd/i3/inside/lights/012/POWER"
+
+- platform: mqtt
+  name: "Light013"
+  state_topic: "stat/i3/inside/lights/013/POWER"
+  command_topic: "cmnd/i3/inside/lights/013/POWER"
+
+- platform: mqtt
+  name: "Light014"
+  state_topic: "stat/i3/inside/lights/014/POWER"
+  command_topic: "cmnd/i3/inside/lights/014/POWER"
+
+- platform: mqtt
+  name: "Light015"
+  state_topic: "stat/i3/inside/lights/015/POWER"
+  command_topic: "cmnd/i3/inside/lights/015/POWER"
+
+- platform: mqtt
+  name: "Light016"
+  state_topic: "stat/i3/inside/lights/016/POWER"
+  command_topic: "cmnd/i3/inside/lights/016/POWER"
+
+- platform: mqtt
+  name: "Light017"
+  state_topic: "stat/i3/inside/lights/017/POWER"
+  command_topic: "cmnd/i3/inside/lights/017/POWER"
+
+- platform: mqtt
+  name: "Light018"
+  state_topic: "stat/i3/inside/lights/018/POWER"
+  command_topic: "cmnd/i3/inside/lights/018/POWER"
+
+- platform: mqtt
+  name: "Light019"
+  state_topic: "stat/i3/inside/lights/019/POWER"
+  command_topic: "cmnd/i3/inside/lights/019/POWER"
+
+- platform: mqtt
+  name: "Light020"
+  state_topic: "stat/i3/inside/lights/020/POWER"
+  command_topic: "cmnd/i3/inside/lights/020/POWER"
+
+- platform: mqtt
+  name: "Light021"
+  state_topic: "stat/i3/inside/lights/021/POWER"
+  command_topic: "cmnd/i3/inside/lights/021/POWER"
+
+- platform: mqtt
+  name: "Light022"
+  state_topic: "stat/i3/inside/lights/022/POWER"
+  command_topic: "cmnd/i3/inside/lights/022/POWER"
+
+- platform: mqtt
+  name: "Light023"
+  state_topic: "stat/i3/inside/lights/023/POWER"
+  command_topic: "cmnd/i3/inside/lights/023/POWER"
+
+- platform: mqtt
+  name: "Light024"
+  state_topic: "stat/i3/inside/lights/024/POWER"
+  command_topic: "cmnd/i3/inside/lights/024/POWER"
+
+- platform: mqtt
+  name: "Light025"
+  state_topic: "stat/i3/inside/lights/025/POWER"
+  command_topic: "cmnd/i3/inside/lights/025/POWER"
+
+- platform: mqtt
+  name: "Light026"
+  state_topic: "stat/i3/inside/lights/026/POWER"
+  command_topic: "cmnd/i3/inside/lights/026/POWER"
+
+- platform: mqtt
+  name: "Light027"
+  state_topic: "stat/i3/inside/lights/027/POWER"
+  command_topic: "cmnd/i3/inside/lights/027/POWER"
+
+- platform: mqtt
+  name: "Light028"
+  state_topic: "stat/i3/inside/lights/028/POWER"
+  command_topic: "cmnd/i3/inside/lights/028/POWER"
+
+- platform: mqtt
+  name: "Light029"
+  state_topic: "stat/i3/inside/lights/029/POWER"
+  command_topic: "cmnd/i3/inside/lights/029/POWER"
+
+- platform: mqtt
+  name: "Light030"
+  state_topic: "stat/i3/inside/lights/030/POWER"
+  command_topic: "cmnd/i3/inside/lights/030/POWER"
+
+- platform: mqtt
+  name: "Light031"
+  state_topic: "stat/i3/inside/lights/031/POWER"
+  command_topic: "cmnd/i3/inside/lights/031/POWER"
+
+- platform: mqtt
+  name: "Light032"
+  state_topic: "stat/i3/inside/lights/032/POWER"
+  command_topic: "cmnd/i3/inside/lights/032/POWER"
+
+- platform: mqtt
+  name: "Light033"
+  state_topic: "stat/i3/inside/lights/033/POWER"
+  command_topic: "cmnd/i3/inside/lights/033/POWER"
+
+- platform: mqtt
+  name: "Light034"
+  state_topic: "stat/i3/inside/lights/034/POWER"
+  command_topic: "cmnd/i3/inside/lights/034/POWER"
+
+- platform: mqtt
+  name: "Light035"
+  state_topic: "stat/i3/inside/lights/035/POWER"
+  command_topic: "cmnd/i3/inside/lights/035/POWER"
+
+- platform: mqtt
+  name: "Light036"
+  state_topic: "stat/i3/inside/lights/036/POWER"
+  command_topic: "cmnd/i3/inside/lights/036/POWER"
+
+- platform: mqtt
+  name: "Light037"
+  state_topic: "stat/i3/inside/lights/037/POWER"
+  command_topic: "cmnd/i3/inside/lights/037/POWER"
+
+- platform: mqtt
+  name: "LightOfficeBathroom"
+  state_topic: "stat/i3/inside/office-bathroom/light/POWER"
+  command_topic: "cmnd/i3/inside/office-bathroom/light/POWER"
+
+- platform: mqtt
+  name: "LightMediaLab"
+  state_topic: "stat/i3/inside/media-lab/lights/POWER"
+  command_topic: "cmnd/i3/inside/media-lab/lights/POWER"
+
+- platform: mqtt
+  name: "LightSnappleVending"
+  state_topic: "stat/i3/inside/commons/snapple-vending-light/POWER"
+  command_topic: "cmnd/i3/inside/commons/snapple-vending-light/POWER"
+
+- platform: mqtt
+  name: "LightTrafficRed"
+  state_topic: "stat/i3/inside/commons/traffic-light/POWER1"
+  command_topic: "cmnd/i3/inside/commons/traffic-light/POWER1"
+
+- platform: mqtt
+  name: "LightTrafficYellow"
+  state_topic: "stat/i3/inside/commons/traffic-light/POWER2"
+  command_topic: "cmnd/i3/inside/commons/traffic-light/POWER2"
+
+- platform: mqtt
+  name: "LightTrafficGreen"
+  state_topic: "stat/i3/inside/commons/traffic-light/POWER3"
+  command_topic: "cmnd/i3/inside/commons/traffic-light/POWER3"
+
+- platform: mqtt
+  name: "Chandelier01"
+  state_topic: "stat/i3/inside/accent/chandelier-01/POWER"
+  command_topic: "cmnd/i3/inside/accent/chandelier-01/POWER"
+
+- platform: mqtt
+  name: "Chandelier02"
+  state_topic: "stat/i3/inside/accent/chandelier-02/POWER"
+  command_topic: "cmnd/i3/inside/accent/chandelier-02/POWER"

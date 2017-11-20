@@ -1,0 +1,15 @@
+- platform: mqtt
+  name: "CommonsCeilingFans"
+  state_topic: "stat/i3/inside/commons/east-ceiling-fans/POWER"
+  command_topic: "cmnd/i3/inside/commons/east-ceiling-fans/POWER"
+
+
+# Switch LaserCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/laserZone/ceilingFan/POWER:command:*:default], <[mosquitto:stat/i3/i3/laserZone/ceilingFan/POWER:state:default]" }
+# Switch MachineShopCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/machine-shop/ceiling-fan/POWER:command:*:default], <[mosquitto:stat/i3/inside/machine-shop/ceiling-fan/POWER:state:default]" }
+
+# // Exhaust Fans
+# Switch LaserZoneExhaustFan (equip_exhaust) { mqtt=">[mosquitto:cmnd/i3/laserZone/ventFan/POWER:command:*:default], <[mosquitto:stat/i3/laserZone/ventFan/POWER:state:default]" }
+# Switch FLV_Fan (equip_exhaust) {mqtt=">[mosquitto:cmnd/i3/inside/fablab/vent/power:command:*:default], <[mosquitto:stat/i3/inside/fablab/vent/POWER:state:default]" }
+
+# Switch CNCCeilingExhaust (exhaust) { mqtt=">[mosquitto:cmnd/i3/inside/cnc/vent/POWER:command:*:default], <[mosquitto:stat/i3/inside/cnc/vent/POWER:state:default]" }
+# Switch SouthCeilingExhaust (exhaust) { mqtt=">[mosquitto:cmnd/i3/inside/commons/south-vent/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/south-vent/POWER:state:default]" }

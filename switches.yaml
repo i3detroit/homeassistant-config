@@ -1,0 +1,3 @@
+# Switch AirCompressor (equipment) { mqtt=">[mosquitto:cmnd/i3/inside/infrastructure/air-compressor/POWER:command:*:default], <[mosquitto:stat/i3/inside/infrastructure/air-compressor/POWER:state:default]" }
+# Switch AirCompressorValve { mqtt=">[mosquitto:cmnd/i3/inside/infrastructure/compressor-valve/POWER:command:*:default], <[mosquitto:stat/i3/inside/infrastructure/compressor-valve/POWER:state:default]" }
+# Switch  ClassroomSign { mqtt=">[mosquitto:cmnd/i3/inside/classroom/sign/POWER:command:*:default], <[mosquitto:stat/i3/inside/classroom/sign/POWER:state:default]" }

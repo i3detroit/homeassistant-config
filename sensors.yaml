@@ -1,0 +1,14 @@
+
+
+# String MachineShopMotion "Machine Shop Motion Sensor" { mqtt="<[mosquitto:stat/i3/inside/machineShop/motion-sensor/motion:state:default]"}
+# String GlassDoorLockSensor "Glass Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/classroom/glassDoor/lock:state:default]" }
+# String GlassDoorOpenSensor "GLass Door Open Sensor" { mqtt="<[mosquitto:stat/i3/classroom/glassDoor/open:state:default]" }
+# String GarageDoorLockSensor "Garage Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/inside/commons/garageDoor:state:default]" }
+# String Doorbell "Doorbell" { mqtt="<[mosquitto:stat/i3/inside/commons/normal-doorbell:state:default]" }
+# Number openEvseAmp (openEvse) { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/amp:state:default]" }
+# Number openEvseWh (openEvse) { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/wh:state:default]" }
+# Number openEvseState (openEvse) { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/state:state:default]" }
+# Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+# Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
+# Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
+# Number portable_temp (temp) { mqtt="<[mosquitto:stat/i3/inside/portable-temp/temp:state:default]" }
