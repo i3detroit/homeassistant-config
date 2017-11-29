@@ -1,15 +1,58 @@
+# - platform: mqtt
+#   name: ""
+#   state_topic: ""
+#   command_topic: ""
+#   payload_on: "ON"
+#   payload_off: "OFF"
+
+#Ceiling Fans
 - platform: mqtt
   name: "CommonsCeilingFans"
   state_topic: "stat/i3/inside/commons/east-ceiling-fans/POWER"
   command_topic: "cmnd/i3/inside/commons/east-ceiling-fans/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
 
+- platform: mqtt
+  name: "LaserCeilingFan"
+  state_topic: "stat/i3/i3/laserZone/ceilingFan/POWER"
+  command_topic: "cmnd/i3/laserZone/ceilingFan/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
 
-# Switch LaserCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/laserZone/ceilingFan/POWER:command:*:default], <[mosquitto:stat/i3/i3/laserZone/ceilingFan/POWER:state:default]" }
-# Switch MachineShopCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/machine-shop/ceiling-fan/POWER:command:*:default], <[mosquitto:stat/i3/inside/machine-shop/ceiling-fan/POWER:state:default]" }
+- platform: mqtt
+  name: "MachineShopCeilingFan"
+  state_topic: "stat/i3/inside/machine-shop/ceiling-fan/POWER"
+  command_topic: "cmnd/i3/inside/machine-shop/ceiling-fan/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
 
-# // Exhaust Fans
-# Switch LaserZoneExhaustFan (equip_exhaust) { mqtt=">[mosquitto:cmnd/i3/laserZone/ventFan/POWER:command:*:default], <[mosquitto:stat/i3/laserZone/ventFan/POWER:state:default]" }
-# Switch FLV_Fan (equip_exhaust) {mqtt=">[mosquitto:cmnd/i3/inside/fablab/vent/power:command:*:default], <[mosquitto:stat/i3/inside/fablab/vent/POWER:state:default]" }
+# Exhaust Fans
+- platform: mqtt
+  name: "FLV_Fan"
+  state_topic: "stat/i3/inside/fablab/vent/POWER"
+  command_topic: "cmnd/i3/inside/fablab/vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
 
-# Switch CNCCeilingExhaust (exhaust) { mqtt=">[mosquitto:cmnd/i3/inside/cnc/vent/POWER:command:*:default], <[mosquitto:stat/i3/inside/cnc/vent/POWER:state:default]" }
-# Switch SouthCeilingExhaust (exhaust) { mqtt=">[mosquitto:cmnd/i3/inside/commons/south-vent/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/south-vent/POWER:state:default]" }
+- platform: mqtt
+  name: "LaserZoneExhaustFan"
+  state_topic: "stat/i3/laserZone/ventFan/POWER"
+  command_topic: "cmnd/i3/laserZone/ventFan/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "CNCCeilingExhaust"
+  state_topic: "stat/i3/inside/cnc/vent/POWER"
+  command_topic: "cmnd/i3/inside/cnc/vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "SouthCeilingExhaust"
+  state_topic: "stat/i3/inside/commons/south-vent/POWER"
+  command_topic: "cmnd/i3/inside/commons/south-vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+

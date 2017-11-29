@@ -1,3 +1,45 @@
-# Switch AirCompressor (equipment) { mqtt=">[mosquitto:cmnd/i3/inside/infrastructure/air-compressor/POWER:command:*:default], <[mosquitto:stat/i3/inside/infrastructure/air-compressor/POWER:state:default]" }
-# Switch AirCompressorValve { mqtt=">[mosquitto:cmnd/i3/inside/infrastructure/compressor-valve/POWER:command:*:default], <[mosquitto:stat/i3/inside/infrastructure/compressor-valve/POWER:state:default]" }
-# Switch  ClassroomSign { mqtt=">[mosquitto:cmnd/i3/inside/classroom/sign/POWER:command:*:default], <[mosquitto:stat/i3/inside/classroom/sign/POWER:state:default]" }
+# switch:
+#   - platform: mqtt
+#     name: ""
+#     state_topic: "stat"
+#     command_topic: "cmnd"
+#     availability_topic: "tele"
+#     payload_on: "ON"
+#     payload_off: "OFF"
+#     payload_available: "online"
+#     payload_not_available: "offline"
+
+# Switch  ClassroomSign { mqtt=">[mosquitto::command:*:default], <[mosquitto::state:default]" }
+
+switch:
+  - platform: mqtt
+    name: "Air Compressor"
+    state_topic: "stat/i3/inside/infrastructure/air-compressor/POWER"
+    command_topic: "cmnd/i3/inside/infrastructure/air-compressor/POWER"
+    # availability_topic: "tele"
+    payload_on: "ON"
+    payload_off: "OFF"
+    # payload_available: "online"
+    # payload_not_available: "offline"
+
+switch:
+  - platform: mqtt
+    name: "Air Compressor Valve"
+    state_topic: "stat/i3/inside/infrastructure/compressor-valve/POWER"
+    command_topic: "cmnd/i3/inside/infrastructure/compressor-valve/POWER"
+    availability_topic: "tele/i3/inside/infrastructure/compressor-valve/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "online"
+    payload_not_available: "offline"
+
+switch:
+  - platform: mqtt
+    name: "Classroom Sign"
+    state_topic: "stat/i3/inside/classroom/sign/POWER"
+    command_topic: "cmnd/i3/inside/classroom/sign/POWER"
+    availability_topic: "tele/i3/inside/classroom/sign/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "online"
+    payload_not_available: "offline"

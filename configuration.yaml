@@ -72,8 +72,11 @@ influxdb:
   password: homeassistant
   include:
     domains:
+      - light
+      - fan
+      - sensor
+      - binary_sensor
       - switch
-
 
 mqtt:
   broker: 10.13.0.22
@@ -83,4 +86,5 @@ mqtt:
 light: !include lights.yaml
 fan: !include fans.yaml
 sensor: !include sensors.yaml
+binary_sensor: !include binary_sensors.yaml
 switch: !incldue switches.yaml
