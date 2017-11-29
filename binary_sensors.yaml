@@ -1,0 +1,47 @@
+# binary_sensor:
+#   - platform: mqtt
+#     name: ""
+#     state_topic: ""
+#     # on means open, off means closed
+#     payload_on: "ON"
+#     payload_off: "OFF"
+#     availability_topic: ""
+#     payload_available: "online"
+#     payload_not_available: "offline"
+#     device_class: opening, plug, motion, etc see https://home-assistant.io/components/binary_sensor/
+
+binary_sensor:
+  - platform: mqtt
+    name: "Glass Door Lock Sensor"
+    state_topic: "stat/i3/classroom/glassDoor/lock"
+    # on means open, off means closed
+    payload_on: "UNLOCKED"
+    payload_off: "LOCKED"
+    # availability_topic: ""
+    # payload_available: "online"
+    # payload_not_available: "offline"
+    device_class: opening
+
+binary_sensor:
+  - platform: mqtt
+    name: "Glass Door Open Sensor"
+    state_topic: "stat/i3/classroom/glassDoor/open"
+    # on means open, off means closed
+    payload_on: "OPEN"
+    payload_off: "CLOSED"
+    # availability_topic: "stat/i3/classroom/glassDoor/lock"
+    # payload_available: "online"
+    # payload_not_available: "offline"
+    device_class: opening
+
+binary_sensor:
+  - platform: mqtt
+    name: "Garage Door Lock Sensor"
+    state_topic: "stat/i3/inside/commons/garageDoor"
+    # on means open, off means closed
+    payload_on: "UNLOCKED"
+    payload_off: "LOCKED"
+    # availability_topic: ""
+    # payload_available: "online"
+    # payload_not_available: "offline"
+    device_class: opening
