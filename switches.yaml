@@ -43,3 +43,14 @@ switch:
     payload_off: "OFF"
     payload_available: "online"
     payload_not_available: "offline"
+
+switch:
+  - platform: mqtt
+    name: "Disco Ball"
+    state_topic: "stat/i3/inside/commons/disco/POWER"
+    command_topic: "cmnd/i3/inside/commons/disco/POWER"
+    availability_topic: "tele/i3/inside/commons/disco/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "online"
+    payload_not_available: "offline"
