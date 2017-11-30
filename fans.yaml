@@ -15,8 +15,8 @@
 
 - platform: mqtt
   name: "LaserCeilingFan"
-  state_topic: "stat/i3/i3/laserZone/ceilingFan/POWER"
-  command_topic: "cmnd/i3/laserZone/ceilingFan/POWER"
+  state_topic: "stat/i3/inside/laser-zone/ceiling-fan/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/ceiling-fan/POWER"
   payload_on: "ON"
   payload_off: "OFF"
 
