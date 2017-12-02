@@ -4,6 +4,9 @@
 #   unit_of_measurement: ""
 #   value_template: '{{ value_json.thing }}' or '{{ value_json["thing"]["nestedthing"] }}' for nested json
 
+# Weather prediction
+- platform: yr
+
 - platform: mqtt
   name: "Machine Shop Motion Sensor"
   state_topic: "stat/i3/inside/machineShop/motion-sensor/motion"
