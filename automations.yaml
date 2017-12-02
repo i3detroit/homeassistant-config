@@ -22,13 +22,13 @@
     service: switch.turn_off
     entity_id: switch.classroom_sign
 
-- alias: Machine Shop Motion Sensor ON
+- alias: Turn on machine shop lights when there is motion detected 
   trigger:
-  - platform: mqtt
-    topic: stat/i3/inside/machineShop/motion-sensor/motion
+    - platform: mqtt
+      topic: stat/i3/inside/machineShop/motion-sensor/motion
   action:
-    service: light.turn_on
-    entity_id: group.machine_shop_lights
+    service: homeassistant.turn_on
+    entity_id: script.machine_shop_motion_light_timer
 
 - alias: Air Compressor Valve ON
   trigger:
