@@ -52,10 +52,6 @@ map:
 # Track the sun
 sun:
 
-# Weather prediction
-sensor:
-  - platform: yr
-
 # Text to speech
 tts:
   - platform: google
@@ -87,4 +83,7 @@ light: !include lights.yaml
 fan: !include fans.yaml
 sensor: !include sensors.yaml
 binary_sensor: !include binary_sensors.yaml
-switch: !incldue switches.yaml
+switch: !include switches.yaml
+
+media_player:
+  - platform: cast
