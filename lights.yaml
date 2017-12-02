@@ -191,7 +191,7 @@
   payload_off: "OFF"
 
 - platform: mqtt
-  name: "light028"
+  name: "LightWelding"
   state_topic: "stat/i3/inside/lights/028/POWER"
   command_topic: "cmnd/i3/inside/lights/028/POWER"
   payload_on: "ON"
@@ -247,14 +247,14 @@
   payload_off: "OFF"
 
 - platform: mqtt
-  name: "light036"
+  name: "LightVinyl"
   state_topic: "stat/i3/inside/lights/036/POWER"
   command_topic: "cmnd/i3/inside/lights/036/POWER"
   payload_on: "ON"
   payload_off: "OFF"
 
 - platform: mqtt
-  name: "light037"
+  name: "LightTreehouse"
   state_topic: "stat/i3/inside/lights/037/POWER"
   command_topic: "cmnd/i3/inside/lights/037/POWER"
   payload_on: "ON"
