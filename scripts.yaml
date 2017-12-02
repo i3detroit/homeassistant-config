@@ -2,15 +2,15 @@ machine_shop_motion_light_timer:
   alias: "Turn on lights and set timer"
   sequence:
     # Cancel old timers 
-    - execute_service: script.turn_off
-      service_data: 
+    - service: script.turn_off
+      data: 
         entity_id: script.machine_shop_motion_timer_kill
-    - execute_service: light.turn_on
-      service_data:
+    - service: light.turn_on
+      data:
         entity_id: group.machine_shop_lights
     # Set new timer 
-    - execute_service: script.turn_on
-      service_data:
+    - service: script.turn_on
+      data:
         entity_id: script.machine_shop_motion_timer_kill
 
 machine_shop_motion_timer_kill:
@@ -18,7 +18,7 @@ machine_shop_motion_timer_kill:
   sequence:
     - delay:
         minutes: 60
-    - execute_service: light.turn_off
-      service_data: 
+    - service: light.turn_off
+      data: 
         entity_id: group.machine_shop_lights
 
