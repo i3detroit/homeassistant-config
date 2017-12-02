@@ -1,15 +1,16 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: i3Detroit
-  # Location required to calculate the time the sun rises and sets
+  
+  #location info
   latitude: 42.453828
   longitude: -83.113769
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 197
+
   # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
   time_zone: America/Detroit
+
   # Customization file
   customize: !include customize.yaml
 
@@ -56,10 +57,6 @@ sun:
 tts:
   - platform: google
 
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-
 influxdb:
   host: 10.13.0.22
   port: 8086
@@ -79,11 +76,17 @@ mqtt:
   port: 1883
   client_id: homeassistant
 
+media_player:
+  - platform: cast
+
+# included configs
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+# include device config include
 light: !include lights.yaml
 fan: !include fans.yaml
 sensor: !include sensors.yaml
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
-
-media_player:
-  - platform: cast
