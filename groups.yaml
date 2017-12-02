@@ -1,0 +1,76 @@
+machine_shop_lights:
+  name: "Machine Shop Lights"
+  entities:
+    - light.light029
+    - light.light030
+    - light.light031
+    - light.light032
+    - light.light033
+    - light.light034
+    - light.light035
+
+emergency_lights:
+  name: "Emergency Lights"
+  entities:
+    - light.light005
+    - light.light010
+    - light.light025
+    - light.light027
+
+row_1_lights:
+  name: "Light Row 1"
+  entities:
+    - light.light001
+    - light.light002
+    - light.light003
+    - light.light004
+
+row_2_lights:
+  name: "Light Row 2"
+  entities:
+    - light.light006
+    - light.light007
+    - light.light008
+    - light.light009
+
+row_3_lights:
+  name: "Light Row 3"
+  entities:
+    - light.light011
+    - light.light012
+    - light.light013
+    - light.light014
+
+row_4_lights:
+  name: "Light Row 4"
+  entities:
+    - light.light015
+    - light.light016
+    - light.light017
+    - light.light018
+    - light.light019
+
+row_5_lights:
+  name: "Light Row 5"
+  entities:
+    - light.light020
+    - light.light021
+    - light.light022
+    - light.light023
+    - light.light024
+    - light.light026
+
+misc_lights:
+  name: "Misc. Lights"
+  entities:
+    - light.LightWelding
+    - light.LightVinyl
+    - light.LightTreehouse
+    - light.LightLargeBathroom
+    - light.LightMediaLab
+    - light.LightSnappleVending
+    - light.LightTrafficGreen
+    - light.LightTrafficYellow
+    - light.LightTrafficRed
+    - light.Chandelier01
+    - light.Chandelier02
