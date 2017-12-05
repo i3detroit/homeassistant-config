@@ -1,5 +1,91 @@
+Main:
+  view: yes
+  icon: mdi:view-list
+  entities:
+    - group.shop_lights
+    - group.misc_lights
+
+HVAC:
+  name: "HVAC"
+  icon: mdi:thermometer
+  entities:
+    - sensor.sonoff_temp
+    - sensor.sonoff_humid
+    - sensor.portable_temp
+
+openEVSE:
+  name: "OpenEVSE Stats"
+  icon: mdi:car
+  entities:
+    - sensor.openEVSE_Amps
+    - sensor.openEVSE_Watt_Seconds
+    - sensor.openEVSE_State
+
+YRWeather:
+  name: "Current Weather"
+  icon: mdi:sun
+  entities:
+    - sensor.Weather_symbol
+    - sensor.Weather_temperature
+    - sensor.Weather_humidity
+    - sensor.Weather_pressure
+    - sensor.Weather_dewpoint_temperature
+    - sensor.Weather_precipitation
+    - sensor.Weather_cloudiness
+    - sensor.Weather_wind_speed
+    - sensor.Weather_wind_direction
+
+row_1_lights:
+  name: "Light Row 1"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light001
+    - light.light002
+    - light.light003
+    - light.light004
+
+row_2_lights:
+  name: "Light Row 2"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light006
+    - light.light007
+    - light.light008
+    - light.light009
+
+row_3_lights:
+  name: "Light Row 3"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light011
+    - light.light012
+    - light.light013
+    - light.light014
+
+row_4_lights:
+  name: "Light Row 4"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light015
+    - light.light016
+    - light.light017
+    - light.light018
+    - light.light019
+
+row_5_lights:
+  name: "Light Row 5"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light020
+    - light.light021
+    - light.light022
+    - light.light023
+    - light.light024
+    - light.light026
+
 machine_shop_lights:
   name: "Machine Shop Lights"
+  icon: mdi:ceiling-light
   entities:
     - light.light029
     - light.light030
@@ -11,57 +97,16 @@ machine_shop_lights:
 
 emergency_lights:
   name: "Emergency Lights"
+  icon: mdi:alarm-light
   entities:
     - light.light005
     - light.light010
     - light.light025
     - light.light027
 
-row_1_lights:
-  name: "Light Row 1"
-  entities:
-    - light.light001
-    - light.light002
-    - light.light003
-    - light.light004
-
-row_2_lights:
-  name: "Light Row 2"
-  entities:
-    - light.light006
-    - light.light007
-    - light.light008
-    - light.light009
-
-row_3_lights:
-  name: "Light Row 3"
-  entities:
-    - light.light011
-    - light.light012
-    - light.light013
-    - light.light014
-
-row_4_lights:
-  name: "Light Row 4"
-  entities:
-    - light.light015
-    - light.light016
-    - light.light017
-    - light.light018
-    - light.light019
-
-row_5_lights:
-  name: "Light Row 5"
-  entities:
-    - light.light020
-    - light.light021
-    - light.light022
-    - light.light023
-    - light.light024
-    - light.light026
-
 misc_lights:
   name: "Misc. Lights"
+  icon: mdi:ceiling-light
   entities:
     - light.LightWelding
     - light.LightVinyl
@@ -74,3 +119,23 @@ misc_lights:
     - light.LightTrafficRed
     - light.Chandelier01
     - light.Chandelier02
+
+shop_lights:
+  name: "Shop Lights"
+  entities:
+    - group.row_1_lights
+    - group.row_2_lights
+    - group.row_3_lights
+    - group.row_4_lights
+    - group.row_5_lights
+    - group.machine_shop_lights
+
+shop_fans:
+  name: "Ceiling Fans"
+  icon: mdi:fan
+  entities: 
+    - fans.CommonsCeilingFans
+    - fans.LaserCeilingFan
+    - fans.MachineShopCeilingFan
+    - fans.CNCCeilingExhaust
+    - fans.SouthCeilingExhaust
