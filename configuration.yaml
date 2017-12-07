@@ -70,6 +70,8 @@ influxdb:
       - sensor
       - binary_sensor
       - switch
+      - yr
+      - sun
 
 mqtt:
   broker: 10.13.0.22
