@@ -17,9 +17,9 @@ openEVSE:
   name: "OpenEVSE Stats"
   icon: mdi:car
   entities:
-    - sensor.openEVSE_Amps
-    - sensor.openEVSE_Watt_Seconds
-    - sensor.openEVSE_State
+    - sensor.ev_charger_amps
+    - sensor.ev_charger_wh
+    - sensor.ev_charger_state
 
 YRWeather:
   name: "Current Weather"
@@ -28,7 +28,7 @@ YRWeather:
     - sensor.Weather_symbol
     - sensor.Weather_temperature
     - sensor.Weather_humidity
-    - sensor.Weather_pressure
+    - sensor.weather_pressure_kpa
     - sensor.Weather_dewpoint_temperature
     - sensor.Weather_precipitation
     - sensor.Weather_cloudiness
