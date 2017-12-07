@@ -67,3 +67,46 @@
   state_topic: "stat/i3/inside/portable-temp/temp"
   unit_of_measurement: "°C"
 
+- platform: template
+  sensors:
+    ev_charger_state:
+      friendly_name: "EV Charger Status"
+      value_template: >-
+        {% if is_state('sensor.openEVSE_State', '1') %}
+          Unplugged
+        {% elif is_state('sensor.openEVSE_State', '2') %}
+          Plugged_in
+        {% elif is_state('sensor.openEVSE_State', '3') %}
+          Charging
+        {% else %}
+          Unknown
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.openEVSE_State', '1') %}
+          mdi:power-plug-off
+        {% elif is_state('sensor.openEVSE_State', '2') %}
+          mdi:power-plug
+        {% elif is_state('sensor.openEVSE_State', '3') %}
+          battery-charging
+        {% else %}
+          mdi:help-circle
+        {% endif %}
+    ev_charger_amps:
+      friendly_name: "EV Charger Amps"
+      unit_of_measurement: 'Amps'
+      value_template: "{{ states('sensor.openEVSE_Amps')|float / 1000 | round(1) }}"
+      icon_template: >-
+         {% if states('sensor.openEVSE_Amps')|float > 0 %}
+            mdi:battery-charging
+          {% else %}
+            mdi:power-plug-off
+          {% endif %}
+    ev_charger_wh:
+      friendly_name: "EV Charger Watt hours"
+      unit_of_measurement: 'Wh'
+      value_template: "{{ states('sensor.openEVSE_Watt_Seconds') | multiply(1/3600000) | round(2) }}"
+
+    weather_pressure_kpa:
+      friendly_name: "Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.Weather_pressure') | multiply(1/10) | round(1) }}"

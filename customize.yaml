@@ -1,0 +1,18 @@
+sensor.Weather_symbol:
+  friendly_name: "Symbol"
+sensor.Weather_temperature:
+  friendly_name: "Temp."
+sensor.Weather_humidity:
+  friendly_name: "Humidity"
+sensor.Weather_pressure:
+  friendly_name: "Pressure"
+sensor.Weather_dewpoint_temperature:
+  friendly_name: "Dewpoint"
+sensor.Weather_precipitation:
+  friendly_name: "Precipitation"
+sensor.Weather_cloudiness:
+  friendly_name: "Cloudiness"
+sensor.Weather_wind_speed:
+  friendly_name: "Wind Speed"
+sensor.Weather_wind_direction:
+  friendly_name: "Wind Direction"
