@@ -87,7 +87,7 @@
         {% elif is_state('sensor.openEVSE_State', '2') %}
           mdi:power-plug
         {% elif is_state('sensor.openEVSE_State', '3') %}
-          battery-charging
+          mdi:battery-charging
         {% else %}
           mdi:help-circle
         {% endif %}
@@ -102,8 +102,8 @@
             mdi:power-plug-off
           {% endif %}
     ev_charger_wh:
-      friendly_name: "EV Charger Watt hours"
-      unit_of_measurement: 'Wh'
+      friendly_name: "EV Charger kWh"
+      unit_of_measurement: 'kWh'
       value_template: "{{ states('sensor.openEVSE_Watt_Seconds') | multiply(1/3600000) | round(2) }}"
 
     weather_pressure_kpa:
