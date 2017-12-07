@@ -8,6 +8,10 @@ machine_shop_motion_light_timer:
     - service: light.turn_on
       data:
         entity_id: group.machine_shop_lights
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/i3/commons/ledMatrix/display"
+        payload: "^SI see you there"
     # Set new timer 
     - service: script.turn_on
       data:
