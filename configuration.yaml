@@ -15,7 +15,7 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+# introduction:
 
 # Enables the frontend
 frontend:
@@ -84,7 +84,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
-# include device config include
+# include device configs
 light: !include lights.yaml
 fan: !include fans.yaml
 sensor: !include sensors.yaml
