@@ -69,3 +69,14 @@
     entity_id: 
       - light.Chandelier01
       - light.Chandelier02
+
+- alias: Who turned out the lights?
+  trigger:
+    - platform: state
+      entity_id: group.shop_lights
+      from: 'on'
+      to: 'off'
+  action:
+    service: notify.slack_home_automation
+    data:
+      message: "Hey! Who turned out the lights?"
