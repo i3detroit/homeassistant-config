@@ -36,7 +36,7 @@
 
 - platform: mqtt
   name: "Garage Door Lock Sensor"
-  state_topic: "stat/i3/inside/commons/garage-door"
+  state_topic: "stat/i3/inside/commons/garage-door/lock"
   # on means open, off means closed
   payload_on: "UNLOCKED"
   payload_off: "LOCKED"
