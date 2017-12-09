@@ -16,3 +16,25 @@ sensor.Weather_wind_speed:
   friendly_name: "Wind Speed"
 sensor.Weather_wind_direction:
   friendly_name: "Wind Direction"
+light.LightWelding:
+  friendly_name: "Welding light"
+light.LightVinyl:
+  friendly_name: "Vinyl light"
+light.LightTreehouse:
+  friendly_name: "Treehouse light"
+light.LightLargeBathroom:
+  friendly_name: "Large Bathroom light"
+light.LightMediaLab:
+  friendly_name: "Media Lab light"
+light.LightSnappleVending:
+  friendly_name: "Snapple Machine Light"
+light.LightTrafficGreen:
+  friendly_name: "Traffic Light Green"
+light.LightTrafficYellow:
+  friendly_name: "Traffic Light Yellow"
+light.LightTrafficRed:
+  friendly_name: "Traffic Light Red"
+light.Chandelier01:
+  friendly_name: "Chanelier N"
+light.Chandelier02:
+  friendly_name: "Chanelier S"
