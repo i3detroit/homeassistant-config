@@ -16,7 +16,7 @@ class CheckPowerMeter(appapi.AppDaemon):
 	    while True:
 	        packet = pm.update()
 	        if packet is not None:
-	            self.call_service("notify/slack_statusbot", message = 'Power meter total kWh: '+str(packet['total_kWh']))
+	            self.call_service("notify/slack_statusbots", message = 'Power meter total kWh: '+str(packet['total_kWh']))
 	            break
 	    pm.close()
 
