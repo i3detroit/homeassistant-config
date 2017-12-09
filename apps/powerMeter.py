@@ -1,10 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import appdaemon.appapi as appapi
 import socket
 import datetime
 
 class CheckPowerMeter(appapi.AppDaemon):
 	def initialize(self):
-		time = datetime.time(15, 42, 0)
+		time = datetime.time(0, 0, 0)
 		self.run_daily(self.do_the_thing, time)
 
 	def do_the_thing(self, kwargs):
@@ -13,7 +16,7 @@ class CheckPowerMeter(appapi.AppDaemon):
 	    while True:
 	        packet = pm.update()
 	        if packet is not None:
-	            self.call_service("notify/slack_test", message = 'Power meter total kWh: '+str(packet['total_kWh']))
+	            self.call_service("notify/slack_statusbot", message = 'Power meter total kWh: '+str(packet['total_kWh']))
 	            break
 	    pm.close()
 
