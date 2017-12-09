@@ -3,7 +3,6 @@ Main:
   icon: mdi:view-list
   entities:
     - group.shop_lights
-    - group.misc_lights
 
 HVAC:
   name: "HVAC"
@@ -113,15 +112,10 @@ misc_lights:
     - light.LightTreehouse
     - light.LightLargeBathroom
     - light.LightMediaLab
-    - light.LightSnappleVending
-    - light.LightTrafficGreen
-    - light.LightTrafficYellow
-    - light.LightTrafficRed
-    - light.Chandelier01
-    - light.Chandelier02
 
 shop_lights:
   name: "Shop Lights"
+  icon: mdi:ceiling-light
   entities:
     - group.row_1_lights
     - group.row_2_lights
@@ -129,6 +123,7 @@ shop_lights:
     - group.row_4_lights
     - group.row_5_lights
     - group.machine_shop_lights
+    - group.misc_lights
 
 shop_fans:
   name: "Ceiling Fans"
@@ -139,3 +134,15 @@ shop_fans:
     - fans.MachineShopCeilingFan
     - fans.CNCCeilingExhaust
     - fans.SouthCeilingExhaust
+
+decor:
+  name: "Decor"
+  icon: mdi:traffic-light
+  entities:
+    - light.LightSnappleVending
+    - light.LightTrafficGreen
+    - light.LightTrafficYellow
+    - light.LightTrafficRed
+    - light.Chandelier01
+    - light.Chandelier02
+    - switch.Disco_Ball
