@@ -80,3 +80,25 @@
     service: notify.slack_home_automation
     data:
       message: "Hey! Who turned out the lights?"
+
+- alias: Fab lab fan status sign on
+  trigger:
+    - platform: state
+      entity_id: fan.flv_fan
+      to: 'on'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "cmnd/i3/commons/16seg/display"
+      payload: "FAB LAB FAN ON"
+
+- alias: Fab lab fan status sign off
+  trigger:
+    - platform: state
+      entity_id: fan.flv_fan
+      to: 'off'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "cmnd/i3/commons/16seg/display"
+      payload: "FAB LAB FAN OFF"
