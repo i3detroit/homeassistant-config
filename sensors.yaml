@@ -23,10 +23,6 @@
     - dewpointTemperature
 
 - platform: mqtt
-  name: "Machine Shop Motion Sensor"
-  state_topic: "stat/i3/inside/machineShop/motion-sensor/motion"
-
-- platform: mqtt
   name: "Doorbell"
   state_topic: "stat/i3/inside/commons/normal-doorbell"
   
@@ -110,3 +106,9 @@
       friendly_name: "Pressure"
       unit_of_measurement: 'kPa'
       value_template: "{{ states('sensor.Weather_pressure') | multiply(1/10) | round(1) }}"
+
+- platform: command_line
+  name: "i3 Power Meter"
+  command: "python3 /home/homeassistant/.homeassistant/power_meter.py"
+  unit_of_measurement: "kWh"
+  scan_interval: "60"
