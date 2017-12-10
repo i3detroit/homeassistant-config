@@ -22,12 +22,12 @@
     service: switch.turn_off
     entity_id: switch.classroom_sign
 
-- alias: Turn on machine shop lights when motion is detected 
+- alias: Machine Shop Motion ON 
   trigger:
     platform: state
-    entity_id: sensor.Machine_Shop_Motion_Sensor
-    from: 'OFF'
-    to: 'ON'
+    entity_id: binary_sensor.machine_shop_motion_sensor
+    from: 'off'
+    to: 'on'
   action:
     - service: light.turn_on
       entity_id: group.machine_shop_lights
@@ -36,12 +36,12 @@
         topic: "cmnd/i3/commons/ledMatrix/display"
         payload: "^SI see you there"
 
-- alias: Turn of machine shop lights when motion is not detected for 60 min 
+- alias: Machine Shop Motion OFF 
   trigger:
     platform: state
-    entity_id: sensor.Machine_Shop_Motion_Sensor
-    from: 'ON'
-    to: 'OFF'
+    entity_id: binary_sensor.machine_shop_motion_sensor
+    from: 'on'
+    to: 'off'
     for:
       hours: 1
   action:
@@ -120,3 +120,25 @@
     data:
       topic: "cmnd/i3/commons/16seg/display"
       payload: "FAB LAB FAN OFF"
+
+- alias: Large Bathroom Motion ON 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.large_bathroom_motion_sensor
+    from: 'off'
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.LightLargeBathroom
+
+- alias: Large Bathroom Motion OFF 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.large_bathroom_motion_sensor
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 30
+  action:
+    service: light.turn_off
+    entity_id: light.LightLargeBathroom
