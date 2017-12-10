@@ -1,28 +1,27 @@
-machine_shop_motion_light_timer:
-  alias: "Turn on lights and set timer"
-  sequence:
-    # Cancel old timers 
-    - service: script.turn_off
-      data: 
-        entity_id: script.machine_shop_motion_timer_kill
-    - service: light.turn_on
-      data:
-        entity_id: group.machine_shop_lights
-    - service: mqtt.publish
-      data:
-        topic: "cmnd/i3/commons/ledMatrix/display"
-        payload: "^SI see you there"
-    # Set new timer 
-    - service: script.turn_on
-      data:
-        entity_id: script.machine_shop_motion_timer_kill
+# machine_shop_motion_light_timer:
+#   alias: "Turn on lights and set timer"
+#   sequence:
+#     # Cancel old timers 
+#     - service: script.turn_off
+#       data: 
+#         entity_id: script.machine_shop_motion_timer_kill
+#     - service: light.turn_on
+#       data:
+#         entity_id: group.machine_shop_lights
+#     - service: mqtt.publish
+#       data:
+#         topic: "cmnd/i3/commons/ledMatrix/display"
+#         payload: "^SI see you there"
+#     # Set new timer 
+#     - service: script.turn_on
+#       data:
+#         entity_id: script.machine_shop_motion_timer_kill
 
-machine_shop_motion_timer_kill:
-  alias: "Turn off lights after 60 minutes"
-  sequence:
-    - delay:
-        minutes: 60
-    - service: light.turn_off
-      data: 
-        entity_id: group.machine_shop_lights
-
+# machine_shop_motion_timer_kill:
+#   alias: "Turn off lights after 60 minutes"
+#   sequence:
+#     - delay:
+#         minutes: 60
+#     - service: light.turn_off
+#       data: 
+#         entity_id: group.machine_shop_lights

@@ -22,13 +22,31 @@
     service: switch.turn_off
     entity_id: switch.classroom_sign
 
-- alias: Turn on machine shop lights when there is motion detected 
+- alias: Turn on machine shop lights when motion is detected 
   trigger:
-    - platform: mqtt
-      topic: stat/i3/inside/machineShop/motion-sensor/motion
+    platform: state
+    entity_id: sensor.Machine_Shop_Motion_Sensor
+    from: 'OFF'
+    to: 'ON'
   action:
-    service: homeassistant.turn_on
-    entity_id: script.machine_shop_motion_light_timer
+    - service: light.turn_on
+      entity_id: group.machine_shop_lights
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/i3/commons/ledMatrix/display"
+        payload: "^SI see you there"
+
+- alias: Turn of machine shop lights when motion is not detected for 60 min 
+  trigger:
+    platform: state
+    entity_id: sensor.Machine_Shop_Motion_Sensor
+    from: 'ON'
+    to: 'OFF'
+    for:
+      hours: 1
+  action:
+    service: light.turn_off
+    entity_id: group.machine_shop_lights
 
 - alias: Air Compressor Valve ON
   trigger:

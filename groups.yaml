@@ -3,6 +3,7 @@ Main:
   icon: mdi:view-list
   entities:
     - group.shop_lights
+    - group.decor
 
 HVAC:
   name: "HVAC"
