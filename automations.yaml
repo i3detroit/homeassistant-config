@@ -95,7 +95,7 @@
       from: 'on'
       to: 'off'
   action:
-    service: notify.slack_home_automation
+    service: notify.slack_statusbots
     data:
       message: "Hey! Who turned out the lights?"
 
