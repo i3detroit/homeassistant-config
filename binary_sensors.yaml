@@ -59,3 +59,10 @@
   payload_on: "ON"
   payload_off: "OFF"
   device_class: motion
+
+- platform: mqtt
+  name: "Small Bathroom Motion Sensor"
+  state_topic: "stat/i3/inside/small-bathroom/motion-sensor/motion"
+  payload_on: "ON"
+  payload_off: "OFF"
+  device_class: motion
