@@ -58,11 +58,6 @@
   unit_of_measurement: "°C"
   value_template: '{{ value_json["DHT22"]["Temperature"] }}'
   
-- platform: mqtt
-  name: "portable_temp"
-  state_topic: "stat/i3/inside/portable-temp/temp"
-  unit_of_measurement: "°C"
-
 - platform: template
   sensors:
     ev_charger_state:
