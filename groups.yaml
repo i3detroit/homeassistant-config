@@ -11,7 +11,6 @@ HVAC:
   entities:
     - sensor.sonoff_temp
     - sensor.sonoff_humid
-    - sensor.portable_temp
     - sensor.ground_cluster_bmp180_pressure
     - sensor.ground_cluster_bmp180_temperature
     - sensor.ground_cluster_dht22_humidity
@@ -22,6 +21,11 @@ HVAC:
     - sensor.ceiling_cluster_dht22_humidity
     - sensor.ceiling_cluster_dht22_temperature
     - sensor.ceiling_cluster_lux
+    - sensor.fablab_cluster_bmp180_pressure
+    - sensor.fablab_cluster_bmp180_temperature
+    - sensor.fablab_cluster_dht22_humidity
+    - sensor.fablab_cluster_dht22_temperature
+    - sensor.fablab_cluster_lux
 
 openEVSE:
   name: "OpenEVSE Stats"
