@@ -34,7 +34,7 @@
 - platform: mqtt
   name: "openEVSE Watt Seconds"
   state_topic: "tele/i3/inside/commons/openevse/wh"
-  unit_of_measurement: "Watt-seconds"
+  unit_of_measurement: "Watt seconds"
   
 - platform: mqtt
   name: "openEVSE State"
@@ -114,14 +114,14 @@
   scan_interval: "60"
 
 - platform: mqtt
-  name: "Ground Cluster bmp180 Temperature"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp180"
+  name: "Ground Cluster bmp280 Temperature"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
 
 - platform: mqtt
-  name: "Ground Cluster bmp180 Pressure"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp180"
+  name: "Ground Cluster bmp280 Pressure"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
 
@@ -144,14 +144,14 @@
   value_template: '{{ value_json.Humidity }}'
 
 - platform: mqtt
-  name: "Ceiling Cluster bmp180 Temperature"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp180"
+  name: "Ceiling Cluster bmp280 Temperature"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
 
 - platform: mqtt
-  name: "Ceiling Cluster bmp180 Pressure"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp180"
+  name: "Ceiling Cluster bmp280 Pressure"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
 
@@ -172,3 +172,38 @@
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/dht22"
   unit_of_measurement: "%"
   value_template: '{{ value_json.Humidity }}'
+
+- platform: mqtt
+  name: "Ceiling Cluster bmp280 Temperature"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bmp280"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.Temperature }}'
+
+- platform: mqtt
+  name: "Ceiling Cluster bmp280 Pressure"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bmp280"
+  unit_of_measurement: "Pa"
+  value_template: '{{ value_json.Pressure }}'
+
+- platform: mqtt
+  name: "Ceiling Cluster Lux"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/lux"
+  unit_of_measurement: "lux"
+  value_template: '{{ value_json.Lux }}'
+
+- platform: mqtt
+  name: "Ceiling Cluster dht22 Temperature"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/dht22"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.Temperature }}'
+
+- platform: mqtt
+  name: "Ceiling Cluster dht22 Humidity"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/dht22"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
+
+- platform: mqtt
+  name: "Bumblebee Tube Time"
+  state_topic: "stat/i3/laserZone/bumblebee_timer/laserTubeTime"
+  unit_of_measurement: "millisecond"
