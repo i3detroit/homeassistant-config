@@ -125,7 +125,6 @@
   trigger:
     platform: state
     entity_id: binary_sensor.large_bathroom_motion_sensor
-    from: 'off'
     to: 'on'
   action:
     service: light.turn_on
@@ -135,7 +134,6 @@
   trigger:
     platform: state
     entity_id: binary_sensor.large_bathroom_motion_sensor
-    from: 'on'
     to: 'off'
     for:
       minutes: 30
