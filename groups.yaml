@@ -62,6 +62,7 @@ row_2_lights:
   name: "Light Row 2"
   icon: mdi:ceiling-light
   entities:
+    - light.light005
     - light.light006
     - light.light007
     - light.light008
@@ -113,10 +114,10 @@ emergency_lights:
   name: "Emergency Lights"
   icon: mdi:alarm-light
   entities:
-    - light.light005
     - light.light010
     - light.light025
     - light.light027
+    - light.light038
 
 misc_lights:
   name: "Misc. Lights"
