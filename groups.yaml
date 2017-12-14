@@ -12,6 +12,16 @@ HVAC:
     - sensor.sonoff_temp
     - sensor.sonoff_humid
     - sensor.portable_temp
+    - sensor.ground_cluster_bmp180_pressure
+    - sensor.ground_cluster_bmp180_temperature
+    - sensor.ground_cluster_dht22_humidity
+    - sensor.ground_cluster_dht22_temperature
+    - sensor.ground_cluster_lux
+    - sensor.ceiling_cluster_bmp180_pressure
+    - sensor.ceiling_cluster_bmp180_temperature
+    - sensor.ceiling_cluster_dht22_humidity
+    - sensor.ceiling_cluster_dht22_temperature
+    - sensor.ceiling_cluster_lux
 
 openEVSE:
   name: "OpenEVSE Stats"
@@ -147,3 +157,19 @@ decor:
     - light.Chandelier01
     - light.Chandelier02
     - switch.Disco_Ball
+
+motion_sensor:
+  name: "Motion Sensors"
+  icon: mdi:run-fast
+  entities:
+    - binary_sensor.machine_shop_motion_sensor
+    - binary_sensor.large_bathroom_motion_sensor
+    - binary_sensor.small_bathroom_motion_sensor
+
+doors:
+  name: "Doors"
+  icon: mdi:door
+  entities:
+    - binary_sensor.garage_door_lock_sensor
+    - binary_sensor.glass_door_lock_sensor
+    - binary_sensor.glass_door_open_sensor
