@@ -202,3 +202,14 @@
   name: "Bumblebee Tube Time"
   state_topic: "stat/i3/laserZone/bumblebee_timer/laserTubeTime"
   unit_of_measurement: "millisecond"
+
+- platform: mqtt
+  name: "Wolverine Tube Time"
+  state_topic: "stat/i3/laserZone/wolverine_timer/laserTubeTime"
+  unit_of_measurement: "millisecond"
+
+- platform: mqtt
+  name: "Snapple Vending Temperature"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.Temperature }}'
