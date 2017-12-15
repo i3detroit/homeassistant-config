@@ -24,7 +24,7 @@
 
 - platform: mqtt
   name: "Doorbell"
-  state_topic: "stat/i3/inside/commons/normal-doorbell"
+  state_topic: "stat/i3/inside/commons/normal-doorbell/press"
   force_update: True
   
 - platform: mqtt
@@ -236,5 +236,5 @@
   name: "Snapple Vending Temperature"
   state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
   unit_of_measurement: "°C"
-  value_template: '{{ value_json.Temperature }}'
+  value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
   force_update: True
