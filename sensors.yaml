@@ -25,38 +25,45 @@
 - platform: mqtt
   name: "Doorbell"
   state_topic: "stat/i3/inside/commons/normal-doorbell"
+  force_update: True
   
 - platform: mqtt
   name: "openEVSE Amps"
   state_topic: "tele/i3/inside/commons/openevse/amp"
   unit_of_measurement: "milliamps"
+  force_update: True
   
 - platform: mqtt
   name: "openEVSE Watt Seconds"
   state_topic: "tele/i3/inside/commons/openevse/wh"
   unit_of_measurement: "Watt seconds"
+  force_update: True
   
 - platform: mqtt
   name: "openEVSE State"
   state_topic: "tele/i3/inside/commons/openevse/state"
+  force_update: True
   
 - platform: mqtt
   name: "sonoff_RSSI"
   state_topic: "tele/i3/inside/commons/traffic-light/STATE"
   unit_of_measurement: "%"
   value_template: '{{ value_json["Wifi"]["RSSI"] }}'
+  force_update: True
   
 - platform: mqtt
   name: "sonoff_humid"
   state_topic: "tele/i3/inside/commons/traffic-light/SENSOR"
   unit_of_measurement: "%"
   value_template: '{{ value_json["DHT22"]["Humidity"] }}'
+  force_update: True
   
 - platform: mqtt
   name: "sonoff_temp"
   state_topic: "tele/i3/inside/commons/traffic-light/SENSOR"
   unit_of_measurement: "°C"
   value_template: '{{ value_json["DHT22"]["Temperature"] }}'
+  force_update: True
   
 - platform: template
   sensors:
@@ -113,103 +120,121 @@
   state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ground Cluster bmp280 Pressure"
   state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ground Cluster Lux"
   state_topic: "tele/i3/inside/commons/ground-sensor-cluster/lux"
   unit_of_measurement: "lux"
   value_template: '{{ value_json.Lux }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ground Cluster dht22 Temperature"
   state_topic: "tele/i3/inside/commons/ground-sensor-cluster/dht22"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ground Cluster dht22 Humidity"
   state_topic: "tele/i3/inside/commons/ground-sensor-cluster/dht22"
   unit_of_measurement: "%"
   value_template: '{{ value_json.Humidity }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ceiling Cluster bmp280 Temperature"
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ceiling Cluster bmp280 Pressure"
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ceiling Cluster Lux"
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/lux"
   unit_of_measurement: "lux"
   value_template: '{{ value_json.Lux }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ceiling Cluster dht22 Temperature"
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/dht22"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
+  force_update: True
 
 - platform: mqtt
   name: "Ceiling Cluster dht22 Humidity"
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/dht22"
   unit_of_measurement: "%"
   value_template: '{{ value_json.Humidity }}'
+  force_update: True
 
 - platform: mqtt
   name: "Fablab Cluster bmp280 Temperature"
   state_topic: "tele/i3/inside/fablab/sensor-cluster/bmp280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
+  force_update: True
 
 - platform: mqtt
   name: "Fablab Cluster bmp280 Pressure"
   state_topic: "tele/i3/inside/fablab/sensor-cluster/bmp280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
+  force_update: True
 
 - platform: mqtt
   name: "Fablab Cluster Lux"
   state_topic: "tele/i3/inside/fablab/sensor-cluster/lux"
   unit_of_measurement: "lux"
   value_template: '{{ value_json.Lux }}'
+  force_update: True
 
 - platform: mqtt
   name: "Fablab Cluster dht22 Temperature"
   state_topic: "tele/i3/inside/fablab/sensor-cluster/dht22"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
+  force_update: True
 
 - platform: mqtt
   name: "Fablab Cluster dht22 Humidity"
   state_topic: "tele/i3/inside/fablab/sensor-cluster/dht22"
   unit_of_measurement: "%"
   value_template: '{{ value_json.Humidity }}'
+  force_update: True
 
 - platform: mqtt
   name: "Bumblebee Tube Time"
   state_topic: "stat/i3/laserZone/bumblebee_timer/laserTubeTime"
   unit_of_measurement: "millisecond"
+  force_update: True
 
 - platform: mqtt
   name: "Wolverine Tube Time"
   state_topic: "stat/i3/laserZone/wolverine_timer/laserTubeTime"
   unit_of_measurement: "millisecond"
+  force_update: True
 
 - platform: mqtt
   name: "Snapple Vending Temperature"
   state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
+  force_update: True
