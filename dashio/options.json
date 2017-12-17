@@ -1,0 +1,73 @@
+{
+  "buttons": [
+  {
+    "name": "One",
+    "address": "44:65:0d:78:94:12",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_green_tape\"}"
+  },
+  {
+    "name": "Two",
+    "address": "44:65:0d:c6:e5:21",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_paper_towels\"}"
+  },
+  {
+    "name": "Three",
+    "address": "0c:47:c9:7c:55:20",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_sharpies\"}"
+  },
+  {
+    "name": "Four",
+    "address": "0c:47:c9:ed:9c:46",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_blue_towels\"}"
+  },
+  {
+    "name": "Five",
+    "address": "44:65:0d:68:38:c9",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_toilet_paper\"}"
+  },
+  {
+    "name": "Six",
+    "address": "ac:63:be:61:47:f5",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_plastic_spoons\"}"
+  },
+  {
+    "name": "Seven",
+    "address": "44:65:0d:4d:a6:0b",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_plastic_forks\"}"
+  },
+  {
+    "name": "Eight",
+    "address": "ac:63:be:a0:4a:d4",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_plastic_knives\"}"
+  },
+  {
+    "name": "Nine",
+    "address": "74:75:48:6f:3b:b7",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_paper_plates\"}"
+  },
+  {
+    "name": "Ten",
+    "address": "f0:27:2d:ef:a8:a2",
+    "domain": "script",
+    "service": "toggle",
+    "service_data": "{\"entity_id\": \"script.dash_cups\"}"
+  }]
+}
