@@ -238,3 +238,18 @@
   unit_of_measurement: "°C"
   value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
   force_update: True
+
+- platform: mqtt
+  name: "Snapple Vending Compressor Amps"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/ENERGY"
+  unit_of_measurement: "Amps"
+  value_template: '{{ value_json.Current }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Snapple Vending Compressor Voltage"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/ENERGY"
+  unit_of_measurement: "Volts"
+  value_template: '{{ value_json.Voltage }}'
+  force_update: True
+
