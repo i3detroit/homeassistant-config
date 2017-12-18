@@ -86,6 +86,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 notify: !include notify.yaml
+scene: !include scenes.yaml
 
 # include device configs
 light: !include lights.yaml
