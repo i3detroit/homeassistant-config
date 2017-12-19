@@ -52,18 +52,22 @@
 
 - alias: Air Compressor Valve ON
   trigger:
-  - platform: mqtt
-    topic: stat/i3/inside/infrastructure/air-compressor/POWER
-    payload: "ON"
+  - platform: state
+    entity_id: switch.Air_Compressor
+    from: 'off'
+    to: 'on'
   action:
     service: switch.turn_on
     entity_id: switch.Air_Compressor_Valve
 
 - alias: Air Compressor Valve OFF
   trigger:
-  - platform: mqtt
-    topic: stat/i3/inside/infrastructure/air-compressor/POWER
-    payload: "OFF"
+  - platform: state
+    entity_id: switch.Air_Compressor
+    from: 'on'
+    to: 'off'
+    for: 
+      seconds: 2
   action:
     service: switch.turn_off
     entity_id: switch.Air_Compressor_Valve
