@@ -1,6 +1,6 @@
 - name: emergency_lights_on
   entities:
-    lights.light038:
+    light.light038:
       brightness: 17
     light.light039:
       brightness: 17
