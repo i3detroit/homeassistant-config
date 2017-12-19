@@ -37,8 +37,8 @@
 
 - platform: mqtt
   name: "LaserZoneExhaustFan"
-  state_topic: "stat/i3/laserZone/ventFan/POWER"
-  command_topic: "cmnd/i3/laserZone/ventFan/POWER"
+  state_topic: "stat/i3/inside/laser-zone/vent-fan/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/vent-fan/POWER"
   payload_on: "ON"
   payload_off: "OFF"
 
