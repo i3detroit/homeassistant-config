@@ -1,72 +1,81 @@
 dash_green_tape:
   alias: "Buy green tape"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional green tape"
 
 dash_sharpies:
   alias: "Buy sharpies"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional sharpies"
 
 dash_paper_towels:
   alias: "Buy paper towels"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional paper towels"
 
 dash_blue_towels:
   alias: "Buy blue (shop) towels"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional blue (shop) towels"
 
 dash_toilet_paper:
   alias: "Buy toilet paper"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional toilet paper"
 
 dash_plastic_spoons:
   alias: "Buy plastic spoons"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional plastic spoons"
 
 dash_plastic_forks:
   alias: "Buy plastic forks"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional plastic forks"
 
 dash_plastic_knives:
   alias: "Buy plastic knives"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional plastic knives"
 
 dash_paper_plates:
   alias: "Buy paper plates"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional paper plates"
 
 dash_cups:
   alias: "Buy cups"
   sequence:
-    - service: notify.slack_bot_chat
+    - service: notify.slack_shopping_list
       data:
         message: "We require additional cups"
+
+dash_paint_booth_filters:
+  alias: "Buy paint booth air filters"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional pait booth filters (10\"x20\")"
+
+
 
 #dash_bowls:
 

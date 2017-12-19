@@ -78,7 +78,7 @@ signal.signal(signal.SIGTERM, signal_handler)
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
 # Create basepath
-path = "/home/homeassistant/dashio/"
+path = "/home/homeassistant/.homeassistant/dashio/"
 
 # Log events to stdout
 logger = logging.getLogger()
