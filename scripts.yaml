@@ -73,7 +73,7 @@ dash_paint_booth_filters:
   sequence:
     - service: notify.slack_shopping_list
       data:
-        message: "We require additional pait booth filters (10\"x20\")"
+        message: "We require additional paint booth filters (10\"x20\"x1\")"
 
 
 

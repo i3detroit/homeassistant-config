@@ -142,7 +142,7 @@
     to: 'on'
   action:
     - service: light.turn_on
-      entity_id: light.LightLargeBathroom\
+      entity_id: light.LightLargeBathroom
     - service: switch.turn_on
       entity_id: switch.Large_Bathroom_Vent_Fan
 

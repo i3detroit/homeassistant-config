@@ -62,7 +62,7 @@
   # payload_not_available: "offline"
 
 - platform: mqtt
-  name "Large Bathroom Vent Fan"
+  name: "Large Bathroom Vent Fan"
   state_topic: "stat/i3/inside/large-bathroom/vent/POWER"
   command_topic: "cmnd/i3/inside/large-bathroom/vent/POWER"
   payload_on: "ON"
