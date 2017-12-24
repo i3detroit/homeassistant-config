@@ -12,7 +12,7 @@
     - service: light.turn_on
       entity_id: light.light039
       data:
-        brightness: 17
+        brightness: 13
     - service: light.turn_on
       entity_id: group.emergency_lights
 
