@@ -95,3 +95,10 @@ fan: !include fans.yaml
 sensor: !include sensors.yaml
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
+
+# Extra panel for configurator plugin
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://10.13.0.22:3218
