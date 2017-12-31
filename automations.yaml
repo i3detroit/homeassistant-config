@@ -1,20 +1,22 @@
-- alias: Emergency lights on at noon
+- alias: Emergency lights reset daily
   trigger:
   - platform: time
     at: '12:00:00'
   - platform: time
     at: '00:00:00'
   action:
-    - service: light.turn_on
-      entity_id: light.light038
-      data:
-        brightness: 17
-    - service: light.turn_on
-      entity_id: light.light039
-      data:
-        brightness: 13
-    - service: light.turn_on
-      entity_id: group.emergency_lights
+    - service: script.turn_on
+      entity_id: script.emergency_lights_reset
+
+- alias: Emergency lights on when all other lights are off
+  trigger:
+    platform: state
+    entity_id: group.shop_lights
+    from: 'on'
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.emergency_lights_reset
 
 - alias: Classroom sign on at sunset
   trigger:
@@ -102,16 +104,16 @@
       - light.Chandelier01
       - light.Chandelier02
 
-- alias: Who turned out the lights?
-  trigger:
-    - platform: state
-      entity_id: group.shop_lights
-      from: 'on'
-      to: 'off'
-  action:
-    service: notify.slack_statusbots
-    data:
-      message: "Hey! Who turned out the lights?"
+# - alias: Who turned out the lights?
+#   trigger:
+#     - platform: state
+#       entity_id: group.shop_lights
+#       from: 'on'
+#       to: 'off'
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Hey! Who turned out the lights?"
 
 - alias: Fab lab fan status sign on
   trigger:
