@@ -48,17 +48,17 @@
         topic: "cmnd/i3/commons/ledMatrix/display"
         payload: "^SI see you there"
 
-- alias: Machine Shop Motion OFF 
-  trigger:
-    platform: state
-    entity_id: binary_sensor.machine_shop_motion_sensor
-    from: 'on'
-    to: 'off'
-    for:
-      hours: 1
-  action:
-    service: light.turn_off
-    entity_id: group.machine_shop_lights
+#- alias: Machine Shop Motion OFF 
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.machine_shop_motion_sensor
+#    from: 'on'
+#    to: 'off'
+#    for:
+#      hours: 1
+#  action:
+#    service: light.turn_off
+#    entity_id: group.machine_shop_lights
 
 - alias: Air Compressor Valve ON
   trigger:
