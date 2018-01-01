@@ -253,3 +253,9 @@
   value_template: '{{ value_json.Voltage }}'
   force_update: True
 
+- platform: template
+  sensors:
+    commons_temp_diff:
+      friendly_name: "Commons ceiling-ground temp diff"
+      unit_of_measurement: "°C"
+      value_template: "{{(states.sensor.ceiling_cluster_bmp280_temperature.state | float - states.sensor.ground_cluster_bmp280_temperature.state | float) | round(2)}}"
