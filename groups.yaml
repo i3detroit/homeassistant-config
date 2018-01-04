@@ -146,11 +146,11 @@ shop_fans:
   name: "Ceiling Fans"
   icon: mdi:fan
   entities: 
-    - fans.CommonsCeilingFans
-    - fans.LaserCeilingFan
-    - fans.MachineShopCeilingFan
-    - fans.CNCCeilingExhaust
-    - fans.SouthCeilingExhaust
+    - fan.CommonsCeilingFans
+    - fan.LaserCeilingFan
+    - fan.MachineShopCeilingFan
+    - fan.CNCCeilingExhaust
+    - fan.SouthCeilingExhaust
 
 decor:
   name: "Decor"
@@ -179,3 +179,13 @@ doors:
     - binary_sensor.garage_door_lock_sensor
     - binary_sensor.glass_door_lock_sensor
     - binary_sensor.glass_door_open_sensor
+
+# shutdown:
+#   name: "Space Shutdown"
+#   icon: mdi:power
+#   entities:
+#     - group.shop_lights
+#     - group.shop_fans
+#     - switch.Air_Compressor
+#     - switch.Paint_Box_Vent
+#     - switch.Large_Bathroom_Vent_Fan
