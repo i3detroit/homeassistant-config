@@ -45,7 +45,7 @@
       entity_id: group.machine_shop_lights
     - service: mqtt.publish
       data:
-        topic: "cmnd/i3/commons/ledMatrix/display"
+        topic: "cmnd/i3/inside/commons/led-matrix/display"
         payload: "^SI see you there"
 
 #- alias: Machine Shop Motion OFF 
