@@ -171,3 +171,21 @@
   action:
     service: switch.turn_off
     entity_id: switch.paint_box_vent
+
+- alias: Ceiling fans ON if Temp Difference
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.commons_temp_diff
+    above: 0.5
+    for:
+      minutes: 1
+  condition:
+    condition: state
+    entity_id: group.shop_lights
+    state: 'on'
+  action:
+    - service: fan.turn_on
+      entity_id: fan.CommonsCeilingFans
+    - service: fan.turn_on
+      entity_id: fan.LaserCeilingFan
+
