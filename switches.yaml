@@ -9,8 +9,6 @@
 #     payload_available: "online"
 #     payload_not_available: "offline"
 
-# Switch  ClassroomSign { mqtt=">[mosquitto::command:*:default], <[mosquitto::state:default]" }
-
 - platform: mqtt
   name: "Air Compressor"
   state_topic: "stat/i3/inside/infrastructure/air-compressor/POWER"
