@@ -16,9 +16,23 @@ emergency_lights_reset:
         # hass brightness values used here are expected to be 0-255 scale
         # So the values given here get renormalized before being sent out mqtt, hence...
         # 69 / 255 * 50 = 13 brightness on the tasmota scale
-        brightness: 69
+        brightness: 24
     - service: light.turn_on
-      entity_id: group.emergency_lights
+      entity_id: light.light040
+      data:
+        # Lights are set up in hass on a 0-50 brightness scale
+        # hass brightness values used here are expected to be 0-255 scale
+        # So the values given here get renormalized before being sent out mqtt, hence...
+        # 12 / 255 * 50 = 2 brightness on the tasmota scale
+        brightness: 30
+    - service: light.turn_on
+      entity_id: light.light027
+      data:
+        # Lights are set up in hass on a 0-50 brightness scale
+        # hass brightness values used here are expected to be 0-255 scale
+        # So the values given here get renormalized before being sent out mqtt, hence...
+        # 5 / 255 * 50 = 2 brightness on the tasmota scale
+        brightness: 18
 
 dash_green_tape:
   alias: "Buy green tape"

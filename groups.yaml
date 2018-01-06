@@ -97,6 +97,7 @@ row_5_lights:
     - light.light022
     - light.light023
     - light.light024
+    - light.light025
     - light.light026
 
 machine_shop_lights:
@@ -116,7 +117,7 @@ emergency_lights:
   icon: mdi:alarm-light
   entities:
     - light.light039
-    - light.light025
+    - light.light040
     - light.light027
     - light.light038
 
@@ -177,8 +178,26 @@ doors:
   icon: mdi:door
   entities:
     - binary_sensor.garage_door_lock_sensor
+    - sensor.Garage_Door_Open
     - binary_sensor.glass_door_lock_sensor
     - binary_sensor.glass_door_open_sensor
+
+window_sensors:
+  name: "Window Sensors"
+  icon: mdi:windows
+  entities:
+    - sensor.Window_Elab_Open
+    - sensor.Window_Craft_Room_Open
+    - sensor.Window_1_Open
+    - sensor.Window_2_Open
+    - sensor.Window_3_Open
+    - sensor.Window_4_Open
+    - sensor.Window_5_Open
+    - sensor.Window_6_Open
+    - sensor.Window_7_Open
+    - sensor.Window_8_Open
+    - sensor.Window_9_Open
+    - sensor.Window_10_Open
 
 # shutdown:
 #   name: "Space Shutdown"

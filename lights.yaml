@@ -189,6 +189,10 @@
   command_topic: "cmnd/i3/inside/lights/027/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  brightness_scale: 50
+  brightness_command_topic: "cmnd/i3/inside/lights/027/Dimmer"
+  # brightness_state_topic: "stat/i3/inside/lights/027/RESULT"
+  brightness_value_template: '{{value_json.Dimmer}}'
 
 - platform: mqtt
   name: "LightWelding"
@@ -280,6 +284,17 @@
   brightness_scale: 50
   brightness_command_topic: "cmnd/i3/inside/lights/039/Dimmer"
   # brightness_state_topic: "stat/i3/inside/lights/039/RESULT"
+  brightness_value_template: '{{value_json.Dimmer}}'
+
+- platform: mqtt
+  name: "light040"
+  state_topic: "stat/i3/inside/lights/040/POWER"
+  command_topic: "cmnd/i3/inside/lights/040/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  brightness_scale: 50
+  brightness_command_topic: "cmnd/i3/inside/lights/040/Dimmer"
+  # brightness_state_topic: "stat/i3/inside/lights/040/RESULT"
   brightness_value_template: '{{value_json.Dimmer}}'
 
 - platform: mqtt
