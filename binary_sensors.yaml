@@ -82,3 +82,11 @@
   payload_on: "OPEN"
   payload_off: "CLOSED"
   device_class: opening
+
+- platform: mqtt
+  name: "Front Door Panel Power"
+  state_topic: "tele/i3/inside/commons/front-door-indicator/LWT"
+  payload_on: "Online"
+  payload_off: "Offline"
+  device_class: power
+

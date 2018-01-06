@@ -189,3 +189,12 @@
     - service: fan.turn_on
       entity_id: fan.LaserCeilingFan
 
+- alias: Front door panel off alert
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door_panel_power
+      to: 'off'
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Alert! Front door panel is OFFLINE"
