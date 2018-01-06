@@ -222,13 +222,13 @@
 
 - platform: mqtt
   name: "Bumblebee Tube Time"
-  state_topic: "stat/i3/laserZone/bumblebee_timer/laserTubeTime"
+  state_topic: "stat/i3/inside/laser-zone/bumblebee-timer/laser-tube-time"
   unit_of_measurement: "millisecond"
   force_update: True
 
 - platform: mqtt
   name: "Wolverine Tube Time"
-  state_topic: "stat/i3/laserZone/wolverine_timer/laserTubeTime"
+  state_topic: "stat/i3/inside/laser-zone/wolverine-timer/laser-tube-time"
   unit_of_measurement: "millisecond"
   force_update: True
 
@@ -261,71 +261,66 @@
       value_template: "{{(states.sensor.ceiling_cluster_bmp280_temperature.state | float - states.sensor.ground_cluster_bmp280_temperature.state | float) | round(2)}}"
 
 - platform: mqtt
-  name: "Front Door Open"
-  state_topic: "base-topic/16113158"
-  force_update: True
-
-- platform: mqtt
   name: "Garage Door Open"
-  state_topic: "base-topic/13690294"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/13690294"
   force_update: True
 
 - platform: mqtt
   name: "Window Elab Open"
-  state_topic: "base-topic/10359814"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/10359814"
   force_update: True
 
 - platform: mqtt
   name: "Window Craft Room Open"
-  state_topic: "base-topic/3923078"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/3923078"
   force_update: True
 
 - platform: mqtt
   name: "Window 1 Open"
-  state_topic: "base-topic/14343686"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/14343686"
   force_update: True
 
 - platform: mqtt
   name: "Window 2 Open"
-  state_topic: "base-topic/4780358"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/4780358"
   force_update: True
 
 - platform: mqtt
   name: "Window 3 Open"
-  state_topic: "base-topic/16269958"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/16269958"
   force_update: True
 
 - platform: mqtt
   name: "Window 4 Open"
-  state_topic: "base-topic/663390"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/663390"
   force_update: True
 
 - platform: mqtt
   name: "Window 5 Open"
-  state_topic: "base-topic/6415366"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/6415366"
   force_update: True
 
 - platform: mqtt
   name: "Window 6 Open"
-  state_topic: "base-topic/15124278"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/15124278"
   force_update: True
 
 - platform: mqtt
   name: "Window 7 Open"
-  state_topic: "base-topic/10228742"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/10228742"
   force_update: True
 
 - platform: mqtt
   name: "Window 8 Open"
-  state_topic: "base-topic/15100166"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/15100166"
   force_update: True
 
 - platform: mqtt
   name: "Window 9 Open"
-  state_topic: "base-topic/11974662"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/11974662"
   force_update: True
 
 - platform: mqtt
   name: "Window 10 Open"
-  state_topic: "base-topic/16758790"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-echo/16758790"
   force_update: True
