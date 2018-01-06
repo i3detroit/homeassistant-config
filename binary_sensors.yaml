@@ -75,3 +75,10 @@
   payload_off: "OFF"
   device_class: power
 
+- platform: mqtt
+  name: "Argon Tank Sensor"
+  state_topic: "stat/i3/inside/weld-zone/tank-sensors/argon"
+  # on means open, off means closed
+  payload_on: "OPEN"
+  payload_off: "CLOSED"
+  device_class: opening
