@@ -1,0 +1,41 @@
+- alias: Reset shutdown button mqtt
+  trigger:
+    platform: state
+    entity_id: sensor.Shutdown_button
+    to: 'DOWNSHUT'
+    for:
+      seconds: 5
+  action:
+    service: mqtt.publish
+    data:
+      topic: "cmnd/i3/automation/shutdown"
+      payload: "clear"
+
+- alias: Reset shutdown primer mqtt
+  trigger:
+    platform: state
+    entity_id: sensor.Shutdown_button_confirmation
+    to: 'It was I who pressed the button'
+    for:
+      seconds: 5
+  action:
+    service: mqtt.publish
+    data:
+      topic: "stat/i3/inside/commons/front-door-indicator/shutdown"
+      payload: "clear"
+
+# Does not actually turn anything off yet
+- alias: Shutdown the whole space
+  trigger:
+    platform: state
+    entity_id: sensor.Shutdown_button_confirmation
+    to: 'It was I who pressed the button'
+  condition:
+    condition: state
+    entity_id: sensor.Shutdown_button
+    state: 'DOWNSHUT'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "stat/i3/automation/hass"
+      payload: "Space shutdown triggered"

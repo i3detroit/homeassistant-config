@@ -1,0 +1,221 @@
+- alias: Emergency lights reset daily
+  trigger:
+  - platform: time
+    at: '12:00:00'
+  - platform: time
+    at: '00:00:00'
+  action:
+    - service: script.turn_on
+      entity_id: script.emergency_lights_reset
+
+- alias: Emergency lights on when all other lights are off
+  trigger:
+    platform: state
+    entity_id: group.shop_lights
+    from: 'on'
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.emergency_lights_reset
+
+- alias: Classroom sign on at sunset
+  trigger:
+  - platform: sun
+    event: sunset
+  action:
+    service: switch.turn_on
+    entity_id: switch.classroom_sign
+
+- alias: Classroom sign off at sunrise
+  trigger:
+  - platform: sun
+    event: sunrise
+  action:
+    service: switch.turn_off
+    entity_id: switch.classroom_sign
+
+- alias: Machine Shop Motion ON 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.machine_shop_motion_sensor
+    from: 'off'
+    to: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: group.machine_shop_lights
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/i3/inside/commons/led-matrix/display"
+        payload: "^SI see you there"
+
+#- alias: Machine Shop Motion OFF 
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.machine_shop_motion_sensor
+#    from: 'on'
+#    to: 'off'
+#    for:
+#      hours: 1
+#  action:
+#    service: light.turn_off
+#    entity_id: group.machine_shop_lights
+
+- alias: Air Compressor Valve ON
+  trigger:
+  - platform: state
+    entity_id: switch.Air_Compressor
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Air_Compressor_Valve
+
+- alias: Air Compressor Valve OFF
+  trigger:
+  - platform: state
+    entity_id: switch.Air_Compressor
+    from: 'on'
+    to: 'off'
+    for: 
+      seconds: 2
+  action:
+    service: switch.turn_off
+    entity_id: switch.Air_Compressor_Valve
+
+- alias: Disco Chandelier ON
+  trigger:
+  - platform: mqtt
+    topic: stat/i3/inside/commons/disco/POWER
+    payload: "ON"
+  action:
+    service: light.turn_on
+    entity_id: 
+      - light.Chandelier01
+      - light.Chandelier02
+
+- alias: Disco Chandelier OFF
+  trigger:
+  - platform: mqtt
+    topic: stat/i3/inside/commons/disco/POWER
+    payload: "OFF"
+  action:
+    service: light.turn_off
+    entity_id: 
+      - light.Chandelier01
+      - light.Chandelier02
+
+# - alias: Who turned out the lights?
+#   trigger:
+#     - platform: state
+#       entity_id: group.shop_lights
+#       from: 'on'
+#       to: 'off'
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Hey! Who turned out the lights?"
+
+- alias: Fab lab fan status sign on
+  trigger:
+    - platform: state
+      entity_id: fan.flv_fan
+      to: 'on'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "cmnd/i3/commons/16seg/display"
+      payload: "FAB LAB FAN ON"
+
+- alias: Fab lab fan status sign off
+  trigger:
+    - platform: state
+      entity_id: fan.flv_fan
+      to: 'off'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "cmnd/i3/commons/16seg/display"
+      payload: "FAB LAB FAN OFF"
+
+- alias: Large Bathroom Motion ON 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.large_bathroom_motion_sensor
+    to: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: light.LightLargeBathroom
+    - service: switch.turn_on
+      entity_id: switch.Large_Bathroom_Vent_Fan
+
+- alias: Large Bathroom Motion OFF 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.large_bathroom_motion_sensor
+    to: 'off'
+    for:
+      minutes: 15
+  action:
+    - service: light.turn_off
+      entity_id: light.LightLargeBathroom
+    - service: switch.turn_off
+      entity_id: switch.Large_Bathroom_Vent_Fan
+
+- alias: Paint box fan timeout
+  trigger:
+    platform: state
+    entity_id: switch.paint_box_vent
+    to: 'on'
+    for:
+      minutes: 60
+  action:
+    service: switch.turn_off
+    entity_id: switch.paint_box_vent
+
+- alias: Ceiling fans ON if Temp Difference
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.commons_temp_diff
+    above: 0.5
+    for:
+      minutes: 1
+  condition:
+    condition: state
+    entity_id: group.shop_lights
+    state: 'on'
+  action:
+    - service: fan.turn_on
+      entity_id: fan.CommonsCeilingFans
+    - service: fan.turn_on
+      entity_id: fan.LaserCeilingFan
+
+- alias: Front door panel off alert
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door_panel_power
+      to: 'off'
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Alert! Front door panel is OFFLINE"
+
+- alias: Front door panel back on alert
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door_panel_power
+      from: 'off'
+      to: 'on'
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Front door panel is back online"
+
+- alias: Hass notify mqtt on reboot
+  trigger: 
+    platform: homeassistant
+    event: start
+  action:
+    service: mqtt.publish
+    data:
+      topic: "stat/i3/automation/hass"
+      payload: "Home assistant has started"
