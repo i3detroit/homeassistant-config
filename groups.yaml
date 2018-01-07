@@ -199,12 +199,15 @@ window_sensors:
     - sensor.Window_9_Open
     - sensor.Window_10_Open
 
-# shutdown:
-#   name: "Space Shutdown"
-#   icon: mdi:power
-#   entities:
-#     - group.shop_lights
-#     - group.shop_fans
-#     - switch.Air_Compressor
-#     - switch.Paint_Box_Vent
-#     - switch.Large_Bathroom_Vent_Fan
+shutdown:
+  name: "Space Shutdown"
+  icon: mdi:power
+  control: hidden
+  entities:
+  #  - group.shop_lights
+  #  - group.shop_fans
+  #  - switch.Air_Compressor
+  #  - switch.Paint_Box_Vent
+  #  - switch.Large_Bathroom_Vent_Fan
+    - switch.Disco_Ball
+   # - fan.LaserZoneExhaustFan
