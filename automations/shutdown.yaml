@@ -1,3 +1,4 @@
+# Publish 'clear' to the shutdown button topics to prevent accidental triggering
 - alias: Reset shutdown button mqtt
   trigger:
     platform: state
@@ -35,7 +36,9 @@
     entity_id: sensor.Shutdown_button
     state: 'DOWNSHUT'
   action:
-    service: mqtt.publish
-    data:
-      topic: "stat/i3/automation/hass"
-      payload: "Space shutdown triggered"
+    - service: mqtt.publish
+      data:
+        topic: "stat/i3/automation/hass"
+        payload: "Space shutdown triggered"
+    - service: homeassistant.turn_off
+      entity_id: group.shutdown
