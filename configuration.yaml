@@ -84,7 +84,7 @@ media_player:
 
 # included configs
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list automations
 script: !include scripts.yaml
 notify: !include notify.yaml
 scene: !include scenes.yaml
