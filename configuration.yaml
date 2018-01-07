@@ -88,6 +88,7 @@ automation: !include_dir_merge_list automations
 script: !include scripts.yaml
 notify: !include notify.yaml
 scene: !include scenes.yaml
+# input_boolean: !include input_boolean.yaml
 
 # include device configs
 light: !include lights.yaml
