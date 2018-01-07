@@ -324,3 +324,13 @@
   name: "Window 10 Open"
   state_topic: "tele/i3/inside/infrastructure/433-rf-echo/16758790"
   force_update: True
+
+- platform: mqtt
+  name: "Shutdown button"
+  state_topic: "cmnd/i3/automation/shutdown"
+  force_update: True
+
+- platform: mqtt
+  name: "Shutdown button confirmation"
+  state_topic: "stat/i3/inside/commons/front-door-indicator/shutdown"
+  force_update: True
