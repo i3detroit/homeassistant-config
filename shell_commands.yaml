@@ -1,0 +1,1 @@
+refresh_mqtt: './home/homeassistant/.homeassistant/refresh_mqtt.sh'

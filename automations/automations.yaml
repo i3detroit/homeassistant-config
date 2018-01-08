@@ -215,7 +215,8 @@
     platform: homeassistant
     event: start
   action:
-    service: mqtt.publish
-    data:
-      topic: "stat/i3/automation/hass"
-      payload: "Home assistant has started"
+    - service: mqtt.publish
+      data:
+        topic: "stat/i3/automation/hass"
+        payload: "Home assistant has started"
+    - service: shell_command.refresh_mqtt

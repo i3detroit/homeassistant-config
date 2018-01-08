@@ -88,7 +88,6 @@ automation: !include_dir_merge_list automations
 script: !include scripts.yaml
 notify: !include notify.yaml
 scene: !include scenes.yaml
-# input_boolean: !include input_boolean.yaml
 
 # include device configs
 light: !include lights.yaml
@@ -96,7 +95,7 @@ fan: !include fans.yaml
 sensor: !include sensors.yaml
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
-
+shell_command: !include shell_commands.yaml
 # Extra panel for configurator plugin
 panel_iframe:
   configurator:
