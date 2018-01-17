@@ -7,25 +7,25 @@ import datetime
 import influxdb
 
 class CheckPowerMeter(appapi.AppDaemon):
-	def initialize(self):
-		time = datetime.time(0, 0, 0)
-		self.run_daily(self.do_the_thing, time)
+    def initialize(self):
+        time = datetime.time(0, 0, 0)
+        self.run_daily(self.do_the_thing, time)
 
-	def do_the_thing(self, kwargs):
-	    pm = PowerMeter()
-	    pm.connect()
-	    while True:
-	        packet = pm.update()
-	        if packet is not None:
-                    client = InfluxDBClient('localhost', 8086, 'hass', 'hass', 'hass')
-                    result = client.query("select value from \"kWh\" WHERE entity_id='i3_power_meter' AND time < now() - 1439m and time > now() - 1440m;")
-                    yesterdayPower = list(result.get_points('kWh'))[0]['value']
-                    powerDiff = packet['total_kWh'] - yesterdayPower
-                    msgString = 'Power meter total kWh: ' + str(packet['total_kWh'])
-                    msgString += ' which is ' + powerDiff + ' kWh more than 24 hours ago'
-	            self.call_service("notify/slack_statusbots", message = msgString)
-	            break
-	    pm.close()
+    def do_the_thing(self, kwargs):
+        pm = PowerMeter()
+        pm.connect()
+        while True:
+            packet = pm.update()
+            if packet is not None:
+                client = InfluxDBClient('localhost', 8086, 'hass', 'hass', 'hass')
+                result = client.query("select value from \"kWh\" WHERE entity_id='i3_power_meter' AND time < now() - 1439m and time > now() - 1440m;")
+                yesterdayPower = list(result.get_points('kWh'))[0]['value']
+                powerDiff = packet['total_kWh'] - yesterdayPower
+                msgString = 'Power meter total kWh: ' + str(packet['total_kWh'])
+                msgString += ' which is ' + powerDiff + ' kWh more than 24 hours ago'
+                self.call_service("notify/slack_statusbots", message = msgString)
+                break
+        pm.close()
 
 class PowerMeter():
     '''Define methods to talk with an EKM power meter over socket'''
