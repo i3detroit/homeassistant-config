@@ -4,7 +4,7 @@
 import appdaemon.appapi as appapi
 import socket
 import datetime
-import influxdb
+from influxdb import InfluxDBClient
 
 class CheckPowerMeter(appapi.AppDaemon):
     def initialize(self):
@@ -20,9 +20,8 @@ class CheckPowerMeter(appapi.AppDaemon):
                 client = InfluxDBClient('localhost', 8086, 'hass', 'hass', 'hass')
                 result = client.query("select value from \"kWh\" WHERE entity_id='i3_power_meter' AND time < now() - 1439m and time > now() - 1440m;")
                 yesterdayPower = list(result.get_points('kWh'))[0]['value']
-                powerDiff = packet['total_kWh'] - yesterdayPower
-                msgString = 'Power meter total kWh: ' + str(packet['total_kWh'])
-                msgString += ' which is ' + powerDiff + ' kWh more than 24 hours ago'
+                powerDiff = str(round(packet['total_kWh'] - yesterdayPower, 1))
+                msgString = 'Power meter is ' + str(packet['total_kWh']) + 'kWh which is ' + powerDiff + ' kWh more than 24 hours ago'
                 self.call_service("notify/slack_statusbots", message = msgString)
                 break
         pm.close()
