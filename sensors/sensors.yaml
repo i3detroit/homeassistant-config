@@ -329,8 +329,3 @@
   name: "Shutdown button"
   state_topic: "cmnd/i3/automation/shutdown"
   force_update: True
-
-- platform: mqtt
-  name: "Glass door metastatus"
-  state_topic: "tele/i3/inside/classroom/glass-door/LWT"
-  force_update: True

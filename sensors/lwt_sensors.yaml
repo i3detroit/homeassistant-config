@@ -1,0 +1,105 @@
+- platform: mqtt
+  name: "Glass Door LWT"
+  state_topic: "tele/i3/inside/classroom/glass-door/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Disco Button LWT"
+  state_topic: "tele/i3/inside/commons/disco-button/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Commons Ground Sensor Cluster LWT"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Commons Ceiling Sensor Cluster LWT"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Fab Lab Sensor Cluster LWT"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Commons Middle East Light Switches South LWT"
+  state_topic: "tele/i3/inside/commons/middle-east-light-switches-south/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Commons Middle East Light Switches North LWT"
+  state_topic: "tele/i3/inside/commons/middle-east-light-switches-north/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Commons Light Switches West LWT"
+  state_topic: "tele/i3/inside/commons/light-switches-west/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Commons Light Switches East LWT"
+  state_topic: "tele/i3/inside/commons/light-switches-east/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Light 28 Button LWT"
+  state_topic: "tele/i3/inside/lights/028-button/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "433 RF Receiver LWT"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-reciever/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Laser Control Buttons 001 LWT"
+  state_topic: "tele/i3/inside/laser-zone/laser-control-buttons-001/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Laser Control Buttons 002 LWT"
+  state_topic: "tele/i3/inside/laser-zone/laser-control-buttons-002/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Air Compressor Request 001 LWT"
+  state_topic: "tele/i3/inside/air-compressor-request-001/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Air Compressor Request 002 LWT"
+  state_topic: "tele/i3/inside/air-compressor-request-002/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Air Compressor Request 003 LWT"
+  state_topic: "tele/i3/inside/air-compressor-request-003/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Fab Lab Control Buttons LWT"
+  state_topic: "tele/i3/inside/fablab-control-buttons/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Weld Zone Tank Sensors LWT"
+  state_topic: "tele/i3/inside/weld-zone/tank-sensors/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Large Bathroom Motion Sensor LWT"
+  state_topic: "tele/i3/inside/large-bathroom/motion-sensor/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Small Bathroom Motion Sensor LWT"
+  state_topic: "tele/i3/inside/small-bathroom/motion-sensor/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Machine Shop Motion Sensor LWT"
+  state_topic: "tele/i3/inside/machine-shop/motion-sensor/LWT"
+  force_update: True
+
