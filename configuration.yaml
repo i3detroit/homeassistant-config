@@ -45,7 +45,8 @@ conversation:
 history:
 
 # View all events in a logbook
-logbook:
+# disabled because it might eat all the ram
+# logbook:
 
 # Enables a map showing the location of tracked devices
 map:
