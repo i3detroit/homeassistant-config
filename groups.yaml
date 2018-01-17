@@ -26,6 +26,7 @@ HVAC:
     - sensor.fablab_cluster_dht22_humidity
     - sensor.fablab_cluster_dht22_temperature
     - sensor.fablab_cluster_lux
+    - sensor.commons_temp_diff
 
 openEVSE:
   name: "OpenEVSE Stats"
@@ -211,3 +212,34 @@ shutdown:
   #  - switch.Large_Bathroom_Vent_Fan
     - switch.Disco_Ball
    # - fan.LaserZoneExhaustFan
+
+laser_zone:
+  name: "Laser Zone"
+  icon: mdi:alert-outline
+  control: hidden
+  entities:
+    - fan.laserzoneexhaustfan
+    - switch.Air_Compressor
+    - switch.Bumblebee_Chiller
+    - switch.Wolverine_Chiller
+    - sensor.bumblebee_tube_time
+    - sensor.wolverine_tube_time
+
+fab_lab:
+  name: "Fab Lab"
+  icon: mdi:power
+  control: hidden
+  entities:
+    - fan.FLV_Fan
+    - switch.Fab_Lab_Chiller
+
+snack_zone:
+  name: "Snack Zone"
+  icon: mdi:food-fork-drink
+  control: hidden
+  entities:
+    - binary_sensor.Snapple_Vending_Compressor_Power
+    - sensor.Snapple_Vending_Temperature
+    - sensor.Snapple_Vending_Compressor_Amps
+    - sensor.Snapple_Vending_Compressor_Voltage
+    - light.LightSnappleVending
