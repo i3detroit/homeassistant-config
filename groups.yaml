@@ -243,3 +243,29 @@ snack_zone:
     - sensor.Snapple_Vending_Compressor_Amps
     - sensor.Snapple_Vending_Compressor_Voltage
     - light.LightSnappleVending
+
+LWT:
+  name: "LWT"
+  icon: mdi:power
+  entities:
+    - sensor.Glass_Door_LWT
+    - sensor.Disco_Button_LWT
+    - sensor.Commons_Ground_Sensor_Cluster_LWT
+    - sensor.Commons_Ceiling_Sensor_Cluster_LWT
+    - sensor.Fab_Lab_Sensor_Cluster_LWT
+    - sensor.Commons_Middle_East_Light_Switches_South_LWT
+    - sensor.Commons_Middle_East_Light_Switches_North_LWT
+    - sensor.Commons_Light_Switches_West_LWT
+    - sensor.Commons_Light_Switches_East_LWT
+    - sensor.Light_28_Button_LWT
+    - sensor.433_RF_Receiver_LWT
+    - sensor.Laser_Control_Buttons_001_LWT
+    - sensor.Laser_Control_Buttons_002_LWT
+    - sensor.Air_Compressor_Request_001_LWT
+    - sensor.Air_Compressor_Request_002_LWT
+    - sensor.Air_Compressor_Request_003_LWT
+    - sensor.Fab_Lab_Control_Buttons_LWT
+    - sensor.Weld_Zone_Tank_Sensors_LWT
+    - sensor.Large_Bathroom_Motion_Sensor_LWT
+    - sensor.Small_Bathroom_Motion_Sensor_LWT
+    - sensor.Machine_Shop_Motion_Sensor_LWT
