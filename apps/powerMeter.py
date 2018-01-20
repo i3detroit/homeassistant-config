@@ -18,7 +18,7 @@ class CheckPowerMeter(appapi.AppDaemon):
             packet = pm.update()
             if packet is not None:
                 client = InfluxDBClient('localhost', 8086, 'hass', 'hass', 'hass')
-                result = client.query("select value from \"kWh\" WHERE entity_id='i3_power_meter' AND time < now() - 1439m and time > now() - 1440m;")
+                result = client.query("select value from \"kWh\" WHERE entity_id='i3_power_meter' AND time < now() - 1437m and time > now() - 1443m;")
                 yesterdayPower = list(result.get_points('kWh'))[0]['value']
                 powerDiff = str(round(packet['total_kWh'] - yesterdayPower, 1))
                 msgString = 'Power meter is ' + str(packet['total_kWh']) + 'kWh which is ' + powerDiff + ' kWh more than 24 hours ago'
