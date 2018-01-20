@@ -75,15 +75,15 @@
 
 - platform: mqtt
   name: "Bumblebee Chiller"
-  state_topic: "stat/i3/inside/laser-zone/bumblebee-chiller/POWER"
-  command_topic: "cmnd/i3/inside/laser-zone/bumblebee-chiller/POWER"
+  state_topic: "stat/i3/inside/laser-zone/bumblebee/chiller/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/bumblebee/chiller/POWER"
   payload_on: "ON"
   payload_off: "OFF"
 
 - platform: mqtt
   name: "Wolverine Chiller"
-  state_topic: "stat/i3/inside/laser-zone/wolverine-chiller/POWER"
-  command_topic: "cmnd/i3/inside/laser-zone/wolverine-chiller/POWER"
+  state_topic: "stat/i3/inside/laser-zone/wolverine/chiller/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/wolverine/chiller/POWER"
   payload_on: "ON"
   payload_off: "OFF"
 
