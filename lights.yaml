@@ -353,3 +353,23 @@
   payload_on: "ON"
   payload_off: "OFF"
 
+- platform: mqtt
+  name: "Craft Room Light"
+  state_topic: "stat/i3/inside/craftroom/light/POWER"
+  command_topic: "cmnd/i3/inside/craftroom/light/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Electronics Lab Light"
+  state_topic: "stat/i3/inside/elab/light/POWER"
+  command_topic: "cmnd/i3/inside/elab/light/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Hallway Light"
+  state_topic: "stat/i3/inside/hallway/light/POWER"
+  command_topic: "cmnd/i3/inside/hallway/light/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"

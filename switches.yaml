@@ -87,3 +87,9 @@
   payload_on: "ON"
   payload_off: "OFF"
 
+- platform: mqtt
+  name: "Hallway Light Switch West"
+  state_topic: "stat/i3/inside/hallway/lightswitch-west/POWER"
+  command_topic: "cmnd/i3/inside/hallway/lightswitch-west/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"

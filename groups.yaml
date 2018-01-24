@@ -130,7 +130,15 @@ misc_lights:
     - light.LightVinyl
     - light.LightTreehouse
     - light.LightLargeBathroom
+
+office_lights:
+  name: "Office Lights"
+  icon: mdi:ceiling-light
+  entities:
     - light.LightMediaLab
+    - light.Craft_Room_Light
+    - light.Electronics_Lab_Light
+    - light.Hallway_Light
 
 shop_lights:
   name: "Shop Lights"
@@ -142,6 +150,7 @@ shop_lights:
     - group.row_4_lights
     - group.row_5_lights
     - group.machine_shop_lights
+    - group.office_lights
     - group.misc_lights
 
 shop_fans:
