@@ -6,7 +6,7 @@ Main:
     - group.decor
 
 HVAC:
-  name: "HVAC"
+  name: "Atmospheric Sensors"
   icon: mdi:thermometer
   entities:
     - sensor.sonoff_temp
@@ -27,6 +27,18 @@ HVAC:
     - sensor.fablab_cluster_dht22_temperature
     - sensor.fablab_cluster_lux
     - sensor.commons_temp_diff
+
+office_thermostat:
+  name: "Office Thermostat"
+  icon: mdi:thermometer
+  entities:
+    - sensor.Office_Thermostat_Ambient_Temperature
+    - sensor.Office_Thermostat_Ambient_Pressure
+    - sensor.Office_Thermostat_Target_Temperature
+    - sensor.Office_Thermostat_Requested_State
+    - sensor.Office_Thermostat_Requested_Fan_State
+    - sensor.Office_Thermostat_Active_State
+    - sensor.Office_Thermostat_Active_Fan_State
 
 openEVSE:
   name: "OpenEVSE Stats"
@@ -233,6 +245,8 @@ laser_zone:
     - switch.Wolverine_Chiller
     - sensor.bumblebee_tube_time
     - sensor.wolverine_tube_time
+    - sensor.Bumblebee_Blast_Gate
+    - sensor.Wolverine_Blast_Gate
 
 fab_lab:
   name: "Fab Lab"
