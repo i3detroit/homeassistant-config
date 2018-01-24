@@ -16,6 +16,7 @@ sensor.Weather_wind_speed:
   friendly_name: "Wind Speed"
 sensor.Weather_wind_direction:
   friendly_name: "Wind Direction"
+
 light.LightWelding:
   friendly_name: "Welding light"
 light.LightVinyl:
@@ -38,3 +39,18 @@ light.Chandelier01:
   friendly_name: "Chanelier N"
 light.Chandelier02:
   friendly_name: "Chanelier S"
+
+sensor.Office_Thermostat_Ambient_Temperature:
+  friendly_name: "Ambient Temperature"
+sensor.Office_Thermostat_Ambient_Pressure:
+  friendly_name: "Ambient Pressure"
+sensor.Office_Thermostat_Target_Temperature:
+  friendly_name: "Target Temperature"
+sensor.Office_Thermostat_Requested_State:
+  friendly_name: "Requested State"
+sensor.Office_Thermostat_Requested_Fan_State:
+  friendly_name: "Requested Fan"
+sensor.Office_Thermostat_Active_State:
+  friendly_name: "Active State"
+sensor.Office_Thermostat_Active_Fan_State:
+  friendly_name: "Active Fan"
