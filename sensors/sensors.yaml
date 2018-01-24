@@ -384,7 +384,3 @@
   state_topic: "tele/i3/inside/office/thermostat/output"
   value_template: '{{ value_json.fan }}'
   force_update: True
-
-# tele/i3/inside/office/thermostat/request {"TargetTemp":25", "requested":"targetTEmpTODO", "fan":"HEAT"}
-# tele/i3/inside/office/thermostat/output {"output":"HEAT", "fan":"AUTO"}
-
