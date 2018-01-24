@@ -220,3 +220,11 @@
         topic: "stat/i3/automation/hass"
         payload: "Home assistant has started"
     - service: shell_command.refresh_mqtt
+
+- alias: Hallway three-way
+  trigger:
+    platform: state
+    entity_id: switch.Hallway_Light_Switch_West
+  action:
+    - service: light.toggle
+      entity_id: light.Hallway_Light
