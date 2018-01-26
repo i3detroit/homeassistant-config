@@ -74,6 +74,7 @@ influxdb:
       - yr
       - sun
       - group
+      - device_tracker
 
 mqtt:
   broker: 10.13.0.22
