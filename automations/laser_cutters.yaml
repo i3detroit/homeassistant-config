@@ -1,0 +1,87 @@
+- alias: Laser cutter exhaust on when laser is on
+  initial_state: false
+  trigger:
+  - platform: state
+    entity_id: switch.Bumblebee
+    to: 'on'
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'on'
+  action:
+    service: fan.turn_on
+    entity_id: fan.LaserZoneExhaustFan
+
+- alias: Laser cutter exhaust off when both lasers off
+  initial_state: false
+  trigger:
+  - platform: state
+    entity_id: switch.Bumblebee
+    to: 'off'
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.Bumblebee
+        state: 'off'
+      - condition: state
+        entity_id: switch.Wolverine
+        state: 'off'
+  action:
+    service: fan.turn_off
+    entity_id: fan.LaserZoneExhaustFan
+
+- alias: Air Compressor on for laser cutters
+  initial_state: false
+  trigger:
+  - platform: state
+    entity_id: switch.Bumblebee
+    to: 'on'
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Air_Compressor
+
+- alias: Chiller on for Bumblebee
+  initial_state: false
+  trigger:
+  - platform: state
+    entity_id: switch.Bumblebee
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Bumblebee_Chiller
+
+- alias: Chiller off for Bumblebee
+  initial_state: false
+  trigger:
+  - platform: state
+    entity_id: switch.Bumblebee
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.Bumblebee_Chiller
+
+- alias: Chiller on for Wolverine
+  initial_state: false
+  trigger:
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Wolverine_Chiller
+
+- alias: Chiller off for Wolverine
+  initial_state: false
+  trigger:
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.Wolverine_Chiller
