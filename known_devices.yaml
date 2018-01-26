@@ -1,0 +1,19 @@
+ac374351a325:
+  hide_if_away: true
+  icon:
+  mac: AC:37:43:51:A3:25
+  name: Jan
+  picture:
+  track: true
+  vendor: unknown
+
+androidb26c230fbb3b062d:
+  hide_if_away: true
+  icon:
+  mac: 64:BC:0C:65:A4:F2
+  name: Mark
+  picture:
+  track: true
+  vendor: LG Electronics (Mobile Communications)
+
+#if you edit this, delete all non-tracked things and force add to git
