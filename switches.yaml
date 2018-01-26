@@ -93,3 +93,17 @@
   command_topic: "cmnd/i3/inside/hallway/lightswitch-west/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+
+- platform: mqtt
+  name: "Bumblebee"
+  state_topic: "stat/i3/inside/laser-zone/bumblebee/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/bumblebee/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Wolverine"
+  state_topic: "stat/i3/inside/laser-zone/wolverine/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/wolverine/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
