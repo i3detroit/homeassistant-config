@@ -24,7 +24,7 @@ emergency_lights_reset:
         # hass brightness values used here are expected to be 0-255 scale
         # So the values given here get renormalized before being sent out mqtt, hence...
         # 12 / 255 * 50 = 2 brightness on the tasmota scale
-        brightness: 30
+        brightness: 46
     - service: light.turn_on
       entity_id: light.light027
       data:
