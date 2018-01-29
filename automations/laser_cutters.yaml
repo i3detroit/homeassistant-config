@@ -1,5 +1,4 @@
 - alias: Laser cutter exhaust on when laser is on
-  initial_state: false
   trigger:
   - platform: state
     entity_id: switch.Bumblebee
@@ -12,7 +11,6 @@
     entity_id: fan.LaserZoneExhaustFan
 
 - alias: Laser cutter exhaust off when both lasers off
-  initial_state: false
   trigger:
   - platform: state
     entity_id: switch.Bumblebee
@@ -34,7 +32,6 @@
     entity_id: fan.LaserZoneExhaustFan
 
 - alias: Air Compressor on for laser cutters
-  initial_state: false
   trigger:
   - platform: state
     entity_id: switch.Bumblebee
@@ -47,7 +44,6 @@
     entity_id: switch.Air_Compressor
 
 - alias: Chiller on for Bumblebee
-  initial_state: false
   trigger:
   - platform: state
     entity_id: switch.Bumblebee
@@ -57,7 +53,6 @@
     entity_id: switch.Bumblebee_Chiller
 
 - alias: Chiller off for Bumblebee
-  initial_state: false
   trigger:
   - platform: state
     entity_id: switch.Bumblebee
@@ -67,7 +62,6 @@
     entity_id: switch.Bumblebee_Chiller
 
 - alias: Chiller on for Wolverine
-  initial_state: false
   trigger:
   - platform: state
     entity_id: switch.Wolverine
@@ -77,7 +71,6 @@
     entity_id: switch.Wolverine_Chiller
 
 - alias: Chiller off for Wolverine
-  initial_state: false
   trigger:
   - platform: state
     entity_id: switch.Wolverine
@@ -85,3 +78,48 @@
   action:
     service: switch.turn_off
     entity_id: switch.Wolverine_Chiller
+
+
+- alias: Bumblebee ON Notification
+  trigger:
+  - platform: state
+    entity_id: switch.Bumblebee
+    to: 'on'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "hass/bumblebee-automation"
+      payload: " ON"
+
+- alias: Bumblebee OFF Notification
+  trigger:
+  - platform: state
+    entity_id: switch.Bumblebee
+    to: 'off'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "hass/bumblebee-automation"
+      payload: " OFF"
+
+- alias: Wolverine ON Notification
+  trigger:
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'on'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "hass/wolverine-automation"
+      payload: " ON"
+
+- alias: Wolverine OFF Notification
+  trigger:
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'off'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "hass/wolverine-automation"
+      payload: " OFF"

@@ -103,3 +103,23 @@
   state_topic: "tele/i3/inside/machine-shop/motion-sensor/LWT"
   force_update: True
 
+- platform: mqtt
+  name: "Bumblebee LWT"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Wolverine LWT"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Bumblebee Status Lights LWT"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/status_lights/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Wolverine Status Lights LWT"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/status_lights/LWT"
+  force_update: True
+
