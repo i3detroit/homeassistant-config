@@ -44,6 +44,8 @@ sensor.Office_Thermostat_Ambient_Temperature:
   friendly_name: "Ambient Temperature"
 sensor.Office_Thermostat_Ambient_Pressure:
   friendly_name: "Ambient Pressure"
+sensor.Office_Thermostat_Ambient_Humidity:
+  friendly_name: "Ambient Humidity"
 sensor.Office_Thermostat_Target_Temperature:
   friendly_name: "Target Temperature"
 sensor.Office_Thermostat_Requested_State:
