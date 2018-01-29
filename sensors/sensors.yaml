@@ -116,18 +116,25 @@
   scan_interval: "60"
 
 - platform: mqtt
-  name: "Ground Cluster bmp280 Temperature"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp280"
+  name: "Ground Cluster bme280 Temperature"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
   force_update: True
 
 - platform: mqtt
-  name: "Ground Cluster bmp280 Pressure"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bmp280"
+  name: "Ground Cluster bme280 Pressure"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
   force_update: True
+
+- platform: mqtt
+  name: "Ground Cluster bme280 Humidity"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
+  force_update: True                                                   
 
 - platform: mqtt
   name: "Ground Cluster Lux"
@@ -151,17 +158,24 @@
   force_update: True
 
 - platform: mqtt
-  name: "Ceiling Cluster bmp280 Temperature"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp280"
+  name: "Ceiling Cluster bme280 Temperature"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
   force_update: True
 
 - platform: mqtt
-  name: "Ceiling Cluster bmp280 Pressure"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bmp280"
+  name: "Ceiling Cluster bme280 Pressure"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Ceiling Cluster bme280 Humidity"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
   force_update: True
 
 - platform: mqtt
@@ -186,17 +200,24 @@
   force_update: True
 
 - platform: mqtt
-  name: "Fablab Cluster bmp280 Temperature"
-  state_topic: "tele/i3/inside/fablab/sensor-cluster/bmp280"
+  name: "Fablab Cluster bme280 Temperature"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
   force_update: True
 
 - platform: mqtt
-  name: "Fablab Cluster bmp280 Pressure"
-  state_topic: "tele/i3/inside/fablab/sensor-cluster/bmp280"
+  name: "Fablab Cluster bme280 Pressure"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Fablab Cluster bme280 Humidity"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
   force_update: True
 
 - platform: mqtt
@@ -258,7 +279,7 @@
     commons_temp_diff:
       friendly_name: "Commons ceiling-ground temp diff"
       unit_of_measurement: "°C"
-      value_template: "{{(states.sensor.ceiling_cluster_bmp280_temperature.state | float - states.sensor.ground_cluster_bmp280_temperature.state | float) | round(2)}}"
+      value_template: "{{(states.sensor.ceiling_cluster_bme280_temperature.state | float - states.sensor.ground_cluster_bme280_temperature.state | float) | round(2)}}"
 
 - platform: mqtt
   name: "Garage Door Open"
@@ -342,17 +363,23 @@
 
 - platform: mqtt
   name: "Office Thermostat Ambient Temperature"
-  state_topic: "tele/i3/inside/office/thermostat/bmp280"
+  state_topic: "tele/i3/inside/office/thermostat/bme280"
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
   force_update: True
 
 - platform: mqtt
   name: "Office Thermostat Ambient Pressure"
-  state_topic: "tele/i3/inside/office/thermostat/bmp280"
+  state_topic: "tele/i3/inside/office/thermostat/bme280"
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
   force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Ambient Humidity"
+  state_topic: "tele/i3/inside/office/thermostat/bme280"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
 
 - platform: mqtt
   name: "Office Thermostat Target Temperature"

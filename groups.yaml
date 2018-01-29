@@ -11,18 +11,21 @@ HVAC:
   entities:
     - sensor.sonoff_temp
     - sensor.sonoff_humid
-    - sensor.ground_cluster_bmp280_pressure
-    - sensor.ground_cluster_bmp280_temperature
+    - sensor.ground_cluster_bme280_pressure
+    - sensor.ground_cluster_bme280_temperature
+    - sensor.ground_cluster_bme280_humidity
     - sensor.ground_cluster_dht22_humidity
     - sensor.ground_cluster_dht22_temperature
     - sensor.ground_cluster_lux
-    - sensor.ceiling_cluster_bmp280_pressure
-    - sensor.ceiling_cluster_bmp280_temperature
+    - sensor.ceiling_cluster_bme280_pressure
+    - sensor.ceiling_cluster_bme280_temperature
+    - sensor.ceiling_cluster_bme280_humidity
     - sensor.ceiling_cluster_dht22_humidity
     - sensor.ceiling_cluster_dht22_temperature
     - sensor.ceiling_cluster_lux
-    - sensor.fablab_cluster_bmp280_pressure
-    - sensor.fablab_cluster_bmp280_temperature
+    - sensor.fablab_cluster_bme280_pressure
+    - sensor.fablab_cluster_bme280_temperature
+    - sensor.fablab_cluster_bme280_humidity
     - sensor.fablab_cluster_dht22_humidity
     - sensor.fablab_cluster_dht22_temperature
     - sensor.fablab_cluster_lux
@@ -34,6 +37,7 @@ office_thermostat:
   entities:
     - sensor.Office_Thermostat_Ambient_Temperature
     - sensor.Office_Thermostat_Ambient_Pressure
+    - sensor.Office_Thermostat_Ambient_Humidity
     - sensor.Office_Thermostat_Target_Temperature
     - sensor.Office_Thermostat_Requested_State
     - sensor.Office_Thermostat_Requested_Fan_State
@@ -151,6 +155,7 @@ office_lights:
     - light.Craft_Room_Light
     - light.Electronics_Lab_Light
     - light.Hallway_Light
+    - light.Small_Bathroom_Light
 
 shop_lights:
   name: "Shop Lights"
