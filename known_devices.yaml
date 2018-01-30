@@ -16,4 +16,22 @@ androidb26c230fbb3b062d:
   track: true
   vendor: LG Electronics (Mobile Communications)
 
+mike_phone:
+  name: "Mike phone"
+  hide_if_away: true
+  icon:
+  mac: 40:4E:36:1D:24:F4
+  picture:
+  track: true
+  vendor: HTC Corporation
+
+graviton:
+  hide_if_away: true
+  icon:
+  mac: 3C:77:E6:0F:B8:D9
+  name: "Mike laptop"
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
 #if you edit this, delete all non-tracked things and force add to git
