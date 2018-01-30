@@ -380,6 +380,7 @@
   state_topic: "tele/i3/inside/office/thermostat/bme280"
   unit_of_measurement: "%"
   value_template: '{{ value_json.Humidity }}'
+  force_update: True
 
 - platform: mqtt
   name: "Office Thermostat Target Temperature"
