@@ -113,3 +113,12 @@
   state_topic: "tele/i3/inside/laser-zone/wolverine/status_lights/LWT"
   force_update: True
 
+- platform: mqtt
+  name: "Bumblebee Chiller LWT"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/chiller/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Wolverine Chiller LWT"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/chiller/LWT"
+  force_update: True
