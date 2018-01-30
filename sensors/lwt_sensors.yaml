@@ -54,16 +54,6 @@
   force_update: True
 
 - platform: mqtt
-  name: "Laser Control Buttons 001 LWT"
-  state_topic: "tele/i3/inside/laser-zone/laser-control-buttons-001/LWT"
-  force_update: True
-
-- platform: mqtt
-  name: "Laser Control Buttons 002 LWT"
-  state_topic: "tele/i3/inside/laser-zone/laser-control-buttons-002/LWT"
-  force_update: True
-
-- platform: mqtt
   name: "Air Compressor Request 001 LWT"
   state_topic: "tele/i3/inside/air-compressor-request-001/LWT"
   force_update: True

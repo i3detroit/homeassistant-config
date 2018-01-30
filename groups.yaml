@@ -289,8 +289,6 @@ LWT:
     - sensor.Commons_Light_Switches_East_LWT
     - sensor.Light_28_Button_LWT
     - sensor.433_RF_Receiver_LWT
-    - sensor.Laser_Control_Buttons_001_LWT
-    - sensor.Laser_Control_Buttons_002_LWT
     - sensor.Air_Compressor_Request_001_LWT
     - sensor.Air_Compressor_Request_002_LWT
     - sensor.Air_Compressor_Request_003_LWT
@@ -299,3 +297,7 @@ LWT:
     - sensor.Large_Bathroom_Motion_Sensor_LWT
     - sensor.Small_Bathroom_Motion_Sensor_LWT
     - sensor.Machine_Shop_Motion_Sensor_LWT
+    - sensor.Bumblebee_LWT
+    - sensor.Bumblebee_status_lights_lwt
+    - sensor.Wolverine_LWT
+    - sensor.Wolverine_status_lights_lwt
