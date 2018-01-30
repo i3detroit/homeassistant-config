@@ -29,7 +29,7 @@
 - platform: mqtt
   name: "Bumblebee Energy Use Today"
   state_topic: "tele/i3/inside/laser-zone/bumblebee/ENERGY"
-  value_template: '{{ value_json.Period }}'
+  value_template: '{{ value_json.Today }}'
   force_update: True
   unit_of_measurement: "kilowatt hours"
 
@@ -64,6 +64,6 @@
 - platform: mqtt
   name: "Wolverine Energy Use Today"
   state_topic: "tele/i3/inside/laser-zone/wolverine/ENERGY"
-  value_template: '{{ value_json.Period }}'
+  value_template: '{{ value_json.Today }}'
   force_update: True
   unit_of_measurement: "kilowatt hours"
