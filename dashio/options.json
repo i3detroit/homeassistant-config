@@ -76,5 +76,47 @@
     "domain": "script",
     "service": "turn_on",
     "service_data": "{\"entity_id\": \"script.dash_paint_booth_filters\"}"
+  },
+  {
+    "name": "Twelve",
+    "address": "fc:a6:67:66:35:0c",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_bowls\"}"
+  },
+  {
+    "name": "Thirteen",
+    "address": "b4:7c:9c:c2:8b:40",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_chopsticks\"}"
+  },
+  {
+    "name": "Fourteen",
+    "address": "50:f5:da:9c:d5:dc",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_centerpull_towels\"}"
+  },
+  {
+    "name": "Fifteen",
+    "address": "78:e1:03:99:a5:be",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_towel_dispenser_towels\"}"
+  },
+  {
+    "name": "Sixteen",
+    "address": "fc:a6:67:f3:fc:50",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_55_gallon_trash_bags\"}"
+  },
+  {
+    "name": "Seventeen",
+    "address": "78:e1:03:ec:1f:98",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_kitchen_trash_bags\"}"
   }]
 }

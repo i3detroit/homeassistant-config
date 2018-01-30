@@ -111,9 +111,45 @@ dash_paint_booth_filters:
       data:
         message: "We require additional paint booth filters (10\"x20\"x1\")"
 
+dash_bowls:
+  alias: "Buy bowls"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional bowls"
 
+dash_chopsticks:
+  alias: "Buy chopsticks"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional chopsticks"
 
-#dash_bowls:
+dash_centerpull_towels:
+  alias: "Buy centerpull towels"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional centerpull towels"
 
+dash_towel_dispenser_towels:
+  alias: "Buy towel dispenser towels"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional towel dispenser towels"
 
-#dash_chopsticks:
+dash_55_gallon_trash_bags:
+  alias: "Buy 55 gallon trash bags"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional 55 gallon trash bags"
+
+dash_kitchen_trash_bags:
+  alias: "Buy kitchen trash bags"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional kitchen trash bags"
+
