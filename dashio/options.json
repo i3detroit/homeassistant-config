@@ -110,7 +110,7 @@
     "address": "fc:a6:67:f3:fc:50",
     "domain": "script",
     "service": "turn_on",
-    "service_data": "{\"entity_id\": \"script.dash_55_gallon_trash_bags\"}"
+    "service_data": "{\"entity_id\": \"script.dash_33_gallon_trash_bags\"}"
   },
   {
     "name": "Seventeen",

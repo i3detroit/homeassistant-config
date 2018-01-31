@@ -137,19 +137,19 @@ dash_towel_dispenser_towels:
   sequence:
     - service: notify.slack_shopping_list
       data:
-        message: "We require additional towel dispenser towels"
+        message: "We require additional nonperforated 50606 towel dispenser towels"
 
-dash_55_gallon_trash_bags:
-  alias: "Buy 55 gallon trash bags"
+dash_33_gallon_trash_bags:
+  alias: "Buy 33 gallon trash bags"
   sequence:
     - service: notify.slack_shopping_list
       data:
-        message: "We require additional 55 gallon trash bags"
+        message: "We require additional 33 gallon trash bags"
 
 dash_kitchen_trash_bags:
   alias: "Buy kitchen trash bags"
   sequence:
     - service: notify.slack_shopping_list
       data:
-        message: "We require additional kitchen trash bags"
+        message: "We require additional 13 gallon kitchen trash bags"
 
