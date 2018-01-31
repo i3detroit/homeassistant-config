@@ -95,12 +95,12 @@
 
 - platform: mqtt
   name: "Bumblebee LWT"
-  state_topic: "tele/i3/inside/laser-zone/bumblebee/LWT"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/laser/LWT"
   force_update: True
 
 - platform: mqtt
   name: "Wolverine LWT"
-  state_topic: "tele/i3/inside/laser-zone/wolverine/LWT"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/laser/LWT"
   force_update: True
 
 - platform: mqtt
