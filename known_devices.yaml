@@ -34,4 +34,9 @@ graviton:
   track: true
   vendor: Hon Hai Precision Ind. Co.,Ltd.
 
-#if you edit this, delete all non-tracked things and force add to git
+# if you edit this, delete all non-tracked things and tell git to track it, commit, tell git to not track
+# not track:
+# git update-index --assume-unchanged FILE_NAME
+# track:
+# git update-index --no-assume-unchanged FILE_NAME
+# https://stackoverflow.com/a/17410119/2423187
