@@ -80,6 +80,13 @@ mqtt:
   broker: 10.13.0.22
   port: 1883
   client_id: homeassistant
+  keepalive: 60
+  birth_message:
+    topic: "tele/hass1/LWT"
+    payload: "Online"
+  will_message:
+    topic: "tele/hass1/LWT"
+    payload: "Offline"
 
 media_player:
   - platform: cast
@@ -116,3 +123,10 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: http://10.13.0.22:3218
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
