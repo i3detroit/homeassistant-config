@@ -32,7 +32,7 @@ emergency_lights_reset:
         # hass brightness values used here are expected to be 0-255 scale
         # So the values given here get renormalized before being sent out mqtt, hence...
         # 5 / 255 * 50 = 2 brightness on the tasmota scale
-        brightness: 18
+        brightness: 24
 
 dash_green_tape:
   alias: "Buy green tape"
@@ -153,3 +153,23 @@ dash_kitchen_trash_bags:
       data:
         message: "We require additional 13 gallon kitchen trash bags"
 
+dash_small_glue_sticks:
+  alias: "Buy small glue sticks"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional small hot glue sticks"
+
+dash_foam_brushes:
+  alias: "Buy kitchen foam brushes"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional foam brushes"
+
+dash_large_glue_sticks:
+  alias: "Buy large glue sticks"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional large hot glue sticks"

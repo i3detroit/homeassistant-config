@@ -118,5 +118,26 @@
     "domain": "script",
     "service": "turn_on",
     "service_data": "{\"entity_id\": \"script.dash_kitchen_trash_bags\"}"
+  },
+  {
+    "name": "Eighteen",
+    "address": "fc:65:de:c4:12:04",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_small_glue_sticks\"}"
+  },
+  {
+    "name": "Nineteen",
+    "address": "78:e1:03:a3:0c:68",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_foam_brushes\"}"
+  }
+  {
+    "name": "Twenty",
+    "address": "78:e1:03:24:5d:1b",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_large_glue_sticks\"}"
   }]
 }
