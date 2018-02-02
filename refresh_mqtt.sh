@@ -70,6 +70,6 @@ mosquitto_pub -t "cmnd/i3/inside/laser-zone/blast-gate-monitor/query" -m ""
 mosquitto_pub -t "cmnd/i3/inside/craftroom/light/POWER" -m ""
 mosquitto_pub -t "cmnd/i3/inside/elab/light/POWER" -m ""
 mosquitto_pub -t "cmnd/i3/inside/hallway/light/POWER" -m ""
-mosquitto_pub -t "cmnd/i3/inside/laser-zone/bumblebee/POWER" -m ""
-mosquitto_pub -t "cmnd/i3/inside/laser-zone/wolverine/POWER" -m ""
+mosquitto_pub -t "cmnd/i3/inside/laser-zone/bumblebee/laser/POWER" -m ""
+mosquitto_pub -t "cmnd/i3/inside/laser-zone/wolverine/laser/POWER" -m ""
 
