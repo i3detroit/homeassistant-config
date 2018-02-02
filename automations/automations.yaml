@@ -176,7 +176,7 @@
     entity_id: binary_sensor.small_bathroom_motion_sensor
     to: 'off'
     for:
-      minutes: 10
+      minutes: 15
   action:
     service: light.turn_off
     entity_id: light.Small_Bathroom_Light
