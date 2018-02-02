@@ -1,69 +1,69 @@
 - platform: mqtt
   name: "Bumblebee Power Draw"
-  state_topic: "tele/i3/inside/laser-zone/bumblebee/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/laser/ENERGY"
   value_template: '{{ value_json.Power }}'
   force_update: True
   unit_of_measurement: "Watts"
 
 - platform: mqtt
   name: "Bumblebee Voltage"
-  state_topic: "tele/i3/inside/laser-zone/bumblebee/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/laser/ENERGY"
   value_template: '{{ value_json.Voltage }}'
   force_update: True
   unit_of_measurement: "Volts"
 
 - platform: mqtt
   name: "Bumblebee Current"
-  state_topic: "tele/i3/inside/laser-zone/bumblebee/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/laser/ENERGY"
   value_template: '{{ value_json.Current }}'
   force_update: True
   unit_of_measurement: "Amps"
 
 - platform: mqtt
   name: "Bumblebee Energy Use Delta"
-  state_topic: "tele/i3/inside/laser-zone/bumblebee/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/laser/ENERGY"
   value_template: '{{ value_json.Period }}'
   force_update: True
   unit_of_measurement: "Watt hours"
 
 - platform: mqtt
   name: "Bumblebee Energy Use Today"
-  state_topic: "tele/i3/inside/laser-zone/bumblebee/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/laser/ENERGY"
   value_template: '{{ value_json.Today }}'
   force_update: True
   unit_of_measurement: "kilowatt hours"
 
 - platform: mqtt
   name: "Wolverine Power Draw"
-  state_topic: "tele/i3/inside/laser-zone/wolverine/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/laser/ENERGY"
   value_template: '{{ value_json.Power }}'
   force_update: True
   unit_of_measurement: "Watts"
 
 - platform: mqtt
   name: "Wolverine Voltage"
-  state_topic: "tele/i3/inside/laser-zone/wolverine/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/laser/ENERGY"
   value_template: '{{ value_json.Voltage }}'
   force_update: True
   unit_of_measurement: "Volts"
 
 - platform: mqtt
   name: "Wolverine Current"
-  state_topic: "tele/i3/inside/laser-zone/wolverine/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/laser/ENERGY"
   value_template: '{{ value_json.Current }}'
   force_update: True
   unit_of_measurement: "Amps"
 
 - platform: mqtt
   name: "Wolverine Energy Use Delta"
-  state_topic: "tele/i3/inside/laser-zone/wolverine/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/laser/ENERGY"
   value_template: '{{ value_json.Period }}'
   force_update: True
   unit_of_measurement: "Watt hours"
 
 - platform: mqtt
   name: "Wolverine Energy Use Today"
-  state_topic: "tele/i3/inside/laser-zone/wolverine/ENERGY"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/laser/ENERGY"
   value_template: '{{ value_json.Today }}'
   force_update: True
   unit_of_measurement: "kilowatt hours"
