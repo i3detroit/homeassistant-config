@@ -40,6 +40,12 @@
     entity_id: binary_sensor.machine_shop_motion_sensor
     from: 'off'
     to: 'on'
+  condition:
+    condition: state
+    entity_id: group.machine_shop_lights
+    state: 'off'
+    for:
+      seconds: 5
   action:
     - service: light.turn_on
       entity_id: group.machine_shop_lights
@@ -142,6 +148,12 @@
     platform: state
     entity_id: binary_sensor.large_bathroom_motion_sensor
     to: 'on'
+  condition:
+    condition: state
+    entity_id: light.LightLargeBathroom
+    state: 'off'
+    for:
+      seconds: 5
   action:
     - service: light.turn_on
       entity_id: light.LightLargeBathroom
@@ -166,6 +178,12 @@
     platform: state
     entity_id: binary_sensor.small_bathroom_motion_sensor
     to: 'on'
+  condition:
+    condition: state
+    entity_id: light.Small_Bathroom_Light
+    state: 'off'
+    for:
+      seconds: 5
   action:
     service: light.turn_on
     entity_id: light.Small_Bathroom_Light
