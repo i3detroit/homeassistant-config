@@ -258,3 +258,44 @@
         topic: "stat/i3/automation/hass"
         payload: "Home assistant has started"
     - service: shell_command.refresh_mqtt
+
+- alias: Traffic hot
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.Ground_Cluster_bme280_Temperature
+    above: 23
+  action:
+    - service: light.turn_on
+      entity_id: light.LightTrafficGreen
+    - service: light.turn_off
+      entity_id: light.LightTrafficYellow
+    - service: light.turn_off
+      entity_id: light.LightTrafficRed
+
+- alias: Traffic medium
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.Ground_Cluster_bme280_Temperature
+    above: 21
+    below: 23
+  action:
+    - service: light.turn_off
+      entity_id: light.LightTrafficGreen
+    - service: light.turn_on
+      entity_id: light.LightTrafficYellow
+    - service: light.turn_off
+      entity_id: light.LightTrafficRed
+
+- alias: Traffic cold
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.Ground_Cluster_bme280_Temperature
+    below: 21
+  action:
+    - service: light.turn_off
+      entity_id: light.LightTrafficGreen
+    - service: light.turn_off
+      entity_id: light.LightTrafficYellow
+    - service: light.turn_on
+      entity_id: light.LightTrafficRed
+
