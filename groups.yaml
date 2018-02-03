@@ -317,3 +317,24 @@ LWT:
     - sensor.Wolverine_LWT
     - sensor.Wolverine_Chiller_LWT
     - sensor.Wolverine_status_lights_lwt
+
+APCUPS:
+  name: "Server Rack UPS"
+  icon: mdi:car-battery
+  entities:
+    - sensor.ups_battery
+    - sensor.ups_battery_voltage
+    - sensor.ups_input_voltage
+    - sensor.ups_internal_temperature
+    - sensor.ups_last_transfer
+    - sensor.ups_line_frequency
+    - sensor.ups_load
+    - sensor.ups_output_voltage
+    - sensor.ups_restore_requirement
+    - sensor.ups_status
+    - sensor.ups_time_left
+    - sensor.ups_time_on_battery
+    - sensor.ups_total_time_on_battery
+    - sensor.ups_transfer_count
+    - sensor.ups_transfer_from_battery
+    - sensor.ups_transfer_to_battery
