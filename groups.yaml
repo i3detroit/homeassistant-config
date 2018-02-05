@@ -192,6 +192,14 @@ decor:
     - light.Chandelier02
     - switch.Disco_Ball
 
+device_trackers:
+  name: "Device Trackers"
+  entities:
+    - device_tracker.mark_phone
+    - device_tracker.jan_phone
+    - device_tracker.mike_phone
+    - device_tracker.graviton
+
 motion_sensor:
   name: "Motion Sensors"
   icon: mdi:run-fast
@@ -338,3 +346,19 @@ APCUPS:
     - sensor.ups_transfer_count
     - sensor.ups_transfer_from_battery
     - sensor.ups_transfer_to_battery
+
+Button_boxes:
+  name: "Button boxes"
+  entities:
+    - sensor.Commons_light_switches_east
+    - sensor.Commons_light_switches_west
+    - sensor.Machine_shop_light_switches_west
+    - sensor.Machine_shop_light_switches_south
+    - sensor.Middle_east_light_switches_south
+    - sensor.Middle_east_light_switches_north
+    - sensor.Disco_button
+    - sensor.Air_compressor_requet_button_001
+    - sensor.Air_compressor_request_button_002
+    - sensor.Air_compressor_request_button_003
+    - sensor.Welding_light_button
+    - sensor.Fab_lab_control_buttons
