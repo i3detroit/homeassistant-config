@@ -44,6 +44,10 @@ conversation:
 # Enables support for tracking state changes over time
 history:
 
+recorder:
+  purge_interval: 1
+  purge_keep_days: 4
+
 # View all events in a logbook
 # disabled because it might eat all the ram
 # logbook:
