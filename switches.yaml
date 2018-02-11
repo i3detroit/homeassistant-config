@@ -107,3 +107,10 @@
   command_topic: "cmnd/i3/inside/laser-zone/wolverine/laser/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+
+- platform: mqtt
+  name: "Disco Spotlights"
+  state_topic: "stat/i3/inside/commons/accent/disco-spotlights/POWER"
+  command_topic: "cmnd/i3/inside/commons/accent/disco-spotlights/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"

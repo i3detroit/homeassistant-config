@@ -191,6 +191,7 @@ decor:
     - light.Chandelier01
     - light.Chandelier02
     - switch.Disco_Ball
+    - switch.Disco_Spotlights
 
 device_trackers:
   name: "Device Trackers"
