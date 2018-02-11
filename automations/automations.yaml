@@ -88,27 +88,31 @@
     service: switch.turn_off
     entity_id: switch.Air_Compressor_Valve
 
-- alias: Disco Chandelier ON
+- alias: Disco Mode ON
   trigger:
   - platform: mqtt
     topic: stat/i3/inside/commons/disco/POWER
     payload: "ON"
   action:
-    service: light.turn_on
-    entity_id: 
-      - light.Chandelier01
-      - light.Chandelier02
+    - service: light.turn_on
+      entity_id: 
+        - light.Chandelier01
+        - light.Chandelier02
+    - service: switch.turn_on
+      entity_id: switch.disco_spotlights
 
-- alias: Disco Chandelier OFF
+- alias: Disco Mode OFF
   trigger:
   - platform: mqtt
     topic: stat/i3/inside/commons/disco/POWER
     payload: "OFF"
   action:
-    service: light.turn_off
-    entity_id: 
-      - light.Chandelier01
-      - light.Chandelier02
+    - service: light.turn_off
+      entity_id: 
+        - light.Chandelier01
+        - light.Chandelier02
+    - service: switch.turn_off
+      entity_id: switch.disco_spotlights
 
 # - alias: Who turned out the lights?
 #   trigger:
