@@ -139,5 +139,19 @@
     "domain": "script",
     "service": "turn_on",
     "service_data": "{\"entity_id\": \"script.dash_large_glue_sticks\"}"
+  },
+  {
+    "name": "Twenty_one",
+    "address": "fc:a6:67:23:52:a8",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_small_glue_sticks\"}"
+  },
+  {
+    "name": "Twenty_two",
+    "address": "78:e1:03:9d:1c:9d",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_large_glue_sticks\"}"
   }]
 }
