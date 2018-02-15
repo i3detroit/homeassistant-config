@@ -279,7 +279,12 @@
     commons_temp_diff:
       friendly_name: "Commons ceiling-ground temp diff"
       unit_of_measurement: "°C"
-      value_template: "{{(states.sensor.ceiling_cluster_bme280_temperature.state | float - states.sensor.ground_cluster_bme280_temperature.state | float) | round(2)}}"
+      value_template: >-
+        {% if states.sensor.ceiling_cluster_bme280_temperature.state | string == "unknown" or states.sensor.ground_cluster_bme280_temperature.state | string == "unknown" %}
+          0.0
+        {% else %}
+          {{((states.sensor.ceiling_cluster_bme280_temperature.state | float) - (states.sensor.ground_cluster_bme280_temperature.state | float)) | round(2)}}
+        {% endif %}
 
 - platform: mqtt
   name: "Garage Door Open"
