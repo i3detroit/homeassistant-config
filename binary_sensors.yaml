@@ -20,6 +20,7 @@
   # payload_available: "online"
   # payload_not_available: "offline"
   device_class: opening
+  force_update: True
 
 
 - platform: mqtt
@@ -32,7 +33,7 @@
   # payload_available: "online"
   # payload_not_available: "offline"
   device_class: opening
-
+  force_update: True
 
 - platform: mqtt
   name: "Garage Door Lock Sensor"
@@ -44,7 +45,7 @@
   # payload_available: "online"
   # payload_not_available: "offline"
   device_class: opening
-
+  force_update: True
 
 - platform: mqtt
   name: "Machine Shop Motion Sensor"
@@ -52,6 +53,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   device_class: motion
+  force_update: True
 
 - platform: mqtt
   name: "Large Bathroom Motion Sensor"
@@ -59,6 +61,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   device_class: motion
+  force_update: True
 
 - platform: mqtt
   name: "Small Bathroom Motion Sensor"
@@ -66,6 +69,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   device_class: motion
+  force_update: True
 
 - platform: mqtt
   name: "Snapple Vending Compressor Power"
@@ -74,6 +78,7 @@
   payload_on: "ON"
   payload_off: "OFF"
   device_class: power
+  force_update: True
 
 - platform: mqtt
   name: "Argon Tank Sensor"
@@ -82,6 +87,7 @@
   payload_on: "OPEN"
   payload_off: "CLOSED"
   device_class: opening
+  force_update: True
 
 - platform: mqtt
   name: "Front Door Panel Power"
@@ -89,4 +95,5 @@
   payload_on: "Online"
   payload_off: "Offline"
   device_class: power
+  force_update: True
 
