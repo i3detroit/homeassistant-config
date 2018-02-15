@@ -97,12 +97,12 @@ dash_paper_plates:
       data:
         message: "We require additional paper plates"
 
-dash_cups:
-  alias: "Buy cups"
+dash_plastic_cups:
+  alias: "Buy plastic cups"
   sequence:
     - service: notify.slack_shopping_list
       data:
-        message: "We require additional cups"
+        message: "We require additional plastic cups"
 
 dash_paint_booth_filters:
   alias: "Buy paint booth air filters"
@@ -173,3 +173,10 @@ dash_large_glue_sticks:
     - service: notify.slack_shopping_list
       data:
         message: "We require additional large hot glue sticks"
+
+dash_styrofoam_cups:
+  alias: "Buy styrofoam cups"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional styrofoam cups"

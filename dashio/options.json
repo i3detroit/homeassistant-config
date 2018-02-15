@@ -68,7 +68,7 @@
     "address": "f0:27:2d:ef:a8:a2",
     "domain": "script",
     "service": "turn_on",
-    "service_data": "{\"entity_id\": \"script.dash_cups\"}"
+    "service_data": "{\"entity_id\": \"script.dash_plastic_cups\"}"
   },
   {
     "name": "Eleven",
@@ -153,5 +153,12 @@
     "domain": "script",
     "service": "turn_on",
     "service_data": "{\"entity_id\": \"script.dash_large_glue_sticks\"}"
-  }]
+  },
+  {
+    "name": "Twenty_three",
+    "address": "fc:a6:67:bb:f6:ff",
+    "domain": "script",
+    "service": "turn_on",
+    "service_data": "{\"entity_id\": \"script.dash_styrofoam_cups\"}"
+  }] 
 }
