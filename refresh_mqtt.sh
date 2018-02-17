@@ -72,4 +72,6 @@ mosquitto_pub -t "cmnd/i3/inside/elab/light/POWER" -m ""
 mosquitto_pub -t "cmnd/i3/inside/hallway/light/POWER" -m ""
 mosquitto_pub -t "cmnd/i3/inside/laser-zone/bumblebee/laser/POWER" -m ""
 mosquitto_pub -t "cmnd/i3/inside/laser-zone/wolverine/laser/POWER" -m ""
-
+mosquitto_pub -t "cmnd/i3/inside/classroom/lights-east/POWER" -m ""
+mosquitto_pub -t "cmnd/i3/inside/classroom/lights-west/POWER" -m ""
+mosquitto_pub -t "cmnd/i3/inside/dooridor/lights/POWER" -m ""
