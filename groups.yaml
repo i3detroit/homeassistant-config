@@ -151,6 +151,9 @@ office_lights:
   name: "Office Lights"
   icon: mdi:ceiling-light
   entities:
+    - light.Classroom_Lights_East
+    - light.Classroom_Lights_West
+    - light.Dooridor_Lights
     - light.LightMediaLab
     - light.Craft_Room_Light
     - light.Electronics_Lab_Light

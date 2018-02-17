@@ -54,6 +54,10 @@ groups:
       - light.electronics_lab_light
       - light.hallway_light
       - light.small_bathroom_light
+      - light.Classroom_Lights_East
+      - light.Classroom_Lights_West
+      - light.Dooridor_Lights
+
     states:
       - state: 'on'
         class: 'light-on'
