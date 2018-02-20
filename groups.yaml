@@ -1,9 +1,11 @@
 Main:
   view: yes
-  icon: mdi:view-list
+  icon: mdi:lightbulb
   entities:
     - group.shop_lights
     - group.decor
+    - group.office_lights
+    - group.misc_lights
 
 HVAC:
   name: "Atmospheric Sensors"
@@ -43,28 +45,6 @@ office_thermostat:
     - sensor.Office_Thermostat_Requested_Fan_State
     - sensor.Office_Thermostat_Active_State
     - sensor.Office_Thermostat_Active_Fan_State
-
-openEVSE:
-  name: "OpenEVSE Stats"
-  icon: mdi:car
-  entities:
-    - sensor.ev_charger_amps
-    - sensor.ev_charger_wh
-    - sensor.ev_charger_state
-
-YRWeather:
-  name: "Current Weather"
-  icon: mdi:sun
-  entities:
-    - sensor.Weather_symbol
-    - sensor.Weather_temperature
-    - sensor.Weather_humidity
-    - sensor.weather_pressure_kpa
-    - sensor.Weather_dewpoint_temperature
-    - sensor.Weather_precipitation
-    - sensor.Weather_cloudiness
-    - sensor.Weather_wind_speed
-    - sensor.Weather_wind_direction
 
 row_1_lights:
   name: "Light Row 1"
@@ -129,14 +109,18 @@ machine_shop_lights:
     - light.light034
     - light.light035
 
-emergency_lights:
-  name: "Emergency Lights"
-  icon: mdi:alarm-light
+office_lights:
+  name: "Office Lights"
+  icon: mdi:ceiling-light
   entities:
-    - light.light039
-    - light.light040
-    - light.light027
-    - light.light038
+    - light.Classroom_Lights_East
+    - light.Classroom_Lights_West
+    - light.Dooridor_Lights
+    - light.Hallway_Light
+    - light.LightMediaLab
+    - light.Craft_Room_Light
+    - light.Electronics_Lab_Light
+    - light.Small_Bathroom_Light
 
 misc_lights:
   name: "Misc. Lights"
@@ -146,19 +130,6 @@ misc_lights:
     - light.LightVinyl
     - light.LightTreehouse
     - light.LightLargeBathroom
-
-office_lights:
-  name: "Office Lights"
-  icon: mdi:ceiling-light
-  entities:
-    - light.Classroom_Lights_East
-    - light.Classroom_Lights_West
-    - light.Dooridor_Lights
-    - light.LightMediaLab
-    - light.Craft_Room_Light
-    - light.Electronics_Lab_Light
-    - light.Hallway_Light
-    - light.Small_Bathroom_Light
 
 shop_lights:
   name: "Shop Lights"
@@ -172,6 +143,37 @@ shop_lights:
     - group.machine_shop_lights
     - group.office_lights
     - group.misc_lights
+
+emergency_lights:
+  name: "Emergency Lights"
+  icon: mdi:alarm-light
+  entities:
+    - light.light039
+    - light.light040
+    - light.light027
+    - light.light038
+
+openEVSE:
+  name: "OpenEVSE Stats"
+  icon: mdi:car
+  entities:
+    - sensor.ev_charger_amps
+    - sensor.ev_charger_wh
+    - sensor.ev_charger_state
+
+YRWeather:
+  name: "Current Weather"
+  icon: mdi:sun
+  entities:
+    - sensor.Weather_symbol
+    - sensor.Weather_temperature
+    - sensor.Weather_humidity
+    - sensor.weather_pressure_kpa
+    - sensor.Weather_dewpoint_temperature
+    - sensor.Weather_precipitation
+    - sensor.Weather_cloudiness
+    - sensor.Weather_wind_speed
+    - sensor.Weather_wind_direction
 
 shop_fans:
   name: "Ceiling Fans"
@@ -203,6 +205,7 @@ device_trackers:
     - device_tracker.jan_phone
     - device_tracker.mike_phone
     - device_tracker.graviton
+    - device_tracker.abzgs4
 
 motion_sensor:
   name: "Motion Sensors"
@@ -243,13 +246,19 @@ shutdown:
   icon: mdi:power
   control: hidden
   entities:
+    - switch.Disco_Ball
   #  - group.shop_lights
   #  - group.shop_fans
   #  - switch.Air_Compressor
   #  - switch.Paint_Box_Vent
   #  - switch.Large_Bathroom_Vent_Fan
-    - switch.Disco_Ball
-   # - fan.LaserZoneExhaustFan
+  #  - fan.LaserZoneExhaustFan
+  #  - fan.FLV_Fan
+  #  - switch.Fab_Lab_Chiller
+  #  - switch.Bumblebee
+  #  - switch.Bumblebee_Chiller
+  #  - switch.Wolverine
+  #  - switch.Wolverine_Chiller
 
 laser_zone:
   name: "Laser Zone"
