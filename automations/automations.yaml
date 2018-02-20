@@ -309,3 +309,50 @@
     - service: light.turn_on
       entity_id: light.LightTrafficRed
 
+- alias: Dooridor Lights Sync On
+  trigger:
+    platform: state
+    entity_id: light.Classroom_Lights_East
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.Dooridor_Lights
+
+- alias: Dooridor Lights Sync Off
+  trigger:
+    platform: state
+    entity_id: light.Classroom_Lights_East
+    to: 'off'
+  action:
+    service: light.turn_off
+    entity_id: light.Dooridor_Lights
+
+- alias: Classroom Lights Sync On
+  trigger:
+    platform: mqtt
+    topic: stat/i3/inside/classroom/lights-east/POWER
+    payload: 'ON'
+  condition: 
+    condition: template
+    value_template: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() < 1.0 }}'
+  action:
+    - service: light.turn_on
+      entity_id: light.Classroom_Lights_West
+    - service: notify.slack_bot_chat
+      data:
+        message: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() }}'
+
+- alias: Classroom Lights Sync Off
+  trigger:
+    platform: mqtt
+    topic: stat/i3/inside/classroom/lights-east/POWER
+    payload: 'OFF'
+  condition: 
+    condition: template
+    value_template: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() < 1.0 }}'
+  action:
+    - service: light.turn_off
+      entity_id: light.Classroom_Lights_West
+    - service: notify.slack_bot_chat
+      data:
+        message: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() }}'
