@@ -344,3 +344,27 @@ warehouse_lights_on:
         - light.light030
     - delay:
         milliseconds: 500
+
+disco_go:
+  alias: "Disco GO!"
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - group.row_1_lights
+        - group.row_2_lights
+        - group.row_3_lights
+    - service: switch.turn_on
+      entity_id:
+        - switch.Disco_Ball
+
+disco_stop:
+    alias: "Disco stop"
+    sequence:
+      - service: light.turn_on
+        entity_id:
+          - group.row_1_lights
+          - group.row_2_lights
+          - group.row_3_lights
+      - service: switch.turn_off
+        entity_id:
+          - switch.Disco_Ball
