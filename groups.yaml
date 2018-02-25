@@ -1,4 +1,4 @@
-Main:
+Lighting:
   view: yes
   icon: mdi:lightbulb
   entities:
@@ -6,6 +6,72 @@ Main:
     - group.decor
     - group.office_lights
     - group.misc_lights
+    - group.row_1_lights
+    - group.row_2_lights
+    - group.row_3_lights
+    - group.row_4_lights
+    - group.row_5_lights
+    - group.machine_shop_lights
+    - group.emergency_lights
+    - group.decor
+
+misc_controls:
+  view: yes
+  icon: mdi:power
+  entities:
+    - group.shop_fans
+    - group.misc_switches
+
+Atmospherics:
+  view: yes
+  icon: mdi:thermometer-lines
+  entities:
+    - group.HVAC
+    - group.office_thermostat
+    - group.YRWeather
+
+Zones:
+  view: yes
+  icon: mdi:selection
+  entities:
+    - group.laser_zone
+    - group.laser_zone_stats
+    - group.fab_lab
+    - group.snack_zone
+    - group.welding
+
+media_players:
+  view: yes
+  icon: mdi:cast
+  entities:
+    - media_player.classroom_tv
+    - media_player.commons
+    - media_player.speakers
+
+doors_etc:
+  view: yes
+  icon: mdi:door
+  entities:
+    - group.doors
+    - group.window_sensors
+    - group.motion_sensor
+
+infrastructure:
+  view: yes
+  icon: mdi:settings
+  entities:
+    - group.LWT
+    - group.openEVSE
+    - group.APCUPS
+    - group.device_trackers
+    - group.shutdown
+
+hass_settings:
+  view: yes
+  icon: mdi:home-assistant
+  entities:
+    - group.all_scripts
+    - group.all_automations
 
 HVAC:
   name: "Atmospheric Sensors"
@@ -198,6 +264,15 @@ decor:
     - switch.Disco_Ball
     - switch.Disco_Spotlights
 
+misc_switches:
+  name: "Misc. Switches"
+  entities:
+    - switch.air_compressor_valve
+    - switch.Classroom_Sign
+    - switch.hallway_light_switch_west
+    - switch.large_bathroom_vent_fan
+    - switch.paint_box_vent
+
 device_trackers:
   name: "Device Trackers"
   entities:
@@ -297,6 +372,11 @@ fab_lab:
   entities:
     - fan.FLV_Fan
     - switch.Fab_Lab_Chiller
+
+welding:
+  name: "Welding Zone"
+  entities:
+    - binary_sensor.argon_tank_sensor
 
 snack_zone:
   name: "Snack Zone"
