@@ -5,3 +5,7 @@ hello_world:
 check_power_meter:
   module: powerMeter
   class: CheckPowerMeter
+
+vm_tracker:
+  module: vmtracker
+  class: VMTracker
