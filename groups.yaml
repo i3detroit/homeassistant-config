@@ -61,6 +61,7 @@ infrastructure:
   icon: mdi:settings
   entities:
     - group.LWT
+    - group.vm_trackers
     - group.openEVSE
     - group.APCUPS
     - group.device_trackers
@@ -281,6 +282,17 @@ device_trackers:
     - device_tracker.mike_phone
     - device_tracker.graviton
     - device_tracker.abzgs4
+
+vm_trackers:
+  name: "VM Trackers"
+  entities:
+    - device_tracker.full_spectrum
+    - device_tracker.asterisk
+    - device_tracker.skynet
+    - device_tracker.minecraft
+    - device_tracker.mcclellan
+    - device_tracker.rostock_max
+    - device_tracker.full_spectrum
 
 motion_sensor:
   name: "Motion Sensors"
