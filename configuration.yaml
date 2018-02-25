@@ -112,17 +112,7 @@ sensor: !include_dir_merge_list sensors
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
 shell_command: !include shell_commands.yaml
-
-#presence detection
-device_tracker:
-  - platform: unifi
-    host: 10.13.0.2
-    verify_ssl: false
-    username: !secret unifi_controller_user
-    password: !secret unifi_controller_pass
-    new_device_defaults:
-      track_new_devices: False
-      hide_if_away: True
+device_tracker: !include device_tracker.yaml
 
 # Extra panel for configurator plugin
 panel_iframe:
