@@ -42,6 +42,60 @@ abzgs4:
   track: true
   vendor: SAMSUNG ELECTRO-MECHANICS(THAILAND)
 
+asterisk:
+  hide_if_away: true
+  icon:
+  mac:
+  name: asterisk
+  picture:
+  track: true
+  vendor:
+
+skynet:
+  hide_if_away: true
+  icon:
+  mac:
+  name: skynet
+  picture:
+  track: true
+  vendor:
+
+minecraft:
+  hide_if_away: true
+  icon:
+  mac:
+  name: minecraft
+  picture:
+  track: true
+  vendor:
+
+mcclellan:
+  hide_if_away: true
+  icon:
+  mac:
+  name: mcclellan
+  picture:
+  track: true
+  vendor:
+
+rostock_max:
+  hide_if_away: true
+  icon:
+  mac:
+  name: rostock max
+  picture:
+  track: true
+  vendor:
+
+full_spectrum:
+  hide_if_away: true
+  icon:
+  mac:
+  name: full spectrum
+  picture:
+  track: true
+  vendor:
+
 # if you edit this, delete all non-tracked things and tell git to track it, commit, tell git to not track
 # not track:
 # git update-index --assume-unchanged FILE_NAME
