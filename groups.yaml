@@ -52,6 +52,7 @@ doors_etc:
   view: yes
   icon: mdi:door
   entities:
+    - sensor.doorbell
     - group.doors
     - group.window_sensors
     - group.motion_sensor
@@ -60,6 +61,10 @@ infrastructure:
   view: yes
   icon: mdi:settings
   entities:
+    - sensor.i3_power_meter
+    - sensor.shutdown_button
+    - sensor.sonoff_RSSI
+    - binary_sensor.front_door_panel_power
     - group.LWT
     - group.vm_trackers
     - group.openEVSE
@@ -232,6 +237,7 @@ YRWeather:
   name: "Current Weather"
   icon: mdi:sun
   entities:
+    - sun.sun
     - sensor.Weather_symbol
     - sensor.Weather_temperature
     - sensor.Weather_humidity
@@ -271,6 +277,7 @@ misc_switches:
     - switch.air_compressor_valve
     - switch.Classroom_Sign
     - switch.hallway_light_switch_west
+    - switch.classroom_east_light_switch
     - switch.large_bathroom_vent_fan
     - switch.paint_box_vent
 
@@ -286,13 +293,13 @@ device_trackers:
 vm_trackers:
   name: "VM Trackers"
   entities:
-    - device_tracker.full_spectrum
-    - device_tracker.asterisk
-    - device_tracker.skynet
-    - device_tracker.minecraft
-    - device_tracker.mcclellan
-    - device_tracker.rostock_max
-    - device_tracker.full_spectrum
+    - sensor.full_spectrum
+    - sensor.asterisk
+    - sensor.skynet
+    - sensor.minecraft
+    - sensor.mcclellan
+    - sensor.rostock_max
+    - sensor.full_spectrum
 
 motion_sensor:
   name: "Motion Sensors"
@@ -467,3 +474,24 @@ Button_boxes:
     - sensor.Air_compressor_request_button_003
     - sensor.Welding_light_button
     - sensor.Fab_lab_control_buttons
+
+junk:
+  name: "Junk"
+  entities:
+    - device_tracker.full_spectrum
+    - device_tracker.asterisk
+    - device_tracker.skynet
+    - device_tracker.minecraft
+    - device_tracker.mcclellan
+    - device_tracker.rostock_max
+    - device_tracker.full_spectrum
+    - sensor.openevse_amps
+    - sensor.openevse_state
+    - sensor.openevse_watt_seconds
+    - sensor.weather_pressure
+    - sensor.i3_power_meter
+    - sensor.shutdown_button
+    - sensor.sonoff_RSSI
+    - binary_sensor.front_door_panel_power
+    - sensor.classroom_east_light_switch
+    - sensor.doorbell
