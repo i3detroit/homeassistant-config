@@ -8,6 +8,7 @@
     hide_if_away: True
 
 - platform: ping
+  consider_home: 600
   hosts:
     asterisk: 10.13.0.9
     skynet: 10.13.0.15
