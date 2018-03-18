@@ -111,7 +111,6 @@ binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
 shell_command: !include shell_commands.yaml
 device_tracker: !include device_tracker.yaml
-camera: !include camera.yaml
 
 # Extra panel for configurator plugin
 panel_iframe:
