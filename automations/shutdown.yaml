@@ -24,3 +24,5 @@
         payload: "Space shutdown triggered"
     - service: homeassistant.turn_off
       entity_id: group.shutdown
+    - service: script.turn_on
+      entity_id: script.warehouse_lights_out
