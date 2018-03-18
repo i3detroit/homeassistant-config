@@ -309,7 +309,7 @@
     - service: light.turn_on
       entity_id: light.LightTrafficRed
 
-- alias: Dooridor Lights Sync On
+- alias: Dooridor and Hall Lights Sync On
   trigger:
     platform: state
     entity_id: light.Classroom_Lights_East
@@ -318,7 +318,7 @@
     service: light.turn_on
     entity_id: light.Dooridor_Lights
 
-- alias: Dooridor Lights Sync Off
+- alias: Dooridor and Hall Lights Sync Off
   trigger:
     platform: state
     entity_id: light.Classroom_Lights_East
@@ -326,6 +326,7 @@
   action:
     service: light.turn_off
     entity_id: light.Dooridor_Lights
+
 
 - alias: Classroom Lights Sync On
   trigger:
@@ -336,8 +337,10 @@
     condition: template
     value_template: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() < 1.0 }}'
   action:
-    service: light.turn_on
-    entity_id: light.Classroom_Lights_West
+    - service: light.turn_on
+      entity_id: light.Classroom_Lights_West
+    - service: light.turn_on
+      entity_id: light.hallway_light
 
 - alias: Classroom Lights Sync Off
   trigger:
@@ -348,5 +351,25 @@
     condition: template
     value_template: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() < 1.0 }}'
   action:
-    service: light.turn_off
-    entity_id: light.Classroom_Lights_West
+    - service: light.turn_off
+      entity_id: light.Classroom_Lights_West
+    - service: light.turn_off
+      entity_id: light.hallway_light
+
+- alias: Recycle Light On
+  trigger:
+    platform: state
+    entity_id: sensor.Recylce_Day
+    to: "Yes"
+  action:
+    service: switch.turn_on
+    entity_id: switch.Recycle_Notification_Light
+
+- alias: Recycle Light Off
+  trigger:
+    platform: state
+    entity_id: sensor.Recylce_Day
+    to: "No"
+  action:
+    service: switch.turn_off
+    entity_id: switch.Recycle_Notification_Light
