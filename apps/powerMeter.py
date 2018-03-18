@@ -19,11 +19,16 @@ class CheckPowerMeter(appapi.AppDaemon):
             if packet is not None:
                 client = InfluxDBClient('localhost', 8086, 'hass', 'hass', 'hass')
                 result = client.query("select value from \"kWh\" WHERE entity_id='i3_power_meter' AND time < now() - 1437m and time > now() - 1443m;")
-                yesterdayPower = list(result.get_points('kWh'))[0]['value']
-                powerDiff = str(round(packet['total_kWh'] - yesterdayPower, 1))
-                msgString = 'Power meter is ' + str(packet['total_kWh']) + 'kWh which is ' + powerDiff + ' kWh more than 24 hours ago'
-                self.call_service("notify/slack_statusbots", message = msgString)
-                break
+                try:
+                    yesterdayPower = list(result.get_points('kWh'))[0]['value']
+                    powerDiff = str(round(packet['total_kWh'] - yesterdayPower, 1))
+                    msgString = 'Power meter is ' + str(packet['total_kWh']) + 'kWh which is ' + powerDiff + ' kWh more than 24 hours ago'
+                    self.call_service("notify/slack_statusbots", message = msgString)
+                    break
+                except IndexError:
+                    msgString = 'Power meter is ' + str(packet['total_kWh']) + 'kWh. Error retrieving yesterday\'s power useage.'
+                    self.call_service("notify/slack_statusbots", message = msgString)
+                    break
         pm.close()
 
 class PowerMeter():
