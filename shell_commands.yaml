@@ -1,1 +1,2 @@
 refresh_mqtt: './home/homeassistant/.homeassistant/refresh_mqtt.sh'
+take_snapshot: !secret camera_wget

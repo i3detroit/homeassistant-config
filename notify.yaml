@@ -17,3 +17,10 @@
   platform: slack
   api_key: !secret slack_api_key
   default_channel: '#shopping-list'
+
+- name: camera_bot
+  platform: twitter
+  consumer_key: !secret twitter_consumer_key
+  consumer_secret: !secret twitter_consumer_secret
+  access_token: !secret twitter_access_token
+  access_token_secret: !secret twitter_access_token_secret

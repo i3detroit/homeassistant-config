@@ -373,3 +373,13 @@
   action:
     service: switch.turn_off
     entity_id: switch.Recycle_Notification_Light
+
+- alias: Tweet photo from camera
+  trigger:
+    # this is just a temporary topic sent by the disco button
+    platform: mqtt
+    topic: stat/i3/inside/commons/disco/POWER
+    payload: "ON"
+  action:
+    service: script.turn_on
+    entity_id: script.tweet_image

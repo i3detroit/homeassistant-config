@@ -368,3 +368,13 @@ disco_stop:
       - service: switch.turn_off
         entity_id:
           - switch.Disco_Ball
+
+tweet_image:
+  alias: "Tweet photo"
+  sequence:
+    - service: shell_command.take_snapshot
+    - service: notify.camera_bot
+      data:
+        message: Test
+        data:
+          media: /home/homeassistant/.homeassistant/tmp/snapshot.jpg

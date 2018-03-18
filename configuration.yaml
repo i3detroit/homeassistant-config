@@ -1,18 +1,16 @@
 homeassistant:
   name: i3Detroit
-
   #location info
   latitude: 42.453828
   longitude: -83.113769
   elevation: 197
-
   # metric for Metric, imperial for Imperial
   unit_system: metric
-
   time_zone: America/Detroit
-
   # Customization file
   customize: !include customize.yaml
+  whitelist_external_dirs:
+    - /home/homeassistant/.homeassistant/tmp
 
 # Show links to resources in log and frontend
 # introduction:
@@ -113,6 +111,7 @@ binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
 shell_command: !include shell_commands.yaml
 device_tracker: !include device_tracker.yaml
+camera: !include camera.yaml
 
 # Extra panel for configurator plugin
 panel_iframe:

@@ -10,3 +10,4 @@ home-assistant_v2.db-wal
 compiled/*
 apps/__pycache__/*
 *.swp
+tmp/*
