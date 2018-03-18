@@ -473,3 +473,14 @@
         {% elif is_state('device_tracker.rostock_max', 'not_home') %}
           offline
         {% endif %}
+
+- platform: template
+  sensors:
+    recycle_day:
+      friendly_name: "Recycle Day?"
+      value_template: >-
+        {% if ((now().weekday() == 2) and now().time().hour >= 12) or ((now().weekday() == 3) and now().time().hour <= 3) %}
+          Yes
+        {% else %}
+          No
+        {%- endif %}
