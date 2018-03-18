@@ -65,6 +65,7 @@ infrastructure:
     - sensor.shutdown_button
     - sensor.sonoff_RSSI
     - binary_sensor.front_door_panel_power
+    - sensor.recycle_day
     - group.LWT
     - group.vm_trackers
     - group.openEVSE
@@ -233,6 +234,14 @@ openEVSE:
     - sensor.ev_charger_wh
     - sensor.ev_charger_state
 
+WUndergroud:
+  name: "WU Daily Forecast"
+  entities:
+    - sensor.pws_weather_1d_metric
+    - sensor.pws_weather_1n_metric
+    - sensor.pws_weather_2d_metric
+    - sensor.pws_weather_2n_metric  
+
 YRWeather:
   name: "Current Weather"
   icon: mdi:sun
@@ -280,6 +289,7 @@ misc_switches:
     - switch.classroom_east_light_switch
     - switch.large_bathroom_vent_fan
     - switch.paint_box_vent
+    - switch.recycle_notification_light
 
 device_trackers:
   name: "Device Trackers"
@@ -492,6 +502,7 @@ junk:
     - sensor.i3_power_meter
     - sensor.shutdown_button
     - sensor.sonoff_RSSI
+    - sensor.recycle_day
     - binary_sensor.front_door_panel_power
     - sensor.classroom_east_light_switch
     - sensor.doorbell
