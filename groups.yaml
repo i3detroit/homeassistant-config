@@ -72,6 +72,7 @@ infrastructure:
     - group.APCUPS
     - group.device_trackers
     - group.shutdown
+    - group.genie_charger
 
 hass_settings:
   view: yes
@@ -506,3 +507,13 @@ junk:
     - binary_sensor.front_door_panel_power
     - sensor.classroom_east_light_switch
     - sensor.doorbell
+
+genie_charger:
+  name: "Genie Charger"
+  entities:
+    - sensor.genie_charge_state
+    - sensor.genie_power_draw
+    - sensor.genie_voltage
+    - sensor.genie_current
+    - sensor.genie_energy_use_delta
+    - sensor.genie_energy_use_today

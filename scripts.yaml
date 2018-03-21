@@ -378,3 +378,11 @@ tweet_image:
         message: Test
         data:
           media: /home/homeassistant/.homeassistant/tmp/snapshot.jpg
+
+tts_test:
+  alias: "Test TTS"
+  sequence:
+    - service: tts.google_say
+      data_template:
+        message: "Genie is {{states('sensor.genie_charge_state')}}."
+        cache: false
