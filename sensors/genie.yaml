@@ -1,0 +1,47 @@
+- platform: mqtt
+  name: "Genie Power Draw"
+  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
+  value_template: '{{ value_json.Power }}'
+  force_update: True
+  unit_of_measurement: "Watts"
+
+- platform: mqtt
+  name: "Genie Voltage"
+  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
+  value_template: '{{ value_json.Voltage }}'
+  force_update: True
+  unit_of_measurement: "Volts"
+
+- platform: mqtt
+  name: "Genie Current"
+  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
+  value_template: '{{ value_json.Current }}'
+  force_update: True
+  unit_of_measurement: "Amps"
+
+- platform: mqtt
+  name: "Genie Energy Use Delta"
+  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
+  value_template: '{{ value_json.Period }}'
+  force_update: True
+  unit_of_measurement: "Watt hours"
+
+- platform: mqtt
+  name: "Genie Energy Use Today"
+  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
+  value_template: '{{ value_json.Today }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+
+- platform: template
+  sensors:
+    genie_charge_state:
+      friendly_name: "Genie Charger State"
+      value_template: >-
+        {% if states('sensor.genie_current') | float > 0.5 %}
+          Charging
+        {% elif (states('sensor.genie_current') | float <= 0.5) and (states('sensor.genie_current') | float > 0.1) %}
+          Plugged in, not charging
+        {% else %}
+          Not plugged in
+        {% endif %}
