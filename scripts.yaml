@@ -373,9 +373,10 @@ tweet_image:
   alias: "Tweet photo"
   sequence:
     - service: shell_command.take_snapshot
-    - service: notify.camera_bot
+#    - service: notify.camera_bot
+    - service: notify.i3_twitter
       data:
-        message: Test
+#        message: "@warrenrobinett @erniecline The egg has been found. https://www.i3detroit.org/creating-anoraks-adventure/"
         data:
           media: /home/homeassistant/.homeassistant/tmp/snapshot.jpg
 
@@ -386,3 +387,4 @@ tts_test:
       data_template:
         message: "Genie is {{states('sensor.genie_charge_state')}}."
         cache: false
+

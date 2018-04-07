@@ -375,14 +375,17 @@
     entity_id: switch.Recycle_Notification_Light
 
 - alias: Tweet photo from camera
+  initial_state: 'off'
   trigger:
     # this is just a temporary topic sent by the disco button
     platform: mqtt
-    topic: stat/i3/inside/commons/disco/POWER
-    payload: "ON"
+    topic: info/i3/atari2600/pressed
+    payload: "pressed 2"
   action:
-    service: script.turn_on
-    entity_id: script.tweet_image
+    - service: script.turn_on
+      entity_id: script.tweet_image
+    - service: automation.turn_off
+      entity_id: automation.tweet_photo_from_camera
 
 - alias: Complain if genie not plugged inside
   trigger:
