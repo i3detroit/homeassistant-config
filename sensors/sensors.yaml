@@ -484,3 +484,20 @@
         {% else %}
           No
         {%- endif %}
+
+- platform: command_line
+  name: "HP M712 Black Toner"
+  command: "python3 /home/homeassistant/.homeassistant/sensors/hpm712toner.py"
+  unit_of_measurement: "%"
+  scan_interval: "3600"
+
+- platform: command_line
+  name: "HP M712 Pages Printed on current Toner Cartridge"
+  command: "python3 /home/homeassistant/.homeassistant/sensors/hpm712pagestoner.py"
+  scan_interval: "3600"
+
+- platform: command_line
+  name: "HP M712 Pages Printed"
+  command: "python3 /home/homeassistant/.homeassistant/sensors/hpm712pages.py"
+  scan_interval: "3600"
+

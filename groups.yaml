@@ -39,6 +39,7 @@ Zones:
     - group.fab_lab
     - group.snack_zone
     - group.welding
+    - group.compute_zone
 
 media_players:
   view: yes
@@ -195,6 +196,7 @@ office_lights:
     - light.Craft_Room_Light
     - light.Electronics_Lab_Light
     - light.Small_Bathroom_Light
+    - light.Small_Bathroom_Shower_Light
 
 misc_lights:
   name: "Misc. Lights"
@@ -289,6 +291,7 @@ misc_switches:
     - switch.hallway_light_switch_west
     - switch.classroom_east_light_switch
     - switch.large_bathroom_vent_fan
+    - switch.small_bathroom_vent_fan
     - switch.paint_box_vent
     - switch.recycle_notification_light
 
@@ -418,6 +421,14 @@ snack_zone:
     - sensor.Snapple_Vending_Compressor_Amps
     - sensor.Snapple_Vending_Compressor_Voltage
     - light.LightSnappleVending
+
+compute_zone:
+  name: "Compute Zone"
+  icon: mdi:desktop-classic
+  entities:
+    - sensor.hp_m712_black_toner
+    - sensor.hp_m712_pages_printed_on_current_toner_cartridge
+    - sensor.hp_m712_pages_printed
 
 LWT:
   name: "LWT"
