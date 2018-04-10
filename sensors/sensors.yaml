@@ -542,3 +542,15 @@
   scan_interval: "3600"
   unit_of_measurement: "%"
   value_template: '{{ value_json.HP_72_Yellow }}'
+
+- platform: command_line
+  name: "Plotter Ink Used"
+  command: "python3 /home/homeassistant/.homeassistant/sensors/plotterinkused.py"
+  unit_of_measurement: "ml"
+  scan_interval: "3600"
+
+- platform: command_line
+  name: "Plotter Paper Used"
+  command: "python3 /home/homeassistant/.homeassistant/sensors/plotterpaperused.py"
+  unit_of_measurement: "sqft"
+  scan_interval: "3600"

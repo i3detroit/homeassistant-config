@@ -424,11 +424,13 @@ snack_zone:
 
 compute_zone:
   name: "Compute Zone"
-  icon: mdi:desktop-classic
+  icon: mdi:printer
   entities:
     - sensor.hp_m712_black_toner
     - sensor.hp_m712_pages_printed_on_current_toner_cartridge
     - sensor.hp_m712_pages_printed
+    - sensor.plotter_paper_used
+    - sensor.plotter_ink_used
     - sensor.plotter_matte_black_ink
     - sensor.plotter_photo_black_ink
     - sensor.plotter_gray_ink
