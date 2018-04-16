@@ -359,7 +359,7 @@
 - alias: Recycle Light On
   trigger:
     platform: state
-    entity_id: sensor.recylce_day
+    entity_id: sensor.recycle_day
     to: "Yes"
   action:
     service: switch.turn_on
@@ -368,7 +368,7 @@
 - alias: Recycle Light Off
   trigger:
     platform: state
-    entity_id: sensor.recylce_day
+    entity_id: sensor.recycle_day
     to: "No"
   action:
     service: switch.turn_off
