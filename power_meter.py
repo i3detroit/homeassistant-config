@@ -169,7 +169,10 @@ if __name__ == '__main__':
     pm = PowerMeter()
 
     # live testing, try to grab a data packet from the meter and print it off
-    pm.connect()
+    try:
+        pm.connect()
+    except OSError:
+        quit()
     while True:
         packet = pm.update()
         if packet is not None:
