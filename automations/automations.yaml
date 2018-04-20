@@ -398,15 +398,3 @@
    service: notify.slack_statusbots
    data:
      message: "The genie has been unplugged for over 6 hours"
-
-- alias: Keep front office warm for drying paint
-  trigger: 
-    platform: time
-    hours: '/1'
-    minutes: '45'
-    seconds: '00'
-  action:
-    service: mqtt.publish
-    data:
-      topic: "cmnd/i3/inside/office/thermostat/target"
-      payload: "24"
