@@ -3,7 +3,11 @@ import requests
 import re
 import json
 
-html = requests.get("http://10.13.0.52/hp/device/webAccess/index.htm;jsessionid=r0zrwjx0r1?content=usage").text
+try:
+    html = requests.get("http://10.13.0.52/hp/device/webAccess/index.htm;jsessionid=r0zrwjx0r1?content=usage").text
+
+except OSError:
+    quit()
 
 soup = BeautifulSoup(html, "lxml")
 table = soup.find("table", attrs={"class":"tablePad3"})

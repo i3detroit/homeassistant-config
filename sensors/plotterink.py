@@ -3,7 +3,11 @@ import requests
 import re
 import json
 
-html = requests.get("http://10.13.0.52/hp/device/webAccess/index.htm").text
+try:
+    html = requests.get("http://10.13.0.52/hp/device/webAccess/index.htm").text
+
+except OSError:
+    quit()
 
 i = html.find('Buy paper now')
 
