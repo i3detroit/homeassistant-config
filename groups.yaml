@@ -282,6 +282,8 @@ decor:
     - light.Chandelier02
     - switch.Disco_Ball
     - switch.Disco_Spotlights
+    - light.Elab_Arch_North
+    - light.Elab_Arch_South
 
 misc_switches:
   name: "Misc. Switches"

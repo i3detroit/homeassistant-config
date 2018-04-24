@@ -409,3 +409,53 @@
   command_topic: "cmnd/i3/inside/dooridor/lights/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+
+- platform: mqtt
+  name: Elab Arch North
+  effect_list:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+  state_topic: "stat/i3/inside/elab/accent/arch-north/POWER"
+  command_topic: "cmnd/i3/inside/elab/accent/arch-north/POWER"
+  brightness_state_topic: "stat/i3/inside/elab/accent/arch-north/Dimmer"
+  brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Dimmer"
+  brightness_scale: 100
+  rgb_command_template: "{{ '%02x%02x%02x00' | format(red, green, blue)}}"
+  rgb_state_topic: "stat/i3/inside/elab/accent/arch-north/Color"
+  rgb_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Color"
+  effect_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Scheme"
+  effect_state_topic: "stat/i3/inside/elab/accent/arch-north/Scheme"
+  state_value_template: "{{ value }}"
+  brightness_value_template: "{{ value }}"
+  effect_value_template: "{{ value }}"
+  rgb_command_mode: hex
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: Elab Arch South
+  effect_list:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+  state_topic: "stat/i3/inside/elab/accent/arch-south/POWER"
+  command_topic: "cmnd/i3/inside/elab/accent/arch-south/POWER"
+  brightness_state_topic: "stat/i3/inside/elab/accent/arch-south/Dimmer"
+  brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Dimmer"
+  brightness_scale: 100
+  rgb_command_template: "{{ '%02x%02x%02x00' | format(red, green, blue)}}"
+  rgb_state_topic: "stat/i3/inside/elab/accent/arch-south/Color"
+  rgb_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Color"
+  effect_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Scheme"
+  effect_state_topic: "stat/i3/inside/elab/accent/arch-south/Scheme"
+  state_value_template: "{{ value }}"
+  brightness_value_template: "{{ value }}"
+  effect_value_template: "{{ value }}"
+  rgb_command_mode: hex
+  payload_on: "ON"
+  payload_off: "OFF"
