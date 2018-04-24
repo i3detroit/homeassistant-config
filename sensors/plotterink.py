@@ -7,6 +7,7 @@ try:
     html = requests.get("http://10.13.0.52/hp/device/webAccess/index.htm").text
 
 except OSError:
+    print("Connection Error. Plotter is probably turned off.")
     quit()
 
 i = html.find('Buy paper now')
