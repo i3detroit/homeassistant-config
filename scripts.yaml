@@ -369,16 +369,16 @@ disco_stop:
         entity_id:
           - switch.Disco_Ball
 
-tweet_image:
-  alias: "Tweet photo"
-  sequence:
-    - service: shell_command.take_snapshot
+#tweet_image:
+#  alias: "Tweet photo"
+#  sequence:
+#    - service: shell_command.take_snapshot
 #    - service: notify.camera_bot
-    - service: notify.i3_twitter
-      data:
+#    - service: notify.i3_twitter
+#      data:
 #        message: "@warrenrobinett @erniecline The egg has been found. https://www.i3detroit.org/creating-anoraks-adventure/"
-        data:
-          media: /home/homeassistant/.homeassistant/tmp/snapshot.jpg
+#        data:
+#          media: /home/homeassistant/.homeassistant/tmp/snapshot.jpg
 
 tts_test:
   alias: "Test TTS"
