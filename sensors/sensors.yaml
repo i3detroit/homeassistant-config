@@ -506,42 +506,42 @@
   command: "python3 /home/homeassistant/.homeassistant/sensors/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.HP_72_Matte_black }}'
+  value_template: '{{ value_json.Matte_black }}'
 
 - platform: command_line
   name: "Plotter Photo Black Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.HP_72_Photo_black }}'
+  value_template: '{{ value_json.Photo_black }}'
 
 - platform: command_line
   name: "Plotter Gray Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.HP_72_Gray }}'
+  value_template: '{{ value_json.Gray }}'
 
 - platform: command_line
   name: "Plotter Cyan Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.HP_72_Cyan }}'
+  value_template: '{{ value_json.Cyan }}'
 
 - platform: command_line
   name: "Plotter Magenta Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.HP_72_Magenta }}'
+  value_template: '{{ value_json.Magenta }}'
 
 - platform: command_line
   name: "Plotter Yellow Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.HP_72_Yellow }}'
+  value_template: '{{ value_json.Yellow }}'
 
 - platform: command_line
   name: "Plotter Ink Used"

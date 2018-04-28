@@ -28,7 +28,13 @@ for row in table.find_all("tr")[1:]:
 out = {}
 
 for x in datasets:
-    a = int(re.sub("[^0-9]", "", x[3][1])) / int(re.sub("[^0-9]", "", x[4][1]))
-    out[re.sub(" ", "_", x[1][1])] =  round(100*a)
+    if x[4][1] == "-":
+        inkpct = 0
+        outname = re.sub("HP  ", "", x[1][1])
+    else:
+        inkpct = int(re.sub("[^0-9]", "", x[3][1])) / int(re.sub("[^0-9]", "", x[4][1]))
+        outname = re.sub("HP 72 ", "", x[1][1])
+        outname = re.sub(" ", "_", outname)
+    out[outname] =  round(100*inkpct)
 
 print(json.dumps(out))
