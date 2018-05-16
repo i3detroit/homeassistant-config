@@ -1,9 +1,12 @@
 media_player.commons:
+  name: "Commons TV"
   platform: cast
   unique_id: c207dc4d-d54c-cc3f-cd46-0af76db0bdec
 media_player.speakers:
+  name: "Commons Speakers"
   platform: cast
   unique_id: 9f5ccd53-6061-a040-0764-0f5ce0da2d4e
 media_player.classroom_tv:
+  name: "Classroom TV"
   platform: cast
   unique_id: 383cb6b2-2837-ec96-71c5-7dd9b172cee2
