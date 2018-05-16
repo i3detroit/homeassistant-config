@@ -398,3 +398,21 @@
    service: notify.slack_statusbots
    data:
      message: "The genie has been unplugged for over 6 hours"
+
+- alias: Small bathroom lights sync ON
+  trigger:
+    platform: state
+    entity_id: light.small_bathroom_light
+    to: "on"
+  action:
+    service: light.turn_on
+    entity_id: light.small_bathroom_shower_light
+
+- alias: Small bathroom lights sync OFF
+  trigger:
+    platform: state
+    entity_id: light.small_bathroom_light
+    to: "off"
+  action:
+    service: light.turn_off
+    entity_id: light.small_bathroom_shower_light
