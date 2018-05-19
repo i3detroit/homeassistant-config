@@ -163,11 +163,17 @@ dash_small_glue_sticks:
     - service: notify.slack_shopping_list
       data:
         message: "We require additional small hot glue sticks"
+    - service: notify.slack_craft_room
+      data:
+        message: "We require additional small hot glue sticks"
 
 dash_foam_brushes:
   alias: "Buy kitchen foam brushes"
   sequence:
     - service: notify.slack_shopping_list
+      data:
+        message: "We require additional foam brushes"
+    - service: notify.slack_craft_room
       data:
         message: "We require additional foam brushes"
 
@@ -177,6 +183,10 @@ dash_large_glue_sticks:
     - service: notify.slack_shopping_list
       data:
         message: "We require additional large hot glue sticks"
+    - service: notify.slack_craft_room
+      data:
+        message: "We require additional large hot glue sticks"
+
 
 dash_styrofoam_cups:
   alias: "Buy styrofoam cups"
