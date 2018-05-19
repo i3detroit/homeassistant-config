@@ -327,15 +327,15 @@
     service: light.turn_off
     entity_id: light.Dooridor_Lights
 
-
 - alias: Classroom Lights Sync On
   trigger:
     platform: mqtt
-    topic: stat/i3/inside/classroom/lights-east/POWER
-    payload: 'ON'
+    topic: cmnd/i3/inside/classroom/lights-east/POWER
+    payload: 'TOGGLE'
   condition: 
-    condition: template
-    value_template: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() < 1.0 }}'
+    condition: state
+    entity_id: light.classroom_lights_east
+    state: 'off'
   action:
     - service: light.turn_on
       entity_id: light.Classroom_Lights_West
@@ -345,11 +345,12 @@
 - alias: Classroom Lights Sync Off
   trigger:
     platform: mqtt
-    topic: stat/i3/inside/classroom/lights-east/POWER
-    payload: 'OFF'
+    topic: cmnd/i3/inside/classroom/lights-east/POWER
+    payload: 'TOGGLE'
   condition: 
-    condition: template
-    value_template: '{{ (now() - states.sensor.Classroom_East_Light_Switch.last_updated).total_seconds() < 1.0 }}'
+    condition: state
+    entity_id: light.classroom_lights_east
+    state: 'on'
   action:
     - service: light.turn_off
       entity_id: light.Classroom_Lights_West
@@ -401,18 +402,32 @@
 
 - alias: Small bathroom lights sync ON
   trigger:
-    platform: state
-    entity_id: light.small_bathroom_light
-    to: "on"
+    - platform: state
+      entity_id: light.small_bathroom_light
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: light.small_bathroom_shower_light
+      from: 'off'
+      to: 'on'
   action:
-    service: light.turn_on
-    entity_id: light.small_bathroom_shower_light
+    - service: light.turn_on
+      entity_id: light.small_bathroom_shower_light
+    - service: light.turn_on
+      entity_id: light.small_bathroom_light
 
 - alias: Small bathroom lights sync OFF
   trigger:
-    platform: state
-    entity_id: light.small_bathroom_light
-    to: "off"
+    - platform: state
+      entity_id: light.small_bathroom_light
+      from: 'on'
+      to: 'off'
+    - platform: state
+      entity_id: light.small_bathroom_shower_light
+      from: 'on'
+      to: 'off'
   action:
-    service: light.turn_off
-    entity_id: light.small_bathroom_shower_light
+    - service: light.turn_off
+      entity_id: light.small_bathroom_shower_light
+    - service: light.turn_off
+      entity_id: light.small_bathroom_light
