@@ -263,15 +263,15 @@
         payload: "Home assistant has started"
     - service: shell_command.refresh_mqtt
 
-- alias: Traffic hot
+- alias: Traffic moist
   trigger:
     platform: numeric_state
-    entity_id: sensor.Ground_Cluster_bme280_Temperature
-    above: 23
+    entity_id: sensor.Ground_Cluster_bme280_Humidity
+    above: 75
     for:
       minutes: 3
   action:
-    - service: light.turn_on
+    - service: light.turn_off
       entity_id: light.LightTrafficGreen
     - service: light.turn_off
       entity_id: light.LightTrafficYellow
@@ -281,9 +281,9 @@
 - alias: Traffic medium
   trigger:
     platform: numeric_state
-    entity_id: sensor.Ground_Cluster_bme280_Temperature
-    above: 21
-    below: 23
+    entity_id: sensor.Ground_Cluster_bme280_Humidity
+    above: 40
+    below: 75
     for:
       minutes: 3
   action:
@@ -294,19 +294,19 @@
     - service: light.turn_off
       entity_id: light.LightTrafficRed
 
-- alias: Traffic cold
+- alias: Traffic dry
   trigger:
     platform: numeric_state
-    entity_id: sensor.Ground_Cluster_bme280_Temperature
-    below: 21
+    entity_id: sensor.Ground_Cluster_bme280_Humidity
+    below: 40
     for:
       minutes: 3
   action:
-    - service: light.turn_off
+    - service: light.turn_on
       entity_id: light.LightTrafficGreen
     - service: light.turn_off
       entity_id: light.LightTrafficYellow
-    - service: light.turn_on
+    - service: light.turn_off
       entity_id: light.LightTrafficRed
 
 - alias: Dooridor and Hall Lights Sync On
@@ -431,3 +431,14 @@
       entity_id: light.small_bathroom_shower_light
     - service: light.turn_off
       entity_id: light.small_bathroom_light
+
+- alias: Small Bathroom Fan Timeout 
+  trigger:
+    platform: state
+    entity_id: switch.small_bathroom_vent_fan
+    to: 'on'
+    for:
+      minutes: 30
+  action:
+    - service: switch.turn_off
+      entity_id: light.small_bathroom_vent_fan
