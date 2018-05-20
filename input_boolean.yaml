@@ -1,0 +1,4 @@
+winterized:
+  name: Winterized?
+  icon: mdi:snowflake
+  restore_state: true
