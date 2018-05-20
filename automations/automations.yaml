@@ -442,3 +442,20 @@
   action:
     - service: switch.turn_off
       entity_id: light.small_bathroom_vent_fan
+
+- alias: Exhaust Fan Auto On
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ceiling_outside_temp_diff
+    above: 1
+    for:
+      minutes: 15
+  condition:
+    condition: state
+    entity_id: switch.winterized
+    state: 'off'
+  action:
+    - service: fan.turn_on
+      entity_id: fan.CNCCeilingExhaust
+    - service: fan.turn_on
+      entity_id: fan.SouthCeilingExhaust
