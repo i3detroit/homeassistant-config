@@ -74,6 +74,7 @@ infrastructure:
     - group.device_trackers
     - group.shutdown
     - group.genie_charger
+    - input_select.winter_or_summer
 
 hass_settings:
   view: yes
@@ -107,6 +108,7 @@ HVAC:
     - sensor.fablab_cluster_dht22_temperature
     - sensor.fablab_cluster_lux
     - sensor.commons_temp_diff
+    - sensor.ceiling_outside_temp_diff
 
 office_thermostat:
   name: "Office Thermostat"
