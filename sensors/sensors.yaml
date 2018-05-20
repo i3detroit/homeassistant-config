@@ -554,3 +554,20 @@
   command: "python3 /home/homeassistant/.homeassistant/sensors/plotterpaperused.py"
   unit_of_measurement: "sqft"
   scan_interval: "3600"
+
+- platform: template
+  sensors:
+    ceiling_outside_temp_diff:
+      friendly_name: "Commons ceiling-outside temp diff"
+      unit_of_measurement: "°C"
+      value_template: >-
+        {% if states.sensor.ceiling_cluster_bme280_temperature.state | string == "unknown" or states.sensor.weather_temperature.state | string == "unknown" %}
+          0.0
+        {% else %}
+          {{((states.sensor.ceiling_cluster_bme280_temperature.state | float) - (states.sensor.weather_temperature.state | float)) | round(2)}}
+        {% endif %}
+
+#- platform: mqtt
+#  name: "Water Cooler Flow Counts"
+#  state_topic: "stat/i3/inside/commons/water-cooler/flow"
+#  force_update: True
