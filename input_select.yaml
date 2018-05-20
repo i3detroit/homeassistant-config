@@ -1,0 +1,6 @@
+winter_or_summer:
+  name: Winter or summer
+  options:
+  - Winter
+  - Summer
+  icon: mdi:snowflake

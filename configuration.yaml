@@ -77,7 +77,7 @@ influxdb:
       - sun
       - group
       - device_tracker
-      - input_boolean
+      - input_select
 
 mqtt:
   broker: 10.13.0.22
@@ -112,7 +112,7 @@ binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
 shell_command: !include shell_commands.yaml
 device_tracker: !include device_tracker.yaml
-input_boolean: !include input_boolean.yaml
+input_select: !include input_select.yaml
 
 # Extra panel for configurator plugin
 panel_iframe:
