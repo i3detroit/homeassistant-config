@@ -400,35 +400,67 @@
    data:
      message: "The genie has been unplugged for over 6 hours"
 
-- alias: Small bathroom lights sync ON
+- alias: Small bathroom lights sync ON A
   trigger:
     - platform: state
       entity_id: light.small_bathroom_light
       from: 'off'
       to: 'on'
-    - platform: state
-      entity_id: light.small_bathroom_shower_light
-      from: 'off'
-      to: 'on'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_shower_light
+    state: 'off'
+    for:
+      seconds: 2
   action:
     - service: light.turn_on
       entity_id: light.small_bathroom_shower_light
-    - service: light.turn_on
-      entity_id: light.small_bathroom_light
 
-- alias: Small bathroom lights sync OFF
+- alias: Small bathroom lights sync OFF A
   trigger:
     - platform: state
       entity_id: light.small_bathroom_light
       from: 'on'
       to: 'off'
-    - platform: state
-      entity_id: light.small_bathroom_shower_light
-      from: 'on'
-      to: 'off'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_shower_light
+    state: 'on'
+    for:
+      seconds: 2
   action:
     - service: light.turn_off
       entity_id: light.small_bathroom_shower_light
+
+- alias: Small bathroom lights sync ON B
+  trigger:
+    - platform: state
+      entity_id: light.small_bathroom_shower_light
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_light
+    state: 'off'
+    for:
+      seconds: 2
+  action:
+    - service: light.turn_on
+      entity_id: light.small_bathroom_light
+
+- alias: Small bathroom lights sync OFF B
+  trigger:
+    - platform: state
+      entity_id: light.small_bathroom_shower_light
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_light
+    state: 'on'
+    for:
+      seconds: 2
+  action:
     - service: light.turn_off
       entity_id: light.small_bathroom_light
 
