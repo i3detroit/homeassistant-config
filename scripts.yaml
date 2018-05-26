@@ -398,3 +398,53 @@ tts_test:
         message: "Genie is {{states('sensor.genie_charge_state')}}."
         cache: false
 
+blink_traffic_light_green:
+  alias: Blink Traffic Light Green
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficgreen
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id:
+        - light.lighttrafficgreen
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficgreen
+
+blink_traffic_light_yellow:
+  alias: Blink Traffic Light yellow
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficyellow
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id:
+        - light.lighttrafficyellow
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficyellow
+
+blink_traffic_light_red:
+  alias: Blink Traffic Light red
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficred
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id:
+        - light.lighttrafficred
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficred
