@@ -491,3 +491,14 @@
       entity_id: fan.CNCCeilingExhaust
     - service: fan.turn_on
       entity_id: fan.SouthCeilingExhaust
+
+- alias: Input_text to LED matrix
+  trigger:
+    platform: state
+    entity_id: input_text.led_matrix_input
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/i3/inside/commons/led-matrix/display"
+        payload_template: "^S{{states('input_text.led_matrix_input')}}"
+

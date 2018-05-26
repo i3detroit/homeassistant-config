@@ -78,6 +78,7 @@ influxdb:
       - group
       - device_tracker
       - input_select
+      - input_text
 
 mqtt:
   broker: 10.13.0.22
@@ -113,6 +114,7 @@ switch: !include switches.yaml
 shell_command: !include shell_commands.yaml
 device_tracker: !include device_tracker.yaml
 input_select: !include input_select.yaml
+input_text: !include input_text.yaml
 
 # Extra panel for configurator plugin
 panel_iframe:
@@ -127,3 +129,8 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
+
+logger:
+  default: error
+  logs:
+    custom_components.influxdb: debug
