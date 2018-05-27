@@ -97,3 +97,19 @@
   device_class: power
   force_update: True
 
+- platform: mqtt
+  name: "Front Door Lock"
+  state_topic: "stat/i3/inside/commons/front-door-indicator/door"
+  force_update: True
+
+- platform: mqtt
+  name: "Front Door Lock"
+  state_topic: "stat/i3/inside/commons/front-door-indicator/door-lock"
+  # on means open, off means closed
+  payload_on: "UNLOCKED"
+  payload_off: "LOCKED"
+  # availability_topic: ""
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  device_class: opening
+  force_update: True

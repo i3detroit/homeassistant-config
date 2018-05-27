@@ -567,7 +567,12 @@
           {{((states.sensor.ceiling_cluster_bme280_temperature.state | float) - (states.sensor.weather_temperature.state | float)) | round(2)}}
         {% endif %}
 
-#- platform: mqtt
-#  name: "Water Cooler Flow Counts"
-#  state_topic: "stat/i3/inside/commons/water-cooler/flow"
-#  force_update: True
+- platform: mqtt
+  name: "Water Cooler Flow Counts"
+  state_topic: "stat/i3/inside/commons/water-cooler/flow"
+  force_update: True
+
+- platform: mqtt
+  name: "Front Door Panel Battery Voltage"
+  state_topic: "stat/i3/inside/commons/front-door-indicator/batteryVoltage"
+  force_update: True

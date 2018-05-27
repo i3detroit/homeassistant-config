@@ -34,6 +34,7 @@ Zones:
   view: yes
   icon: mdi:selection
   entities:
+    - sensor.elab_arch_north_ir_receiver
     - group.laser_zone
     - group.laser_zone_stats
     - group.fab_lab
@@ -67,6 +68,8 @@ infrastructure:
     - sensor.shutdown_button
     - sensor.sonoff_RSSI
     - binary_sensor.front_door_panel_power
+    - sensor.front_door_panel_battery_voltage
+    - sensor.water_cooler_flow_counts
     - sensor.recycle_day
     - group.LWT
     - group.vm_trackers
@@ -332,6 +335,8 @@ doors:
   name: "Doors"
   icon: mdi:door
   entities:
+    - binary_sensor.front_door_lock
+    - sensor.front_door_panel_battery_voltage
     - binary_sensor.garage_door_lock_sensor
     - sensor.Garage_Door_Open
     - binary_sensor.glass_door_lock_sensor
@@ -531,6 +536,8 @@ junk:
     - binary_sensor.front_door_panel_power
     - sensor.classroom_east_light_switch
     - sensor.doorbell
+    - sensor.water_cooler_flow_counts
+    - sensor.elab_arch_north_ir_receiver
 
 genie_charger:
   name: "Genie Charger"
