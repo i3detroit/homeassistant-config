@@ -71,6 +71,7 @@ infrastructure:
     - sensor.front_door_panel_battery_voltage
     - sensor.water_cooler_flow_counts
     - sensor.recycle_day
+    - sensor.open_for_tours
     - group.LWT
     - group.vm_trackers
     - group.openEVSE
@@ -533,6 +534,7 @@ junk:
     - sensor.shutdown_button
     - sensor.sonoff_RSSI
     - sensor.recycle_day
+    - sensor.open_for_tours
     - binary_sensor.front_door_panel_power
     - sensor.classroom_east_light_switch
     - sensor.doorbell
