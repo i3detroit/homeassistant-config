@@ -388,7 +388,6 @@
   payload_on: "ON"
   payload_off: "OFF"
 
-
 - platform: mqtt
   name: "Classroom Lights East"
   state_topic: "stat/i3/inside/classroom/lights-east/POWER"

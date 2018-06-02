@@ -272,6 +272,8 @@ warehouse_lights_out:
     - service: light.turn_off
       entity_id:
         - light.light005
+        - light.LightLargeBathroom
+        - group.office_lights
     - delay:
         milliseconds: 500
 
@@ -281,6 +283,8 @@ warehouse_lights_on:
     - service: light.turn_on
       entity_id:
         - light.light005
+        - light.LightLargeBathroom
+        - group.office_lights
     - delay:
         milliseconds: 500
     - service: light.turn_on
