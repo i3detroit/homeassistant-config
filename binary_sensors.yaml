@@ -104,7 +104,7 @@
 
 - platform: mqtt
   name: "Front Door Lock"
-  state_topic: "stat/i3/inside/commons/front-door-indicator/door-lock"
+  state_topic: "stat/i3/inside/commons/front-door/lock"
   # on means open, off means closed
   payload_on: "UNLOCKED"
   payload_off: "LOCKED"
