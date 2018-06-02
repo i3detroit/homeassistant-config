@@ -576,3 +576,14 @@
   name: "Front Door Panel Battery Voltage"
   state_topic: "stat/i3/inside/commons/front-door-indicator/batteryVoltage"
   force_update: True
+
+- platform: template
+  sensors:
+    open_for_tours:
+      friendly_name: "Open For Tours"
+      value_template: >-
+        {% if ((now().weekday() == 4) and now().time().hour >= 18 and now().time().hour <= 21) %}
+          on
+        {% else %}
+          off
+        {%- endif %}

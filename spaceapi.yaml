@@ -1,0 +1,28 @@
+space: i3Detroit
+logo: https://www.i3detroit.org/blog/wp-content/uploads/2009/06/logo-copy.png
+url: https://www.i3detroit.org
+location:
+  address: "1481-A Wordsworth St, Ferndale, MI 48083, USA"
+  # lon: -83.113698
+  # lat: 42.453752
+contact:
+  email: "contact@i3detroit.org"
+  phone: "+1-248-556-9995"
+  irc: "irc.freenode.net/#i3detroit"
+  twitter: "@i3detroit"
+  mailing_list: "https://groups.google.com/forum/#!forum/i3detroit-public"
+  # facebook: "i3detroit"
+issue_report_channels:
+  - email
+state:
+  entity_id: "sensor.open_for_tours"
+sensors:
+  temperature:
+    - "sensor.ground_cluster_bme280_temperature"
+  humidity:
+    - "sensor.ground_cluster_bme280_humidity"
+  # barometer:
+  #   - "sensor.ground_cluster_bme280_pressure"
+# projects:
+#   - "https://i3detroit.org/wiki"
+#   - "https://github.com/i3detroit"
