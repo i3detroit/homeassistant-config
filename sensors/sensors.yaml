@@ -574,7 +574,7 @@
 
 - platform: mqtt
   name: "Front Door Panel Battery Voltage"
-  state_topic: "stat/i3/inside/commons/front-door-indicator/batteryVoltage"
+  state_topic: "tele/i3/inside/commons/front-door-indicator/batteryVoltage"
   force_update: True
 
 - platform: template
