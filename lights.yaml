@@ -413,53 +413,69 @@
 - platform: mqtt
   name: Elab Arch North
   effect_list:
-    - 0
-    - 1
     - 2
     - 3
-    - 4
-  state_topic: "stat/i3/inside/elab/accent/arch-north/POWER"
+  state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
   command_topic: "cmnd/i3/inside/elab/accent/arch-north/POWER"
-  brightness_state_topic: "stat/i3/inside/elab/accent/arch-north/Dimmer"
+  brightness_state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
   brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Dimmer"
   brightness_scale: 100
-  # temporary until RGB gets wired correctly
-  # rgb_command_template: "{{ '00%02x%02x%02x' | format(green, red, blue)}}"
   rgb_command_template: "{{ '%02x%02x%02x00' | format(red, green, blue)}}"
-  rgb_state_topic: "stat/i3/inside/elab/accent/arch-north/Color"
+  rgb_state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
   rgb_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Color"
   effect_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Scheme"
-  effect_state_topic: "stat/i3/inside/elab/accent/arch-north/Scheme"
-  state_value_template: "{{ value }}"
-  brightness_value_template: "{{ value }}"
-  effect_value_template: "{{ value }}"
-  rgb_command_mode: hex
+  effect_state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
+  state_value_template: >
+    {% if "POWER" in value_json %}
+      {{ value_json.POWER }}
+    {% endif %}
+  brightness_value_template: >
+    {% if "Dimmer" in value_json %}
+      {{ value_json.Dimmer }}
+    {% endif %}
+  effect_value_template: >
+    {% if "Scheme" in value_json %}
+      {{ value_json.Scheme }}
+    {% endif %}
+  rgb_value_template: >
+    {% if "Color" in value_json %}
+      {{ (value_json.Color[0:2] | int(int, 16)) | string + ',' + (value_json.Color[2:4] | int(int, 16)) | string + ',' + (value_json.Color[4:6] | int(int, 16)) | string }}
+    {% endif %}
   payload_on: "ON"
   payload_off: "OFF"
+  on_command_type: "brightness"
 
 - platform: mqtt
   name: Elab Arch South
   effect_list:
-    - 0
-    - 1
     - 2
     - 3
-    - 4
-  state_topic: "stat/i3/inside/elab/accent/arch-south/POWER"
+  state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
   command_topic: "cmnd/i3/inside/elab/accent/arch-south/POWER"
-  brightness_state_topic: "stat/i3/inside/elab/accent/arch-south/Dimmer"
+  brightness_state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
   brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Dimmer"
   brightness_scale: 100
-  # temporary until RGB gets wired correctly
-  #rgb_command_template: "{{ '00%02x%02x%02x' | format(red, blue, green)}}"
   rgb_command_template: "{{ '%02x%02x%02x00' | format(red, green, blue)}}"
-  rgb_state_topic: "stat/i3/inside/elab/accent/arch-south/Color"
+  rgb_state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
   rgb_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Color"
   effect_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Scheme"
-  effect_state_topic: "stat/i3/inside/elab/accent/arch-south/Scheme"
-  state_value_template: "{{ value }}"
-  brightness_value_template: "{{ value }}"
-  effect_value_template: "{{ value }}"
-  rgb_command_mode: hex
+  effect_state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
+  state_value_template: >
+    {% if "POWER" in value_json %}
+      {{ value_json.POWER }}
+    {% endif %}
+  brightness_value_template: >
+    {% if "Dimmer" in value_json %}
+      {{ value_json.Dimmer }}
+    {% endif %}
+  effect_value_template: >
+    {% if "Scheme" in value_json %}
+      {{ value_json.Scheme }}
+    {% endif %}
+  rgb_value_template: >
+    {% if "Color" in value_json %}
+      {{ (value_json.Color[0:2] | int(int, 16)) | string + ',' + (value_json.Color[2:4] | int(int, 16)) | string + ',' + (value_json.Color[4:6] | int(int, 16)) | string }}
+    {% endif %}
   payload_on: "ON"
   payload_off: "OFF"
+  on_command_type: "brightness"
