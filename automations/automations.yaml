@@ -252,6 +252,18 @@
     data:
       message: "Front door panel is back online"
 
+- alias: Front door panel low voltage
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.front_door_panel_battery_voltage
+      below: 12.0
+      for:
+        minutes: 5
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Alert! Front door panel voltage is low ({{states.sensor.front_door_panel_battery_voltage.state}} V)"
+
 - alias: Hass notify mqtt on reboot
   trigger: 
     platform: homeassistant
