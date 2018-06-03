@@ -45,7 +45,7 @@
     entity_id: group.machine_shop_lights
     state: 'off'
     for:
-      seconds: 5
+      seconds: 30
   action:
     - service: light.turn_on
       entity_id: group.machine_shop_lights
@@ -482,7 +482,7 @@
     entity_id: switch.small_bathroom_vent_fan
     to: 'on'
     for:
-      minutes: 30
+      minutes: 10
   action:
     - service: switch.turn_off
       entity_id: light.small_bathroom_vent_fan
@@ -512,5 +512,5 @@
     - service: mqtt.publish
       data:
         topic: "cmnd/i3/inside/commons/led-matrix/display"
-        payload_template: "^S{{states('input_text.led_matrix_input')}}"
+        payload_template: '^S{{states("input_text.led_matrix_input")}}'
 
