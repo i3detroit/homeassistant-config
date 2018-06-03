@@ -35,6 +35,7 @@ Zones:
   icon: mdi:selection
   entities:
     - sensor.elab_arch_north_ir_receiver
+    - sensor.elab_arch_south_ir_receiver
     - group.laser_zone
     - group.laser_zone_stats
     - group.fab_lab
@@ -213,6 +214,7 @@ misc_lights:
     - light.LightVinyl
     - light.LightTreehouse
     - light.LightLargeBathroom
+    - light.tool_crib_workbench_lights
 
 shop_lights:
   name: "Shop Lights"
@@ -540,6 +542,7 @@ junk:
     - sensor.doorbell
     - sensor.water_cooler_flow_counts
     - sensor.elab_arch_north_ir_receiver
+    - sensor.elab_arch_south_ir_receiver
 
 genie_charger:
   name: "Genie Charger"
