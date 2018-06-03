@@ -117,12 +117,12 @@ input_select: !include input_select.yaml
 input_text: !include input_text.yaml
 spaceapi: !include spaceapi.yaml
 
-# Extra panel for configurator plugin
+# Embedded Grafana
 panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: http://10.13.0.22:3218
+  grafana:
+    title: "Grafana"
+    icon: mdi:chart-areaspline
+    url: "http://10.13.0.22:3000"
 
 panel_custom:
   - name: floorplan
