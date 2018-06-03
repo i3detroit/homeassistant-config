@@ -1,10 +1,17 @@
 # Generated on 11/20/17 15:41:20
 # by C:\Users\michael\Documents\GitHub\homeassistant-config\generating scripts\lights.py
+# and then replace
+# (  command_topic: "cmnd(/.+/)POWER\d?")
+# with
+# \1\n  availability_topic: "tele\2LWT"\n  payload_available: "online"\n  payload_not_available: "offline"
 
 - platform: mqtt
   name: "light001"
   state_topic: "stat/i3/inside/lights/001/POWER"
   command_topic: "cmnd/i3/inside/lights/001/POWER"
+  availability_topic: "tele/i3/inside/lights/001/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -12,6 +19,9 @@
   name: "light002"
   state_topic: "stat/i3/inside/lights/002/POWER"
   command_topic: "cmnd/i3/inside/lights/002/POWER"
+  availability_topic: "tele/i3/inside/lights/002/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -19,6 +29,9 @@
   name: "light003"
   state_topic: "stat/i3/inside/lights/003/POWER"
   command_topic: "cmnd/i3/inside/lights/003/POWER"
+  availability_topic: "tele/i3/inside/lights/003/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -26,6 +39,9 @@
   name: "light004"
   state_topic: "stat/i3/inside/lights/004/POWER"
   command_topic: "cmnd/i3/inside/lights/004/POWER"
+  availability_topic: "tele/i3/inside/lights/004/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -33,6 +49,9 @@
   name: "light005"
   state_topic: "stat/i3/inside/lights/005/POWER"
   command_topic: "cmnd/i3/inside/lights/005/POWER"
+  availability_topic: "tele/i3/inside/lights/005/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -40,6 +59,9 @@
   name: "light006"
   state_topic: "stat/i3/inside/lights/006/POWER"
   command_topic: "cmnd/i3/inside/lights/006/POWER"
+  availability_topic: "tele/i3/inside/lights/006/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -47,6 +69,9 @@
   name: "light007"
   state_topic: "stat/i3/inside/lights/007/POWER"
   command_topic: "cmnd/i3/inside/lights/007/POWER"
+  availability_topic: "tele/i3/inside/lights/007/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -54,6 +79,9 @@
   name: "light008"
   state_topic: "stat/i3/inside/lights/008/POWER"
   command_topic: "cmnd/i3/inside/lights/008/POWER"
+  availability_topic: "tele/i3/inside/lights/008/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -61,6 +89,9 @@
   name: "light009"
   state_topic: "stat/i3/inside/lights/009/POWER"
   command_topic: "cmnd/i3/inside/lights/009/POWER"
+  availability_topic: "tele/i3/inside/lights/009/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -68,6 +99,9 @@
   name: "light010"
   state_topic: "stat/i3/inside/lights/010/POWER"
   command_topic: "cmnd/i3/inside/lights/010/POWER"
+  availability_topic: "tele/i3/inside/lights/010/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -75,6 +109,9 @@
   name: "light011"
   state_topic: "stat/i3/inside/lights/011/POWER"
   command_topic: "cmnd/i3/inside/lights/011/POWER"
+  availability_topic: "tele/i3/inside/lights/011/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -82,6 +119,9 @@
   name: "light012"
   state_topic: "stat/i3/inside/lights/012/POWER"
   command_topic: "cmnd/i3/inside/lights/012/POWER"
+  availability_topic: "tele/i3/inside/lights/012/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -89,6 +129,9 @@
   name: "light013"
   state_topic: "stat/i3/inside/lights/013/POWER"
   command_topic: "cmnd/i3/inside/lights/013/POWER"
+  availability_topic: "tele/i3/inside/lights/013/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -96,6 +139,9 @@
   name: "light014"
   state_topic: "stat/i3/inside/lights/014/POWER"
   command_topic: "cmnd/i3/inside/lights/014/POWER"
+  availability_topic: "tele/i3/inside/lights/014/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -103,6 +149,9 @@
   name: "light015"
   state_topic: "stat/i3/inside/lights/015/POWER"
   command_topic: "cmnd/i3/inside/lights/015/POWER"
+  availability_topic: "tele/i3/inside/lights/015/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -110,6 +159,9 @@
   name: "light016"
   state_topic: "stat/i3/inside/lights/016/POWER"
   command_topic: "cmnd/i3/inside/lights/016/POWER"
+  availability_topic: "tele/i3/inside/lights/016/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -117,6 +169,9 @@
   name: "light017"
   state_topic: "stat/i3/inside/lights/017/POWER"
   command_topic: "cmnd/i3/inside/lights/017/POWER"
+  availability_topic: "tele/i3/inside/lights/017/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -124,6 +179,9 @@
   name: "light018"
   state_topic: "stat/i3/inside/lights/018/POWER"
   command_topic: "cmnd/i3/inside/lights/018/POWER"
+  availability_topic: "tele/i3/inside/lights/018/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -131,6 +189,9 @@
   name: "light019"
   state_topic: "stat/i3/inside/lights/019/POWER"
   command_topic: "cmnd/i3/inside/lights/019/POWER"
+  availability_topic: "tele/i3/inside/lights/019/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -138,6 +199,9 @@
   name: "light020"
   state_topic: "stat/i3/inside/lights/020/POWER"
   command_topic: "cmnd/i3/inside/lights/020/POWER"
+  availability_topic: "tele/i3/inside/lights/020/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -145,6 +209,9 @@
   name: "light021"
   state_topic: "stat/i3/inside/lights/021/POWER"
   command_topic: "cmnd/i3/inside/lights/021/POWER"
+  availability_topic: "tele/i3/inside/lights/021/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -152,6 +219,9 @@
   name: "light022"
   state_topic: "stat/i3/inside/lights/022/POWER"
   command_topic: "cmnd/i3/inside/lights/022/POWER"
+  availability_topic: "tele/i3/inside/lights/022/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -159,6 +229,9 @@
   name: "light023"
   state_topic: "stat/i3/inside/lights/023/POWER"
   command_topic: "cmnd/i3/inside/lights/023/POWER"
+  availability_topic: "tele/i3/inside/lights/023/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -166,6 +239,9 @@
   name: "light024"
   state_topic: "stat/i3/inside/lights/024/POWER"
   command_topic: "cmnd/i3/inside/lights/024/POWER"
+  availability_topic: "tele/i3/inside/lights/024/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -173,6 +249,9 @@
   name: "light025"
   state_topic: "stat/i3/inside/lights/025/POWER"
   command_topic: "cmnd/i3/inside/lights/025/POWER"
+  availability_topic: "tele/i3/inside/lights/025/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -180,6 +259,9 @@
   name: "light026"
   state_topic: "stat/i3/inside/lights/026/POWER"
   command_topic: "cmnd/i3/inside/lights/026/POWER"
+  availability_topic: "tele/i3/inside/lights/026/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -187,6 +269,9 @@
   name: "light027"
   state_topic: "stat/i3/inside/lights/027/POWER"
   command_topic: "cmnd/i3/inside/lights/027/POWER"
+  availability_topic: "tele/i3/inside/lights/027/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
   brightness_scale: 50
@@ -198,6 +283,9 @@
   name: "LightWelding"
   state_topic: "stat/i3/inside/lights/028/POWER"
   command_topic: "cmnd/i3/inside/lights/028/POWER"
+  availability_topic: "tele/i3/inside/lights/028/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -205,6 +293,9 @@
   name: "light029"
   state_topic: "stat/i3/inside/lights/029/POWER"
   command_topic: "cmnd/i3/inside/lights/029/POWER"
+  availability_topic: "tele/i3/inside/lights/029/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -212,6 +303,9 @@
   name: "light030"
   state_topic: "stat/i3/inside/lights/030/POWER"
   command_topic: "cmnd/i3/inside/lights/030/POWER"
+  availability_topic: "tele/i3/inside/lights/030/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -219,6 +313,9 @@
   name: "light031"
   state_topic: "stat/i3/inside/lights/031/POWER"
   command_topic: "cmnd/i3/inside/lights/031/POWER"
+  availability_topic: "tele/i3/inside/lights/031/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -226,6 +323,9 @@
   name: "light032"
   state_topic: "stat/i3/inside/lights/032/POWER"
   command_topic: "cmnd/i3/inside/lights/032/POWER"
+  availability_topic: "tele/i3/inside/lights/032/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -233,6 +333,9 @@
   name: "light033"
   state_topic: "stat/i3/inside/lights/033/POWER"
   command_topic: "cmnd/i3/inside/lights/033/POWER"
+  availability_topic: "tele/i3/inside/lights/033/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -240,6 +343,9 @@
   name: "light034"
   state_topic: "stat/i3/inside/lights/034/POWER"
   command_topic: "cmnd/i3/inside/lights/034/POWER"
+  availability_topic: "tele/i3/inside/lights/034/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -247,6 +353,9 @@
   name: "light035"
   state_topic: "stat/i3/inside/lights/035/POWER"
   command_topic: "cmnd/i3/inside/lights/035/POWER"
+  availability_topic: "tele/i3/inside/lights/035/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -254,6 +363,9 @@
   name: "LightVinyl"
   state_topic: "stat/i3/inside/lights/036/POWER"
   command_topic: "cmnd/i3/inside/lights/036/POWER"
+  availability_topic: "tele/i3/inside/lights/036/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -261,6 +373,9 @@
   name: "LightTreehouse"
   state_topic: "stat/i3/inside/lights/037/POWER"
   command_topic: "cmnd/i3/inside/lights/037/POWER"
+  availability_topic: "tele/i3/inside/lights/037/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -268,6 +383,9 @@
   name: "light038"
   state_topic: "stat/i3/inside/lights/038/POWER"
   command_topic: "cmnd/i3/inside/lights/038/POWER"
+  availability_topic: "tele/i3/inside/lights/038/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
   brightness_scale: 50
@@ -279,6 +397,9 @@
   name: "light039"
   state_topic: "stat/i3/inside/lights/039/POWER"
   command_topic: "cmnd/i3/inside/lights/039/POWER"
+  availability_topic: "tele/i3/inside/lights/039/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
   brightness_scale: 50
@@ -290,6 +411,9 @@
   name: "light040"
   state_topic: "stat/i3/inside/lights/040/POWER"
   command_topic: "cmnd/i3/inside/lights/040/POWER"
+  availability_topic: "tele/i3/inside/lights/040/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
   brightness_scale: 50
@@ -301,6 +425,9 @@
   name: "LightLargeBathroom"
   state_topic: "stat/i3/inside/large-bathroom/light/POWER"
   command_topic: "cmnd/i3/inside/large-bathroom/light/POWER"
+  availability_topic: "tele/i3/inside/large-bathroom/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -308,6 +435,9 @@
   name: "LightMediaLab"
   state_topic: "stat/i3/inside/media-lab/lights/POWER"
   command_topic: "cmnd/i3/inside/media-lab/lights/POWER"
+  availability_topic: "tele/i3/inside/media-lab/lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -315,6 +445,9 @@
   name: "LightSnappleVending"
   state_topic: "stat/i3/inside/commons/snapple-vending-light/POWER"
   command_topic: "cmnd/i3/inside/commons/snapple-vending-light/POWER"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -322,6 +455,9 @@
   name: "LightTrafficRed"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER1"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER1"
+  availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -329,6 +465,9 @@
   name: "LightTrafficYellow"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER2"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER2"
+  availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -336,6 +475,9 @@
   name: "LightTrafficGreen"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER3"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER3"
+  availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -343,6 +485,9 @@
   name: "Chandelier01"
   state_topic: "stat/i3/inside/accent/chandelier-01/POWER"
   command_topic: "cmnd/i3/inside/accent/chandelier-01/POWER"
+  availability_topic: "tele/i3/inside/accent/chandelier-01/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -350,6 +495,9 @@
   name: "Chandelier02"
   state_topic: "stat/i3/inside/accent/chandelier-02/POWER"
   command_topic: "cmnd/i3/inside/accent/chandelier-02/POWER"
+  availability_topic: "tele/i3/inside/accent/chandelier-02/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -357,6 +505,9 @@
   name: "Craft Room Light"
   state_topic: "stat/i3/inside/craftroom/light/POWER"
   command_topic: "cmnd/i3/inside/craftroom/light/POWER"
+  availability_topic: "tele/i3/inside/craftroom/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -364,6 +515,9 @@
   name: "Electronics Lab Light"
   state_topic: "stat/i3/inside/elab/light/POWER"
   command_topic: "cmnd/i3/inside/elab/light/POWER"
+  availability_topic: "tele/i3/inside/elab/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -371,6 +525,9 @@
   name: "Hallway Light"
   state_topic: "stat/i3/inside/hallway/light/POWER"
   command_topic: "cmnd/i3/inside/hallway/light/POWER"
+  availability_topic: "tele/i3/inside/hallway/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -378,6 +535,9 @@
   name: "Small Bathroom Light"
   state_topic: "stat/i3/inside/small-bathroom/light/POWER"
   command_topic: "cmnd/i3/inside/small-bathroom/light/POWER"
+  availability_topic: "tele/i3/inside/small-bathroom/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -385,6 +545,9 @@
   name: "Small Bathroom Shower Light"
   state_topic: "stat/i3/inside/small-bathroom/shower-light/POWER"
   command_topic: "cmnd/i3/inside/small-bathroom/shower-light/POWER"
+  availability_topic: "tele/i3/inside/small-bathroom/shower-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -392,6 +555,9 @@
   name: "Classroom Lights East"
   state_topic: "stat/i3/inside/classroom/lights-east/POWER"
   command_topic: "cmnd/i3/inside/classroom/lights-east/POWER"
+  availability_topic: "tele/i3/inside/classroom/lights-east/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -399,6 +565,9 @@
   name: "Classroom Lights West"
   state_topic: "stat/i3/inside/classroom/lights-west/POWER"
   command_topic: "cmnd/i3/inside/classroom/lights-west/POWER"
+  availability_topic: "tele/i3/inside/classroom/lights-west/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -406,6 +575,19 @@
   name: "Dooridor Lights"
   state_topic: "stat/i3/inside/dooridor/lights/POWER"
   command_topic: "cmnd/i3/inside/dooridor/lights/POWER"
+  availability_topic: "tele/i3/inside/dooridor/lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Tool Crib Workbench Lights"
+  state_topic: "stat/i3/inside/tool-crib/workbench-lights/POWER"
+  command_topic: "cmnd/i3/inside/tool-crib/workbench-lights/POWER"
+  availability_topic: "tele/i3/inside/tool-crib/workbench-lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
 
@@ -416,6 +598,7 @@
     - 3
   state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
   command_topic: "cmnd/i3/inside/elab/accent/arch-north/POWER"
+  availability_topic: "tele/i3/inside/elab/accent/arch-north/LWT"
   brightness_state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
   brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Dimmer"
   brightness_scale: 100
@@ -442,6 +625,8 @@
     {% endif %}
   payload_on: "ON"
   payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   on_command_type: "brightness"
 
 - platform: mqtt
@@ -451,6 +636,7 @@
     - 3
   state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
   command_topic: "cmnd/i3/inside/elab/accent/arch-south/POWER"
+  availability_topic: "tele/i3/inside/elab/accent/arch-south/LWT"
   brightness_state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
   brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Dimmer"
   brightness_scale: 100
@@ -477,4 +663,6 @@
     {% endif %}
   payload_on: "ON"
   payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   on_command_type: "brightness"
