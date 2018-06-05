@@ -105,9 +105,9 @@ groups:
 
   - name: Ceiling Fans
     entities:
-      - fan.commonsceilingfans
-      - fan.machineshopceilingfan
-      - fan.laserceilingfan
+      - switch.commonsceilingfans
+      - switch.machineshopceilingfan
+      - switch.laserceilingfan
     states:
       - state: 'on'
         class: 'light-on'
