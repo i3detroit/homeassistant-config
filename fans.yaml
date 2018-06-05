@@ -12,6 +12,9 @@
   command_topic: "cmnd/i3/inside/commons/ceiling-fans/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/ceiling-fans/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "LaserCeilingFan"
@@ -19,6 +22,9 @@
   command_topic: "cmnd/i3/inside/laser-zone/ceiling-fan/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/ceiling-fan/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "MachineShopCeilingFan"
@@ -26,6 +32,9 @@
   command_topic: "cmnd/i3/inside/machine-shop/ceiling-fan/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/machine-shop/ceiling-fan/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 # Exhaust Fans
 - platform: mqtt
@@ -34,6 +43,9 @@
   command_topic: "cmnd/i3/inside/fablab/vent/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/fablab/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "LaserZoneExhaustFan"
@@ -41,6 +53,9 @@
   command_topic: "cmnd/i3/inside/laser-zone/vent-fan/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/vent-fan/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "CNCCeilingExhaust"
@@ -48,6 +63,9 @@
   command_topic: "cmnd/i3/inside/cnc/vent/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/cnc/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "SouthCeilingExhaust"
@@ -55,4 +73,7 @@
   command_topic: "cmnd/i3/inside/commons/south-vent/POWER"
   payload_on: "ON"
   payload_off: "OFF"
-
+  availability_topic: "tele/i3/inside/commons/south-vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  

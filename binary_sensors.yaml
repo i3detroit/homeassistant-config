@@ -74,9 +74,12 @@
 - platform: mqtt
   name: "Snapple Vending Compressor Power"
   state_topic: "tele/i3/inside/commons/snapple-vending-compress/STATE"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
   value_template: '{{ value_json.POWER }}'
   payload_on: "ON"
   payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
   device_class: power
   force_update: True
 
