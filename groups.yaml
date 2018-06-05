@@ -273,11 +273,11 @@ shop_fans:
   name: "Ceiling Fans"
   icon: mdi:fan
   entities: 
-    - fan.CommonsCeilingFans
-    - fan.LaserCeilingFan
-    - fan.MachineShopCeilingFan
-    - fan.CNCCeilingExhaust
-    - fan.SouthCeilingExhaust
+    - switch.CommonsCeilingFans
+    - switch.LaserCeilingFan
+    - switch.MachineShopCeilingFan
+    - switch.CNCCeilingExhaust
+    - switch.SouthCeilingExhaust
 
 decor:
   name: "Decor"
@@ -373,8 +373,8 @@ shutdown:
   #  - switch.Air_Compressor
   #  - switch.Paint_Box_Vent
   #  - switch.Large_Bathroom_Vent_Fan
-  #  - fan.LaserZoneExhaustFan
-  #  - fan.FLV_Fan
+  #  - switch.LaserZoneExhaustFan
+  #  - switch.FLV_Fan
   #  - switch.Fab_Lab_Chiller
   #  - switch.Bumblebee
   #  - switch.Bumblebee_Chiller
@@ -394,7 +394,7 @@ laser_zone:
     - switch.Wolverine_Chiller
     - sensor.wolverine_tube_time
     - sensor.Wolverine_Blast_Gate
-    - fan.laserzoneexhaustfan
+    - switch.laserzoneexhaustfan
     - switch.Air_Compressor
 
 laser_zone_stats:
@@ -416,7 +416,7 @@ fab_lab:
   icon: mdi:power
   control: hidden
   entities:
-    - fan.FLV_Fan
+    - switch.FLV_Fan
     - switch.Fab_Lab_Chiller
 
 welding:

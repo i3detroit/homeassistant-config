@@ -7,8 +7,8 @@
     entity_id: switch.Wolverine
     to: 'on'
   action:
-    service: fan.turn_on
-    entity_id: fan.LaserZoneExhaustFan
+    service: switch.turn_on
+    entity_id: switch.LaserZoneExhaustFan
 
 - alias: Laser cutter exhaust off when both lasers off
   trigger:
@@ -28,8 +28,8 @@
         entity_id: switch.Wolverine
         state: 'off'
   action:
-    service: fan.turn_off
-    entity_id: fan.LaserZoneExhaustFan
+    service: switch.turn_off
+    entity_id: switch.LaserZoneExhaustFan
 
 - alias: Air Compressor on for laser cutters
   trigger:

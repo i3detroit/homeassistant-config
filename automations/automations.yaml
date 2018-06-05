@@ -128,7 +128,7 @@
 - alias: Fab lab fan status sign on
   trigger:
     - platform: state
-      entity_id: fan.flv_fan
+      entity_id: switch.flv_fan
       to: 'on'
   action:
     service: mqtt.publish
@@ -139,7 +139,7 @@
 - alias: Fab lab fan status sign off
   trigger:
     - platform: state
-      entity_id: fan.flv_fan
+      entity_id: switch.flv_fan
       to: 'off'
   action:
     service: mqtt.publish
@@ -226,10 +226,10 @@
     entity_id: group.shop_lights
     state: 'on'
   action:
-    - service: fan.turn_on
-      entity_id: fan.CommonsCeilingFans
-    - service: fan.turn_on
-      entity_id: fan.LaserCeilingFan
+    - service: switch.turn_on
+      entity_id: switch.CommonsCeilingFans
+    - service: switch.turn_on
+      entity_id: switch.LaserCeilingFan
 
 - alias: Front door panel off alert
   trigger:
@@ -499,10 +499,10 @@
     entity_id: input_select.winter_or_summer
     state: 'Summer'
   action:
-    - service: fan.turn_on
-      entity_id: fan.CNCCeilingExhaust
-    - service: fan.turn_on
-      entity_id: fan.SouthCeilingExhaust
+    - service: switch.turn_on
+      entity_id: switch.CNCCeilingExhaust
+    - service: switch.turn_on
+      entity_id: switch.SouthCeilingExhaust
 
 - alias: Input_text to LED matrix
   trigger:

@@ -33,10 +33,10 @@ emergency_lights_reset:
         # So the values given here get renormalized before being sent out mqtt, hence...
         # 5 / 255 * 50 = 2 brightness on the tasmota scale
         brightness: 24
-    - service: fan.turn_on
-      entity_id: fan.CommonsCeilingFans
-    - service: fan.turn_on
-      entity_id: fan.LaserCeilingFan
+    - service: switch.turn_on
+      entity_id: switch.CommonsCeilingFans
+    - service: switch.turn_on
+      entity_id: switch.LaserCeilingFan
 
 dash_green_tape:
   alias: "Buy green tape"
