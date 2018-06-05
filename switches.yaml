@@ -1,63 +1,60 @@
 # 
 #   - platform: mqtt
 #     name: ""
-#     state_topic: "stat"
-#     command_topic: "cmnd"
-#     availability_topic: "tele"
+#     state_topic: "stat/"
+#     command_topic: "cmnd/"
+#     availability_topic: "tele/"
 #     payload_on: "ON"
 #     payload_off: "OFF"
-#     payload_available: "online"
-#     payload_not_available: "offline"
+#     payload_available: "Online"
+#     payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Air Compressor"
   state_topic: "stat/i3/inside/infrastructure/air-compressor/POWER"
   command_topic: "cmnd/i3/inside/infrastructure/air-compressor/POWER"
-  # availability_topic: "tele"
   payload_on: "ON"
   payload_off: "OFF"
-  # payload_available: "online"
-  # payload_not_available: "offline"
 
 - platform: mqtt
   name: "Air Compressor Valve"
   state_topic: "stat/i3/inside/infrastructure/compressor-valve/POWER"
   command_topic: "cmnd/i3/inside/infrastructure/compressor-valve/POWER"
-  # availability_topic: "tele/i3/inside/infrastructure/compressor-valve/LWT"
+  availability_topic: "tele/i3/inside/infrastructure/compressor-valve/LWT"
   payload_on: "ON"
   payload_off: "OFF"
-  # payload_available: "online"
-  # payload_not_available: "offline"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Classroom Sign"
   state_topic: "stat/i3/inside/classroom/sign/POWER"
   command_topic: "cmnd/i3/inside/classroom/sign/POWER"
-  # availability_topic: "tele/i3/inside/classroom/sign/LWT"
+  availability_topic: "tele/i3/inside/classroom/sign/LWT"
   payload_on: "ON"
   payload_off: "OFF"
-  # payload_available: "online"
-  # payload_not_available: "offline"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Disco Ball"
   state_topic: "stat/i3/inside/commons/disco/POWER"
   command_topic: "cmnd/i3/inside/commons/disco/POWER"
-  # availability_topic: "tele/i3/inside/commons/disco/LWT"
+  availability_topic: "tele/i3/inside/commons/disco/LWT"
   payload_on: "ON"
   payload_off: "OFF"
-  # payload_available: "online"
-  # payload_not_available: "offline"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Paint Box Vent"
   state_topic: "stat/i3/inside/commons/paint-box/POWER"
   command_topic: "cmnd/i3/inside/commons/paint-box/POWER"
-  # availability_topic: "tele/i3/inside/commons/paint-box/LWT"
+  availability_topic: "tele/i3/inside/commons/paint-box/LWT"
   payload_on: "ON"
   payload_off: "OFF"
-  # payload_available: "online"
-  # payload_not_available: "offline"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Large Bathroom Vent Fan"
@@ -65,6 +62,9 @@
   command_topic: "cmnd/i3/inside/large-bathroom/vent/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/large-bathroom/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Small Bathroom Vent Fan"
@@ -72,6 +72,9 @@
   command_topic: "cmnd/i3/inside/small-bathroom/vent/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/small-bathroom/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Fab Lab Chiller"
@@ -79,6 +82,9 @@
   command_topic: "cmnd/i3/inside/fablab/chiller/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/fablab/chiller/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Bumblebee Chiller"
@@ -86,6 +92,9 @@
   command_topic: "cmnd/i3/inside/laser-zone/bumblebee/chiller/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/bumblebee-chiller/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Wolverine Chiller"
@@ -93,6 +102,9 @@
   command_topic: "cmnd/i3/inside/laser-zone/wolverine/chiller/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/wolverine/chiller/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Hallway Light Switch West"
@@ -100,6 +112,29 @@
   command_topic: "cmnd/i3/inside/hallway/lightswitch-west/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/hallway/lightswitch-west/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Hallway Light Switch West"
+  state_topic: "stat/i3/inside/hallway/lightswitch-east/POWER"
+  command_topic: "cmnd/i3/inside/hallway/lightswitch-east/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/hallway/lightswitch-east/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Hallway Light Switch West"
+  state_topic: "stat/i3/inside/classroom/lightswitch-east/POWER"
+  command_topic: "cmnd/i3/inside/classroom/lightswitch-east/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/classroom/lightswitch-east/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Bumblebee"
@@ -107,6 +142,9 @@
   command_topic: "cmnd/i3/inside/laser-zone/bumblebee/laser/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/bumblebee/laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Wolverine"
@@ -114,6 +152,9 @@
   command_topic: "cmnd/i3/inside/laser-zone/wolverine/laser/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/wolverine/laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Disco Spotlights"
@@ -121,6 +162,9 @@
   command_topic: "cmnd/i3/inside/commons/accent/disco-spotlights/POWER"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/accent/disco-spotlights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Recycle Notification Light"
@@ -128,3 +172,6 @@
   command_topic: "cmnd/i3/inside/commons/notification-lights/POWER1"
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/notification-lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
