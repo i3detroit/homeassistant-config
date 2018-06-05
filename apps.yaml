@@ -9,3 +9,7 @@ check_power_meter:
 vm_tracker:
   module: vmtracker
   class: VMTracker
+
+light_lwt:
+  module: light_lwt_tracker
+  class: LightLWT
