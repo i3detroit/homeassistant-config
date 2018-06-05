@@ -127,16 +127,6 @@
   payload_not_available: "Offline"
 
 - platform: mqtt
-  name: "Hallway Light Switch West"
-  state_topic: "stat/i3/inside/classroom/lightswitch-east/POWER"
-  command_topic: "cmnd/i3/inside/classroom/lightswitch-east/POWER"
-  payload_on: "ON"
-  payload_off: "OFF"
-  availability_topic: "tele/i3/inside/classroom/lightswitch-east/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
   name: "Bumblebee"
   state_topic: "stat/i3/inside/laser-zone/bumblebee/laser/POWER"
   command_topic: "cmnd/i3/inside/laser-zone/bumblebee/laser/POWER"
