@@ -107,7 +107,6 @@ scene: !include scenes.yaml
 
 # include device configs
 light: !include lights.yaml
-fan: !include fans.yaml
 sensor: !include_dir_merge_list sensors
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
