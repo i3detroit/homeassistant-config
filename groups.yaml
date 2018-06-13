@@ -297,6 +297,7 @@ decor:
 misc_switches:
   name: "Misc. Switches"
   entities:
+    - switch.Air_Compressor
     - switch.air_compressor_valve
     - switch.Classroom_Sign
     - switch.hallway_light_switch_west
@@ -368,18 +369,11 @@ shutdown:
   control: hidden
   entities:
     - switch.Disco_Ball
-  #  - group.shop_lights
-  #  - group.shop_fans
-  #  - switch.Air_Compressor
-  #  - switch.Paint_Box_Vent
-  #  - switch.Large_Bathroom_Vent_Fan
-  #  - switch.LaserZoneExhaustFan
-  #  - switch.FLV_Fan
-  #  - switch.Fab_Lab_Chiller
-  #  - switch.Bumblebee
-  #  - switch.Bumblebee_Chiller
-  #  - switch.Wolverine
-  #  - switch.Wolverine_Chiller
+    - switch.CNCCeilingExhaust
+    - switch.SouthCeilingExhaust
+    - switch.Paint_Box_Vent
+    - switch.Large_Bathroom_Vent_Fan
+    - switch.Small_Bathroom_Vent_Fan
 
 laser_zone:
   name: "Laser Zone"
@@ -429,6 +423,7 @@ snack_zone:
   icon: mdi:food-fork-drink
   control: hidden
   entities:
+    - sensor.water_cooler_filter_use
     - binary_sensor.Snapple_Vending_Compressor_Power
     - sensor.Snapple_Vending_Temperature
     - sensor.Snapple_Vending_Compressor_Amps
