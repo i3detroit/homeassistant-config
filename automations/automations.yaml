@@ -514,3 +514,12 @@
         topic: "cmnd/i3/inside/commons/led-matrix/display"
         payload_template: '^S{{states("input_text.led_matrix_input")}}'
 
+- alias: Water Cooler Needs Filter Change
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.water_cooler_filter_use
+    above: 4500
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "The water cooler needs a new filter. Congrats on filtering 4500 liters of water!"
