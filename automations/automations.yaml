@@ -161,8 +161,6 @@
   action:
     - service: light.turn_on
       entity_id: light.LightLargeBathroom
-    - service: switch.turn_on
-      entity_id: switch.Large_Bathroom_Vent_Fan
 
 - alias: Large Bathroom Motion OFF 
   trigger:
@@ -174,6 +172,15 @@
   action:
     - service: light.turn_off
       entity_id: light.LightLargeBathroom
+
+- alias: Large Bathroom Fan Timeout
+  trigger:
+    platform: state
+    entity_id: switch.Large_Bathroom_Vent_Fan
+    to: 'on'
+    for:
+      minutes: 15
+  action:
     - service: switch.turn_off
       entity_id: switch.Large_Bathroom_Vent_Fan
 
@@ -482,7 +489,7 @@
     entity_id: switch.small_bathroom_vent_fan
     to: 'on'
     for:
-      minutes: 10
+      minutes: 15
   action:
     - service: switch.turn_off
       entity_id: light.small_bathroom_vent_fan
