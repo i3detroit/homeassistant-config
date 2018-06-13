@@ -1,17 +1,3 @@
-# Publish 'clear' to the shutdown button topic to prevent accidental triggering
-# - alias: Reset shutdown button mqtt
-#   trigger:
-#     platform: state
-#     entity_id: sensor.Shutdown_button
-#     to: 'DOWNSHUT'
-#     for:
-#       seconds: 5
-#   action:
-#     service: mqtt.publish
-#     data:
-#       topic: "cmnd/i3/automation/shutdown"
-#       payload: "clear"
-
 - alias: Shutdown the whole space
   trigger:
     platform: mqtt
