@@ -89,6 +89,43 @@ hass_settings:
     - group.all_scripts
     - group.all_automations
 
+shop_lights:
+  name: "Shop Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - group.row_1_lights
+    - group.row_2_lights
+    - group.row_3_lights
+    - group.row_4_lights
+    - group.row_5_lights
+    - group.machine_shop_lights
+    - group.office_lights
+    - group.misc_lights
+
+office_lights:
+  name: "Office Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.Classroom_Lights_East
+    - light.Classroom_Lights_West
+    - light.Dooridor_Lights
+    - light.Hallway_Light
+    - light.LightMediaLab
+    - light.Craft_Room_Light
+    - light.Electronics_Lab_Light
+    - light.Small_Bathroom_Light
+    - light.Small_Bathroom_Shower_Light
+
+misc_lights:
+  name: "Misc. Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.LightWelding
+    - light.LightVinyl
+    - light.LightTreehouse
+    - light.LightLargeBathroom
+    - light.tool_crib_workbench_lights
+
 HVAC:
   name: "Atmospheric Sensors"
   icon: mdi:thermometer
@@ -191,43 +228,6 @@ machine_shop_lights:
     - light.light033
     - light.light034
     - light.light035
-
-office_lights:
-  name: "Office Lights"
-  icon: mdi:ceiling-light
-  entities:
-    - light.Classroom_Lights_East
-    - light.Classroom_Lights_West
-    - light.Dooridor_Lights
-    - light.Hallway_Light
-    - light.LightMediaLab
-    - light.Craft_Room_Light
-    - light.Electronics_Lab_Light
-    - light.Small_Bathroom_Light
-    - light.Small_Bathroom_Shower_Light
-
-misc_lights:
-  name: "Misc. Lights"
-  icon: mdi:ceiling-light
-  entities:
-    - light.LightWelding
-    - light.LightVinyl
-    - light.LightTreehouse
-    - light.LightLargeBathroom
-    - light.tool_crib_workbench_lights
-
-shop_lights:
-  name: "Shop Lights"
-  icon: mdi:ceiling-light
-  entities:
-    - group.row_1_lights
-    - group.row_2_lights
-    - group.row_3_lights
-    - group.row_4_lights
-    - group.row_5_lights
-    - group.machine_shop_lights
-    - group.office_lights
-    - group.misc_lights
 
 emergency_lights:
   name: "Emergency Lights"
