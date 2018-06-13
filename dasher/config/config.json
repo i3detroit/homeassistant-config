@@ -1,0 +1,233 @@
+{
+  "buttons": [
+  {
+    "name": "One",
+    "address": "44:65:0d:78:94:12",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_green_tape"}
+  },
+  {
+    "name": "Two",
+    "address": "44:65:0d:c6:e5:21",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_paper_towels"}
+  },
+  {
+    "name": "Three",
+    "address": "0c:47:c9:7c:55:20",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_sharpies"}
+  },
+  {
+    "name": "Four",
+    "address": "0c:47:c9:ed:9c:46",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_blue_towels"}
+  },
+  {
+    "name": "Five",
+    "address": "44:65:0d:68:38:c9",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_toilet_paper"}
+  },
+  {
+    "name": "Six",
+    "address": "ac:63:be:61:47:f5",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_plastic_spoons"}
+  },
+  {
+    "name": "Seven",
+    "address": "44:65:0d:4d:a6:0b",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_plastic_forks"}
+  },
+  {
+    "name": "Eight",
+    "address": "ac:63:be:a0:4a:d4",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_plastic_knives"}
+  },
+  {
+    "name": "Nine",
+    "address": "74:75:48:6f:3b:b7",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_paper_plates"}
+  },
+  {
+    "name": "Ten",
+    "address": "f0:27:2d:ef:a8:a2",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_plastic_cups"}
+  },
+  {
+    "name": "Eleven",
+    "address": "0c:47:c9:a7:e7:a2",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_paint_booth_filters"}
+  },
+  {
+    "name": "Twelve",
+    "address": "fc:a6:67:66:35:0c",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_bowls"}
+  },
+  {
+    "name": "Thirteen",
+    "address": "b4:7c:9c:c2:8b:40",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_chopsticks"}
+  },
+  {
+    "name": "Fourteen",
+    "address": "50:f5:da:9c:d5:dc",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_centerpull_towels"}
+  },
+  {
+    "name": "Fifteen",
+    "address": "78:e1:03:99:a5:be",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_towel_dispenser_towels"}
+  },
+  {
+    "name": "Sixteen",
+    "address": "fc:a6:67:f3:fc:50",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_33_gallon_trash_bags"}
+  },
+  {
+    "name": "Seventeen",
+    "address": "78:e1:03:ec:1f:98",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_kitchen_trash_bags"}
+  },
+  {
+    "name": "Eighteen",
+    "address": "fc:65:de:c4:12:04",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_small_glue_sticks"}
+  },
+  {
+    "name": "Nineteen",
+    "address": "78:e1:03:a3:0c:68",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_foam_brushes"}
+  },
+  {
+    "name": "Twenty",
+    "address": "78:e1:03:24:5d:1b",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_large_glue_sticks"}
+  },
+  {
+    "name": "Twenty_one",
+    "address": "fc:a6:67:23:52:a8",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_small_glue_sticks"}
+  },
+  {
+    "name": "Twenty_two",
+    "address": "78:e1:03:9d:1c:9d",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_large_glue_sticks"}
+  },
+  {
+    "name": "Twenty_three",
+    "address": "fc:a6:67:bb:f6:ff",
+    "timeout": "60000",
+    "protocol": "udp",
+    "method": "POST",
+    "url": "http://10.13.0.22:8123/api/services/script/turn_on",
+    "json": true,
+    "body": {"entity_id": "script.dash_styrofoam_cups"}
+  }] 
+}

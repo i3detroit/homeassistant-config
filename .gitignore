@@ -11,3 +11,14 @@ compiled/*
 apps/__pycache__/*
 *.swp
 tmp/*
+dasher/.gitignore
+dasher/LICENSE
+dasher/README.md
+dasher/app.js
+dasher/config/config.example.json
+dasher/config/org.dasher.plist
+dasher/lib/
+dasher/package-lock.json
+dasher/package.json
+dasher/script/
+
