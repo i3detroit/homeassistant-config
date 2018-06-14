@@ -103,6 +103,7 @@ developer_settings:
 shop_lights:
   name: "Shop Lights"
   icon: mdi:ceiling-light
+  control: hidden
   entities:
     - group.row_1_lights
     - group.row_2_lights
@@ -116,6 +117,7 @@ shop_lights:
 office_lights:
   name: "Office Lights"
   icon: mdi:ceiling-light
+  control: hidden
   entities:
     - light.Classroom_Lights_East
     - light.Classroom_Lights_West
@@ -130,6 +132,7 @@ office_lights:
 misc_lights:
   name: "Misc. Lights"
   icon: mdi:ceiling-light
+  control: hidden
   entities:
     - light.LightWelding
     - light.LightVinyl
@@ -283,6 +286,7 @@ YRWeather:
 shop_fans:
   name: "Ceiling Fans"
   icon: mdi:fan
+  control: hidden
   entities: 
     - switch.CommonsCeilingFans
     - switch.LaserCeilingFan
@@ -293,6 +297,7 @@ shop_fans:
 decor:
   name: "Decor"
   icon: mdi:traffic-light
+  control: hidden
   entities:
     - light.LightSnappleVending
     - light.LightTrafficGreen
