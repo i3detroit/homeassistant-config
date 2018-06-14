@@ -596,7 +596,7 @@
       entity_id: input_boolean.developer_mode_enable
       to: "on"
       for:
-        minutess: 5
+        minutes: 5
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.developer_mode_enable
