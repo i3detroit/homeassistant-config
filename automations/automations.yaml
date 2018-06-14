@@ -589,3 +589,14 @@
       entity_id: group.emergency_lights
       data:
         visible: false
+
+- alias: Disable developer mode after timeout
+  trigger:
+    - platform: state
+      entity_id: input_boolean.developer_mode_enable
+      to: "on"
+      for:
+        minutess: 5
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.developer_mode_enable
