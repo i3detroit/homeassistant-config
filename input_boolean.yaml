@@ -1,0 +1,4 @@
+developer_mode_enable:
+  name: Arm Self Destruct Sequence
+  icon: mdi:alert-outline
+  initial: off

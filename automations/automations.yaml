@@ -530,3 +530,62 @@
     service: notify.slack_statusbots
     data:
       message: "The water cooler needs a new filter. Congrats on filtering 4500 liters of water!"
+
+- alias: Developer On
+  trigger:
+    - platform: state
+      entity_id: input_boolean.developer_mode_enable
+      to: "on"
+  action:
+    - service: group.set_visibility
+      entity_id: group.all_scripts
+      data:
+        visible: true
+    - service: group.set_visibility
+      entity_id: group.all_automations
+      data:
+        visible: true
+    - service: group.set_visibility
+      entity_id: group.emergency_lights
+      data:
+        visible: true
+
+- alias: Developer Off
+  trigger:
+    - platform: state
+      entity_id: input_boolean.developer_mode_enable
+      to: "off"
+  action:
+    - service: group.set_visibility
+      entity_id: group.all_scripts
+      data:
+        visible: false
+    - service: group.set_visibility
+      entity_id: group.all_automations
+      data:
+        visible: false
+    - service: group.set_visibility
+      entity_id: group.emergency_lights
+      data:
+        visible: false
+
+- alias: Set developer mode defaults on boot
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.developer_mode_enable
+    - service: group.set_visibility
+      entity_id: group.all_scripts
+      data:
+        visible: false
+    - service: group.set_visibility
+      entity_id: group.all_automations
+      data:
+        visible: false
+    - service: group.set_visibility
+      entity_id: group.emergency_lights
+      data:
+        visible: false

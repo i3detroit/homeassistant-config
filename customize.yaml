@@ -1,10 +1,3 @@
-group.all_automations:
-  hidden: false
-  control: hidden
-group.all_scripts:
-  hidden: false
-  control: hidden
-
 sensor.Weather_symbol:
   friendly_name: "Symbol"
 sensor.Weather_temperature:
