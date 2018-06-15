@@ -67,3 +67,32 @@
   value_template: '{{ value_json.Today }}'
   force_update: True
   unit_of_measurement: "kilowatt hours"
+
+- platform: template
+  sensors:
+    bumblebee_power:
+      friendly_name: "Bumblebee"
+      value_template: "{{ states('switch.bumblebee') }}"
+      icon: mdi:flash
+    bumblebee_chiller_power:
+      friendly_name: "Bumblebee Chiller"
+      value_template: "{{ states('switch.bumblebee_chiller') }}"
+      icon: mdi:flash
+    wolverine_power:
+      friendly_name: "Wolverine"
+      value_template: "{{ states('switch.wolverine') }}"
+      icon: mdi:flash
+    wolverine_chiller_power:
+      friendly_name: "Wolverine Chiller"
+      value_template: "{{ states('switch.wolverine_chiller') }}"
+      icon: mdi:flash
+    laser_exhaust_power:
+      friendly_name: "Laser Cutter Exhaust Fan"
+      value_template: "{{ states('switch.LaserZoneExhaustFan') }}"
+      icon: mdi:fan
+    air_compressor_power:
+      friendly_name: "Air Compressor"
+      value_template: "{{ states('switch.air_compressor') }}"
+    air_compressor_valve_state:
+      friendly_name: "Air Compressor Valve"
+      value_template: "{{ states('switch.air_compressor_valve') }}"

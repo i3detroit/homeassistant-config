@@ -313,8 +313,6 @@ decor:
 misc_switches:
   name: "Misc. Switches"
   entities:
-    - switch.Air_Compressor
-    - switch.air_compressor_valve
     - switch.Classroom_Sign
     - switch.hallway_light_switch_west
     - switch.classroom_east_light_switch
@@ -396,16 +394,14 @@ laser_zone:
   icon: mdi:alert-outline
   control: hidden
   entities:
-    - switch.Bumblebee
-    - switch.Bumblebee_Chiller
+    - sensor.bumblebee_power
+    - sensor.bumblebee_chiller_power
     - sensor.Bumblebee_Blast_Gate
-    - sensor.bumblebee_tube_time
-    - switch.Wolverine
-    - switch.Wolverine_Chiller
-    - sensor.wolverine_tube_time
+    - sensor.wolverine
+    - sensor.wolverine_chiller_power
     - sensor.Wolverine_Blast_Gate
-    - switch.laserzoneexhaustfan
-    - switch.Air_Compressor
+    - sensor.laser_cutter_exhaust_fan
+    - sensor.air_compressor_power
 
 laser_zone_stats:
   name: "Laser Zone Stats"
@@ -415,11 +411,13 @@ laser_zone_stats:
     - sensor.Bumblebee_Current
     - sensor.Bumblebee_Energy_Use_Delta
     - sensor.Bumblebee_Energy_Use_Today
+    - sensor.bumblebee_tube_time
     - sensor.Wolverine_Power_Draw
     - sensor.Wolverine_Voltage
     - sensor.Wolverine_Current
     - sensor.Wolverine_Energy_Use_Delta
     - sensor.Wolverine_Energy_Use_Today
+    - sensor.wolverine_tube_time
     
 fab_lab:
   name: "Fab Lab"
@@ -569,3 +567,14 @@ enable_developer:
   name: "Self Destruct"
   entities:
     input_boolean.developer_mode_enable
+
+hidden_controls:
+  name: "BE CAREFUL WITH THESE"
+  entities:
+    - switch.bumblebee
+    - switch.bumblebee_chiller
+    - switch.wolverine
+    - switch.wolverine_chiller
+    - switch.laserzoneexhaustfan
+    - switch.air_compressor
+    - switch.air_compressor_valve
