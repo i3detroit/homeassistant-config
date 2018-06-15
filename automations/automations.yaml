@@ -508,8 +508,8 @@
   action:
     - service: switch.turn_on
       entity_id: switch.CNCCeilingExhaust
-    - service: switch.turn_on
-      entity_id: switch.SouthCeilingExhaust
+    # - service: switch.turn_on
+    #   entity_id: switch.SouthCeilingExhaust
 
 - alias: Input_text to LED matrix
   trigger:
