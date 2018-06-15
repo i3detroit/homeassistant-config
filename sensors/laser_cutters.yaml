@@ -101,24 +101,8 @@
   name: "Bumblebee Blast Gate"
   state_topic: "stat/i3/inside/laser-zone/bumblebee/vent-fan-gate"
   force_update: True
-  icon_template: >-
-    {% if is_state('sensor.Bumblebee_Blast_Gate', 'open') %}
-      mdi:checkbox-marked-circle
-    {% elif is_state('sensor.Bumblebee_Blast_Gate', 'closed') %}
-      mdi:close-circle
-    {% else %}
-      mdi:help
-    {% endif %}
 
 - platform: mqtt
   name: "Wolverine Blast Gate"
   state_topic: "stat/i3/inside/laser-zone/wolverine/vent-fan-gate"
   force_update: True
-  icon_template: >-
-    {% if is_state('sensor.wolverine_blast_gate', 'open') %}
-      mdi:checkbox-marked-circle
-    {% elif is_state('sensor.wolverine_blast_gate', 'closed') %}
-      mdi:close-circle
-    {% else %}
-      mdi:help
-    {% endif %}
