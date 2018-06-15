@@ -397,7 +397,7 @@ laser_zone:
     - sensor.bumblebee_power
     - sensor.bumblebee_chiller_power
     - sensor.Bumblebee_Blast_Gate
-    - sensor.wolverine
+    - sensor.wolverine_power
     - sensor.wolverine_chiller_power
     - sensor.Wolverine_Blast_Gate
     - sensor.laser_cutter_exhaust_fan

@@ -357,16 +357,6 @@
   force_update: True
 
 - platform: mqtt
-  name: "Bumblebee Blast Gate"
-  state_topic: "stat/i3/inside/laser-zone/bumblebee/vent-fan-gate"
-  force_update: True
-
-- platform: mqtt
-  name: "Wolverine Blast Gate"
-  state_topic: "stat/i3/inside/laser-zone/wolverine/vent-fan-gate"
-  force_update: True
-
-- platform: mqtt
   name: "Office Thermostat Ambient Temperature"
   state_topic: "tele/i3/inside/office/thermostat/bme280"
   unit_of_measurement: "°C"
