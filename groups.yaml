@@ -98,6 +98,7 @@ developer_settings:
     - group.enable_developer
     - group.all_scripts
     - group.all_automations
+    - group.hidden_controls
     - group.emergency_lights
 
 shop_lights:
@@ -570,6 +571,7 @@ enable_developer:
 
 hidden_controls:
   name: "BE CAREFUL WITH THESE"
+  control: hidden
   entities:
     - switch.bumblebee
     - switch.bumblebee_chiller
