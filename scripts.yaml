@@ -227,6 +227,7 @@ warehouse_lights_out:
         - light.light024
         - light.light017
         - light.light013
+        - light.tool_crib_workbench_lights
         - light.light009
         - light.light004
     - delay:
@@ -452,3 +453,15 @@ blink_traffic_light_red:
     - service: light.turn_off
       entity_id:
         - light.lighttrafficred
+
+full_shutdown:
+  alias: Activate Self Destruct
+  sequence:
+    - service: switch.turn_off
+      entity_id: 
+        - group.shutdown
+        - switch.air_compressor
+        - switch.bumblebee
+        - switch.wolverine
+    - service: script.turn_on
+      entity_id: script.warehouse_lights_out

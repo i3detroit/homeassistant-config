@@ -553,6 +553,10 @@
       entity_id: group.hidden_controls
       data:
         visible: true
+    - service: group.set_visibility
+      entity_id: group.full_shutdown_card
+      data:
+        visible: true
 
 - alias: Developer Off
   trigger:
@@ -574,6 +578,10 @@
         visible: false
     - service: group.set_visibility
       entity_id: group.hidden_controls
+      data:
+        visible: false
+    - service: group.set_visibility
+      entity_id: group.full_shutdown_card
       data:
         visible: false
 
@@ -599,6 +607,10 @@
         visible: false
     - service: group.set_visibility
       entity_id: group.hidden_controls
+      data:
+        visible: false
+    - service: group.set_visibility
+      entity_id: group.full_shutdown_card
       data:
         visible: false
 
