@@ -465,3 +465,8 @@
         {% else %}
           off
         {%- endif %}
+
+- platform: mqtt
+  name: "Emergency Lights Reset Button"
+  state_topic: "cmnd/i3/automation/emergencyLightsOn"
+  force_update: True
