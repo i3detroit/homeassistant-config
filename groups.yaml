@@ -146,23 +146,17 @@ HVAC:
   entities:
     - sensor.sonoff_temp
     - sensor.sonoff_humid
-    - sensor.ground_cluster_bme280_pressure
-    - sensor.ground_cluster_bme280_temperature
-    - sensor.ground_cluster_bme280_humidity
-    - sensor.ground_cluster_dht22_humidity
-    - sensor.ground_cluster_dht22_temperature
+    - sensor.ground_cluster_pressure
+    - sensor.ground_cluster_temperature
+    - sensor.ground_cluster_humidity
     - sensor.ground_cluster_lux
-    - sensor.ceiling_cluster_bme280_pressure
-    - sensor.ceiling_cluster_bme280_temperature
-    - sensor.ceiling_cluster_bme280_humidity
-    - sensor.ceiling_cluster_dht22_humidity
-    - sensor.ceiling_cluster_dht22_temperature
+    - sensor.ceiling_cluster_pressure
+    - sensor.ceiling_cluster_temperature
+    - sensor.ceiling_cluster_humidity
     - sensor.ceiling_cluster_lux
-    - sensor.fablab_cluster_bme280_pressure
-    - sensor.fablab_cluster_bme280_temperature
-    - sensor.fablab_cluster_bme280_humidity
-    - sensor.fablab_cluster_dht22_humidity
-    - sensor.fablab_cluster_dht22_temperature
+    - sensor.fablab_cluster_pressure
+    - sensor.fablab_cluster_temperature
+    - sensor.fablab_cluster_humidity
     - sensor.fablab_cluster_lux
     - sensor.commons_temp_diff
     - sensor.ceiling_outside_temp_diff
