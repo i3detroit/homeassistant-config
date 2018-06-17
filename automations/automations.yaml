@@ -1,9 +1,12 @@
-- alias: Emergency lights reset daily
+- alias: Emergency lights reset
   trigger:
   - platform: time
     at: '12:00:00'
   - platform: time
     at: '00:00:00'
+  - platform: mqtt
+    topic: cmnd/i3/automation/emergencyLightsOn
+    payload: "ON"
   action:
     - service: script.turn_on
       entity_id: script.emergency_lights_reset
