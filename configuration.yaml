@@ -116,6 +116,7 @@ input_select: !include input_select.yaml
 input_boolean: !include input_boolean.yaml
 input_text: !include input_text.yaml
 spaceapi: !include spaceapi.yaml
+climate: !include climate.yaml
 
 # Embedded Grafana
 panel_iframe:
@@ -132,3 +133,4 @@ panel_custom:
     config: !include floorplan.yaml
 
 logger:
+  default: error

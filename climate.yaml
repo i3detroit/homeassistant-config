@@ -1,0 +1,33 @@
+- platform: mqtt
+  name: Office
+  modes:
+    - 'off'
+    - heat
+    - cool
+  swing_modes:
+    - 0
+    - 1
+    - 2
+    - 3
+  fan_modes:
+    - auto
+    - 'on'
+  availability_topic: "tele/i3/inside/office/thermostat/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  current_temperature_topic: "tele/i3/inside/office/thermostat/bme280"
+  current_temperature_template: "{{value_json.Temperature}}"
+  mode_command_topic: "cmnd/i3/inside/office/thermostat/mode"
+  mode_state_topic: "tele/i3/inside/office/thermostat/output"
+  mode_state_template: "{{value_json.output}}"
+  temperature_command_topic: "cmnd/i3/inside/office/thermostat/target"
+  temperature_state_topic: "tele/i3/inside/office/thermostat/request"
+  temperature_state_template: "{{value_json.TargetTemp}}"
+  fan_mode_command_topic: "cmnd/i3/inside/office/thermostat/fan"
+  fan_mode_state_topic: "tele/i3/inside/office/thermostat/output"
+  fan_mode_state_template: "{{value_json.fan}}"
+  swing_mode_command_topic: "cmnd/i3/inside/office/thermostat/swing"
+  swing_mode_state_topic: tele/i3/inside/office/thermostat/output"
+  swing_mode_state_template: "{{value_json.swing}}"
+  min_temp: 5
+  max_temp: 30

@@ -35,6 +35,7 @@ Atmospherics:
   icon: mdi:thermometer-lines
   entities:
     - group.HVAC
+    - climate.office
     - group.office_thermostat
     - group.YRWeather
 
