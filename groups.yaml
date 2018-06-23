@@ -35,7 +35,6 @@ Atmospherics:
   icon: mdi:thermometer-lines
   entities:
     - group.HVAC
-    - climate.office
     - group.office_thermostat
     - group.YRWeather
 
@@ -166,13 +165,14 @@ office_thermostat:
   name: "Office Thermostat"
   icon: mdi:thermometer
   entities:
-    - sensor.Office_Thermostat_Ambient_Temperature
+    - climate.office
+#    - sensor.Office_Thermostat_Ambient_Temperature
     - sensor.Office_Thermostat_Ambient_Pressure
     - sensor.Office_Thermostat_Ambient_Humidity
-    - sensor.Office_Thermostat_Target_Temperature
+#    - sensor.Office_Thermostat_Target_Temperature
     - sensor.Office_Thermostat_Requested_State
     - sensor.Office_Thermostat_Requested_Fan_State
-    - sensor.Office_Thermostat_Active_State
+#    - sensor.Office_Thermostat_Active_State
     - sensor.Office_Thermostat_Active_Fan_State
 
 row_1_lights:
