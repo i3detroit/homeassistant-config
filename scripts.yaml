@@ -207,10 +207,6 @@ warehouse_lights_out:
         - light.light031
         - light.light032
         - light.light030
-    - delay:
-        milliseconds: 500
-    - service: light.turn_off
-      entity_id:
         - light.light018
         - light.light035
         - light.light034
@@ -342,14 +338,6 @@ warehouse_lights_on:
         milliseconds: 500
     - service: light.turn_on
       entity_id:
-        - light.light018
-        - light.light035
-        - light.light034
-        - light.light029
-    - delay:
-        milliseconds: 500
-    - service: light.turn_on
-      entity_id:
         - light.light025
         - light.light019
         - light.light026
@@ -357,6 +345,10 @@ warehouse_lights_on:
         - light.light031
         - light.light032
         - light.light030
+        - light.light018
+        - light.light035
+        - light.light034
+        - light.light029
     - delay:
         milliseconds: 500
 
