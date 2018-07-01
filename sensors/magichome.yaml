@@ -1,6 +1,6 @@
 - platform: mqtt
   name: "Elab Arch North IR Receiver"
-  state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
+  state_topic: "tele/i3/inside/elab/accent/arch-north/RESULT"
   availability_topic: "tele/i3/inside/elab/accent/arch-north/LWT"
   payload_available: "Online"
   payload_unavailable: "Offline"
@@ -12,7 +12,7 @@
 
 - platform: mqtt
   name: "Elab Arch South IR Receiver"
-  state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
+  state_topic: "tele/i3/inside/elab/accent/arch-south/RESULT"
   availability_topic: "tele/i3/inside/elab/accent/arch-south/LWT"
   payload_available: "Online"
   payload_unavailable: "Offline"
