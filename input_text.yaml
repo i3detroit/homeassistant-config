@@ -1,4 +1,0 @@
-led_matrix_input:
-  name: LED Matrix Input
-  max: 23
-  icon: mdi:sign-text
