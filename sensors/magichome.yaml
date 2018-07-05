@@ -5,8 +5,8 @@
   payload_available: "Online"
   payload_unavailable: "Offline"
   value_template: >
-    {% if "Irreceived" in value_json %}
-      {{ value_json["Irreceived"]["Data"] }}
+    {% if "IrReceived" in value_json %}
+      {{ value_json["IrReceived"]["Data"] }}
     {% endif %}
   force_update: True
 
@@ -17,7 +17,7 @@
   payload_available: "Online"
   payload_unavailable: "Offline"
   value_template: >
-    {% if "Irreceived" in value_json %}
-      {{ value_json["Irreceived"]["Data"] }}
+    {% if "IrReceived" in value_json %}
+      {{ value_json["IrReceived"]["Data"] }}
     {% endif %}
   force_update: True
