@@ -55,7 +55,6 @@ media_players:
   view: yes
   icon: mdi:cast
   entities:
-    - input_text.led_matrix_input
     - media_player.classroom_tv
     - media_player.commons
     - media_player.speakers
