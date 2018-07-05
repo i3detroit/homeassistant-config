@@ -178,7 +178,7 @@
     entity_id: switch.Large_Bathroom_Vent_Fan
     to: 'on'
     for:
-      minutes: 15
+      minutes: 5
   action:
     - service: switch.turn_off
       entity_id: switch.Large_Bathroom_Vent_Fan
@@ -488,7 +488,7 @@
     entity_id: switch.small_bathroom_vent_fan
     to: 'on'
     for:
-      minutes: 15
+      minutes: 5
   action:
     - service: switch.turn_off
       entity_id: light.small_bathroom_vent_fan
@@ -613,3 +613,45 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.developer_mode_enable
+
+- alias: disable small bathroom vent fan when HVAC running
+  trigger:
+    - platform: state
+      entity_id: switch.small_bathroom_vent_fan
+      to: "on"
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: sensor.office_thermostat_active_state
+        state: 'cool'
+      - condition: state
+        entity_id: sensor.office_thermostat_active_state
+        state: 'heat'
+      - condition: state
+        entity_id: sensor.office_thermostat_active_fan_state
+        state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.small_bathroom_vent_fan
+
+- alias: yell at slack if UPS is on battery
+  trigger:
+    - platform: state
+      entity_id: sensor.ups_status
+      to: "ONBATT"
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Alert! UPS is on battery"
+
+- alias: tell slack when UPS is no longer on battery
+  trigger:
+    - platform: state
+      entity_id: sensor.ups_status
+      to: "ONLINE"
+      from: "ONBATT"
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "UPS is OK. No longer on battery"
