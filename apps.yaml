@@ -13,3 +13,7 @@ vm_tracker:
 light_lwt:
   module: light_lwt_tracker
   class: LightLWT
+
+IR_Remote:
+  module: IR_remote_handler
+  class: IRRemote
