@@ -10,9 +10,9 @@ vm_tracker:
   module: vmtracker
   class: VMTracker
 
-light_lwt:
-  module: light_lwt_tracker
-  class: LightLWT
+#light_lwt:
+#  module: light_lwt_tracker
+#  class: LightLWT
 
 IR_Remote:
   module: IR_remote_handler
