@@ -550,6 +550,7 @@ junk:
 genie_charger:
   name: "Genie Charger"
   entities:
+    - switch.genie_charger
     - sensor.genie_charge_state
     - sensor.genie_power_draw
     - sensor.genie_voltage
