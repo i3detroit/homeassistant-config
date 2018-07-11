@@ -655,3 +655,12 @@
     service: notify.slack_statusbots
     data:
       message: "UPS is OK. No longer on battery"
+
+- alias: Turn the genie charger back on when someone's stupid
+  trigger:
+    - platform: state
+      entity_id: switch.genie_charger
+      to: "off"
+  action:
+    service: switch.turn_on
+    entity_id: switch.genie_charger

@@ -132,5 +132,5 @@ panel_custom:
     url_path: floorplan
     config: !include floorplan.yaml
 
-logger:
-  default: error
+# logger:
+#   default: error

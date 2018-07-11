@@ -238,3 +238,12 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   
+- platform: mqtt
+  name: "Genie Charger"
+  state_topic: "stat/i3/inside/commons/genie-charging/POWER"
+  command_topic: "cmnd/i3/inside/commons/genie-charging/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
