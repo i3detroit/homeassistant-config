@@ -470,3 +470,13 @@
   name: "Emergency Lights Reset Button"
   state_topic: "cmnd/i3/automation/emergencyLightsOn"
   force_update: True
+
+- platform: template
+  sensors:
+    office_thermostat_temp_on:
+      friendly_name: "Office Thermostat Temp On"
+      unit_of_measurement: "°C"
+      value_template: >-
+        {% if states.sensor.office_thermostat_active_state.state | string == "cool" or states.sensor.office_thermostat_active_state.state | string == "heat" %}
+          {{states.sensor.office_thermostat_ambient_temperature.state | float }}
+        {% endif %}
