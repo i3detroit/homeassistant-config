@@ -93,11 +93,11 @@ developer_settings:
   icon: mdi:home-assistant
   entities:
     - group.enable_developer
+    - group.hidden_controls
+    - group.emergency_lights
     - group.full_shutdown_card
     - group.all_scripts
     - group.all_automations
-    - group.hidden_controls
-    - group.emergency_lights
 
 shop_lights:
   name: "Shop Lights"
@@ -567,6 +567,7 @@ hidden_controls:
   name: "BE CAREFUL WITH THESE"
   control: hidden
   entities:
+    - switch.alarm_siren
     - switch.bumblebee
     - switch.bumblebee_chiller
     - switch.wolverine
