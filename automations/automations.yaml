@@ -148,9 +148,9 @@
 
 - alias: Large Bathroom Motion ON 
   trigger:
-    platform: state
-    entity_id: binary_sensor.large_bathroom_motion_sensor
-    to: 'on'
+    platform: mqtt
+    topic: stat/i3/inside/large-bathroom/motion-sensor/motion
+    payload: 'ON'
   condition:
     condition: state
     entity_id: light.LightLargeBathroom
@@ -185,9 +185,9 @@
 
 - alias: Small Bathroom Motion ON 
   trigger:
-    platform: state
-    entity_id: binary_sensor.small_bathroom_motion_sensor
-    to: 'on'
+    platform: mqtt
+    topic: stat/i3/inside/small-bathroom/motion-sensor/motion
+    payload: 'ON'
   condition:
     condition: state
     entity_id: light.Small_Bathroom_Light
