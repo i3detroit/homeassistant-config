@@ -301,8 +301,10 @@ decor:
     - light.LightTrafficRed
     - light.Chandelier01
     - light.Chandelier02
+    - light.Fairy_Lights
     - switch.Disco_Ball
     - switch.Disco_Spotlights
+    - light.lanterns
     - light.Elab_Arch_North
     - light.Elab_Arch_South
 

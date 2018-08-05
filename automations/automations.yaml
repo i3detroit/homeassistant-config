@@ -97,6 +97,7 @@
       entity_id: 
         - light.Chandelier01
         - light.Chandelier02
+        - light.fairy_lights
     - service: switch.turn_on
       entity_id: switch.disco_spotlights
 
@@ -110,6 +111,7 @@
       entity_id: 
         - light.Chandelier01
         - light.Chandelier02
+        - light.fairy_lights
     - service: switch.turn_off
       entity_id: switch.disco_spotlights
 
@@ -664,3 +666,21 @@
   action:
     service: switch.turn_on
     entity_id: switch.genie_charger
+
+- alias: Lanterns on with light row 5
+  trigger:
+    - platform: state
+      entity_id: light.light020
+      to: "on"
+  action:
+    service: light.turn_on
+    entity_id: light.lanterns
+
+- alias: Lanterns off with light row 5
+  trigger:
+    - platform: state
+      entity_id: light.light020
+      to: "off"
+  action:
+    service: light.turn_off
+    entity_id: light.lanterns
