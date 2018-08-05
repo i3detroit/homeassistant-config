@@ -18,11 +18,12 @@ state:
   entity_id: "sensor.open_for_tours"
 sensors:
   temperature:
-    - "sensor.ground_cluster_bme280_temperature"
+    - "sensor.ground_cluster_temperature"
   humidity:
-    - "sensor.ground_cluster_bme280_humidity"
+    - "sensor.ground_cluster_humidity"
+# looks like these aren't supported but I saw them in some references:
   # barometer:
-  #   - "sensor.ground_cluster_bme280_pressure"
+  #   - "sensor.ground_cluster_pressure"
 # projects:
 #   - "https://i3detroit.org/wiki"
 #   - "https://github.com/i3detroit"
