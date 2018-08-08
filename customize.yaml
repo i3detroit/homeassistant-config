@@ -46,18 +46,18 @@ light.Chandelier02:
   friendly_name: "Chanelier S"
 
 sensor.Office_Thermostat_Ambient_Temperature:
-  friendly_name: "Ambient Temperature"
+  friendly_name: "Office Ambient Temperature"
 sensor.Office_Thermostat_Ambient_Pressure:
-  friendly_name: "Ambient Pressure"
+  friendly_name: "Office Ambient Pressure"
 sensor.Office_Thermostat_Ambient_Humidity:
-  friendly_name: "Ambient Humidity"
+  friendly_name: "Office Ambient Humidity"
 sensor.Office_Thermostat_Target_Temperature:
-  friendly_name: "Target Temperature"
+  friendly_name: "Office Target Temperature"
 sensor.Office_Thermostat_Requested_State:
-  friendly_name: "Requested State"
+  friendly_name: "Office Requested State"
 sensor.Office_Thermostat_Requested_Fan_State:
-  friendly_name: "Requested Fan"
+  friendly_name: "Office Requested Fan"
 sensor.Office_Thermostat_Active_State:
-  friendly_name: "Active State"
+  friendly_name: "Office Active State"
 sensor.Office_Thermostat_Active_Fan_State:
-  friendly_name: "Active Fan"
+  friendly_name: "Office Fan State"
