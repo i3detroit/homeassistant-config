@@ -1,0 +1,89 @@
+- platform: mqtt
+  name: "Snapple Vending Temperature"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Power Draw"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Power"] }}'
+  force_update: True
+  unit_of_measurement: "Watts"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  
+- platform: mqtt
+  name: "Snapple Voltage"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
+  force_update: True
+  unit_of_measurement: "Volts"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Current"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Current"] }}'
+  force_update: True
+  unit_of_measurement: "Amps"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Energy Use Delta"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Period"] }}'
+  force_update: True
+  unit_of_measurement: "Watt hours"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Energy Use Today"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Today"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Energy Use Yesterday"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Total Power"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Power Factor"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Factor"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/Snapple-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"

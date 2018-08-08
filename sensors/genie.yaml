@@ -1,7 +1,7 @@
 - platform: mqtt
   name: "Genie Power Draw"
-  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
-  value_template: '{{ value_json.Power }}'
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Power"] }}'
   force_update: True
   unit_of_measurement: "Watts"
   availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
@@ -10,31 +10,73 @@
   
 - platform: mqtt
   name: "Genie Voltage"
-  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
-  value_template: '{{ value_json.Voltage }}'
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
   force_update: True
   unit_of_measurement: "Volts"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Genie Current"
-  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
-  value_template: '{{ value_json.Current }}'
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Current"] }}'
   force_update: True
   unit_of_measurement: "Amps"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Genie Energy Use Delta"
-  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
-  value_template: '{{ value_json.Period }}'
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Period"] }}'
   force_update: True
   unit_of_measurement: "Watt hours"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Genie Energy Use Today"
-  state_topic: "tele/i3/inside/commons/genie-charging/ENERGY"
-  value_template: '{{ value_json.Today }}'
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Today"] }}'
   force_update: True
   unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Genie Energy Use Yesterday"
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Genie Total Power"
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Genie Power Factor"
+  state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Factor"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/commons/Genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: template
   sensors:
