@@ -10,9 +10,6 @@
   availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
-  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Ground Cluster Pressure"
@@ -20,9 +17,6 @@
   unit_of_measurement: "Pa"
   value_template: '{{ value_json.Pressure }}'
   force_update: True
-  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
   availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
@@ -36,9 +30,6 @@
   availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
-  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Ground Cluster Lux"
@@ -46,9 +37,6 @@
   unit_of_measurement: "lux"
   value_template: '{{ value_json.Lux }}'
   force_update: True
-  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Ceiling Cluster Temperature"
@@ -56,9 +44,6 @@
   unit_of_measurement: "°C"
   value_template: '{{ value_json.Temperature }}'
   force_update: True
-  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
   availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
@@ -75,9 +60,6 @@
   availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
-  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
 
 - platform: mqtt
   name: "Ceiling Cluster Humidity"
@@ -85,9 +67,6 @@
   unit_of_measurement: "%"
   value_template: '{{ value_json.Humidity }}'
   force_update: True
-  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
   availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
