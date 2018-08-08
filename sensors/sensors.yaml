@@ -55,14 +55,14 @@
   name: "sonoff_humid"
   state_topic: "tele/i3/inside/commons/traffic-light/SENSOR"
   unit_of_measurement: "%"
-  value_template: '{{ value_json["DHT22"]["Humidity"] }}'
+  value_template: '{{ value_json["AM2301"]["Humidity"] }}'
   force_update: True
   
 - platform: mqtt
   name: "sonoff_temp"
   state_topic: "tele/i3/inside/commons/traffic-light/SENSOR"
   unit_of_measurement: "°C"
-  value_template: '{{ value_json["DHT22"]["Temperature"] }}'
+  value_template: '{{ value_json["AM2301"]["Temperature"] }}'
   force_update: True
   
 - platform: template
@@ -114,123 +114,6 @@
   command: "python3 /home/homeassistant/.homeassistant/power_meter.py"
   unit_of_measurement: "kWh"
   scan_interval: "60"
-
-- platform: mqtt
-  name: "Ground Cluster Temperature"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
-  unit_of_measurement: "°C"
-  value_template: '{{ value_json.Temperature }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Ground Cluster Pressure"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
-  unit_of_measurement: "Pa"
-  value_template: '{{ value_json.Pressure }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Ground Cluster Humidity"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
-  unit_of_measurement: "%"
-  value_template: '{{ value_json.Humidity }}'
-  force_update: True                                                   
-
-- platform: mqtt
-  name: "Ground Cluster Lux"
-  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/lux"
-  unit_of_measurement: "lux"
-  value_template: '{{ value_json.Lux }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Ceiling Cluster Temperature"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
-  unit_of_measurement: "°C"
-  value_template: '{{ value_json.Temperature }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Ceiling Cluster Pressure"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
-  unit_of_measurement: "Pa"
-  value_template: '{{ value_json.Pressure }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Ceiling Cluster Humidity"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
-  unit_of_measurement: "%"
-  value_template: '{{ value_json.Humidity }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Ceiling Cluster Lux"
-  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/lux"
-  unit_of_measurement: "lux"
-  value_template: '{{ value_json.Lux }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Fablab Cluster Temperature"
-  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
-  unit_of_measurement: "°C"
-  value_template: '{{ value_json.Temperature }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Fablab Cluster Pressure"
-  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
-  unit_of_measurement: "Pa"
-  value_template: '{{ value_json.Pressure }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Fablab Cluster Humidity"
-  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
-  unit_of_measurement: "%"
-  value_template: '{{ value_json.Humidity }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Fablab Cluster Lux"
-  state_topic: "tele/i3/inside/fablab/sensor-cluster/lux"
-  unit_of_measurement: "lux"
-  value_template: '{{ value_json.Lux }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Bumblebee Tube Time"
-  state_topic: "stat/i3/inside/laser-zone/bumblebee-timer/laser-tube-time"
-  unit_of_measurement: "millisecond"
-  force_update: True
-
-- platform: mqtt
-  name: "Wolverine Tube Time"
-  state_topic: "stat/i3/inside/laser-zone/wolverine-timer/laser-tube-time"
-  unit_of_measurement: "millisecond"
-  force_update: True
-
-- platform: mqtt
-  name: "Snapple Vending Temperature"
-  state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
-  unit_of_measurement: "°C"
-  value_template: '{{ value_json["DS18B20"]["Temperature"] }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Snapple Vending Compressor Amps"
-  state_topic: "tele/i3/inside/commons/snapple-vending-compress/ENERGY"
-  unit_of_measurement: "Amps"
-  value_template: '{{ value_json.Current }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Snapple Vending Compressor Voltage"
-  state_topic: "tele/i3/inside/commons/snapple-vending-compress/ENERGY"
-  unit_of_measurement: "Volts"
-  value_template: '{{ value_json.Voltage }}'
-  force_update: True
 
 - platform: template
   sensors:
@@ -318,21 +201,21 @@
   name: "Office Thermostat Ambient Temperature"
   state_topic: "tele/i3/inside/office/thermostat/bme280"
   unit_of_measurement: "°C"
-  value_template: '{{ value_json.Temperature }}'
+  value_template: '{{ value_json.temperature }}'
   force_update: True
 
 - platform: mqtt
   name: "Office Thermostat Ambient Pressure"
   state_topic: "tele/i3/inside/office/thermostat/bme280"
   unit_of_measurement: "Pa"
-  value_template: '{{ value_json.Pressure }}'
+  value_template: '{{ value_json.pressure }}'
   force_update: True
 
 - platform: mqtt
   name: "Office Thermostat Ambient Humidity"
   state_topic: "tele/i3/inside/office/thermostat/bme280"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.Humidity }}'
+  value_template: '{{ value_json.humidity }}'
   force_update: True
 
 - platform: mqtt
@@ -357,7 +240,7 @@
 - platform: mqtt
   name: "Office Thermostat Active State"
   state_topic: "tele/i3/inside/office/thermostat/output"
-  value_template: '{{ value_json.output }}'
+  value_template: '{{ value_json.state }}'
   force_update: True
 
 - platform: mqtt

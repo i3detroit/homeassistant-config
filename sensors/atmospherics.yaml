@@ -1,0 +1,146 @@
+########################################################################
+### Ground Sensor Cluster
+########################################################################
+- platform: mqtt
+  name: "Ground Cluster Temperature"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.Temperature }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Ground Cluster Pressure"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
+  unit_of_measurement: "Pa"
+  value_template: '{{ value_json.Pressure }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Ground Cluster Humidity"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/bme280"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Ground Cluster Lux"
+  state_topic: "tele/i3/inside/commons/ground-sensor-cluster/lux"
+  unit_of_measurement: "lux"
+  value_template: '{{ value_json.Lux }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ground-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Ceiling Cluster Temperature"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.Temperature }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+########################################################################
+### Ceiling Sensor Cluster
+########################################################################
+- platform: mqtt
+  name: "Ceiling Cluster Pressure"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
+  unit_of_measurement: "Pa"
+  value_template: '{{ value_json.Pressure }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Ceiling Cluster Humidity"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Ceiling Cluster Lux"
+  state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/lux"
+  unit_of_measurement: "lux"
+  value_template: '{{ value_json.Lux }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+########################################################################
+### Fab Lab Sensor Cluster
+########################################################################
+- platform: mqtt
+  name: "Fablab Cluster Temperature"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.Temperature }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/fablab/sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Fablab Cluster Pressure"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
+  unit_of_measurement: "Pa"
+  value_template: '{{ value_json.Pressure }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/fablab/sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Fablab Cluster Humidity"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/bme280"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.Humidity }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/fablab/sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Fablab Cluster Lux"
+  state_topic: "tele/i3/inside/fablab/sensor-cluster/lux"
+  unit_of_measurement: "lux"
+  value_template: '{{ value_json.Lux }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/fablab/sensor-cluster/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
