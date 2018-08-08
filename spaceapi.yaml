@@ -19,8 +19,16 @@ state:
 sensors:
   temperature:
     - "sensor.ground_cluster_temperature"
+    - "sensor.ceiling_cluster_temperature"
+    - "sensor.fablab_cluster_temperature"
+    - "sensor.snapple_vending_temperature"
+    - "sensor.office_thermostat_ambient_temperature"
   humidity:
     - "sensor.ground_cluster_humidity"
+    - "sensor.ceiling_cluster_humidity"
+    - "sensor.fablab_cluster_humidity"
+    - "sensor.office_thermostat_ambient_humidity"
+
 # looks like these aren't supported but I saw them in some references:
   # barometer:
   #   - "sensor.ground_cluster_pressure"
