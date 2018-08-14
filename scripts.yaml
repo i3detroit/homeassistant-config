@@ -32,7 +32,7 @@ emergency_lights_reset:
         # hass brightness values used here are expected to be 0-255 scale
         # So the values given here get renormalized before being sent out mqtt, hence...
         # 5 / 255 * 50 = 2 brightness on the tasmota scale
-        brightness: 44
+        brightness: 50
     - service: switch.turn_on
       entity_id: switch.CommonsCeilingFans
     - service: switch.turn_on
@@ -186,7 +186,6 @@ dash_large_glue_sticks:
     - service: notify.slack_craft_room
       data:
         message: "We require additional large hot glue sticks"
-
 
 dash_styrofoam_cups:
   alias: "Buy styrofoam cups"
@@ -375,17 +374,6 @@ disco_stop:
       - service: switch.turn_off
         entity_id:
           - switch.Disco_Ball
-
-#tweet_image:
-#  alias: "Tweet photo"
-#  sequence:
-#    - service: shell_command.take_snapshot
-#    - service: notify.camera_bot
-#    - service: notify.i3_twitter
-#      data:
-#        message: "@warrenrobinett @erniecline The egg has been found. https://www.i3detroit.org/creating-anoraks-adventure/"
-#        data:
-#          media: /home/homeassistant/.homeassistant/tmp/snapshot.jpg
 
 tts_test:
   alias: "Test TTS"
