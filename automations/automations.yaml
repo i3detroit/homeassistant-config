@@ -493,7 +493,7 @@
       minutes: 5
   action:
     - service: switch.turn_off
-      entity_id: light.small_bathroom_vent_fan
+      entity_id: switch.small_bathroom_vent_fan
 
 - alias: Exhaust Fan Auto On
   trigger:
