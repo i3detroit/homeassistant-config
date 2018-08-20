@@ -247,7 +247,15 @@
   name: "Office Thermostat Timeout"
   state_topic: "tele/i3/inside/office/thermostat/input"
   value_template: '{{ value_json.timeout }}'
+  unit_of_measurement: "ms"
   force_update: True
+
+- platform: template
+  sensors:
+    office_thermostat_timeout_human_readable:
+      friendly_name: "Office Thermostat Reset Timeout"
+      unit_of_measurement: "hours"
+      value_template: "{{ states('sensor.Office_Thermostat_Timeout') | float / 3600000 | round(1) }}"
 
 - platform: mqtt
   name: "Office Thermostat Active State"
