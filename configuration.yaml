@@ -92,9 +92,6 @@ mqtt:
     topic: "tele/hass1/LWT"
     payload: "Offline"
 
-media_player:
-  - platform: cast
-
 apcupsd:
   host: 10.13.0.17
 
