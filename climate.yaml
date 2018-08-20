@@ -21,13 +21,13 @@
   mode_state_topic: "tele/i3/inside/office/thermostat/output"
   mode_state_template: "{{value_json.state}}"
   temperature_command_topic: "cmnd/i3/inside/office/thermostat/target"
-  temperature_state_topic: "tele/i3/inside/office/thermostat/request"
-  temperature_state_template: "{{value_json.TargetTemp}}"
+  temperature_state_topic: "tele/i3/inside/office/thermostat/input"
+  temperature_state_template: "{{value_json.target}}"
   fan_mode_command_topic: "cmnd/i3/inside/office/thermostat/fan"
   fan_mode_state_topic: "tele/i3/inside/office/thermostat/output"
   fan_mode_state_template: "{{value_json.fan}}"
   # swing_mode_command_topic: "cmnd/i3/inside/office/thermostat/swing"
-  # swing_mode_state_topic: "tele/i3/inside/office/thermostat/output"
+  # swing_mode_state_topic: "tele/i3/inside/office/thermostat/input"
   # swing_mode_state_template: "{{value_json.swing}}"
   min_temp: 5
   max_temp: 30

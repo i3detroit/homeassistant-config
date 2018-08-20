@@ -220,21 +220,33 @@
 
 - platform: mqtt
   name: "Office Thermostat Target Temperature"
-  state_topic: "tele/i3/inside/office/thermostat/request"
+  state_topic: "tele/i3/inside/office/thermostat/input"
   unit_of_measurement: "°C"
-  value_template: '{{ value_json.TargetTemp }}'
+  value_template: '{{ value_json.target }}'
   force_update: True
 
 - platform: mqtt
   name: "Office Thermostat Requested State"
-  state_topic: "tele/i3/inside/office/thermostat/request"
-  value_template: '{{ value_json.requested }}'
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.mode }}'
   force_update: True
 
 - platform: mqtt
   name: "Office Thermostat Requested Fan State"
-  state_topic: "tele/i3/inside/office/thermostat/request"
+  state_topic: "tele/i3/inside/office/thermostat/input"
   value_template: '{{ value_json.fan }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Swing"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.swing }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Timeout"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.timeout }}'
   force_update: True
 
 - platform: mqtt
@@ -343,7 +355,7 @@
     open_for_tours:
       friendly_name: "Open For Tours"
       value_template: >-
-        {% if ((now().weekday() == 4) and now().time().hour >= 18 and now().time().hour <= 21) %}
+        {% if ((now().weekday() == 4) and now().time().hour >= 18 and now().time().hour <= 20) %}
           on
         {% else %}
           off
