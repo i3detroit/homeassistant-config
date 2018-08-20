@@ -173,6 +173,9 @@ office_thermostat:
     - sensor.Office_Thermostat_Requested_Fan_State
 #    - sensor.Office_Thermostat_Active_State
     - sensor.Office_Thermostat_Active_Fan_State
+    - sensor.Office_Thermostat_Swing
+#    - sensor.Office_Thermostat_Timeout
+    - sensor.office_thermostat_timeout_human_readable
 
 row_1_lights:
   name: "Light Row 1"
@@ -325,6 +328,8 @@ device_trackers:
     - device_tracker.mike_phone
     - device_tracker.graviton
     - device_tracker.abzgs4
+    - device_tracker.abzmans9
+    - device_tracker.abztopwin
 
 vm_trackers:
   name: "VM Trackers"
