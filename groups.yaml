@@ -145,15 +145,15 @@ HVAC:
   entities:
     - sensor.sonoff_temp
     - sensor.sonoff_humid
-    - sensor.ground_cluster_pressure
+    - sensor.ground_cluster_pressure_kpa
     - sensor.ground_cluster_temperature
     - sensor.ground_cluster_humidity
     - sensor.ground_cluster_lux
-    - sensor.ceiling_cluster_pressure
+    - sensor.ceiling_cluster_pressure_kpa
     - sensor.ceiling_cluster_temperature
     - sensor.ceiling_cluster_humidity
     - sensor.ceiling_cluster_lux
-    - sensor.fablab_cluster_pressure
+    - sensor.fablab_cluster_pressure_kpa
     - sensor.fablab_cluster_temperature
     - sensor.fablab_cluster_humidity
     - sensor.fablab_cluster_lux
@@ -166,7 +166,7 @@ office_thermostat:
   entities:
     - climate.office
 #    - sensor.Office_Thermostat_Ambient_Temperature
-    - sensor.Office_Thermostat_Ambient_Pressure
+    - sensor.office_thermostat_pressure_kpa
     - sensor.Office_Thermostat_Ambient_Humidity
 #    - sensor.Office_Thermostat_Target_Temperature
     - sensor.Office_Thermostat_Requested_State

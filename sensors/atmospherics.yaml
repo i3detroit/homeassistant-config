@@ -38,6 +38,9 @@
   value_template: '{{ value_json.Lux }}'
   force_update: True
 
+########################################################################
+### Ceiling Sensor Cluster
+########################################################################
 - platform: mqtt
   name: "Ceiling Cluster Temperature"
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
@@ -48,9 +51,6 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-########################################################################
-### Ceiling Sensor Cluster
-########################################################################
 - platform: mqtt
   name: "Ceiling Cluster Pressure"
   state_topic: "tele/i3/inside/commons/ceiling-sensor-cluster/bme280"
@@ -123,3 +123,18 @@
   availability_topic: "tele/i3/inside/fablab/sensor-cluster/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
+
+- platform: template
+  sensors:
+    ground_cluster_pressure_kpa:
+      friendly_name: "Ground Cluster Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.ground_cluster_pressure') | multiply(1/1000) | round(1) }}"
+    ceiling_cluster_pressure_kpa:
+      friendly_name: "Ceiling Cluster Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.ceiling_cluster_pressure') | multiply(1/1000) | round(1) }}"
+    fablab_cluster_pressure_kpa:
+      friendly_name: "Fablab Cluster Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.fablab_cluster_pressure') | multiply(1/1000) | round(1) }}"

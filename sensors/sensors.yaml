@@ -211,6 +211,13 @@
   value_template: '{{ value_json.pressure }}'
   force_update: True
 
+- platform: template
+  sensors:
+    office_thermostat_pressure_kpa:
+      friendly_name: "Office Ambient Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.office_thermostat_ambient_pressure') | multiply(1/1000) | round(1) }}"
+
 - platform: mqtt
   name: "Office Thermostat Ambient Humidity"
   state_topic: "tele/i3/inside/office/thermostat/bme280"
