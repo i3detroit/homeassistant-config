@@ -431,7 +431,7 @@
     entity_id: light.small_bathroom_shower_light
     state: 'off'
     for:
-      seconds: 2
+      seconds: 1
   action:
     - service: light.turn_on
       entity_id: light.small_bathroom_shower_light
@@ -447,7 +447,7 @@
     entity_id: light.small_bathroom_shower_light
     state: 'on'
     for:
-      seconds: 2
+      seconds: 1
   action:
     - service: light.turn_off
       entity_id: light.small_bathroom_shower_light
@@ -463,7 +463,7 @@
     entity_id: light.small_bathroom_light
     state: 'off'
     for:
-      seconds: 2
+      seconds: 1
   action:
     - service: light.turn_on
       entity_id: light.small_bathroom_light
@@ -479,7 +479,7 @@
     entity_id: light.small_bathroom_light
     state: 'on'
     for:
-      seconds: 2
+      seconds: 1
   action:
     - service: light.turn_off
       entity_id: light.small_bathroom_light
@@ -616,26 +616,26 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.developer_mode_enable
 
-- alias: disable small bathroom vent fan when HVAC running
-  trigger:
-    - platform: state
-      entity_id: switch.small_bathroom_vent_fan
-      to: "on"
-  condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: sensor.office_thermostat_active_state
-        state: 'cool'
-      - condition: state
-        entity_id: sensor.office_thermostat_active_state
-        state: 'heat'
-      - condition: state
-        entity_id: sensor.office_thermostat_active_fan_state
-        state: 'on'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.small_bathroom_vent_fan
+# - alias: disable small bathroom vent fan when HVAC running
+#   trigger:
+#     - platform: state
+#       entity_id: switch.small_bathroom_vent_fan
+#       to: "on"
+#   condition:
+#     condition: or
+#     conditions:
+#       - condition: state
+#         entity_id: sensor.office_thermostat_active_state
+#         state: 'cool'
+#       - condition: state
+#         entity_id: sensor.office_thermostat_active_state
+#         state: 'heat'
+#       - condition: state
+#         entity_id: sensor.office_thermostat_active_fan_state
+#         state: 'on'
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.small_bathroom_vent_fan
 
 - alias: yell at slack if UPS is on battery
   trigger:
