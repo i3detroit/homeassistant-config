@@ -26,24 +26,7 @@
   name: "Doorbell"
   state_topic: "stat/i3/inside/commons/normal-doorbell/press"
   force_update: True
-  
-- platform: mqtt
-  name: "openEVSE Amps"
-  state_topic: "tele/i3/inside/commons/openevse/amp"
-  unit_of_measurement: "milliamps"
-  force_update: True
-  
-- platform: mqtt
-  name: "openEVSE Watt Seconds"
-  state_topic: "tele/i3/inside/commons/openevse/wh"
-  unit_of_measurement: "Watt seconds"
-  force_update: True
-  
-- platform: mqtt
-  name: "openEVSE State"
-  state_topic: "tele/i3/inside/commons/openevse/state"
-  force_update: True
-  
+
 - platform: mqtt
   name: "sonoff_RSSI"
   state_topic: "tele/i3/inside/commons/traffic-light/STATE"
@@ -64,50 +47,6 @@
   unit_of_measurement: "°C"
   value_template: '{{ value_json["AM2301"]["Temperature"] }}'
   force_update: True
-  
-- platform: template
-  sensors:
-    ev_charger_state:
-      friendly_name: "EV Charger Status"
-      value_template: >-
-        {% if is_state('sensor.openEVSE_State', '1') %}
-          Unplugged
-        {% elif is_state('sensor.openEVSE_State', '2') %}
-          Plugged_in
-        {% elif is_state('sensor.openEVSE_State', '3') %}
-          Charging
-        {% else %}
-          Unknown
-        {% endif %}
-      icon_template: >-
-        {% if is_state('sensor.openEVSE_State', '1') %}
-          mdi:power-plug-off
-        {% elif is_state('sensor.openEVSE_State', '2') %}
-          mdi:power-plug
-        {% elif is_state('sensor.openEVSE_State', '3') %}
-          mdi:battery-charging
-        {% else %}
-          mdi:help-circle
-        {% endif %}
-    ev_charger_amps:
-      friendly_name: "EV Charger Amps"
-      unit_of_measurement: 'Amps'
-      value_template: "{{ states('sensor.openEVSE_Amps')|float / 1000 | round(1) }}"
-      icon_template: >-
-         {% if states('sensor.openEVSE_Amps')|float > 0 %}
-            mdi:battery-charging
-          {% else %}
-            mdi:power-plug-off
-          {% endif %}
-    ev_charger_wh:
-      friendly_name: "EV Charger kWh"
-      unit_of_measurement: 'kWh'
-      value_template: "{{ states('sensor.openEVSE_Watt_Seconds') | multiply(1/3600000) | round(2) }}"
-
-    weather_pressure_kpa:
-      friendly_name: "Pressure"
-      unit_of_measurement: 'kPa'
-      value_template: "{{ states('sensor.Weather_pressure') | multiply(1/10) | round(1) }}"
 
 - platform: command_line
   name: "i3 Power Meter"
@@ -126,6 +65,10 @@
         {% else %}
           {{((states.sensor.ceiling_cluster_temperature.state | float) - (states.sensor.ground_cluster_temperature.state | float)) | round(2)}}
         {% endif %}
+    weather_pressure_kpa:
+      friendly_name: "Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.Weather_pressure') | multiply(1/10) | round(1) }}"
 
 - platform: mqtt
   name: "Garage Door Open"
@@ -195,85 +138,6 @@
 - platform: mqtt
   name: "Shutdown button"
   state_topic: "cmnd/i3/automation/shutdown"
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Ambient Temperature"
-  state_topic: "tele/i3/inside/office/thermostat/bme280"
-  unit_of_measurement: "°C"
-  value_template: '{{ value_json.temperature }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Ambient Pressure"
-  state_topic: "tele/i3/inside/office/thermostat/bme280"
-  unit_of_measurement: "Pa"
-  value_template: '{{ value_json.pressure }}'
-  force_update: True
-
-- platform: template
-  sensors:
-    office_thermostat_pressure_kpa:
-      friendly_name: "Office Ambient Pressure"
-      unit_of_measurement: 'kPa'
-      value_template: "{{ states('sensor.office_thermostat_ambient_pressure') | multiply(1/1000) | round(1) }}"
-
-- platform: mqtt
-  name: "Office Thermostat Ambient Humidity"
-  state_topic: "tele/i3/inside/office/thermostat/bme280"
-  unit_of_measurement: "%"
-  value_template: '{{ value_json.humidity }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Target Temperature"
-  state_topic: "tele/i3/inside/office/thermostat/input"
-  unit_of_measurement: "°C"
-  value_template: '{{ value_json.target }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Requested State"
-  state_topic: "tele/i3/inside/office/thermostat/input"
-  value_template: '{{ value_json.mode }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Requested Fan State"
-  state_topic: "tele/i3/inside/office/thermostat/input"
-  value_template: '{{ value_json.fan }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Swing"
-  state_topic: "tele/i3/inside/office/thermostat/input"
-  value_template: '{{ value_json.swing }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Timeout"
-  state_topic: "tele/i3/inside/office/thermostat/input"
-  value_template: '{{ value_json.timeout }}'
-  unit_of_measurement: "ms"
-  force_update: True
-
-- platform: template
-  sensors:
-    office_thermostat_timeout_human_readable:
-      friendly_name: "Office Thermostat Reset Timeout"
-      unit_of_measurement: "hours"
-      value_template: "{{ states('sensor.Office_Thermostat_Timeout') | float / 3600000 | round(1) }}"
-
-- platform: mqtt
-  name: "Office Thermostat Active State"
-  state_topic: "tele/i3/inside/office/thermostat/output"
-  value_template: '{{ value_json.state }}'
-  force_update: True
-
-- platform: mqtt
-  name: "Office Thermostat Active Fan State"
-  state_topic: "tele/i3/inside/office/thermostat/output"
-  value_template: '{{ value_json.fan }}'
   force_update: True
 
 - platform: mqtt
