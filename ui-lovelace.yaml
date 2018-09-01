@@ -1,0 +1,35 @@
+title: i3Detroit
+
+views:
+  - title: Lights
+    id: lights
+    cards:
+      - type: entities
+        title: Shop Lights
+        entities:
+          - group.row_1_lights
+          - group.row_2_lights
+          - group.row_3_lights
+          - group.row_4_lights
+          - group.row_5_lights
+          - group.machine_shop_lights
+      - type: entities
+        title: Misc. Lights
+        entities:
+          - light.lightwelding
+          - light.lightvinyl
+          - light.lighttreehouse
+          - light.lightlargebathroom
+          - light.tool_crib_workbench_lights
+      - type: entities
+        title: Office Lights
+        entities:
+          - light.classroom_lights_east
+          - light.classroom_lights_west
+          - light.dooridor_lights
+          - light.hallway_light
+          - light.lightmedialab
+          - light.craft_room_light
+          - light.electronics_lab_light
+          - light.small_bathroom_light
+          - light.small_bathroom_shower_light
