@@ -10,8 +10,8 @@ contact:
   phone: "+1-248-556-9995"
   irc: "irc.freenode.net/#i3detroit"
   twitter: "@i3detroit"
+  facebook: "https://www.facebook.com/i3detroit"
   mailing_list: "https://groups.google.com/forum/#!forum/i3detroit-public"
-  # facebook: "i3detroit"
 issue_report_channels:
   - email
 state:
@@ -28,10 +28,12 @@ sensors:
     - "sensor.ceiling_cluster_humidity"
     - "sensor.fablab_cluster_humidity"
     - "sensor.office_thermostat_ambient_humidity"
-
-# looks like these aren't supported but I saw them in some references:
-  # barometer:
-  #   - "sensor.ground_cluster_pressure"
+  barometer:
+    - "sensor.ground_cluster_pressure_kpa"
+    - "sensor.ceiling_cluster_pressure_kpa"
+    - "sensor.fablab_cluster_pressure_kpa"
+    - "sensor.office_thermostat_pressure_kpa"
 # projects:
-#   - "https://i3detroit.org/wiki"
-#   - "https://github.com/i3detroit"
+#   - wiki: "https://i3detroit.org/wiki"
+#   - github: "https://github.com/i3detroit"
+#   - blog: "https://www.i3detroit.org/blog/"
