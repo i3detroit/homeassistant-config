@@ -176,6 +176,7 @@ office_thermostat:
     - sensor.Office_Thermostat_Swing
 #    - sensor.Office_Thermostat_Timeout
     - sensor.office_thermostat_timeout_human_readable
+    - sensor.office_thermostat_power_source
 
 row_1_lights:
   name: "Light Row 1"

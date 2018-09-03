@@ -684,3 +684,24 @@
   action:
     service: light.turn_off
     entity_id: light.lanterns
+
+- alias: Office thermostat is on battery
+  trigger:
+    - platform: state
+      entity_id: sensor.office_thermostat_power_source
+      to: 'battery'
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Alert! Office thermostat is running on battery."
+
+- alias: Office thermostat is back on mains
+  trigger:
+    - platform: state
+      entity_id: sensor.office_thermostat_power_source
+      from: 'mains'
+      to: 'battery'
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Office thermostat is back on mains power."

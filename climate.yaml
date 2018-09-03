@@ -15,7 +15,7 @@
   availability_topic: "tele/i3/inside/office/thermostat/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
-  current_temperature_topic: "tele/i3/inside/office/thermostat/bme280"
+  current_temperature_topic: "tele/i3/inside/office/thermostat/sensors"
   current_temperature_template: "{{value_json.temperature}}"
   mode_command_topic: "cmnd/i3/inside/office/thermostat/mode"
   mode_state_topic: "tele/i3/inside/office/thermostat/output"
