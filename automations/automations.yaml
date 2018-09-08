@@ -670,7 +670,7 @@
 - alias: Lanterns on with light row 5
   trigger:
     - platform: state
-      entity_id: light.light020
+      entity_id: group.row_5_lights
       to: "on"
   action:
     service: light.turn_on
@@ -679,7 +679,7 @@
 - alias: Lanterns off with light row 5
   trigger:
     - platform: state
-      entity_id: light.light020
+      entity_id: group.row_5_lights
       to: "off"
   action:
     service: light.turn_off
