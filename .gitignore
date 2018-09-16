@@ -21,4 +21,4 @@ dasher/lib/
 dasher/package-lock.json
 dasher/package.json
 dasher/script/
-
+.storage/
