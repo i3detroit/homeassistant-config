@@ -77,6 +77,16 @@
   payload_not_available: "Offline"
 
 - platform: mqtt
+  name: "Chinesium Laser"
+  state_topic: "stat/i3/inside/fablab/chinesium-laser/POWER"
+  command_topic: "cmnd/i3/inside/fablab/chinesium-laser/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
   name: "Fab Lab Chiller"
   state_topic: "stat/i3/inside/fablab/chiller/POWER"
   command_topic: "cmnd/i3/inside/fablab/chiller/POWER"
