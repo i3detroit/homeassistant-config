@@ -200,7 +200,7 @@
   name: "Bumblebee Blast Gate"
   state_topic: "stat/i3/inside/laser-zone/bumblebee/vent-fan-gate"
   force_update: True
-  availability_topic: "tele/i3/inside/laser-zone/bumblebee/vent-fan-gate/LWT"
+  availability_topic: "tele/i3/inside/laser-zone/blast-gate-monitor/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
 
@@ -208,7 +208,7 @@
   name: "Wolverine Blast Gate"
   state_topic: "stat/i3/inside/laser-zone/wolverine/vent-fan-gate"
   force_update: True
-  availability_topic: "tele/i3/inside/laser-zone/wolverine/vent-fan-gate/LWT"
+  availability_topic: "tele/i3/inside/laser-zone/blast-gate-monitor/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
 

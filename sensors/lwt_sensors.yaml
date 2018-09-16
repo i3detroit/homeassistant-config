@@ -122,3 +122,403 @@
   name: "Wolverine Chiller LWT"
   state_topic: "tele/i3/inside/laser-zone/wolverine/chiller/LWT"
   force_update: True
+
+- platform: mqtt
+  name: "light001 LWT"
+  state_topic: "tele/i3/inside/lights/001/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light002 LWT"
+  state_topic: "tele/i3/inside/lights/002/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light003 LWT"
+  state_topic: "tele/i3/inside/lights/003/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light004 LWT"
+  state_topic: "tele/i3/inside/lights/004/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light005 LWT"
+  state_topic: "tele/i3/inside/lights/005/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light006 LWT"
+  state_topic: "tele/i3/inside/lights/006/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light007 LWT"
+  state_topic: "tele/i3/inside/lights/007/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light008 LWT"
+  state_topic: "tele/i3/inside/lights/008/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light009 LWT"
+  state_topic: "tele/i3/inside/lights/009/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light010 LWT"
+  state_topic: "tele/i3/inside/lights/010/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light011 LWT"
+  state_topic: "tele/i3/inside/lights/011/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light012 LWT"
+  state_topic: "tele/i3/inside/lights/012/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light013 LWT"
+  state_topic: "tele/i3/inside/lights/013/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light014 LWT"
+  state_topic: "tele/i3/inside/lights/014/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light015 LWT"
+  state_topic: "tele/i3/inside/lights/015/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light016 LWT"
+  state_topic: "tele/i3/inside/lights/016/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light017 LWT"
+  state_topic: "tele/i3/inside/lights/017/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light018 LWT"
+  state_topic: "tele/i3/inside/lights/018/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light019 LWT"
+  state_topic: "tele/i3/inside/lights/019/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light020 LWT"
+  state_topic: "tele/i3/inside/lights/020/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light021 LWT"
+  state_topic: "tele/i3/inside/lights/021/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light022 LWT"
+  state_topic: "tele/i3/inside/lights/022/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light023 LWT"
+  state_topic: "tele/i3/inside/lights/023/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light024 LWT"
+  state_topic: "tele/i3/inside/lights/024/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light025 LWT"
+  state_topic: "tele/i3/inside/lights/025/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light026 LWT"
+  state_topic: "tele/i3/inside/lights/026/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light027 LWT"
+  state_topic: "tele/i3/inside/lights/027/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightWelding LWT"
+  state_topic: "tele/i3/inside/lights/028/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light029 LWT"
+  state_topic: "tele/i3/inside/lights/029/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light030 LWT"
+  state_topic: "tele/i3/inside/lights/030/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light031 LWT"
+  state_topic: "tele/i3/inside/lights/031/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light032 LWT"
+  state_topic: "tele/i3/inside/lights/032/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light033 LWT"
+  state_topic: "tele/i3/inside/lights/033/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light034 LWT"
+  state_topic: "tele/i3/inside/lights/034/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light035 LWT"
+  state_topic: "tele/i3/inside/lights/035/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightVinyl LWT"
+  state_topic: "tele/i3/inside/lights/036/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightTreehouse LWT"
+  state_topic: "tele/i3/inside/lights/037/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light038 LWT"
+  state_topic: "tele/i3/inside/lights/038/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light039 LWT"
+  state_topic: "tele/i3/inside/lights/039/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "light040 LWT"
+  state_topic: "tele/i3/inside/lights/040/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightLargeBathroom LWT"
+  state_topic: "tele/i3/inside/large-bathroom/light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightMediaLab LWT"
+  state_topic: "tele/i3/inside/media-lab/lights/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightSnappleVending LWT"
+  state_topic: "tele/i3/inside/commons/snapple-vending-light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightTrafficRed LWT"
+  state_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightTrafficYellow LWT"
+  state_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LightTrafficGreen LWT"
+  state_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Chandelier01 LWT"
+  state_topic: "tele/i3/inside/accent/chandelier-01/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Chandelier02 LWT"
+  state_topic: "tele/i3/inside/accent/chandelier-02/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Craft Room Light LWT"
+  state_topic: "tele/i3/inside/craftroom/light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Electronics Lab Light LWT"
+  state_topic: "tele/i3/inside/elab/light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Hallway Light LWT"
+  state_topic: "tele/i3/inside/hallway/light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Small Bathroom Light LWT"
+  state_topic: "tele/i3/inside/small-bathroom/light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Small Bathroom Shower Light LWT"
+  state_topic: "tele/i3/inside/small-bathroom/shower-light/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Classroom Lights East LWT"
+  state_topic: "tele/i3/inside/classroom/lights-east/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Classroom Lights West LWT"
+  state_topic: "tele/i3/inside/classroom/lights-west/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Dooridor Lights LWT"
+  state_topic: "tele/i3/inside/dooridor/lights/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Tool Crib Workbench Lights LWT"
+  state_topic: "tele/i3/inside/tool-crib/workbench-lights/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Fairy Lights LWT"
+  state_topic: "tele/i3/inside/commons/accent/fairy-lights/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Lanterns LWT"
+  state_topic: "tele/i3/inside/laser-zone/accent/lanterns/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Air Compressor Valve LWT"
+  state_topic: "tele/i3/inside/infrastructure/compressor-valve/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Classroom Sign LWT"
+  state_topic: "tele/i3/inside/classroom/sign/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Disco Ball LWT"
+  state_topic: "tele/i3/inside/commons/disco/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Paint Box Vent LWT"
+  state_topic: "tele/i3/inside/commons/paint-box/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Large Bathroom Vent Fan LWT"
+  state_topic: "tele/i3/inside/large-bathroom/vent/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Small Bathroom Vent Fan LWT"
+  state_topic: "tele/i3/inside/small-bathroom/vent/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Fab Lab Chiller LWT"
+  state_topic: "tele/i3/inside/fablab/chiller/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Hallway Light Switch West LWT"
+  state_topic: "tele/i3/inside/hallway/lightswitch-west/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Hallway Light Switch West LWT"
+  state_topic: "tele/i3/inside/hallway/lightswitch-east/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Disco Spotlights LWT"
+  state_topic: "tele/i3/inside/commons/accent/disco-spotlights/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Recycle Notification Light LWT"
+  state_topic: "tele/i3/inside/commons/notification-lights/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "CommonsCeilingFans LWT"
+  state_topic: "tele/i3/inside/commons/ceiling-fans/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LaserCeilingFan LWT"
+  state_topic: "tele/i3/inside/laser-zone/ceiling-fan/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "MachineShopCeilingFan LWT"
+  state_topic: "tele/i3/inside/machine-shop/ceiling-fan/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "FLV_Fan LWT"
+  state_topic: "tele/i3/inside/fablab/vent/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "LaserZoneExhaustFan LWT"
+  state_topic: "tele/i3/inside/laser-zone/vent-fan/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "CNCCeilingExhaust LWT"
+  state_topic: "tele/i3/inside/cnc/vent/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "SouthCeilingExhaust LWT"
+  state_topic: "tele/i3/inside/commons/south-vent/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Genie Charger LWT"
+  state_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Alarm Siren LWT"
+  state_topic: "tele/i3/inside/commons/siren/LWT"
+  force_update: true
+
+- platform: mqtt
+  name: "Snapple Vending Compressor Power LWT"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  force_update: true

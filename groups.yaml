@@ -486,11 +486,91 @@ LWT:
     - sensor.Small_Bathroom_Motion_Sensor_LWT
     - sensor.Machine_Shop_Motion_Sensor_LWT
     - sensor.Bumblebee_LWT
-    - sensor.Bumblebee_Chiller_lwt
-    - sensor.Bumblebee_status_lights_lwt
     - sensor.Wolverine_LWT
+    - sensor.Bumblebee_Status_Lights_LWT
+    - sensor.Wolverine_Status_Lights_LWT
+    - sensor.Bumblebee_Chiller_LWT
     - sensor.Wolverine_Chiller_LWT
-    - sensor.Wolverine_status_lights_lwt
+    - sensor.light001_LWT
+    - sensor.light002_LWT
+    - sensor.light003_LWT
+    - sensor.light004_LWT
+    - sensor.light005_LWT
+    - sensor.light006_LWT
+    - sensor.light007_LWT
+    - sensor.light008_LWT
+    - sensor.light009_LWT
+    - sensor.light010_LWT
+    - sensor.light011_LWT
+    - sensor.light012_LWT
+    - sensor.light013_LWT
+    - sensor.light014_LWT
+    - sensor.light015_LWT
+    - sensor.light016_LWT
+    - sensor.light017_LWT
+    - sensor.light018_LWT
+    - sensor.light019_LWT
+    - sensor.light020_LWT
+    - sensor.light021_LWT
+    - sensor.light022_LWT
+    - sensor.light023_LWT
+    - sensor.light024_LWT
+    - sensor.light025_LWT
+    - sensor.light026_LWT
+    - sensor.light027_LWT
+    - sensor.LightWelding_LWT
+    - sensor.light029_LWT
+    - sensor.light030_LWT
+    - sensor.light031_LWT
+    - sensor.light032_LWT
+    - sensor.light033_LWT
+    - sensor.light034_LWT
+    - sensor.light035_LWT
+    - sensor.LightVinyl_LWT
+    - sensor.LightTreehouse_LWT
+    - sensor.light038_LWT
+    - sensor.light039_LWT
+    - sensor.light040_LWT
+    - sensor.LightLargeBathroom_LWT
+    - sensor.LightMediaLab_LWT
+    - sensor.LightSnappleVending_LWT
+    - sensor.LightTrafficRed_LWT
+    - sensor.LightTrafficYellow_LWT
+    - sensor.LightTrafficGreen_LWT
+    - sensor.Chandelier01_LWT
+    - sensor.Chandelier02_LWT
+    - sensor.Craft_Room_Light_LWT
+    - sensor.Electronics_Lab_Light_LWT
+    - sensor.Hallway_Light_LWT
+    - sensor.Small_Bathroom_Light_LWT
+    - sensor.Small_Bathroom_Shower_Light_LWT
+    - sensor.Classroom_Lights_East_LWT
+    - sensor.Classroom_Lights_West_LWT
+    - sensor.Dooridor_Lights_LWT
+    - sensor.Tool_Crib_Workbench_Lights_LWT
+    - sensor.Fairy_Lights_LWT
+    - sensor.Lanterns_LWT
+    - sensor.Air_Compressor_Valve_LWT
+    - sensor.Classroom_Sign_LWT
+    - sensor.Disco_Ball_LWT
+    - sensor.Paint_Box_Vent_LWT
+    - sensor.Large_Bathroom_Vent_Fan_LWT
+    - sensor.Small_Bathroom_Vent_Fan_LWT
+    - sensor.Fab_Lab_Chiller_LWT
+    - sensor.Hallway_Light_Switch_West_LWT
+    - sensor.Hallway_Light_Switch_West_LWT
+    - sensor.Disco_Spotlights_LWT
+    - sensor.Recycle_Notification_Light_LWT
+    - sensor.CommonsCeilingFans_LWT
+    - sensor.LaserCeilingFan_LWT
+    - sensor.MachineShopCeilingFan_LWT
+    - sensor.FLV_Fan_LWT
+    - sensor.LaserZoneExhaustFan_LWT
+    - sensor.CNCCeilingExhaust_LWT
+    - sensor.SouthCeilingExhaust_LWT
+    - sensor.Genie_Charger_LWT
+    - sensor.Alarm_Siren_LWT
+    - sensor.Snapple_Vending_Compressor_Power_LWT
 
 APCUPS:
   name: "Server Rack UPS"
