@@ -1,0 +1,47 @@
+- alias: Chinesium Laser On
+  trigger:
+    - platform: state
+      entity_id: switch.Chinesium_Laser
+      to: 'on'
+      from: 'off'
+  action:
+  action:
+    - service: switch.turn_on
+      entity_id: switch.Fab_Lab_Chiller
+    - service: switch.turn_on
+      entity_id: switch.Fab_Lab_Exhaust_Fan
+
+# - alias: Chinesium Laser Chiller Off
+#   trigger:
+#     - platform: state
+#       entity_id: switch.Chinesium_Laser
+#       to: 'off'
+#       from: 'on'
+#   action:
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.Fab_Lab_Chiller
+#     - service: switch.turn_off
+#       entity_id: switch.Fab_Lab_Exhaust_Fan
+
+- alias: Fab lab fan status sign on
+  trigger:
+    - platform: state
+      entity_id: switch.flv_fan
+      to: 'on'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "cmnd/i3/commons/16seg/display"
+      payload: "FAB LAB FAN ON"
+
+- alias: Fab lab fan status sign off
+  trigger:
+    - platform: state
+      entity_id: switch.flv_fan
+      to: 'off'
+  action:
+    service: mqtt.publish
+    data:
+      topic: "cmnd/i3/commons/16seg/display"
+      payload: "FAB LAB FAN OFF"

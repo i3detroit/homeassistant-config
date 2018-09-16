@@ -426,8 +426,9 @@ fab_lab:
   icon: mdi:power
   control: hidden
   entities:
-    - switch.FLV_Fan
+    - switch.Fab_Lab_Exhaust_Fan
     - switch.Fab_Lab_Chiller
+    - switch.Chinesium_Laser
 
 welding:
   name: "Welding Zone"
