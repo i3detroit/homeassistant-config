@@ -209,7 +209,7 @@
 
 # Exhaust Fans
 - platform: mqtt
-  name: "Fab Lab Exhuast Fan"
+  name: "Fab Lab Exhaust Fan"
   state_topic: "stat/i3/inside/fablab/vent/POWER"
   command_topic: "cmnd/i3/inside/fablab/vent/POWER"
   payload_on: "ON"
