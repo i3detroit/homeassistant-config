@@ -80,3 +80,86 @@
   availability_topic: "tele/i3/inside/fablab/chiller/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
+
+########################################################################
+### Chinesium Laser Power
+########################################################################
+- platform: mqtt
+  name: "Chinesium Laser Power Draw"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Power"] }}'
+  force_update: True
+  unit_of_measurement: "Watts"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  
+- platform: mqtt
+  name: "Chinesium Laser Voltage"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
+  force_update: True
+  unit_of_measurement: "Volts"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Chinesium Laser Current"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Current"] }}'
+  force_update: True
+  unit_of_measurement: "Amps"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Chinesium Laser Energy Use Delta"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Period"] }}'
+  force_update: True
+  unit_of_measurement: "Watt hours"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Chinesium Laser Energy Use Today"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Today"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Chinesium Laser Energy Use Yesterday"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Chinesium Laser Total Power"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Chinesium Laser Power Factor"
+  state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Factor"] }}'
+  force_update: True
+  unit_of_measurement: "kilowatt hours"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"

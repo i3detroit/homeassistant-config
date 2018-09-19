@@ -47,6 +47,7 @@ Zones:
     - group.laser_zone
     - group.laser_zone_stats
     - group.fab_lab
+    - group.fab_lab_stats
     - group.snack_zone
     - group.welding
     - group.compute_zone
@@ -429,6 +430,16 @@ fab_lab:
     - switch.Fab_Lab_Exhaust_Fan
     - switch.Fab_Lab_Chiller
     - switch.Chinesium_Laser
+
+fab_lab_stats:
+  name: "Fab Lab Stats"
+  entities:
+    - sensor.Chinesium_Laser_Power_Draw
+    - sensor.Chinesium_Laser_Voltage
+    - sensor.Chinesium_Laser_Current
+    - sensor.Chinesium_Laser_Energy_Use_Delta
+    - sensor.Chinesium_Laser_Energy_Use_Today
+    - sensor.Chinesium_Laser_Total_Power
 
 welding:
   name: "Welding Zone"
