@@ -267,3 +267,13 @@
   availability_topic: "tele/i3/inside/commons/siren/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Machine Compressor"
+  state_topic: "stat/i3/inside/commons/snapple-vending-compress/POWER"
+  command_topic: "cmnd/i3/inside/commons/snapple-vending-compress/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"

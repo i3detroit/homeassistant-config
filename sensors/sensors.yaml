@@ -206,6 +206,14 @@
         {% else %}
           No
         {%- endif %}
+    meeting_time:
+      friendly_name: "Meeting time?"
+      value_template: >-
+        {% if (now().weekday() == 1) and (now().date().day <= 22) and (now().time().hour >= 19) and (now().time().hour < 21) %}
+          Yes
+        {% else %}
+          No
+        {%- endif %}
 
 - platform: template
   sensors:

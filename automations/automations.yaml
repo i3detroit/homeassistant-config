@@ -373,6 +373,28 @@
     service: switch.turn_off
     entity_id: switch.Recycle_Notification_Light
 
+- alias: Meeting Day Turn Off Loud Things
+  trigger:
+    platform: state
+    entity_id: sensor.meeting_time
+    to: "Yes"
+  action:
+    - service: switch.turn_off
+      entity_id: switch.Snapple_Machine_Compressor
+    - service: switch.turn_off
+      entity_id: switch.CNCCeilingExhaust
+    - service: switch.turn_off
+      entity_id: switch.SouthCeilingExhaust
+
+- alias: Meeting Day Turn On Snapple Compressor
+  trigger:
+    platform: state
+    entity_id: sensor.meeting_time
+    to: "No"
+  action:
+    service: switch.turn_on
+    entity_id: switch.Snapple_Machine_Compressor
+
 #- alias: Tweet photo from camera
 #  initial_state: 'off'
 #  trigger:
