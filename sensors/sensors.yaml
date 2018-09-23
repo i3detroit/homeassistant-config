@@ -235,6 +235,7 @@
 - platform: mqtt
   name: "Front Door Panel Battery Voltage"
   state_topic: "tele/i3/inside/commons/front-door-indicator/batteryVoltage"
+  unit_of_measurement: "V"
   force_update: True
 
 - platform: template

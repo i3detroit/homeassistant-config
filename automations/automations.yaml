@@ -245,6 +245,13 @@
       below: 12.0
       for:
         minutes: 5
+    - platform: time
+      minutes: '/240'
+      seconds: 00
+  condition:
+    condition: numeric_state
+    entity_id: sensor.front_door_panel_battery_voltage
+    below: 12.0
   action:
     service: notify.slack_statusbots
     data:
