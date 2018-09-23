@@ -445,3 +445,51 @@ full_shutdown:
         - switch.wolverine
     - service: script.turn_on
       entity_id: script.warehouse_lights_out
+
+elab_red_alert:
+  alias: Elab Red Alert
+  sequence:
+    - service: light.turn_on
+      entity_id: group.elab_arch
+      data:
+        rgb_color: [255, 0, 0]
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_on
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_off
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_on
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_off
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_on
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_off
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_on
+      entity_id: group.elab_arch
+    - delay:
+        milliseconds: 250
+    - service: light.turn_off
+      entity_id: group.elab_arch
+    - service: light.turn_on
+      entity_id: group.elab_arch
+      data:
+        effect: 2

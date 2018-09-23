@@ -251,6 +251,13 @@ emergency_lights:
     - light.light027
     - light.light038
 
+elab_arch:
+  name: "Elab Arch"
+  icon: mdi:alarm-light
+  entities:
+    - light.elab_arch_north
+    - light.elab_arch_south
+
 openEVSE:
   name: "OpenEVSE Stats"
   icon: mdi:car

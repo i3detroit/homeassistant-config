@@ -712,3 +712,11 @@
     service: notify.slack_statusbots
     data:
       message: "Office thermostat is back on mains power."
+
+- alias: Doorbell Red Alert
+  trigger:
+    - platform: mqtt
+      topic: stat/i3/inside/commons/normal-doorbell/press
+  action:
+    service: script.turn_on
+    entity_id: script.elab_red_alert
