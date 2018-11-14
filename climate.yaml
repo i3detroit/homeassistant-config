@@ -12,6 +12,7 @@
   fan_modes:
     - auto
     - 'on'
+    - 'off'
   availability_topic: "tele/i3/inside/office/thermostat/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
