@@ -222,6 +222,8 @@
     - platform: state
       entity_id: binary_sensor.front_door_panel_power
       to: 'off'
+      for:
+        minutes: 1
   action:
     service: notify.slack_statusbots
     data:
@@ -664,6 +666,16 @@
     service: notify.slack_statusbots
     data:
       message: "UPS is OK. No longer on battery"
+
+- alias: yell at slack if UPS is on battery
+  trigger:
+    - platform: state
+      entity_id: sensor.ups_status
+      to: "ONLINE REPLACEBATT"
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Alert! UPS batteries need to be changed"
 
 - alias: Turn the genie charger back on when someone's stupid
   trigger:
