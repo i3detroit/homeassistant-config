@@ -1,0 +1,497 @@
+- platform: mqtt
+  name: "433 RF Receiver VCC"
+  state_topic: "tele/i3/inside/infrastructure/433-rf-reciever/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Bumblebee VCC"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/laser/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Wolverine VCC"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/laser/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Bumblebee Chiller VCC"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee/chiller/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Wolverine Chiller VCC"
+  state_topic: "tele/i3/inside/laser-zone/wolverine/chiller/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: True
+
+- platform: mqtt
+  name: "light001 VCC"
+  state_topic: "tele/i3/inside/lights/001/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light002 VCC"
+  state_topic: "tele/i3/inside/lights/002/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light003 VCC"
+  state_topic: "tele/i3/inside/lights/003/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light004 VCC"
+  state_topic: "tele/i3/inside/lights/004/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light005 VCC"
+  state_topic: "tele/i3/inside/lights/005/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light006 VCC"
+  state_topic: "tele/i3/inside/lights/006/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light007 VCC"
+  state_topic: "tele/i3/inside/lights/007/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light008 VCC"
+  state_topic: "tele/i3/inside/lights/008/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light009 VCC"
+  state_topic: "tele/i3/inside/lights/009/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light010 VCC"
+  state_topic: "tele/i3/inside/lights/010/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light011 VCC"
+  state_topic: "tele/i3/inside/lights/011/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light012 VCC"
+  state_topic: "tele/i3/inside/lights/012/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light013 VCC"
+  state_topic: "tele/i3/inside/lights/013/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light014 VCC"
+  state_topic: "tele/i3/inside/lights/014/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light015 VCC"
+  state_topic: "tele/i3/inside/lights/015/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light016 VCC"
+  state_topic: "tele/i3/inside/lights/016/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light017 VCC"
+  state_topic: "tele/i3/inside/lights/017/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light018 VCC"
+  state_topic: "tele/i3/inside/lights/018/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light019 VCC"
+  state_topic: "tele/i3/inside/lights/019/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light020 VCC"
+  state_topic: "tele/i3/inside/lights/020/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light021 VCC"
+  state_topic: "tele/i3/inside/lights/021/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light022 VCC"
+  state_topic: "tele/i3/inside/lights/022/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light023 VCC"
+  state_topic: "tele/i3/inside/lights/023/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light024 VCC"
+  state_topic: "tele/i3/inside/lights/024/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light025 VCC"
+  state_topic: "tele/i3/inside/lights/025/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light026 VCC"
+  state_topic: "tele/i3/inside/lights/026/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light027 VCC"
+  state_topic: "tele/i3/inside/lights/027/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LightWelding VCC"
+  state_topic: "tele/i3/inside/lights/028/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light029 VCC"
+  state_topic: "tele/i3/inside/lights/029/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light030 VCC"
+  state_topic: "tele/i3/inside/lights/030/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light031 VCC"
+  state_topic: "tele/i3/inside/lights/031/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light032 VCC"
+  state_topic: "tele/i3/inside/lights/032/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light033 VCC"
+  state_topic: "tele/i3/inside/lights/033/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light034 VCC"
+  state_topic: "tele/i3/inside/lights/034/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light035 VCC"
+  state_topic: "tele/i3/inside/lights/035/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LightVinyl VCC"
+  state_topic: "tele/i3/inside/lights/036/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LightTreehouse VCC"
+  state_topic: "tele/i3/inside/lights/037/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light038 VCC"
+  state_topic: "tele/i3/inside/lights/038/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light039 VCC"
+  state_topic: "tele/i3/inside/lights/039/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "light040 VCC"
+  state_topic: "tele/i3/inside/lights/040/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LightLargeBathroom VCC"
+  state_topic: "tele/i3/inside/large-bathroom/light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LightMediaLab VCC"
+  state_topic: "tele/i3/inside/media-lab/lights/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LightSnappleVending VCC"
+  state_topic: "tele/i3/inside/commons/snapple-vending-light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LightTraffic VCC"
+  state_topic: "tele/i3/inside/commons/traffic-light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Chandelier01 VCC"
+  state_topic: "tele/i3/inside/accent/chandelier-01/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Chandelier02 VCC"
+  state_topic: "tele/i3/inside/accent/chandelier-02/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Craft Room Light VCC"
+  state_topic: "tele/i3/inside/craftroom/light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Electronics Lab Light VCC"
+  state_topic: "tele/i3/inside/elab/light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Hallway Light VCC"
+  state_topic: "tele/i3/inside/hallway/light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Small Bathroom Light VCC"
+  state_topic: "tele/i3/inside/small-bathroom/light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Small Bathroom Shower Light VCC"
+  state_topic: "tele/i3/inside/small-bathroom/shower-light/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Classroom Lights East VCC"
+  state_topic: "tele/i3/inside/classroom/lights-east/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Classroom Lights West VCC"
+  state_topic: "tele/i3/inside/classroom/lights-west/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Dooridor Lights VCC"
+  state_topic: "tele/i3/inside/dooridor/lights/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Tool Crib Workbench Lights VCC"
+  state_topic: "tele/i3/inside/tool-crib/workbench-lights/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Fairy Lights VCC"
+  state_topic: "tele/i3/inside/commons/accent/fairy-lights/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Lanterns VCC"
+  state_topic: "tele/i3/inside/laser-zone/accent/lanterns/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Air Compressor Valve VCC"
+  state_topic: "tele/i3/inside/infrastructure/compressor-valve/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Classroom Sign VCC"
+  state_topic: "tele/i3/inside/classroom/sign/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Disco Ball VCC"
+  state_topic: "tele/i3/inside/commons/disco/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Paint Box Vent VCC"
+  state_topic: "tele/i3/inside/commons/paint-box/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Large Bathroom Vent Fan VCC"
+  state_topic: "tele/i3/inside/large-bathroom/vent/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Small Bathroom Vent Fan VCC"
+  state_topic: "tele/i3/inside/small-bathroom/vent/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Fab Lab Chiller VCC"
+  state_topic: "tele/i3/inside/fablab/chiller/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Hallway Light Switch West VCC"
+  state_topic: "tele/i3/inside/hallway/lightswitch-west/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Hallway Light Switch West VCC"
+  state_topic: "tele/i3/inside/hallway/lightswitch-east/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Disco Spotlights VCC"
+  state_topic: "tele/i3/inside/commons/accent/disco-spotlights/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Recycle Notification Light VCC"
+  state_topic: "tele/i3/inside/commons/notification-lights/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "CommonsCeilingFans VCC"
+  state_topic: "tele/i3/inside/commons/ceiling-fans/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LaserCeilingFan VCC"
+  state_topic: "tele/i3/inside/laser-zone/ceiling-fan/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "MachineShopCeilingFan VCC"
+  state_topic: "tele/i3/inside/machine-shop/ceiling-fan/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "FLV_Fan VCC"
+  state_topic: "tele/i3/inside/fablab/vent/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "LaserZoneExhaustFan VCC"
+  state_topic: "tele/i3/inside/laser-zone/vent-fan/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "CNCCeilingExhaust VCC"
+  state_topic: "tele/i3/inside/cnc/vent/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "SouthCeilingExhaust VCC"
+  state_topic: "tele/i3/inside/commons/south-vent/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Genie Charger VCC"
+  state_topic: "tele/i3/inside/commons/genie-charging/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Alarm Siren VCC"
+  state_topic: "tele/i3/inside/commons/siren/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
+
+- platform: mqtt
+  name: "Snapple Vending Compressor Power VCC"
+  state_topic: "tele/i3/inside/commons/snapple-vending-compress/STATE"
+  value_template: '{{ value_json.Vcc }}'
+  force_update: true
