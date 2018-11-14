@@ -223,3 +223,13 @@
   state_topic: "stat/i3/inside/laser-zone/wolverine-timer/laser-tube-time"
   unit_of_measurement: "millisecond"
   force_update: True
+
+- platform: mqtt
+  name: "Bumblebee Timer LWT"
+  state_topic: "tele/i3/inside/laser-zone/bumblebee-timer/LWT"
+  force_update: True
+
+- platform: mqtt
+  name: "Wolverine Timer LWT"
+  state_topic: "tele/i3/inside/laser-zone/wolverine-timer/LWT"
+  force_update: True
