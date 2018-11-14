@@ -82,6 +82,7 @@ infrastructure:
     - sensor.recycle_day
     - sensor.open_for_tours
     - group.LWT
+    - group.VCC
     - group.vm_trackers
     - group.openEVSE
     - group.APCUPS
@@ -91,7 +92,7 @@ infrastructure:
 
 developer_settings:
   view: yes
-  icon: mdi:home-assistant
+  icon: mdi:nuke
   entities:
     - group.enable_developer
     - group.hidden_controls
@@ -590,6 +591,114 @@ LWT:
     - sensor.Genie_Charger_LWT
     - sensor.Alarm_Siren_LWT
     - sensor.Snapple_Vending_Compressor_Power_LWT
+
+VCC:
+  name: "VCC"
+  icon: mdi:power
+  entities:
+    - sensor.Glass_Door_VCC
+    - sensor.Disco_Button_VCC
+    - sensor.Commons_Ground_Sensor_Cluster_VCC
+    - sensor.Commons_Ceiling_Sensor_Cluster_VCC
+    - sensor.Fab_Lab_Sensor_Cluster_VCC
+    - sensor.Commons_Middle_East_Light_Switches_South_VCC
+    - sensor.Commons_Middle_East_Light_Switches_North_VCC
+    - sensor.Commons_Light_Switches_West_VCC
+    - sensor.Commons_Light_Switches_East_VCC
+    - sensor.Light_28_Button_VCC
+    - sensor.433_RF_Receiver_VCC
+    - sensor.Air_Compressor_Request_001_VCC
+    - sensor.Air_Compressor_Request_002_VCC
+    - sensor.Air_Compressor_Request_003_VCC
+    - sensor.Fab_Lab_Control_Buttons_VCC
+    - sensor.Weld_Zone_Tank_Sensors_VCC
+    - sensor.Large_Bathroom_Motion_Sensor_VCC
+    - sensor.Small_Bathroom_Motion_Sensor_VCC
+    - sensor.Machine_Shop_Motion_Sensor_VCC
+    - sensor.Bumblebee_VCC
+    - sensor.Wolverine_VCC
+    - sensor.Bumblebee_Status_Lights_VCC
+    - sensor.Wolverine_Status_Lights_VCC
+    - sensor.Bumblebee_Chiller_VCC
+    - sensor.Wolverine_Chiller_VCC
+    - sensor.light001_VCC
+    - sensor.light002_VCC
+    - sensor.light003_VCC
+    - sensor.light004_VCC
+    - sensor.light005_VCC
+    - sensor.light006_VCC
+    - sensor.light007_VCC
+    - sensor.light008_VCC
+    - sensor.light009_VCC
+    - sensor.light010_VCC
+    - sensor.light011_VCC
+    - sensor.light012_VCC
+    - sensor.light013_VCC
+    - sensor.light014_VCC
+    - sensor.light015_VCC
+    - sensor.light016_VCC
+    - sensor.light017_VCC
+    - sensor.light018_VCC
+    - sensor.light019_VCC
+    - sensor.light020_VCC
+    - sensor.light021_VCC
+    - sensor.light022_VCC
+    - sensor.light023_VCC
+    - sensor.light024_VCC
+    - sensor.light025_VCC
+    - sensor.light026_VCC
+    - sensor.light027_VCC
+    - sensor.LightWelding_VCC
+    - sensor.light029_VCC
+    - sensor.light030_VCC
+    - sensor.light031_VCC
+    - sensor.light032_VCC
+    - sensor.light033_VCC
+    - sensor.light034_VCC
+    - sensor.light035_VCC
+    - sensor.LightVinyl_VCC
+    - sensor.LightTreehouse_VCC
+    - sensor.light038_VCC
+    - sensor.light039_VCC
+    - sensor.light040_VCC
+    - sensor.LightLargeBathroom_VCC
+    - sensor.LightMediaLab_VCC
+    - sensor.LightSnappleVending_VCC
+    - sensor.LightTraffic_VCC
+    - sensor.Chandelier01_VCC
+    - sensor.Chandelier02_VCC
+    - sensor.Craft_Room_Light_VCC
+    - sensor.Electronics_Lab_Light_VCC
+    - sensor.Hallway_Light_VCC
+    - sensor.Small_Bathroom_Light_VCC
+    - sensor.Small_Bathroom_Shower_Light_VCC
+    - sensor.Classroom_Lights_East_VCC
+    - sensor.Classroom_Lights_West_VCC
+    - sensor.Dooridor_Lights_VCC
+    - sensor.Tool_Crib_Workbench_Lights_VCC
+    - sensor.Fairy_Lights_VCC
+    - sensor.Lanterns_VCC
+    - sensor.Air_Compressor_Valve_VCC
+    - sensor.Classroom_Sign_VCC
+    - sensor.Disco_Ball_VCC
+    - sensor.Paint_Box_Vent_VCC
+    - sensor.Large_Bathroom_Vent_Fan_VCC
+    - sensor.Small_Bathroom_Vent_Fan_VCC
+    - sensor.Fab_Lab_Chiller_VCC
+    - sensor.Hallway_Light_Switch_West_VCC
+    - sensor.Hallway_Light_Switch_West_VCC
+    - sensor.Disco_Spotlights_VCC
+    - sensor.Recycle_Notification_Light_VCC
+    - sensor.CommonsCeilingFans_VCC
+    - sensor.LaserCeilingFan_VCC
+    - sensor.MachineShopCeilingFan_VCC
+    - sensor.FLV_Fan_VCC
+    - sensor.LaserZoneExhaustFan_VCC
+    - sensor.CNCCeilingExhaust_VCC
+    - sensor.SouthCeilingExhaust_VCC
+    - sensor.Genie_Charger_VCC
+    - sensor.Alarm_Siren_VCC
+    - sensor.Snapple_Vending_Compressor_Power_VCC
 
 APCUPS:
   name: "Server Rack UPS"
