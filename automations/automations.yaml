@@ -98,6 +98,8 @@
         - light.Chandelier01
         - light.Chandelier02
         - light.fairy_lights
+        - light.swirly_lights_01
+        - light.swirly_lights_02
     - service: switch.turn_on
       entity_id: switch.disco_spotlights
 
@@ -112,6 +114,8 @@
         - light.Chandelier01
         - light.Chandelier02
         - light.fairy_lights
+        - light.swirly_lights_01
+        - light.swirly_lights_02
     - service: switch.turn_off
       entity_id: switch.disco_spotlights
 

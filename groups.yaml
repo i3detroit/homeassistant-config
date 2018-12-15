@@ -308,7 +308,8 @@ decor:
   icon: mdi:traffic-light
   control: hidden
   entities:
-    - light.LightSnappleVending
+    - light.snapple_vending_light
+    - script.reset_snapple_rgb
     - light.LightTrafficGreen
     - light.LightTrafficYellow
     - light.LightTrafficRed
@@ -320,6 +321,8 @@ decor:
     - light.lanterns
     - light.Elab_Arch_North
     - light.Elab_Arch_South
+    - light.swirly_lights_01
+    - light.swirly_lights_02
 
 misc_switches:
   name: "Misc. Switches"

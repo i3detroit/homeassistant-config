@@ -442,16 +442,6 @@
   payload_off: "OFF"
 
 - platform: mqtt
-  name: "LightSnappleVending"
-  state_topic: "stat/i3/inside/commons/snapple-vending-light/POWER"
-  command_topic: "cmnd/i3/inside/commons/snapple-vending-light/POWER"
-  availability_topic: "tele/i3/inside/commons/snapple-vending-light/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
   name: "LightTrafficRed"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER1"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER1"
@@ -682,6 +672,64 @@
   state_topic: "stat/i3/inside/laser-zone/accent/lanterns/POWER"
   command_topic: "cmnd/i3/inside/laser-zone/accent/lanterns/POWER"
   availability_topic: "tele/i3/inside/laser-zone/accent/lanterns/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: Snapple Vending Light
+  effect_list:
+    - 2
+    - 3
+  state_topic: "stat/i3/inside/commons/snapple-vending-light/RESULT"
+  command_topic: "cmnd/i3/inside/commons/snapple-vending-light/POWER"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-light/LWT"
+  brightness_state_topic: "stat/i3/inside/commons/snapple-vending-light/RESULT"
+  brightness_command_topic: "cmnd/i3/inside/commons/snapple-vending-light/Dimmer"
+  brightness_scale: 100
+  rgb_command_template: "{{ '%02x%02x%02x00' | format(green, red, blue)}}"
+  rgb_state_topic: "stat/i3/inside/commons/snapple-vending-light/RESULT"
+  rgb_command_topic: "cmnd/i3/inside/commons/snapple-vending-light/Color"
+  effect_command_topic: "cmnd/i3/inside/commons/snapple-vending-light/Scheme"
+  effect_state_topic: "stat/i3/inside/commons/snapple-vending-light/RESULT"
+  state_value_template: >
+    {% if "POWER" in value_json %}
+      {{ value_json.POWER }}
+    {% endif %}
+  brightness_value_template: >
+    {% if "Dimmer" in value_json %}
+      {{ value_json.Dimmer }}
+    {% endif %}
+  effect_value_template: >
+    {% if "Scheme" in value_json %}
+      {{ value_json.Scheme }}
+    {% endif %}
+  rgb_value_template: >
+    {% if "Color" in value_json %}
+      {{ (value_json.Color[2:4] | int(int, 16)) | string + ',' + (value_json.Color[0:2] | int(int, 16)) | string + ',' + (value_json.Color[4:6] | int(int, 16)) | string }}
+    {% endif %}
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  on_command_type: "brightness"
+
+- platform: mqtt
+  name: "Swirly Lights 01"
+  state_topic: "stat/i3/inside/commons/accent/swirly-lights-01/POWER"
+  command_topic: "cmnd/i3/inside/commons/accent/swirly-lights-01/POWER"
+  availability_topic: "tele/i3/inside/commons/accent/swirly-lights-01/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Swirly Lights 02"
+  state_topic: "stat/i3/inside/commons/accent/swirly-lights-02/POWER"
+  command_topic: "cmnd/i3/inside/commons/accent/swirly-lights-02/POWER"
+  availability_topic: "tele/i3/inside/commons/accent/swirly-lights-02/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
   payload_on: "ON"

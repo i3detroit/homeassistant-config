@@ -493,3 +493,11 @@ elab_red_alert:
       entity_id: group.elab_arch
       data:
         effect: 2
+
+reset_snapple_rgb:
+  alias: Reset Snapple RGB to White
+  sequence:
+    - service: light.turn_on
+      entity_id: light.snapple_vending_light
+      data:
+        rgb_color: [255, 184, 128]
