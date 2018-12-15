@@ -21,8 +21,10 @@ class CheckPowerMeter(appapi.AppDaemon):
                 result = client.query("select value from \"kWh\" WHERE entity_id='i3_power_meter' AND time < now() - 1437m and time > now() - 1443m;")
                 try:
                     yesterdayPower = list(result.get_points('kWh'))[0]['value']
-                    powerDiff = str(round(packet['total_kWh'] - yesterdayPower, 1))
-                    msgString = 'Power meter is ' + str(packet['total_kWh']) + 'kWh which is ' + powerDiff + ' kWh more than 24 hours ago'
+                    diff = packet['total_kWh'] - yesterdayPower
+                    powerDiff = str(round(diff, 1))
+                    powerCost = str(round(diff * 0.126, 2))
+                    msgString = 'Power meter reads ' + str(packet['total_kWh']) + ' kWh. Yesterday we used ' + powerDiff + ' kWh which cost $' + powerCost + '.'
                     self.call_service("notify/slack_statusbots", message = msgString)
                     break
                 except IndexError:
