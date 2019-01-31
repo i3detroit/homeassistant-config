@@ -81,14 +81,16 @@ infrastructure:
     - sensor.water_cooler_flow_counts
     - sensor.recycle_day
     - sensor.open_for_tours
-    - group.LWT
-    - group.VCC
     - group.vm_trackers
     - group.openEVSE
-    - group.APCUPS
     - group.device_trackers
+    - group.hardac_power
+    - group.network_rack_power
     - group.genie_charger
+    - group.APCUPS
     - input_select.winter_or_summer
+    - group.LWT
+    - group.VCC
 
 developer_settings:
   view: yes
@@ -423,12 +425,14 @@ laser_zone_stats:
     - sensor.Bumblebee_Power_Draw
     - sensor.Bumblebee_Voltage
     - sensor.Bumblebee_Current
+    - sensor.Bumblebee_Power_Factor
     - sensor.Bumblebee_Energy_Use_Delta
     - sensor.Bumblebee_Energy_Use_Today
     - sensor.bumblebee_tube_time
     - sensor.Wolverine_Power_Draw
     - sensor.Wolverine_Voltage
     - sensor.Wolverine_Current
+    - sensor.Wolverine_Power_Factor
     - sensor.Wolverine_Energy_Use_Delta
     - sensor.Wolverine_Energy_Use_Today
     - sensor.wolverine_tube_time
@@ -800,3 +804,23 @@ full_shutdown_card:
   control: hidden
   entities:
     - script.full_shutdown
+
+network_rack_power:
+  name: "Network Rack Power"
+  entities:
+    - sensor.network_rack_power_draw
+    - sensor.network_rack_voltage
+    - sensor.network_rack_current
+    - sensor.network_rack_power_factor
+    - sensor.network_rack_energy_use_delta
+    - sensor.network_rack_energy_use_today
+
+hardac_power:
+  name: "Hardac Power"
+  entities:
+    - sensor.hardac_power_draw
+    - sensor.hardac_voltage
+    - sensor.hardac_current
+    - sensor.hardac_power_factor
+    - sensor.hardac_energy_use_delta
+    - sensor.hardac_energy_use_today

@@ -83,7 +83,6 @@
   state_topic: "tele/i3/inside/commons/snapple-vending-compress/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Factor"] }}'
   force_update: True
-  unit_of_measurement: "kilowatt hours"
   availability_topic: "tele/i3/inside/commons/Snapple-charging/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
