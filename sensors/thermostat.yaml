@@ -92,3 +92,23 @@
         {% if states.sensor.office_thermostat_active_state.state | string == "cool" or states.sensor.office_thermostat_active_state.state | string == "heat" %}
           {{states.sensor.office_thermostat_ambient_temperature.state | float }}
         {% endif %}
+
+- platform: template
+  sensors:
+    office_thermostat_temp_on:
+      friendly_name: "Office Thermostat Cool On"
+      unit_of_measurement: "°C"
+      value_template: >-
+        {% if states.sensor.office_thermostat_active_state.state | string == "cool" %}
+          {{states.sensor.office_thermostat_ambient_temperature.state | float }}
+        {% endif %}
+
+- platform: template
+  sensors:
+    office_thermostat_temp_on:
+      friendly_name: "Office Thermostat Heat On"
+      unit_of_measurement: "°C"
+      value_template: >-
+        {% if states.sensor.office_thermostat_active_state.state | string == "heat" %}
+          {{states.sensor.office_thermostat_ambient_temperature.state | float }}
+        {% endif %}

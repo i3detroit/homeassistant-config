@@ -522,3 +522,8 @@
   name: "Snapple Vending Compressor Power LWT"
   state_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
   force_update: true
+
+- platform: mqtt
+  name: "Office Thermostat LWT"
+  state_topic: "tele/i3/inside/office/thermostat/LWT"
+  force_update: True
