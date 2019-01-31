@@ -227,7 +227,7 @@
       entity_id: binary_sensor.front_door_panel_power
       to: 'off'
       for:
-        minutes: 1
+        seconds: 15
   action:
     service: notify.slack_statusbots
     data:
@@ -722,12 +722,34 @@
   trigger:
     - platform: state
       entity_id: sensor.office_thermostat_power_source
-      from: 'mains'
-      to: 'battery'
+      from: 'battery'
+      to: 'mains'
   action:
     service: notify.slack_statusbots
     data:
       message: "Office thermostat is back on mains power."
+
+- alias: Office thermostat is offline
+  trigger:
+    - platform: state
+      entity_id: sensor.office_thermostat_lwt
+      from: 'Online'
+      to: 'Offline'
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Alert! Office thermostat is offline."
+
+- alias: Office thermostat is online
+  trigger:
+    - platform: state
+      entity_id: sensor.office_thermostat_lwt
+      from: 'Offline'
+      to: 'Online'
+  action:
+    service: notify.slack_statusbots
+    data:
+      message: "Office thermostat is online."
 
 - alias: Doorbell Red Alert
   trigger:
