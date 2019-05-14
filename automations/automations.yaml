@@ -671,7 +671,7 @@
     data:
       message: "UPS is OK. No longer on battery"
 
-- alias: yell at slack if UPS is on battery
+- alias: yell at slack if UPS battery needs to be changed
   trigger:
     - platform: state
       entity_id: sensor.ups_status

@@ -1,8 +1,8 @@
 - alias: Shutdown the whole space
   trigger:
-    platform: mqtt
-    topic: cmnd/i3/automation/shutdown
-    payload: 'DOWNSHUT'
+    - platform: mqtt
+      topic: cmnd/i3/automation/shutdown
+      payload: 'DOWNSHUT'
   action:
     - service: mqtt.publish
       data:
