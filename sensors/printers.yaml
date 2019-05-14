@@ -19,42 +19,60 @@
   command: "python3 /home/homeassistant/.homeassistant/sensors/scripts/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.Matte_black }}'
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Matte_black }}
+    {% endif %}
 
 - platform: command_line
   name: "Plotter Photo Black Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/scripts/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.Photo_black }}'
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Photo_black }}
+    {% endif %}
 
 - platform: command_line
   name: "Plotter Gray Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/scripts/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.Gray }}'
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Gray }}
+    {% endif %}
 
 - platform: command_line
   name: "Plotter Cyan Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/scripts/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.Cyan }}'
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Cyan }}
+    {% endif %}
 
 - platform: command_line
   name: "Plotter Magenta Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/scripts/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.Magenta }}'
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Magenta }}
+    {% endif %}
 
 - platform: command_line
   name: "Plotter Yellow Ink"
   command: "python3 /home/homeassistant/.homeassistant/sensors/scripts/plotterink.py"
   scan_interval: "3600"
   unit_of_measurement: "%"
-  value_template: '{{ value_json.Yellow }}'
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Yellow }}
+    {% endif %}
 
 - platform: command_line
   name: "Plotter Ink Used"
