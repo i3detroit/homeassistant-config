@@ -734,3 +734,133 @@
   payload_not_available: "Offline"
   payload_on: "ON"
   payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 041"
+  state_topic: "stat/i3/inside/lights/041/POWER"
+  command_topic: "cmnd/i3/inside/lights/041/POWER"
+  availability_topic: "tele/i3/inside/lights/041/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 042"
+  state_topic: "stat/i3/inside/lights/042/POWER"
+  command_topic: "cmnd/i3/inside/lights/042/POWER"
+  availability_topic: "tele/i3/inside/lights/042/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 043"
+  state_topic: "stat/i3/inside/lights/043/POWER"
+  command_topic: "cmnd/i3/inside/lights/043/POWER"
+  availability_topic: "tele/i3/inside/lights/043/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 044"
+  state_topic: "stat/i3/inside/lights/044/POWER"
+  command_topic: "cmnd/i3/inside/lights/044/POWER"
+  availability_topic: "tele/i3/inside/lights/044/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 045"
+  state_topic: "stat/i3/inside/lights/045/POWER"
+  command_topic: "cmnd/i3/inside/lights/045/POWER"
+  availability_topic: "tele/i3/inside/lights/045/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 046"
+  state_topic: "stat/i3/inside/lights/046/POWER"
+  command_topic: "cmnd/i3/inside/lights/046/POWER"
+  availability_topic: "tele/i3/inside/lights/046/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 047"
+  state_topic: "stat/i3/inside/lights/047/POWER"
+  command_topic: "cmnd/i3/inside/lights/047/POWER"
+  availability_topic: "tele/i3/inside/lights/047/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 048"
+  state_topic: "stat/i3/inside/lights/048/POWER"
+  command_topic: "cmnd/i3/inside/lights/048/POWER"
+  availability_topic: "tele/i3/inside/lights/048/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 049"
+  state_topic: "stat/i3/inside/lights/049/POWER"
+  command_topic: "cmnd/i3/inside/lights/049/POWER"
+  availability_topic: "tele/i3/inside/lights/049/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 050"
+  state_topic: "stat/i3/inside/lights/050/POWER"
+  command_topic: "cmnd/i3/inside/lights/050/POWER"
+  availability_topic: "tele/i3/inside/lights/050/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 051"
+  state_topic: "stat/i3/inside/lights/051/POWER"
+  command_topic: "cmnd/i3/inside/lights/051/POWER"
+  availability_topic: "tele/i3/inside/lights/051/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Light 052"
+  state_topic: "stat/i3/inside/lights/052/POWER"
+  command_topic: "cmnd/i3/inside/lights/052/POWER"
+  availability_topic: "tele/i3/inside/lights/052/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "B Side Office Light"
+  state_topic: "stat/i3/inside/b-side/office/lights/POWER"
+  command_topic: "cmnd/i3/inside/b-side/office/lights/POWER"
+  availability_topic: "tele/i3/inside/b-side/office/lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
