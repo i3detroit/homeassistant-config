@@ -22,9 +22,10 @@ class CheckPowerMeter(appapi.AppDaemon):
                 try:
                     yesterdayPower = list(result.get_points('kWh'))[0]['value']
                     diff = packet['total_kWh'] - yesterdayPower
-                    powerDiff = str(round(diff, 1))
-                    powerCost = str(round(diff * 0.126, 2))
-                    msgString = 'Power meter reads ' + str(packet['total_kWh']) + ' kWh. Yesterday we used ' + powerDiff + ' kWh which cost $' + powerCost + '.'
+                    powerTot = "{:.1f}".format(packet['total_kWh'])
+                    powerDiff = "{:.1f}".format(diff)
+                    powerCost = "{:.2f}".format(diff * 0.126)
+                    msgString = 'Power meter reads ' + powerTot + ' kWh. Yesterday we used ' + powerDiff + ' kWh which cost $' + powerCost + '.'
                     self.call_service("notify/slack_statusbots", message = msgString)
                     break
                 except IndexError:
