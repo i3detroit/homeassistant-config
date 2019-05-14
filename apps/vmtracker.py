@@ -1,7 +1,7 @@
 import appdaemon.appapi as appapi
 
 vm_list = ["asterisk", "full spectrum", "mcclellan", "minecraft",
-          "rostock max", "skynet"]
+          "rostock max", "skynet", "fab lab south pi", "fab lab north pi"]
 
 class VMTracker(appapi.AppDaemon):
 
@@ -18,4 +18,3 @@ class VMTracker(appapi.AppDaemon):
         elif new == "home" and old == "not_home":
           msgString = vm + " is online"
           self.call_service("notify/slack_statusbots", message = msgString)
-
