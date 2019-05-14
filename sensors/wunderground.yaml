@@ -1,7 +1,0 @@
-- platform: wunderground
-  api_key: !secret wunderground_api_key
-  monitored_conditions:
-    - weather_1d_metric
-    - weather_1n_metric
-    - weather_2d_metric
-    - weather_2n_metric
