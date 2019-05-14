@@ -142,3 +142,76 @@ devices:
     method: post
     content-type: json
     body: '{"entity_id": "script.dash_styrofoam_cups"}'
+  FC:A6:67:BA:2A:AD:
+    name: Blank 1
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  44:65:0D:DD:87:FE:
+    name: Blank 2
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  AC:63:BE:A5:2E:22:
+    name: Blank 3
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  0C:47:C9:1D:C7:EA:
+    name: Blank 4
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  AC:63:BE:15:B0:69:
+    name: Blank 5
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  84:D6:D0:70:63:84:
+    name: Blank 6
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  44:65:0D:AF:9E:3E:
+    name: Blank 7
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  18:74:2E:68:6E:FB:
+    name: Blank 8
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  6C:56:97:DA:8B:DC:
+    name: Blank 9
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  78:E1:03:37:A0:B7:
+    name: Blank 10
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.blank"}'
+  FC:65:DE:7A:D5:2B:
+    name: Blank 11
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.b_side_lights_off"}'
+  44:65:0D:F1:00:4E:
+    name: B-Side Lights On
+    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
+    method: post
+    content-type: json
+    body: '{"entity_id": "script.b_side_lights_on"}'
+
