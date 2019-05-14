@@ -1,0 +1,66 @@
+- platform: template
+  sensors:
+    full_spectrum:
+      friendly_name: "Full Spectrum"
+      value_template: >-
+        {% if is_state('device_tracker.full_spectrum', 'home') %}
+          online
+        {% elif is_state('device_tracker.full_spectrum', 'not_home') %}
+          offline
+        {% endif %}
+    asterisk:
+      friendly_name: "asterisk"
+      value_template: >-
+        {% if is_state('device_tracker.asterisk', 'home') %}
+          online
+        {% elif is_state('device_tracker.asterisk', 'not_home') %}
+          offline
+        {% endif %}
+    skynet:
+      friendly_name: "Skynet"
+      value_template: >-
+        {% if is_state('device_tracker.skynet', 'home') %}
+          online
+        {% elif is_state('device_tracker.skynet', 'not_home') %}
+          offline
+        {% endif %}
+    minecraft:
+      friendly_name: "Minecraft"
+      value_template: >-
+        {% if is_state('device_tracker.minecraft', 'home') %}
+          online
+        {% elif is_state('device_tracker.minecraft', 'not_home') %}
+          offline
+        {% endif %}
+    mcclellan:
+      friendly_name: "McClellan"
+      value_template: >-
+        {% if is_state('device_tracker.mcclellan', 'home') %}
+          online
+        {% elif is_state('device_tracker.mcclellan', 'not_home') %}
+          offline
+        {% endif %}
+    rostock_max:
+      friendly_name: "Rostock_MAX"
+      value_template: >-
+        {% if is_state('device_tracker.rostock_max', 'home') %}
+          online
+        {% elif is_state('device_tracker.rostock_max', 'not_home') %}
+          offline
+        {% endif %}
+    fab_lab_south_pi:
+      friendly_name: "Fab Lab South Pi"
+      value_template: >-
+        {% if is_state('device_tracker.fab_lab_south_pi', 'home') %}
+          online
+        {% elif is_state('device_tracker.fab_lab_south_pi', 'not_home') %}
+          offline
+        {% endif %}
+    fab_lab_north_pi:
+      friendly_name: "Fab Lab North Pi"
+      value_template: >-
+        {% if is_state('device_tracker.fab_lab_north_pi', 'home') %}
+          online
+        {% elif is_state('device_tracker.fab_lab_north_pi', 'not_home') %}
+          offline
+        {% endif %}
