@@ -22,6 +22,7 @@ Lighting:
     - group.row_4_lights
     - group.row_5_lights
     - group.machine_shop_lights
+    - group.b_side_lights
 
 misc_controls:
   view: yes
@@ -36,6 +37,8 @@ Atmospherics:
   entities:
     - group.HVAC
     - group.office_thermostat
+    - group.sensor_cluster_006
+    - group.sensor_cluster_007
     - group.YRWeather
 
 Zones:
@@ -81,6 +84,7 @@ infrastructure:
     - sensor.water_cooler_flow_counts
     - sensor.recycle_day
     - sensor.open_for_tours
+    - group.b_side_sensors
     - group.vm_trackers
     - group.openEVSE
     - group.device_trackers
@@ -115,6 +119,7 @@ shop_lights:
     - group.row_5_lights
     - group.machine_shop_lights
     - group.office_lights
+    - group.b_side_lights
     - group.misc_lights
 
 office_lights:
@@ -131,6 +136,7 @@ office_lights:
     - light.Electronics_Lab_Light
     - light.Small_Bathroom_Light
     - light.Small_Bathroom_Shower_Light
+    - light.B_Side_Office_Light
 
 misc_lights:
   name: "Misc. Lights"
@@ -181,6 +187,24 @@ office_thermostat:
 #    - sensor.Office_Thermostat_Timeout
     - sensor.office_thermostat_timeout_human_readable
     - sensor.office_thermostat_power_source
+
+sensor_cluster_006:
+  name: "Sensor Cluster 006"
+  icon: mdi:thermometer
+  entities:
+    - sensor.cluster_006_temperature
+    - sensor.cluster_006_humidity
+    - sensor.cluster_006_pressure_kpa
+    - sensor.cluster_006_lux
+
+sensor_cluster_007:
+  name: "Sensor Cluster 007"
+  icon: mdi:thermometer
+  entities:
+    - sensor.cluster_007_temperature
+    - sensor.cluster_007_humidity
+    - sensor.cluster_007_pressure_kpa
+    - sensor.cluster_007_lux
 
 row_1_lights:
   name: "Light Row 1"
@@ -245,6 +269,22 @@ machine_shop_lights:
     - light.light034
     - light.light035
 
+b_side_lights:
+  name: "B-Side Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_042
+    - light.light_043
+    - light.light_044
+    - light.light_045
+    - light.light_046
+    - light.light_047
+    - light.light_048
+    - light.light_049
+    - light.light_050
+    - light.light_051
+    - light.light_052
+    
 emergency_lights:
   name: "Emergency Lights"
   icon: mdi:alarm-light
@@ -253,6 +293,7 @@ emergency_lights:
     - light.light040
     - light.light027
     - light.light038
+    - light.light_041
 
 elab_arch:
   name: "Elab Arch"
@@ -824,3 +865,17 @@ hardac_power:
     - sensor.hardac_power_factor
     - sensor.hardac_energy_use_delta
     - sensor.hardac_energy_use_today
+
+b_side_sensors:
+  name: "B-Side Sensors"
+  entities:
+    - binary_sensor.b_side_office_motion
+    - binary_sensor.b_side_courtyard_door_motion
+    - binary_sensor.b_side_rear_shop
+    - binary_sensor.b_side_rear_door_open
+    - binary_sensor.b_side_garage_door_open
+    - binary_sensor.b_side_courtyard_door_open
+    - binary_sensor.b_side_office_front_door_open
+    - binary_sensor.b_side_lightswitch_off
+    - binary_sensor.b_side_lightswitch_on
+    - binary_sensor.a_b_front_door_open

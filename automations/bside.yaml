@@ -1,0 +1,62 @@
+- alias: B Side Office Lights Motion ON 
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.b_side_office_motion
+      to: '0'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.B_Side_Office_Light
+        state: 'off'
+        for:
+          seconds: 10
+      - condition: state
+        entity_id: binary_sensor.b_side_office_motion
+        state: '1'
+        for:
+          seconds: 2
+  action:
+    - service: light.turn_on
+      entity_id: light.B_Side_Office_Light
+
+- alias: B Side Office Lights Motion OFF 
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.b_side_office_motion
+      to: '1'
+      for:
+        minutes: 10
+  action:
+    - service: light.turn_off
+      entity_id: light.B_Side_Office_Light
+
+- alias: B Side Lights Button ON
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.b_side_lightswitch_on
+      to: '0'
+  condition:
+    condition: state
+    entity_id: binary_sensor.b_side_lightswitch_on
+    state: '1'
+    for:
+      seconds: 2
+  action:
+    - service: light.turn_on
+      entity_id: group.b_side_lights
+
+- alias: B Side Lights Button OFF
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.b_side_lightswitch_off
+      to: '0'
+  condition:
+    condition: state
+    entity_id: binary_sensor.b_side_lightswitch_off
+    state: '1'
+    for:
+      seconds: 2
+  action:
+    - service: light.turn_off
+      entity_id: group.b_side_lights
