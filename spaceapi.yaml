@@ -21,18 +21,24 @@ sensors:
     - "sensor.ground_cluster_temperature"
     - "sensor.ceiling_cluster_temperature"
     - "sensor.fablab_cluster_temperature"
-    - "sensor.snapple_vending_temperature"
     - "sensor.office_thermostat_ambient_temperature"
+    - "sensor.cluster_006_temperature"
+    - "sensor.cluster_007_temperature"
   humidity:
     - "sensor.ground_cluster_humidity"
     - "sensor.ceiling_cluster_humidity"
     - "sensor.fablab_cluster_humidity"
     - "sensor.office_thermostat_ambient_humidity"
+    - "sensor.cluster_006_humidity"
+    - "sensor.cluster_007_humidity"
+
   barometer:
     - "sensor.ground_cluster_pressure_kpa"
     - "sensor.ceiling_cluster_pressure_kpa"
     - "sensor.fablab_cluster_pressure_kpa"
     - "sensor.office_thermostat_pressure_kpa"
+    - "sensor.cluster_006_pressure_kpa"
+    - "sensor.cluster_007_pressure_kpa"
 # projects:
 #   - wiki: "https://i3detroit.org/wiki"
 #   - github: "https://github.com/i3detroit"
