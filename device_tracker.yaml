@@ -1,11 +1,11 @@
-- platform: unifi
-  host: 10.13.0.2
-  verify_ssl: false
-  username: !secret unifi_controller_user
-  password: !secret unifi_controller_pass
-  new_device_defaults:
-    track_new_devices: False
-    hide_if_away: True
+# - platform: unifi
+#   host: 10.13.0.2
+#   verify_ssl: false
+#   username: !secret unifi_controller_user
+#   password: !secret unifi_controller_pass
+#   new_device_defaults:
+#     track_new_devices: False
+#     hide_if_away: True
 
 - platform: ping
   consider_home: 600
@@ -16,3 +16,5 @@
     mcclellan: 10.13.0.22
     rostock_max: 10.13.0.156
     full_spectrum: 10.13.0.150
+    fab_lab_south_pi: 10.13.0.50
+    fab_lab_north_pi: 10.13.0.51
