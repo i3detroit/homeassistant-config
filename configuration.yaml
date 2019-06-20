@@ -130,4 +130,4 @@ panel_custom:
     config: !include floorplan.yaml
 
 logger:
-  default: warning
+  default: error
