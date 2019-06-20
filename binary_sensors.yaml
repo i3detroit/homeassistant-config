@@ -116,8 +116,8 @@
   name: "B Side Office Motion"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D0"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: motion
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -128,8 +128,8 @@
   name: "B Side Courtyard Door Motion"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D1"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: motion
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -137,11 +137,11 @@
   payload_not_available: "Offline"
 
 - platform: mqtt
-  name: "B Side Rear Shop"
+  name: "B Side Rear Shop Motion"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D2"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: motion
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -152,8 +152,8 @@
   name: "B Side Rear Door Open"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D3"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: opening
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -164,8 +164,8 @@
   name: "B Side Garage Door Open"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D4"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: opening
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -176,8 +176,8 @@
   name: "B Side Courtyard Door Open"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D5"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: opening
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -185,11 +185,11 @@
   payload_not_available: "Offline"
 
 - platform: mqtt
-  name: "A-B Front Door Open"
+  name: "A B Front Door Open"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D6"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: opening
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -200,8 +200,8 @@
   name: "B Side Office Front Door Open"
   state_topic: "stat/i3/inside/b-side/alarm-panel/RESULT"
   value_template: '{{ value_json["MCP230XX_INT"]["D7"] }}'
-  payload_on: "0"
-  payload_off: "1"
+  payload_on: "1"
+  payload_off: "0"
   device_class: opening
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
@@ -214,7 +214,6 @@
   value_template: '{{ value_json["MCP230XX_INT"]["D8"] }}'
   payload_on: "0"
   payload_off: "1"
-  device_class: opening
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
   payload_available: "Online"
@@ -226,7 +225,6 @@
   value_template: '{{ value_json["MCP230XX_INT"]["D9"] }}'
   payload_on: "0"
   payload_off: "1"
-  device_class: opening
   force_update: True
   availability_topic: "tele/i3/inside/b-side/alarm-panel/LWT"
   payload_available: "Online"
