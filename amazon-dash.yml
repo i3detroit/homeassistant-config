@@ -207,11 +207,11 @@ devices:
     url: 'http://10.13.0.22:8123/api/services/script/turn_on'
     method: post
     content-type: json
-    body: '{"entity_id": "script.b_side_lights_off"}'
+    body: '{"entity_id": "script.blank"}'
   44:65:0D:F1:00:4E:
-    name: B-Side Lights On
+    name: Blank 12
     url: 'http://10.13.0.22:8123/api/services/script/turn_on'
     method: post
     content-type: json
-    body: '{"entity_id": "script.b_side_lights_on"}'
+    body: '{"entity_id": "script.blank"}'
 
