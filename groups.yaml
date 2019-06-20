@@ -35,6 +35,7 @@ Atmospherics:
   view: yes
   icon: mdi:thermometer-lines
   entities:
+    - group.omnisensor
     - group.HVAC
     - group.office_thermostat
     - group.sensor_cluster_006
@@ -270,7 +271,7 @@ machine_shop_lights:
     - light.light035
 
 b_side_lights:
-  name: "B-Side Lights"
+  name: "B Side Lights"
   icon: mdi:ceiling-light
   entities:
     - light.light_042
@@ -871,7 +872,7 @@ b_side_sensors:
   entities:
     - binary_sensor.b_side_office_motion
     - binary_sensor.b_side_courtyard_door_motion
-    - binary_sensor.b_side_rear_shop
+    - binary_sensor.b_side_rear_shop_motion
     - binary_sensor.b_side_rear_door_open
     - binary_sensor.b_side_garage_door_open
     - binary_sensor.b_side_courtyard_door_open
@@ -879,3 +880,21 @@ b_side_sensors:
     - binary_sensor.b_side_lightswitch_off
     - binary_sensor.b_side_lightswitch_on
     - binary_sensor.a_b_front_door_open
+
+omnisensor:
+  name: "Omnisensor"
+  entities:
+    - sensor.omnisensor_temperature
+    - sensor.omnisensor_pressure
+    - sensor.omnisensor_humidity
+    - sensor.omnisensor_voc
+    - sensor.omnisensor_lux
+    - sensor.omnisensor_pm_1
+    - sensor.omnisensor_pm_2_5
+    - sensor.omnisensor_pm_10
+    - sensor.omnisensor_pb_0_3
+    - sensor.omnisensor_pb_0_5
+    - sensor.omnisensor_pb_1
+    - sensor.omnisensor_pb_2_5
+    - sensor.omnisensor_pb_5
+    - sensor.omnisensor_pb_10
