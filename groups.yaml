@@ -346,6 +346,7 @@ shop_fans:
     - switch.SouthCeilingExhaust
     - switch.large_bathroom_vent_fan
     - switch.small_bathroom_vent_fan
+    - switch.bside_ceiling_vent_fan
 
 decor:
   name: "Decor"
