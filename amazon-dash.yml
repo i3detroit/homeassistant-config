@@ -143,11 +143,11 @@ devices:
     content-type: json
     body: '{"entity_id": "script.dash_styrofoam_cups"}'
   FC:A6:67:BA:2A:AD:
-    name: Blank 1
+    name: Purple Glue Sticks (24)
     url: 'http://10.13.0.22:8123/api/services/script/turn_on'
     method: post
     content-type: json
-    body: '{"entity_id": "script.blank"}'
+    body: '{"entity_id": "script.dash_fablab_glue_sticks"}'
   44:65:0D:DD:87:FE:
     name: Blank 2
     url: 'http://10.13.0.22:8123/api/services/script/turn_on'

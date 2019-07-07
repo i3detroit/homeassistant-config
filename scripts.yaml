@@ -196,6 +196,13 @@ dash_styrofoam_cups:
       data:
         message: "We require additional styrofoam cups"
 
+dash_fablab_glue_sticks:
+  alias: "Buy purple glue sticks"
+  sequence:
+    - service: notify.slack_shopping_list
+      data:
+        message: "Fablab requires additional purple glue sticks"
+
 # warehouse_lights_out:
 #   alias: Warehouse lights out
 #   sequence:
