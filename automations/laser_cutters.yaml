@@ -21,12 +21,22 @@
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: switch.Bumblebee
-        state: 'off'
-      - condition: state
-        entity_id: switch.Wolverine
-        state: 'off'
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: switch.Bumblebee
+            state: 'off'
+          - condition: state
+            entity_id: switch.Bumblebee
+            state: 'unavailable'
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: switch.Wolverine
+            state: 'off'
+          - condition: state
+            entity_id: switch.Wolverine
+            state: 'unavailable' 
   action:
     service: switch.turn_off
     entity_id: switch.LaserZoneExhaustFan
