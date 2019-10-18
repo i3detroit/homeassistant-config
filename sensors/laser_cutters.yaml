@@ -183,7 +183,7 @@
       friendly_name: "Wolverine Chiller"
       value_template: "{{ states('switch.wolverine_chiller') }}"
       icon_template: mdi:flash
-    laser_exhaust_power:
+    laser_cutter_exhaust_fan:
       friendly_name: "Laser Cutter Exhaust Fan"
       value_template: "{{ states('switch.LaserZoneExhaustFan') }}"
       icon_template: mdi:fan
