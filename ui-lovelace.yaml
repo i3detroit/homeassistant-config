@@ -1,29 +1,81 @@
+resources:
+  - type: js
+    url: /local/monster-card.js
 title: i3Detroit
-
 views:
-  - title: Lights
-    id: lights
+  - badges: []
     cards:
-      - type: entities
-        title: Shop Lights
-        entities:
+      - entities:
           - group.row_1_lights
           - group.row_2_lights
           - group.row_3_lights
           - group.row_4_lights
           - group.row_5_lights
           - group.machine_shop_lights
-      - type: entities
-        title: Misc. Lights
-        entities:
-          - light.lightwelding
-          - light.lightvinyl
-          - light.lighttreehouse
-          - light.lightlargebathroom
-          - light.tool_crib_workbench_lights
-      - type: entities
-        title: Office Lights
-        entities:
+          - group.office_lights
+          - group.b_side_lights
+          - group.misc_lights
+        show_header_toggle: false
+        title: Shop Lights
+        type: entities
+      - entities:
+          - light.light001
+          - light.light002
+          - light.light003
+          - light.light004
+        show_header_toggle: true
+        title: Light Row 1
+        type: entities
+      - entities:
+          - light.light005
+          - light.light006
+          - light.light007
+          - light.light008
+          - light.light009
+        show_header_toggle: true
+        title: Light Row 2
+        type: entities
+      - entities:
+          - light.light010
+          - light.light011
+          - light.light012
+          - light.light013
+          - light.light014
+        show_header_toggle: true
+        title: Light Row 3
+        type: entities
+      - entities:
+          - light.light015
+          - light.light016
+          - light.light017
+          - light.light018
+          - light.light019
+        show_header_toggle: true
+        title: Light Row 4
+        type: entities
+      - entities:
+          - light.light020
+          - light.light021
+          - light.light022
+          - light.light023
+          - light.light024
+          - light.light025
+          - light.light026
+        show_header_toggle: true
+        title: Light Row 5
+        type: entities
+      - entities:
+          - light.light029
+          - light.light030
+          - light.light031
+          - light.light032
+          - light.light033
+          - light.light034
+          - light.light035
+        show_header_toggle: true
+        title: Machine Shop Lights
+        type: entities
+      - entities:
           - light.classroom_lights_east
           - light.classroom_lights_west
           - light.dooridor_lights
@@ -33,3 +85,816 @@ views:
           - light.electronics_lab_light
           - light.small_bathroom_light
           - light.small_bathroom_shower_light
+          - light.b_side_office_light
+        show_header_toggle: false
+        title: Office Lights
+        type: entities
+      - entities:
+          - light.light_041
+          - light.light_042
+          - light.light_043
+          - light.light_044
+          - light.light_045
+          - light.light_046
+          - light.light_047
+          - light.light_048
+          - light.light_049
+          - light.light_050
+          - light.light_051
+          - light.light_052
+          - light.light_053
+          - light.light_054
+        show_header_toggle: true
+        title: B Side Lights
+        type: entities
+      - entities:
+          - light.lightwelding
+          - light.lightvinyl
+          - light.lighttreehouse
+          - light.lightlargebathroom
+          - light.tool_crib_workbench_lights
+        show_header_toggle: false
+        title: Misc. Lights
+        type: entities
+      - entities:
+          - switch.commonsceilingfans
+          - switch.laserceilingfan
+          - switch.machineshopceilingfan
+          - switch.cncceilingexhaust
+          - switch.southceilingexhaust
+          - switch.large_bathroom_vent_fan
+          - switch.small_bathroom_vent_fan
+          - switch.bside_ceiling_vent_fan
+        show_header_toggle: false
+        title: Fans
+        type: entities
+      - entities:
+          - light.snapple_vending_light
+          - script.reset_snapple_rgb
+          - light.lighttrafficgreen
+          - light.lighttrafficyellow
+          - light.lighttrafficred
+          - light.chandelier01
+          - light.chandelier02
+          - light.fairy_lights
+          - switch.disco_ball
+          - switch.disco_spotlights
+          - light.lanterns
+          - light.elab_arch_north
+          - light.elab_arch_south
+          - light.swirly_lights_01
+          - light.swirly_lights_02
+        show_header_toggle: false
+        title: Decor
+        type: entities
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - entities:
+          - group.row_1_lights
+          - group.row_2_lights
+          - group.row_3_lights
+          - group.row_4_lights
+          - group.row_5_lights
+          - group.machine_shop_lights
+          - group.office_lights
+          - group.b_side_lights
+          - group.misc_lights
+        show_header_toggle: false
+        title: Shop Lights
+        type: entities
+      - entities:
+          - light.light001
+          - light.light002
+          - light.light003
+          - light.light004
+        show_header_toggle: true
+        title: Light Row 1
+        type: entities
+      - entities:
+          - light.light005
+          - light.light006
+          - light.light007
+          - light.light008
+          - light.light009
+        show_header_toggle: true
+        title: Light Row 2
+        type: entities
+      - entities:
+          - light.light010
+          - light.light011
+          - light.light012
+          - light.light013
+          - light.light014
+        show_header_toggle: true
+        title: Light Row 3
+        type: entities
+      - entities:
+          - light.light015
+          - light.light016
+          - light.light017
+          - light.light018
+          - light.light019
+        show_header_toggle: true
+        title: Light Row 4
+        type: entities
+      - entities:
+          - light.light020
+          - light.light021
+          - light.light022
+          - light.light023
+          - light.light024
+          - light.light025
+          - light.light026
+        show_header_toggle: true
+        title: Light Row 5
+        type: entities
+      - entities:
+          - light.light029
+          - light.light030
+          - light.light031
+          - light.light032
+          - light.light033
+          - light.light034
+          - light.light035
+        show_header_toggle: true
+        title: Machine Shop Lights
+        type: entities
+      - entities:
+          - light.classroom_lights_east
+          - light.classroom_lights_west
+          - light.dooridor_lights
+          - light.hallway_light
+          - light.lightmedialab
+          - light.craft_room_light
+          - light.electronics_lab_light
+          - light.small_bathroom_light
+          - light.small_bathroom_shower_light
+          - light.b_side_office_light
+        show_header_toggle: false
+        title: Office Lights
+        type: entities
+      - entities:
+          - entity: light.light_041
+          - entity: light.light_042
+          - entity: light.light_043
+          - entity: light.light_044
+          - entity: light.light_045
+          - entity: light.light_046
+          - entity: light.light_047
+          - entity: light.light_048
+          - entity: light.light_049
+          - entity: light.light_050
+          - entity: light.light_051
+          - entity: light.light_052
+          - entity: light.light_053
+          - entity: light.light_054
+        show_header_toggle: true
+        title: B Side Lights
+        type: entities
+      - entities:
+          - light.lightwelding
+          - light.lightvinyl
+          - light.lighttreehouse
+          - light.lightlargebathroom
+          - light.tool_crib_workbench_lights
+        show_header_toggle: false
+        title: Misc. Lights
+        type: entities
+      - entities:
+          - light.snapple_vending_light
+          - script.reset_snapple_rgb
+          - light.lighttrafficgreen
+          - light.lighttrafficyellow
+          - light.lighttrafficred
+          - light.chandelier01
+          - light.chandelier02
+          - light.fairy_lights
+          - switch.disco_ball
+          - switch.disco_spotlights
+          - light.lanterns
+          - light.elab_arch_north
+          - light.elab_arch_south
+          - light.swirly_lights_01
+          - light.swirly_lights_02
+        show_header_toggle: false
+        title: Decor
+        type: entities
+    icon: 'mdi:lightbulb'
+    path: lighting
+    title: Lighting
+  - badges: []
+    cards:
+      - entities:
+          - switch.commonsceilingfans
+          - switch.laserceilingfan
+          - switch.machineshopceilingfan
+          - switch.cncceilingexhaust
+          - switch.southceilingexhaust
+          - switch.large_bathroom_vent_fan
+          - switch.small_bathroom_vent_fan
+          - switch.bside_ceiling_vent_fan
+        show_header_toggle: false
+        title: Fans
+        type: entities
+      - entities:
+          - switch.classroom_sign
+          - switch.hallway_light_switch_west
+          - switch.paint_box_vent
+          - switch.recycle_notification_light
+        show_header_toggle: true
+        title: Misc. Switches
+        type: entities
+    icon: 'mdi:power'
+    path: misc_controls
+    title: misc_controls
+  - badges: []
+    cards:
+      - entities:
+          - sensor.omnisensor_temperature
+          - sensor.omnisensor_pressure
+          - sensor.omnisensor_humidity
+          - sensor.omnisensor_voc
+          - sensor.omnisensor_lux
+          - sensor.omnisensor_pm_1
+          - sensor.omnisensor_pm_2_5
+          - sensor.omnisensor_pm_10
+          - sensor.omnisensor_pb_0_3
+          - sensor.omnisensor_pb_0_5
+          - sensor.omnisensor_pb_1
+          - sensor.omnisensor_pb_2_5
+          - sensor.omnisensor_pb_5
+          - sensor.omnisensor_pb_10
+        show_header_toggle: true
+        title: Omnisensor
+        type: entities
+      - entities:
+          - sensor.sonoff_temp
+          - sensor.sonoff_humid
+          - sensor.ground_cluster_pressure_kpa
+          - sensor.ground_cluster_temperature
+          - sensor.ground_cluster_humidity
+          - sensor.ground_cluster_lux
+          - sensor.ceiling_cluster_pressure_kpa
+          - sensor.ceiling_cluster_temperature
+          - sensor.ceiling_cluster_humidity
+          - sensor.ceiling_cluster_lux
+          - sensor.fablab_cluster_pressure_kpa
+          - sensor.fablab_cluster_temperature
+          - sensor.fablab_cluster_humidity
+          - sensor.fablab_cluster_lux
+          - sensor.commons_temp_diff
+          - sensor.ceiling_outside_temp_diff
+        show_header_toggle: true
+        title: Atmospheric Sensors
+        type: entities
+      - entities:
+          - sensor.office_thermostat_pressure_kpa
+          - sensor.office_thermostat_ambient_humidity
+          - sensor.office_thermostat_requested_state
+          - sensor.office_thermostat_requested_fan_state
+          - sensor.office_thermostat_active_fan_state
+          - sensor.office_thermostat_swing
+          - sensor.office_thermostat_timeout_human_readable
+          - sensor.office_thermostat_power_source
+        show_header_toggle: true
+        title: Office Thermostat
+        type: entities
+      - entity: climate.office
+        type: thermostat
+      - entities:
+          - sensor.cluster_006_temperature
+          - sensor.cluster_006_humidity
+          - sensor.cluster_006_pressure_kpa
+          - sensor.cluster_006_lux
+        show_header_toggle: true
+        title: Sensor Cluster 006
+        type: entities
+      - entities:
+          - sensor.cluster_007_temperature
+          - sensor.cluster_007_humidity
+          - sensor.cluster_007_pressure_kpa
+          - sensor.cluster_007_lux
+        show_header_toggle: true
+        title: Sensor Cluster 007
+        type: entities
+      - entities:
+          - sensor.cluster_008_temperature
+          - sensor.cluster_008_humidity
+          - sensor.cluster_008_pressure_kpa
+          - sensor.cluster_008_lux
+        show_header_toggle: true
+        title: Sensor Cluster 008
+        type: entities
+      - entities:
+          - sun.sun
+          - sensor.weather_symbol
+          - sensor.weather_temperature
+          - sensor.weather_humidity
+          - sensor.weather_pressure_kpa
+          - sensor.weather_dewpoint_temperature
+          - sensor.weather_precipitation
+          - sensor.weather_cloudiness
+          - sensor.weather_wind_speed
+          - sensor.weather_wind_direction
+        show_header_toggle: true
+        title: Current Weather
+        type: entities
+    icon: 'mdi:thermometer-lines'
+    path: atmospherics
+    title: Atmospherics
+  - badges:
+      - sensor.elab_arch_north_ir_receiver
+      - sensor.elab_arch_south_ir_receiver
+    cards:
+      - entities:
+          - sensor.bumblebee_power
+          - sensor.bumblebee_chiller_power
+          - sensor.bumblebee_blast_gate
+          - sensor.wolverine_power
+          - sensor.wolverine_chiller_power
+          - sensor.wolverine_blast_gate
+          - sensor.laser_cutter_exhaust_fan
+          - sensor.air_compressor_power
+        show_header_toggle: false
+        title: Laser Zone
+        type: entities
+      - entities:
+          - sensor.bumblebee_power_draw
+          - sensor.bumblebee_voltage
+          - sensor.bumblebee_current
+          - sensor.bumblebee_power_factor
+          - sensor.bumblebee_energy_use_delta
+          - sensor.bumblebee_energy_use_today
+          - sensor.bumblebee_tube_time
+          - sensor.wolverine_power_draw
+          - sensor.wolverine_voltage
+          - sensor.wolverine_current
+          - sensor.wolverine_power_factor
+          - sensor.wolverine_energy_use_delta
+          - sensor.wolverine_energy_use_today
+          - sensor.wolverine_tube_time
+        show_header_toggle: true
+        title: Laser Zone Stats
+        type: entities
+      - entities:
+          - switch.fab_lab_exhaust_fan
+          - switch.fab_lab_chiller
+          - switch.chinesium_laser
+        show_header_toggle: false
+        title: Fab Lab
+        type: entities
+      - entities:
+          - sensor.chinesium_laser_power_draw
+          - sensor.chinesium_laser_voltage
+          - sensor.chinesium_laser_current
+          - sensor.chinesium_laser_energy_use_delta
+          - sensor.chinesium_laser_energy_use_today
+          - sensor.chinesium_laser_total_power
+        show_header_toggle: true
+        title: Fab Lab Stats
+        type: entities
+      - entities:
+          - entity: sensor.water_cooler_filter_use
+          - entity: sensor.snapple_current
+          - entity: sensor.snapple_voltage
+          - entity: sensor.snapple_power_draw
+          - entity: sensor.snapple_compressor_state
+        show_header_toggle: false
+        title: Snack Zone
+        type: entities
+      - entities:
+          - entity: switch.fablab_ac
+          - entity: sensor.fablab_ac_current
+          - entity: sensor.fablab_ac_voltage
+          - entity: sensor.fablab_ac_reactive_power_draw
+        show_header_toggle: false
+        title: Fab Lab AC
+        type: entities
+      - entities:
+          - binary_sensor.argon_tank_sensor
+        show_header_toggle: true
+        title: Welding Zone
+        type: entities
+      - entities:
+          - sensor.hp_m712_black_toner
+          - sensor.hp_m712_pages_printed_on_current_toner_cartridge
+          - sensor.hp_m712_pages_printed
+          - sensor.plotter_paper_used
+          - sensor.plotter_ink_used
+          - sensor.plotter_matte_black_ink
+          - sensor.plotter_photo_black_ink
+          - sensor.plotter_gray_ink
+          - sensor.plotter_cyan_ink
+          - sensor.plotter_magenta_ink
+          - sensor.plotter_yellow_ink
+        show_header_toggle: true
+        title: Compute Zone
+        type: entities
+    icon: 'mdi:selection'
+    path: zones
+    title: Zones
+  - badges: []
+    cards:
+      - entity: media_player.classroom_tv
+        type: media-control
+      - entity: media_player.commons
+        type: media-control
+      - entity: media_player.speakers
+        type: media-control
+    icon: 'mdi:cast'
+    path: media_players
+    title: media_players
+  - badges:
+      - sensor.doorbell
+    cards:
+      - entities:
+          - binary_sensor.front_door_lock
+          - sensor.front_door_panel_battery_voltage
+          - binary_sensor.garage_door_lock_sensor
+          - sensor.garage_door_open
+          - binary_sensor.glass_door_lock_sensor
+          - binary_sensor.glass_door_open_sensor
+        show_header_toggle: true
+        title: Doors
+        type: entities
+      - entities:
+          - sensor.window_elab_open
+          - sensor.window_craft_room_open
+          - sensor.window_1_open
+          - sensor.window_2_open
+          - sensor.window_3_open
+          - sensor.window_4_open
+          - sensor.window_5_open
+          - sensor.window_6_open
+          - sensor.window_7_open
+          - sensor.window_8_open
+          - sensor.window_9_open
+          - sensor.window_10_open
+        show_header_toggle: true
+        title: Window Sensors
+        type: entities
+      - entities:
+          - binary_sensor.machine_shop_motion_sensor
+          - binary_sensor.large_bathroom_motion_sensor
+          - binary_sensor.small_bathroom_motion_sensor
+        show_header_toggle: true
+        title: Motion Sensors
+        type: entities
+    icon: 'mdi:door'
+    path: doors_etc
+    title: doors_etc
+  - badges:
+      - binary_sensor.front_door_panel_power
+      - sensor.i3_power_meter
+      - sensor.shutdown_button
+      - sensor.sonoff_rssi
+      - sensor.front_door_panel_battery_voltage
+      - sensor.water_cooler_flow_counts
+      - sensor.recycle_day
+      - sensor.open_for_tours
+    cards:
+      - entities:
+          - binary_sensor.b_side_office_motion
+          - binary_sensor.b_side_courtyard_door_motion
+          - binary_sensor.b_side_rear_shop_motion
+          - binary_sensor.b_side_rear_door_open
+          - binary_sensor.b_side_garage_door_open
+          - binary_sensor.b_side_courtyard_door_open
+          - binary_sensor.b_side_office_front_door_open
+          - binary_sensor.b_side_lightswitch_off
+          - binary_sensor.b_side_lightswitch_on
+          - binary_sensor.a_b_front_door_open
+        show_header_toggle: true
+        title: B-Side Sensors
+        type: entities
+      - entities:
+          - sensor.full_spectrum
+          - sensor.asterisk
+          - sensor.skynet
+          - sensor.minecraft
+          - sensor.mcclellan
+          - sensor.rostock_max
+          - sensor.full_spectrum
+        show_header_toggle: true
+        title: VM Trackers
+        type: entities
+      - entities:
+          - sensor.ev_charger_amps
+          - sensor.ev_charger_wh
+          - sensor.ev_charger_state
+        show_header_toggle: true
+        title: OpenEVSE Stats
+        type: entities
+      - entities:
+          - device_tracker.mark_phone
+          - device_tracker.jan_phone
+          - device_tracker.mike_phone
+          - device_tracker.graviton
+          - device_tracker.abzgs4
+          - device_tracker.abzmans9
+          - device_tracker.abztopwin
+        show_header_toggle: true
+        title: Device Trackers
+        type: entities
+      - entities:
+          - switch.genie_charger
+          - sensor.genie_charge_state
+          - sensor.genie_power_draw
+          - sensor.genie_voltage
+          - sensor.genie_current
+          - sensor.genie_energy_use_delta
+          - sensor.genie_energy_use_today
+        show_header_toggle: true
+        title: Genie Charger
+        type: entities
+      - entities:
+          - sensor.glass_door_lwt
+          - sensor.disco_button_lwt
+          - sensor.commons_ground_sensor_cluster_lwt
+          - sensor.commons_ceiling_sensor_cluster_lwt
+          - sensor.fab_lab_sensor_cluster_lwt
+          - sensor.commons_middle_east_light_switches_south_lwt
+          - sensor.commons_middle_east_light_switches_north_lwt
+          - sensor.commons_light_switches_west_lwt
+          - sensor.commons_light_switches_east_lwt
+          - sensor.light_28_button_lwt
+          - sensor.433_rf_receiver_lwt
+          - sensor.air_compressor_request_001_lwt
+          - sensor.air_compressor_request_002_lwt
+          - sensor.air_compressor_request_003_lwt
+          - sensor.fab_lab_control_buttons_lwt
+          - sensor.weld_zone_tank_sensors_lwt
+          - sensor.large_bathroom_motion_sensor_lwt
+          - sensor.small_bathroom_motion_sensor_lwt
+          - sensor.machine_shop_motion_sensor_lwt
+          - sensor.bumblebee_lwt
+          - sensor.wolverine_lwt
+          - sensor.bumblebee_status_lights_lwt
+          - sensor.wolverine_status_lights_lwt
+          - sensor.bumblebee_chiller_lwt
+          - sensor.wolverine_chiller_lwt
+          - sensor.light001_lwt
+          - sensor.light002_lwt
+          - sensor.light003_lwt
+          - sensor.light004_lwt
+          - sensor.light005_lwt
+          - sensor.light006_lwt
+          - sensor.light007_lwt
+          - sensor.light008_lwt
+          - sensor.light009_lwt
+          - sensor.light010_lwt
+          - sensor.light011_lwt
+          - sensor.light012_lwt
+          - sensor.light013_lwt
+          - sensor.light014_lwt
+          - sensor.light015_lwt
+          - sensor.light016_lwt
+          - sensor.light017_lwt
+          - sensor.light018_lwt
+          - sensor.light019_lwt
+          - sensor.light020_lwt
+          - sensor.light021_lwt
+          - sensor.light022_lwt
+          - sensor.light023_lwt
+          - sensor.light024_lwt
+          - sensor.light025_lwt
+          - sensor.light026_lwt
+          - sensor.light027_lwt
+          - sensor.lightwelding_lwt
+          - sensor.light029_lwt
+          - sensor.light030_lwt
+          - sensor.light031_lwt
+          - sensor.light032_lwt
+          - sensor.light033_lwt
+          - sensor.light034_lwt
+          - sensor.light035_lwt
+          - sensor.lightvinyl_lwt
+          - sensor.lighttreehouse_lwt
+          - sensor.light038_lwt
+          - sensor.light039_lwt
+          - sensor.light040_lwt
+          - sensor.lightlargebathroom_lwt
+          - sensor.lightmedialab_lwt
+          - sensor.lightsnapplevending_lwt
+          - sensor.lighttrafficred_lwt
+          - sensor.lighttrafficyellow_lwt
+          - sensor.lighttrafficgreen_lwt
+          - sensor.chandelier01_lwt
+          - sensor.chandelier02_lwt
+          - sensor.craft_room_light_lwt
+          - sensor.electronics_lab_light_lwt
+          - sensor.hallway_light_lwt
+          - sensor.small_bathroom_light_lwt
+          - sensor.small_bathroom_shower_light_lwt
+          - sensor.classroom_lights_east_lwt
+          - sensor.classroom_lights_west_lwt
+          - sensor.dooridor_lights_lwt
+          - sensor.tool_crib_workbench_lights_lwt
+          - sensor.fairy_lights_lwt
+          - sensor.lanterns_lwt
+          - sensor.air_compressor_valve_lwt
+          - sensor.classroom_sign_lwt
+          - sensor.disco_ball_lwt
+          - sensor.paint_box_vent_lwt
+          - sensor.large_bathroom_vent_fan_lwt
+          - sensor.small_bathroom_vent_fan_lwt
+          - sensor.fab_lab_chiller_lwt
+          - sensor.hallway_light_switch_west_lwt
+          - sensor.hallway_light_switch_west_lwt
+          - sensor.disco_spotlights_lwt
+          - sensor.recycle_notification_light_lwt
+          - sensor.commonsceilingfans_lwt
+          - sensor.laserceilingfan_lwt
+          - sensor.machineshopceilingfan_lwt
+          - sensor.flv_fan_lwt
+          - sensor.laserzoneexhaustfan_lwt
+          - sensor.cncceilingexhaust_lwt
+          - sensor.southceilingexhaust_lwt
+          - sensor.genie_charger_lwt
+          - sensor.alarm_siren_lwt
+          - sensor.snapple_vending_compressor_power_lwt
+        show_header_toggle: true
+        title: LWT
+        type: entities
+      - entities:
+          - sensor.glass_door_vcc
+          - sensor.disco_button_vcc
+          - sensor.commons_ground_sensor_cluster_vcc
+          - sensor.commons_ceiling_sensor_cluster_vcc
+          - sensor.fab_lab_sensor_cluster_vcc
+          - sensor.commons_middle_east_light_switches_south_vcc
+          - sensor.commons_middle_east_light_switches_north_vcc
+          - sensor.commons_light_switches_west_vcc
+          - sensor.commons_light_switches_east_vcc
+          - sensor.light_28_button_vcc
+          - sensor.433_rf_receiver_vcc
+          - sensor.air_compressor_request_001_vcc
+          - sensor.air_compressor_request_002_vcc
+          - sensor.air_compressor_request_003_vcc
+          - sensor.fab_lab_control_buttons_vcc
+          - sensor.weld_zone_tank_sensors_vcc
+          - sensor.large_bathroom_motion_sensor_vcc
+          - sensor.small_bathroom_motion_sensor_vcc
+          - sensor.machine_shop_motion_sensor_vcc
+          - sensor.bumblebee_vcc
+          - sensor.wolverine_vcc
+          - sensor.bumblebee_status_lights_vcc
+          - sensor.wolverine_status_lights_vcc
+          - sensor.bumblebee_chiller_vcc
+          - sensor.wolverine_chiller_vcc
+          - sensor.light001_vcc
+          - sensor.light002_vcc
+          - sensor.light003_vcc
+          - sensor.light004_vcc
+          - sensor.light005_vcc
+          - sensor.light006_vcc
+          - sensor.light007_vcc
+          - sensor.light008_vcc
+          - sensor.light009_vcc
+          - sensor.light010_vcc
+          - sensor.light011_vcc
+          - sensor.light012_vcc
+          - sensor.light013_vcc
+          - sensor.light014_vcc
+          - sensor.light015_vcc
+          - sensor.light016_vcc
+          - sensor.light017_vcc
+          - sensor.light018_vcc
+          - sensor.light019_vcc
+          - sensor.light020_vcc
+          - sensor.light021_vcc
+          - sensor.light022_vcc
+          - sensor.light023_vcc
+          - sensor.light024_vcc
+          - sensor.light025_vcc
+          - sensor.light026_vcc
+          - sensor.light027_vcc
+          - sensor.lightwelding_vcc
+          - sensor.light029_vcc
+          - sensor.light030_vcc
+          - sensor.light031_vcc
+          - sensor.light032_vcc
+          - sensor.light033_vcc
+          - sensor.light034_vcc
+          - sensor.light035_vcc
+          - sensor.lightvinyl_vcc
+          - sensor.lighttreehouse_vcc
+          - sensor.light038_vcc
+          - sensor.light039_vcc
+          - sensor.light040_vcc
+          - sensor.lightlargebathroom_vcc
+          - sensor.lightmedialab_vcc
+          - sensor.lightsnapplevending_vcc
+          - sensor.lighttraffic_vcc
+          - sensor.chandelier01_vcc
+          - sensor.chandelier02_vcc
+          - sensor.craft_room_light_vcc
+          - sensor.electronics_lab_light_vcc
+          - sensor.hallway_light_vcc
+          - sensor.small_bathroom_light_vcc
+          - sensor.small_bathroom_shower_light_vcc
+          - sensor.classroom_lights_east_vcc
+          - sensor.classroom_lights_west_vcc
+          - sensor.dooridor_lights_vcc
+          - sensor.tool_crib_workbench_lights_vcc
+          - sensor.fairy_lights_vcc
+          - sensor.lanterns_vcc
+          - sensor.air_compressor_valve_vcc
+          - sensor.classroom_sign_vcc
+          - sensor.disco_ball_vcc
+          - sensor.paint_box_vent_vcc
+          - sensor.large_bathroom_vent_fan_vcc
+          - sensor.small_bathroom_vent_fan_vcc
+          - sensor.fab_lab_chiller_vcc
+          - sensor.hallway_light_switch_west_vcc
+          - sensor.hallway_light_switch_west_vcc
+          - sensor.disco_spotlights_vcc
+          - sensor.recycle_notification_light_vcc
+          - sensor.commonsceilingfans_vcc
+          - sensor.laserceilingfan_vcc
+          - sensor.machineshopceilingfan_vcc
+          - sensor.flv_fan_vcc
+          - sensor.laserzoneexhaustfan_vcc
+          - sensor.cncceilingexhaust_vcc
+          - sensor.southceilingexhaust_vcc
+          - sensor.genie_charger_vcc
+          - sensor.alarm_siren_vcc
+          - sensor.snapple_vending_compressor_power_vcc
+        show_header_toggle: true
+        title: VCC
+        type: entities
+      - entities:
+          - input_select.winter_or_summer
+        title: Input select
+        type: entities
+    icon: 'mdi:settings'
+    path: infrastructure
+    title: infrastructure
+  - badges: []
+    cards:
+      - entities:
+          - input_boolean.developer_mode_enable
+        show_header_toggle: false
+        title: Self Destruct
+        type: entities
+      - card:
+          entities:
+            - switch.alarm_siren
+            - switch.bumblebee
+            - switch.bumblebee_chiller
+            - switch.wolverine
+            - switch.wolverine_chiller
+            - switch.laserzoneexhaustfan
+            - switch.air_compressor
+            - switch.air_compressor_valve
+          show_header_toggle: false
+          title: Hidden Controls
+          type: entities
+        conditions:
+          - entity: input_boolean.developer_mode_enable
+            state: 'on'
+        type: conditional
+      - card:
+          entities:
+            - light.light039
+            - light.light040
+            - light.light027
+            - light.light038
+          show_header_toggle: true
+          title: Emergency Lights
+          type: entities
+        conditions:
+          - entity: input_boolean.developer_mode_enable
+            state: 'on'
+        type: conditional
+      - card:
+          card:
+            title: Automations
+            type: entities
+          filter:
+            include:
+              - domain: automation
+          show_empty: false
+          type: 'custom:monster-card'
+        conditions:
+          - entity: input_boolean.developer_mode_enable
+            state: 'on'
+        type: conditional
+      - card:
+          card:
+            title: Scripts
+            type: entities
+          filter:
+            include:
+              - domain: script
+          show_empty: false
+          type: 'custom:monster-card'
+        conditions:
+          - entity: input_boolean.developer_mode_enable
+            state: 'on'
+        type: conditional
+    icon: 'mdi:nuke'
+    path: developer_settings
+    title: developer_settings
