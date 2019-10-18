@@ -3,8 +3,8 @@
   state_topic: "tele/i3/inside/elab/accent/arch-north/RESULT"
   availability_topic: "tele/i3/inside/elab/accent/arch-north/LWT"
   payload_available: "Online"
-  payload_unavailable: "Offline"
-  value_template: >
+  payload_not_available: "Offline"
+  value_template: >-
     {% if "IrReceived" in value_json %}
       {{ value_json["IrReceived"]["Data"] }}
     {% endif %}
@@ -15,8 +15,8 @@
   state_topic: "tele/i3/inside/elab/accent/arch-south/RESULT"
   availability_topic: "tele/i3/inside/elab/accent/arch-south/LWT"
   payload_available: "Online"
-  payload_unavailable: "Offline"
-  value_template: >
+  payload_not_available: "Offline"
+  value_template: >-
     {% if "IrReceived" in value_json %}
       {{ value_json["IrReceived"]["Data"] }}
     {% endif %}
