@@ -1,217 +1,181 @@
 # this belongs in /etc/amazon-dash.yml
 # provided here for reference
-# Used with https://github.com/Nekmo/amazon-dash
+# Used with http://github.com/Nekmo/amazon-dash
 settings:
   delay: 60
 devices:
   44:65:0D:78:94:12:
     name: Green Tape (1)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_green_tape"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_green_tape
   44:65:0D:C6:E5:21:
     name: Paper Towels (2)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_paper_towels"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_paper_towels
   0C:47:C9:7C:55:20:
     name: Sharpies (3)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_sharpies"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_sharpies
   0C:47:C9:ED:9C:46:
     name: Blue Towels (4)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_blue_towels"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_blue_towels
   44:65:0D:68:38:C9:
     name: Toilet Paper (5)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_toilet_paper"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_toilet_paper
   AC:63:BE:61:47:F5:
     name: Plastic Spoons (6)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_plastic_spoons"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_plastic_spoons
   44:65:0D:4D:A6:0B:
     name: Plastic Forks (7)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_plastic_forks"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_plastic_forks
   AC:63:BE:A0:4A:D4:
     name: Plastic Knives (8)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_plastic_knives"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_plastic_knives
   74:75:48:6F:3B:B7:
     name: Paper Plates (9)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_paper_plates"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_paper_plates
   F0:27:2D:EF:A8:A2:
     name: Plastic Cups (10)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_plastic_cups"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_plastic_cups
   0C:47:C9:A7:E7:A2:
     name: Paint Booth Filters (11)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_paint_booth_filters"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_paint_booth_filters
   FC:A6:67:66:35:0C:
     name: Bowls (12)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_bowls"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_bowls
   B4:7C:9C:C2:8B:40:
     name: Chopsticks (13)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_chopsticks"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_chopsticks
   50:F5:DA:9C:D5:DC:
     name: Centerpull Towels (14)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_centerpull_towels"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_centerpull_towels
   78:E1:03:99:A5:BE:
     name: Towel Dispenser Towels (15)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_towel_dispenser_towels"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_towel_dispenser_towels
   FC:A6:67:F3:FC:50:
     name: 33 Gallon Trash Bags (16)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_33_gallon_trash_bags"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_33_gallon_trash_bags
   78:E1:03:EC:1F:98:
     name: Kitchen Trash Bags (17)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_kitchen_trash_bags"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_kitchen_trash_bags
   FC:65:DE:C4:12:04:
     name: Small Glue Sticks (18)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_small_glue_sticks"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_small_glue_sticks
   78:E1:03:A3:0C:68:
     name: Foam Brushes (19)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_foam_brushes"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_foam_brushes
   78:E1:03:24:5D:1B:
     name: Large Glue Sticks (20)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_large_glue_sticks"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_large_glue_sticks
   FC:A6:67:23:52:A8:
     name: Small Glue Sticks (21)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_small_glue_sticks"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_small_glue_sticks
   78:E1:03:9D:1C:9D:
     name: Large Glue Sticks (22)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_large_glue_sticks"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_large_glue_sticks
   FC:A6:67:BB:F6:FF:
     name: Styrofoam Cups (23)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_styrofoam_cups"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_styrofoam_cups
   FC:A6:67:BA:2A:AD:
     name: Purple Glue Sticks (24)
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.dash_fablab_glue_sticks"}'
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: dash_fablab_glue_sticks
   44:65:0D:DD:87:FE:
-    name: Blank 2
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (25)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   AC:63:BE:A5:2E:22:
-    name: Blank 3
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (26)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   0C:47:C9:1D:C7:EA:
-    name: Blank 4
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (27)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   AC:63:BE:15:B0:69:
-    name: Blank 5
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (28)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   84:D6:D0:70:63:84:
-    name: Blank 6
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (29)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   44:65:0D:AF:9E:3E:
-    name: Blank 7
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (30)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   18:74:2E:68:6E:FB:
-    name: Blank 8
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (31)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   6C:56:97:DA:8B:DC:
-    name: Blank 9
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (32)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   78:E1:03:37:A0:B7:
-    name: Blank 10
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (33)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   FC:65:DE:7A:D5:2B:
-    name: Blank 11
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
+    name: Blank (34)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank
   44:65:0D:F1:00:4E:
-    name: Blank 12
-    url: 'http://10.13.0.22:8123/api/services/script/turn_on'
-    method: post
-    content-type: json
-    body: '{"entity_id": "script.blank"}'
-
+    name: Blank (35)
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU
+    homeassistant: http://10.13.0.22:8123
+    event: blank

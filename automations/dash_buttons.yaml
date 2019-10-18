@@ -1,0 +1,206 @@
+- alias: dash buy green tape
+  trigger:
+    platform: event
+    event_type: dash_green_tape
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional green tape"
+
+- alias: "dash buy sharpies"
+  trigger:
+    platform: event
+    event_type: dash_sharpies
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional sharpies"
+
+- alias: "dash buy paper towels"
+  trigger:
+    platform: event
+    event_type: dash_paper_towels
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional paper towels"
+
+- alias: "dash buy blue (shop) towels"
+  trigger:
+    platform: event
+    event_type: dash_blue_towels
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional blue (shop) towels"
+
+- alias: "dash buy toilet paper"
+  trigger:
+    platform: event
+    event_type: dash_toilet_paper
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional toilet paper"
+
+- alias: "dash buy plastic spoons"
+  trigger:
+    platform: event
+    event_type: dash_plastic_spoons
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional plastic spoons"
+
+- alias: "dash buy plastic forks"
+  trigger:
+    platform: event
+    event_type: dash_plastic_forks
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional plastic forks"
+
+- alias: "dash buy plastic knives"
+  trigger:
+    platform: event
+    event_type: dash_plastic_knives
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional plastic knives"
+
+- alias: "dash buy paper plates"
+  trigger:
+    platform: event
+    event_type: dash_paper_plates
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional paper plates"
+
+- alias: "dash buy plastic cups"
+  trigger:
+    platform: event
+    event_type: dash_plastic_cups
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional plastic cups"
+
+- alias: "dash buy paint booth air filters"
+  trigger:
+    platform: event
+    event_type: dash_paint_booth_filters
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional paint booth filters (10\"x20\"x1\")"
+
+- alias: "dash buy bowls"
+  trigger:
+    platform: event
+    event_type: dash_bowls
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional bowls"
+
+- alias: "dash buy chopsticks"
+  trigger:
+    platform: event
+    event_type: dash_chopsticks
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional chopsticks"
+
+- alias: "dash buy centerpull towels"
+  trigger:
+    platform: event
+    event_type: dash_centerpull_towels
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional centerpull towels"
+
+- alias: "dash buy towel dispenser towels"
+  trigger:
+    platform: event
+    event_type: dash_towel_dispenser_towels
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional nonperforated 50606 towel dispenser towels"
+
+- alias: "dash buy 33 gallon trash bags"
+  trigger:
+    platform: event
+    event_type: dash_33_gallon_trash_bags
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional 33 gallon trash bags"
+
+- alias: "dash buy kitchen trash bags"
+  trigger:
+    platform: event
+    event_type: dash_kitchen_trash_bags
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional 13 gallon kitchen trash bags"
+
+- alias: "dash buy small glue sticks"
+  trigger:
+    platform: event
+    event_type: dash_small_glue_sticks
+  action:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional small hot glue sticks"
+    - service: notify.slack_craft_room
+      data:
+        message: "We require additional small hot glue sticks"
+
+- alias: "dash buy kitchen foam brushes"
+  trigger:
+    platform: event
+    event_type: dash_foam_brushes
+  action:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional foam brushes"
+    - service: notify.slack_craft_room
+      data:
+        message: "We require additional foam brushes"
+
+- alias: "dash buy large glue sticks"
+  trigger:
+    platform: event
+    event_type: dash_large_glue_sticks
+  action:
+    - service: notify.slack_shopping_list
+      data:
+        message: "We require additional large hot glue sticks"
+    - service: notify.slack_craft_room
+      data:
+        message: "We require additional large hot glue sticks"
+
+- alias: "dash buy styrofoam cups"
+  trigger:
+    platform: event
+    event_type: dash_styrofoam_cups
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "We require additional styrofoam cups"
+
+- alias: "dash buy purple glue sticks"
+  trigger:
+    platform: event
+    event_type: dash_fablab_glue_sticks
+  action:
+    service: notify.slack_shopping_list
+    data:
+      message: "Fablab requires additional purple glue sticks"
