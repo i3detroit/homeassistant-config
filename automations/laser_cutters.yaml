@@ -99,7 +99,7 @@
     service: mqtt.publish
     data:
       topic: "hass/bumblebee-automation"
-      payload: " ON"
+      payload: "ON"
 
 - alias: Bumblebee OFF Notification
   trigger:
@@ -110,7 +110,7 @@
     service: mqtt.publish
     data:
       topic: "hass/bumblebee-automation"
-      payload: " OFF"
+      payload: "OFF"
 
 - alias: Wolverine ON Notification
   trigger:
@@ -121,7 +121,7 @@
     service: mqtt.publish
     data:
       topic: "hass/wolverine-automation"
-      payload: " ON"
+      payload: "ON"
 
 - alias: Wolverine OFF Notification
   trigger:
@@ -132,4 +132,4 @@
     service: mqtt.publish
     data:
       topic: "hass/wolverine-automation"
-      payload: " OFF"
+      payload: "OFF"

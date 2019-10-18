@@ -251,7 +251,7 @@
       below: 12.0
       for:
         minutes: 5
-    - platform: time
+    - platform: time_pattern
       minutes: '/240'
       seconds: 00
   condition:
@@ -421,7 +421,7 @@
 #    - service: automation.turn_off
 #      entity_id: automation.tweet_photo_from_camera
 
-- alias: Complain if genie not plugged inside
+- alias: Complain if genie not plugged in
   trigger:
     platform: state
     entity_id: sensor.genie_charge_state
@@ -432,6 +432,25 @@
    service: notify.slack_statusbots
    data:
      message: "The genie has been unplugged for over 6 hours"
+
+- alias: Notify that genie is plugged in again
+  trigger:
+    - platform: state
+      entity_id: sensor.genie_charge_state
+      to: "Plugged in, not charging"
+    - platform: state
+      entity_id: sensor.genie_charge_state
+      to: "Charging"
+  condition:
+    condition: state
+    entity_id: sensor.genie_charge_state
+    state: 'Not plugged in'
+    for:
+      hours: 6
+  action:
+   service: notify.slack_statusbots
+   data:
+     message: "The genie is plugged in again"
 
 - alias: Small bathroom lights sync ON A
   trigger:
