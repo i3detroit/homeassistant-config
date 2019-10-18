@@ -14,7 +14,7 @@ i = html.find('Buy paper now')
 
 html = html[i:i+5000]
 
-soup = BeautifulSoup(html, "lxml")
+soup = BeautifulSoup(html, "html.parser")
 table = soup.find("table", attrs={"class":"dataTable"})
 
 # The first tr contains the field names.

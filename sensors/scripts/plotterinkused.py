@@ -9,7 +9,7 @@ try:
 except OSError:
     quit()
 
-soup = BeautifulSoup(html, "lxml")
+soup = BeautifulSoup(html, "html.parser")
 table = soup.find("table", attrs={"class":"tablePad3"})
 
 # The first tr contains the field names.
