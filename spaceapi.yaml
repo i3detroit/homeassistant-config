@@ -10,7 +10,7 @@ contact:
   phone: "+1-248-556-9995"
   irc: "irc.freenode.net/#i3detroit"
   twitter: "@i3detroit"
-  facebook: "https://www.facebook.com/i3detroit"
+  # facebook: "https://www.facebook.com/i3detroit"
   mailing_list: "https://groups.google.com/forum/#!forum/i3detroit-public"
 issue_report_channels:
   - email
@@ -24,6 +24,7 @@ sensors:
     - "sensor.office_thermostat_ambient_temperature"
     - "sensor.cluster_006_temperature"
     - "sensor.cluster_007_temperature"
+    - "sensor.cluster_008_temperature"
   humidity:
     - "sensor.ground_cluster_humidity"
     - "sensor.ceiling_cluster_humidity"
@@ -31,6 +32,7 @@ sensors:
     - "sensor.office_thermostat_ambient_humidity"
     - "sensor.cluster_006_humidity"
     - "sensor.cluster_007_humidity"
+    - "sensor.cluster_008_humidity"
 
   barometer:
     - "sensor.ground_cluster_pressure_kpa"
@@ -39,6 +41,7 @@ sensors:
     - "sensor.office_thermostat_pressure_kpa"
     - "sensor.cluster_006_pressure_kpa"
     - "sensor.cluster_007_pressure_kpa"
+    - "sensor.cluster_008_pressure_kpa"
 # projects:
 #   - wiki: "https://i3detroit.org/wiki"
 #   - github: "https://github.com/i3detroit"
