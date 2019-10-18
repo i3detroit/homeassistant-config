@@ -18,7 +18,7 @@ homeassistant:
 # Enables the frontend
 frontend:
 
-# Enables configuration UI
+# # Enables configuration UI
 config:
 
 http:
@@ -36,8 +36,8 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
     
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+# # Allows you to issue voice commands from the frontend in enabled browsers
+# conversation:
 
 # Enables support for tracking state changes over time
 history:
@@ -56,9 +56,7 @@ map:
 # Track the sun
 sun:
 
-# Text to speech
-tts:
-  - platform: google
+system_health:
 
 influxdb:
   host: 10.13.0.22
