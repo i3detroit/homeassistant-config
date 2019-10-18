@@ -1,10 +1,10 @@
-hello_world:
-  module: hello
-  class: HelloWorld
+# hello_world:
+#   module: hello
+#   class: HelloWorld
 
-check_power_meter:
-  module: powerMeter
-  class: CheckPowerMeter
+# check_power_meter:
+#   module: powerMeter
+#   class: CheckPowerMeter
 
 vm_tracker:
   module: vmtracker

@@ -1,9 +1,9 @@
-import appdaemon.appapi as appapi
+import appdaemon.plugins.hass.hassapi as hass
 
 vm_list = ["asterisk", "full spectrum", "mcclellan", "minecraft",
           "rostock max", "skynet", "fab lab south pi", "fab lab north pi"]
 
-class VMTracker(appapi.AppDaemon):
+class VMTracker(hass.Hass):
 
   def initialize(self):
     self.listen_state(self.presence_change, "device_tracker")

@@ -1,14 +1,11 @@
-AppDaemon:
+appdaemon:
   logfile: STDOUT
   errorfile: STDERR
   logsize: 100000
   log_generations: 3
   threads: 10
-  api_port: 5000
-  # api_key: !secret api_key
-  # api_ssl_certificate: <path/to/root/CA/cert>
-  # api_ssl_key: <path/to/root/CA/key>
-HASS:
-  ha_url: http://10.13.0.22:8123
-HADashboard:
-  dash_url: http://10.13.0.22:5050
+  plugins:
+    HASS:
+      type: hass
+      ha_url: http://10.13.0.22:8123
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhM2QxOWFmN2M0MTk0OTI0OTg4ZjUyN2I1NTE2NzQzYyIsImlhdCI6MTU2MzEwODczNywiZXhwIjoxODc4NDY4NzM3fQ.CJmI1A0anN2tVeoL-5I0Epd16hxcL-UCsUikrCaY4lU

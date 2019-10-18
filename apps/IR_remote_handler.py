@@ -1,4 +1,4 @@
-import appdaemon.appapi as appapi
+import appdaemon.plugins.hass.hassapi as hass
 
 northArchTop = "cmnd/i3/inside/elab/accent/arch-north/"
 southArchTop = "cmnd/i3/inside/elab/accent/arch-south/"
@@ -31,7 +31,7 @@ commands = {
 }
 
 
-class IRRemote(appapi.AppDaemon):
+class IRRemote(hass.Hass):
     def initialize(self):
         self.listen_state(self.command_received, entity="sensor.elab_arch_north_ir_receiver")
         self.listen_state(self.command_received, entity="sensor.elab_arch_south_ir_receiver")
