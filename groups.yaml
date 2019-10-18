@@ -274,6 +274,7 @@ b_side_lights:
   name: "B Side Lights"
   icon: mdi:ceiling-light
   entities:
+    - light.light_041
     - light.light_042
     - light.light_043
     - light.light_044
@@ -285,6 +286,8 @@ b_side_lights:
     - light.light_050
     - light.light_051
     - light.light_052
+    - light.light_053
+    - light.light_054
     
 emergency_lights:
   name: "Emergency Lights"
@@ -294,7 +297,6 @@ emergency_lights:
     - light.light040
     - light.light027
     - light.light038
-    - light.light_041
 
 elab_arch:
   name: "Elab Arch"
@@ -374,7 +376,7 @@ misc_switches:
   entities:
     - switch.Classroom_Sign
     - switch.hallway_light_switch_west
-    - switch.classroom_east_light_switch
+    # - switch.classroom_east_light_switch
     - switch.paint_box_vent
     - switch.recycle_notification_light
 
