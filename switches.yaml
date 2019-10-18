@@ -279,10 +279,21 @@
   payload_not_available: "Offline"
 
 - platform: mqtt
-  name: 'B-Side Ceiling Vent Fan'
+  name: 'BSide Ceiling Vent Fan'
   state_topic: 'stat/i3/inside/b-side/roof-exhaust-fan/POWER'
   command_topic: 'cmnd/i3/inside/b-side/roof-exhaust-fan/POWER'
   availability_topic: 'tele/i3/inside/b-side/roof-exhaust-fan/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'
+
+- platform: mqtt
+  name: 'Fablab AC'
+  state_topic: 'stat/i3/inside/fablab/ac/POWER'
+  command_topic: 'cmnd/i3/inside/fablab/ac/POWER'
+  json_attributes_topic: 'tele/i3/inside/fablab/ac/STATE'
+  availability_topic: 'tele/i3/inside/fablab/ac/LWT'
   payload_available: 'Online'
   payload_not_available: 'Offline'
   payload_on: 'ON'
