@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: 'Light 034'
+  state_topic: 'stat/i3/inside/lights/034/POWER'
+  command_topic: 'cmnd/i3/inside/lights/034/POWER'
+  json_attributes_topic: 'tele/i3/inside/lights/034/STATE'
+  availability_topic: 'tele/i3/inside/lights/034/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'

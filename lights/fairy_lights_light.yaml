@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: 'Fairy Lights'
+  state_topic: 'stat/i3/inside/commons/accent/fairy-lights/POWER'
+  command_topic: 'cmnd/i3/inside/commons/accent/fairy-lights/POWER'
+  json_attributes_topic: 'tele/i3/inside/commons/accent/fairy-lights/STATE'
+  availability_topic: 'tele/i3/inside/commons/accent/fairy-lights/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'

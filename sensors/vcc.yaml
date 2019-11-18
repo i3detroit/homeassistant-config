@@ -29,30 +29,6 @@
   force_update: True
 
 - platform: mqtt
-  name: "light001 VCC"
-  state_topic: "tele/i3/inside/lights/001/STATE"
-  value_template: '{{ value_json.Vcc }}'
-  force_update: true
-
-- platform: mqtt
-  name: "light002 VCC"
-  state_topic: "tele/i3/inside/lights/002/STATE"
-  value_template: '{{ value_json.Vcc }}'
-  force_update: true
-
-- platform: mqtt
-  name: "light003 VCC"
-  state_topic: "tele/i3/inside/lights/003/STATE"
-  value_template: '{{ value_json.Vcc }}'
-  force_update: true
-
-- platform: mqtt
-  name: "light004 VCC"
-  state_topic: "tele/i3/inside/lights/004/STATE"
-  value_template: '{{ value_json.Vcc }}'
-  force_update: true
-
-- platform: mqtt
   name: "light005 VCC"
   state_topic: "tele/i3/inside/lights/005/STATE"
   value_template: '{{ value_json.Vcc }}'

@@ -2,7 +2,7 @@ emergency_lights_reset:
   alias: "Emergency Lights Reset"
   sequence:
     - service: light.turn_on
-      entity_id: light.light038
+      entity_id: light.light_038
       data:
         # Lights are set up in hass on a 0-50 brightness scale
         # hass brightness values used here are expected to be 0-255 scale
@@ -10,7 +10,7 @@ emergency_lights_reset:
         # 90 / 255 * 50 = 17 brightness on the tasmota scale
         brightness: 30
     - service: light.turn_on
-      entity_id: light.light039
+      entity_id: light.light_039
       data:
         # Lights are set up in hass on a 0-50 brightness scale
         # hass brightness values used here are expected to be 0-255 scale
@@ -18,7 +18,7 @@ emergency_lights_reset:
         # 69 / 255 * 50 = 13 brightness on the tasmota scale
         brightness: 24
     - service: light.turn_on
-      entity_id: light.light040
+      entity_id: light.light_040
       data:
         # Lights are set up in hass on a 0-50 brightness scale
         # hass brightness values used here are expected to be 0-255 scale
@@ -26,7 +26,7 @@ emergency_lights_reset:
         # 12 / 255 * 50 = 2 brightness on the tasmota scale
         brightness: 46
     - service: light.turn_on
-      entity_id: light.light027
+      entity_id: light.light_027
       data:
         # Lights are set up in hass on a 0-50 brightness scale
         # hass brightness values used here are expected to be 0-255 scale

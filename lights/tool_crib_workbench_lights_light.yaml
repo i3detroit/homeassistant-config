@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: 'Tool Crib Workbench Lights'
+  state_topic: 'stat/i3/inside/tool-crib/workbench-lights/POWER'
+  command_topic: 'cmnd/i3/inside/tool-crib/workbench-lights/POWER'
+  json_attributes_topic: 'tele/i3/inside/tool-crib/workbench-lights/STATE'
+  availability_topic: 'tele/i3/inside/tool-crib/workbench-lights/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'

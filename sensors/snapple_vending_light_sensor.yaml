@@ -1,0 +1,88 @@
+- platform: template
+  sensors:
+    snapple_vending_light_time:
+      friendly_name: 'Snapple Vending Light Time'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Time }}'
+    snapple_vending_light_uptime:
+      friendly_name: 'Snapple Vending Light Uptime'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Uptime }}'
+    snapple_vending_light_vcc:
+      friendly_name: 'Snapple Vending Light Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Vcc }}'
+    snapple_vending_light_heap:
+      friendly_name: 'Snapple Vending Light Heap'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Heap }}'
+    snapple_vending_light_sleepmode:
+      friendly_name: 'Snapple Vending Light SleepMode'
+      value_template: '{{ states.light.snapple_vending_light.attributes.SleepMode }}'
+    snapple_vending_light_sleep:
+      friendly_name: 'Snapple Vending Light Sleep'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Sleep }}'
+    snapple_vending_light_loadavg:
+      friendly_name: 'Snapple Vending Light LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.snapple_vending_light.attributes.LoadAvg }}'
+    snapple_vending_light_wifi_ssid:
+      friendly_name: 'Snapple Vending Light Wifi SSId'
+      value_template: "{{ state_attr('light.snapple_vending_light', 'Wifi')['SSId'] }}"
+    snapple_vending_light_wifi_ap:
+      friendly_name: 'Snapple Vending Light Wifi AP'
+      value_template: >-
+        {% if state_attr('light.snapple_vending_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.snapple_vending_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.snapple_vending_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.snapple_vending_light', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.snapple_vending_light', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.snapple_vending_light', 'Wifi')['BSSId'] }}
+        {% endif %}
+    snapple_vending_light_wifi_bssid:
+      friendly_name: 'Snapple Vending Light Wifi BSSId'
+      value_template: "{{ state_attr('light.snapple_vending_light', 'Wifi')['BSSId'] }}"
+    snapple_vending_light_wifi_channel:
+      friendly_name: 'Snapple Vending Light Wifi Channel'
+      value_template: "{{ state_attr('light.snapple_vending_light', 'Wifi')['Channel'] }}"
+    snapple_vending_light_wifi_rssi:
+      friendly_name: 'Snapple Vending Light Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.snapple_vending_light', 'Wifi')['RSSI'] }}"
+    snapple_vending_light_wifi_linkcount:
+      friendly_name: 'Snapple Vending Light Wifi Link Count'
+      value_template: "{{ state_attr('light.snapple_vending_light', 'Wifi')['LinkCount'] }}"
+    snapple_vending_light_wifi_downtime:
+      friendly_name: 'Snapple Vending Light Wifi Downtime'
+      value_template: "{{ state_attr('light.snapple_vending_light', 'Wifi')['Downtime'] }}"
+    snapple_vending_light_power:
+      friendly_name: 'Snapple Vending Light Power'
+      value_template: '{{ states.light.snapple_vending_light.attributes.POWER }}'
+    snapple_vending_light_dimmer:
+      friendly_name: 'Snapple Vending Light Dimmer'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Dimmer }}'
+    snapple_vending_light_color:
+      friendly_name: 'Snapple Vending Light Color'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Color }}'
+    snapple_vending_light_hsb_color:
+      friendly_name: 'Snapple Vending Light HSB Color'
+      value_template: '{{ states.light.snapple_vending_light.attributes.HSBColor }}'
+    snapple_vending_light_color_channel:
+      friendly_name: 'Snapple Vending Light Color Channel'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Channel }}'
+    snapple_vending_light_scheme:
+      friendly_name: 'Snapple Vending Light Scheme'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Scheme }}'
+    snapple_vending_light_fade:
+      friendly_name: 'Snapple Vending Light Fade'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Fade }}'
+    snapple_vending_light_speed:
+      friendly_name: 'Snapple Vending Light Speed'
+      value_template: '{{ states.light.snapple_vending_light.attributes.Speed }}'
+    snapple_vending_light_led_table:
+      friendly_name: 'Snapple Vending Light LED Table'
+      value_template: '{{ states.light.snapple_vending_light.attributes.LedTable }}'

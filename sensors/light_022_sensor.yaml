@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    light_022_time:
+      friendly_name: 'Light 022 Time'
+      value_template: '{{ states.light.light_022.attributes.Time }}'
+    light_022_uptime:
+      friendly_name: 'Light 022 Uptime'
+      value_template: '{{ states.light.light_022.attributes.Uptime }}'
+    light_022_vcc:
+      friendly_name: 'Light 022 Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.light_022.attributes.Vcc }}'
+    light_022_heap:
+      friendly_name: 'Light 022 Heap'
+      value_template: '{{ states.light.light_022.attributes.Heap }}'
+    light_022_sleepmode:
+      friendly_name: 'Light 022 SleepMode'
+      value_template: '{{ states.light.light_022.attributes.SleepMode }}'
+    light_022_sleep:
+      friendly_name: 'Light 022 Sleep'
+      value_template: '{{ states.light.light_022.attributes.Sleep }}'
+    light_022_loadavg:
+      friendly_name: 'Light 022 LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.light_022.attributes.LoadAvg }}'
+    light_022_wifi_ssid:
+      friendly_name: 'Light 022 Wifi SSId'
+      value_template: "{{ state_attr('light.light_022', 'Wifi')['SSId'] }}"
+    light_022_wifi_ap:
+      friendly_name: 'Light 022 Wifi AP'
+      value_template: >-
+        {% if state_attr('light.light_022', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.light_022', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.light_022', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.light_022', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.light_022', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.light_022', 'Wifi')['BSSId'] }}
+        {% endif %}
+    light_022_wifi_bssid:
+      friendly_name: 'Light 022 Wifi BSSId'
+      value_template: "{{ state_attr('light.light_022', 'Wifi')['BSSId'] }}"
+    light_022_wifi_channel:
+      friendly_name: 'Light 022 Wifi Channel'
+      value_template: "{{ state_attr('light.light_022', 'Wifi')['Channel'] }}"
+    light_022_wifi_rssi:
+      friendly_name: 'Light 022 Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.light_022', 'Wifi')['RSSI'] }}"
+    light_022_wifi_linkcount:
+      friendly_name: 'Light 022 Wifi Link Count'
+      value_template: "{{ state_attr('light.light_022', 'Wifi')['LinkCount'] }}"
+    light_022_wifi_downtime:
+      friendly_name: 'Light 022 Wifi Downtime'
+      value_template: "{{ state_attr('light.light_022', 'Wifi')['Downtime'] }}"
+    light_022_power:
+      friendly_name: 'Light 022 Power'
+      value_template: '{{ states.light.light_022.attributes.POWER }}'

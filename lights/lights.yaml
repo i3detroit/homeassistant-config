@@ -1,0 +1,235 @@
+- platform: mqtt
+  name: "LightLargeBathroom"
+  state_topic: "stat/i3/inside/large-bathroom/light/POWER"
+  command_topic: "cmnd/i3/inside/large-bathroom/light/POWER"
+  availability_topic: "tele/i3/inside/large-bathroom/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "LightMediaLab"
+  state_topic: "stat/i3/inside/media-lab/lights/POWER"
+  command_topic: "cmnd/i3/inside/media-lab/lights/POWER"
+  availability_topic: "tele/i3/inside/media-lab/lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "LightTrafficRed"
+  state_topic: "stat/i3/inside/commons/traffic-light/POWER1"
+  command_topic: "cmnd/i3/inside/commons/traffic-light/POWER1"
+  availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "LightTrafficYellow"
+  state_topic: "stat/i3/inside/commons/traffic-light/POWER2"
+  command_topic: "cmnd/i3/inside/commons/traffic-light/POWER2"
+  availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "LightTrafficGreen"
+  state_topic: "stat/i3/inside/commons/traffic-light/POWER3"
+  command_topic: "cmnd/i3/inside/commons/traffic-light/POWER3"
+  availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Chandelier01"
+  state_topic: "stat/i3/inside/accent/chandelier-01/POWER"
+  command_topic: "cmnd/i3/inside/accent/chandelier-01/POWER"
+  availability_topic: "tele/i3/inside/accent/chandelier-01/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Chandelier02"
+  state_topic: "stat/i3/inside/accent/chandelier-02/POWER"
+  command_topic: "cmnd/i3/inside/accent/chandelier-02/POWER"
+  availability_topic: "tele/i3/inside/accent/chandelier-02/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Craft Room Light"
+  state_topic: "stat/i3/inside/craftroom/light/POWER"
+  command_topic: "cmnd/i3/inside/craftroom/light/POWER"
+  availability_topic: "tele/i3/inside/craftroom/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Electronics Lab Light"
+  state_topic: "stat/i3/inside/elab/light/POWER"
+  command_topic: "cmnd/i3/inside/elab/light/POWER"
+  availability_topic: "tele/i3/inside/elab/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Hallway Light"
+  state_topic: "stat/i3/inside/hallway/light/POWER"
+  command_topic: "cmnd/i3/inside/hallway/light/POWER"
+  availability_topic: "tele/i3/inside/hallway/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Small Bathroom Light"
+  state_topic: "stat/i3/inside/small-bathroom/light/POWER"
+  command_topic: "cmnd/i3/inside/small-bathroom/light/POWER"
+  availability_topic: "tele/i3/inside/small-bathroom/light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Small Bathroom Shower Light"
+  state_topic: "stat/i3/inside/small-bathroom/shower-light/POWER"
+  command_topic: "cmnd/i3/inside/small-bathroom/shower-light/POWER"
+  availability_topic: "tele/i3/inside/small-bathroom/shower-light/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Classroom Lights East"
+  state_topic: "stat/i3/inside/classroom/lights-east/POWER"
+  command_topic: "cmnd/i3/inside/classroom/lights-east/POWER"
+  availability_topic: "tele/i3/inside/classroom/lights-east/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Classroom Lights West"
+  state_topic: "stat/i3/inside/classroom/lights-west/POWER"
+  command_topic: "cmnd/i3/inside/classroom/lights-west/POWER"
+  availability_topic: "tele/i3/inside/classroom/lights-west/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Dooridor Lights"
+  state_topic: "stat/i3/inside/dooridor/lights/POWER"
+  command_topic: "cmnd/i3/inside/dooridor/lights/POWER"
+  availability_topic: "tele/i3/inside/dooridor/lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: Elab Arch North
+  effect_list:
+    - 2
+    - 3
+  state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
+  command_topic: "cmnd/i3/inside/elab/accent/arch-north/POWER"
+  availability_topic: "tele/i3/inside/elab/accent/arch-north/LWT"
+  brightness_state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
+  brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Dimmer"
+  brightness_scale: 100
+  rgb_command_template: "{{ '%02x%02x%02x00' | format(red, green, blue)}}"
+  rgb_state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
+  rgb_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Color"
+  effect_command_topic: "cmnd/i3/inside/elab/accent/arch-north/Scheme"
+  effect_state_topic: "stat/i3/inside/elab/accent/arch-north/RESULT"
+  state_value_template: >
+    {% if "POWER" in value_json %}
+      {{ value_json.POWER }}
+    {% endif %}
+  brightness_value_template: >
+    {% if "Dimmer" in value_json %}
+      {{ value_json.Dimmer }}
+    {% endif %}
+  effect_value_template: >
+    {% if "Scheme" in value_json %}
+      {{ value_json.Scheme }}
+    {% endif %}
+  rgb_value_template: >
+    {% if "Color" in value_json %}
+      {{ (value_json.Color[0:2] | int(int, 16)) | string + ',' + (value_json.Color[2:4] | int(int, 16)) | string + ',' + (value_json.Color[4:6] | int(int, 16)) | string }}
+    {% endif %}
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  on_command_type: "brightness"
+
+- platform: mqtt
+  name: Elab Arch South
+  effect_list:
+    - 2
+    - 3
+  state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
+  command_topic: "cmnd/i3/inside/elab/accent/arch-south/POWER"
+  availability_topic: "tele/i3/inside/elab/accent/arch-south/LWT"
+  brightness_state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
+  brightness_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Dimmer"
+  brightness_scale: 100
+  rgb_command_template: "{{ '%02x%02x%02x00' | format(red, green, blue)}}"
+  rgb_state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
+  rgb_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Color"
+  effect_command_topic: "cmnd/i3/inside/elab/accent/arch-south/Scheme"
+  effect_state_topic: "stat/i3/inside/elab/accent/arch-south/RESULT"
+  state_value_template: >
+    {% if "POWER" in value_json %}
+      {{ value_json.POWER }}
+    {% endif %}
+  brightness_value_template: >
+    {% if "Dimmer" in value_json %}
+      {{ value_json.Dimmer }}
+    {% endif %}
+  effect_value_template: >
+    {% if "Scheme" in value_json %}
+      {{ value_json.Scheme }}
+    {% endif %}
+  rgb_value_template: >
+    {% if "Color" in value_json %}
+      {{ (value_json.Color[0:2] | int(int, 16)) | string + ',' + (value_json.Color[2:4] | int(int, 16)) | string + ',' + (value_json.Color[4:6] | int(int, 16)) | string }}
+    {% endif %}
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  on_command_type: "brightness"
+
+- platform: mqtt
+  name: "B Side Office Light"
+  state_topic: "stat/i3/inside/b-side/office/lights/POWER"
+  command_topic: "cmnd/i3/inside/b-side/office/lights/POWER"
+  availability_topic: "tele/i3/inside/b-side/office/lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  payload_on: "ON"
+  payload_off: "OFF"

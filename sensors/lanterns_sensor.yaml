@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    lanterns_time:
+      friendly_name: 'Lanterns Time'
+      value_template: '{{ states.light.lanterns.attributes.Time }}'
+    lanterns_uptime:
+      friendly_name: 'Lanterns Uptime'
+      value_template: '{{ states.light.lanterns.attributes.Uptime }}'
+    lanterns_vcc:
+      friendly_name: 'Lanterns Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.lanterns.attributes.Vcc }}'
+    lanterns_heap:
+      friendly_name: 'Lanterns Heap'
+      value_template: '{{ states.light.lanterns.attributes.Heap }}'
+    lanterns_sleepmode:
+      friendly_name: 'Lanterns SleepMode'
+      value_template: '{{ states.light.lanterns.attributes.SleepMode }}'
+    lanterns_sleep:
+      friendly_name: 'Lanterns Sleep'
+      value_template: '{{ states.light.lanterns.attributes.Sleep }}'
+    lanterns_loadavg:
+      friendly_name: 'Lanterns LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.lanterns.attributes.LoadAvg }}'
+    lanterns_wifi_ssid:
+      friendly_name: 'Lanterns Wifi SSId'
+      value_template: "{{ state_attr('light.lanterns', 'Wifi')['SSId'] }}"
+    lanterns_wifi_ap:
+      friendly_name: 'Lanterns Wifi AP'
+      value_template: >-
+        {% if state_attr('light.lanterns', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.lanterns', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.lanterns', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.lanterns', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.lanterns', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.lanterns', 'Wifi')['BSSId'] }}
+        {% endif %}
+    lanterns_wifi_bssid:
+      friendly_name: 'Lanterns Wifi BSSId'
+      value_template: "{{ state_attr('light.lanterns', 'Wifi')['BSSId'] }}"
+    lanterns_wifi_channel:
+      friendly_name: 'Lanterns Wifi Channel'
+      value_template: "{{ state_attr('light.lanterns', 'Wifi')['Channel'] }}"
+    lanterns_wifi_rssi:
+      friendly_name: 'Lanterns Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.lanterns', 'Wifi')['RSSI'] }}"
+    lanterns_wifi_linkcount:
+      friendly_name: 'Lanterns Wifi Link Count'
+      value_template: "{{ state_attr('light.lanterns', 'Wifi')['LinkCount'] }}"
+    lanterns_wifi_downtime:
+      friendly_name: 'Lanterns Wifi Downtime'
+      value_template: "{{ state_attr('light.lanterns', 'Wifi')['Downtime'] }}"
+    lanterns_power:
+      friendly_name: 'Lanterns Power'
+      value_template: '{{ states.light.lanterns.attributes.POWER }}'

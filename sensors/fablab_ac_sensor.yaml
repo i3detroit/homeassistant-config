@@ -1,3 +1,66 @@
+- platform: template
+  sensors:
+    fablab_ac_time:
+      friendly_name: 'Fablab AC Time'
+      value_template: '{{ states.switch.fablab_ac.attributes.Time }}'
+    fablab_ac_uptime:
+      friendly_name: 'Fablab AC Uptime'
+      value_template: '{{ states.switch.fablab_ac.attributes.Uptime }}'
+    fablab_ac_vcc:
+      friendly_name: 'Fablab AC Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.switch.fablab_ac.attributes.Vcc }}'
+    fablab_ac_heap:
+      friendly_name: 'Fablab AC Heap'
+      value_template: '{{ states.light.fablab_ac.attributes.Heap }}'
+    fablab_ac_sleepmode:
+      friendly_name: 'Fablab AC SleepMode'
+      value_template: '{{ states.switch.fablab_ac.attributes.SleepMode }}'
+    fablab_ac_sleep:
+      friendly_name: 'Fablab AC Sleep'
+      value_template: '{{ states.switch.fablab_ac.attributes.Sleep }}'
+    fablab_ac_loadavg:
+      friendly_name: 'Fablab AC LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.switch.fablab_ac.attributes.LoadAvg }}'
+    fablab_ac_wifi_ssid:
+      friendly_name: 'Fablab AC Wifi SSId'
+      value_template: "{{ state_attr('switch.fablab_ac', 'Wifi')['SSId'] }}"
+    fablab_ac_wifi_ap:
+      friendly_name: 'Fablab AC Wifi AP'
+      value_template: >-
+        {% if state_attr('switch.fablab_ac', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('switch.fablab_ac', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('switch.fablab_ac', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('switch.fablab_ac', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('switch.fablab_ac', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('switch.fablab_ac', 'Wifi')['BSSId'] }}
+        {% endif %}
+    fablab_ac_wifi_bssid:
+      friendly_name: 'Fablab AC Wifi BSSId'
+      value_template: "{{ state_attr('switch.fablab_ac', 'Wifi')['BSSId'] }}"
+    fablab_ac_wifi_channel:
+      friendly_name: 'Fablab AC Wifi Channel'
+      value_template: "{{ state_attr('switch.fablab_ac', 'Wifi')['Channel'] }}"
+    fablab_ac_wifi_rssi:
+      friendly_name: 'Fablab AC Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('switch.fablab_ac', 'Wifi')['RSSI'] }}"
+    fablab_ac_wifi_linkcount:
+      friendly_name: 'Fablab AC Wifi Link Count'
+      value_template: "{{ state_attr('switch.fablab_ac', 'Wifi')['LinkCount'] }}"
+    fablab_ac_wifi_downtime:
+      friendly_name: 'Fablab AC Wifi Downtime'
+      value_template: "{{ state_attr('switch.fablab_ac', 'Wifi')['Downtime'] }}"
+    fablab_ac_power:
+      friendly_name: 'Fablab AC Power'
+      value_template: '{{ states.switch.fablab_ac.attributes.POWER }}'
 
 - platform: mqtt
   name: 'Fablab AC Total Start Time'
@@ -107,63 +170,3 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: template
-  sensors:
-    fablab_ac_time:
-      friendly_name: 'Fablab AC Time'
-      value_template: '{{ states.switch.fablab_ac.attributes.Time }}'
-    fablab_ac_uptime:
-      friendly_name: 'Fablab AC Uptime'
-      value_template: '{{ states.switch.fablab_ac.attributes.Uptime }}'
-    fablab_ac_vcc:
-      friendly_name: 'Fablab AC Vcc'
-      unit_of_measurement: 'V'
-      value_template: '{{ states.switch.fablab_ac.attributes.Vcc }}'
-    fablab_ac_heap:
-      friendly_name: 'Fablab AC Heap'
-      value_template: '{{ states.light.fablab_ac.attributes.Heap }}'
-    fablab_ac_sleepmode:
-      friendly_name: 'Fablab AC SleepMode'
-      value_template: '{{ states.switch.fablab_ac.attributes.SleepMode }}'
-    fablab_ac_sleep:
-      friendly_name: 'Fablab AC Sleep'
-      value_template: '{{ states.switch.fablab_ac.attributes.Sleep }}'
-    fablab_ac_loadavg:
-      friendly_name: 'Fablab AC LoadAvg'
-      unit_of_measurement: '%'
-      value_template: '{{ states.switch.fablab_ac.attributes.LoadAvg }}'
-    fablab_ac_power:
-      friendly_name: 'Fablab AC Power'
-      value_template: '{{ states.switch.fablab_ac.attributes.POWER }}'
-    fablab_ac_wifi_ssid:
-      friendly_name: 'Fablab AC Wifi SSId'
-      value_template: '{{ states.switch.fablab_ac.attributes.Wifi.SSId }}'
-    fablab_ac_wifi_bssid:
-      friendly_name: 'Fablab AC Wifi BSSId'
-      value_template: >-
-        {% if states.switch.fablab_ac.attributes.Wifi.BSSId | string == '02:9F:C2:24:32:82' %}
-          Office AP
-        {% elif states.switch.fablab_ac.attributes.Wifi.BSSId | string == '02:9F:C2:24:30:D7' %}
-          Mezzanine AP
-        {% elif states.switch.fablab_ac.attributes.Wifi.BSSId | string == '02:9F:C2:24:2D:F1' %}
-          Tool Crib AP
-        {% elif states.switch.fablab_ac.attributes.Wifi.BSSId | string == '0E:EC:DA:B7:E0:7D' %}
-          B-Side South AP
-        {% elif states.switch.fablab_ac.attributes.Wifi.BSSId | string == 'C6:FB:E4:44:66:C4' %}
-          B-Side North AP
-        {% else %}
-          {{ states.switch.fablab_ac.attributes.Wifi.BSSId }}
-        {% endif %}
-    fablab_ac_wifi_channel:
-      friendly_name: 'Fablab AC Wifi Channel'
-      value_template: '{{ states.switch.fablab_ac.attributes.Wifi.Channel }}'
-    fablab_ac_wifi_rssi:
-      friendly_name: 'Fablab AC Wifi RSSI'
-      unit_of_measurement: '%'
-      value_template: '{{ states.switch.fablab_ac.attributes.Wifi.RSSI }}'
-    fablab_ac_wifi_linkcount:
-      friendly_name: 'Fablab AC Wifi Link Count'
-      value_template: '{{ states.switch.fablab_ac.attributes.Wifi.LinkCount }}'
-    fablab_ac_wifi_downtime:
-      friendly_name: 'Fablab AC Wifi Downtime'
-      value_template: '{{ states.switch.fablab_ac.attributes.Wifi.Downtime }}'

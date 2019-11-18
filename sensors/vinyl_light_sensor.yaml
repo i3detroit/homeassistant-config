@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    vinyl_light_time:
+      friendly_name: 'Vinyl Light Time'
+      value_template: '{{ states.light.vinyl_light.attributes.Time }}'
+    vinyl_light_uptime:
+      friendly_name: 'Vinyl Light Uptime'
+      value_template: '{{ states.light.vinyl_light.attributes.Uptime }}'
+    vinyl_light_vcc:
+      friendly_name: 'Vinyl Light Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.vinyl_light.attributes.Vcc }}'
+    vinyl_light_heap:
+      friendly_name: 'Vinyl Light Heap'
+      value_template: '{{ states.light.vinyl_light.attributes.Heap }}'
+    vinyl_light_sleepmode:
+      friendly_name: 'Vinyl Light SleepMode'
+      value_template: '{{ states.light.vinyl_light.attributes.SleepMode }}'
+    vinyl_light_sleep:
+      friendly_name: 'Vinyl Light Sleep'
+      value_template: '{{ states.light.vinyl_light.attributes.Sleep }}'
+    vinyl_light_loadavg:
+      friendly_name: 'Vinyl Light LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.vinyl_light.attributes.LoadAvg }}'
+    vinyl_light_wifi_ssid:
+      friendly_name: 'Vinyl Light Wifi SSId'
+      value_template: "{{ state_attr('light.vinyl_light', 'Wifi')['SSId'] }}"
+    vinyl_light_wifi_ap:
+      friendly_name: 'Vinyl Light Wifi AP'
+      value_template: >-
+        {% if state_attr('light.vinyl_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.vinyl_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.vinyl_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.vinyl_light', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.vinyl_light', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.vinyl_light', 'Wifi')['BSSId'] }}
+        {% endif %}
+    vinyl_light_wifi_bssid:
+      friendly_name: 'Vinyl Light Wifi BSSId'
+      value_template: "{{ state_attr('light.vinyl_light', 'Wifi')['BSSId'] }}"
+    vinyl_light_wifi_channel:
+      friendly_name: 'Vinyl Light Wifi Channel'
+      value_template: "{{ state_attr('light.vinyl_light', 'Wifi')['Channel'] }}"
+    vinyl_light_wifi_rssi:
+      friendly_name: 'Vinyl Light Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.vinyl_light', 'Wifi')['RSSI'] }}"
+    vinyl_light_wifi_linkcount:
+      friendly_name: 'Vinyl Light Wifi Link Count'
+      value_template: "{{ state_attr('light.vinyl_light', 'Wifi')['LinkCount'] }}"
+    vinyl_light_wifi_downtime:
+      friendly_name: 'Vinyl Light Wifi Downtime'
+      value_template: "{{ state_attr('light.vinyl_light', 'Wifi')['Downtime'] }}"
+    vinyl_light_power:
+      friendly_name: 'Vinyl Light Power'
+      value_template: '{{ states.light.vinyl_light.attributes.POWER }}'

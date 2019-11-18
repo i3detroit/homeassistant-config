@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    tool_crib_workbench_lights_time:
+      friendly_name: 'Tool Crib Workbench Lights Time'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.Time }}'
+    tool_crib_workbench_lights_uptime:
+      friendly_name: 'Tool Crib Workbench Lights Uptime'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.Uptime }}'
+    tool_crib_workbench_lights_vcc:
+      friendly_name: 'Tool Crib Workbench Lights Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.Vcc }}'
+    tool_crib_workbench_lights_heap:
+      friendly_name: 'Tool Crib Workbench Lights Heap'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.Heap }}'
+    tool_crib_workbench_lights_sleepmode:
+      friendly_name: 'Tool Crib Workbench Lights SleepMode'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.SleepMode }}'
+    tool_crib_workbench_lights_sleep:
+      friendly_name: 'Tool Crib Workbench Lights Sleep'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.Sleep }}'
+    tool_crib_workbench_lights_loadavg:
+      friendly_name: 'Tool Crib Workbench Lights LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.LoadAvg }}'
+    tool_crib_workbench_lights_wifi_ssid:
+      friendly_name: 'Tool Crib Workbench Lights Wifi SSId'
+      value_template: "{{ state_attr('light.tool_crib_workbench_lights', 'Wifi')['SSId'] }}"
+    tool_crib_workbench_lights_wifi_ap:
+      friendly_name: 'Tool Crib Workbench Lights Wifi AP'
+      value_template: >-
+        {% if state_attr('light.tool_crib_workbench_lights', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.tool_crib_workbench_lights', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.tool_crib_workbench_lights', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.tool_crib_workbench_lights', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.tool_crib_workbench_lights', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.tool_crib_workbench_lights', 'Wifi')['BSSId'] }}
+        {% endif %}
+    tool_crib_workbench_lights_wifi_bssid:
+      friendly_name: 'Tool Crib Workbench Lights Wifi BSSId'
+      value_template: "{{ state_attr('light.tool_crib_workbench_lights', 'Wifi')['BSSId'] }}"
+    tool_crib_workbench_lights_wifi_channel:
+      friendly_name: 'Tool Crib Workbench Lights Wifi Channel'
+      value_template: "{{ state_attr('light.tool_crib_workbench_lights', 'Wifi')['Channel'] }}"
+    tool_crib_workbench_lights_wifi_rssi:
+      friendly_name: 'Tool Crib Workbench Lights Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.tool_crib_workbench_lights', 'Wifi')['RSSI'] }}"
+    tool_crib_workbench_lights_wifi_linkcount:
+      friendly_name: 'Tool Crib Workbench Lights Wifi Link Count'
+      value_template: "{{ state_attr('light.tool_crib_workbench_lights', 'Wifi')['LinkCount'] }}"
+    tool_crib_workbench_lights_wifi_downtime:
+      friendly_name: 'Tool Crib Workbench Lights Wifi Downtime'
+      value_template: "{{ state_attr('light.tool_crib_workbench_lights', 'Wifi')['Downtime'] }}"
+    tool_crib_workbench_lights_power:
+      friendly_name: 'Tool Crib Workbench Lights Power'
+      value_template: '{{ states.light.tool_crib_workbench_lights.attributes.POWER }}'

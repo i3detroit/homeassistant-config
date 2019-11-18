@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    treehouse_light_time:
+      friendly_name: 'Treehouse Light Time'
+      value_template: '{{ states.light.treehouse_light.attributes.Time }}'
+    treehouse_light_uptime:
+      friendly_name: 'Treehouse Light Uptime'
+      value_template: '{{ states.light.treehouse_light.attributes.Uptime }}'
+    treehouse_light_vcc:
+      friendly_name: 'Treehouse Light Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.treehouse_light.attributes.Vcc }}'
+    treehouse_light_heap:
+      friendly_name: 'Treehouse Light Heap'
+      value_template: '{{ states.light.treehouse_light.attributes.Heap }}'
+    treehouse_light_sleepmode:
+      friendly_name: 'Treehouse Light SleepMode'
+      value_template: '{{ states.light.treehouse_light.attributes.SleepMode }}'
+    treehouse_light_sleep:
+      friendly_name: 'Treehouse Light Sleep'
+      value_template: '{{ states.light.treehouse_light.attributes.Sleep }}'
+    treehouse_light_loadavg:
+      friendly_name: 'Treehouse Light LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.treehouse_light.attributes.LoadAvg }}'
+    treehouse_light_wifi_ssid:
+      friendly_name: 'Treehouse Light Wifi SSId'
+      value_template: "{{ state_attr('light.treehouse_light', 'Wifi')['SSId'] }}"
+    treehouse_light_wifi_ap:
+      friendly_name: 'Treehouse Light Wifi AP'
+      value_template: >-
+        {% if state_attr('light.treehouse_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.treehouse_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.treehouse_light', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.treehouse_light', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.treehouse_light', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.treehouse_light', 'Wifi')['BSSId'] }}
+        {% endif %}
+    treehouse_light_wifi_bssid:
+      friendly_name: 'Treehouse Light Wifi BSSId'
+      value_template: "{{ state_attr('light.treehouse_light', 'Wifi')['BSSId'] }}"
+    treehouse_light_wifi_channel:
+      friendly_name: 'Treehouse Light Wifi Channel'
+      value_template: "{{ state_attr('light.treehouse_light', 'Wifi')['Channel'] }}"
+    treehouse_light_wifi_rssi:
+      friendly_name: 'Treehouse Light Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.treehouse_light', 'Wifi')['RSSI'] }}"
+    treehouse_light_wifi_linkcount:
+      friendly_name: 'Treehouse Light Wifi Link Count'
+      value_template: "{{ state_attr('light.treehouse_light', 'Wifi')['LinkCount'] }}"
+    treehouse_light_wifi_downtime:
+      friendly_name: 'Treehouse Light Wifi Downtime'
+      value_template: "{{ state_attr('light.treehouse_light', 'Wifi')['Downtime'] }}"
+    treehouse_light_power:
+      friendly_name: 'Treehouse Light Power'
+      value_template: '{{ states.light.treehouse_light.attributes.POWER }}'

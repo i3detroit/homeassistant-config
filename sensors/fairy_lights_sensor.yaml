@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    fairy_lights_time:
+      friendly_name: 'Fairy Lights Time'
+      value_template: '{{ states.light.fairy_lights.attributes.Time }}'
+    fairy_lights_uptime:
+      friendly_name: 'Fairy Lights Uptime'
+      value_template: '{{ states.light.fairy_lights.attributes.Uptime }}'
+    fairy_lights_vcc:
+      friendly_name: 'Fairy Lights Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.fairy_lights.attributes.Vcc }}'
+    fairy_lights_heap:
+      friendly_name: 'Fairy Lights Heap'
+      value_template: '{{ states.light.fairy_lights.attributes.Heap }}'
+    fairy_lights_sleepmode:
+      friendly_name: 'Fairy Lights SleepMode'
+      value_template: '{{ states.light.fairy_lights.attributes.SleepMode }}'
+    fairy_lights_sleep:
+      friendly_name: 'Fairy Lights Sleep'
+      value_template: '{{ states.light.fairy_lights.attributes.Sleep }}'
+    fairy_lights_loadavg:
+      friendly_name: 'Fairy Lights LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.fairy_lights.attributes.LoadAvg }}'
+    fairy_lights_wifi_ssid:
+      friendly_name: 'Fairy Lights Wifi SSId'
+      value_template: "{{ state_attr('light.fairy_lights', 'Wifi')['SSId'] }}"
+    fairy_lights_wifi_ap:
+      friendly_name: 'Fairy Lights Wifi AP'
+      value_template: >-
+        {% if state_attr('light.fairy_lights', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.fairy_lights', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.fairy_lights', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.fairy_lights', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.fairy_lights', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.fairy_lights', 'Wifi')['BSSId'] }}
+        {% endif %}
+    fairy_lights_wifi_bssid:
+      friendly_name: 'Fairy Lights Wifi BSSId'
+      value_template: "{{ state_attr('light.fairy_lights', 'Wifi')['BSSId'] }}"
+    fairy_lights_wifi_channel:
+      friendly_name: 'Fairy Lights Wifi Channel'
+      value_template: "{{ state_attr('light.fairy_lights', 'Wifi')['Channel'] }}"
+    fairy_lights_wifi_rssi:
+      friendly_name: 'Fairy Lights Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.fairy_lights', 'Wifi')['RSSI'] }}"
+    fairy_lights_wifi_linkcount:
+      friendly_name: 'Fairy Lights Wifi Link Count'
+      value_template: "{{ state_attr('light.fairy_lights', 'Wifi')['LinkCount'] }}"
+    fairy_lights_wifi_downtime:
+      friendly_name: 'Fairy Lights Wifi Downtime'
+      value_template: "{{ state_attr('light.fairy_lights', 'Wifi')['Downtime'] }}"
+    fairy_lights_power:
+      friendly_name: 'Fairy Lights Power'
+      value_template: '{{ states.light.fairy_lights.attributes.POWER }}'

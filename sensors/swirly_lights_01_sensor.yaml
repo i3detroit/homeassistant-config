@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    swirly_lights_01_time:
+      friendly_name: 'Swirly Lights 01 Time'
+      value_template: '{{ states.light.swirly_lights_01.attributes.Time }}'
+    swirly_lights_01_uptime:
+      friendly_name: 'Swirly Lights 01 Uptime'
+      value_template: '{{ states.light.swirly_lights_01.attributes.Uptime }}'
+    swirly_lights_01_vcc:
+      friendly_name: 'Swirly Lights 01 Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.swirly_lights_01.attributes.Vcc }}'
+    swirly_lights_01_heap:
+      friendly_name: 'Swirly Lights 01 Heap'
+      value_template: '{{ states.light.swirly_lights_01.attributes.Heap }}'
+    swirly_lights_01_sleepmode:
+      friendly_name: 'Swirly Lights 01 SleepMode'
+      value_template: '{{ states.light.swirly_lights_01.attributes.SleepMode }}'
+    swirly_lights_01_sleep:
+      friendly_name: 'Swirly Lights 01 Sleep'
+      value_template: '{{ states.light.swirly_lights_01.attributes.Sleep }}'
+    swirly_lights_01_loadavg:
+      friendly_name: 'Swirly Lights 01 LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.swirly_lights_01.attributes.LoadAvg }}'
+    swirly_lights_01_wifi_ssid:
+      friendly_name: 'Swirly Lights 01 Wifi SSId'
+      value_template: "{{ state_attr('light.swirly_lights_01', 'Wifi')['SSId'] }}"
+    swirly_lights_01_wifi_ap:
+      friendly_name: 'Swirly Lights 01 Wifi AP'
+      value_template: >-
+        {% if state_attr('light.swirly_lights_01', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('light.swirly_lights_01', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('light.swirly_lights_01', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('light.swirly_lights_01', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('light.swirly_lights_01', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('light.swirly_lights_01', 'Wifi')['BSSId'] }}
+        {% endif %}
+    swirly_lights_01_wifi_bssid:
+      friendly_name: 'Swirly Lights 01 Wifi BSSId'
+      value_template: "{{ state_attr('light.swirly_lights_01', 'Wifi')['BSSId'] }}"
+    swirly_lights_01_wifi_channel:
+      friendly_name: 'Swirly Lights 01 Wifi Channel'
+      value_template: "{{ state_attr('light.swirly_lights_01', 'Wifi')['Channel'] }}"
+    swirly_lights_01_wifi_rssi:
+      friendly_name: 'Swirly Lights 01 Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('light.swirly_lights_01', 'Wifi')['RSSI'] }}"
+    swirly_lights_01_wifi_linkcount:
+      friendly_name: 'Swirly Lights 01 Wifi Link Count'
+      value_template: "{{ state_attr('light.swirly_lights_01', 'Wifi')['LinkCount'] }}"
+    swirly_lights_01_wifi_downtime:
+      friendly_name: 'Swirly Lights 01 Wifi Downtime'
+      value_template: "{{ state_attr('light.swirly_lights_01', 'Wifi')['Downtime'] }}"
+    swirly_lights_01_power:
+      friendly_name: 'Swirly Lights 01 Power'
+      value_template: '{{ states.light.swirly_lights_01.attributes.POWER }}'

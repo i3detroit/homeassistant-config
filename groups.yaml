@@ -144,9 +144,9 @@ misc_lights:
   icon: mdi:ceiling-light
   control: hidden
   entities:
-    - light.LightWelding
-    - light.LightVinyl
-    - light.LightTreehouse
+    - light.welding_light
+    - light.vinyl_light
+    - light.treehouse_light
     - light.LightLargeBathroom
     - light.tool_crib_workbench_lights
 
@@ -211,64 +211,64 @@ row_1_lights:
   name: "Light Row 1"
   icon: mdi:ceiling-light
   entities:
-    - light.light001
-    - light.light002
-    - light.light003
-    - light.light004
+    - light.light_001
+    - light.light_002
+    - light.light_003
+    - light.light_004
 
 row_2_lights:
   name: "Light Row 2"
   icon: mdi:ceiling-light
   entities:
-    - light.light005
-    - light.light006
-    - light.light007
-    - light.light008
-    - light.light009
+    - light.light_005
+    - light.light_006
+    - light.light_007
+    - light.light_008
+    - light.light_009
 
 row_3_lights:
   name: "Light Row 3"
   icon: mdi:ceiling-light
   entities:
-    - light.light010
-    - light.light011
-    - light.light012
-    - light.light013
-    - light.light014
+    - light.light_010
+    - light.light_011
+    - light.light_012
+    - light.light_013
+    - light.light_014
 
 row_4_lights:
   name: "Light Row 4"
   icon: mdi:ceiling-light
   entities:
-    - light.light015
-    - light.light016
-    - light.light017
-    - light.light018
-    - light.light019
+    - light.light_015
+    - light.light_016
+    - light.light_017
+    - light.light_018
+    - light.light_019
 
 row_5_lights:
   name: "Light Row 5"
   icon: mdi:ceiling-light
   entities:
-    - light.light020
-    - light.light021
-    - light.light022
-    - light.light023
-    - light.light024
-    - light.light025
-    - light.light026
+    - light.light_020
+    - light.light_021
+    - light.light_022
+    - light.light_023
+    - light.light_024
+    - light.light_025
+    - light.light_026
 
 machine_shop_lights:
   name: "Machine Shop Lights"
   icon: mdi:ceiling-light
   entities:
-    - light.light029
-    - light.light030
-    - light.light031
-    - light.light032
-    - light.light033
-    - light.light034
-    - light.light035
+    - light.light_029
+    - light.light_030
+    - light.light_031
+    - light.light_032
+    - light.light_033
+    - light.light_034
+    - light.light_035
 
 b_side_lights:
   name: "B Side Lights"
@@ -293,10 +293,10 @@ emergency_lights:
   name: "Emergency Lights"
   icon: mdi:alarm-light
   entities:
-    - light.light039
-    - light.light040
-    - light.light027
-    - light.light038
+    - light.light_039
+    - light.light_040
+    - light.light_027
+    - light.light_038
 
 elab_arch:
   name: "Elab Arch"
@@ -673,46 +673,7 @@ VCC:
     - sensor.Wolverine_Status_Lights_VCC
     - sensor.Bumblebee_Chiller_VCC
     - sensor.Wolverine_Chiller_VCC
-    - sensor.light001_VCC
-    - sensor.light002_VCC
-    - sensor.light003_VCC
-    - sensor.light004_VCC
-    - sensor.light005_VCC
-    - sensor.light006_VCC
-    - sensor.light007_VCC
-    - sensor.light008_VCC
-    - sensor.light009_VCC
-    - sensor.light010_VCC
-    - sensor.light011_VCC
-    - sensor.light012_VCC
-    - sensor.light013_VCC
-    - sensor.light014_VCC
-    - sensor.light015_VCC
-    - sensor.light016_VCC
-    - sensor.light017_VCC
-    - sensor.light018_VCC
-    - sensor.light019_VCC
-    - sensor.light020_VCC
-    - sensor.light021_VCC
-    - sensor.light022_VCC
-    - sensor.light023_VCC
-    - sensor.light024_VCC
-    - sensor.light025_VCC
-    - sensor.light026_VCC
-    - sensor.light027_VCC
     - sensor.LightWelding_VCC
-    - sensor.light029_VCC
-    - sensor.light030_VCC
-    - sensor.light031_VCC
-    - sensor.light032_VCC
-    - sensor.light033_VCC
-    - sensor.light034_VCC
-    - sensor.light035_VCC
-    - sensor.LightVinyl_VCC
-    - sensor.LightTreehouse_VCC
-    - sensor.light038_VCC
-    - sensor.light039_VCC
-    - sensor.light040_VCC
     - sensor.LightLargeBathroom_VCC
     - sensor.LightMediaLab_VCC
     - sensor.LightSnappleVending_VCC
