@@ -1,0 +1,18 @@
+- platform: template
+  sensors:
+    a_main_keypad:
+      friendly_name: "A-Side Main Door Keypad"
+      value_template: >-
+        {% if is_state('device_tracker.a_main_keypad', 'home') %}
+          Online
+        {% elif is_state('device_tracker.a_main_keypad', 'not_home') %}
+          Offline
+        {% endif %}
+    b_office_keypad:
+      friendly_name: "B-Side Office Door Keypad"
+      value_template: >-
+        {% if is_state('device_tracker.b_office_keypad', 'home') %}
+          Online
+        {% elif is_state('device_tracker.b_office_keypad', 'not_home') %}
+          Offline
+        {% endif %}
