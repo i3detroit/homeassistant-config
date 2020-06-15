@@ -1,15 +1,4 @@
-default_view:
-  view: yes
-  name: Home
-  entities:
-    - group.shop_lights
-    - group.office_lights
-    - group.misc_lights
-    - group.shop_fans
-    - group.decor
-
 Lighting:
-  view: yes
   icon: mdi:lightbulb
   entities:
     - group.shop_lights
@@ -25,14 +14,12 @@ Lighting:
     - group.b_side_lights
 
 misc_controls:
-  view: yes
   icon: mdi:power
   entities:
     - group.shop_fans
     - group.misc_switches
 
 Atmospherics:
-  view: yes
   icon: mdi:thermometer-lines
   entities:
     - group.omnisensor
@@ -43,7 +30,6 @@ Atmospherics:
     - group.YRWeather
 
 Zones:
-  view: yes
   icon: mdi:selection
   entities:
     - sensor.elab_arch_north_ir_receiver
@@ -57,7 +43,6 @@ Zones:
     - group.compute_zone
 
 media_players:
-  view: yes
   icon: mdi:cast
   entities:
     - media_player.classroom_tv
@@ -65,7 +50,6 @@ media_players:
     - media_player.speakers
 
 doors_etc:
-  view: yes
   icon: mdi:door
   entities:
     - sensor.doorbell
@@ -74,7 +58,6 @@ doors_etc:
     - group.motion_sensor
 
 infrastructure:
-  view: yes
   icon: mdi:settings
   entities:
     - sensor.i3_power_meter
@@ -98,7 +81,6 @@ infrastructure:
     - group.VCC
 
 developer_settings:
-  view: yes
   icon: mdi:nuke
   entities:
     - group.enable_developer
@@ -111,7 +93,7 @@ developer_settings:
 shop_lights:
   name: "Shop Lights"
   icon: mdi:ceiling-light
-  control: hidden
+  #control: hidden
   entities:
     - group.row_1_lights
     - group.row_2_lights
@@ -126,7 +108,7 @@ shop_lights:
 office_lights:
   name: "Office Lights"
   icon: mdi:ceiling-light
-  control: hidden
+  #control: hidden
   entities:
     - light.Classroom_Lights_East
     - light.Classroom_Lights_West
@@ -142,7 +124,7 @@ office_lights:
 misc_lights:
   name: "Misc. Lights"
   icon: mdi:ceiling-light
-  control: hidden
+  #control: hidden
   entities:
     - light.welding_light
     - light.vinyl_light
@@ -339,7 +321,7 @@ YRWeather:
 shop_fans:
   name: "Fans"
   icon: mdi:fan
-  control: hidden
+  #control: hidden
   entities: 
     - switch.CommonsCeilingFans
     - switch.LaserCeilingFan
@@ -353,7 +335,7 @@ shop_fans:
 decor:
   name: "Decor"
   icon: mdi:traffic-light
-  control: hidden
+  #control: hidden
   entities:
     - light.snapple_vending_light
     - script.reset_snapple_rgb
@@ -441,7 +423,7 @@ window_sensors:
 shutdown:
   name: "Space Shutdown"
   icon: mdi:power
-  control: hidden
+  #control: hidden
   entities:
     - switch.Disco_Ball
     - switch.CNCCeilingExhaust
@@ -453,7 +435,7 @@ shutdown:
 laser_zone:
   name: "Laser Zone"
   icon: mdi:alert-outline
-  control: hidden
+  #control: hidden
   entities:
     - sensor.bumblebee_power
     - sensor.bumblebee_chiller_power
@@ -485,7 +467,7 @@ laser_zone_stats:
 fab_lab:
   name: "Fab Lab"
   icon: mdi:power
-  control: hidden
+  #control: hidden
   entities:
     - switch.Fab_Lab_Exhaust_Fan
     - switch.Fab_Lab_Chiller
@@ -509,7 +491,7 @@ welding:
 snack_zone:
   name: "Snack Zone"
   icon: mdi:food-fork-drink
-  control: hidden
+  #control: hidden
   entities:
     - sensor.water_cooler_filter_use
     - binary_sensor.Snapple_Vending_Compressor_Power
@@ -794,7 +776,7 @@ enable_developer:
 
 hidden_controls:
   name: "BE CAREFUL WITH THESE"
-  control: hidden
+  #control: hidden
   entities:
     - switch.alarm_siren
     - switch.bumblebee
@@ -807,7 +789,7 @@ hidden_controls:
 
 full_shutdown_card:
   name: "Full Shutdown - Includes Equipment"
-  control: hidden
+  #control: hidden
   entities:
     - script.full_shutdown
 
