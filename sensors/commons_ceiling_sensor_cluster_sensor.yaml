@@ -1,0 +1,113 @@
+- platform: mqtt
+  name: 'Commons Ceiling Sensor Cluster'
+  state_topic: 'stat/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  json_attributes_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/STATE'
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+- platform: template
+  sensors:
+    commons_ceiling_sensor_cluster_time:
+      friendly_name: 'Commons Ceiling Sensor Cluster Time'
+      value_template: '{{ states.sensor.commons_ceiling_sensor_cluster.attributes.Time }}'
+    commons_ceiling_sensor_cluster_uptime:
+      friendly_name: 'Commons Ceiling Sensor Cluster Uptime'
+      value_template: '{{ states.sensor.commons_ceiling_sensor_cluster.attributes.Uptime }}'
+    commons_ceiling_sensor_cluster_vcc:
+      friendly_name: 'Commons Ceiling Sensor Cluster Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.sensor.commons_ceiling_sensor_cluster.attributes.Vcc }}'
+    commons_ceiling_sensor_cluster_heap:
+      friendly_name: 'Commons Ceiling Sensor Cluster Heap'
+      value_template: '{{ states.sensor.commons_ceiling_sensor_cluster.attributes.Heap }}'
+    commons_ceiling_sensor_cluster_sleepmode:
+      friendly_name: 'Commons Ceiling Sensor Cluster SleepMode'
+      value_template: '{{ states.sensor.commons_ceiling_sensor_cluster.attributes.SleepMode }}'
+    commons_ceiling_sensor_cluster_sleep:
+      friendly_name: 'Commons Ceiling Sensor Cluster Sleep'
+      value_template: '{{ states.sensor.commons_ceiling_sensor_cluster.attributes.Sleep }}'
+    commons_ceiling_sensor_cluster_loadavg:
+      friendly_name: 'Commons Ceiling Sensor Cluster LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.sensor.commons_ceiling_sensor_cluster.attributes.LoadAvg }}'
+    commons_ceiling_sensor_cluster_wifi_ssid:
+      friendly_name: 'Commons Ceiling Sensor Cluster Wifi SSId'
+      value_template: "{{ state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['SSId'] }}"
+    commons_ceiling_sensor_cluster_wifi_bssid:
+      friendly_name: 'Commons Ceiling Sensor Cluster Wifi BSSId'
+      value_template: "{{ state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['BSSId'] }}"
+    commons_ceiling_sensor_cluster_wifi_channel:
+      friendly_name: 'Commons Ceiling Sensor Cluster Wifi Channel'
+      value_template: "{{ state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['Channel'] }}"
+    commons_ceiling_sensor_cluster_wifi_rssi:
+      friendly_name: 'Commons Ceiling Sensor Cluster Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['RSSI'] }}"
+    commons_ceiling_sensor_cluster_wifi_linkcount:
+      friendly_name: 'Commons Ceiling Sensor Cluster Wifi Link Count'
+      value_template: "{{ state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['LinkCount'] }}"
+    commons_ceiling_sensor_cluster_wifi_downtime:
+      friendly_name: 'Commons Ceiling Sensor Cluster Wifi Downtime'
+      value_template: "{{ state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['Downtime'] }}"
+    commons_ceiling_sensor_cluster_wifi_ap:
+      friendly_name: 'Commons Ceiling Sensor Cluster Wifi AP'
+      value_template: >-
+        {% if state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['BSSId'] | string == '02:9F:C2:24:32:82' %}
+          Office AP
+        {% elif state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['BSSId'] | string == '02:9F:C2:24:30:D7' %}
+          Mezzanine AP
+        {% elif state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['BSSId'] | string == '02:9F:C2:24:2D:F1' %}
+          Tool Crib AP
+        {% elif state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['BSSId'] | string == '0E:EC:DA:B7:E0:7D' %}
+          B-Side South AP
+        {% elif state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['BSSId'] | string == 'C6:FB:E4:44:66:C4' %}
+          B-Side North AP
+        {% else %}
+          {{ state_attr('sensor.commons_ceiling_sensor_cluster', 'Wifi')['BSSId'] }}
+        {% endif %}
+- platform: mqtt
+  name: 'Ceiling Cluster Temperature'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: '°C'
+  value_template: "{{ value_json['BME280']['Temperature'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: mqtt
+  name: 'Ceiling Cluster Pressure'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: 'hPa'
+  value_template: "{{ value_json['BME280']['Pressure'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: mqtt
+  name: 'Ceiling Cluster Humidity'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: '%'
+  value_template: "{{ value_json['BME280']['Humidity'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: mqtt
+  name: 'Ceiling Cluster Lux'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: 'lux'
+  value_template: "{{ value_json['BH1750']['Illuminance'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: template
+  sensors:
+    ceiling_cluster_pressure_kpa:
+      friendly_name: "Ceiling Cluster Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.ceiling_cluster_pressure') | multiply(1/10) | round(1) }}"
