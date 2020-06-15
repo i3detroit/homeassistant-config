@@ -226,8 +226,7 @@
     - platform: state
       entity_id: binary_sensor.front_door_panel_power
       to: 'off'
-      for:
-        seconds: 15
+      for: "00:00:15"
   action:
     service: notify.slack_statusbots
     data:
@@ -239,6 +238,11 @@
       entity_id: binary_sensor.front_door_panel_power
       from: 'off'
       to: 'on'
+  condition:
+    condition: state
+    entity_id: binary_sensor.front_door_panel_power
+    state: 'off'
+    for: "00:00:15"
   action:
     service: notify.slack_statusbots
     data:
@@ -549,100 +553,6 @@
     service: notify.slack_statusbots
     data:
       message: "The water cooler needs a new filter. Congrats on filtering 4500 liters of water!"
-
-- alias: Developer On
-  trigger:
-    - platform: state
-      entity_id: input_boolean.developer_mode_enable
-      to: "on"
-  action:
-    - service: group.set_visibility
-      entity_id: group.all_scripts
-      data:
-        visible: true
-    - service: group.set_visibility
-      entity_id: group.all_automations
-      data:
-        visible: true
-    - service: group.set_visibility
-      entity_id: group.emergency_lights
-      data:
-        visible: true
-    - service: group.set_visibility
-      entity_id: group.hidden_controls
-      data:
-        visible: true
-    - service: group.set_visibility
-      entity_id: group.full_shutdown_card
-      data:
-        visible: true
-
-- alias: Developer Off
-  trigger:
-    - platform: state
-      entity_id: input_boolean.developer_mode_enable
-      to: "off"
-  action:
-    - service: group.set_visibility
-      entity_id: group.all_scripts
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.all_automations
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.emergency_lights
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.hidden_controls
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.full_shutdown_card
-      data:
-        visible: false
-
-- alias: Set developer mode defaults on boot
-  trigger:
-    platform: homeassistant
-    event: start
-  action:
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.developer_mode_enable
-    - service: group.set_visibility
-      entity_id: group.all_scripts
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.all_automations
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.emergency_lights
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.hidden_controls
-      data:
-        visible: false
-    - service: group.set_visibility
-      entity_id: group.full_shutdown_card
-      data:
-        visible: false
-
-- alias: Disable developer mode after timeout
-  trigger:
-    - platform: state
-      entity_id: input_boolean.developer_mode_enable
-      to: "on"
-      for:
-        minutes: 5
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.developer_mode_enable
 
 # - alias: disable small bathroom vent fan when HVAC running
 #   trigger:
