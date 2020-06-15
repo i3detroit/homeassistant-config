@@ -11,7 +11,7 @@ contact:
   irc: "irc.freenode.net/#i3detroit"
   twitter: "@i3detroit"
   # facebook: "https://www.facebook.com/i3detroit"
-  mailing_list: "https://groups.google.com/forum/#!forum/i3detroit-public"
+  ml: "https://groups.google.com/forum/#!forum/i3detroit-public"
 issue_report_channels:
   - email
 state:
@@ -33,7 +33,6 @@ sensors:
     - "sensor.cluster_006_humidity"
     - "sensor.cluster_007_humidity"
     - "sensor.cluster_008_humidity"
-
   barometer:
     - "sensor.ground_cluster_pressure_kpa"
     - "sensor.ceiling_cluster_pressure_kpa"
@@ -42,6 +41,12 @@ sensors:
     - "sensor.cluster_006_pressure_kpa"
     - "sensor.cluster_007_pressure_kpa"
     - "sensor.cluster_008_pressure_kpa"
+  compressed_air:
+    - "sensor.compressed_air_line_pressure_01"
+    - "sensor.compressed_air_line_pressure_02"
+  laser_cutters:
+    - "sensor.bumblebee_power"
+    - "sensor.wolverine_power"
 # projects:
 #   - wiki: "https://i3detroit.org/wiki"
 #   - github: "https://github.com/i3detroit"
