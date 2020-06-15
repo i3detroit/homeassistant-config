@@ -32,7 +32,7 @@ http:
 # the developers to assist with development of Home Assistant.
 # For more information, please see:
 # https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-updater:
+# updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
     
@@ -112,20 +112,7 @@ input_boolean: !include input_boolean.yaml
 # input_text: !include input_text.yaml
 spaceapi: !include spaceapi.yaml
 climate: !include climate.yaml
-
-# Embedded Grafana
-panel_iframe:
-  grafana:
-    title: "Grafana"
-    icon: mdi:chart-areaspline
-    url: "http://10.13.0.22:3000"
-
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
+timer: !include timer.yaml
 
 logger:
   default: error
