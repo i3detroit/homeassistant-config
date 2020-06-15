@@ -344,7 +344,7 @@ reset_snapple_rgb:
     - service: light.turn_on
       entity_id: light.snapple_vending_light
       data:
-        rgb_color: [255, 184, 128]
+        rgb_color: [255, 227, 217]
 
 b_side_lights_on:
   alias: B-Side Lights On

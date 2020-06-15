@@ -10,7 +10,7 @@
   brightness_state_topic: "stat/i3/inside/commons/snapple-vending-light/RESULT"
   brightness_command_topic: "cmnd/i3/inside/commons/snapple-vending-light/Dimmer"
   brightness_scale: 100
-  rgb_command_template: "{{ '%02x%02x%02x00' | format(red, green, blue)}}"
+  rgb_command_template: "{{ '%02x%02x%02x00' | format(green, red, blue)}}"
   rgb_state_topic: "stat/i3/inside/commons/snapple-vending-light/RESULT"
   rgb_command_topic: "cmnd/i3/inside/commons/snapple-vending-light/Color"
   effect_command_topic: "cmnd/i3/inside/commons/snapple-vending-light/Scheme"
