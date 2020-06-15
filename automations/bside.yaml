@@ -23,21 +23,3 @@
   action:
     - service: light.turn_off
       entity_id: light.B_Side_Office_Light
-
-- alias: B Side Lights Button ON
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.b_side_lightswitch_on
-      to: 'on'
-  action:
-    - service: light.turn_on
-      entity_id: group.b_side_lights
-
-- alias: B Side Lights Button OFF
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.b_side_lightswitch_off
-      to: 'on'
-  action:
-    - service: light.turn_off
-      entity_id: group.b_side_lights
