@@ -2,5 +2,5 @@ a_side_main_keypad_heartbeat:
   duration: '00:05:00'
 b_side_office_keypad_heartbeat:
   duration: '00:05:00'
-test:
-  duration: '00:00:05'
+front_door_lock:
+  duration: '00:05:00'
