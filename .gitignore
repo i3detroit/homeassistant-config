@@ -1,0 +1,13 @@
+home-assistant_v2.db*
+home-assistant.log
+.cloud/
+.storage/
+!.storage/lovelace
+secrets.yaml
+*.token
+www
+tts
+esphome/common/secrets.yaml
+esphome/.vscode
+blueprints/
+.vscode
