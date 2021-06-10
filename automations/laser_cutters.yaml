@@ -1,0 +1,90 @@
+- alias: Laser cutter exhaust on when laser is on
+  trigger:
+  - platform: state
+    entity_id: switch.Cyclops
+    to: 'on'
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Laser_Zone_Exhaust_Fan
+
+- alias: Laser cutter exhaust off when both lasers off
+  trigger:
+  - platform: state
+    entity_id: switch.Cyclops
+    to: 'off'
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: switch.Cyclops
+            state: 'off'
+          - condition: state
+            entity_id: switch.Cyclops
+            state: 'unavailable'
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: switch.Wolverine
+            state: 'off'
+          - condition: state
+            entity_id: switch.Wolverine
+            state: 'unavailable' 
+  action:
+    service: switch.turn_off
+    entity_id: switch.Laser_Zone_Exhaust_Fan
+
+- alias: Air Compressor on for laser cutters
+  trigger:
+  - platform: state
+    entity_id: switch.Cyclops
+    to: 'on'
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Air_Compressor
+
+- alias: Chiller on for Cyclops
+  trigger:
+  - platform: state
+    entity_id: switch.Cyclops
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Cyclops_Chiller
+
+- alias: Chiller off for Cyclops
+  trigger:
+  - platform: state
+    entity_id: switch.Cyclops
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.Cyclops_Chiller
+
+- alias: Chiller on for Wolverine
+  trigger:
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Wolverine_Chiller
+
+- alias: Chiller off for Wolverine
+  trigger:
+  - platform: state
+    entity_id: switch.Wolverine
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.Wolverine_Chiller

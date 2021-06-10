@@ -1,0 +1,28 @@
+- binary_sensor:
+  - name: "Cyclops Power"
+    state: "{{ states('switch.cyclops') }}"
+    icon: mdi:flash
+- binary_sensor:
+  - name: "Cyclops Chiller_power"
+    state: "{{ states('switch.cyclops_chiller') }}"
+    icon: mdi:flash
+- binary_sensor:
+  - name: "Wolverine Power"
+    state: "{{ states('switch.wolverine') }}"
+    icon: mdi:flash
+- binary_sensor:
+  - name: "Wolverine Chiller Power"
+    state: "{{ states('switch.wolverine_chiller') }}"
+    icon: mdi:flash
+- binary_sensor:
+  - name: "Laser Cutter Exhaust Fan"
+    state: "{{ states('switch.LaserZoneExhaustFan') }}"
+    icon: mdi:fan
+- binary_sensor:
+  - name: "Air Compressor Power"
+    state: "{{ states('switch.air_compressor') }}"
+    icon: mdi:engine
+- binary_sensor:
+  - name: "Air Compressor Valve"
+    state: "{{ states('switch.air_compressor_valve') }}"
+    icon: mdi:flash

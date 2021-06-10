@@ -1,0 +1,11 @@
+# device is electrodragon; programming via pin header does not work
+
+<<: !include common/sonoff_basic_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "light_016"
+  pretty_name: "Light 016"
+  ui_name: "Light 016"
+  icon: "mdi:lightbulb"
+  ip_address: 10.13.107.129

@@ -1,0 +1,13 @@
+- platform: influxdb
+  host: localhost
+  username: homeassistant
+  password: homeassistant
+  queries:
+    - name: Water Cooler Filter Use
+      unit_of_measurement: "L"
+      value_template: '{{ (value | float / 898) | round(2) }}'
+      group_function: sum
+      where: '"entity_id" = ''water_cooler_flow_counts'' and time > 2018-05-25'
+      measurement: '"state"'
+      field: value
+      database: "homeassistant"

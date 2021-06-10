@@ -1,0 +1,87 @@
+- platform: command_line
+  name: "HP M712 Black Toner"
+  command: "python3 /config/sensors/scripts/hpm712toner.py"
+  unit_of_measurement: "%"
+  scan_interval: "3600"
+
+- platform: command_line
+  name: "HP M712 Pages Printed on current Toner Cartridge"
+  command: "python3 /config/sensors/scripts/hpm712pagestoner.py"
+  scan_interval: "3600"
+
+- platform: command_line
+  name: "HP M712 Pages Printed"
+  command: "python3 /config/sensors/scripts/hpm712pages.py"
+  scan_interval: "3600"
+
+- platform: command_line
+  name: "Plotter Matte Black Ink"
+  command: "python3 /config/sensors/scripts/plotterink.py"
+  scan_interval: "3600"
+  unit_of_measurement: "%"
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Matte_black }}
+    {% endif %}
+
+- platform: command_line
+  name: "Plotter Photo Black Ink"
+  command: "python3 /config/sensors/scripts/plotterink.py"
+  scan_interval: "3600"
+  unit_of_measurement: "%"
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Photo_black }}
+    {% endif %}
+
+- platform: command_line
+  name: "Plotter Gray Ink"
+  command: "python3 /config/sensors/scripts/plotterink.py"
+  scan_interval: "3600"
+  unit_of_measurement: "%"
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Gray }}
+    {% endif %}
+
+- platform: command_line
+  name: "Plotter Cyan Ink"
+  command: "python3 /config/sensors/scripts/plotterink.py"
+  scan_interval: "3600"
+  unit_of_measurement: "%"
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Cyan }}
+    {% endif %}
+
+- platform: command_line
+  name: "Plotter Magenta Ink"
+  command: "python3 /config/sensors/scripts/plotterink.py"
+  scan_interval: "3600"
+  unit_of_measurement: "%"
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Magenta }}
+    {% endif %}
+
+- platform: command_line
+  name: "Plotter Yellow Ink"
+  command: "python3 /config/sensors/scripts/plotterink.py"
+  scan_interval: "3600"
+  unit_of_measurement: "%"
+  value_template: >-
+    {% if 'Error' not in value %}
+      {{ value_json.Yellow }}
+    {% endif %}
+
+- platform: command_line
+  name: "Plotter Ink Used"
+  command: "python3 /config/sensors/scripts/plotterinkused.py"
+  unit_of_measurement: "ml"
+  scan_interval: "3600"
+
+- platform: command_line
+  name: "Plotter Paper Used"
+  command: "python3 /config/sensors/scripts/plotterpaperused.py"
+  unit_of_measurement: "sqft"
+  scan_interval: "3600"

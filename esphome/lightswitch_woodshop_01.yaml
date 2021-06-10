@@ -1,0 +1,7 @@
+<<: !include common/button_box_2.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "wood_shop_lightswitch_01"
+  pretty_name: "Wood Shop Lightswitch 01"
+  target_1: "group.wood_shop_lights"

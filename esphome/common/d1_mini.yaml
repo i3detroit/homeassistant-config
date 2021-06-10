@@ -1,0 +1,3 @@
+<<: !include wifi.yaml
+<<: !include esp_home_components.yaml
+<<: !include board_d1_mini.yaml

@@ -1,0 +1,199 @@
+{
+    "version": 1,
+    "key": "lovelace",
+    "data": {
+        "config": {
+            "views": [
+                {
+                    "title": "Home",
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "group.row_1_lights"
+                                },
+                                {
+                                    "entity": "group.row_2_lights"
+                                },
+                                {
+                                    "entity": "group.row_3_lights"
+                                },
+                                {
+                                    "entity": "group.row_4_lights"
+                                },
+                                {
+                                    "entity": "group.row_5_lights"
+                                },
+                                {
+                                    "entity": "group.machine_shop_lights"
+                                },
+                                {
+                                    "entity": "group.misc_lights"
+                                },
+                                {
+                                    "entity": "group.office_lights"
+                                },
+                                {
+                                    "entity": "group.b_side_lights"
+                                },
+                                {
+                                    "entity": "group.wood_shop_lights"
+                                }
+                            ],
+                            "title": "Lights",
+                            "state_color": true
+                        },
+                        {
+                            "type": "glance",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.air_compressor_power"
+                                },
+                                {
+                                    "entity": "binary_sensor.cyclops_power"
+                                },
+                                {
+                                    "entity": "binary_sensor.wolverine_power"
+                                }
+                            ],
+                            "title": "Equipment Status"
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:lightbulb",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Light Row 1",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.row_1_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Light Row 2",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.row_2_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Light Row 3",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.row_3_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Light Row 4",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.row_4_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Light Row 5",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.row_5_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "B-Side Main Lights",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.b_side_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Wood Shop Lights",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.wood_shop_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Misc Lights",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.misc_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Office Lights",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.office_lights"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Machine Shop Lights",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.machine_shop_lights"
+                        }
+                    ]
+                },
+                {
+                    "visible": [
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        }
+                    ],
+                    "icon": "mdi:nuke",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Emergency Lights",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.emergency_lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.air_compressor"
+                                },
+                                {
+                                    "entity": "switch.cyclops"
+                                },
+                                {
+                                    "entity": "switch.wolverine"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Please don't break things"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

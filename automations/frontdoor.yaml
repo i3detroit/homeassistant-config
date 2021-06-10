@@ -1,0 +1,44 @@
+# - alias: Front door lock open timer start
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.front_door_lock
+#       to: 'on'
+#   action:
+#     - service: timer.start
+#       entity_id: timer.front_door_lock
+
+# - alias: Front door lock
+#   trigger:
+#   - platform: event
+#     event_type: timer.finished
+#     event_data:
+#       entity_id: timer.front_door_lock
+#   condition:
+#     condition: state
+#     entity_id: binary_sensor.front_door_lock
+#     state: 'on'
+#   action:
+#   - service: notify.slack_statusbots
+#     data:
+#       message: "Front door has been left open for the past 10 minutes."
+#   - service: timer.start
+#     entity_id: timer.front_door_lock
+#   - service: automation.turn_on
+#     entity_id: automation.front_door_lock_closed
+
+# - alias: Front door lock closed
+#   initial_state: false
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.front_door_lock
+#       to: 'off'
+#   condition:
+#     condition: state
+#     entity_id: timer.front_door_lock
+#     state: 'active'
+#   action:
+#   - service: notify.slack_statusbots
+#     data:
+#       message: "Front door is closed again."
+#   - service: automation.turn_off
+#     entity_id: automation.front_door_lock_closed

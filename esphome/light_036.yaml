@@ -1,0 +1,9 @@
+<<: !include common/sonoff_basic_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "red_pallet_rack_light"
+  pretty_name: "Red Pallet Rack Light"
+  ui_name: "Red Pallet Rack Light"
+  icon: "mdi:lightbulb"
+  ip_address: 10.13.107.212

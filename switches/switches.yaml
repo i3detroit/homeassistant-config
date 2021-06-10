@@ -1,0 +1,294 @@
+- platform: mqtt
+  name: "Air Compressor"
+  state_topic: "stat/i3/inside/infrastructure/air-compressor/POWER"
+  command_topic: "cmnd/i3/inside/infrastructure/air-compressor/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: "Air Compressor Valve"
+  state_topic: "stat/i3/inside/infrastructure/compressor-valve/POWER"
+  command_topic: "cmnd/i3/inside/infrastructure/compressor-valve/POWER"
+  availability_topic: "tele/i3/inside/infrastructure/compressor-valve/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Classroom Sign"
+  state_topic: "stat/i3/inside/classroom/sign/POWER"
+  command_topic: "cmnd/i3/inside/classroom/sign/POWER"
+  availability_topic: "tele/i3/inside/classroom/sign/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Disco Ball"
+  state_topic: "stat/i3/inside/commons/disco/POWER"
+  command_topic: "cmnd/i3/inside/commons/disco/POWER"
+  availability_topic: "tele/i3/inside/commons/disco/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Paint Box Vent"
+  state_topic: "stat/i3/inside/commons/paint-box/POWER"
+  command_topic: "cmnd/i3/inside/commons/paint-box/POWER"
+  availability_topic: "tele/i3/inside/commons/paint-box/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Large Bathroom Vent Fan"
+  state_topic: "stat/i3/inside/large-bathroom/vent/POWER"
+  command_topic: "cmnd/i3/inside/large-bathroom/vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/large-bathroom/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Small Bathroom Vent Fan"
+  state_topic: "stat/i3/inside/small-bathroom/vent/POWER"
+  command_topic: "cmnd/i3/inside/small-bathroom/vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/small-bathroom/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Chinesium Laser"
+  state_topic: "stat/i3/inside/fablab/chinesium-laser/POWER"
+  command_topic: "cmnd/i3/inside/fablab/chinesium-laser/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/fablab/chinesium-laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Fab Lab Chiller"
+  state_topic: "stat/i3/inside/fablab/chiller/POWER"
+  command_topic: "cmnd/i3/inside/fablab/chiller/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/fablab/chiller/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: 'Cyclops Chiller'
+  state_topic: 'stat/i3/inside/laser-zone/cyclops/chiller/POWER'
+  command_topic: 'cmnd/i3/inside/laser-zone/cyclops/chiller/POWER'
+  json_attributes_topic: 'tele/i3/inside/laser-zone/cyclops/chiller/STATE'
+  availability_topic: 'tele/i3/inside/laser-zone/cyclops/chiller/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'
+
+- platform: mqtt
+  name: "Wolverine Chiller"
+  state_topic: "stat/i3/inside/laser-zone/wolverine/chiller/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/wolverine/chiller/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/wolverine/chiller/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Hallway Light Switch West"
+  state_topic: "stat/i3/inside/hallway/lightswitch-west/POWER"
+  command_topic: "cmnd/i3/inside/hallway/lightswitch-west/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/hallway/lightswitch-west/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Hallway Light Switch West"
+  state_topic: "stat/i3/inside/hallway/lightswitch-east/POWER"
+  command_topic: "cmnd/i3/inside/hallway/lightswitch-east/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/hallway/lightswitch-east/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: 'Cyclops'
+  state_topic: 'stat/i3/inside/laser-zone/cyclops/laser/POWER'
+  command_topic: 'cmnd/i3/inside/laser-zone/cyclops/laser/POWER'
+  json_attributes_topic: 'tele/i3/inside/laser-zone/cyclops/laser/STATE'
+  availability_topic: 'tele/i3/inside/laser-zone/cyclops/laser/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'
+
+- platform: mqtt
+  name: "Wolverine"
+  state_topic: "stat/i3/inside/laser-zone/wolverine/laser/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/wolverine/laser/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/wolverine/laser/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Disco Spotlights"
+  state_topic: "stat/i3/inside/commons/accent/disco-spotlights/POWER"
+  command_topic: "cmnd/i3/inside/commons/accent/disco-spotlights/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/accent/disco-spotlights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Recycle Notification Light"
+  state_topic: "stat/i3/inside/commons/notification-lights/POWER1"
+  command_topic: "cmnd/i3/inside/commons/notification-lights/POWER1"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/notification-lights/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+#Ceiling Fans
+- platform: mqtt
+  name: "CommonsCeilingFans"
+  state_topic: "stat/i3/inside/commons/ceiling-fans/POWER"
+  command_topic: "cmnd/i3/inside/commons/ceiling-fans/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/ceiling-fans/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "LaserCeilingFan"
+  state_topic: "stat/i3/inside/laser-zone/ceiling-fan/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/ceiling-fan/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/ceiling-fan/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "MachineShopCeilingFan"
+  state_topic: "stat/i3/inside/machine-shop/ceiling-fan/POWER"
+  command_topic: "cmnd/i3/inside/machine-shop/ceiling-fan/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/machine-shop/ceiling-fan/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+# Exhaust Fans
+- platform: mqtt
+  name: "Fab Lab Exhaust Fan"
+  state_topic: "stat/i3/inside/fablab/vent/POWER"
+  command_topic: "cmnd/i3/inside/fablab/vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/fablab/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  icon: mdi:fan
+
+- platform: mqtt
+  name: "Laser Zone Exhaust Fan"
+  state_topic: "stat/i3/inside/laser-zone/vent-fan/POWER"
+  command_topic: "cmnd/i3/inside/laser-zone/vent-fan/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/laser-zone/vent-fan/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  icon: mdi:fan
+
+- platform: mqtt
+  name: "CNC Roof Exhaust Fan"
+  state_topic: "stat/i3/inside/cnc/vent/POWER"
+  command_topic: "cmnd/i3/inside/cnc/vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/cnc/vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  icon: mdi:fan
+
+- platform: mqtt
+  name: "South Roof Exhaust Fan"
+  state_topic: "stat/i3/inside/commons/south-vent/POWER"
+  command_topic: "cmnd/i3/inside/commons/south-vent/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/south-vent/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  
+- platform: mqtt
+  name: "Genie Charger"
+  state_topic: "stat/i3/inside/commons/genie-charging/POWER"
+  command_topic: "cmnd/i3/inside/commons/genie-charging/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/genie-charging/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Alarm Siren"
+  state_topic: "stat/i3/inside/commons/siren/POWER"
+  command_topic: "cmnd/i3/inside/commons/siren/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/siren/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Snapple Machine Compressor"
+  state_topic: "stat/i3/inside/commons/snapple-vending-compress/POWER"
+  command_topic: "cmnd/i3/inside/commons/snapple-vending-compress/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: 'Machine Shop Roof Exhaust Fan'
+  state_topic: 'stat/i3/inside/b-side/roof-exhaust-fan/POWER'
+  command_topic: 'cmnd/i3/inside/b-side/roof-exhaust-fan/POWER'
+  availability_topic: 'tele/i3/inside/b-side/roof-exhaust-fan/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'
+
+- platform: mqtt
+  name: 'Fablab AC'
+  state_topic: 'stat/i3/inside/fablab/ac/POWER'
+  command_topic: 'cmnd/i3/inside/fablab/ac/POWER'
+  json_attributes_topic: 'tele/i3/inside/fablab/ac/STATE'
+  availability_topic: 'tele/i3/inside/fablab/ac/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'

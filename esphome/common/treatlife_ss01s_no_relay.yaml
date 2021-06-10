@@ -1,0 +1,24 @@
+<<: !include wifi.yaml
+<<: !include esp_home_components.yaml
+<<: !include board_esp01_1m.yaml
+
+status_led:
+  pin:
+    number: 5
+    inverted: True
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+
+switch:
+  - name: "${pretty_name} LED"
+    id: power_led
+    platform: gpio
+    pin:
+      number: 4
+      inverted: False

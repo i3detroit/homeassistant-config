@@ -1,0 +1,54 @@
+- platform: mqtt
+  name: 'Commons Ceiling Sensor Cluster'
+  state_topic: 'stat/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  json_attributes_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/STATE'
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: mqtt
+  name: 'Ceiling Cluster Temperature'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: '°C'
+  value_template: "{{ value_json['BME280']['Temperature'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: mqtt
+  name: 'Ceiling Cluster Pressure'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: 'hPa'
+  value_template: "{{ value_json['BME280']['Pressure'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: mqtt
+  name: 'Ceiling Cluster Humidity'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: '%'
+  value_template: "{{ value_json['BME280']['Humidity'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: mqtt
+  name: 'Ceiling Cluster Lux'
+  state_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/SENSOR'
+  unit_of_measurement: 'lux'
+  value_template: "{{ value_json['BH1750']['Illuminance'] }}"
+  force_update: True
+  availability_topic: 'tele/i3/inside/commons/ceiling-sensor-cluster/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+
+- platform: template
+  sensors:
+    ceiling_cluster_pressure_kpa:
+      friendly_name: "Ceiling Cluster Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.ceiling_cluster_pressure') | multiply(1/10) | round(1) }}"

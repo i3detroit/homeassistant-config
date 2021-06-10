@@ -1,0 +1,9 @@
+<<: !include common/sonoff_basic_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "light_028"
+  pretty_name: "Welding Light"
+  ui_name: "Welding Light"
+  icon: "mdi:lightbulb"
+  ip_address: 10.13.107.243

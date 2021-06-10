@@ -1,0 +1,99 @@
+# #################################################
+# # A-side Keypad
+# #################################################
+# - alias: Start A Main Keypad Heartbeat Timer
+#   trigger: 
+#     platform: homeassistant
+#     event: start
+#   action:
+#   - service: timer.start
+#     entity_id: timer.a_side_main_keypad_heartbeat
+
+# - alias: Restart A Main Keypad Heartbeat Timer
+#   trigger:
+#   - platform: mqtt
+#     topic: i3/doors/a-side-main/sync
+#   action:
+#   - service: timer.start
+#     entity_id: timer.a_side_main_keypad_heartbeat
+
+# - alias: A Main Keypad Heartbeat Timeout
+#   trigger:
+#   - platform: event
+#     event_type: timer.finished
+#     event_data:
+#       entity_id: timer.a_side_main_keypad_heartbeat
+#   action:
+#   - service: notify.slack_statusbots
+#     data:
+#       message: "A-side main door keypad heartbeat has timed out (5 min since last heartbeat). Power cycling the keypad."
+#   - service: script.turn_on
+#     data:
+#       entity_id: script.a_side_keypad_power_cycle
+
+# - alias: A Main Keypad Back Online
+#   trigger:
+#   - platform: mqtt
+#     topic: i3/doors/a-side-main/sync
+#   condition:
+#     condition: state
+#     entity_id: timer.a_side_main_keypad_heartbeat
+#     state: 'idle'
+#   action:
+#   - service: notify.slack_statusbots
+#     data:
+#       message: "A-side main door keypad back online. Hearbeat received."
+#   - service: mqtt.publish
+#     data:
+#       topic: !secret a_side_keypad_command_topic
+#       payload: !secret a_side_keypad_open_payload
+
+# #################################################
+# # B-side Keypad
+# #################################################
+# - alias: Start B Office Keypad Heartbeat Timer
+#   trigger: 
+#     platform: homeassistant
+#     event: start
+#   action:
+#   - service: timer.start
+#     entity_id: timer.b_side_office_keypad_heartbeat
+
+# - alias: Restart B Office Keypad Heartbeat Timer
+#   trigger:
+#   - platform: mqtt
+#     topic: i3/doors/b-side-office/sync
+#   action:
+#   - service: timer.start
+#     entity_id: timer.b_side_office_keypad_heartbeat
+
+# - alias: B Office Keypad Heartbeat Timeout
+#   trigger:
+#   - platform: event
+#     event_type: timer.finished
+#     event_data:
+#       entity_id: timer.b_side_office_keypad_heartbeat
+#   action:
+#   - service: notify.slack_statusbots
+#     data:
+#       message: "B-Side office door keypad heartbeat has timed out (5 min since last heartbeat) Power cycling the keypad."
+#   - service: script.turn_on
+#     data:
+#       entity_id: script.b_side_keypad_power_cycle
+
+# - alias: B Office Keypad Back Online
+#   trigger:
+#   - platform: mqtt
+#     topic: i3/doors/b-side-office/sync
+#   condition:
+#     condition: state
+#     entity_id: timer.b_side_office_keypad_heartbeat
+#     state: 'idle'
+#   action:
+#   - service: notify.slack_statusbots
+#     data:
+#       message: "B-Side office door keypad back online. Hearbeat received."
+#   - service: mqtt.publish
+#     data:
+#       topic: !secret b_side_keypad_command_topic
+#       payload: !secret b_side_keypad_open_payload

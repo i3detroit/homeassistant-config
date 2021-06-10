@@ -1,0 +1,506 @@
+- alias: Emergency lights reset
+  trigger:
+  - platform: time
+    at: '12:00:00'
+  - platform: time
+    at: '00:00:00'
+  action:
+    - service: script.turn_on
+      entity_id: script.emergency_lights_reset
+
+- alias: Emergency lights on when all other lights are off
+  trigger:
+    platform: state
+    entity_id: group.all_normal_lights
+    from: 'on'
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.emergency_lights_reset
+
+- alias: Classroom sign on at sunset
+  trigger:
+  - platform: sun
+    event: sunset
+  action:
+    service: switch.turn_on
+    entity_id: switch.classroom_sign
+
+- alias: Classroom sign off at sunrise
+  trigger:
+  - platform: sun
+    event: sunrise
+  action:
+    service: switch.turn_off
+    entity_id: switch.classroom_sign
+
+- alias: Machine Shop Motion ON 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.machine_shop_motion_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: group.machine_shop_lights
+    state: 'off'
+    for:
+      seconds: 30
+  action:
+    - service: light.turn_on
+      entity_id: group.machine_shop_lights
+
+- alias: Air Compressor Valve ON
+  trigger:
+  - platform: state
+    entity_id: switch.Air_Compressor
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.Air_Compressor_Valve
+
+- alias: Air Compressor Valve OFF
+  trigger:
+  - platform: state
+    entity_id: switch.Air_Compressor
+    from: 'on'
+    to: 'off'
+    for: 
+      seconds: 2
+  action:
+    service: switch.turn_off
+    entity_id: switch.Air_Compressor_Valve
+
+- alias: Disco Mode ON
+  trigger:
+  - platform: mqtt
+    topic: stat/i3/inside/commons/disco/POWER
+    payload: "ON"
+  action:
+    - service: light.turn_on
+      entity_id: 
+        - light.Chandelier01
+        - light.Chandelier02
+        - light.fairy_lights
+        - light.swirly_lights_01
+        - light.swirly_lights_02
+    - service: switch.turn_on
+      entity_id: switch.disco_spotlights
+
+- alias: Disco Mode OFF
+  trigger:
+  - platform: mqtt
+    topic: stat/i3/inside/commons/disco/POWER
+    payload: "OFF"
+  action:
+    - service: light.turn_off
+      entity_id: 
+        - light.Chandelier01
+        - light.Chandelier02
+        - light.fairy_lights
+        - light.swirly_lights_01
+        - light.swirly_lights_02
+    - service: switch.turn_off
+      entity_id: switch.disco_spotlights
+
+- alias: Large Bathroom Motion ON 
+  trigger:
+    platform: mqtt
+    topic: stat/i3/inside/large-bathroom/motion-sensor/motion
+    payload: 'ON'
+  condition:
+    condition: state
+    entity_id: light.LightLargeBathroom
+    state: 'off'
+    for:
+      seconds: 5
+  action:
+    - service: light.turn_on
+      entity_id: light.LightLargeBathroom
+
+- alias: Large Bathroom Motion OFF 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.large_bathroom_motion_sensor
+    to: 'off'
+    for:
+      minutes: 10
+  action:
+    - service: light.turn_off
+      entity_id: light.LightLargeBathroom
+
+- alias: Large Bathroom Fan Timeout
+  trigger:
+    platform: state
+    entity_id: switch.Large_Bathroom_Vent_Fan
+    to: 'on'
+    for:
+      minutes: 5
+  action:
+    - service: switch.turn_off
+      entity_id: switch.Large_Bathroom_Vent_Fan
+
+- alias: Small Bathroom Motion ON 
+  trigger:
+    platform: mqtt
+    topic: stat/i3/inside/small-bathroom/motion-sensor/motion
+    payload: 'ON'
+  condition:
+    condition: state
+    entity_id: light.Small_Bathroom_Light
+    state: 'off'
+    for:
+      seconds: 5
+  action:
+    service: light.turn_on
+    entity_id: light.Small_Bathroom_Light
+
+- alias: Small Bathroom Motion OFF 
+  trigger:
+    platform: state
+    entity_id: binary_sensor.small_bathroom_motion_sensor
+    to: 'off'
+    for:
+      minutes: 15
+  action:
+    service: light.turn_off
+    entity_id: light.Small_Bathroom_Light
+
+- alias: Paint box fan timeout
+  trigger:
+    platform: state
+    entity_id: switch.paint_box_vent
+    to: 'on'
+    for:
+      minutes: 60
+  action:
+    service: switch.turn_off
+    entity_id: switch.paint_box_vent
+
+# - alias: Front door panel off alert
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.front_door_panel_power
+#       to: 'off'
+#       for: "00:00:15"
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Alert! Front door panel is OFFLINE"
+
+# - alias: Front door panel back on alert
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.front_door_panel_power
+#       from: 'off'
+#       to: 'on'
+#   condition:
+#     condition: state
+#     entity_id: binary_sensor.front_door_panel_power
+#     state: 'off'
+#     for: "00:00:15"
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Front door panel is back online"
+
+# - alias: Front door panel low voltage
+#   trigger:
+#     - platform: numeric_state
+#       entity_id: sensor.front_door_panel_battery_voltage
+#       below: 12.0
+#       for:
+#         minutes: 5
+#     - platform: time_pattern
+#       minutes: '/240'
+#       seconds: 00
+#   condition:
+#     condition: numeric_state
+#     entity_id: sensor.front_door_panel_battery_voltage
+#     below: 12.0
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Alert! Front door panel voltage is low ({{states.sensor.front_door_panel_battery_voltage.state}} V)"
+
+- alias: Dooridor and Hall Lights Sync On
+  trigger:
+    platform: state
+    entity_id: light.Classroom_Lights_East
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.Dooridor_Lights
+
+- alias: Dooridor and Hall Lights Sync Off
+  trigger:
+    platform: state
+    entity_id: light.Classroom_Lights_East
+    to: 'off'
+  action:
+    service: light.turn_off
+    entity_id: light.Dooridor_Lights
+
+- alias: Classroom Lights Sync On
+  trigger:
+    platform: mqtt
+    topic: cmnd/i3/inside/classroom/lights-east/POWER
+    payload: 'TOGGLE'
+  condition: 
+    condition: state
+    entity_id: light.classroom_lights_east
+    state: 'off'
+  action:
+    - service: light.turn_on
+      entity_id: light.Classroom_Lights_West
+    - service: light.turn_on
+      entity_id: light.hallway_light
+
+- alias: Classroom Lights Sync Off
+  trigger:
+    platform: mqtt
+    topic: cmnd/i3/inside/classroom/lights-east/POWER
+    payload: 'TOGGLE'
+  condition: 
+    condition: state
+    entity_id: light.classroom_lights_east
+    state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.Classroom_Lights_West
+    - service: light.turn_off
+      entity_id: light.hallway_light
+
+# - alias: Recycle Light On
+#   trigger:
+#     platform: state
+#     entity_id: sensor.recycle_day
+#     to: "Yes"
+#   action:
+#     service: switch.turn_on
+#     entity_id: switch.Recycle_Notification_Light
+
+# - alias: Recycle Light Off
+#   trigger:
+#     platform: state
+#     entity_id: sensor.recycle_day
+#     to: "No"
+#   action:
+#     service: switch.turn_off
+#     entity_id: switch.Recycle_Notification_Light
+
+# - alias: Complain if genie not plugged in
+#   trigger:
+#     platform: state
+#     entity_id: sensor.genie_charge_state
+#     to: "Not plugged in"
+#     for:
+#       hours: 6
+#   action:
+#    service: notify.slack_statusbots
+#    data:
+#      message: "The genie has been unplugged for over 6 hours"
+
+# - alias: Notify that genie is plugged in again
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.genie_charge_state
+#       to: "Plugged in, not charging"
+#     - platform: state
+#       entity_id: sensor.genie_charge_state
+#       to: "Charging"
+#   condition:
+#     condition: state
+#     entity_id: sensor.genie_charge_state
+#     state: 'Not plugged in'
+#     for:
+#       hours: 6
+#   action:
+#    service: notify.slack_statusbots
+#    data:
+#      message: "The genie is plugged in again"
+
+- alias: Small bathroom lights sync ON A
+  trigger:
+    - platform: state
+      entity_id: light.small_bathroom_light
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_shower_light
+    state: 'off'
+    for:
+      seconds: 1
+  action:
+    - service: light.turn_on
+      entity_id: light.small_bathroom_shower_light
+
+- alias: Small bathroom lights sync OFF A
+  trigger:
+    - platform: state
+      entity_id: light.small_bathroom_light
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_shower_light
+    state: 'on'
+    for:
+      seconds: 1
+  action:
+    - service: light.turn_off
+      entity_id: light.small_bathroom_shower_light
+
+- alias: Small bathroom lights sync ON B
+  trigger:
+    - platform: state
+      entity_id: light.small_bathroom_shower_light
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_light
+    state: 'off'
+    for:
+      seconds: 1
+  action:
+    - service: light.turn_on
+      entity_id: light.small_bathroom_light
+
+- alias: Small bathroom lights sync OFF B
+  trigger:
+    - platform: state
+      entity_id: light.small_bathroom_shower_light
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: state
+    entity_id: light.small_bathroom_light
+    state: 'on'
+    for:
+      seconds: 1
+  action:
+    - service: light.turn_off
+      entity_id: light.small_bathroom_light
+
+- alias: Small Bathroom Fan Timeout 
+  trigger:
+    platform: state
+    entity_id: switch.small_bathroom_vent_fan
+    to: 'on'
+    for:
+      minutes: 5
+  action:
+    - service: switch.turn_off
+      entity_id: switch.small_bathroom_vent_fan
+
+- alias: Exhaust Fan Auto On
+  initial_state: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ceiling_outside_temp_diff
+    above: 1
+    for:
+      minutes: 15
+  action:
+    - service: switch.turn_on
+      entity_id: switch.CNCCeilingExhaust
+    - service: switch.turn_on
+      entity_id: switch.SouthCeilingExhaust
+
+# - alias: Water Cooler Needs Filter Change
+#   trigger:
+#     platform: numeric_state
+#     entity_id: sensor.water_cooler_filter_use
+#     above: 4500
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "The water cooler needs a new filter. Congrats on filtering 4500 liters of water!"
+
+# - alias: yell at slack if UPS is on battery
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.ups_status
+#       to: "ONBATT"
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Alert! UPS is on battery"
+
+# - alias: tell slack when UPS is no longer on battery
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.ups_status
+#       to: "ONLINE"
+#       from: "ONBATT"
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "UPS is OK. No longer on battery"
+
+# - alias: yell at slack if UPS battery needs to be changed
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.ups_status
+#       to: "ONLINE REPLACEBATT"
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Alert! UPS batteries need to be changed"
+
+- alias: Turn the genie charger back on when someone's stupid
+  trigger:
+    - platform: state
+      entity_id: switch.genie_charger
+      to: "off"
+      for:
+        minutes: 1
+  action:
+    service: switch.turn_on
+    entity_id: switch.genie_charger
+
+# - alias: Office thermostat is on battery
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.office_thermostat_power_source
+#       to: 'battery'
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Alert! Office thermostat is running on battery."
+
+# - alias: Office thermostat is back on mains
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.office_thermostat_power_source
+#       from: 'battery'
+#       to: 'mains'
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Office thermostat is back on mains power."
+
+# - alias: Office thermostat is offline
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.office_thermostat_lwt
+#       from: 'Online'
+#       to: 'Offline'
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Alert! Office thermostat is offline."
+
+# - alias: Office thermostat is online
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.office_thermostat_lwt
+#       from: 'Offline'
+#       to: 'Online'
+#   action:
+#     service: notify.slack_statusbots
+#     data:
+#       message: "Office thermostat is online."

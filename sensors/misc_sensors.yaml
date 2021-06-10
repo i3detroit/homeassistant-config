@@ -1,0 +1,78 @@
+- platform: mqtt
+  name: "Classroom East Light Switch"
+  state_topic: "cmnd/i3/inside/classroom/lights-east/POWER"
+  force_update: True
+
+# - platform: template
+#   sensors:
+#     recycle_day:
+#       entity_id: sensor.time_date
+#       friendly_name: "Recycle Day?"
+#       value_template: >-
+#         {% if ((now().weekday() == 2) and now().time().hour >= 12) or ((now().weekday() == 3) and now().time().hour <= 3) %}
+#           Yes
+#         {% else %}
+#           No
+#         {%- endif %}
+#     meeting_time:
+#       entity_id: sensor.time_date
+#       friendly_name: "Meeting time?"
+#       value_template: >-
+#         {% if (now().weekday() == 1) and (now().date().day <= 22) and (now().time().hour >= 19) and (now().time().hour < 21) %}
+#           Yes
+#         {% else %}
+#           No
+#         {%- endif %}
+
+- platform: mqtt
+  name: "Water Cooler Flow Counts"
+  state_topic: "stat/i3/inside/commons/water-cooler/flow"
+  force_update: True
+
+- platform: mqtt
+  name: "Front Door Panel Battery Voltage"
+  state_topic: "tele/i3/inside/commons/front-door-indicator/batteryVoltage"
+  unit_of_measurement: "V"
+  force_update: True
+
+# - platform: template
+#   sensors:
+#     open_for_tours:
+#       friendly_name: "Open For Tours"
+#       entity_id: sensor.time_date
+#       value_template: >-
+#         {% if ((now().weekday() == 4) and now().time().hour >= 18 and now().time().hour <= 20) %}
+#           on
+#         {% else %}
+#           off
+#         {%- endif %}
+
+
+- platform: mqtt
+  name: "Compressed Air Line Pressure 01"
+  state_topic: "stat/i3/inside/sensors/air-line-pressure-01/pressure"
+  unit_of_measurement: "psi"
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/air-line-pressure-01/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Compressed Air Line Pressure 02"
+  state_topic: "stat/i3/inside/sensors/air-line-pressure-02/pressure"
+  unit_of_measurement: "psi"
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/air-line-pressure-02/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+    - 'date_time_utc'
+    - 'date_time_iso'
+    - 'time_date'
+    - 'time_utc'
+    - 'beat'

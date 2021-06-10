@@ -1,0 +1,32 @@
+<<: !include wifi.yaml
+<<: !include esp_home_components.yaml
+<<: !include board_esp01_1m.yaml
+
+status_led:
+  pin:
+    number: 2
+    inverted: True
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.toggle: light_1
+
+output:
+  - platform: gpio
+    pin:
+      number: 15
+      inverted: False
+    id: relay_1
+
+light:
+  - platform: binary
+    name: "${ui_name}"
+    id: light_1
+    output: relay_1
+    restore_mode: RESTORE_DEFAULT_ON

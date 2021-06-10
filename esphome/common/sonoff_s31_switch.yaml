@@ -1,0 +1,53 @@
+<<: !include wifi.yaml
+<<: !include esp_home_components.yaml
+<<: !include board_esp01_1m.yaml
+
+# Need to turn off the serial logger because we are using the serial
+# connection for the power sensors.
+logger:
+  baud_rate: 0
+  level: DEBUG
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+
+status_led:
+  pin:
+    number: 13
+    inverted: True
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 0
+      mode: INPUT_PULLUP
+      inverted: False
+    on_press:
+      - switch.toggle: relay_1
+  - platform: status
+    name: "${pretty_name} Status"
+
+
+switch:
+  - name: "${ui_name}"
+    id: relay_1
+    icon: "${icon}"
+    platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    restore_mode: RESTORE_DEFAULT_OFF
+
+sensor:
+  - platform: cse7766
+    current:
+      name: "${pretty_name} Current"
+    voltage:
+      name: "${pretty_name} Voltage"
+    power:
+      name: "${pretty_name} Power"
+    update_interval: 10s
+  - !include wifi_signal.yaml
+  - !include uptime.yaml

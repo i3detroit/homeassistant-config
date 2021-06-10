@@ -1,0 +1,126 @@
+emergency_lights_reset:
+  alias: "Emergency Lights Reset"
+  sequence:
+    - service: light.turn_on
+      entity_id: light.light_038
+      data:
+        # Lights are set up in hass on a 0-50 brightness scale
+        # hass brightness values used here are expected to be 0-255 scale
+        # So the values given here get renormalized before being sent out mqtt, hence...
+        # 90 / 255 * 50 = 17 brightness on the tasmota scale
+        brightness: 30
+    - service: light.turn_on
+      entity_id: light.light_039
+      data:
+        # Lights are set up in hass on a 0-50 brightness scale
+        # hass brightness values used here are expected to be 0-255 scale
+        # So the values given here get renormalized before being sent out mqtt, hence...
+        # 69 / 255 * 50 = 13 brightness on the tasmota scale
+        brightness: 24
+    - service: light.turn_on
+      entity_id: light.light_040
+      data:
+        # Lights are set up in hass on a 0-50 brightness scale
+        # hass brightness values used here are expected to be 0-255 scale
+        # So the values given here get renormalized before being sent out mqtt, hence...
+        # 12 / 255 * 50 = 2 brightness on the tasmota scale
+        brightness: 46
+    - service: light.turn_on
+      entity_id: light.light_027
+      data:
+        # Lights are set up in hass on a 0-50 brightness scale
+        # hass brightness values used here are expected to be 0-255 scale
+        # So the values given here get renormalized before being sent out mqtt, hence...
+        # 5 / 255 * 50 = 2 brightness on the tasmota scale
+        brightness: 40
+    - service: switch.turn_on
+      entity_id: switch.CommonsCeilingFans
+    - service: switch.turn_on
+      entity_id: switch.LaserCeilingFan
+
+blink_traffic_light_green:
+  alias: Blink Traffic Light Green
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficgreen
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id:
+        - light.lighttrafficgreen
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficgreen
+
+blink_traffic_light_yellow:
+  alias: Blink Traffic Light yellow
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficyellow
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id:
+        - light.lighttrafficyellow
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficyellow
+
+blink_traffic_light_red:
+  alias: Blink Traffic Light red
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficred
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id:
+        - light.lighttrafficred
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id:
+        - light.lighttrafficred
+
+reset_snapple_rgb:
+  alias: Reset Snapple RGB to White
+  sequence:
+    - service: light.turn_on
+      entity_id: light.snapple_vending_light
+      data:
+        rgb_color: [255, 227, 217]
+
+a_side_keypad_power_cycle:
+  alias: Power Cycle A-Side Keypad
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: !secret a_side_keypad_toggle_topic
+        payload: "OFF"
+    - delay:
+        milliseconds: 500
+    - service: mqtt.publish
+      data:
+        topic: !secret a_side_keypad_toggle_topic
+        payload: "ON"
+
+b_side_keypad_power_cycle:
+  alias: Power Cycle B-Side Keypad
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: !secret b_side_keypad_toggle_topic
+        payload: "OFF"
+    - delay:
+        milliseconds: 500
+    - service: mqtt.publish
+      data:
+        topic: !secret b_side_keypad_toggle_topic
+        payload: "ON"

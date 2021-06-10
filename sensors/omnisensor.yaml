@@ -1,0 +1,146 @@
+- platform: mqtt
+  name: "Omnisensor Temperature"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json["BME680"]["Temperature"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor Pressure hPa"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "hPa"
+  value_template: '{{ value_json["BME680"]["Pressure"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: template
+  sensors:
+    omnisensor_pressure:
+      friendly_name: "Omnisensor Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ states('sensor.omnisensor_pressure_hpa') | multiply(1/10) | round(1) }}"
+
+- platform: mqtt
+  name: "Omnisensor Humidity"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json["BME680"]["Humidity"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor VOC"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "kOhm"
+  value_template: '{{ value_json["BME680"]["Gas"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor Lux"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "lux"
+  value_template: '{{ value_json["BH1750"]["Illuminance"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PM 1"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ug/m3"
+  value_template: '{{ value_json["PMS5003"]["PM1"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PM 2_5"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ug/m3"
+  value_template: '{{ value_json["PMS5003"]["PM2.5"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PM 10"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ug/m3"
+  value_template: '{{ value_json["PMS5003"]["PM10"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PB 0_3"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ppd"
+  value_template: '{{ value_json["PMS5003"]["PB0.3"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PB 0_5"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ppd"
+  value_template: '{{ value_json["PMS5003"]["PB0.5"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PB 1"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ppd"
+  value_template: '{{ value_json["PMS5003"]["PB1"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PB 2_5"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ppd"
+  value_template: '{{ value_json["PMS5003"]["PB2.5"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PB 5"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ppd"
+  value_template: '{{ value_json["PMS5003"]["PB5"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+
+- platform: mqtt
+  name: "Omnisensor PB 10"
+  state_topic: "tele/i3/inside/sensors/omnisensor/SENSOR"
+  unit_of_measurement: "ppd"
+  value_template: '{{ value_json["PMS5003"]["PB10"] }}'
+  force_update: True
+  availability_topic: "tele/i3/inside/sensors/omnisensor/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"

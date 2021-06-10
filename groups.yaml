@@ -1,0 +1,181 @@
+row_1_lights:
+  name: "Light Row 1"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_001
+    - light.light_002
+    - light.light_003
+    - light.light_004
+
+row_2_lights:
+  name: "Light Row 2"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_005
+    - light.light_006
+    - light.light_007
+    - light.light_008
+    - light.light_009
+
+row_3_lights:
+  name: "Light Row 3"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_010
+    - light.light_011
+    - light.light_012
+    - light.light_013
+    - light.light_014
+
+row_4_lights:
+  name: "Light Row 4"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_015
+    - light.light_016
+    - light.light_017
+    - light.light_018
+    - light.light_019
+
+row_5_lights:
+  name: "Light Row 5"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_020
+    - light.light_021
+    - light.light_022
+    - light.light_023
+    - light.light_024
+    - light.light_025
+    - light.light_026
+    - light.lanterns
+
+machine_shop_lights:
+  name: "Machine Shop Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_029
+    - light.light_030
+    - light.light_031
+    - light.light_032
+    - light.light_033
+    - light.light_034
+    - light.light_035
+
+misc_lights:
+  name: "Misc. Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.welding_light
+    - light.vinyl_light
+    - light.treehouse_light
+    - light.LightLargeBathroom
+    - light.tool_crib_workbench_lights
+
+office_lights:
+  name: "Office Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.Classroom_Lights_East
+    - light.Classroom_Lights_West
+    - light.Dooridor_Lights
+    - light.Hallway_Light
+    - light.LightMediaLab
+    - light.Craft_Room_Light
+    - light.Electronics_Lab_Light
+    - light.Small_Bathroom_Light
+    - light.Small_Bathroom_Shower_Light
+    - light.B_Side_Office_Light
+
+b_side_lights:
+  name: "B Side Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_043
+    - light.light_044
+    - light.light_045
+    - light.light_046
+    - light.light_047
+    - light.light_048
+    - light.light_049
+    - light.light_052
+#    - light.light_053
+    - light.light_054
+#    - light.light_056
+#    - light.light_057
+#    - light.light_058
+    - light.light_067
+    - light.light_068
+    - light.light_069
+    - light.light_070
+    - light.light_071
+#    - light.light_072
+    - light.light_073
+    - light.light_074
+    - light.light_075
+    - light.light_076
+    - light.light_078
+    - light.light_079
+    - light.light_080
+    - light.light_081
+    - light.light_082
+    - light.light_083
+    - light.light_085
+    - light.light_087
+    - light.light_089
+    - light.light_091
+    - light.light_092
+    - light.light_093
+    - light.light_095
+    - light.light_096
+    - light.light_097
+    - light.light_098
+    
+wood_shop_lights:
+  name: "Wood Shop Lights"
+  icon: "mdi:ceiling-light"
+  entities:
+    - light.light_050
+    - light.light_051
+    - light.light_055
+    - light.light_059
+    - light.light_060
+    - light.light_061
+    - light.light_063
+    - light.light_064
+    - light.light_065
+    - light.light_066
+
+kiln_jewelry_lights:
+  name: "Jewelry & Kiln Lights"
+  icon: mdi:ceiling-light
+  entities:
+    - light.light_046
+    - light.light_047
+    - light.light_048
+    - light.light_049
+
+emergency_lights:
+  name: "Emergency Lights"
+  icon: mdi:alarm-light
+  entities:
+    - light.light_039
+    - light.light_040
+    - light.light_027
+    - light.light_038
+
+all_normal_lights:
+  name: All Lights
+  icon: mdi:lightbulb
+  entities:
+    - group.row_1_lights
+    - group.row_2_lights
+    - group.row_3_lights
+    - group.row_4_lights
+    - group.row_5_lights
+    - group.machine_shop_lights
+    - group.misc_lights
+    - group.office_lights
+    - group.b_side_lights
+    - group.wood_shop_lights
+    - group.kiln_jewelry_lights

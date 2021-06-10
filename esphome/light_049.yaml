@@ -1,0 +1,9 @@
+<<: !include common/sonoff_basic_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "light_049"
+  pretty_name: "Light 049"
+  ui_name: "Light 049"
+  icon: "mdi:lightbulb"
+  ip_address: 10.13.107.165

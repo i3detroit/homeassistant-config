@@ -1,0 +1,9 @@
+<<: !include common/button_box_6.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "b_side_lightswitch_02"
+  pretty_name: "B-Side Lightswitch 02"
+  target_1: "group.b_side_lights"
+  target_2: "group.wood_shop_lights"
+  target_3: "group.kiln_jewelry_lights"

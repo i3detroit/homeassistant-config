@@ -1,0 +1,13 @@
+- platform: mqtt
+  name: 'Light 027'
+  state_topic: 'stat/i3/inside/lights/027/POWER'
+  command_topic: 'cmnd/i3/inside/lights/027/POWER'
+  availability_topic: 'tele/i3/inside/lights/027/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'
+  brightness_scale: 50
+  brightness_command_topic: 'cmnd/i3/inside/lights/027/Dimmer'
+  brightness_state_topic: 'stat/i3/inside/lights/027/RESULT'
+  brightness_value_template: '{{value_json.Dimmer}}'

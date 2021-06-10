@@ -1,0 +1,94 @@
+- platform: mqtt
+  name: "Office Thermostat Ambient Temperature"
+  state_topic: "tele/i3/inside/office/thermostat/sensors"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.temperature }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Ambient Pressure"
+  state_topic: "tele/i3/inside/office/thermostat/sensors"
+  unit_of_measurement: "Pa"
+  value_template: '{{ value_json.pressure }}'
+  force_update: True
+
+- platform: template
+  sensors:
+    office_thermostat_pressure_kpa:
+      friendly_name: "Office Ambient Pressure"
+      unit_of_measurement: 'kPa'
+      value_template: "{{ ((states('sensor.office_thermostat_ambient_pressure') | multiply(1/1000)) | float) | round(1) }}"
+
+- platform: mqtt
+  name: "Office Thermostat Ambient Humidity"
+  state_topic: "tele/i3/inside/office/thermostat/sensors"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.humidity }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Target Temperature"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.target }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Requested State"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.mode }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Requested Fan State"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.fan }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Swing"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.swing }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Timeout"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.timeout }}'
+  unit_of_measurement: "ms"
+  force_update: True
+
+- platform: template
+  sensors:
+    office_thermostat_timeout_human_readable:
+      friendly_name: "Office Thermostat Reset Timeout"
+      unit_of_measurement: "hours"
+      value_template: "{{ states('sensor.Office_Thermostat_Timeout') | float / 3600000 | round(1) }}"
+
+- platform: mqtt
+  name: "Office Thermostat Active State"
+  state_topic: "tele/i3/inside/office/thermostat/output"
+  value_template: '{{ value_json.state }}'
+  force_update: True
+
+- platform: mqtt
+  name: "Office Thermostat Active Fan State"
+  state_topic: "tele/i3/inside/office/thermostat/output"
+  value_template: '{{ value_json.fan }}'
+  force_update: True
+
+# - platform: mqtt
+#   name: "Office Thermostat Power Source"
+#   state_topic: "tele/i3/inside/office/thermostat/sensors"
+#   value_template: '{{ value_json.powerSource }}'
+#   force_update: True
+
+- platform: template
+  sensors:
+    office_thermostat_temp_on:
+      friendly_name: "Office Thermostat Temp On"
+      unit_of_measurement: "°C"
+      value_template: >-
+        {% if states.sensor.office_thermostat_active_state.state | string == "cool" or states.sensor.office_thermostat_active_state.state | string == "heat" %}
+          {{states.sensor.office_thermostat_ambient_temperature.state | float }}
+        {% endif %}

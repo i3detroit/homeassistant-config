@@ -1,1 +1,360 @@
-[]
+- id: '1623327623174'
+  alias: MQTT query on boot
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: start
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/classroom/glass-door/lock
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/classroom/glass-door/open
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/snapple-vending-light/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/accent/chandelier-01/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/accent/chandelier-02/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/classroom/sign/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/cnc/vent/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/cnc/light/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/disco/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/ceiling-fans/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/garage-door/lock
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/front-door/lock
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/south-vent/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/fablab/vent/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/infrastructure/compressor-valve/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/large-bathroom/light/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/large-bathroom/vent/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/001/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/002/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/003/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/004/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/005/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/006/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/007/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/008/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/009/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/010/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/011/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/012/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/013/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/014/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/015/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/016/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/017/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/018/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/019/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/020/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/021/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/022/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/023/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/024/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/025/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/026/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/027/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/028/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/029/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/030/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/031/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/032/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/033/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/034/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/035/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/036/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/037/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/038/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/039/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/040/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/041/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/042/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/043/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/044/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/045/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/046/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/047/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/048/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/049/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/050/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/051/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/052/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/053/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/054/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/055/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/056/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/057/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/058/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/059/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/060/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/061/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/062/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/063/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/064/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/065/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/066/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/lights/067/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/infrastructure/air-compressor/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/ceiling-fan/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/vent-fan/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/machine-shop/ceiling-fan/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/media-lab/lights/POWER
+  - service: mqtt.publish
+    data:
+      topic: tele/i3/inside/commons/openevse/query
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/paint-box/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/traffic-light/POWER1
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/traffic-light/POWER2
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/traffic-light/POWER3
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/bumblebee/chiller/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/wolverine/chiller/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/blast-gate-monitor/query
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/craftroom/light/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/elab/light/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/hallway/light/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/bumblebee/laser/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/wolverine/laser/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/classroom/lights-east/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/classroom/lights-west/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/dooridor/lights/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/notification-lights/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/small-bathroom/vent/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/small-bathroom/shower-light/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/elab/accent/arch-north/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/elab/accent/arch-south/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/office/thermostat/target
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/genie-charging/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/siren/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/laser-zone/accent/lanterns/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/commons/fairy-lights/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/fablab/chinesium/POWER
+  - service: mqtt.publish
+    data:
+      topic: cmnd/i3/inside/office/thermostat/query
+  mode: single

@@ -11,3 +11,4 @@ esphome/common/secrets.yaml
 esphome/.vscode
 blueprints/
 .vscode
+custom_components/
