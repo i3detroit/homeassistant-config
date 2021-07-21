@@ -1,6 +1,9 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+http:
+  server_port: 80
+
 # Text to speech
 tts:
   - platform: google_translate
@@ -18,6 +21,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
 script: !include scripts.yaml
+script old: !include_dir_merge_list scripts
 scene: !include scenes.yaml
 sensor: !include_dir_merge_list sensors
 binary_sensor: !include_dir_merge_list binary_sensors

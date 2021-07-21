@@ -91,9 +91,9 @@ b_side_lights:
   name: "B Side Lights"
   icon: mdi:ceiling-light
   entities:
-    - light.light_043
-    - light.light_044
-    - light.light_045
+    # - light.light_043
+    # - light.light_044
+    # - light.light_045
     - light.light_046
     - light.light_047
     - light.light_048
@@ -114,22 +114,34 @@ b_side_lights:
     - light.light_074
     - light.light_075
     - light.light_076
+    - light.light_077
     - light.light_078
     - light.light_079
     - light.light_080
     - light.light_081
     - light.light_082
     - light.light_083
+    - light.light_084
     - light.light_085
+    - light.light_086
     - light.light_087
     - light.light_089
+    - light.light_090
     - light.light_091
     - light.light_092
     - light.light_093
+    - light.light_094
     - light.light_095
     - light.light_096
     - light.light_097
     - light.light_098
+    - light.light_099
+    - light.light_100
+    - light.light_101
+    - light.light_102
+    - light.light_103
+    - light.light_104
+    - light.light_106
     
 wood_shop_lights:
   name: "Wood Shop Lights"
@@ -144,7 +156,7 @@ wood_shop_lights:
     - light.light_063
     - light.light_064
     - light.light_065
-    - light.light_066
+    - light.light_088
 
 kiln_jewelry_lights:
   name: "Jewelry & Kiln Lights"

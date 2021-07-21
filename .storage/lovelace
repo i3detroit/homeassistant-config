@@ -45,6 +45,27 @@
                             "state_color": true
                         },
                         {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.south_roof_exhaust_fan",
+                                    "icon": "mdi:fan",
+                                    "name": "South (A)"
+                                },
+                                {
+                                    "entity": "switch.cnc_roof_exhaust_fan",
+                                    "name": "CNC (A)"
+                                },
+                                {
+                                    "entity": "switch.machine_shop_roof_exhaust_fan",
+                                    "icon": "mdi:fan",
+                                    "name": "Machine Shop (B)"
+                                }
+                            ],
+                            "title": "Roof Exhaust Fans",
+                            "state_color": true
+                        },
+                        {
                             "type": "glance",
                             "entities": [
                                 {
@@ -58,6 +79,11 @@
                                 }
                             ],
                             "title": "Equipment Status"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.office",
+                            "name": "Office Thermostat"
                         }
                     ]
                 },
@@ -154,6 +180,45 @@
                                 "show_header_toggle": true
                             },
                             "group": "group.machine_shop_lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.fairy_lights"
+                                },
+                                {
+                                    "entity": "light.lanterns"
+                                },
+                                {
+                                    "entity": "light.swirly_lights_01"
+                                },
+                                {
+                                    "entity": "light.swirly_lights_02"
+                                },
+                                {
+                                    "entity": "light.lighttrafficred"
+                                },
+                                {
+                                    "entity": "light.lighttrafficyellow"
+                                },
+                                {
+                                    "entity": "light.lighttrafficgreen"
+                                },
+                                {
+                                    "entity": "switch.disco_ball"
+                                },
+                                {
+                                    "entity": "switch.disco_spotlights"
+                                },
+                                {
+                                    "entity": "light.chandelier01"
+                                },
+                                {
+                                    "entity": "light.chandelier02"
+                                }
+                            ],
+                            "title": "Decor"
                         }
                     ]
                 },
@@ -190,6 +255,20 @@
                             ],
                             "show_header_toggle": false,
                             "title": "Please don't break things"
+                        }
+                    ]
+                },
+                {
+                    "path": "",
+                    "title": "Grafana",
+                    "icon": "mdi:chart-areaspline",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "iframe",
+                            "url": "http://10.13.0.22:3000",
+                            "aspect_ratio": "50%"
                         }
                     ]
                 }
