@@ -12,3 +12,5 @@ esphome/.vscode
 blueprints/
 .vscode
 custom_components/
+ssh/
+shell/hass.token

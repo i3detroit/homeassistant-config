@@ -358,3 +358,13 @@
     data:
       topic: cmnd/i3/inside/office/thermostat/query
   mode: single
+- id: '1627008032755'
+  alias: SpaceAPI Upload
+  description: upload our spaceapi output to the i3detroit.org webserver
+  trigger:
+  - platform: time_pattern
+    minutes: /2
+  condition: []
+  action:
+  - service: shell_command.spaceapi_upload
+  mode: single
