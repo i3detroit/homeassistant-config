@@ -1,4 +1,4 @@
-<<: !include common/button_box_6.yaml
+<<: !include common/common/button_box_6_long_press.yaml
 <<: !include common/api.yaml
 
 substitutions:

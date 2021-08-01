@@ -44,10 +44,13 @@ sensor:
   - platform: cse7766
     current:
       name: "${pretty_name} Current"
+      force_update: true
     voltage:
       name: "${pretty_name} Voltage"
+      force_update: true
     power:
       name: "${pretty_name} Power"
+      force_update: true
     update_interval: 10s
   - !include wifi_signal.yaml
   - !include uptime.yaml

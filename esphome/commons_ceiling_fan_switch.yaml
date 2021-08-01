@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_fan.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "commons_ceiling_fan_lightswitch"
+  pretty_name: "Commons Ceiling Fan Switch"
+  ui_name: "Commons Ceiling Fan"
+  icon: "mdi:fan"

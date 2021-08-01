@@ -57,7 +57,7 @@
                                     "name": "CNC (A)"
                                 },
                                 {
-                                    "entity": "switch.machine_shop_roof_exhaust_fan",
+                                    "entity": "switch.machine_shop_exhaust_fan",
                                     "icon": "mdi:fan",
                                     "name": "Machine Shop (B)"
                                 }
@@ -251,6 +251,9 @@
                                 },
                                 {
                                     "entity": "switch.wolverine"
+                                },
+                                {
+                                    "entity": "switch.laser_zone_exhaust_fan"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -269,6 +272,226 @@
                             "type": "iframe",
                             "url": "http://10.13.0.22:3000",
                             "aspect_ratio": "50%"
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:map",
+                    "visible": [
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        }
+                    ],
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "picture-elements",
+                            "elements": [
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_001",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "style": {
+                                        "top": "70%",
+                                        "left": "77%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_002",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "77%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_003",
+                                    "style": {
+                                        "top": "45.5%",
+                                        "left": "77%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_004",
+                                    "style": {
+                                        "top": "32%",
+                                        "left": "77%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_005",
+                                    "style": {
+                                        "top": "80%",
+                                        "left": "72.2%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_006",
+                                    "style": {
+                                        "top": "66.5%",
+                                        "left": "72.2%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_007",
+                                    "style": {
+                                        "top": "53%",
+                                        "left": "72.2%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_008",
+                                    "style": {
+                                        "top": "39.5%",
+                                        "left": "72.2%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_009",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "72.2%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_010",
+                                    "style": {
+                                        "top": "70%",
+                                        "left": "66%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_011",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "66%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_012",
+                                    "style": {
+                                        "top": "45.5%",
+                                        "left": "66%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_013",
+                                    "style": {
+                                        "top": "32%",
+                                        "left": "66%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_014",
+                                    "style": {
+                                        "top": "21%",
+                                        "left": "67%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_015",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "61%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_016",
+                                    "style": {
+                                        "top": "39.5%",
+                                        "left": "61%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_017",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "61%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_018",
+                                    "style": {
+                                        "top": "17%",
+                                        "left": "61%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_019",
+                                    "style": {
+                                        "top": "9%",
+                                        "left": "61%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_020",
+                                    "style": {
+                                        "top": "70%",
+                                        "left": "56%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_021",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "56%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_022",
+                                    "style": {
+                                        "top": "45.5%",
+                                        "left": "56%",
+                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                    }
+                                }
+                            ],
+                            "image": "local/outline_for_home_assistant3.png",
+                            "dark_mode_image": "local/outline_for_home_assistant3.png"
                         }
                     ]
                 }

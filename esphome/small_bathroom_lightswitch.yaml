@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "small_bathroom_lightswitch"
+  pretty_name: "Small Bathroom Lightswitch"
+  ui_name: "Small Bathroom Light"
+  icon: "mdi:lightbulb"

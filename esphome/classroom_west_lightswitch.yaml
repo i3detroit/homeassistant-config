@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "classroom_west_lightswitch"
+  pretty_name: "Classroom West Lightswitch"
+  ui_name: "Classroom West Lights"
+  icon: "mdi:lightbulb"

@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_fan.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "large_bathroom_exhaust_fan_switch"
+  pretty_name: "Large Bathroom Exhaust Fan switch"
+  ui_name: "Large Bathroom Exhaust Fan"
+  icon: "mdi:fan"

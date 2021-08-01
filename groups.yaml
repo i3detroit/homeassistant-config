@@ -82,10 +82,10 @@ office_lights:
     - light.Hallway_Light
     - light.LightMediaLab
     - light.Craft_Room_Light
-    - light.Electronics_Lab_Light
+    - light.elab_lights
     - light.Small_Bathroom_Light
     - light.Small_Bathroom_Shower_Light
-    - light.B_Side_Office_Light
+    - switch.b_side_office_lights
 
 b_side_lights:
   name: "B Side Lights"

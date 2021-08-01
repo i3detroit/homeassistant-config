@@ -1,0 +1,8 @@
+<<: !include common/treatlife_3way_ss02.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "b_side_office_east_lightswitch"
+  pretty_name: "B-Side Office East Lightswitch"
+  ui_name: "B-Side Office Lights"
+  icon: "mdi:lightbulb"

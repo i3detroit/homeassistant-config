@@ -1,0 +1,141 @@
+<<: !include d1_mini.yaml
+
+binary_sensor:
+  - name: "${pretty_name} Button 1"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.turn_on
+          data:
+            entity_id: "${target_1}"
+    on_multi_click:
+      timing:
+        - ON for at least 0.4s
+      then:
+        - homeassistant.service:
+            service: homeassistant.turn_on
+            data:
+              entity_id: "${target_2}"
+        - homeassistant.service:
+            service: homeassistant.turn_on
+            data:
+              entity_id: "${target_3}"
+  - name: "${pretty_name} Button 2"
+    platform: gpio
+    pin:
+      number: 12
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.turn_off
+          data:
+            entity_id: "${target_1}"
+    on_multi_click:
+      timing:
+        - ON for at least 0.4s
+      then:
+        - homeassistant.service:
+            service: homeassistant.turn_off
+            data:
+              entity_id: "${target_2}"
+        - homeassistant.service:
+            service: homeassistant.turn_off
+            data:
+              entity_id: "${target_3}"
+  - name: "${pretty_name} Button 3"
+    platform: gpio
+    pin:
+      number: 14
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.turn_on
+          data:
+            entity_id: "${target_2}"
+    on_multi_click:
+      timing:
+        - ON for at least 0.4s
+      then:
+        - homeassistant.service:
+            service: homeassistant.turn_on
+            data:
+              entity_id: "${target_1}"
+        - homeassistant.service:
+            service: homeassistant.turn_on
+            data:
+              entity_id: "${target_3}"
+  - name: "${pretty_name} Button 4"
+    platform: gpio
+    pin:
+      number: 5
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.turn_off
+          data:
+            entity_id: "${target_2}"
+    on_multi_click:
+      timing:
+        - ON for at least 0.4s
+      then:
+        - homeassistant.service:
+            service: homeassistant.turn_off
+            data:
+              entity_id: "${target_1}"
+        - homeassistant.service:
+            service: homeassistant.turn_off
+            data:
+              entity_id: "${target_3}"
+  - name: "${pretty_name} Button 5"
+    platform: gpio
+    pin:
+      number: 4
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.turn_on
+          data:
+            entity_id: ${target_3}"
+    on_multi_click:
+      timing:
+        - ON for at least 0.4s
+      then:
+        - homeassistant.service:
+            service: homeassistant.turn_on
+            data:
+              entity_id: "${target_1}"
+        - homeassistant.service:
+            service: homeassistant.turn_on
+            data:
+              entity_id: "${target_2}"
+  - name: "${pretty_name} Button 6"
+    platform: gpio
+    pin:
+      number: 2
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.turn_off
+          data:
+            entity_id: ${target_3}"
+    on_multi_click:
+      timing:
+        - ON for at least 0.4s
+      then:
+        - homeassistant.service:
+            service: homeassistant.turn_off
+            data:
+              entity_id: "${target_1}"
+        - homeassistant.service:
+            service: homeassistant.turn_off
+            data:
+              entity_id: "${target_2}"

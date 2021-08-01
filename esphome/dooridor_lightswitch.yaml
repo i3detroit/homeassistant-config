@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "dooridor_lightswitch"
+  pretty_name: "Dooridor Lightswitch"
+  ui_name: "Dooridor Light"
+  icon: "mdi:lightbulb"

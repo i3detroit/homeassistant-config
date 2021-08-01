@@ -1,0 +1,44 @@
+<<: !include common/d1_mini.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "test_io_expander"
+  pretty_name: "Test IO Expander"
+  ui_name: "Test IO Expander"
+
+i2c:
+  sda: 4
+  scl: 5
+
+mcp23017:
+  - id: 'mcp23017_hub'
+    address: 0x20
+
+binary_sensor:
+  - platform: gpio
+    name: "MCP23017 Pin #0"
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 0
+      number: 0
+      # One of INPUT or INPUT_PULLUP
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "MCP23017 Pin #1"
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 1
+      number: 1
+      # One of INPUT or INPUT_PULLUP
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "MCP23017 Pin #8"
+    pin:
+      mcp23xxx: mcp23017_hub
+      # Use pin number 8
+      number: 8
+      # One of INPUT or INPUT_PULLUP
+      mode: INPUT_PULLUP
+      inverted: False

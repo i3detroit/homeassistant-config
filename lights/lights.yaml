@@ -79,16 +79,6 @@
   payload_off: "OFF"
 
 - platform: mqtt
-  name: "Electronics Lab Light"
-  state_topic: "stat/i3/inside/elab/light/POWER"
-  command_topic: "cmnd/i3/inside/elab/light/POWER"
-  availability_topic: "tele/i3/inside/elab/light/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
   name: "Hallway Light"
   state_topic: "stat/i3/inside/hallway/light/POWER"
   command_topic: "cmnd/i3/inside/hallway/light/POWER"
@@ -223,13 +213,3 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   on_command_type: "brightness"
-
-- platform: mqtt
-  name: "B Side Office Light"
-  state_topic: "stat/i3/inside/b-side/office/lights/POWER"
-  command_topic: "cmnd/i3/inside/b-side/office/lights/POWER"
-  availability_topic: "tele/i3/inside/b-side/office/lights/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
