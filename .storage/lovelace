@@ -3,9 +3,39 @@
     "key": "lovelace",
     "data": {
         "config": {
+            "kiosk_mode": {
+                "user_settings": [
+                    {
+                        "users": [
+                            "kiosk"
+                        ],
+                        "kiosk": true,
+                        "hide_sidebar": true,
+                        "hide_header": true
+                    }
+                ]
+            },
             "views": [
                 {
                     "title": "Home",
+                    "visible": [
+                        {
+                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+                        },
+                        {
+                            "user": "c13c74138a344210a6a621c5e0d19dc3"
+                        },
+                        {
+                            "user": "ff7ab356a33f4f379242067463126a32"
+                        },
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        },
+                        {
+                            "user": "a7e70d3c39dc46dea8761652dadb25b0"
+                        }
+                    ],
+                    "badges": [],
                     "cards": [
                         {
                             "type": "entities",
@@ -45,6 +75,52 @@
                             "state_color": true
                         },
                         {
+                            "type": "thermostat",
+                            "entity": "climate.office",
+                            "name": "Office Thermostat"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.front_door_lock",
+                                    "name": "Front Door",
+                                    "state_color": true
+                                },
+                                {
+                                    "entity": "binary_sensor.glass_door_open_sensor",
+                                    "name": "Glass Door",
+                                    "state_color": true
+                                },
+                                {
+                                    "entity": "binary_sensor.glass_door_lock_sensor",
+                                    "name": "Glass Door Lock",
+                                    "state_color": true
+                                }
+                            ],
+                            "title": "Doors"
+                        },
+                        {
+                            "type": "glance",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.air_compressor_power"
+                                },
+                                {
+                                    "entity": "binary_sensor.cyclops_power"
+                                },
+                                {
+                                    "entity": "binary_sensor.wolverine_power"
+                                },
+                                {
+                                    "entity": "sensor.genie_charge_state"
+                                }
+                            ],
+                            "title": "Equipment Status",
+                            "columns": 3,
+                            "show_icon": true
+                        },
+                        {
                             "type": "entities",
                             "entities": [
                                 {
@@ -64,31 +140,28 @@
                             ],
                             "title": "Roof Exhaust Fans",
                             "state_color": true
-                        },
-                        {
-                            "type": "glance",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.air_compressor_power"
-                                },
-                                {
-                                    "entity": "binary_sensor.cyclops_power"
-                                },
-                                {
-                                    "entity": "binary_sensor.wolverine_power"
-                                }
-                            ],
-                            "title": "Equipment Status"
-                        },
-                        {
-                            "type": "thermostat",
-                            "entity": "climate.office",
-                            "name": "Office Thermostat"
                         }
                     ]
                 },
                 {
                     "icon": "mdi:lightbulb",
+                    "visible": [
+                        {
+                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+                        },
+                        {
+                            "user": "c13c74138a344210a6a621c5e0d19dc3"
+                        },
+                        {
+                            "user": "ff7ab356a33f4f379242067463126a32"
+                        },
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        },
+                        {
+                            "user": "a7e70d3c39dc46dea8761652dadb25b0"
+                        }
+                    ],
                     "badges": [],
                     "cards": [
                         {
@@ -216,9 +289,24 @@
                                 },
                                 {
                                     "entity": "light.chandelier02"
+                                },
+                                {
+                                    "entity": "light.elab_arch_north"
+                                },
+                                {
+                                    "entity": "light.elab_arch_south"
                                 }
                             ],
                             "title": "Decor"
+                        },
+                        {
+                            "type": "custom:group-card",
+                            "card": {
+                                "type": "entities",
+                                "title": "Jewelry & Kiln Lights",
+                                "show_header_toggle": true
+                            },
+                            "group": "group.kiln_jewelry_lights"
                         }
                     ]
                 },
@@ -226,6 +314,9 @@
                     "visible": [
                         {
                             "user": "90b63f479ed24cde8ef677d85f615260"
+                        },
+                        {
+                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
                         }
                     ],
                     "icon": "mdi:nuke",
@@ -265,7 +356,24 @@
                     "path": "",
                     "title": "Grafana",
                     "icon": "mdi:chart-areaspline",
-                    "panel": true,
+                    "type": "panel",
+                    "visible": [
+                        {
+                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+                        },
+                        {
+                            "user": "c13c74138a344210a6a621c5e0d19dc3"
+                        },
+                        {
+                            "user": "ff7ab356a33f4f379242067463126a32"
+                        },
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        },
+                        {
+                            "user": "a7e70d3c39dc46dea8761652dadb25b0"
+                        }
+                    ],
                     "badges": [],
                     "cards": [
                         {
@@ -280,9 +388,24 @@
                     "visible": [
                         {
                             "user": "90b63f479ed24cde8ef677d85f615260"
+                        },
+                        {
+                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+                        },
+                        {
+                            "user": "c13c74138a344210a6a621c5e0d19dc3"
+                        },
+                        {
+                            "user": "ff7ab356a33f4f379242067463126a32"
+                        },
+                        {
+                            "user": "a7e70d3c39dc46dea8761652dadb25b0"
+                        },
+                        {
+                            "user": "24b5f1a4ed6b43d9991c432a1cff21e9"
                         }
                     ],
-                    "panel": true,
+                    "type": "panel",
                     "badges": [],
                     "cards": [
                         {
@@ -290,14 +413,48 @@
                             "elements": [
                                 {
                                     "type": "state-icon",
-                                    "entity": "light.light_001",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
+                                    "title": "Air Compressor",
+                                    "entity": "binary_sensor.air_compressor_power",
                                     "style": {
-                                        "top": "70%",
+                                        "top": "9%",
+                                        "left": "64.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.front_door_lock",
+                                    "style": {
+                                        "top": "85%",
+                                        "left": "71.75%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.glass_door_open_sensor",
+                                    "style": {
+                                        "top": "92.5%",
+                                        "left": "68.8%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.glass_door_lock_sensor",
+                                    "style": {
+                                        "top": "92.5%",
+                                        "left": "71%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_001",
+                                    "style": {
+                                        "top": "76%",
                                         "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -306,7 +463,7 @@
                                     "style": {
                                         "top": "60%",
                                         "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -315,7 +472,7 @@
                                     "style": {
                                         "top": "45.5%",
                                         "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -324,7 +481,7 @@
                                     "style": {
                                         "top": "32%",
                                         "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -333,7 +490,7 @@
                                     "style": {
                                         "top": "80%",
                                         "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -342,7 +499,7 @@
                                     "style": {
                                         "top": "66.5%",
                                         "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -351,7 +508,7 @@
                                     "style": {
                                         "top": "53%",
                                         "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -360,7 +517,7 @@
                                     "style": {
                                         "top": "39.5%",
                                         "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -369,7 +526,7 @@
                                     "style": {
                                         "top": "26%",
                                         "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -378,7 +535,7 @@
                                     "style": {
                                         "top": "70%",
                                         "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -387,7 +544,7 @@
                                     "style": {
                                         "top": "60%",
                                         "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -396,7 +553,7 @@
                                     "style": {
                                         "top": "45.5%",
                                         "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -405,7 +562,7 @@
                                     "style": {
                                         "top": "32%",
                                         "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -414,7 +571,7 @@
                                     "style": {
                                         "top": "21%",
                                         "left": "67%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -423,7 +580,7 @@
                                     "style": {
                                         "top": "60%",
                                         "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -432,7 +589,7 @@
                                     "style": {
                                         "top": "39.5%",
                                         "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -441,7 +598,7 @@
                                     "style": {
                                         "top": "26%",
                                         "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -450,7 +607,7 @@
                                     "style": {
                                         "top": "17%",
                                         "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -459,7 +616,7 @@
                                     "style": {
                                         "top": "9%",
                                         "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -468,7 +625,7 @@
                                     "style": {
                                         "top": "70%",
                                         "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -477,7 +634,7 @@
                                     "style": {
                                         "top": "60%",
                                         "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
@@ -486,7 +643,752 @@
                                     "style": {
                                         "top": "45.5%",
                                         "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(2, 2)"
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_023",
+                                    "style": {
+                                        "top": "32%",
+                                        "left": "56%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_024",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "56%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_025",
+                                    "style": {
+                                        "top": "9%",
+                                        "left": "56%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_026",
+                                    "style": {
+                                        "top": "14%",
+                                        "left": "57%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_029",
+                                    "style": {
+                                        "top": "16%",
+                                        "left": "77%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_030",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "78%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_031",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "70%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_032",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "73.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_033",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "67%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_034",
+                                    "style": {
+                                        "top": "16%",
+                                        "left": "67%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_035",
+                                    "style": {
+                                        "top": "16%",
+                                        "left": "65%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.vinyl_light",
+                                    "style": {
+                                        "top": "52%",
+                                        "left": "55%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.treehouse_light",
+                                    "style": {
+                                        "top": "52%",
+                                        "left": "61.7%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_078",
+                                    "style": {
+                                        "top": "80%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_073",
+                                    "style": {
+                                        "top": "74.16%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_077",
+                                    "style": {
+                                        "top": "68.33%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_084",
+                                    "style": {
+                                        "top": "62.5%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_085",
+                                    "style": {
+                                        "top": "56.67%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_094",
+                                    "style": {
+                                        "top": "50.83%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_074",
+                                    "style": {
+                                        "top": "45%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_086",
+                                    "style": {
+                                        "top": "39.17%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_089",
+                                    "style": {
+                                        "top": "33.33%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_090",
+                                    "style": {
+                                        "top": "27.5%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_087",
+                                    "style": {
+                                        "top": "21.66%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_096",
+                                    "style": {
+                                        "top": "15.833%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_067",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_081",
+                                    "style": {
+                                        "top": "74.16%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_104",
+                                    "style": {
+                                        "top": "68.33%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_103",
+                                    "style": {
+                                        "top": "62.5%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_106",
+                                    "style": {
+                                        "top": "56.67%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_100",
+                                    "style": {
+                                        "top": "50.83%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_102",
+                                    "style": {
+                                        "top": "45%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_099",
+                                    "style": {
+                                        "top": "39.17%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_101",
+                                    "style": {
+                                        "top": "33.33%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_095",
+                                    "style": {
+                                        "top": "27.5%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_093",
+                                    "style": {
+                                        "top": "21.66%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_098",
+                                    "style": {
+                                        "top": "15.833%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_071",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "45%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_076",
+                                    "style": {
+                                        "top": "74.16%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_079",
+                                    "style": {
+                                        "top": "68.33%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_069",
+                                    "style": {
+                                        "top": "62.5%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_080",
+                                    "style": {
+                                        "top": "56.67%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_075",
+                                    "style": {
+                                        "top": "50.83%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_097",
+                                    "style": {
+                                        "top": "45%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_083",
+                                    "style": {
+                                        "top": "39.17%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_091",
+                                    "style": {
+                                        "top": "33.33%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_082",
+                                    "style": {
+                                        "top": "27.5%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_070",
+                                    "style": {
+                                        "top": "21.66%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_092",
+                                    "style": {
+                                        "top": "15.833%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_068",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_046",
+                                    "style": {
+                                        "top": "36%",
+                                        "left": "34%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_047",
+                                    "style": {
+                                        "top": "36%",
+                                        "left": "28%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_048",
+                                    "style": {
+                                        "top": "43%",
+                                        "left": "34%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_049",
+                                    "style": {
+                                        "top": "43%",
+                                        "left": "28%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.classroom_east_lights",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "68%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.classroom_west_lights",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "65%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.dooridor_light",
+                                    "style": {
+                                        "top": "87.8%",
+                                        "left": "69.2%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.craft_room_lights",
+                                    "style": {
+                                        "top": "89%",
+                                        "left": "65.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.elab_lights",
+                                    "style": {
+                                        "top": "89%",
+                                        "left": "58%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.small_bathroom_light",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "59.7%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "switch.b_side_office_lights",
+                                    "style": {
+                                        "top": "80.6%",
+                                        "left": "47%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.media_lab_lights",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "62%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_050",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "22%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_051",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "25%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_055",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "28%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_059",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "31%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_060",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "34%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_061",
+                                    "style": {
+                                        "top": "18%",
+                                        "left": "22%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_063",
+                                    "style": {
+                                        "top": "18%",
+                                        "left": "25%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_064",
+                                    "style": {
+                                        "top": "18%",
+                                        "left": "28%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_065",
+                                    "style": {
+                                        "top": "18%",
+                                        "left": "31%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_088",
+                                    "style": {
+                                        "top": "18%",
+                                        "left": "34%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_052",
+                                    "style": {
+                                        "top": "28%",
+                                        "left": "32%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_054",
+                                    "style": {
+                                        "top": "28%",
+                                        "left": "35%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                }
+                            ],
+                            "image": "local/outline_for_home_assistant3.png",
+                            "dark_mode_image": "local/outline_for_home_assistant3.png"
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:engine",
+                    "visible": [
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        }
+                    ],
+                    "type": "panel",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "picture-elements",
+                            "elements": [
+                                {
+                                    "type": "state-icon",
+                                    "title": "Air Compressor",
+                                    "entity": "binary_sensor.air_compressor_power",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "65%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "switch.cnc_roof_exhaust_fan",
+                                    "style": {
+                                        "top": "25%",
+                                        "left": "74%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "switch.south_roof_exhaust_fan",
+                                    "icon": "mdi:fan",
+                                    "style": {
+                                        "top": "66%",
+                                        "left": "65%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "switch.machine_shop_exhaust_fan",
+                                    "style": {
+                                        "top": "35%",
+                                        "left": "48%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "title": "Cyclops",
+                                    "icon": "mdi:printer-3d-nozzle",
+                                    "entity": "switch.cyclops",
+                                    "style": {
+                                        "top": "45%",
+                                        "left": "55.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "title": "Wolverine",
+                                    "icon": "mdi:printer-3d-nozzle",
+                                    "entity": "switch.cyclops",
+                                    "style": {
+                                        "top": "39.5%",
+                                        "left": "55.5%",
+                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 }
                             ],

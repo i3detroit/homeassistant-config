@@ -1,98 +1,96 @@
 emergency_lights_reset:
-  alias: "Emergency Lights Reset"
+  alias: Emergency Lights Reset
   sequence:
-    - service: light.turn_on
-      entity_id: light.light_038
-      data:
-        # Lights are set up in hass on a 0-50 brightness scale
-        # hass brightness values used here are expected to be 0-255 scale
-        # So the values given here get renormalized before being sent out mqtt, hence...
-        # 90 / 255 * 50 = 17 brightness on the tasmota scale
-        brightness: 30
-    - service: light.turn_on
-      entity_id: light.light_039
-      data:
-        # Lights are set up in hass on a 0-50 brightness scale
-        # hass brightness values used here are expected to be 0-255 scale
-        # So the values given here get renormalized before being sent out mqtt, hence...
-        # 69 / 255 * 50 = 13 brightness on the tasmota scale
-        brightness: 24
-    - service: light.turn_on
-      entity_id: light.light_040
-      data:
-        # Lights are set up in hass on a 0-50 brightness scale
-        # hass brightness values used here are expected to be 0-255 scale
-        # So the values given here get renormalized before being sent out mqtt, hence...
-        # 12 / 255 * 50 = 2 brightness on the tasmota scale
-        brightness: 46
-    - service: light.turn_on
-      entity_id: light.light_027
-      data:
-        # Lights are set up in hass on a 0-50 brightness scale
-        # hass brightness values used here are expected to be 0-255 scale
-        # So the values given here get renormalized before being sent out mqtt, hence...
-        # 5 / 255 * 50 = 2 brightness on the tasmota scale
-        brightness: 40
-    - service: switch.turn_on
-      entity_id: switch.CommonsCeilingFans
-    - service: switch.turn_on
-      entity_id: switch.LaserCeilingFan
-
+  - service: light.turn_on
+    entity_id: light.light_038
+    data:
+      brightness: 30
+  - service: light.turn_on
+    entity_id: light.light_039
+    data:
+      brightness: 24
+  - service: light.turn_on
+    entity_id: light.light_040
+    data:
+      brightness: 46
+  - service: light.turn_on
+    entity_id: light.light_027
+    data:
+      brightness: 40
+  - type: turn_on
+    device_id: e6216bdbeb15aa66fc7eb818eaec1942
+    entity_id: switch.commons_ceiling_fan
+    domain: switch
+  - type: turn_on
+    device_id: 968a252d87ed946fbf8d50ea3ab31c52
+    entity_id: switch.laser_zone_ceiling_fan
+    domain: switch
+  - type: turn_on
+    device_id: 2f1c04318e8a82b0f1d04c061b865169
+    entity_id: switch.machine_shop_exhaust_fan
+    domain: switch
+  - service: switch.turn_on
+    target:
+      entity_id: switch.cnc_roof_exhaust_fan
+  - service: switch.turn_on
+    target:
+      entity_id: switch.south_roof_exhaust_fan
+  mode: single
 blink_traffic_light_green:
   alias: Blink Traffic Light Green
   sequence:
-    - service: light.turn_off
-      entity_id:
-        - light.lighttrafficgreen
-    - delay:
-        milliseconds: 500
-    - service: light.turn_on
-      entity_id:
-        - light.lighttrafficgreen
-    - delay:
-        milliseconds: 500
-    - service: light.turn_off
-      entity_id:
-        - light.lighttrafficgreen
-
+  - service: light.turn_off
+    entity_id:
+    - light.lighttrafficgreen
+  - delay:
+      milliseconds: 500
+  - service: light.turn_on
+    entity_id:
+    - light.lighttrafficgreen
+  - delay:
+      milliseconds: 500
+  - service: light.turn_off
+    entity_id:
+    - light.lighttrafficgreen
 blink_traffic_light_yellow:
   alias: Blink Traffic Light yellow
   sequence:
-    - service: light.turn_off
-      entity_id:
-        - light.lighttrafficyellow
-    - delay:
-        milliseconds: 500
-    - service: light.turn_on
-      entity_id:
-        - light.lighttrafficyellow
-    - delay:
-        milliseconds: 500
-    - service: light.turn_off
-      entity_id:
-        - light.lighttrafficyellow
-
+  - service: light.turn_off
+    entity_id:
+    - light.lighttrafficyellow
+  - delay:
+      milliseconds: 500
+  - service: light.turn_on
+    entity_id:
+    - light.lighttrafficyellow
+  - delay:
+      milliseconds: 500
+  - service: light.turn_off
+    entity_id:
+    - light.lighttrafficyellow
 blink_traffic_light_red:
   alias: Blink Traffic Light red
   sequence:
-    - service: light.turn_off
-      entity_id:
-        - light.lighttrafficred
-    - delay:
-        milliseconds: 500
-    - service: light.turn_on
-      entity_id:
-        - light.lighttrafficred
-    - delay:
-        milliseconds: 500
-    - service: light.turn_off
-      entity_id:
-        - light.lighttrafficred
-
+  - service: light.turn_off
+    entity_id:
+    - light.lighttrafficred
+  - delay:
+      milliseconds: 500
+  - service: light.turn_on
+    entity_id:
+    - light.lighttrafficred
+  - delay:
+      milliseconds: 500
+  - service: light.turn_off
+    entity_id:
+    - light.lighttrafficred
 reset_snapple_rgb:
   alias: Reset Snapple RGB to White
   sequence:
-    - service: light.turn_on
-      entity_id: light.snapple_vending_light
-      data:
-        rgb_color: [255, 227, 217]
+  - service: light.turn_on
+    entity_id: light.snapple_vending_light
+    data:
+      rgb_color:
+      - 255
+      - 227
+      - 217
