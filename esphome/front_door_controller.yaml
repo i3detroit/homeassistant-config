@@ -76,8 +76,6 @@ light:
     num_leds: 4
     rgb_order: GRB
   - platform: partition
-    internal: true
-    name: "led_0"
     id: led_0
     segments:
       - id: led_strip
@@ -116,6 +114,7 @@ light:
 
 binary_sensor:
   - name: "Front Door Open"
+    device_class: door
     id: button_0
     platform: gpio
     pin:
@@ -135,6 +134,7 @@ binary_sensor:
           green: 50%
           blue: 0%
   - name: "Glass Door Open"
+    device_class: door
     id: button_1
     platform: gpio
     pin:
@@ -154,6 +154,7 @@ binary_sensor:
           green: 50%
           blue: 0%
   - name: "Glass Door Lock"
+    device_class: lock
     id: button_2
     platform: gpio
     pin:
