@@ -550,17 +550,12 @@
   - condition: device
     type: is_off
     device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
-    entity_id: light.small_bathroom_light_2
+    entity_id: light.small_bathroom_light
     domain: light
-    for:
-      hours: 0
-      minutes: 0
-      seconds: 5
-      milliseconds: 0
   action:
   - type: turn_on
     device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
-    entity_id: light.small_bathroom_light_2
+    entity_id: light.small_bathroom_light
     domain: light
   mode: single
 - id: '1628203629710'
@@ -575,7 +570,7 @@
   action:
   - type: turn_off
     device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
-    entity_id: light.small_bathroom_light_2
+    entity_id: light.small_bathroom_light
     domain: light
   mode: single
 - id: '1628203747980'
