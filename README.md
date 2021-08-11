@@ -1,0 +1,1 @@
+i3Detroit is a hackerspace in Ferndale, MI. This is our Home Assistant (and ESPHome) configuration. We have 150+ esp8266 and such based devices running ESPHome, Tasmota, and custom programs automating a bunch of things.
