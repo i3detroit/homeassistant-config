@@ -9,7 +9,7 @@
 substitutions:
   device_name: "front_door_status_ontroller"
   pretty_name: "Front Door Status Controller"
-  ui_name: "$(pretty_name)"
+  ui_name: "${pretty_name}"
 
 esphome:
   name: "${device_name}"
