@@ -1,0 +1,229 @@
+# Uses a button box PCB
+# Don't install LED resistors
+# Sensors on first 5 inputs (don't use 5V pin on JST connector)
+# LED strip on 6th JST connector - jumper over R6 to provide full 5V to strip
+
+<<: !include common/wifi.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "test_leds"
+  pretty_name: "Test LEDs"
+  ui_name: "Test LEDs"
+  icon: "mdi:lamp"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: d1_mini
+  build_path: "./build/${device_name}"
+  on_boot:
+    then:
+      - light.turn_off:
+          id: led_strip
+      - if:
+          condition:
+            lambda: 'return id(button_0).state == false;'
+          then:
+            - light.turn_on:
+                id: led_0
+                red: 0%
+                green: 50%
+                blue: 0%
+          else:
+            - light.turn_on:
+                id: led_0
+                red: 50%
+                green: 0%
+                blue: 0%
+      - if:
+          condition:
+            lambda: 'return id(button_1).state == false;'
+          then:
+            - light.turn_on:
+                id: led_1
+                red: 0%
+                green: 50%
+                blue: 0%
+          else:
+            - light.turn_on:
+                id: led_1
+                red: 50%
+                green: 0%
+                blue: 0%
+      - if:
+          condition:
+            lambda: 'return id(button_2).state == false;'
+          then:
+            - light.turn_on:
+                id: led_2
+                red: 0%
+                green: 50%
+                blue: 0%
+          else:
+            - light.turn_on:
+                id: led_2
+                red: 50%
+                green: 0%
+                blue: 0%
+
+api:
+
+light:
+  - platform: fastled_clockless
+    id: led_strip
+    chipset: WS2811
+    pin: GPIO2
+    num_leds: 4
+    rgb_order: GRB
+  - platform: partition
+    internal: true
+    name: "led_0"
+    id: led_0
+    segments:
+      - id: led_strip
+        from: 0
+        to: 0
+  - platform: partition
+    id: led_1
+    segments:
+      - id: led_strip
+        from: 1
+        to: 1
+  - platform: partition
+    id: led_2
+    segments:
+      - id: led_strip
+        from: 2
+        to: 2
+  - platform: partition
+    id: led_3
+    segments:
+      - id: led_strip
+        from: 3
+        to: 3
+  # - platform: partition
+  #   id: led_4
+  #   segments:
+  #     - id: led_strip
+  #       from: 4
+  #       to: 4
+  # - platform: partition
+  #   id: led_5
+  #   segments:
+  #     - id: led_strip
+  #       from: 5
+  #       to: 5
+
+binary_sensor:
+  - name: "Front Door Open"
+    id: button_0
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.turn_on:
+          id: led_0
+          red: 50%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_on:
+          id: led_0
+          red: 0%
+          green: 50%
+          blue: 0%
+  - name: "Glass Door Open"
+    id: button_1
+    platform: gpio
+    pin:
+      number: 12
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.turn_on:
+          id: led_1
+          red: 50%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_on:
+          id: led_1
+          red: 0%
+          green: 50%
+          blue: 0%
+  - name: "Glass Door Lock"
+    id: button_2
+    platform: gpio
+    pin:
+      number: 14
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.turn_on:
+          id: led_2
+          red: 50%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_on:
+          id: led_2
+          red: 0%
+          green: 50%
+          blue: 0%
+  - id: air_compressor_state
+    platform: homeassistant
+    entity_id: 'binary_sensor.air_compressor_power'
+    on_press:
+      - light.turn_on:
+          id: led_3
+          red: 50%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_on:
+          id: led_3
+          red: 0%
+          green: 50%
+          blue: 0%
+    
+  # - name: "Sensor 3"
+  #   id: button_3
+  #   platform: gpio
+  #   pin:
+  #     number: 5
+  #     mode: INPUT_PULLUP
+  #     inverted: True
+  #   on_press:
+  #     - light.turn_on:
+  #         id: led_3
+  #         red: 50%
+  #         green: 0%
+  #         blue: 0%
+  #   on_release:
+  #     - light.turn_on:
+  #         id: led_3
+  #         red: 0%
+  #         green: 50%
+  #         blue: 0% 
+  # - name: "Sensor 4"
+  #   id: button_4
+  #   platform: gpio
+  #   pin:
+  #     number: 4
+  #     mode: INPUT_PULLUP
+  #     inverted: True
+  #   on_press:
+  #     - light.turn_on:
+  #         id: led_4
+  #         red: 50%
+  #         green: 0%
+  #         blue: 0%
+  #   on_release:
+  #     - light.turn_on:
+  #         id: led_4
+  #         red: 0%
+  #         green: 50%
+  #         blue: 0% 
