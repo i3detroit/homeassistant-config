@@ -14,7 +14,7 @@ binary_sensor:
             entity_id: "${target_1}"
     on_multi_click:
       timing:
-        - ON for at least 0.4s
+        - ON for at least 0.5s
       then:
         - homeassistant.service:
             service: homeassistant.turn_on
@@ -37,7 +37,7 @@ binary_sensor:
             entity_id: "${target_1}"
     on_multi_click:
       timing:
-        - ON for at least 0.4s
+        - ON for at least 0.5s
       then:
         - homeassistant.service:
             service: homeassistant.turn_off
@@ -60,7 +60,7 @@ binary_sensor:
             entity_id: "${target_2}"
     on_multi_click:
       timing:
-        - ON for at least 0.4s
+        - ON for at least 0.5s
       then:
         - homeassistant.service:
             service: homeassistant.turn_on
@@ -83,7 +83,7 @@ binary_sensor:
             entity_id: "${target_2}"
     on_multi_click:
       timing:
-        - ON for at least 0.4s
+        - ON for at least 0.5s
       then:
         - homeassistant.service:
             service: homeassistant.turn_off
@@ -103,10 +103,10 @@ binary_sensor:
       - homeassistant.service:
           service: homeassistant.turn_on
           data:
-            entity_id: ${target_3}"
+            entity_id: "${target_3}"
     on_multi_click:
       timing:
-        - ON for at least 0.4s
+        - ON for at least 0.5s
       then:
         - homeassistant.service:
             service: homeassistant.turn_on
@@ -126,10 +126,10 @@ binary_sensor:
       - homeassistant.service:
           service: homeassistant.turn_off
           data:
-            entity_id: ${target_3}"
+            entity_id: "${target_3}"
     on_multi_click:
       timing:
-        - ON for at least 0.4s
+        - ON for at least 0.5s
       then:
         - homeassistant.service:
             service: homeassistant.turn_off

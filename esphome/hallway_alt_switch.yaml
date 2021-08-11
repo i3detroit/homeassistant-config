@@ -1,0 +1,31 @@
+# Based on SS01s_no_relay
+<<: !include common/treatlife_ss01s_no_relay.yaml
+
+substitutions:
+  device_name: "hallway_alt_switch"
+  pretty_name: "Hallway Alt Switch"
+  ui_name: "Hallway Alt Switch"
+  target_name: "hallway_lightswitch"
+
+#overriding common/treatlife_ss01s_no_relay.yaml
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: "esphome.${target_name}_power_toggle"
+
+api:
+  services:
+    - service: led_on
+      then:
+        - switch.turn_on:
+            id: power_led
+    - service: led_off
+      then:
+        - switch.turn_off:
+            id: power_led

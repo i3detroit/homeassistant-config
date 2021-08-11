@@ -1,0 +1,31 @@
+<<: !include common/sonoff_s31_switch.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "full_spectrum_laser"
+  pretty_name: "Full Spectrum Laser Outlet"
+  ui_name: "Full Spectrum Laser"
+  icon: "mdi:power"
+
+# overriding common/sonof_s31_switch.yaml
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    internal: True
+    pin:
+      number: 0
+      mode: INPUT_PULLUP
+      inverted: True
+  - platform: status
+    name: "${pretty_name} Status"
+
+switch:
+  - name: "${ui_name}"
+    id: relay_1
+    icon: "${icon}"
+    platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    restore_mode: ALWAYS_ON
+    internal: True

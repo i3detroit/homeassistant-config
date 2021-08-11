@@ -1,8 +1,3 @@
-- platform: mqtt
-  name: "Classroom East Light Switch"
-  state_topic: "cmnd/i3/inside/classroom/lights-east/POWER"
-  force_update: True
-
 # - platform: template
 #   sensors:
 #     recycle_day:

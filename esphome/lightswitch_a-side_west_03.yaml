@@ -1,0 +1,8 @@
+<<: !include common/button_box_4_long_press.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "a_side_lightswitch_west_03"
+  pretty_name: "A-Side Lightswitch West 03"
+  target_1: "group.row_4_lights"
+  target_2: "group.row_5_lights"

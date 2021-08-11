@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_light.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "media_lab_lightswitch"
+  pretty_name: "Media Lab Lightswitch"
+  ui_name: "Media Lab Lights"
+  icon: "mdi:lightbulb"

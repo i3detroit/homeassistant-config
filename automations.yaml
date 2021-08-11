@@ -368,3 +368,234 @@
   action:
   - service: shell_command.spaceapi_upload
   mode: single
+- id: '1628099784943'
+  alias: Large Bathroom Motion ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.large_bathroom_motion_sensor
+    to: 'on'
+  condition:
+  - condition: device
+    type: is_off
+    device_id: 535a24966a688f9ddabfd042b92ad6a3
+    entity_id: light.large_bathroom_light
+    domain: light
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  action:
+  - type: turn_on
+    device_id: 535a24966a688f9ddabfd042b92ad6a3
+    entity_id: light.large_bathroom_light
+    domain: light
+  mode: single
+- id: '1628099880959'
+  alias: Large Bathroom Motion OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.large_bathroom_motion_sensor
+    to: 'off'
+    for: 00:10:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 535a24966a688f9ddabfd042b92ad6a3
+    entity_id: light.large_bathroom_light
+    domain: light
+  mode: single
+- id: '1628099948333'
+  alias: Large Bathroom Fan Timeout
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 9934d59d904e351e98e5a4316e2569f7
+    entity_id: switch.large_bathroom_exhaust_fan
+    domain: switch
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 9934d59d904e351e98e5a4316e2569f7
+    entity_id: switch.large_bathroom_exhaust_fan
+    domain: switch
+  mode: single
+- id: '1628115715834'
+  alias: Dooridor and Hall Lights Sync
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: b5f81dc5a6ecf22d42a2d360866a13a4
+    entity_id: light.classroom_east_lights
+    domain: light
+  - platform: device
+    type: turned_off
+    device_id: b5f81dc5a6ecf22d42a2d360866a13a4
+    entity_id: light.classroom_east_lights
+    domain: light
+  condition: []
+  action:
+  - service: light.turn_{{ trigger.to_state.state }}
+    target:
+      entity_id: light.dooridor_light
+  mode: single
+- id: '1628116035884'
+  alias: Classroom Lights Sync
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: 96c207da5a46f5aa1a9bb0389635181d
+    entity_id: binary_sensor.classroom_east_alt_switch_button
+    domain: binary_sensor
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: device
+        type: is_on
+        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
+        entity_id: light.classroom_east_lights
+        domain: light
+      sequence:
+      - type: turn_off
+        device_id: 6236b48b4ccbaae89aa7ee6b525d2210
+        entity_id: light.hallway_lights
+        domain: light
+      - type: turn_off
+        device_id: d6ad15cf2b2f2802c956b427dddd9191
+        entity_id: light.classroom_west_lights
+        domain: light
+      - type: turn_off
+        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
+        entity_id: light.classroom_east_lights
+        domain: light
+    - conditions:
+      - condition: device
+        type: is_off
+        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
+        entity_id: light.classroom_east_lights
+        domain: light
+      sequence:
+      - type: turn_on
+        device_id: d6ad15cf2b2f2802c956b427dddd9191
+        entity_id: light.classroom_west_lights
+        domain: light
+      - type: turn_on
+        device_id: 6236b48b4ccbaae89aa7ee6b525d2210
+        entity_id: light.hallway_lights
+        domain: light
+      - type: turn_on
+        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
+        entity_id: light.classroom_east_lights
+        domain: light
+    default: []
+  mode: single
+- id: '1628116933429'
+  alias: Disco Mode
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: stat/i3/inside/commons/disco/POWER
+    payload: 'ON'
+  - platform: mqtt
+    topic: stat/i3/inside/commons/disco/POWER
+    payload: 'OFF'
+  condition: []
+  action:
+  - service: light.turn_{{ trigger.payload }}
+    target:
+      entity_id:
+      - light.swirly_lights_01
+      - light.swirly_lights_02
+      - light.lanterns
+      - light.chandelier01
+      - light.chandelier02
+      - light.fairy_lights
+  - service: switch.turn_{{ trigger.payload }}
+    target:
+      entity_id: switch.disco_spotlights
+  mode: single
+- id: '1628117264623'
+  alias: Craft Room Lights Button
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: cmnd/i3/inside/craftroom/light/power
+    payload: '2'
+  condition: []
+  action:
+  - type: toggle
+    device_id: e8dbe6d72d480979dea9f4cdbc8e2582
+    entity_id: light.craft_room_lights
+    domain: light
+  mode: single
+- id: '1628203562056'
+  alias: Small Bathroom Motion ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.small_bathroom_motion_sensor
+    to: 'on'
+  condition:
+  - condition: device
+    type: is_off
+    device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
+    entity_id: light.small_bathroom_light_2
+    domain: light
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  action:
+  - type: turn_on
+    device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
+    entity_id: light.small_bathroom_light_2
+    domain: light
+  mode: single
+- id: '1628203629710'
+  alias: Small Bathroom Motion OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.small_bathroom_motion_sensor
+    to: 'off'
+    for: 00:10:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
+    entity_id: light.small_bathroom_light_2
+    domain: light
+  mode: single
+- id: '1628203747980'
+  alias: Small bathroom fan timeout
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 98e2b3734333f134187dcd38172f7aeb
+    entity_id: switch.small_bathroom_exhaust_fan
+    domain: switch
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 98e2b3734333f134187dcd38172f7aeb
+    entity_id: switch.small_bathroom_exhaust_fan
+    domain: switch
+  mode: single

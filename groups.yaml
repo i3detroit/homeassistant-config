@@ -69,19 +69,19 @@ misc_lights:
     - light.welding_light
     - light.vinyl_light
     - light.treehouse_light
-    - light.LightLargeBathroom
+    - light.large_bathroom_light
     - light.tool_crib_workbench_lights
 
 office_lights:
   name: "Office Lights"
   icon: mdi:ceiling-light
   entities:
-    - light.Classroom_Lights_East
-    - light.Classroom_Lights_West
-    - light.Dooridor_Lights
-    - light.Hallway_Light
-    - light.LightMediaLab
-    - light.Craft_Room_Light
+    - light.Classroom_East_Lights
+    - light.Classroom_West_Lights
+    - light.Dooridor_Light
+    - light.Hallway_Lights
+    - light.Media_Lab_Lights
+    - light.Craft_Room_Lights
     - light.elab_lights
     - light.Small_Bathroom_Light
     - light.Small_Bathroom_Shower_Light

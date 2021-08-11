@@ -46,26 +46,6 @@
   payload_not_available: "Offline"
 
 - platform: mqtt
-  name: "Large Bathroom Vent Fan"
-  state_topic: "stat/i3/inside/large-bathroom/vent/POWER"
-  command_topic: "cmnd/i3/inside/large-bathroom/vent/POWER"
-  payload_on: "ON"
-  payload_off: "OFF"
-  availability_topic: "tele/i3/inside/large-bathroom/vent/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
-  name: "Small Bathroom Vent Fan"
-  state_topic: "stat/i3/inside/small-bathroom/vent/POWER"
-  command_topic: "cmnd/i3/inside/small-bathroom/vent/POWER"
-  payload_on: "ON"
-  payload_off: "OFF"
-  availability_topic: "tele/i3/inside/small-bathroom/vent/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
   name: "Chinesium Laser"
   state_topic: "stat/i3/inside/fablab/chinesium-laser/POWER"
   command_topic: "cmnd/i3/inside/fablab/chinesium-laser/POWER"
@@ -103,26 +83,6 @@
   payload_on: "ON"
   payload_off: "OFF"
   availability_topic: "tele/i3/inside/laser-zone/wolverine/chiller/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
-  name: "Hallway Light Switch West"
-  state_topic: "stat/i3/inside/hallway/lightswitch-west/POWER"
-  command_topic: "cmnd/i3/inside/hallway/lightswitch-west/POWER"
-  payload_on: "ON"
-  payload_off: "OFF"
-  availability_topic: "tele/i3/inside/hallway/lightswitch-west/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
-  name: "Hallway Light Switch West"
-  state_topic: "stat/i3/inside/hallway/lightswitch-east/POWER"
-  command_topic: "cmnd/i3/inside/hallway/lightswitch-east/POWER"
-  payload_on: "ON"
-  payload_off: "OFF"
-  availability_topic: "tele/i3/inside/hallway/lightswitch-east/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
 
@@ -168,16 +128,6 @@
   payload_not_available: "Offline"
 
 #Ceiling Fans
-- platform: mqtt
-  name: "LaserCeilingFan"
-  state_topic: "stat/i3/inside/laser-zone/ceiling-fan/POWER"
-  command_topic: "cmnd/i3/inside/laser-zone/ceiling-fan/POWER"
-  payload_on: "ON"
-  payload_off: "OFF"
-  availability_topic: "tele/i3/inside/laser-zone/ceiling-fan/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
 - platform: mqtt
   name: "MachineShopCeilingFan"
   state_topic: "stat/i3/inside/machine-shop/ceiling-fan/POWER"
@@ -261,16 +211,6 @@
   availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
-
-- platform: mqtt
-  name: 'Machine Shop Roof Exhaust Fan'
-  state_topic: 'stat/i3/inside/b-side/roof-exhaust-fan/POWER'
-  command_topic: 'cmnd/i3/inside/b-side/roof-exhaust-fan/POWER'
-  availability_topic: 'tele/i3/inside/b-side/roof-exhaust-fan/LWT'
-  payload_available: 'Online'
-  payload_not_available: 'Offline'
-  payload_on: 'ON'
-  payload_off: 'OFF'
 
 - platform: mqtt
   name: 'Fablab AC'

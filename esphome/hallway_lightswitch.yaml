@@ -1,0 +1,31 @@
+<<: !include common/treatlife_ss01s_light.yaml
+
+substitutions:
+  device_name: "hallway_lightswitch"
+  pretty_name: "Hallway Lightswitch"
+  ui_name: "Hallway Lights"
+  icon: "mdi:lightbulb"
+  switch_name: "hallway_alt_switch"
+
+api:
+  services:
+    - service: power_toggle
+      then:
+        - light.toggle:
+            id: light_1
+
+# overwriting the light in common/sonoff_ss01s_light.yaml
+light:
+  - platform: binary
+    name: "${ui_name}"
+    id: light_1
+    output: relay_1
+    restore_mode: RESTORE_DEFAULT_OFF
+    on_turn_on:
+      - homeassistant.service:
+          service: "esphome.${switch_name}_led_on"
+      - switch.turn_on: power_led
+    on_turn_off:
+      - homeassistant.service:
+          service: "esphome.${switch_name}_led_off"
+      - switch.turn_off: power_led

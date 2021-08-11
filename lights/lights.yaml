@@ -1,24 +1,4 @@
 - platform: mqtt
-  name: "LightLargeBathroom"
-  state_topic: "stat/i3/inside/large-bathroom/light/POWER"
-  command_topic: "cmnd/i3/inside/large-bathroom/light/POWER"
-  availability_topic: "tele/i3/inside/large-bathroom/light/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "LightMediaLab"
-  state_topic: "stat/i3/inside/media-lab/lights/POWER"
-  command_topic: "cmnd/i3/inside/media-lab/lights/POWER"
-  availability_topic: "tele/i3/inside/media-lab/lights/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
   name: "LightTrafficRed"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER1"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER1"
@@ -63,76 +43,6 @@
   state_topic: "stat/i3/inside/accent/chandelier-02/POWER"
   command_topic: "cmnd/i3/inside/accent/chandelier-02/POWER"
   availability_topic: "tele/i3/inside/accent/chandelier-02/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Craft Room Light"
-  state_topic: "stat/i3/inside/craftroom/light/POWER"
-  command_topic: "cmnd/i3/inside/craftroom/light/POWER"
-  availability_topic: "tele/i3/inside/craftroom/light/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Hallway Light"
-  state_topic: "stat/i3/inside/hallway/light/POWER"
-  command_topic: "cmnd/i3/inside/hallway/light/POWER"
-  availability_topic: "tele/i3/inside/hallway/light/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Small Bathroom Light"
-  state_topic: "stat/i3/inside/small-bathroom/light/POWER"
-  command_topic: "cmnd/i3/inside/small-bathroom/light/POWER"
-  availability_topic: "tele/i3/inside/small-bathroom/light/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Small Bathroom Shower Light"
-  state_topic: "stat/i3/inside/small-bathroom/shower-light/POWER"
-  command_topic: "cmnd/i3/inside/small-bathroom/shower-light/POWER"
-  availability_topic: "tele/i3/inside/small-bathroom/shower-light/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Classroom Lights East"
-  state_topic: "stat/i3/inside/classroom/lights-east/POWER"
-  command_topic: "cmnd/i3/inside/classroom/lights-east/POWER"
-  availability_topic: "tele/i3/inside/classroom/lights-east/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Classroom Lights West"
-  state_topic: "stat/i3/inside/classroom/lights-west/POWER"
-  command_topic: "cmnd/i3/inside/classroom/lights-west/POWER"
-  availability_topic: "tele/i3/inside/classroom/lights-west/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Dooridor Lights"
-  state_topic: "stat/i3/inside/dooridor/lights/POWER"
-  command_topic: "cmnd/i3/inside/dooridor/lights/POWER"
-  availability_topic: "tele/i3/inside/dooridor/lights/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
   payload_on: "ON"

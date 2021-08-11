@@ -1,8 +1,0 @@
-<<: !include common/sonoff_basic_light.yaml
-<<: !include common/api.yaml
-
-substitutions:
-  device_name: "light_038"
-  pretty_name: "Light 038"
-  ui_name: "Light 038"
-  icon: "mdi:lightbulb"

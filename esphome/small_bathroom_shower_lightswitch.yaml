@@ -1,8 +1,37 @@
+# This is set up in tandem with small_bathroom_lightswitch.
+# There are two lights in the room which we want to always be on or off together.
+# When the main bathroom light changes state, it commands the shower light to the same state.
+# The shower lightswitch doesn't control its own light. Instead it controls
+# the main light which then by proxy controls the shower light.
+# I hope this prevents any future bathroom raves.
+
 <<: !include common/treatlife_ss01s_light.yaml
-<<: !include common/api.yaml
 
 substitutions:
   device_name: "small_bathroom_shower_lightswitch"
   pretty_name: "Small Bathroom Shower Lightswitch"
   ui_name: "Small Bathroom Shower Light"
   icon: "mdi:lightbulb"
+
+api:
+  services:
+    - service: power_on
+      then:
+        - light.turn_on:
+            id: light_1
+    - service: power_off
+      then:
+        - light.turn_off:
+            id: light_1
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      then:
+        - homeassistant.service:
+            service: "esphome.small_bathroom_lightswitch_power_toggle"

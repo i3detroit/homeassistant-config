@@ -1,0 +1,10 @@
+<<: !include common/button_box_6_long_press.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "a_side_lightswitch_east_02"
+  pretty_name: "A-Side Lightswitch East 02"
+  target_1: "group.row_1_lights"
+  target_2: "group.row_2_lights"
+  target_3: "group.row_3_lights"
+  ip_address: 10.13.107.143

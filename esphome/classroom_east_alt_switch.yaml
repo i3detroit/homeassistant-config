@@ -1,0 +1,18 @@
+# Based on SS01s_no_relay
+<<: !include common/treatlife_ss01s_no_relay.yaml
+
+substitutions:
+  device_name: "classroom_east_alt_switch"
+  pretty_name: "Classroom East Alt Switch"
+  ui_name: "Classroom East Alt Switch"
+
+api:
+  services:
+    - service: led_on
+      then:
+        - switch.turn_on:
+            id: power_led
+    - service: led_off
+      then:
+        - switch.turn_off:
+            id: power_led
