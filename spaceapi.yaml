@@ -38,6 +38,8 @@ sensors:
   laser_cutters:
     - "binary_sensor.cyclops_power"
     - "binary_sensor.wolverine_power"
+  last_updated:
+    - "sensor.date_time_iso"
 # projects:
 #   - wiki: "https://i3detroit.org/wiki"
 #   - github: "https://github.com/i3detroit"
