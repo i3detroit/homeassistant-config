@@ -7,10 +7,9 @@
 <<: !include common/esp_home_components.yaml
 
 substitutions:
-  device_name: "test_leds"
-  pretty_name: "Test LEDs"
-  ui_name: "Test LEDs"
-  icon: "mdi:lamp"
+  device_name: "front_door_status_ontroller"
+  pretty_name: "Front Door Status Controller"
+  ui_name: "$(pretty_name)"
 
 esphome:
   name: "${device_name}"
