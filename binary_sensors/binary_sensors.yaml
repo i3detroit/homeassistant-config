@@ -98,4 +98,38 @@
   # payload_not_available: "offline"
   device_class: door
   force_update: True
-  
+
+- platform: template
+  sensors:
+    officeap:
+      friendly_name: "Office AP"
+      device_class: problem
+      value_template: "{% if is_state('device_tracker.officeap', 'home') %}off{% else %}on{% endif %}"
+
+- platform: template
+  sensors:
+    mezzanineap:
+      friendly_name: "Mezzanine AP"
+      device_class: problem
+      value_template: "{% if is_state('device_tracker.mezzanineap', 'home') %}off{% else %}on{% endif %}"
+
+- platform: template
+  sensors:
+    toolcribap:
+      friendly_name: "Tool Crib AP"
+      device_class: problem
+      value_template: "{% if is_state('device_tracker.toolcribap', 'home') %}off{% else %}on{% endif %}"
+
+- platform: template
+  sensors:
+    bsidesouthap:
+      friendly_name: "B-Side South AP"
+      device_class: problem
+      value_template: "{% if is_state('device_tracker.bsidesouthap', 'home') %}off{% else %}on{% endif %}"
+
+- platform: template
+  sensors:
+    bsidenorthap:
+      friendly_name: "B-Side North AP"
+      device_class: problem
+      value_template: "{% if is_state('device_tracker.bsidenorthap', 'home') %}off{% else %}on{% endif %}"
