@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    office_subpanel_breaker_7:
+      friendly_name: "Office Subpanel Breaker 7"
+      device_class: problem
+      value_template: "{{ expand('group.row_2_lights')|selectattr('state','in',['unavailable','unknown','none'])|list|count == expand('group.row_2_lights')|list|count }}"
