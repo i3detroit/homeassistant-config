@@ -2,6 +2,9 @@
 <<: !include esp_home_components.yaml
 <<: !include board_esp01_1m.yaml
 
+packages:
+  restart: !include restart.yaml
+
 status_led:
   pin:
     number: 13
