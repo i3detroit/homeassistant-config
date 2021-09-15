@@ -62,3 +62,38 @@ a_side_keypad_timed_out:
                 payload: !secret a_side_keypad_open_payload
       default: []
   mode: single
+
+b_side_keypad_timed_out:
+  alias: b-side office keypad timed out
+  sequence:
+    - service: notify.hass_slack
+      data:
+        message: B-side office keypad's heartbeat has timed out. Attempting to restart it...
+    - service: script.turn_on
+      target:
+        entity_id: script.b_side_keypad_power_cycle
+    - wait_for_trigger:
+        - platform: mqtt
+          topic: !secret b_side_keypad_heartbeat_topic
+      timeout: '00:02:00'
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: '{{ wait.trigger is none }}'
+          sequence:
+            - service: notify.hass_slack
+              data:
+                message: B-side office keypad did not come back online after restart. Someone should check on it.
+        - conditions:
+            - condition: template
+              value_template: '{{ wait.trigger is not none }}'
+          sequence:
+            - service: notify.hass_slack
+              data:
+                message: B-side office keypad is back online after restarting.
+            - service: mqtt.publish
+              data:
+                topic: !secret b_side_keypad_command_topic
+                payload: !secret b_side_keypad_open_payload
+      default: []
+  mode: single

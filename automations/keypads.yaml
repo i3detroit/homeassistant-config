@@ -15,7 +15,22 @@
       entity_id: script.a_side_keypad_timed_out
   mode: restart
 
-
+- alias: B-Side keypad heartbeat
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: !secret b_side_keypad_heartbeat_topic
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 4
+      seconds: 0
+      milliseconds: 0
+  - service: script.turn_on
+    target:
+      entity_id: script.b_side_keypad_timed_out
+  mode: restart
 
 # #################################################
 # # A-side Keypad
