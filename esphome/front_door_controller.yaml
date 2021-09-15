@@ -7,9 +7,10 @@
 <<: !include common/esp_home_components.yaml
 
 substitutions:
-  device_name: "front_door_status_ontroller"
+  device_name: "front_door_status_controller"
   pretty_name: "Front Door Status Controller"
   ui_name: "${pretty_name}"
+  ip_address: "10.13.107.197"
 
 esphome:
   name: "${device_name}"
@@ -27,54 +28,131 @@ esphome:
             - light.turn_on:
                 id: led_0
                 red: 0%
-                green: 50%
+                green: 10%
                 blue: 0%
           else:
             - light.turn_on:
                 id: led_0
-                red: 50%
+                red: 10%
                 green: 0%
                 blue: 0%
+      - wait_until:
+          api.connected:
+      - delay: 5s
       - if:
           condition:
-            lambda: 'return id(button_1).state == false;'
+            lambda: 'return id(glass_door_open_state).state == false;'
           then:
             - light.turn_on:
                 id: led_1
                 red: 0%
-                green: 50%
+                green: 10%
                 blue: 0%
           else:
             - light.turn_on:
                 id: led_1
-                red: 50%
+                red: 10%
                 green: 0%
                 blue: 0%
       - if:
           condition:
-            lambda: 'return id(button_2).state == false;'
+            lambda: 'return id(glass_door_lock_state).state == false;'
           then:
             - light.turn_on:
                 id: led_2
                 red: 0%
-                green: 50%
+                green: 10%
                 blue: 0%
           else:
             - light.turn_on:
                 id: led_2
-                red: 50%
+                red: 10%
                 green: 0%
                 blue: 0%
+      - if:
+          condition:
+            lambda: 'return id(air_compressor_state).state == false;'
+          then:
+            - light.turn_on:
+                id: led_3
+                red: 0%
+                green: 10%
+                blue: 0%
+          else:
+            - light.turn_on:
+                id: led_3
+                red: 10%
+                green: 0%
+                blue: 0%
+      # - if:
+      #     condition:
+      #       lambda: 'return id(button_1).state == false;'
+      #     then:
+      #       - light.turn_on:
+      #           id: led_1
+      #           red: 0%
+      #           green: 10%
+      #           blue: 0%
+      #     else:
+      #       - light.turn_on:
+      #           id: led_1
+      #           red: 10%
+      #           green: 0%
+      #           blue: 0%
+      # - if:
+      #     condition:
+      #       lambda: 'return id(button_2).state == false;'
+      #     then:
+      #       - light.turn_on:
+      #           id: led_2
+      #           red: 0%
+      #           green: 10%
+      #           blue: 0%
+      #     else:
+      #       - light.turn_on:
+      #           id: led_2
+      #           red: 10%
+      #           green: 0%
+      #           blue: 0%
 
 api:
+  services:
+    - service: led_1_green
+      then:
+        - light.turn_on:
+            id: led_1
+            red: 0%
+            green: 10%
+            blue: 0%
+    - service: led_1_red
+      then:
+        - light.turn_on:
+            id: led_1
+            red: 10%
+            green: 0%
+            blue: 0%
+    - service: led_2_green
+      then:
+        - light.turn_on:
+            id: led_2
+            red: 0%
+            green: 10%
+            blue: 0%
+    - service: led_2_red
+      then:
+        - light.turn_on:
+            id: led_2
+            red: 10%
+            green: 0%
+            blue: 0%
 
 light:
   - platform: fastled_clockless
     id: led_strip
     chipset: WS2811
     pin: GPIO2
-    num_leds: 4
-    rgb_order: GRB
+    num_leds: 5
+    rgb_order: RGB
   - platform: partition
     id: led_0
     segments:
@@ -99,18 +177,12 @@ light:
       - id: led_strip
         from: 3
         to: 3
-  # - platform: partition
-  #   id: led_4
-  #   segments:
-  #     - id: led_strip
-  #       from: 4
-  #       to: 4
-  # - platform: partition
-  #   id: led_5
-  #   segments:
-  #     - id: led_strip
-  #       from: 5
-  #       to: 5
+  - platform: partition
+    id: led_4
+    segments:
+      - id: led_strip
+        from: 4
+        to: 4
 
 binary_sensor:
   - name: "Front Door Open"
@@ -120,77 +192,91 @@ binary_sensor:
     pin:
       number: 13
       mode: INPUT_PULLUP
-      inverted: True
+      inverted: false
     on_press:
       - light.turn_on:
           id: led_0
-          red: 50%
+          red: 10%
           green: 0%
           blue: 0%
     on_release:
       - light.turn_on:
           id: led_0
           red: 0%
-          green: 50%
+          green: 10%
           blue: 0%
-  - name: "Glass Door Open"
-    device_class: door
-    id: button_1
-    platform: gpio
-    pin:
-      number: 12
-      mode: INPUT_PULLUP
-      inverted: True
-    on_press:
-      - light.turn_on:
-          id: led_1
-          red: 50%
-          green: 0%
-          blue: 0%
-    on_release:
-      - light.turn_on:
-          id: led_1
-          red: 0%
-          green: 50%
-          blue: 0%
-  - name: "Glass Door Lock"
-    device_class: lock
-    id: button_2
-    platform: gpio
-    pin:
-      number: 14
-      mode: INPUT_PULLUP
-      inverted: True
-    on_press:
-      - light.turn_on:
-          id: led_2
-          red: 50%
-          green: 0%
-          blue: 0%
-    on_release:
-      - light.turn_on:
-          id: led_2
-          red: 0%
-          green: 50%
-          blue: 0%
+
+  - id: glass_door_open_state
+    platform: homeassistant
+    entity_id: 'binary_sensor.glass_door_open'
+
+  - id: glass_door_lock_state
+    platform: homeassistant
+    entity_id: 'binary_sensor.glass_door_lock'
+
   - id: air_compressor_state
     platform: homeassistant
     entity_id: 'binary_sensor.air_compressor_power'
     on_press:
       - light.turn_on:
           id: led_3
-          red: 50%
+          red: 10%
           green: 0%
           blue: 0%
     on_release:
       - light.turn_on:
           id: led_3
           red: 0%
-          green: 50%
+          green: 10%
           blue: 0%
     
+  # - name: "Garage Door"
+  #   device_class: garage_door
+  #   id: button_1
+  #   platform: gpio
+  #   pin:
+  #     number: 12
+  #     mode: INPUT_PULLUP
+  #     inverted: True
+  #   on_press:
+  #     - light.turn_on:
+  #         id: led_4
+  #         red: 10%
+  #         green: 0%
+  #         blue: 0%
+  #   on_release:
+  #     - light.turn_on:
+  #         id: led_4
+  #         red: 0%
+  #         green: 10%
+  #         blue: 0% 
+  #
+  # - name: "Sensor 2"
+  #   device_class: door
+  #   id: button_2
+  #   force_update: true
+  #   platform: gpio
+  #   pin:
+  #     number: 14
+  #     mode: INPUT_PULLUP
+  #     inverted: True
+  #   on_press:
+  #     - light.turn_on:
+  #         id: led_x
+  #         red: 10%
+  #         green: 0%
+  #         blue: 0%
+  #   on_release:
+  #     - light.turn_on:
+  #         id: led_x
+  #         red: 0%
+  #         green: 10%
+  #         blue: 0%
+  #
   # - name: "Sensor 3"
+  #   device_class: lock
   #   id: button_3
+  #   force_update: true
   #   platform: gpio
   #   pin:
   #     number: 5
@@ -198,17 +284,19 @@ binary_sensor:
   #     inverted: True
   #   on_press:
   #     - light.turn_on:
-  #         id: led_3
-  #         red: 50%
+  #         id: led_x
+  #         red: 10%
   #         green: 0%
   #         blue: 0%
   #   on_release:
   #     - light.turn_on:
-  #         id: led_3
+  #         id: led_x
   #         red: 0%
-  #         green: 50%
-  #         blue: 0% 
+  #         green: 10%
+  #         blue: 0%
+  #
   # - name: "Sensor 4"
+  #   device_class: door
   #   id: button_4
   #   platform: gpio
   #   pin:
@@ -217,13 +305,13 @@ binary_sensor:
   #     inverted: True
   #   on_press:
   #     - light.turn_on:
-  #         id: led_4
-  #         red: 50%
+  #         id: led_x
+  #         red: 10%
   #         green: 0%
   #         blue: 0%
   #   on_release:
   #     - light.turn_on:
-  #         id: led_4
+  #         id: led_x
   #         red: 0%
-  #         green: 50%
+  #         green: 10%
   #         blue: 0% 
