@@ -22,7 +22,7 @@ row_3_lights:
   icon: mdi:ceiling-light
   entities:
     - light.light_010
-    - light.light_011
+    - light.light_072
     - light.light_012
     - light.light_013
     - light.light_014
@@ -66,7 +66,6 @@ misc_lights:
   name: "Misc. Lights"
   icon: mdi:ceiling-light
   entities:
-    - light.welding_light
     - light.vinyl_light
     - light.treehouse_light
     - light.large_bathroom_light
@@ -94,10 +93,6 @@ b_side_lights:
     # - light.light_043
     # - light.light_044
     # - light.light_045
-    - light.light_046
-    - light.light_047
-    - light.light_048
-    - light.light_049
     - light.light_052
 #    - light.light_053
     - light.light_054
@@ -176,8 +171,8 @@ emergency_lights:
     - light.light_027
     - light.light_038
 
-all_normal_lights:
-  name: All Lights
+all_normal_light_groups:
+  name: All Light Groups
   icon: mdi:lightbulb
   entities:
     - group.row_1_lights
@@ -191,3 +186,105 @@ all_normal_lights:
     - group.b_side_lights
     - group.wood_shop_lights
     - group.kiln_jewelry_lights
+
+all_normal_lights:
+  name: Any Lights
+  icon: mdi:lightbulb
+  entities:
+    - light.light_001
+    - light.light_002
+    - light.light_003
+    - light.light_004
+    - light.light_005
+    - light.light_006
+    - light.light_007
+    - light.light_008
+    - light.light_009
+    - light.light_010
+    - light.light_011
+    - light.light_012
+    - light.light_013
+    - light.light_014
+    - light.light_015
+    - light.light_016
+    - light.light_017
+    - light.light_018
+    - light.light_019
+    - light.light_020
+    - light.light_021
+    - light.light_022
+    - light.light_023
+    - light.light_024
+    - light.light_025
+    - light.light_026
+    - light.light_029
+    - light.light_030
+    - light.light_031
+    - light.light_032
+    - light.light_033
+    - light.light_034
+    - light.light_035
+    - light.vinyl_light
+    - light.treehouse_light
+    - light.tool_crib_workbench_lights
+    - light.Classroom_East_Lights
+    - light.Classroom_West_Lights
+    - light.Dooridor_Light
+    - light.Hallway_Lights
+    - light.Media_Lab_Lights
+    - light.Craft_Room_Lights
+    - light.elab_lights
+    - switch.b_side_office_lights
+    - light.light_046
+    - light.light_047
+    - light.light_048
+    - light.light_049
+    - light.light_052
+    - light.light_054
+    - light.light_067
+    - light.light_068
+    - light.light_069
+    - light.light_070
+    - light.light_071
+    - light.light_073
+    - light.light_074
+    - light.light_075
+    - light.light_076
+    - light.light_077
+    - light.light_078
+    - light.light_079
+    - light.light_080
+    - light.light_081
+    - light.light_082
+    - light.light_083
+    - light.light_084
+    - light.light_085
+    - light.light_086
+    - light.light_087
+    - light.light_089
+    - light.light_090
+    - light.light_091
+    - light.light_092
+    - light.light_093
+    - light.light_094
+    - light.light_095
+    - light.light_096
+    - light.light_097
+    - light.light_098
+    - light.light_099
+    - light.light_100
+    - light.light_101
+    - light.light_102
+    - light.light_103
+    - light.light_104
+    - light.light_106
+    - light.light_050
+    - light.light_051
+    - light.light_055
+    - light.light_059
+    - light.light_060
+    - light.light_061
+    - light.light_063
+    - light.light_064
+    - light.light_065
+    - light.light_088
