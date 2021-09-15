@@ -1,0 +1,69 @@
+<<: !include common/d1_mini.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "fablab_sensor_cluster"
+  pretty_name: "Fab Lab Sensor Cluster"
+  location: "Fab Lab"
+  ui_name: "${pretty_name}"
+  ip_address: 10.13.107.92
+
+logger:
+  baud_rate: 0
+  level: DEBUG
+
+uart:
+  tx_pin: 1
+  rx_pin: 3
+  baud_rate: 9600
+
+i2c:
+  sda: 4
+  scl: 5
+
+sensor:
+  - platform: pmsx003
+    type: PMSX003
+    pm_1_0:
+      name: "${location} PM <1.0µm Concentration"
+      accuracy_decimals: 2
+      icon: mdi:molecule
+      filters:
+        - sliding_window_moving_average:
+            window_size: 20
+            send_every: 20
+    pm_2_5:
+      name: "${location} PM <2.5µm Concentration"
+      accuracy_decimals: 2
+      icon: mdi:molecule
+      filters:
+        - sliding_window_moving_average:
+            window_size: 20
+            send_every: 20
+    pm_10_0:
+      name: "${location} PM <10.0µm Concentration"
+      accuracy_decimals: 2
+      icon: mdi:molecule
+      filters:
+        - sliding_window_moving_average:
+            window_size: 20
+            send_every: 20
+
+  - platform: bme280
+    temperature:
+      name: "${location} Temperature"
+      accuracy_decimals: 2
+    pressure:
+      name: "${location} Pressure"
+      accuracy_decimals: 2
+    humidity:
+      name: "${location} Humidity"
+      accuracy_decimals: 2
+    address: 0x76
+    update_interval: 60s
+
+  - platform: bh1750
+    name: "${location} Illuminance"
+    address: 0x23
+    measurement_duration: 69
+    update_interval: 60s

@@ -1,0 +1,10 @@
+<<: !include common/button_box_6_long_press.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "b_side_lightswitch_03"
+  pretty_name: "B-Side Lightswitch 03"
+  target_1: "group.b_side_lights"
+  target_2: "group.wood_shop_lights"
+  target_3: "group.kiln_jewelry_lights"
+  ip_address: 10.13.107.239

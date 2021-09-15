@@ -1,0 +1,98 @@
+<<: !include common/d1_mini.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "b-side_alarm_panel"
+  pretty_name: "B-Side Alarm Panel"
+  ui_name: "${pretty_name}"
+  ip_address: 10.13.107.228
+
+i2c:
+  sda: 4
+  scl: 5
+
+mcp23017:
+  - id: 'mcp23017_hub'
+    address: 0x20
+
+binary_sensor:
+  - platform: gpio
+    name: "B-Side Office Motion"
+    device_class: motion
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 0
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "B-Side Courtyard Door Motion"
+    device_class: motion
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 1
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "B-Side Rear Shop Motion"
+    device_class: motion
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 2
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "B-Side Back Door"
+    device_class: door
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 3
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "B-Side Garage Door"
+    device_class: garage_door
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 4
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "B-Side Courtyard Door"
+    device_class: door
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 5
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "A-B Front Door"
+    device_class: door
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 6
+      mode: INPUT_PULLUP
+      inverted: False
+  - platform: gpio
+    name: "B-Side Office Front Door"
+    device_class: door
+    filters:
+      - delayed_on: 100ms
+    pin:
+      mcp23xxx: mcp23017_hub
+      number: 7
+      mode: INPUT_PULLUP
+      inverted: False
