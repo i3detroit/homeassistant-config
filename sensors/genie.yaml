@@ -85,7 +85,7 @@
         {% if states('sensor.genie_current') | float > 0.5 %}
           Charging
         {% elif (states('sensor.genie_current') | float <= 0.5) and (states('sensor.genie_current') | float > 0.1) %}
-          Plugged in, not charging
+          Plugged in
         {% elif states('sensor.genie_current') | string == 'Unavailable' %}
           unavailable
         {% else %}
