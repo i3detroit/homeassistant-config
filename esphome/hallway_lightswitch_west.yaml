@@ -1,8 +1,0 @@
-<<: !include common/treatlife_3way_ss02.yaml
-<<: !include common/api.yaml
-
-substitutions:
-  device_name: "hallway_west_lightswitch"
-  pretty_name: "Hallway West Lightswitch"
-  ui_name: "Hallway West Lightswitch"
-  icon: "mdi:lightbulb"

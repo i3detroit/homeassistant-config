@@ -1,8 +1,0 @@
-<<: !include common/treatlife_3way_ss02.yaml
-<<: !include common/api.yaml
-
-substitutions:
-  device_name: "classroom_east_west_lightswitch"
-  pretty_name: "Classroom East West Lightswitch"
-  ui_name: "Classroom East West Lightswitch"
-  icon: "mdi:lightbulb"
