@@ -65,10 +65,14 @@
                                     "entity": "group.office_lights"
                                 },
                                 {
-                                    "entity": "group.b_side_lights"
+                                    "entity": "group.b_side_lights",
+                                    "name": "B-Side Main Lights"
                                 },
                                 {
                                     "entity": "group.wood_shop_lights"
+                                },
+                                {
+                                    "entity": "group.kiln_jewelry_lights"
                                 }
                             ],
                             "title": "Lights",
@@ -81,21 +85,34 @@
                         },
                         {
                             "type": "entities",
+                            "state_color": true,
                             "entities": [
                                 {
-                                    "entity": "binary_sensor.front_door_lock",
-                                    "name": "Front Door",
-                                    "state_color": true
+                                    "entity": "binary_sensor.front_door_open",
+                                    "name": "A-Side Front Door"
                                 },
                                 {
-                                    "entity": "binary_sensor.glass_door_open_sensor",
-                                    "name": "Glass Door",
-                                    "state_color": true
+                                    "entity": "binary_sensor.glass_door_open",
+                                    "name": "Glass Door"
                                 },
                                 {
-                                    "entity": "binary_sensor.glass_door_lock_sensor",
-                                    "name": "Glass Door Lock",
-                                    "state_color": true
+                                    "entity": "binary_sensor.glass_door_lock",
+                                    "name": "Glass Door Lock"
+                                },
+                                {
+                                    "entity": "binary_sensor.b_side_office_front_door"
+                                },
+                                {
+                                    "entity": "binary_sensor.b_side_garage_door"
+                                },
+                                {
+                                    "entity": "binary_sensor.b_side_courtyard_door"
+                                },
+                                {
+                                    "entity": "binary_sensor.b_side_back_door"
+                                },
+                                {
+                                    "entity": "binary_sensor.a_b_front_door"
                                 }
                             ],
                             "title": "Doors"
@@ -104,16 +121,20 @@
                             "type": "glance",
                             "entities": [
                                 {
-                                    "entity": "binary_sensor.air_compressor_power"
+                                    "entity": "binary_sensor.air_compressor_power",
+                                    "name": "Air Compressor"
                                 },
                                 {
-                                    "entity": "binary_sensor.cyclops_power"
+                                    "entity": "binary_sensor.cyclops_power",
+                                    "name": "Cyclops"
                                 },
                                 {
-                                    "entity": "binary_sensor.wolverine_power"
+                                    "entity": "binary_sensor.wolverine_power",
+                                    "name": "Wolverine"
                                 },
                                 {
-                                    "entity": "sensor.genie_charge_state"
+                                    "entity": "sensor.genie_charge_state",
+                                    "name": "Genie"
                                 }
                             ],
                             "title": "Equipment Status",
@@ -140,119 +161,6 @@
                             ],
                             "title": "Roof Exhaust Fans",
                             "state_color": true
-                        }
-                    ]
-                },
-                {
-                    "icon": "mdi:lightbulb",
-                    "visible": [
-                        {
-                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
-                        },
-                        {
-                            "user": "c13c74138a344210a6a621c5e0d19dc3"
-                        },
-                        {
-                            "user": "ff7ab356a33f4f379242067463126a32"
-                        },
-                        {
-                            "user": "90b63f479ed24cde8ef677d85f615260"
-                        },
-                        {
-                            "user": "a7e70d3c39dc46dea8761652dadb25b0"
-                        }
-                    ],
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Light Row 1",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.row_1_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Light Row 2",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.row_2_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Light Row 3",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.row_3_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Light Row 4",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.row_4_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Light Row 5",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.row_5_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "B-Side Main Lights",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.b_side_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Wood Shop Lights",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.wood_shop_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Misc Lights",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.misc_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Office Lights",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.office_lights"
-                        },
-                        {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Machine Shop Lights",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.machine_shop_lights"
                         },
                         {
                             "type": "entities",
@@ -289,24 +197,292 @@
                                 },
                                 {
                                     "entity": "light.chandelier02"
-                                },
-                                {
-                                    "entity": "light.elab_arch_north"
-                                },
-                                {
-                                    "entity": "light.elab_arch_south"
                                 }
                             ],
                             "title": "Decor"
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:lightbulb",
+                    "visible": [
+                        {
+                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
                         },
                         {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Jewelry & Kiln Lights",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.kiln_jewelry_lights"
+                            "user": "c13c74138a344210a6a621c5e0d19dc3"
+                        },
+                        {
+                            "user": "ff7ab356a33f4f379242067463126a32"
+                        },
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        },
+                        {
+                            "user": "a7e70d3c39dc46dea8761652dadb25b0"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.light_001"
+                                },
+                                {
+                                    "entity": "light.light_002"
+                                },
+                                {
+                                    "entity": "light.light_003"
+                                },
+                                {
+                                    "entity": "light.light_004"
+                                }
+                            ],
+                            "title": "Light Row 1"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.light_005"
+                                },
+                                {
+                                    "entity": "light.light_006"
+                                },
+                                {
+                                    "entity": "light.light_007"
+                                },
+                                {
+                                    "entity": "light.light_008"
+                                },
+                                {
+                                    "entity": "light.light_009"
+                                }
+                            ],
+                            "title": "Light Row 2"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.light_010"
+                                },
+                                {
+                                    "entity": "light.light_072"
+                                },
+                                {
+                                    "entity": "light.light_012"
+                                },
+                                {
+                                    "entity": "light.light_013"
+                                },
+                                {
+                                    "entity": "light.light_014"
+                                }
+                            ],
+                            "title": "Light Row 3"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.light_015"
+                                },
+                                {
+                                    "entity": "light.light_016"
+                                },
+                                {
+                                    "entity": "light.light_017"
+                                },
+                                {
+                                    "entity": "light.light_018"
+                                },
+                                {
+                                    "entity": "light.light_019"
+                                }
+                            ],
+                            "title": "Light Row 4"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.light_020"
+                                },
+                                {
+                                    "entity": "light.light_021"
+                                },
+                                {
+                                    "entity": "light.light_022"
+                                },
+                                {
+                                    "entity": "light.light_023"
+                                },
+                                {
+                                    "entity": "light.light_024"
+                                },
+                                {
+                                    "entity": "light.light_025"
+                                },
+                                {
+                                    "entity": "light.light_026"
+                                },
+                                {
+                                    "entity": "light.lanterns"
+                                }
+                            ],
+                            "title": "Light Row 5"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "light.light_029",
+                                "light.light_030",
+                                "light.light_031",
+                                "light.light_032",
+                                "light.light_033",
+                                "light.light_034",
+                                "light.light_035"
+                            ],
+                            "title": "Machine Shop Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "light.vinyl_light",
+                                "light.treehouse_light",
+                                "light.large_bathroom_light",
+                                "light.tool_crib_workbench_lights"
+                            ],
+                            "title": "Misc. Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "light.classroom_east_lights",
+                                "light.classroom_west_lights",
+                                "light.dooridor_light",
+                                "light.hallway_lights",
+                                "light.media_lab_lights",
+                                "light.craft_room_lights",
+                                "light.elab_lights",
+                                "light.small_bathroom_light",
+                                "light.small_bathroom_shower_light",
+                                "switch.b_side_office_lights"
+                            ],
+                            "title": "Office Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "light.light_052",
+                                "light.light_054",
+                                "light.light_067",
+                                "light.light_068",
+                                "light.light_069",
+                                "light.light_070",
+                                "light.light_071",
+                                "light.light_073",
+                                "light.light_074",
+                                "light.light_075",
+                                "light.light_076",
+                                "light.light_077",
+                                "light.light_078",
+                                "light.light_079",
+                                "light.light_080",
+                                "light.light_081",
+                                "light.light_082",
+                                "light.light_083",
+                                "light.light_084",
+                                "light.light_085",
+                                "light.light_086",
+                                "light.light_087",
+                                "light.light_089",
+                                "light.light_090",
+                                "light.light_091",
+                                "light.light_092",
+                                "light.light_093",
+                                "light.light_094",
+                                "light.light_095",
+                                "light.light_096",
+                                "light.light_097",
+                                "light.light_098",
+                                "light.light_099",
+                                "light.light_100",
+                                "light.light_101",
+                                "light.light_102",
+                                "light.light_103",
+                                "light.light_104",
+                                "light.light_106"
+                            ],
+                            "title": "B-Side Main Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "light.light_050",
+                                "light.light_051",
+                                "light.light_055",
+                                "light.light_059",
+                                "light.light_060",
+                                "light.light_061",
+                                "light.light_063",
+                                "light.light_064",
+                                "light.light_065",
+                                "light.light_088"
+                            ],
+                            "title": "Wood Shop Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "light.light_046",
+                                "light.light_047",
+                                "light.light_048",
+                                "light.light_049"
+                            ],
+                            "title": "Jewelry & Kiln Lights"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.fairy_lights"
+                                },
+                                {
+                                    "entity": "light.lanterns"
+                                },
+                                {
+                                    "entity": "light.swirly_lights_01"
+                                },
+                                {
+                                    "entity": "light.swirly_lights_02"
+                                },
+                                {
+                                    "entity": "light.lighttrafficred"
+                                },
+                                {
+                                    "entity": "light.lighttrafficyellow"
+                                },
+                                {
+                                    "entity": "light.lighttrafficgreen"
+                                },
+                                {
+                                    "entity": "switch.disco_ball"
+                                },
+                                {
+                                    "entity": "switch.disco_spotlights"
+                                },
+                                {
+                                    "entity": "light.chandelier01"
+                                },
+                                {
+                                    "entity": "light.chandelier02"
+                                }
+                            ],
+                            "title": "Decor"
                         }
                     ]
                 },
@@ -348,7 +524,8 @@
                                 }
                             ],
                             "show_header_toggle": false,
-                            "title": "Please don't break things"
+                            "title": "Please don't break things",
+                            "state_color": true
                         }
                     ]
                 },
@@ -396,9 +573,6 @@
                             "user": "c13c74138a344210a6a621c5e0d19dc3"
                         },
                         {
-                            "user": "ff7ab356a33f4f379242067463126a32"
-                        },
-                        {
                             "user": "a7e70d3c39dc46dea8761652dadb25b0"
                         },
                         {
@@ -406,994 +580,1982 @@
                         }
                     ],
                     "type": "panel",
+                    "path": "map",
+                    "title": "map",
                     "badges": [],
                     "cards": [
                         {
                             "type": "picture-elements",
+                            "image": "local/ha_floorplan_light.png",
+                            "dark_mode_image": "local/ha_floorplan_dark.png",
                             "elements": [
+                                {
+                                    "type": "service-button",
+                                    "title": "Things for shutdown",
+                                    "service": "home-assistant.turn_off",
+                                    "style": {
+                                        "left": "84%",
+                                        "top": "14%",
+                                        "transform": "translate(0%, -50%) scale(1.9, 1.9)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "group.all_normal_lights",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Any lights: ",
+                                            "entity": "group.all_normal_lights",
+                                            "style": {
+                                                "top": "18%",
+                                                "left": "82%",
+                                                "font-size": "22px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "group.all_normal_lights",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Any lights: ",
+                                            "entity": "group.all_normal_lights",
+                                            "style": {
+                                                "top": "18%",
+                                                "left": "82%",
+                                                "font-size": "22px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "group.all_normal_lights",
+                                    "style": {
+                                        "top": "18%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "switch.air_compressor",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Air Compresssor: ",
+                                            "entity": "switch.air_compressor",
+                                            "style": {
+                                                "top": "22%",
+                                                "left": "82%",
+                                                "font-size": "22px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "switch.air_compressor",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Air Compresssor: ",
+                                            "entity": "switch.air_compressor",
+                                            "style": {
+                                                "top": "22%",
+                                                "left": "82%",
+                                                "font-size": "22px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "switch.air_compressor",
+                                    "icon": "mdi:engine",
+                                    "style": {
+                                        "top": "22%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.glass_door_lock",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Glass Door Lock: ",
+                                            "entity": "binary_sensor.glass_door_lock",
+                                            "style": {
+                                                "top": "26%",
+                                                "left": "82%",
+                                                "font-size": "22px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.glass_door_lock",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Glass Door Lock: ",
+                                            "entity": "binary_sensor.glass_door_lock",
+                                            "style": {
+                                                "top": "26%",
+                                                "left": "82%",
+                                                "font-size": "22px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.glass_door_lock",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.glass_door_open_sensor",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Glass Door: ",
+                                            "entity": "binary_sensor.glass_door_open_sensor",
+                                            "style": {
+                                                "top": "30%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.glass_door_open_sensor",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Glass Door: ",
+                                            "entity": "binary_sensor.glass_door_open_sensor",
+                                            "style": {
+                                                "top": "30%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.glass_door_open_sensor",
+                                    "style": {
+                                        "top": "30%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Cyclops: ",
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "style": {
+                                                "top": "42%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "icon": "mdi:printer-3d-nozzle-alert",
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "style": {
+                                                "top": "45%",
+                                                "left": "49%"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "icon": "mdi:printer-3d-nozzle-alert",
+                                            "style": {
+                                                "top": "42%",
+                                                "left": "81.3%",
+                                                "transform": "translate(-50%, -50%) scale(1, 1)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Cyclops: ",
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "style": {
+                                                "top": "42%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "icon": "mdi:printer-3d-nozzle",
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "style": {
+                                                "top": "45%",
+                                                "left": "49%"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.cyclops_power",
+                                            "icon": "mdi:printer-3d-nozzle",
+                                            "style": {
+                                                "top": "42%",
+                                                "left": "81.3%",
+                                                "transform": "translate(-50%, -50%) scale(1, 1)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Wolverine: ",
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "style": {
+                                                "top": "46%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "icon": "mdi:printer-3d-nozzle-alert",
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "style": {
+                                                "top": "39%",
+                                                "left": "49%"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "icon": "mdi:printer-3d-nozzle-alert",
+                                            "style": {
+                                                "top": "46%",
+                                                "left": "81.3%",
+                                                "transform": "translate(-50%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Wolverine: ",
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "style": {
+                                                "top": "46%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "icon": "mdi:printer-3d-nozzle",
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "style": {
+                                                "top": "39%",
+                                                "left": "49%"
+                                            }
+                                        },
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.wolverine_power",
+                                            "icon": "mdi:printer-3d-nozzle",
+                                            "style": {
+                                                "top": "46%",
+                                                "left": "81.3%",
+                                                "transform": "translate(-50%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "switch.laser_zone_exhaust_fan",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Laser Exhaust: ",
+                                            "entity": "switch.laser_zone_exhaust_fan",
+                                            "style": {
+                                                "top": "50%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "switch.laser_zone_exhaust_fan",
+                                    "style": {
+                                        "top": "42%",
+                                        "left": "50%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "switch.laser_zone_exhaust_fan",
+                                    "style": {
+                                        "top": "50%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "switch.laser_zone_exhaust_fan",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Laser Exhaust: ",
+                                            "entity": "switch.laser_zone_exhaust_fan",
+                                            "style": {
+                                                "top": "50%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.b_side_office_front_door",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "B-Side Front Door: ",
+                                            "entity": "binary_sensor.b_side_office_front_door",
+                                            "style": {
+                                                "top": "34%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.b_side_office_front_door",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "B-Side Front Door: ",
+                                            "entity": "binary_sensor.b_side_office_front_door",
+                                            "style": {
+                                                "top": "34%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.b_side_office_front_door",
+                                    "style": {
+                                        "top": "34%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "B-Side Garage Door: ",
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "style": {
+                                                "top": "38%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "B-Side Garage Door: ",
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "style": {
+                                                "top": "38%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.b_side_garage_door",
+                                    "style": {
+                                        "top": "38%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.genie_charge_state",
+                                            "state": "Plugged in"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Genie: ",
+                                            "entity": "sensor.genie_charge_state",
+                                            "style": {
+                                                "top": "54%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.genie_charge_state",
+                                            "state": "Charging"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Genie: ",
+                                            "entity": "sensor.genie_charge_state",
+                                            "style": {
+                                                "top": "54%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "sensor.genie_charge_state",
+                                            "state": "Not plugged in"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "Genie: ",
+                                            "entity": "sensor.genie_charge_state",
+                                            "style": {
+                                                "top": "54%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "service-button",
+                                    "title": "Manually check these",
+                                    "service": "home-assistant.turn_off",
+                                    "style": {
+                                        "left": "84%",
+                                        "top": "66%",
+                                        "transform": "translate(0%, -50%) scale(1.9, 1.9)"
+                                    }
+                                },
+                                {
+                                    "type": "custom:text-element",
+                                    "text": "B-Side Back Door Locked?",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "82%",
+                                        "font-size": "20px",
+                                        "color": "rgb(200,200,200)",
+                                        "white-space": "nowrap",
+                                        "transform": "translate(0%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:lock",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:lock",
+                                    "style": {
+                                        "top": "3%",
+                                        "left": "10.8%",
+                                        "transform": "translate(-50%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "custom:text-element",
+                                    "text": "B-Side Courtyard Door Locked?",
+                                    "style": {
+                                        "top": "74%",
+                                        "left": "82%",
+                                        "font-size": "20px",
+                                        "color": "rgb(200,200,200)",
+                                        "white-space": "nowrap",
+                                        "transform": "translate(0%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:lock",
+                                    "style": {
+                                        "top": "74%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:lock",
+                                    "style": {
+                                        "top": "65%",
+                                        "left": "27.3%",
+                                        "transform": "translate(-50%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "custom:text-element",
+                                    "text": "A-Side Garage Door Locked?",
+                                    "style": {
+                                        "top": "70%",
+                                        "left": "82%",
+                                        "font-size": "20px",
+                                        "color": "rgb(200,200,200)",
+                                        "white-space": "nowrap",
+                                        "transform": "translate(0%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:garage",
+                                    "style": {
+                                        "top": "83.8%",
+                                        "left": "75%",
+                                        "transform": "translate(-50%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:garage",
+                                    "style": {
+                                        "top": "70%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%)"
+                                    }
+                                },
+                                {
+                                    "type": "custom:text-element",
+                                    "text": "Full/Smelly Trash Taken Out?",
+                                    "style": {
+                                        "top": "82%",
+                                        "left": "82%",
+                                        "font-size": "20px",
+                                        "color": "rgb(200,200,200)",
+                                        "white-space": "nowrap",
+                                        "transform": "translate(0%, -50%)"
+                                    }
+                                },
                                 {
                                     "type": "state-icon",
                                     "title": "Air Compressor",
                                     "entity": "binary_sensor.air_compressor_power",
                                     "style": {
                                         "top": "9%",
-                                        "left": "64.5%",
+                                        "left": "60.5%",
                                         "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
-                                    "entity": "binary_sensor.front_door_lock",
+                                    "entity": "binary_sensor.front_door_open",
                                     "style": {
                                         "top": "85%",
-                                        "left": "71.75%",
+                                        "left": "69.1%",
                                         "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
-                                    "entity": "binary_sensor.glass_door_open_sensor",
+                                    "entity": "binary_sensor.glass_door_open",
                                     "style": {
                                         "top": "92.5%",
-                                        "left": "68.8%",
+                                        "left": "66%",
                                         "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
-                                    "entity": "binary_sensor.glass_door_lock_sensor",
+                                    "entity": "binary_sensor.glass_door_lock",
                                     "style": {
                                         "top": "92.5%",
-                                        "left": "71%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_001",
-                                    "style": {
-                                        "top": "76%",
-                                        "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_002",
-                                    "style": {
-                                        "top": "60%",
-                                        "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_003",
-                                    "style": {
-                                        "top": "45.5%",
-                                        "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_004",
-                                    "style": {
-                                        "top": "32%",
-                                        "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_005",
-                                    "style": {
-                                        "top": "80%",
-                                        "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_006",
-                                    "style": {
-                                        "top": "66.5%",
-                                        "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_007",
-                                    "style": {
-                                        "top": "53%",
-                                        "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_008",
-                                    "style": {
-                                        "top": "39.5%",
-                                        "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_009",
-                                    "style": {
-                                        "top": "26%",
-                                        "left": "72.2%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_010",
-                                    "style": {
-                                        "top": "70%",
-                                        "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_011",
-                                    "style": {
-                                        "top": "60%",
-                                        "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_012",
-                                    "style": {
-                                        "top": "45.5%",
-                                        "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_013",
-                                    "style": {
-                                        "top": "32%",
-                                        "left": "66%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_014",
-                                    "style": {
-                                        "top": "21%",
-                                        "left": "67%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_015",
-                                    "style": {
-                                        "top": "60%",
-                                        "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_016",
-                                    "style": {
-                                        "top": "39.5%",
-                                        "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_017",
-                                    "style": {
-                                        "top": "26%",
-                                        "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_018",
-                                    "style": {
-                                        "top": "17%",
-                                        "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_019",
-                                    "style": {
-                                        "top": "9%",
-                                        "left": "61%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_020",
-                                    "style": {
-                                        "top": "70%",
-                                        "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_021",
-                                    "style": {
-                                        "top": "60%",
-                                        "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_022",
-                                    "style": {
-                                        "top": "45.5%",
-                                        "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_023",
-                                    "style": {
-                                        "top": "32%",
-                                        "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_024",
-                                    "style": {
-                                        "top": "26%",
-                                        "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_025",
-                                    "style": {
-                                        "top": "9%",
-                                        "left": "56%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_026",
-                                    "style": {
-                                        "top": "14%",
-                                        "left": "57%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_029",
-                                    "style": {
-                                        "top": "16%",
-                                        "left": "77%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_030",
-                                    "style": {
-                                        "top": "8%",
-                                        "left": "78%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_031",
-                                    "style": {
-                                        "top": "8%",
-                                        "left": "70%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_032",
-                                    "style": {
-                                        "top": "8%",
-                                        "left": "73.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_033",
-                                    "style": {
-                                        "top": "8%",
-                                        "left": "67%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_034",
-                                    "style": {
-                                        "top": "16%",
-                                        "left": "67%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_035",
-                                    "style": {
-                                        "top": "16%",
-                                        "left": "65%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.vinyl_light",
-                                    "style": {
-                                        "top": "52%",
-                                        "left": "55%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.treehouse_light",
-                                    "style": {
-                                        "top": "52%",
-                                        "left": "61.7%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_078",
-                                    "style": {
-                                        "top": "80%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_073",
-                                    "style": {
-                                        "top": "74.16%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_077",
-                                    "style": {
-                                        "top": "68.33%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_084",
-                                    "style": {
-                                        "top": "62.5%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_085",
-                                    "style": {
-                                        "top": "56.67%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_094",
-                                    "style": {
-                                        "top": "50.83%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_074",
-                                    "style": {
-                                        "top": "45%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_086",
-                                    "style": {
-                                        "top": "39.17%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_089",
-                                    "style": {
-                                        "top": "33.33%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_090",
-                                    "style": {
-                                        "top": "27.5%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_087",
-                                    "style": {
-                                        "top": "21.66%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_096",
-                                    "style": {
-                                        "top": "15.833%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_067",
-                                    "style": {
-                                        "top": "10%",
-                                        "left": "40.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_081",
-                                    "style": {
-                                        "top": "74.16%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_104",
-                                    "style": {
-                                        "top": "68.33%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_103",
-                                    "style": {
-                                        "top": "62.5%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_106",
-                                    "style": {
-                                        "top": "56.67%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_100",
-                                    "style": {
-                                        "top": "50.83%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_102",
-                                    "style": {
-                                        "top": "45%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_099",
-                                    "style": {
-                                        "top": "39.17%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_101",
-                                    "style": {
-                                        "top": "33.33%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_095",
-                                    "style": {
-                                        "top": "27.5%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_093",
-                                    "style": {
-                                        "top": "21.66%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_098",
-                                    "style": {
-                                        "top": "15.833%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_071",
-                                    "style": {
-                                        "top": "10%",
-                                        "left": "45%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_076",
-                                    "style": {
-                                        "top": "74.16%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_079",
-                                    "style": {
-                                        "top": "68.33%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_069",
-                                    "style": {
-                                        "top": "62.5%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_080",
-                                    "style": {
-                                        "top": "56.67%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_075",
-                                    "style": {
-                                        "top": "50.83%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_097",
-                                    "style": {
-                                        "top": "45%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_083",
-                                    "style": {
-                                        "top": "39.17%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_091",
-                                    "style": {
-                                        "top": "33.33%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_082",
-                                    "style": {
-                                        "top": "27.5%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_070",
-                                    "style": {
-                                        "top": "21.66%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_092",
-                                    "style": {
-                                        "top": "15.833%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_068",
-                                    "style": {
-                                        "top": "10%",
-                                        "left": "49.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_046",
-                                    "style": {
-                                        "top": "36%",
-                                        "left": "34%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_047",
-                                    "style": {
-                                        "top": "36%",
-                                        "left": "28%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_048",
-                                    "style": {
-                                        "top": "43%",
-                                        "left": "34%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.light_049",
-                                    "style": {
-                                        "top": "43%",
-                                        "left": "28%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "light.classroom_east_lights",
-                                    "style": {
-                                        "top": "78%",
                                         "left": "68%",
                                         "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
-                                    "entity": "light.classroom_west_lights",
+                                    "entity": "light.light_001",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "76%",
+                                        "left": "75%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_002",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "75%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_003",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "45.5%",
+                                        "left": "75%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_004",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "32%",
+                                        "left": "75%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_005",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "80%",
+                                        "left": "69.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_006",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "66.5%",
+                                        "left": "69.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_007",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "53%",
+                                        "left": "69.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_008",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "39.5%",
+                                        "left": "69.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_009",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "69.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_010",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "70%",
+                                        "left": "62%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_072",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "62%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_012",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "45.5%",
+                                        "left": "62%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_013",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "32%",
+                                        "left": "62%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_014",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "21%",
+                                        "left": "63.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_015",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "56.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_016",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "39.5%",
+                                        "left": "56.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_017",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "56.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_018",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "17%",
+                                        "left": "56.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_019",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "9%",
+                                        "left": "56.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_020",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "70%",
+                                        "left": "50.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_021",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "60%",
+                                        "left": "50.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_022",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "45.5%",
+                                        "left": "50.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_023",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "32%",
+                                        "left": "50.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_024",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "50.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_025",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "9%",
+                                        "left": "50.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_026",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "14%",
+                                        "left": "52%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_029",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "16%",
+                                        "left": "75%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_030",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "76.55%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_031",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "67.4%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_032",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "71.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_033",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "63.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_034",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "16%",
+                                        "left": "63.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_035",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "16%",
+                                        "left": "61%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.vinyl_light",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "52.6%",
+                                        "left": "49.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.treehouse_light",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "52%",
+                                        "left": "57.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_078",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "80%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_073",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "74.16%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_077",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "68.33%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_084",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "62.5%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_085",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "56.67%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_094",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "50.83%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_074",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "45%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_086",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "39.17%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_089",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "33.33%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_090",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "27.5%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_087",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "21.66%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_096",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "15.833%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_067",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "32.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_081",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "74.16%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_104",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "68.33%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_103",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "62.5%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_106",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "56.67%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_100",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "50.83%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_102",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "45%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_099",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "39.17%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_101",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "33.33%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_095",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "27.5%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_093",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "21.66%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_098",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "15.833%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_071",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "38%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_076",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "74.16%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_079",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "68.33%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_069",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "62.5%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_080",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "56.67%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_075",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "50.83%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_097",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "45%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_083",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "39.17%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_091",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "33.33%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_082",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "27.5%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_070",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "21.66%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_092",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "15.833%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_068",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "43%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_048",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "36%",
+                                        "left": "25%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_046",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "36%",
+                                        "left": "18%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_047",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "43%",
+                                        "left": "25%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.light_049",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "43%",
+                                        "left": "18%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.classroom_east_lights",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
                                         "top": "78%",
-                                        "left": "65%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "64.6%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "light.classroom_west_lights",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "61.4%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.dooridor_light",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
                                         "top": "87.8%",
-                                        "left": "69.2%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "66%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.craft_room_lights",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "89%",
-                                        "left": "65.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "90%",
+                                        "left": "62%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.elab_lights",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "89%",
-                                        "left": "58%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "90%",
+                                        "left": "53%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.small_bathroom_light",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
                                         "top": "78%",
-                                        "left": "59.7%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "54.85%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "switch.b_side_office_lights",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
                                         "top": "80.6%",
-                                        "left": "47%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "40.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.media_lab_lights",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
                                         "top": "78%",
-                                        "left": "62%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "57.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_050",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "10%",
-                                        "left": "22%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "30%",
+                                        "left": "12%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_051",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "10%",
-                                        "left": "25%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "12%",
+                                        "left": "12%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_055",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "10%",
-                                        "left": "28%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "20%",
+                                        "left": "17%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_059",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "10%",
-                                        "left": "31%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "20%",
+                                        "left": "27%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_060",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "10%",
-                                        "left": "34%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "12%",
+                                        "left": "27%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_061",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "18%",
-                                        "left": "22%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "28.9%",
+                                        "left": "31%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_063",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "18%",
-                                        "left": "25%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "12%",
+                                        "left": "21.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_064",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "18%",
-                                        "left": "28%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "20%",
+                                        "left": "21.5%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_065",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "18%",
-                                        "left": "31%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "12%",
+                                        "left": "17%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_088",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
-                                        "top": "18%",
-                                        "left": "34%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "top": "30%",
+                                        "left": "17%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_052",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
                                         "top": "28%",
-                                        "left": "32%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "23%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
                                 },
                                 {
                                     "type": "state-icon",
                                     "entity": "light.light_054",
+                                    "icon": "mdi:lightbulb",
                                     "style": {
                                         "top": "28%",
-                                        "left": "35%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "26%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "icon": "mdi:garage-open-variant",
+                                            "style": {
+                                                "top": "83.8%",
+                                                "left": "32.5%",
+                                                "transform": "translate(-50%, -50%) scale(1, 1)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.b_side_garage_door",
+                                            "icon": "mdi:garage-variant",
+                                            "style": {
+                                                "top": "83.8%",
+                                                "left": "32.5%",
+                                                "transform": "translate(-50%, -50%) scale(1, 1)"
+                                            }
+                                        }
+                                    ]
                                 }
-                            ],
-                            "image": "local/outline_for_home_assistant3.png",
-                            "dark_mode_image": "local/outline_for_home_assistant3.png"
+                            ]
                         }
                     ]
                 },
                 {
-                    "icon": "mdi:engine",
+                    "icon": "mdi:gauge",
+                    "visible": [
+                        {
+                            "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+                        },
+                        {
+                            "user": "c13c74138a344210a6a621c5e0d19dc3"
+                        },
+                        {
+                            "user": "90b63f479ed24cde8ef677d85f615260"
+                        },
+                        {
+                            "user": "a7e70d3c39dc46dea8761652dadb25b0"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.fab_lab_temperature",
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_humidity",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_pressure",
+                                    "name": "Pressure"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_illuminance",
+                                    "name": "Illuminance"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_pm_10_0um_concentration",
+                                    "name": "PM < 10 \u03bcm Concentration"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_pm_2_5um_concentration",
+                                    "name": "PM < 2.5 \u03bcm Concentration"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_pm_1_0um_concentration",
+                                    "name": "PM < 1 \u03bcm Concentration"
+                                }
+                            ],
+                            "title": "Fab Lab"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.fab_lab_pm_10_0um_concentration"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_pm_2_5um_concentration"
+                                },
+                                {
+                                    "entity": "sensor.fab_lab_pm_1_0um_concentration"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.mezzanineap",
+                                    "name": "Mezzanine AP",
+                                    "icon": "mdi:wifi"
+                                },
+                                {
+                                    "entity": "binary_sensor.toolcribap",
+                                    "name": "Tool Crib AP",
+                                    "icon": "mdi:wifi"
+                                },
+                                {
+                                    "entity": "binary_sensor.officeap",
+                                    "name": "Office AP",
+                                    "icon": "mdi:wifi"
+                                },
+                                {
+                                    "entity": "binary_sensor.bsidesouthap",
+                                    "name": "B-Side South AP",
+                                    "icon": "mdi:wifi"
+                                },
+                                {
+                                    "entity": "binary_sensor.bsidenorthap",
+                                    "name": "B-Side North AP",
+                                    "icon": "mdi:wifi"
+                                }
+                            ],
+                            "title": "Wi-Fi Access Points"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.office_subpanel_breaker_7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.b_side_office_motion"
+                                },
+                                {
+                                    "entity": "binary_sensor.b_side_courtyard_door_motion"
+                                },
+                                {
+                                    "entity": "binary_sensor.b_side_rear_shop_motion"
+                                },
+                                {
+                                    "entity": "binary_sensor.large_bathroom_motion_sensor"
+                                },
+                                {
+                                    "entity": "binary_sensor.machine_shop_motion_sensor"
+                                },
+                                {
+                                    "entity": "binary_sensor.small_bathroom_motion_sensor"
+                                }
+                            ],
+                            "title": "Motion Sensors"
+                        }
+                    ]
+                },
+                {
+                    "icon": "",
                     "visible": [
                         {
                             "user": "90b63f479ed24cde8ef677d85f615260"
                         }
                     ],
                     "type": "panel",
+                    "title": "test",
                     "badges": [],
                     "cards": [
                         {
                             "type": "picture-elements",
+                            "image": "local/ha_floorplan_light.png",
+                            "dark_mode_image": "local/ha_floorplan_dark.png",
                             "elements": [
                                 {
-                                    "type": "state-icon",
-                                    "title": "Air Compressor",
-                                    "entity": "binary_sensor.air_compressor_power",
+                                    "type": "service-button",
+                                    "title": "Things for shutdown",
+                                    "service": "home-assistant.turn_off",
                                     "style": {
-                                        "top": "10%",
-                                        "left": "65%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "switch.cnc_roof_exhaust_fan",
-                                    "style": {
-                                        "top": "25%",
-                                        "left": "74%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "switch.south_roof_exhaust_fan",
-                                    "icon": "mdi:fan",
-                                    "style": {
-                                        "top": "66%",
-                                        "left": "65%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "entity": "switch.machine_shop_exhaust_fan",
-                                    "style": {
-                                        "top": "35%",
-                                        "left": "48%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "title": "Cyclops",
-                                    "icon": "mdi:printer-3d-nozzle",
-                                    "entity": "switch.cyclops",
-                                    "style": {
-                                        "top": "45%",
-                                        "left": "55.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
-                                    }
-                                },
-                                {
-                                    "type": "state-icon",
-                                    "title": "Wolverine",
-                                    "icon": "mdi:printer-3d-nozzle",
-                                    "entity": "switch.cyclops",
-                                    "style": {
-                                        "top": "39.5%",
-                                        "left": "55.5%",
-                                        "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                                        "left": "84%",
+                                        "top": "14%",
+                                        "transform": "translate(0%, -50%) scale(1.9, 1.9)"
                                     }
                                 }
-                            ],
-                            "image": "local/outline_for_home_assistant3.png",
-                            "dark_mode_image": "local/outline_for_home_assistant3.png"
+                            ]
                         }
                     ]
                 }
