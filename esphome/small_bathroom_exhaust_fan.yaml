@@ -6,3 +6,4 @@ substitutions:
   pretty_name: "Small Bathroom Exhaust Fan Switch"
   ui_name: "Small Bathroom Exhaust Fan"
   icon: "mdi:fan"
+  ip_address: "10.13.107.28"

@@ -6,6 +6,7 @@ substitutions:
   pretty_name: "Hallway Alt Switch"
   ui_name: "Hallway Alt Switch"
   target_name: "hallway_lightswitch"
+  ip_address: "10.13.107.22"
 
 #overriding common/treatlife_ss01s_no_relay.yaml
 binary_sensor:

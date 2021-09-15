@@ -6,3 +6,4 @@ substitutions:
   pretty_name: "Elab Lightswitch"
   ui_name: "Elab Lights"
   icon: "mdi:lightbulb"
+  ip_address: "10.13.107.189"

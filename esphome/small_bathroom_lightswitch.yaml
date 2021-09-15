@@ -12,7 +12,7 @@ substitutions:
   pretty_name: "Small Bathroom Lightswitch"
   ui_name: "Small Bathroom Light"
   icon: "mdi:lightbulb"
-
+  ip_address: "10.13.107.217"
 api:
   services:
     - service: power_toggle

@@ -6,3 +6,4 @@ substitutions:
   pretty_name: "B-Side Office East Lightswitch"
   ui_name: "B-Side Office Lights"
   icon: "mdi:lightbulb"
+  ip_address: "10.13.107.209"

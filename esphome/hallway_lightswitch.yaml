@@ -6,6 +6,7 @@ substitutions:
   ui_name: "Hallway Lights"
   icon: "mdi:lightbulb"
   switch_name: "hallway_alt_switch"
+  ip_address: "10.13.107.26"
 
 api:
   services:
