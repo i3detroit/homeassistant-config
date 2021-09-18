@@ -84,6 +84,8 @@ esphome:
                 red: 10%
                 green: 0%
                 blue: 0%
+      - light.turn_on:
+          id: shutdown_button_led
       # - if:
       #     condition:
       #       lambda: 'return id(button_1).state == false;'
@@ -146,6 +148,11 @@ api:
             green: 0%
             blue: 0%
 
+output:
+  - platform: gpio
+    pin: 4
+    id: shutdown_led_output
+
 light:
   - platform: fastled_clockless
     id: led_strip
@@ -183,6 +190,11 @@ light:
       - id: led_strip
         from: 4
         to: 4
+  - platform: binary
+    output: shutdown_led_output
+    id: shutdown_button_led
+    name: "Shutdown button LED"
+    restore_mode: RESTORE_DEFAULT_ON
 
 binary_sensor:
   - name: "Front Door Open"
@@ -230,29 +242,29 @@ binary_sensor:
           green: 10%
           blue: 0%
     
+  - name: "Shutdown Button"
+    id: shutdown_button
+    platform: gpio
+    pin:
+      number: 12
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      then:
+        - light.turn_off:
+            id: shutdown_button_led
+        - delay: 2s
+        - light.turn_on:
+            id: shutdown_button_led
+    on_multi_click:
+      - timing:
+          - ON for 2s to 3s
+        then: 
+          - homeassistant.service:
+              service: script.shutdown      
+
   # - name: "Garage Door"
   #   device_class: garage_door
-  #   id: button_1
-  #   platform: gpio
-  #   pin:
-  #     number: 12
-  #     mode: INPUT_PULLUP
-  #     inverted: True
-  #   on_press:
-  #     - light.turn_on:
-  #         id: led_4
-  #         red: 10%
-  #         green: 0%
-  #         blue: 0%
-  #   on_release:
-  #     - light.turn_on:
-  #         id: led_4
-  #         red: 0%
-  #         green: 10%
-  #         blue: 0% 
-  #
-  # - name: "Sensor 2"
-  #   device_class: door
   #   id: button_2
   #   force_update: true
   #   platform: gpio
@@ -295,23 +307,3 @@ binary_sensor:
   #         green: 10%
   #         blue: 0%
   #
-  # - name: "Sensor 4"
-  #   device_class: door
-  #   id: button_4
-  #   platform: gpio
-  #   pin:
-  #     number: 4
-  #     mode: INPUT_PULLUP
-  #     inverted: True
-  #   on_press:
-  #     - light.turn_on:
-  #         id: led_x
-  #         red: 10%
-  #         green: 0%
-  #         blue: 0%
-  #   on_release:
-  #     - light.turn_on:
-  #         id: led_x
-  #         red: 0%
-  #         green: 10%
-  #         blue: 0% 
