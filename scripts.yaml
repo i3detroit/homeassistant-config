@@ -94,3 +94,11 @@ reset_snapple_rgb:
       - 255
       - 227
       - 217
+shutdown:
+  sequence:
+  - service: homeassistant.turn_off
+    target:
+      entity_id: group.row_1_lights
+  mode: single
+  alias: Shutdown
+  icon: mdi:nuke
