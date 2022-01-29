@@ -1,0 +1,75 @@
+# Uses a button box PCB
+# Don't install LED resistors
+# Sensors on first 2 inputs (don't use 5V pin on JST connector)
+
+<<: !include common/wifi.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "glass_door"
+  pretty_name: "Glass Door"
+  ui_name: "${pretty_name}"
+  target_name: "front_door_status_controller"
+  ip_address: "10.13.107.100"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: d1_mini
+  build_path: "./build/${device_name}"
+  on_boot:
+    then:
+      - wait_until:
+          api.connected:
+      - delay: 5s
+      - if:
+          condition:
+            lambda: 'return id(button_0).state == false;'
+          then:
+            - homeassistant.service:
+                service: "esphome.${target_name}_led_1_green"
+          else:
+            - homeassistant.service:
+                service: "esphome.${target_name}_led_1_red"
+      - if:
+          condition:
+            lambda: 'return id(button_1).state == false;'
+          then:
+            - homeassistant.service:
+                service: "esphome.${target_name}_led_2_green"
+          else:
+            - homeassistant.service:
+                service: "esphome.${target_name}_led_2_red"
+
+api:
+
+binary_sensor:
+  - name: "Glass Door Open"
+    device_class: door
+    id: button_0
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: false
+    on_press:
+      - homeassistant.service:
+          service: "esphome.${target_name}_led_1_red"
+    on_release:
+      - homeassistant.service:
+          service: "esphome.${target_name}_led_1_green"
+    
+  - name: "Glass Door Lock"
+    device_class: lock
+    id: button_1
+    platform: gpio
+    pin:
+      number: 12
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - homeassistant.service:
+          service: "esphome.${target_name}_led_2_red"
+    on_release:
+      - homeassistant.service:
+          service: "esphome.${target_name}_led_2_green"

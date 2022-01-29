@@ -1,0 +1,45 @@
+packages:
+  base_components: !include packages/esp_home_components.yaml
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp8285
+  build_path: "./build/${device_name}"
+  on_boot:
+    then:
+      - light.control:
+          id: light_1
+          brightness: 100%
+          color_temperature: 264 mireds
+
+output:
+  - platform: esp8266_pwm
+    id: red_output
+    pin: GPIO4
+  - platform: esp8266_pwm
+    id: green_output
+    pin: GPIO12
+  - platform: esp8266_pwm
+    id: blue_output
+    pin: GPIO14
+  - platform: esp8266_pwm
+    id: warm_white_output
+    pin: GPIO13
+  - platform: esp8266_pwm
+    id: white_output
+    pin: GPIO5
+
+light:
+  - platform: rgbww
+    name: "${pretty_name}"
+    id: light_1
+    red: red_output
+    green: green_output
+    blue: blue_output
+    warm_white: warm_white_output
+    cold_white: white_output
+    cold_white_color_temperature: 6000 K
+    warm_white_color_temperature: 3000 K
+    color_interlock: true
+    restore_mode: RESTORE_DEFAULT_ON

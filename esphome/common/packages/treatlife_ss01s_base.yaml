@@ -1,0 +1,17 @@
+packages: 
+  board: !include board_esp01_1m.yaml
+  base_components: !include esp_home_components.yaml
+
+status_led:
+  pin:
+    number: 5
+    inverted: True
+
+switch:
+  - name: "${pretty_name} LED"
+    id: power_led
+    platform: gpio
+    pin:
+      number: 4
+      inverted: False
+    internal: True

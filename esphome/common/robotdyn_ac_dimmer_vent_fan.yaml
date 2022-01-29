@@ -1,0 +1,21 @@
+packages:
+  base_components: !include packages/esp_home_components.yaml
+  board: !include packages/board_d1_mini.yaml
+
+output:
+  - platform: ac_dimmer
+    id: dimmer1
+    gate_pin: D0
+    zero_cross_pin:
+      number: D1
+      mode:
+        input: true
+      inverted: yes
+    method: leading
+    max_power: 0.64
+    min_power: 0.28
+
+fan:
+  - platform: speed
+    output: dimmer1
+    name: "${pretty_name}"

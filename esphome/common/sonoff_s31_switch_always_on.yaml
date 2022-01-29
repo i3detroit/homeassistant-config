@@ -1,0 +1,13 @@
+# Need to use this include syntax instead of packages to overwrite the
+# default switch with restore_mode: ALWAYS_ON
+<<: !include sonoff_s31_switch.yaml
+
+switch:
+  - name: "${ui_name}"
+    id: relay_1
+    icon: "${icon}"
+    platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    restore_mode: ALWAYS_ON

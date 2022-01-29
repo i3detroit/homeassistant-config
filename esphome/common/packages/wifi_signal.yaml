@@ -1,0 +1,4 @@
+sensor: 
+  - platform: wifi_signal
+    name: "${pretty_name} WiFi Signal Strength"
+    update_interval: 60s
