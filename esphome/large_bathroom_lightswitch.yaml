@@ -6,3 +6,4 @@ substitutions:
   pretty_name: "Large Bathroom Lightswitch"
   ui_name: "Large Bathroom Light"
   icon: "mdi:lightbulb"
+  ip_address: 10.13.107.250

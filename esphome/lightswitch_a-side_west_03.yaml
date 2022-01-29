@@ -6,3 +6,4 @@ substitutions:
   pretty_name: "A-Side Lightswitch West 03"
   target_1: "group.row_4_lights"
   target_2: "group.row_5_lights"
+  ip_address: "10.13.107.220"

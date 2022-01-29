@@ -5,6 +5,7 @@ substitutions:
   device_name: "classroom_east_alt_switch"
   pretty_name: "Classroom East Alt Switch"
   ui_name: "Classroom East Alt Switch"
+  ip_address: "10.13.107.214"
 
 api:
   services:

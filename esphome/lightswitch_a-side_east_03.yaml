@@ -7,3 +7,4 @@ substitutions:
   target_1: "group.row_1_lights"
   target_2: "group.row_2_lights"
   target_3: "group.row_3_lights"
+  ip_address: "10.13.107.25"
