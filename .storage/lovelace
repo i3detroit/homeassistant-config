@@ -103,6 +103,10 @@
                                     "entity": "binary_sensor.b_side_office_front_door"
                                 },
                                 {
+                                    "entity": "binary_sensor.a_side_garage_door_open",
+                                    "name": "A-Side Garage Door"
+                                },
+                                {
                                     "entity": "binary_sensor.b_side_garage_door"
                                 },
                                 {
@@ -422,16 +426,39 @@
                         {
                             "type": "entities",
                             "entities": [
-                                "light.light_050",
-                                "light.light_051",
-                                "light.light_055",
-                                "light.light_059",
-                                "light.light_060",
-                                "light.light_061",
-                                "light.light_063",
-                                "light.light_064",
-                                "light.light_065",
-                                "light.light_088"
+                                {
+                                    "entity": "light.light_041"
+                                },
+                                {
+                                    "entity": "light.light_050"
+                                },
+                                {
+                                    "entity": "light.light_051"
+                                },
+                                {
+                                    "entity": "light.light_055"
+                                },
+                                {
+                                    "entity": "light.light_059"
+                                },
+                                {
+                                    "entity": "light.light_060"
+                                },
+                                {
+                                    "entity": "light.light_061"
+                                },
+                                {
+                                    "entity": "light.light_063"
+                                },
+                                {
+                                    "entity": "light.light_064"
+                                },
+                                {
+                                    "entity": "light.light_065"
+                                },
+                                {
+                                    "entity": "light.light_088"
+                                }
                             ],
                             "title": "Wood Shop Lights"
                         },
@@ -493,19 +520,37 @@
                         },
                         {
                             "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+                        },
+                        {
+                            "user": "c13c74138a344210a6a621c5e0d19dc3"
                         }
                     ],
                     "icon": "mdi:nuke",
                     "badges": [],
                     "cards": [
                         {
-                            "type": "custom:group-card",
-                            "card": {
-                                "type": "entities",
-                                "title": "Emergency Lights",
-                                "show_header_toggle": true
-                            },
-                            "group": "group.emergency_lights"
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "light.light_039"
+                                },
+                                {
+                                    "entity": "light.light_040"
+                                },
+                                {
+                                    "entity": "light.light_027"
+                                },
+                                {
+                                    "entity": "light.light_038"
+                                },
+                                {
+                                    "entity": "light.light_056"
+                                },
+                                {
+                                    "entity": "light.light_062"
+                                }
+                            ],
+                            "title": "Emergency Lights"
                         },
                         {
                             "type": "entities",
@@ -838,7 +883,7 @@
                                             "prefix": "Cyclops: ",
                                             "entity": "binary_sensor.cyclops_power",
                                             "style": {
-                                                "top": "42%",
+                                                "top": "46%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "font-weight": "bold",
@@ -860,7 +905,7 @@
                                             "entity": "binary_sensor.cyclops_power",
                                             "icon": "mdi:printer-3d-nozzle-alert",
                                             "style": {
-                                                "top": "42%",
+                                                "top": "46%",
                                                 "left": "81.3%",
                                                 "transform": "translate(-50%, -50%) scale(1, 1)"
                                             }
@@ -881,7 +926,7 @@
                                             "prefix": "Cyclops: ",
                                             "entity": "binary_sensor.cyclops_power",
                                             "style": {
-                                                "top": "42%",
+                                                "top": "46%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "color": "rgb(96,96,96)",
@@ -902,7 +947,7 @@
                                             "entity": "binary_sensor.cyclops_power",
                                             "icon": "mdi:printer-3d-nozzle",
                                             "style": {
-                                                "top": "42%",
+                                                "top": "46%",
                                                 "left": "81.3%",
                                                 "transform": "translate(-50%, -50%) scale(1, 1)"
                                             }
@@ -923,7 +968,7 @@
                                             "prefix": "Wolverine: ",
                                             "entity": "binary_sensor.wolverine_power",
                                             "style": {
-                                                "top": "46%",
+                                                "top": "50%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "font-weight": "bold",
@@ -945,7 +990,7 @@
                                             "entity": "binary_sensor.wolverine_power",
                                             "icon": "mdi:printer-3d-nozzle-alert",
                                             "style": {
-                                                "top": "46%",
+                                                "top": "50%",
                                                 "left": "81.3%",
                                                 "transform": "translate(-50%, -50%)"
                                             }
@@ -966,7 +1011,7 @@
                                             "prefix": "Wolverine: ",
                                             "entity": "binary_sensor.wolverine_power",
                                             "style": {
-                                                "top": "46%",
+                                                "top": "50%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "color": "rgb(96,96,96)",
@@ -987,7 +1032,7 @@
                                             "entity": "binary_sensor.wolverine_power",
                                             "icon": "mdi:printer-3d-nozzle",
                                             "style": {
-                                                "top": "46%",
+                                                "top": "50%",
                                                 "left": "81.3%",
                                                 "transform": "translate(-50%, -50%)"
                                             }
@@ -1008,7 +1053,7 @@
                                             "prefix": "Laser Exhaust: ",
                                             "entity": "switch.laser_zone_exhaust_fan",
                                             "style": {
-                                                "top": "50%",
+                                                "top": "54%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "font-weight": "bold",
@@ -1031,7 +1076,7 @@
                                     "type": "state-icon",
                                     "entity": "switch.laser_zone_exhaust_fan",
                                     "style": {
-                                        "top": "50%",
+                                        "top": "54%",
                                         "left": "81.3%",
                                         "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
@@ -1050,7 +1095,7 @@
                                             "prefix": "Laser Exhaust: ",
                                             "entity": "switch.laser_zone_exhaust_fan",
                                             "style": {
-                                                "top": "50%",
+                                                "top": "54%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "color": "rgb(96,96,96)",
@@ -1119,6 +1164,62 @@
                                     "type": "conditional",
                                     "conditions": [
                                         {
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "A-Side Garage Door: ",
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "style": {
+                                                "top": "38%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "font-weight": "bold",
+                                                "color": "rgb(253,216,53)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-label",
+                                            "prefix": "A-Side Garage Door: ",
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "style": {
+                                                "top": "38%",
+                                                "left": "82%",
+                                                "font-size": "20px",
+                                                "color": "rgb(96,96,96)",
+                                                "transform": "translate(0%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "binary_sensor.a_side_garage_door_open",
+                                    "style": {
+                                        "top": "38%",
+                                        "left": "81.3%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
                                             "entity": "binary_sensor.b_side_garage_door",
                                             "state": "on"
                                         }
@@ -1129,7 +1230,7 @@
                                             "prefix": "B-Side Garage Door: ",
                                             "entity": "binary_sensor.b_side_garage_door",
                                             "style": {
-                                                "top": "38%",
+                                                "top": "42%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "font-weight": "bold",
@@ -1153,7 +1254,7 @@
                                             "prefix": "B-Side Garage Door: ",
                                             "entity": "binary_sensor.b_side_garage_door",
                                             "style": {
-                                                "top": "38%",
+                                                "top": "42%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "color": "rgb(96,96,96)",
@@ -1166,7 +1267,7 @@
                                     "type": "state-icon",
                                     "entity": "binary_sensor.b_side_garage_door",
                                     "style": {
-                                        "top": "38%",
+                                        "top": "42%",
                                         "left": "81.3%",
                                         "transform": "translate(-50%, -50%) scale(1, 1)"
                                     }
@@ -1185,7 +1286,7 @@
                                             "prefix": "Genie: ",
                                             "entity": "sensor.genie_charge_state",
                                             "style": {
-                                                "top": "54%",
+                                                "top": "58%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "color": "rgb(96,96,96)",
@@ -1208,7 +1309,7 @@
                                             "prefix": "Genie: ",
                                             "entity": "sensor.genie_charge_state",
                                             "style": {
-                                                "top": "54%",
+                                                "top": "58%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "color": "rgb(96,96,96)",
@@ -1231,7 +1332,7 @@
                                             "prefix": "Genie: ",
                                             "entity": "sensor.genie_charge_state",
                                             "style": {
-                                                "top": "54%",
+                                                "top": "58%",
                                                 "left": "82%",
                                                 "font-size": "20px",
                                                 "font-weight": "bold",
@@ -1325,16 +1426,16 @@
                                 },
                                 {
                                     "type": "icon",
-                                    "icon": "mdi:garage",
+                                    "icon": "mdi:lock",
                                     "style": {
                                         "top": "83.8%",
-                                        "left": "75%",
+                                        "left": "76%",
                                         "transform": "translate(-50%, -50%)"
                                     }
                                 },
                                 {
                                     "type": "icon",
-                                    "icon": "mdi:garage",
+                                    "icon": "mdi:lock",
                                     "style": {
                                         "top": "70%",
                                         "left": "81.3%",
@@ -2242,6 +2343,16 @@
                                 },
                                 {
                                     "type": "state-icon",
+                                    "entity": "light.light_041",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "top": "20%",
+                                        "left": "12%",
+                                        "transform": "translate(-50%, -50%) scale(1, 1)"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
                                     "entity": "light.light_051",
                                     "icon": "mdi:lightbulb",
                                     "style": {
@@ -2391,6 +2502,48 @@
                                             }
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "state": "on"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "icon": "mdi:garage-open-variant",
+                                            "style": {
+                                                "top": "83.8%",
+                                                "left": "74%",
+                                                "transform": "translate(-50%, -50%)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "conditional",
+                                    "conditions": [
+                                        {
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "state": "off"
+                                        }
+                                    ],
+                                    "elements": [
+                                        {
+                                            "type": "state-icon",
+                                            "entity": "binary_sensor.a_side_garage_door_open",
+                                            "icon": "mdi:garage-variant",
+                                            "style": {
+                                                "top": "83.8%",
+                                                "left": "74%",
+                                                "transform": "translate(-50%, -50%)"
+                                            }
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -2526,6 +2679,17 @@
                                 }
                             ],
                             "title": "Motion Sensors"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.ground_cluster_temperature"
+                                },
+                                {
+                                    "entity": "sensor.ceiling_cluster_temperature"
+                                }
+                            ]
                         }
                     ]
                 },
