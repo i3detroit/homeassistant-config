@@ -142,6 +142,7 @@ wood_shop_lights:
   name: "Wood Shop Lights"
   icon: "mdi:ceiling-light"
   entities:
+    - light.light_041
     - light.light_050
     - light.light_051
     - light.light_055
@@ -170,6 +171,8 @@ emergency_lights:
     - light.light_040
     - light.light_027
     - light.light_038
+    - light.light_056
+    - light.light_062
 
 all_normal_light_groups:
   name: All Light Groups
@@ -288,3 +291,22 @@ all_normal_lights:
     - light.light_064
     - light.light_065
     - light.light_088
+
+laser_devices:
+  name: Laser Zone Devices for Shutdown
+  entities:
+    - switch.laser_zone_exhaust_fan
+    - switch.cyclops
+    - switch.cyclops_chiller
+    - switch.wolverine
+    - switch.wolverine_chiller
+    # - switch.full_spectrum_chiller
+
+shutdown:
+  name: Things to turn off on Shutdown
+  icon: mdi:nuke
+  entities:
+    - group.all_normal_lights
+    - switch.air_compressor
+    - group.laser_devices
+    - switch.disco_ball
