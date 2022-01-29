@@ -26,15 +26,15 @@ emergency_lights_reset:
     entity_id: switch.laser_zone_ceiling_fan
     domain: switch
   - type: turn_on
-    device_id: 2f1c04318e8a82b0f1d04c061b865169
-    entity_id: switch.machine_shop_exhaust_fan
-    domain: switch
+    device_id: 20085ac41f9dc5b881d00405541fc252
+    entity_id: light.light_056
+    domain: light
   - service: switch.turn_on
     target:
-      entity_id: switch.cnc_roof_exhaust_fan
-  - service: switch.turn_on
+      entity_id: switch.fab_lab_exhaust_fan
+  - service: light.turn_on
     target:
-      entity_id: switch.south_roof_exhaust_fan
+      entity_id: light.light_062
   mode: single
 blink_traffic_light_green:
   alias: Blink Traffic Light Green
