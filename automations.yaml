@@ -595,7 +595,7 @@
     domain: switch
   mode: single
 - id: '1629339400804'
-  alias: Office lights all on
+  alias: Office lights all on/off
   description: ''
   trigger:
   - type: turned_on
@@ -610,9 +610,28 @@
       milliseconds: 0
   condition: []
   action:
-  - service: homeassistant.turn_on
-    target:
-      entity_id: group.office_lights
+  - choose:
+    - conditions:
+      - condition: device
+        type: is_off
+        device_id: 657457c2cc4fda77bf057a97ca632c78
+        entity_id: light.elab_lights
+        domain: light
+      sequence:
+      - service: homeassistant.turn_on
+        target:
+          entity_id: group.office_lights
+    - conditions:
+      - condition: device
+        type: is_on
+        device_id: 657457c2cc4fda77bf057a97ca632c78
+        entity_id: light.elab_lights
+        domain: light
+      sequence:
+      - service: homeassistant.turn_off
+        target:
+          entity_id: group.office_lights
+    default: []
   mode: single
 - id: '1630537956782'
   alias: AP Disconnected - Mezzanine
@@ -640,7 +659,7 @@
   condition:
   - condition: template
     value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 240 }}'''
+      | as_timestamp) > 210 }}'''
   action:
   - service: notify.hass_slack
     data:
@@ -657,7 +676,7 @@
   condition:
   - condition: template
     value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 240 }}'''
+      | as_timestamp) > 210 }}'''
   action:
   - service: notify.hass_slack
     data:
@@ -689,7 +708,7 @@
   condition:
   - condition: template
     value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 240 }}'''
+      | as_timestamp) > 210 }}'''
   action:
   - service: notify.hass_slack
     data:
@@ -721,7 +740,7 @@
   condition:
   - condition: template
     value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 240 }}'''
+      | as_timestamp) > 210 }}'''
   action:
   - service: notify.hass_slack
     data:
@@ -753,7 +772,7 @@
   condition:
   - condition: template
     value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 240 }}'''
+      | as_timestamp) > 210 }}'''
   action:
   - service: notify.hass_slack
     data:
@@ -773,4 +792,56 @@
   - service: notify.hass_slack
     data:
       message: B-Side North AP is disconnected
+  mode: single
+- id: '1638201213002'
+  alias: Complain if genie not plugged in
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.genie_charge_state
+    to: Not plugged in
+    for: '6:00:00'
+  condition: []
+  action:
+  - service: notify.hass_slack
+    data:
+      message: The genie has been unplugged for over 6 hours
+  - service: automation.turn_on
+    target:
+      entity_id: automation.notify_that_genie_is_plugged_in_again
+  mode: single
+- id: '1638201355599'
+  alias: Notify that genie is plugged in again
+  trigger:
+  - platform: state
+    entity_id: sensor.genie_charge_state
+    to: Plugged in
+  - platform: state
+    entity_id: sensor.genie_charge_state
+    to: Charging
+  condition: []
+  action:
+  - service: notify.hass_slack
+    data:
+      message: The genie is plugged in again
+  - service: automation.turn_off
+    target:
+      entity_id: automation.notify_that_genie_is_plugged_in_again
+  mode: single
+- id: '1638231960434'
+  alias: Complain more if genie not plugged in
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.genie_charge_state
+    to: Not plugged in
+    for: '24:00:00'
+  condition: []
+  action:
+  - service: notify.hass_slack
+    data:
+      message: Seriously, plug in the genie. It's been 24 hours. @mkfink @abzman
+  - service: automation.turn_on
+    target:
+      entity_id: automation.notify_that_genie_is_plugged_in_again
   mode: single
