@@ -1,9 +1,0 @@
-captive_portal:
-
-# Enable logging
-logger:
-
-ota:
-
-web_server:
-  port: 80

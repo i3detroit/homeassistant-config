@@ -1,3 +1,0 @@
-switch:
-  - platform: restart
-    name: "${pretty_name} Restart"

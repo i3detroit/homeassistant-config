@@ -1,11 +1,5 @@
-<<: !include wifi.yaml
-<<: !include esp_home_components.yaml
-<<: !include board_esp01_1m.yaml
-
-status_led:
-  pin:
-    number: 5
-    inverted: True
+packages: 
+  package: !include packages/treatlife_ss01s_base.yaml
 
 binary_sensor:
   - name: "${pretty_name} Button"
@@ -19,14 +13,6 @@ binary_sensor:
         - switch.toggle: relay_1
 
 switch:
-  - name: "${pretty_name} LED"
-    id: power_led
-    platform: gpio
-    pin:
-      number: 4
-      inverted: False
-    internal: True
-
   - name: "${ui_name}"
     id: relay_1
     icon: "${icon}"

@@ -1,6 +1,6 @@
-<<: !include wifi.yaml
-<<: !include esp_home_components.yaml
-<<: !include board_esp01_1m.yaml
+packages: 
+  board: !include packages/board_esp01_1m.yaml
+  base_components: !include packages/esp_home_components.yaml
 
 # Need to turn off the serial logger because we are using the serial
 # connection for the power sensors.
@@ -23,7 +23,7 @@ binary_sensor:
     pin:
       number: 0
       mode: INPUT_PULLUP
-      inverted: False
+      inverted: True
     on_press:
       - light.toggle: light_1
   - platform: status
@@ -47,13 +47,8 @@ sensor:
   - platform: cse7766
     current:
       name: "${pretty_name} Current"
-      force_update: true
     voltage:
       name: "${pretty_name} Voltage"
-      force_update: true
     power:
       name: "${pretty_name} Power"
-      force_update: true
     update_interval: 10s
-  - !include wifi_signal.yaml
-  - !include uptime.yaml

@@ -1,4 +1,6 @@
-<<: !include d1_mini.yaml
+packages: 
+  board: !include packages/board_d1_mini.yaml
+  base_components: !include packages/esp_home_components.yaml
 
 binary_sensor:
   - name: "${pretty_name} Button 1"
@@ -14,7 +16,7 @@ binary_sensor:
             entity_id: "${target_1}"
     on_multi_click:
       timing:
-        - ON for at least 0.5s
+        - ON for at least 0.4s
       then:
         - homeassistant.service:
             service: homeassistant.turn_on
@@ -33,7 +35,7 @@ binary_sensor:
             entity_id: "${target_1}"
     on_multi_click:
       timing:
-        - ON for at least 0.5s
+        - ON for at least 0.4s
       then:
         - homeassistant.service:
             service: homeassistant.turn_off
@@ -52,7 +54,7 @@ binary_sensor:
             entity_id: "${target_2}"
     on_multi_click:
       timing:
-        - ON for at least 0.5s
+        - ON for at least 0.4s
       then:
         - homeassistant.service:
             service: homeassistant.turn_on
@@ -71,7 +73,7 @@ binary_sensor:
             entity_id: "${target_2}"
     on_multi_click:
       timing:
-        - ON for at least 0.5s
+        - ON for at least 0.4s
       then:
         - homeassistant.service:
             service: homeassistant.turn_off
