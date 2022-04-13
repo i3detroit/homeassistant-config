@@ -17,18 +17,6 @@ emergency_lights_reset:
     entity_id: light.light_027
     data:
       brightness: 40
-  - type: turn_on
-    device_id: e6216bdbeb15aa66fc7eb818eaec1942
-    entity_id: switch.commons_ceiling_fan
-    domain: switch
-  - type: turn_on
-    device_id: 968a252d87ed946fbf8d50ea3ab31c52
-    entity_id: switch.laser_zone_ceiling_fan
-    domain: switch
-  - type: turn_on
-    device_id: 20085ac41f9dc5b881d00405541fc252
-    entity_id: light.light_056
-    domain: light
   - service: switch.turn_on
     target:
       entity_id: switch.fab_lab_exhaust_fan
@@ -102,3 +90,219 @@ shutdown:
   mode: single
   alias: Shutdown
   icon: mdi:nuke
+out_of_household_paper_towels:
+  alias: 'shopping-list: Out of household paper towels'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of household paper towels
+  mode: single
+  icon: mdi:paper-roll
+shopping_list_out_of_green_tape:
+  alias: 'shopping-list: Out of green tape'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of green tape
+  mode: single
+  icon: mdi:circle-outline
+shopping_list_out_of_sharpies:
+  alias: 'shopping-list: Out of sharpies'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of sharpies
+  mode: single
+  icon: mdi:pen
+shopping_list_out_of_blue_towels:
+  alias: 'shopping-list: Out of blue towels'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of blue (shop) paper towels
+  mode: single
+  icon: mdi:paper-roll
+shopping_list_out_of_toilet_paper:
+  alias: 'shopping-list: Out of toilet paper'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of toilet paper
+  mode: single
+  icon: mdi:paper-roll
+shopping_list_out_of_plastic_knives:
+  alias: 'shopping-list: Out of plastic knives'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of plastic knives
+  mode: single
+  icon: mdi:knife
+shopping_list_out_of_paper_plates:
+  alias: 'shopping-list: Out of paper plates'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of paper plates
+  mode: single
+  icon: mdi:circle
+shopping_list_out_of_paint_booth_filters:
+  alias: 'shopping-list: Out of paint booth filters'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of paint booth filters
+  mode: single
+  icon: mdi:air-filter
+shopping_list_out_of_bowls:
+  alias: 'shopping-list: Out of bowls'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of bowls
+  mode: single
+  icon: mdi:bowl
+shopping_list_out_of_chopsticks:
+  alias: 'shopping-list: Out of chopsticks'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of chopsticks
+  mode: single
+  icon: mdi:close
+shopping_list_out_of_centerpull_towels:
+  alias: 'shopping-list: Out of centerpull towels'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of centerpull towels
+  mode: single
+  icon: mdi:paper-roll
+shopping_list_out_of_towel_dispenser_towels:
+  alias: 'shopping-list: Out of towel dispenser towels'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of towel dispenser towels
+  mode: single
+  icon: mdi:paper-roll
+shopping_list_out_of_33_gallon_trash_bags:
+  alias: 'shopping-list: Out of 33 gallon trash bags'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of 33 gallon trash bags
+  mode: single
+  icon: mdi:trash-can
+shopping_list_out_of_kitchen_trash_bags:
+  alias: 'shopping-list: Out of kitchen trash bags'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of kitchen trash bags
+  mode: single
+  icon: mdi:trash-can-outline
+shopping_list_out_of_small_gluesticks:
+  alias: 'shopping-list: Out of small gluesticks'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of small gluesticks
+  mode: single
+  icon: mdi:minus
+shopping_list_out_of_large_gluesticks:
+  alias: 'shopping-list: Out of large gluesticks'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of large gluesticks
+  mode: single
+  icon: mdi:minus-thick
+shopping_list_out_of_foam_brushes:
+  alias: 'shopping-list: Out of foam brushes'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of foam brushes
+  mode: single
+  icon: mdi:brush
+shopping_list_out_of_plastic_forks:
+  alias: 'shopping-list: Out of plastic forks'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of plastic forks
+  mode: single
+  icon: mdi:silverware-fork
+shopping_list_out_of_plastic_spoons:
+  alias: 'shopping-list: Out of plastic spoons'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of plastic spoons
+  mode: single
+  icon: mdi:silverware-spoon
+shopping_list_out_of_plastic_cups:
+  alias: 'shopping-list: Out of plastic cups'
+  sequence:
+  - service: notify.hass_slack
+    data:
+      target: '#shopping-list'
+      message: We're out of plastic cups
+  mode: single
+  icon: mdi:cup
+a_side_keypad_power_cycle:
+  alias: a_side_keypad_power_cycle
+  sequence:
+  - type: turn_off
+    device_id: 601b6cccb0f5f140460ae390f0cda2ee
+    entity_id: switch.a_side_main_keypad_watchdog
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - type: turn_on
+    device_id: 601b6cccb0f5f140460ae390f0cda2ee
+    entity_id: switch.a_side_main_keypad_watchdog
+    domain: switch
+  mode: single
+  icon: mdi:dialpad
+b_side_keypad_power_cycle:
+  alias: b_side_keypad_power_cycle
+  sequence:
+  - type: turn_off
+    device_id: 323d6dc11fec5f738789c5af4c448c8e
+    entity_id: switch.b_side_office_keypad_watchdog
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - type: turn_on
+    device_id: 323d6dc11fec5f738789c5af4c448c8e
+    entity_id: switch.b_side_office_keypad_watchdog
+    domain: switch
+  mode: single
+  icon: mdi:dialpad
