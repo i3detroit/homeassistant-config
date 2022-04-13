@@ -2,9 +2,13 @@
 # Don't install LED resistors
 # Sensors on first 5 inputs (don't use 5V pin on JST connector)
 # LED strip on 6th JST connector - jumper over R6 to provide full 5V to strip
-
-<<: !include common/wifi.yaml
-<<: !include common/esp_home_components.yaml
+packages:
+  base: !include common/packages/esp_home_components.yaml
+  
+esp8266:
+  framework:
+    version: 2.7.4
+  board: d1_mini
 
 substitutions:
   device_name: "front_door_status_controller"
@@ -14,8 +18,6 @@ substitutions:
 
 esphome:
   name: "${device_name}"
-  platform: ESP8266
-  board: d1_mini
   build_path: "./build/${device_name}"
   on_boot:
     then:

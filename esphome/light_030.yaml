@@ -1,5 +1,6 @@
-<<: !include common/sonoff_basic_light.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/sonoff_basic_light.yaml
+
 
 substitutions:
   device_name: "light_030"

@@ -1,5 +1,6 @@
-<<: !include common/button_box_2.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/button_box_2.yaml
+
 
 substitutions:
   device_name: "wood_shop_lightswitch_01"

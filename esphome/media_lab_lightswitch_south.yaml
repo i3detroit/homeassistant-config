@@ -1,5 +1,6 @@
-<<: !include common/treatlife_3way_ss02.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/treatlife_3way_ss02.yaml
+
 
 substitutions:
   device_name: "media_lab_south_lightswitch"

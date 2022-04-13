@@ -1,5 +1,7 @@
-<<: !include common/d1_mini.yaml
-<<: !include common/api.yaml
+packages:
+  board: !include common/packages/board_d1_mini.yaml
+  base_components: !include common/packages/esp_home_components.yaml
+
 
 substitutions:
   device_name: "fablab_sensor_cluster"

@@ -1,5 +1,6 @@
-<<: !include common/button_box_4_long_press.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/button_box_4_long_press.yaml
+
 
 substitutions:
   device_name: "a_side_lightswitch_west_03"

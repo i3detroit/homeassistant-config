@@ -1,5 +1,6 @@
-<<: !include common/ct-065w.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/ct-065w
+
 
 substitutions:
   device_name: "light_015"

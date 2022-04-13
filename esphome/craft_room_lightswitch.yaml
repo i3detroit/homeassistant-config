@@ -1,5 +1,6 @@
-<<: !include common/treatlife_ss01s_light.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/treatlife_ss01s_light.yaml
+
 
 substitutions:
   device_name: "craft_room_lightswitch"

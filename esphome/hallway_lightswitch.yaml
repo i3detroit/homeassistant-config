@@ -1,4 +1,5 @@
-<<: !include common/treatlife_ss01s_light.yaml
+packages:
+  package: !include common/treatlife_ss01s_light.yaml
 
 substitutions:
   device_name: "hallway_lightswitch"

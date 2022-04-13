@@ -1,5 +1,6 @@
-<<: !include common/sonoff_s31_switch.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/sonoff_s31_switch.yaml
+
 
 substitutions:
   device_name: "full_spectrum_laser"

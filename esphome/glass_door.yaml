@@ -2,8 +2,8 @@
 # Don't install LED resistors
 # Sensors on first 2 inputs (don't use 5V pin on JST connector)
 
-<<: !include common/wifi.yaml
-<<: !include common/esp_home_components.yaml
+packages:
+  base: !include common/packages/esp_home_components.yaml
 
 substitutions:
   device_name: "glass_door"
