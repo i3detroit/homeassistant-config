@@ -1,0 +1,9 @@
+packages:
+  package: !include common/button_box_4_long_press.yaml
+
+substitutions:
+  device_name: "b-side-decor-switch"
+  pretty_name: "B-Side Decor Switch"
+  target_1: "light.welding_helmet_lights"
+  target_2: "light.mural_blacklight"
+  ip_address: 10.13.107.256

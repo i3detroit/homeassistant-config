@@ -1,0 +1,35 @@
+packages:
+  # board: !include common/packages/board_d1_mini.yaml
+  base_components: !include common/packages/esp_home_components.yaml
+
+substitutions:
+  device_name: "welding_helmet_lights"
+  pretty_name: "Welding Helmet Lights"
+  ui_name: "Welding Helmet Lights"
+  
+esphome:
+  name: "${device_name}"
+  build_path: "./build/${device_name}"
+  
+esp8266:
+  framework:
+    version: 2.7.4
+  board: d1_mini
+ 
+light:
+  - platform: fastled_clockless
+    chipset: WS2812B
+    pin: GPIO2
+    num_leds: 144
+    rgb_order: GRB
+    name: "${ui_name}"
+    effects:
+      - addressable_rainbow:
+          name: Rainbow Cycle
+          width: 288
+          speed: 10
+      - addressable_rainbow:
+          name: Rainbow
+          width: 48
+      - random:
+
