@@ -6,6 +6,8 @@ row_1_lights:
     - light.light_002
     - light.light_003
     - light.light_004
+    - light.light_058
+    - light.light_105
 
 row_2_lights:
   name: "Light Row 2"
@@ -171,7 +173,7 @@ emergency_lights:
     - light.light_040
     - light.light_027
     - light.light_038
-    - light.light_056
+#    - light.light_056
     - light.light_062
 
 all_normal_light_groups:
