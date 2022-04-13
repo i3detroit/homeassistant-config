@@ -1,0 +1,9 @@
+packages:
+  thermostat: !include common/thermostat_heat_only.yaml
+
+substitutions:
+  # device
+  device_name: "thermostat-a-ne"
+  pretty_name: "A-Side NE Shop Thermostat"
+  ui_name: "${pretty_name}"
+  ip_address: 10.13.107.67

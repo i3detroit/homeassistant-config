@@ -1,0 +1,243 @@
+packages:
+  board: !include packages/board_esp32_wroom.yaml
+  base_components: !include packages/esp_home_components.yaml
+
+substitutions:
+  # defaults
+  default_temperature: 10 °C
+  # interfaces
+  sda_pin:      GPIO21
+  scl_pin:      GPIO22
+  spi_clk_pin:  GPIO18
+  spi_mosi_pin: GPIO19
+  spi_cs_pin:    GPIO5
+  # outputs
+  ## relays
+  heater_relay_pin: GPIO16
+  fan_relay_pin:    GPIO17
+  ## leds
+  mode_off_led_pin:       GPIO33
+  mode_heat_led_pin:      GPIO3
+  heating_active_led_pin: GPIO32
+  # inputs
+  low_point_up_button_pin:   GPIO25
+  low_point_down_button_pin: GPIO26
+  reset_button_pin:          GPIO27
+  heat_on_off_button_pin:    GPIO23
+
+api:
+  services:
+    - service: idle_reset
+      then:
+        - climate.control:
+            id: _thermostat
+            mode: HEAT
+            # I don't know why _low is omited from the name here, but it only works this way
+            target_temperature: ${default_temperature}
+
+spi:
+  clk_pin: "${spi_clk_pin}"
+  mosi_pin: "${spi_mosi_pin}"
+
+i2c:
+  sda: "${sda_pin}"
+  scl: "${scl_pin}"
+  scan: true
+  id: bus_a
+
+display:
+  - platform: max7219
+    cs_pin: ${spi_cs_pin}
+    num_chips: 1
+    reverse_enable: False
+    update_interval: 0.1s
+    # 0 and 3 are the digits to start writing at
+    lambda: |-
+      it.printf(0, "%.1fC", id(_thermostat).target_temperature_low);
+      it.printf(4, "%.1fC", id(temp).state);
+
+sensor:
+  - platform: bme280
+    temperature:
+      id: temp
+      name: "${pretty_name} Temperature"
+      oversampling: 16x
+    pressure:
+      name: "${pretty_name} Pressure"
+    humidity:
+      name: "${pretty_name} Humidity"
+    address: 0x76
+    update_interval: 10s
+
+# Relays for heater and fan control
+switch:
+  - platform: gpio
+    id: heater_relay
+    pin: "${heater_relay_pin}"
+    inverted: true
+  - platform: gpio
+    id: fan_relay
+    pin: "${fan_relay_pin}"
+    inverted: true
+
+climate:
+  - platform: thermostat
+    name: "${pretty_name}"
+    id: _thermostat
+    sensor: temp
+    default_target_temperature_low: ${default_temperature}
+    heat_deadband: 0.5 °C
+    heat_overrun: 0.5 °C
+    startup_delay: true
+    default_mode: heat
+    min_heating_off_time: 5s  # These should probably be like 30-60s
+    min_heating_run_time: 5s  # 5s is just for testing
+    min_idle_time: 5s
+    visual:
+      temperature_step: 0.5 °C
+    # action to take when activating furnace
+    heat_action:
+      - switch.turn_on: heater_relay
+      - switch.turn_on: fan_relay    # currently fan is forced on with heat
+      - light.turn_on: heating_active_led
+    # action to take when deactivating furnace
+    idle_action:
+      - switch.turn_off: heater_relay
+      - switch.turn_off: fan_relay
+      - light.turn_off: heating_active_led
+    # Change LEDs when thermostat function is set to heat mode
+    heat_mode:
+      - light.turn_on: mode_heat_led
+      - light.turn_off: mode_off_led
+    # Change LEDs when thermostat function is set to off mode
+    off_mode:
+      - light.turn_on: mode_off_led
+      - light.turn_off: mode_heat_led
+
+# Buttons for local control
+binary_sensor:
+  # Toggle mode between HEAT and OFF
+  - platform: gpio
+    name: heat_toggle
+    id: heat_on_off
+    pin:
+      number: "${heat_on_off_button_pin}"
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: 10ms
+    on_press:
+      then:
+        - if:
+            condition:
+              # mode 0 is OFF, 3 is HEAT
+              lambda: |-
+                return id(_thermostat).mode == 0;
+            then:
+              - climate.control:
+                  id: _thermostat
+                  mode: "HEAT"
+            else:
+              - climate.control:
+                  id: _thermostat
+                  mode: "OFF"
+
+  # Target temp up
+  - platform: gpio
+    name: low_point_up
+    id: low_point_up
+    pin:
+      number: "${low_point_up_button_pin}"
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: 10ms
+    on_press:
+      then:
+        - lambda: |-
+            id(_thermostat).target_temperature_low += 0.5;
+            ESP_LOGI("main", "target_temperature_low incremented to %f °C", id(_thermostat).target_temperature_low);
+
+  # Target temp down
+  - platform: gpio
+    name: low_point_down
+    id: low_point_down
+    pin:
+      number: "${low_point_down_button_pin}"
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: 10ms
+    on_press:
+      then:
+        - lambda: |-
+            id(_thermostat).target_temperature_low -= 0.5;
+            ESP_LOGI("main", "target_temperature_low decremented to %f °C", id(_thermostat).target_temperature_low);
+
+  # Reset to default mode/fan mode/target temp
+  - platform: gpio
+    name: reset
+    id: reset_button
+    pin:
+      number: "${reset_button_pin}"
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: 10ms
+    on_press:
+      then:
+        - climate.control:
+            id: _thermostat
+            mode: HEAT
+            # I don't know why _low is omited from the name here, but it only works this way
+            target_temperature: ${default_temperature}
+
+# Intermediary outputs for LEDs
+output:
+  - platform: gpio
+    id: mode_off_out
+    pin:
+      number: "${mode_off_led_pin}"
+      mode:
+        output: true
+      inverted: false
+  - platform: gpio
+    id: mode_heat_out
+    pin:
+      number: "${mode_heat_led_pin}"
+      mode:
+        output: true
+      inverted: false
+  - platform: gpio
+    id: heating_active_out
+    pin:
+      number: "${heating_active_led_pin}"
+      mode:
+        output: true
+      inverted: false
+
+# LEDs
+light:
+  # Thermostat function set to OFF
+  - platform: binary
+    name: mode_off_led
+    id: mode_off_led
+    output: mode_off_out
+  # Thermostat function set to HEAT
+  - platform: binary
+    name: mode_heat_led
+    id: mode_heat_led
+    output: mode_heat_out
+  # Actively heating
+  - platform: binary
+    name: heating_led
+    id: heating_active_led
+    output: heating_active_out

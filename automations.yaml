@@ -845,3 +845,19 @@
     target:
       entity_id: automation.notify_that_genie_is_plugged_in_again
   mode: single
+- id: '1649818626943'
+  alias: Thermostat Reset A-Side NE
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: climate.a_side_ne_shop_thermostat
+    attribute: temperature
+    above: '10'
+    for:
+      hours: 3
+      minutes: 0
+      seconds: 0
+  condition: []
+  action:
+  - service: esphome.thermostat_a_ne_idle_reset
+  mode: single
