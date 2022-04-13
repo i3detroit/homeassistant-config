@@ -1,31 +1,3 @@
-a_side_keypad_power_cycle:
-  alias: Power Cycle A-Side Keypad
-  sequence:
-    - service: mqtt.publish
-      data:
-        topic: !secret a_side_keypad_toggle_topic
-        payload: "OFF"
-    - delay:
-        milliseconds: 500
-    - service: mqtt.publish
-      data:
-        topic: !secret a_side_keypad_toggle_topic
-        payload: "ON"
-
-b_side_keypad_power_cycle:
-  alias: Power Cycle B-Side Keypad
-  sequence:
-    - service: mqtt.publish
-      data:
-        topic: !secret b_side_keypad_toggle_topic
-        payload: "OFF"
-    - delay:
-        milliseconds: 500
-    - service: mqtt.publish
-      data:
-        topic: !secret b_side_keypad_toggle_topic
-        payload: "ON"
-
 a_side_keypad_timed_out:
   alias: A-Side keypad timed out
   sequence:

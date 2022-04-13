@@ -1,0 +1,37 @@
+substitutions:
+  device_name: "b-side-office-keypad-watchdog"
+  pretty_name: "B-Side Office Keypad Watchdog"
+  ui_name: "${pretty_name}"
+  icon: "mdi:dog-side"
+  ip_address: !secret b_side_kp_watchdog_ip
+
+packages: 
+  board: !include common/packages/board_esp01_1m.yaml
+  base_components: !include common/packages/esp_home_components.yaml
+
+status_led:
+  pin:
+    number: 13
+    inverted: True
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 0
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - switch.toggle: relay_1
+
+switch:
+  - name: "${ui_name}"
+    id: relay_1
+    icon: "${icon}"
+    platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    restore_mode: RESTORE_DEFAULT_ON
+
+
