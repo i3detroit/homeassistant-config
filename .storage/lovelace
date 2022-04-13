@@ -1,5 +1,6 @@
 {
     "version": 1,
+    "minor_version": 1,
     "key": "lovelace",
     "data": {
         "config": {
@@ -14,6 +15,34 @@
                         "hide_header": true
                     }
                 ]
+            },
+            "button_card_templates": {
+                "shopping-item": {
+                    "layout": "icon_name",
+                    "size": "20%",
+                    "styles": {
+                        "name": [
+                            {
+                                "align-self": "middle"
+                            },
+                            {
+                                "justify-self": "left"
+                            }
+                        ],
+                        "icon": [
+                            {
+                                "color": "var(--primary-text-color)"
+                            }
+                        ]
+                    },
+                    "tap_action": {
+                        "action": "call-service",
+                        "service": "script.turn_on",
+                        "service_data": {
+                            "entity_id": "entity"
+                        }
+                    }
+                }
             },
             "views": [
                 {
@@ -82,6 +111,19 @@
                             "type": "thermostat",
                             "entity": "climate.office",
                             "name": "Office Thermostat"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.commons_ceiling_fan"
+                                },
+                                {
+                                    "entity": "switch.laser_zone_ceiling_fan"
+                                }
+                            ],
+                            "state_color": true,
+                            "title": "Ceiling Fans"
                         },
                         {
                             "type": "entities",
@@ -201,6 +243,9 @@
                                 },
                                 {
                                     "entity": "light.chandelier02"
+                                },
+                                {
+                                    "entity": "light.welding_helmet_lights"
                                 }
                             ],
                             "title": "Decor"
@@ -242,6 +287,12 @@
                                 },
                                 {
                                     "entity": "light.light_004"
+                                },
+                                {
+                                    "entity": "light.light_058"
+                                },
+                                {
+                                    "entity": "light.light_105"
                                 }
                             ],
                             "title": "Light Row 1"
@@ -507,6 +558,9 @@
                                 },
                                 {
                                     "entity": "light.chandelier02"
+                                },
+                                {
+                                    "entity": "light.welding_helmet_lights"
                                 }
                             ],
                             "title": "Decor"
@@ -2690,6 +2744,10 @@
                                     "entity": "sensor.ceiling_cluster_temperature"
                                 }
                             ]
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.a_side_ne_shop_thermostat"
                         }
                     ]
                 },
@@ -2718,6 +2776,186 @@
                                         "top": "14%",
                                         "transform": "translate(0%, -50%) scale(1.9, 1.9)"
                                     }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Shopping List",
+                    "path": "shopping-list",
+                    "icon": "mdi:basket",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "markdown",
+                            "content": "### Press if we're out of something\n---"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_green_tape",
+                                    "name": "Green Tape",
+                                    "styles": {
+                                        "icon": [
+                                            {
+                                                "color": "green"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_sharpies",
+                                    "name": "Sharpies"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "markdown",
+                            "content": "### It will send a message to _#shopping-list_ on slack\n---"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_plastic_forks",
+                                    "name": "Plastic Forks"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_plastic_spoons",
+                                    "name": "Plastic Spoons"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_plastic_knives",
+                                    "name": "Plastic Knives"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_chopsticks",
+                                    "name": "Chopsticks"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.out_of_household_paper_towels",
+                                    "name": "Paper Towels"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_blue_towels",
+                                    "name": "Blue Shop Towels",
+                                    "styles": {
+                                        "icon": [
+                                            {
+                                                "color": "dodgerblue"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_centerpull_towels",
+                                    "name": "Centerpull Towels"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_towel_dispenser_towels",
+                                    "name": "Towel Dispenser Paper Towels"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_toilet_paper",
+                                    "name": "Toilet Paper"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_paper_plates",
+                                    "name": "Paper Plates"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_bowls",
+                                    "name": "Bowls"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_plastic_cups",
+                                    "name": "Plastic Cups"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_large_gluesticks",
+                                    "name": "Large Hot Glue Sticks"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_small_gluesticks",
+                                    "name": "Small Hot Glue Sticks"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_foam_brushes",
+                                    "name": "Foam Brushes"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_paint_booth_filters",
+                                    "name": "Paint Booth Filters"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_33_gallon_trash_bags",
+                                    "name": "33 Gallon Trash Bags"
+                                },
+                                {
+                                    "type": "custom:button-card",
+                                    "template": "shopping-item",
+                                    "entity": "script.shopping_list_out_of_kitchen_trash_bags",
+                                    "name": "Kitchen Trash Bags"
                                 }
                             ]
                         }

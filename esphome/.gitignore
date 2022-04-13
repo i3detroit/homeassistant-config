@@ -10,3 +10,5 @@
 /secrets.yaml
 /common/secrets.yaml
 /build
+/test_*.yaml
+/test-*.yaml
