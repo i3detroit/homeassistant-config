@@ -1,7 +1,6 @@
 packages:
   package: !include common/sonoff_basic_light.yaml
 
-
 substitutions:
   device_name: "light_030"
   pretty_name: "Light 030"

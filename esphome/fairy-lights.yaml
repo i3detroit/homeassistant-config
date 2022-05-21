@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_basic_light.yaml
+  
+substitutions:
+  device_name: fairy-lights
+  pretty_name: "Fairy Lights"
+  ui_name: "${pretty_name}"
+  icon: "mdi:string-lights"
+  ip_address: 10.13.107.253
+  

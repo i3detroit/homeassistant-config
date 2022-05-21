@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_pow_r1.yaml
+  
+substitutions:
+  device_name: wolverine
+  pretty_name: "Wolverine"
+  ui_name: "${pretty_name}"
+  icon: "mdi:printer-3d-nozzle"
+  ip_address: 10.13.107.256
+  

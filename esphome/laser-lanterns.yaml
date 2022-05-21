@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_basic_light.yaml
+  
+substitutions:
+  device_name: laser-lanterns
+  pretty_name: "Laser Lanterns"
+  ui_name: "${pretty_name}"
+  icon: "mdi:ceiling-light"
+  ip_address: 10.13.107.153

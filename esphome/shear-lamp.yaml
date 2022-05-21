@@ -1,0 +1,9 @@
+packages:
+    etekcity: !include common/etekcity_switch.yaml
+
+substitutions:
+  device_name: "shear-lamp"
+  pretty_name: "Shear Lamp"
+  ui_name: "${pretty_name}"
+  icon: "mdi:lightbulb"
+  ip_address: 10.13.107.152

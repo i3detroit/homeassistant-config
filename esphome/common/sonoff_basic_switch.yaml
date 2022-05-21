@@ -1,4 +1,4 @@
-packages: 
+packages:
   board: !include packages/board_esp01_1m.yaml
   base_components: !include packages/esp_home_components.yaml
 

@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_basic_light.yaml
+  
+substitutions:
+  device_name: tool-crib-workbench-lights
+  pretty_name: "Tool Crib Workbench Lights"
+  ui_name: "${pretty_name}"
+  icon: "mdi:lightbulb"
+  ip_address: 10.13.107.256
+  

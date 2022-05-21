@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_s31_switch.yaml
+
+
+substitutions:
+  device_name: "cyclops"
+  pretty_name: "Cyclops"
+  ui_name: "${pretty_name}"
+  icon: "mdi:printer-3d-nozzle"

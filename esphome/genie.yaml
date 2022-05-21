@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_pow_r1.yaml
+  
+substitutions:
+  device_name: genie
+  pretty_name: "Genie"
+  ui_name: "${pretty_name}"
+  icon: "mdi:oil-lamp"
+  ip_address: 10.13.107.256

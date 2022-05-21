@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_s31_switch.yaml
+  
+substitutions:
+  device_name: cyclops-chiller
+  pretty_name: "Cyclops Chiller"
+  ui_name: "${pretty_name}"
+  icon: "mdi:power"
+  ip_address: 10.13.107.256
+  

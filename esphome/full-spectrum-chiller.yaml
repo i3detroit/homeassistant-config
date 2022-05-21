@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_basic_switch.yaml
+  
+substitutions:
+  device_name: full-spectrum-chiller
+  pretty_name: "Full Spectrum Chiller"
+  ui_name: "${pretty_name}"
+  icon: "mdi:power"
+  ip_address: 10.13.107.256

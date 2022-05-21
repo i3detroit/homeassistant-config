@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_basic_light.yaml
+  
+substitutions:
+  device_name: disco-spotlights
+  pretty_name: "Disco Spotlights"
+  ui_name: "${pretty_name}"
+  icon: "mdi:spotlight"
+  ip_address: 10.13.107.256
+  

@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_basic_light.yaml
+  
+substitutions:
+  device_name: swirly-lights-01
+  pretty_name: "Swirly Lights 01"
+  ui_name: "${pretty_name}"
+  icon: "mdi:ceiling-light"
+  ip_address: 10.13.107.256
+  

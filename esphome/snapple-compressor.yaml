@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_s31_switch.yaml
+  
+substitutions:
+  device_name: snapple-compressor
+  pretty_name: "Snapple Compressor"
+  ui_name: "${pretty_name}"
+  icon: "mdi:engine"
+  ip_address: 10.13.107.256
+  

@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_basic_switch.yaml
+  
+substitutions:
+  device_name: disco-ball
+  pretty_name: "Disco Ball"
+  ui_name: "${pretty_name}"
+  icon: "mdi:shimmer"
+  ip_address: 10.13.107.256
+  

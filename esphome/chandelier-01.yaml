@@ -1,0 +1,10 @@
+packages:
+  package: !include common/sonoff_sv.yaml
+
+substitutions:
+  device_name: "chandelier-01"
+  pretty_name: "Chandelier 01"
+  ui_name: "${pretty_name}"
+  icon: "mdi:chandelier"
+  ip_address: 10.13.107.256
+    

@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_pow_r1.yaml
+  
+substitutions:
+  device_name: fab-lab-ac
+  pretty_name: "Fab Lab AC"
+  ui_name: "${pretty_name}"
+  icon: "mdi:air-conditioner"
+  ip_address: 10.13.107.256

@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_th.yaml
+  
+substitutions:
+  device_name: a-sw-vent-fan
+  pretty_name: "A-Side SW Vent Fan"
+  ui_name: "${pretty_name}"
+  icon: "mdi:fan"
+  ip_address: 10.13.107.256
