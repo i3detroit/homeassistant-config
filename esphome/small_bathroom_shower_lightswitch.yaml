@@ -9,7 +9,7 @@
 
 substitutions:
   device_name: "small_bathroom_shower_lightswitch"
-  pretty_name: "Small Bathroom Shower Lightswitch"
+  pretty_name: "Small Bath Shower Lightswitch"
   ui_name: "Small Bathroom Shower Light"
   icon: "mdi:lightbulb"
   ip_address: "10.13.107.215"

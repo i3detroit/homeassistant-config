@@ -4,7 +4,7 @@ wifi:
       password: !secret wifi_pass_i3
   use_address: "${ip_address}"
   ap:
-    ssid: "please help me ${friendly_name}"
+    ssid: "${pretty_name}"
     password: !secret wifi_pass_i3
     ap_timeout: 5min
 
