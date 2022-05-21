@@ -67,5 +67,5 @@ sensor:
   - platform: bh1750
     name: "${location} Illuminance"
     address: 0x23
-    measurement_duration: 69
+    # measurement_duration: 69
     update_interval: 60s
