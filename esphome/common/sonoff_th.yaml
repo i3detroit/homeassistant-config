@@ -1,5 +1,5 @@
 packages:
-  package: !include common/sonoff_basic_switch.yaml
+  package: !include sonoff_basic_switch.yaml
 
 output:
   - platform: GPIO
