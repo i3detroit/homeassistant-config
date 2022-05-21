@@ -1,5 +1,5 @@
 packages:
-  package: !include common/ct-065w
+  package: !include common/ct-065w.yaml
 
 
 substitutions:

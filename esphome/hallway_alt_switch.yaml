@@ -1,6 +1,4 @@
-packages:
-# Based on SS01s_no_relay
-  package: !include common/treatlife_ss01s_no_relay.yaml
+<<: !include common/treatlife_ss01s_no_relay.yaml
 
 substitutions:
   device_name: "hallway_alt_switch"

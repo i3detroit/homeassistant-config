@@ -1,6 +1,6 @@
-<<: !include wifi.yaml
-<<: !include esp_home_components.yaml
-<<: !include board_esp01_1m.yaml
+packages:
+  base: !include packages/esp_home_components.yaml
+  board: !include packages/board_esp01_1m.yaml
 
 status_led:
   pin:
