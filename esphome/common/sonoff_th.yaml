@@ -2,14 +2,14 @@ packages:
   package: !include sonoff_basic_switch.yaml
 
 output:
-  - platform: GPIO
+  - platform: gpio
     id: led_1_output
     pin:
       number: GPIO14
       inverted: True
 
 light:
-  - platform: monochromatic
+  - platform: binary
     name: "${pretty_name} LED"
     output: led_1_output
     id: led_1
