@@ -120,6 +120,11 @@
                                 },
                                 {
                                     "entity": "switch.laser_zone_ceiling_fan"
+                                },
+                                {
+                                    "entity": "switch.machineshopceilingfan",
+                                    "icon": "mdi:fan",
+                                    "name": "Machine Shop Ceiling Fan"
                                 }
                             ],
                             "state_color": true,
@@ -215,7 +220,7 @@
                                     "entity": "light.fairy_lights"
                                 },
                                 {
-                                    "entity": "light.lanterns"
+                                    "entity": "light.laser_lanterns"
                                 },
                                 {
                                     "entity": "light.swirly_lights_01"
@@ -385,7 +390,7 @@
                                     "entity": "light.light_026"
                                 },
                                 {
-                                    "entity": "light.lanterns"
+                                    "entity": "light.laser_lanterns"
                                 }
                             ],
                             "title": "Light Row 5"
@@ -530,7 +535,7 @@
                                     "entity": "light.fairy_lights"
                                 },
                                 {
-                                    "entity": "light.lanterns"
+                                    "entity": "light.laser_lanterns"
                                 },
                                 {
                                     "entity": "light.swirly_lights_01"

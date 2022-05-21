@@ -42,7 +42,6 @@
 #           off
 #         {%- endif %}
 
-
 - platform: mqtt
   name: "Compressed Air Line Pressure 01"
   state_topic: "stat/i3/inside/sensors/air-line-pressure-01/pressure"
@@ -63,11 +62,23 @@
 
 - platform: time_date
   display_options:
-    - 'time'
-    - 'date'
-    - 'date_time'
-    - 'date_time_utc'
-    - 'date_time_iso'
-    - 'time_date'
-    - 'time_utc'
-    - 'beat'
+    - "time"
+    - "date"
+    - "date_time"
+    - "date_time_utc"
+    - "date_time_iso"
+    - "time_date"
+    - "time_utc"
+    - "beat"
+
+- platform: mqtt
+  name: "A-Side scanned uid"
+  state_topic: "i3/doors/a-side-main/send"
+  value_template: '{{ value_json["uid"] }}'
+  force_update: True
+
+- platform: mqtt
+  name: "B-Side scanned uid"
+  state_topic: "i3/doors/b-side-office/send"
+  value_template: '{{ value_json["uid"] }}'
+  force_update: True

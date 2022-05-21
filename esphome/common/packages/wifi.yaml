@@ -1,7 +1,12 @@
 wifi:
-  ssid: !secret wifi_ssid_i3
-  password: !secret wifi_pass_i3
+  networks:
+    - ssid: !secret wifi_ssid_i3
+      password: !secret wifi_pass_i3
   use_address: "${ip_address}"
+  ap:
+    ssid: "please help me ${friendly_name}"
+    password: !secret wifi_pass_i3
+    ap_timeout: 5min
 
 text_sensor:
   - platform: wifi_info

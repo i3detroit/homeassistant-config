@@ -50,7 +50,7 @@ row_5_lights:
     - light.light_024
     - light.light_025
     - light.light_026
-    - light.lanterns
+    - light.laser_lanterns
 
 machine_shop_lights:
   name: "Machine Shop Lights"
@@ -96,17 +96,17 @@ b_side_lights:
     # - light.light_044
     # - light.light_045
     - light.light_052
-#    - light.light_053
+    #    - light.light_053
     - light.light_054
-#    - light.light_056
-#    - light.light_057
-#    - light.light_058
+    #    - light.light_056
+    #    - light.light_057
+    #    - light.light_058
     - light.light_067
     - light.light_068
     - light.light_069
     - light.light_070
     - light.light_071
-#    - light.light_072
+    #    - light.light_072
     - light.light_073
     - light.light_074
     - light.light_075
@@ -139,7 +139,7 @@ b_side_lights:
     - light.light_103
     - light.light_104
     - light.light_106
-    
+
 wood_shop_lights:
   name: "Wood Shop Lights"
   icon: "mdi:ceiling-light"
@@ -173,7 +173,7 @@ emergency_lights:
     - light.light_040
     - light.light_027
     - light.light_038
-#    - light.light_056
+    #    - light.light_056
     - light.light_062
 
 all_normal_light_groups:

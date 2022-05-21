@@ -517,7 +517,6 @@
       entity_id:
       - light.swirly_lights_01
       - light.swirly_lights_02
-      - light.lanterns
       - light.chandelier01
       - light.chandelier02
       - light.fairy_lights
@@ -860,4 +859,27 @@
   condition: []
   action:
   - service: esphome.thermostat_a_ne_idle_reset
+  mode: single
+- id: '1651522520211'
+  alias: Key monitor
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.a_side_scanned_uid
+    to: '3980923'
+  - platform: state
+    entity_id: sensor.a_side_scanned_uid
+    to: '3562045'
+  - platform: state
+    entity_id: sensor.b_side_scanned_uid
+    to: '3980923'
+  - platform: state
+    entity_id: sensor.b_side_scanned_uid
+    to: '3562045'
+  condition: []
+  action:
+  - service: notify.hass_slack
+    data:
+      target: '@mkfink'
+      message: Test message
   mode: single

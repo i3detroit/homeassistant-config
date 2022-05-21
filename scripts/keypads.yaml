@@ -10,20 +10,20 @@ a_side_keypad_timed_out:
     - wait_for_trigger:
         - platform: mqtt
           topic: !secret a_side_keypad_heartbeat_topic
-      timeout: '00:02:00'
+      timeout: "00:02:00"
     - choose:
         - conditions:
             - condition: template
-              value_template: '{{ wait.trigger is none }}'
+              value_template: "{{ wait.trigger is none }}"
           sequence:
             - service: notify.hass_slack
               data:
                 message: >-
                   A-side keypad did not come back online after restart. Someone
-                  should check on it.
+                  should check on it. @mkfink
         - conditions:
             - condition: template
-              value_template: '{{ wait.trigger is not none }}'
+              value_template: "{{ wait.trigger is not none }}"
           sequence:
             - service: notify.hass_slack
               data:
@@ -47,18 +47,18 @@ b_side_keypad_timed_out:
     - wait_for_trigger:
         - platform: mqtt
           topic: !secret b_side_keypad_heartbeat_topic
-      timeout: '00:02:00'
+      timeout: "00:02:00"
     - choose:
         - conditions:
             - condition: template
-              value_template: '{{ wait.trigger is none }}'
+              value_template: "{{ wait.trigger is none }}"
           sequence:
             - service: notify.hass_slack
               data:
-                message: B-side office keypad did not come back online after restart. Someone should check on it.
+                message: B-side office keypad did not come back online after restart. Someone should check on it. @mkfink
         - conditions:
             - condition: template
-              value_template: '{{ wait.trigger is not none }}'
+              value_template: "{{ wait.trigger is not none }}"
           sequence:
             - service: notify.hass_slack
               data:
