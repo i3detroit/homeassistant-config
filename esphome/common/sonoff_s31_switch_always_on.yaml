@@ -2,6 +2,14 @@
 # default switch with restore_mode: ALWAYS_ON
 <<: !include sonoff_s31_switch.yaml
 
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 0
+      mode: INPUT_PULLUP
+      inverted: True
+
 switch:
   - name: "${ui_name}"
     id: relay_1

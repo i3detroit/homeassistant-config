@@ -1,6 +1,5 @@
 packages:
-  package: !include common/sonoff_s31_switch.yaml
-
+  package: !include common/sonoff_s31_switch_always_on.yaml
 
 substitutions:
   device_name: "full_spectrum_laser"
@@ -19,14 +18,3 @@ binary_sensor:
       inverted: True
   - platform: status
     name: "${pretty_name} Status"
-
-switch:
-  - name: "${ui_name}"
-    id: relay_1
-    icon: "${icon}"
-    platform: gpio
-    pin:
-      number: 12
-      inverted: False
-    restore_mode: ALWAYS_ON
-    internal: True

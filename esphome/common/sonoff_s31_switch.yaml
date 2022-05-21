@@ -1,4 +1,4 @@
-packages: 
+packages:
   board: !include packages/board_esp01_1m.yaml
   base_components: !include packages/esp_home_components.yaml
 
@@ -28,7 +28,6 @@ binary_sensor:
       - switch.toggle: relay_1
   - platform: status
     name: "${pretty_name} Status"
-
 
 switch:
   - name: "${ui_name}"
