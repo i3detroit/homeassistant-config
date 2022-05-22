@@ -411,10 +411,19 @@
                         {
                             "type": "entities",
                             "entities": [
-                                "light.vinyl_light",
-                                "light.treehouse_light",
-                                "light.large_bathroom_light",
-                                "light.tool_crib_workbench_lights"
+                                {
+                                    "entity": "light.red_pallet_rack_light"
+                                },
+                                {
+                                    "entity": "light.treehouse_light_2"
+                                },
+                                {
+                                    "entity": "light.large_bathroom_light"
+                                },
+                                {
+                                    "entity": "light.light_013",
+                                    "name": "Tool Crib Workbench"
+                                }
                             ],
                             "title": "Misc. Lights"
                         },

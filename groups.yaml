@@ -68,7 +68,7 @@ misc_lights:
   name: "Misc. Lights"
   icon: mdi:ceiling-light
   entities:
-    - light.vinyl_light
+    - light.red_pallet_rack_light
     - light.treehouse_light
     - light.large_bathroom_light
     - light.tool_crib_workbench_lights

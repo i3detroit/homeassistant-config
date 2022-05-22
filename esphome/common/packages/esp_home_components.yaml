@@ -14,3 +14,7 @@ packages:
   wifi: !include wifi.yaml
   wifi_signal: !include wifi_signal.yaml
   uptime: !include uptime.yaml
+
+switch:
+  - platform: restart
+    name: "${pretty_name} Restart"

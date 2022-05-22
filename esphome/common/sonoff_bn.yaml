@@ -1,0 +1,22 @@
+packages:
+  board: !include packages/board_esp01_1m.yaml
+  base_components: !include packages/esp_home_components.yaml
+
+status_led:
+  pin:
+    number: 13
+    inverted: True
+
+output:
+  - platform: esp8266_pwm
+    pin:
+      number: 12
+      inverted: False
+    id: white
+
+light:
+  - platform: monochromatic
+    name: "${ui_name}"
+    id: light_1
+    output: white
+    restore_mode: RESTORE_DEFAULT_ON

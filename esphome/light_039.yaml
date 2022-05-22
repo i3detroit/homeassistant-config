@@ -1,5 +1,5 @@
 packages:
-  package: !include common/sonoff_basic_light.yaml
+  package: !include common/sonoff_bn.yaml
 
 
 substitutions:
