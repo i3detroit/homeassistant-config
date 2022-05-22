@@ -3,7 +3,7 @@ packages:
 
 
 substitutions:
-  device_name: "machine_shop_exhaust_fan_lightswitch"
+  device_name: "machine_shop_exhaust_fan_switch"
   pretty_name: "Machine Shop Exhaust Fan Switch"
   ui_name: "Machine Shop Exhaust Fan"
   icon: "mdi:fan"
