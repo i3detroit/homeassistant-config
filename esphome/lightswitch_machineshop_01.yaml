@@ -1,0 +1,10 @@
+packages:
+  package: !include common/button_box_4.yaml
+
+
+substitutions:
+  device_name: "machine_shop_lightswitch_01"
+  pretty_name: "Machine Shop Lightswitch 01"
+  target_1: "group.machine_shop_lights"
+  target_2: "switch.machine_shop_ceiling_fan"
+  ip_address: "10.13.107.xxx"

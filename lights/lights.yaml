@@ -29,26 +29,6 @@
   payload_off: "OFF"
 
 - platform: mqtt
-  name: "Chandelier01"
-  state_topic: "stat/i3/inside/accent/chandelier-01/POWER"
-  command_topic: "cmnd/i3/inside/accent/chandelier-01/POWER"
-  availability_topic: "tele/i3/inside/accent/chandelier-01/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
-  name: "Chandelier02"
-  state_topic: "stat/i3/inside/accent/chandelier-02/POWER"
-  command_topic: "cmnd/i3/inside/accent/chandelier-02/POWER"
-  availability_topic: "tele/i3/inside/accent/chandelier-02/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  payload_on: "ON"
-  payload_off: "OFF"
-
-- platform: mqtt
   name: Elab Arch North
   effect_list:
     - 2

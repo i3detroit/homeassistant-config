@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_bn.yaml
+
+
+substitutions:
+  device_name: "light_038"
+  pretty_name: "Emergency Light 038"
+  ui_name: "Emergency Light 038"
+  icon: "mdi:lightbulb"

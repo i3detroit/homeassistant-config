@@ -4,6 +4,6 @@ packages:
 
 substitutions:
   device_name: "light_039"
-  pretty_name: "Light 039"
-  ui_name: "Light 039"
+  pretty_name: "Emergency Light 039"
+  ui_name: "Emergency Light 039"
   icon: "mdi:lightbulb"
