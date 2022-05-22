@@ -4,7 +4,7 @@ packages:
 
 substitutions:
   device_name: "large_bathroom_exhaust_fan_switch"
-  pretty_name: "Large Bathroom Exhaust Fan switch"
+  pretty_name: "Large Bathroom Exhaust Fan"
   ui_name: "Large Bathroom Exhaust Fan"
   icon: "mdi:fan"
   ip_address: "10.13.107.211"
