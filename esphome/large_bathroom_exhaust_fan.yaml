@@ -3,7 +3,7 @@ packages:
 
 
 substitutions:
-  device_name: "large_bathroom_exhaust_fan_switch"
+  device_name: "large_bathroom_exhaust_fan"
   pretty_name: "Large Bathroom Exhaust Fan"
   ui_name: "Large Bathroom Exhaust Fan"
   icon: "mdi:fan"
