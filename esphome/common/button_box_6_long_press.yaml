@@ -1,4 +1,4 @@
-packages: 
+packages:
   board: !include packages/board_d1_mini.yaml
   base_components: !include packages/esp_home_components.yaml
 
@@ -105,7 +105,7 @@ binary_sensor:
       - homeassistant.service:
           service: homeassistant.turn_on
           data:
-            entity_id: ${target_3}"
+            entity_id: "${target_3}"
     on_multi_click:
       timing:
         - ON for at least 0.4s
@@ -128,7 +128,7 @@ binary_sensor:
       - homeassistant.service:
           service: homeassistant.turn_off
           data:
-            entity_id: ${target_3}"
+            entity_id: "${target_3}"
     on_multi_click:
       timing:
         - ON for at least 0.4s
