@@ -512,17 +512,15 @@
     payload: 'OFF'
   condition: []
   action:
-  - service: light.turn_{{ trigger.payload }}
+  - service: homeassistant.turn_{{ trigger.payload }}
     target:
       entity_id:
       - light.swirly_lights_01
       - light.swirly_lights_02
-      - light.chandelier01
-      - light.chandelier02
+      - switch.chandelier_01
+      - switch.chandelier_02
       - light.fairy_lights
-  - service: switch.turn_{{ trigger.payload }}
-    target:
-      entity_id: switch.disco_spotlights
+      - light.disco_spotlights
   mode: single
 - id: '1628117264623'
   alias: Craft Room Lights Button

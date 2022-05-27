@@ -2,27 +2,37 @@ emergency_lights_reset:
   alias: Emergency Lights Reset
   sequence:
   - service: light.turn_on
-    entity_id: light.light_038
     data:
       brightness: 30
+    target:
+      entity_id: light.emergency_light_038
   - service: light.turn_on
-    entity_id: light.light_039
     data:
       brightness: 24
+    target:
+      entity_id:
+      - light.emergency_light_039
   - service: light.turn_on
-    entity_id: light.light_040
     data:
       brightness: 46
+    target:
+      entity_id:
+      - light.emergency_light_040
   - service: light.turn_on
-    entity_id: light.light_027
     data:
       brightness: 40
+    target:
+      entity_id:
+      - light.emergency_light_027
   - service: switch.turn_on
     target:
       entity_id: switch.fab_lab_exhaust_fan
+    data: {}
   - service: light.turn_on
     target:
-      entity_id: light.light_062
+      entity_id:
+      - light.emergency_light_062
+    data: {}
   mode: single
 blink_traffic_light_green:
   alias: Blink Traffic Light Green

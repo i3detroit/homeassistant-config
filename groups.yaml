@@ -169,12 +169,12 @@ emergency_lights:
   name: "Emergency Lights"
   icon: mdi:alarm-light
   entities:
-    - light.light_039
-    - light.light_040
-    - light.light_027
-    - light.light_038
-    #    - light.light_056
-    - light.light_062
+    - light.emergency_light_039
+    - light.emergency_light_040
+    - light.emergency_light_027
+    - light.emergency_light_038
+    #    - light.emergency_light_056
+    - light.emergency_light_062
 
 all_normal_light_groups:
   name: All Light Groups

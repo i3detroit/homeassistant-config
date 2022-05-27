@@ -2,7 +2,7 @@ wifi:
   networks:
     - ssid: !secret wifi_ssid_i3
       password: !secret wifi_pass_i3
-  # use_address: "${ip_address}"
+  use_address: "${ip_address}"
   ap:
     ssid: "${pretty_name}"
     password: !secret wifi_pass_i3

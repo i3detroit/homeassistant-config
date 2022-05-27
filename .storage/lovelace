@@ -122,7 +122,7 @@
                                     "entity": "switch.laser_zone_ceiling_fan"
                                 },
                                 {
-                                    "entity": "switch.machineshopceilingfan",
+                                    "entity": "switch.machine_shop_ceiling_fan",
                                     "icon": "mdi:fan",
                                     "name": "Machine Shop Ceiling Fan"
                                 }
@@ -241,16 +241,20 @@
                                     "entity": "switch.disco_ball"
                                 },
                                 {
-                                    "entity": "switch.disco_spotlights"
+                                    "entity": "light.disco_spotlights",
+                                    "icon": "mdi:spotlight-beam"
                                 },
                                 {
-                                    "entity": "light.chandelier01"
+                                    "entity": "switch.chandelier_01"
                                 },
                                 {
-                                    "entity": "light.chandelier02"
+                                    "entity": "switch.chandelier_02"
                                 },
                                 {
                                     "entity": "light.welding_helmet_lights"
+                                },
+                                {
+                                    "entity": "light.mural_blacklight"
                                 }
                             ],
                             "title": "Decor"
@@ -415,7 +419,7 @@
                                     "entity": "light.red_pallet_rack_light"
                                 },
                                 {
-                                    "entity": "light.treehouse_light_2"
+                                    "entity": "light.treehouse_light"
                                 },
                                 {
                                     "entity": "light.large_bathroom_light"
@@ -565,13 +569,13 @@
                                     "entity": "switch.disco_ball"
                                 },
                                 {
-                                    "entity": "switch.disco_spotlights"
+                                    "entity": "light.disco_spotlights"
                                 },
                                 {
-                                    "entity": "light.chandelier01"
+                                    "entity": "switch.chandelier_01"
                                 },
                                 {
-                                    "entity": "light.chandelier02"
+                                    "entity": "switch.chandelier_02"
                                 },
                                 {
                                     "entity": "light.welding_helmet_lights"
@@ -600,22 +604,22 @@
                             "type": "entities",
                             "entities": [
                                 {
-                                    "entity": "light.light_039"
+                                    "entity": "light.emergency_light_039"
                                 },
                                 {
-                                    "entity": "light.light_040"
+                                    "entity": "light.emergency_light_040"
                                 },
                                 {
-                                    "entity": "light.light_027"
+                                    "entity": "light.emergency_light_027"
                                 },
                                 {
-                                    "entity": "light.light_038"
+                                    "entity": "light.emergency_light_038"
                                 },
                                 {
-                                    "entity": "light.light_056"
+                                    "entity": "light.emergency_light_056"
                                 },
                                 {
-                                    "entity": "light.light_062"
+                                    "entity": "light.emergency_light_062"
                                 }
                             ],
                             "title": "Emergency Lights"

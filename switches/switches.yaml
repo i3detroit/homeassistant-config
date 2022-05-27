@@ -26,16 +26,6 @@
   payload_not_available: "Offline"
 
 - platform: mqtt
-  name: "Paint Box Vent"
-  state_topic: "stat/i3/inside/commons/paint-box/POWER"
-  command_topic: "cmnd/i3/inside/commons/paint-box/POWER"
-  availability_topic: "tele/i3/inside/commons/paint-box/LWT"
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
   name: "Chinesium Laser"
   state_topic: "stat/i3/inside/fablab/chinesium-laser/POWER"
   command_topic: "cmnd/i3/inside/fablab/chinesium-laser/POWER"
