@@ -3,8 +3,8 @@ packages:
 
 
 substitutions:
-  device_name: "small_bathroom_exhaust_fan_lightswitch"
-  pretty_name: "Small Bathroom Exhaust Fan Switch"
+  device_name: "small_bathroom_exhaust_fan"
+  pretty_name: "Small Bathroom Exhaust Fan"
   ui_name: "Small Bathroom Exhaust Fan"
   icon: "mdi:fan"
   ip_address: "10.13.107.28"

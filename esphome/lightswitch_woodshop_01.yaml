@@ -1,9 +1,0 @@
-packages:
-  package: !include common/button_box_2.yaml
-
-
-substitutions:
-  device_name: "wood_shop_lightswitch_01"
-  pretty_name: "Wood Shop Lightswitch 01"
-  target_1: "group.wood_shop_lights"
-  ip_address: "10.13.107.46"

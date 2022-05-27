@@ -6,4 +6,4 @@ substitutions:
   pretty_name: "Genie"
   ui_name: "${pretty_name}"
   icon: "mdi:oil-lamp"
-  ip_address: 10.13.107.256
+  ip_address: 10.13.107.240
