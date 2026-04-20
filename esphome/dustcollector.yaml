@@ -1,0 +1,567 @@
+esphome:
+  name: dustcollector
+  friendly_name: "Dust Collector"
+
+esp8266:
+  board: d1_mini_pro
+  restore_from_flash: true
+
+# Disable logging
+logger:
+  baud_rate: 0
+
+web_server:
+  port: 80
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "mTy4Dwu60uxMZK4acOVhGejMuie1eQewAi8bW/XiXS4="
+  services:
+  - service: start_collector
+    variables: {}
+    then:
+      - script.execute: script_start_collector
+  - service: stop_collector
+    variables: {}
+    then:
+      - script.execute: script_stop_collector
+
+ota:
+  password: "36633bc24acbc4b42a66dfe998652b8d"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Dustcollector Fallback Hotspot"
+    password: "6VjGTBcQ8pu6"
+
+captive_portal:
+
+substitutions:
+  btn_debounce_on: 50ms
+  btn_debounce_off: 50ms
+  sensor_debounce_on: 50ms
+  sensor_debounce_off: 50ms
+  shaker_on_time: 10s
+  shaker_switch_time: 1s
+  shaker_cycles: "3"
+  vfd_full_speed: "60.00"
+  vfd_off_speed: "0.00"
+
+uart:
+  baud_rate: 115200
+  tx_pin: 1
+  rx_pin: 3
+
+i2c:
+  sda: 4
+  scl: 5
+  scan: true
+
+mcp23017:
+  - id: io_device
+    address: 0x20
+
+modbus:
+  id: vfd_bus
+    
+modbus_controller:
+  - id: vfd_device #Ironhorse ACN drive, functions 0x03, 0x04, 0x06, and 0x10
+    address: 0x1
+    modbus_id: vfd_bus
+    setup_priority: -10
+
+script:
+  - id: run_shaker #run the shaker forward and backward to clear the filter
+    mode: single
+    then:
+      - switch.turn_on: shaker_active
+      - repeat:
+          count: ${shaker_cycles}
+          then:
+            - switch.turn_on: shaker_fwd
+            - delay: ${shaker_on_time}
+            - switch.turn_off: shaker_fwd
+            - delay: ${shaker_switch_time}
+            - switch.turn_on: shaker_rev
+            - delay: ${shaker_on_time}
+            - switch.turn_off: shaker_rev
+            - delay: ${shaker_switch_time}
+      - switch.turn_off: shaker_active
+  - id: stop_shaker #ensure the shaker is not running
+    mode: single
+    then:
+      - switch.turn_off: shaker_fwd
+      - switch.turn_off: shaker_rev
+      - switch.turn_off: shaker_active
+  - id: script_start_collector #start up the main collector after ensuring the shaker is not running
+    mode: single
+    then:
+      - script.stop: run_shaker
+      - script.wait: stop_shaker
+      - number.set:
+          id: vfd_control_frequency
+          value: ${vfd_full_speed}
+      - select.set:
+          id: vfd_operation_control
+          option: "Start"
+  - id: script_stop_collector
+    mode: single
+    then:
+      - select.set:
+          id: vfd_operation_control
+          option: "Stop"
+      - number.set:
+          id: vfd_control_frequency
+          value: ${vfd_off_speed}
+      - wait_until:
+          condition:
+            text_sensor.state:
+              id: vfd_direction
+              state: "Stopped"
+      - script.execute: run_shaker
+
+switch:
+  - platform: gpio
+    name: "Shaker Forward"
+    id: shaker_fwd
+    interlock: [shaker_rev]
+    pin:
+      mcp23xxx: io_device
+      number: 12 #B4
+      mode:
+        output: true
+      inverted: true
+  - platform: gpio
+    name: "Shaker Reverse"
+    id: shaker_rev
+    interlock: [shaker_fwd]
+    pin:
+      mcp23xxx: io_device
+      number: 13 #B5
+      mode:
+        output: true
+      inverted: true
+  - platform: gpio
+    name: "Shaker Active"
+    id: shaker_active
+    disabled_by_default: true
+    internal: true
+    pin:
+      mcp23xxx: io_device
+      number: 8 #B0
+      mode:
+        output: true
+      inverted: true
+  - platform: gpio
+    name: "Fault Buzzer"
+    id: fault_buzzer
+    disabled_by_default: true
+    pin:
+      mcp23xxx: io_device
+      number: 9 #B1
+      mode:
+        output: true
+      inverted: true
+  - platform: gpio
+    name: "Left Bin Full Light"
+    id: left_bin_full
+    disabled_by_default: true
+    internal: true
+    pin:
+      mcp23xxx: io_device
+      number: 10 #B2
+      mode:
+        output: true
+      inverted: true
+  - platform: gpio
+    name: "Right Bin Full Light"
+    id: right_bin_full
+    disabled_by_default: true
+    internal: true
+    pin:
+      mcp23xxx: io_device
+      number: 11 #B3
+      mode:
+        output: true
+      inverted: true
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    id: vfd_fault_history_reset
+    name: "Drive Fault History Reset"
+    address: 0x0380
+    register_type: holding
+    bitmask: 0x1
+    on_turn_on:
+      - delay: 50ms
+      - switch.turn_off: vfd_fault_history_reset
+
+number:
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    id: vfd_control_frequency
+    name: "Drive Frequency Control"
+    device_class: "frequency"
+    unit_of_measurement: "Hz"
+    address: 0x0380
+    value_type: U_WORD
+    min_value: ${vfd_off_speed}
+    max_value: ${vfd_full_speed}
+    step: 0.01
+    multiply: 100
+
+select:
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    id: vfd_operation_control
+    name: "Drive Operation Control"
+    address: 0x0382
+    value_type: U_WORD
+    optionsmap:
+      "Stop": 0x0
+      "Start": 0x3
+
+binary_sensor:
+  - platform: gpio
+    name: "Start Button"
+    id: start_btn
+    pin:
+      mcp23xxx: io_device
+      number: 0 #A0
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: ${btn_debounce_on}
+      - delayed_off: ${btn_debounce_off}
+    on_press:
+      - script.execute: script_start_collector
+  - platform: gpio
+    name: "Stop Button"
+    id: stop_btn
+    pin:
+      mcp23xxx: io_device
+      number: 1 #A1
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: ${btn_debounce_on}
+      - delayed_off: ${btn_debounce_off}
+    on_press:
+      - script.execute: script_stop_collector
+  - platform: gpio
+    name: "Left Bin Sensor"
+    id: left_bin_sensor
+    pin:
+      mcp23xxx: io_device
+      number: 2 #A2
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: ${sensor_debounce_on}
+      - delayed_off: ${sensor_debounce_off}
+    on_press:
+      - switch.turn_on: left_bin_full
+    on_release:
+      - switch.turn_off: left_bin_full
+  - platform: gpio
+    name: "Right Bin Sensor"
+    id: right_bin_sensor
+    pin:
+      mcp23xxx: io_device
+      number: 3 #A3
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    filters:
+      - delayed_on: ${sensor_debounce_on}
+      - delayed_off: ${sensor_debounce_off}
+    on_press:
+      - switch.turn_on: right_bin_full
+    on_release:
+      - switch.turn_off: right_bin_full
+
+text_sensor:
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Status"
+    id: vfd_state
+    register_type: holding
+    internal: true
+    address: 0x0305
+    bitmask: 0xF000
+    raw_encode: HEXBYTES
+    lambda: |-
+      uint16_t value = modbus_controller::word_from_hex_str(x, 0);
+      switch (value) {
+        case 0: return std::string("Normal");
+        case 4: return std::string("Warning");
+        case 8: return std::string("Fault");
+        default: return std::string("Unknown");
+      }
+      return x;
+    on_value:
+      - if:
+          condition:
+            text_sensor.state:
+              id: vfd_state
+              state: "Fault"
+          then:
+            - switch.turn_on: fault_buzzer
+          else:
+            - switch.turn_off: fault_buzzer
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Operating State"
+    id: vfd_operation_state
+    register_type: holding
+    internal: true
+    address: 0x0305
+    bitmask: 0x00F0
+    raw_encode: HEXBYTES
+    lambda: |-
+      uint16_t value = modbus_controller::word_from_hex_str(x, 0);
+      switch (value) {
+        case 1: return std::string("Speed Searching");
+        case 2: return std::string("Accelerating");
+        case 3: return std::string("Constant Rate");
+        case 4: return std::string("Decelerating");
+        case 5: return std::string("Decelerating To Stop");
+        case 6: return std::string("Hardware OCS");
+        case 7: return std::string("Software OCS");
+        case 8: return std::string("Dwell");
+        default: return std::string("Unknown");
+      }
+      return x;
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Direction"
+    id: vfd_direction
+    register_type: holding
+    internal: true
+    address: 0x0305
+    bitmask: 0x000F
+    raw_encode: HEXBYTES
+    lambda: |-
+      uint16_t value = modbus_controller::word_from_hex_str(x, 0);
+      switch (value) {
+        case 0: return std::string("Stopped");
+        case 1: return std::string("Forward");
+        case 2: return std::string("Reverse");
+        case 3: return std::string("DC Operating");
+        default: return std::string("Unknown");
+      }
+      return x;
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Fault Info"
+    id: latch_info
+    register_type: holding
+    internal: true
+    address: 0x0330
+    register_count: 2
+    raw_encode: HEXBYTES
+    lambda: |-
+      uint32_t value = modbus_controller::word_from_hex_str(x, 0);
+      switch (value) {
+        case 0x80000000: return std::string("Fuse Open Trip");
+        case 0x40000000: return std::string("Overheat Trip");
+        case 0x20000000: return std::string("Arm Short");
+        case 0x10000000: return std::string("External Trip");
+        case 0x08000000: return std::string("Overvoltage Trip");
+        case 0x04000000: return std::string("Overcurrent Trip");
+        case 0x02000000: return std::string("NTC Trip");
+        case 0x00400000: return std::string("Input Open-phase Trip");
+        case 0x00200000: return std::string("Output Open-phase Trip");
+        case 0x00100000: return std::string("Ground Fault Trip");
+        case 0x00080000: return std::string("E-Thermal Trip");
+        case 0x00040000: return std::string("Drive Overload Trip");
+        case 0x00020000: return std::string("Underload Trip");
+        case 0x00010000: return std::string("Overload Trip");
+        case 0x00002000: return std::string("Safety B");
+        case 0x00001000: return std::string("Safety A");
+        case 0x00000400: return std::string("Bad Option Card");
+        case 0x00000200: return std::string("No Motor Trip");
+        case 0x00000100: return std::string("External Brake Trip");
+        case 0x00000080: return std::string("Bad Basic I/O Contact");
+        case 0x00000040: return std::string("Pre PID Fail");
+        case 0x00000020: return std::string("Error Writing Parameter");
+        case 0x00000008: return std::string("Fan Trip");
+        default: return std::string("No Fault");
+      }
+      return x;
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive H/W Diagnosis Info"
+    id: hw_info
+    register_type: holding
+    internal: true
+    address: 0x0333
+    raw_encode: HEXBYTES
+    lambda: |-
+      uint16_t value = modbus_controller::word_from_hex_str(x, 0);
+      switch (value) {
+        case 0x0020: return std::string("Queue Full");
+        case 0x0008: return std::string("Watchdog-2 Error");
+        case 0x0004: return std::string("Watchdog-1 Error");
+        case 0x0002: return std::string("EEPROM Error");
+        case 0x0001: return std::string("ADC Error");
+        default: return std::string("None");
+      }
+      return x;
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Warning Info"
+    id: warning_info
+    register_type: holding
+    internal: true
+    address: 0x0334
+    raw_encode: HEXBYTES
+    lambda: |-
+      uint16_t value = modbus_controller::word_from_hex_str(x, 0);
+      switch (value) {
+        case 0x0200: return std::string("Auto Tuning Failed");
+        case 0x0100: return std::string("Keypad Lost");
+        case 0x0080: return std::string("Encoder Disconnection");
+        case 0x0040: return std::string("Encoder Wrong Installation");
+        case 0x0020: return std::string("DB");
+        case 0x0010: return std::string("Fan Running");
+        case 0x0008: return std::string("Lost Command");
+        case 0x0004: return std::string("Drive Overload");
+        case 0x0002: return std::string("Underload");
+        case 0x0001: return std::string("Overload");
+        default: return std::string("No Warning");
+      }
+      return x;
+
+sensor:
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Output Current"
+    device_class: "current"
+    unit_of_measurement: "A"
+    accuracy_decimals: 1
+    register_type: holding
+    address: 0x0310
+    value_type: U_WORD
+    filters:
+      - multiply: 0.1
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Output Frequency"
+    device_class: "frequency"
+    unit_of_measurement: "Hz"
+    accuracy_decimals: 2
+    register_type: holding
+    address: 0x0311
+    value_type: U_WORD
+    filters:
+      - multiply: 0.01
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Output RPM"
+    device_class: "speed"
+    unit_of_measurement: "RPM"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0312
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Output Voltage"
+    device_class: "voltage"
+    unit_of_measurement: "V"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0314
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive DC Bus Voltage"
+    device_class: "voltage"
+    unit_of_measurement: "V"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0315
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Temperature"
+    device_class: "temperature"
+    unit_of_measurement: "°C"
+    accuracy_decimals: 2
+    register_type: holding
+    address: 0x032D
+    value_type: U_WORD
+    filters:
+      - multiply: 0.01
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive On Time (Days)"
+    device_class: "duration"
+    unit_of_measurement: "d"
+    state_class: "total"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0340
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive On Time (Minutes)"
+    device_class: "duration"
+    unit_of_measurement: "min"
+    state_class: "total"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0341
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Run Time (Days)"
+    device_class: "duration"
+    unit_of_measurement: "d"
+    state_class: "total"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0342
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Run Time (Minutes)"
+    device_class: "duration"
+    unit_of_measurement: "min"
+    state_class: "total"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0343
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Fan Time (Days)"
+    device_class: "duration"
+    unit_of_measurement: "d"
+    state_class: "total"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0344
+    value_type: U_WORD
+  - platform: modbus_controller
+    modbus_controller_id: vfd_device
+    name: "Drive Fan Time (Minutes)"
+    device_class: "duration"
+    unit_of_measurement: "min"
+    state_class: "total"
+    accuracy_decimals: 0
+    register_type: holding
+    address: 0x0345
+    value_type: U_WORD

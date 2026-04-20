@@ -504,15 +504,14 @@
   alias: Disco Mode
   description: ''
   trigger:
-  - platform: mqtt
-    topic: stat/i3/inside/commons/disco/POWER
-    payload: 'ON'
-  - platform: mqtt
-    topic: stat/i3/inside/commons/disco/POWER
-    payload: 'OFF'
+  - platform: device
+    type: changed_states
+    device_id: 7bae24579d11e6c6ead62d594938c066
+    entity_id: switch.disco_ball
+    domain: switch
   condition: []
   action:
-  - service: homeassistant.turn_{{ trigger.payload }}
+  - service: homeassistant.turn_{{ trigger.to_state.state }}
     target:
       entity_id:
       - light.swirly_lights_01
@@ -641,9 +640,17 @@
     for: 00:04:00
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: Mezzanine AP is disconnected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_down_mezzanine
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_connected_mezzanine
   mode: single
 - id: '1630538145102'
   alias: AP Connected - Mezzanine
@@ -653,14 +660,19 @@
     entity_id: device_tracker.mezzanineap
     from: not_home
     to: home
-  condition:
-  - condition: template
-    value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 210 }}'''
+  condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: Mezzanine AP is connected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_connected_mezzanine
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_down_mezzanine
   mode: single
 - id: '1630538194340'
   alias: AP Connected - Office
@@ -670,14 +682,19 @@
     entity_id: device_tracker.officeap
     from: not_home
     to: home
-  condition:
-  - condition: template
-    value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 210 }}'''
+  condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: Office AP is connected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_connected_office
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_office
   mode: single
 - id: '1630538221304'
   alias: AP Disconnected - Office
@@ -690,9 +707,17 @@
     for: 00:04:00
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: Office AP is disconnected
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_connected_office
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_office
   mode: single
 - id: '1630538259777'
   alias: AP Connected - Tool Crib
@@ -702,14 +727,19 @@
     entity_id: device_tracker.toolcribap
     from: not_home
     to: home
-  condition:
-  - condition: template
-    value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 210 }}'''
+  condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: Tool Crib AP is connected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_connected_tool_crib
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_tool_crib
   mode: single
 - id: '1630538286564'
   alias: AP Disconnected - Tool Crib
@@ -722,9 +752,17 @@
     for: 00:04:00
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: Tool Crib AP is disconnected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_tool_crib
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_connected_tool_crib
   mode: single
 - id: '1630538328496'
   alias: AP Connected - B-Side South
@@ -734,14 +772,19 @@
     entity_id: device_tracker.bsidesouthap
     from: not_home
     to: home
-  condition:
-  - condition: template
-    value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 210 }}'''
+  condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: B-Side South AP is connected
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_b_side_south
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_connected_b_side_south
   mode: single
 - id: '1630538348128'
   alias: AP Disconnected - B-Side South
@@ -754,9 +797,17 @@
     for: 00:04:00
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: B-Side South AP is disconnected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_b_side_south
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_connected_b_side_south
   mode: single
 - id: '1630538371738'
   alias: AP Connected - B-Side North
@@ -766,14 +817,19 @@
     entity_id: device_tracker.bsidenorthap
     from: not_home
     to: home
-  condition:
-  - condition: template
-    value_template: '''{{ (now() | as_timestamp) - (trigger.from_state.last_changed
-      | as_timestamp) > 210 }}'''
+  condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: B-Side North AP is connected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_connected_b_side_north
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_b_side_north
   mode: single
 - id: '1630538395298'
   alias: AP Disconnected - B-Side North
@@ -786,26 +842,47 @@
     for: 00:04:00
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: B-Side North AP is disconnected
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.ap_disconnected_b_side_north
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id: automation.ap_connected_b_side_north
   mode: single
 - id: '1638201213002'
   alias: Complain if genie not plugged in
   description: ''
   trigger:
   - platform: state
-    entity_id: sensor.genie_charge_state
-    to: Not plugged in
-    for: '6:00:00'
+    entity_id:
+    - sensor.genie_charge_state
+    for:
+      hours: 6
+      minutes: 0
+      seconds: 0
+    to: unavailable
+  - platform: state
+    entity_id:
+    - sensor.genie_charge_state
+    to: not plugged in
+    for:
+      hours: 6
+      minutes: 0
+      seconds: 0
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: The genie has been unplugged for over 6 hours
   - service: automation.turn_on
     target:
       entity_id: automation.notify_that_genie_is_plugged_in_again
+    data: {}
   mode: single
 - id: '1638201355599'
   alias: Notify that genie is plugged in again
@@ -818,7 +895,7 @@
     to: Charging
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: The genie is plugged in again
   - service: automation.turn_off
@@ -833,14 +910,23 @@
     entity_id: sensor.genie_charge_state
     to: Not plugged in
     for: '24:00:00'
+  - platform: state
+    entity_id:
+    - sensor.genie_charge_state
+    to: unavailable
+    for:
+      hours: 24
+      minutes: 0
+      seconds: 0
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       message: Seriously, plug in the genie. It's been 24 hours. @mkfink @abzman
   - service: automation.turn_on
     target:
       entity_id: automation.notify_that_genie_is_plugged_in_again
+    data: {}
   mode: single
 - id: '1649818626943'
   alias: Thermostat Reset A-Side NE
@@ -876,8 +962,155 @@
     to: '3562045'
   condition: []
   action:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '@mkfink'
       message: Test message
+  mode: single
+- id: '1655771700966'
+  alias: Disco button on
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: 9c725eb4c87b8738d76a02e76fb04a56
+    entity_id: binary_sensor.disco_button_button_1
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 7bae24579d11e6c6ead62d594938c066
+    entity_id: switch.disco_ball
+    domain: switch
+  mode: single
+- id: '1655771741240'
+  alias: Disco button off
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: 9c725eb4c87b8738d76a02e76fb04a56
+    entity_id: binary_sensor.disco_button_button_2
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 7bae24579d11e6c6ead62d594938c066
+    entity_id: switch.disco_ball
+    domain: switch
+  mode: single
+- id: '1735616484533'
+  alias: Turn on Recycle Notification Light
+  description: ''
+  trigger:
+  - platform: time
+    at: '18:00:05'
+  condition:
+  - condition: time
+    before: '19:00:00'
+    weekday:
+    - wed
+    after: '17:00:00'
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.recycle_notification_light
+  mode: single
+- id: '1735616564755'
+  alias: Turn off Recycle Notification Light
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:05
+  condition:
+  - condition: time
+    before: 09:00:00
+    weekday:
+    - thu
+    after: 08:00:00
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.recycle_notification_light
+  mode: single
+- id: '1760310093672'
+  alias: Sewing Zone Accent Lights On
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: f070c5b7fecf740ab06b08b4668b52c4
+    entity_id: binary_sensor.dust_collector_buttons_01_button_1
+    domain: binary_sensor
+  - type: turned_on
+    platform: device
+    device_id: ae92f26108a9915b1540372deafe09ba
+    entity_id: binary_sensor.dust_collector_buttons_06_button_1
+    domain: binary_sensor
+  - type: turned_on
+    platform: device
+    device_id: f070c5b7fecf740ab06b08b4668b52c4
+    entity_id: binary_sensor.dust_collector_buttons_01_button_1
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.sewing_zone_accent_lights
+  mode: single
+- id: '1760310189626'
+  alias: Sewing Zone Main Lights Off
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: 5a86d553d161d3a9133adde231778a0d
+    entity_id: binary_sensor.dust_collector_buttons_03_button_2
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.sewing_zone_main_lights
+  mode: single
+- id: '1767468901331'
+  alias: Sewing Zone Main Lights On
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: 5a86d553d161d3a9133adde231778a0d
+    entity_id: binary_sensor.dust_collector_buttons_03_button_1
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.sewing_zone_main_lights
+  mode: single
+- id: '1767469208346'
+  alias: Sewing Zone Accent Lights Off
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: ae92f26108a9915b1540372deafe09ba
+    entity_id: binary_sensor.dust_collector_buttons_06_button_2
+    domain: binary_sensor
+  - type: turned_on
+    platform: device
+    device_id: f070c5b7fecf740ab06b08b4668b52c4
+    entity_id: binary_sensor.dust_collector_buttons_01_button_2
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.sewing_zone_accent_lights
   mode: single

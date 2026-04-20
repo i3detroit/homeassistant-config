@@ -1,0 +1,31 @@
+packages: 
+  package: !include packages/treatlife_ss01s_base.yaml
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      then:
+        - light.toggle: light_1
+
+output:
+  - platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    id: relay_1
+
+light:
+  - platform: binary
+    name: "${ui_name}"
+    id: light_1
+    output: relay_1
+    restore_mode: RESTORE_DEFAULT_ON
+    on_turn_on:
+      - switch.turn_on: power_led
+    on_turn_off:
+      - switch.turn_off: power_led

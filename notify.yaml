@@ -1,5 +1,8 @@
-- name: hass_slack
-  platform: slack
-  api_key: !secret slack_api_key
-  default_channel: "#statusbots"
- 
+# - name: hass_slack
+#   platform: slack
+#   api_key: !secret slack_api_key
+#   default_channel: "#statusbots"
+
+- name: 16seg
+  platform: command_line
+  command: "/config/scripts/16seg.py"

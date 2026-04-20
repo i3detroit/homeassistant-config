@@ -1,7 +1,7 @@
 packages:
 # device is electrodragon; programming via pin header does not work
 
-  package: !include common/sonoff_basic_light.yaml
+  package: !include common/electrodragon_light.yaml
 
 
 substitutions:

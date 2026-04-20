@@ -71,6 +71,6 @@ for f in $@; do \
     if [[ "$response" == *"Success"* ]]; then
 	    msg "success"
     else
-	    msg "FAIL"
+	    die "FAIL"
     fi
 done

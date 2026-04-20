@@ -7,3 +7,4 @@ substitutions:
   pretty_name: "Media Lab Lightswitch"
   ui_name: "Media Lab Lights"
   icon: "mdi:lightbulb"
+  ip_address: "10.13.107.159"

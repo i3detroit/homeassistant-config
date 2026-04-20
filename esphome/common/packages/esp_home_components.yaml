@@ -1,9 +1,11 @@
-captive_portal:
+# captive_portal:
 
-# Enable logging
+# logging breaks sonoff basics magically
 logger:
+  level: INFO
 
 ota:
+  platform: esphome
 
 web_server:
   port: 80

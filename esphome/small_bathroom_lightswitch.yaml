@@ -29,8 +29,8 @@ light:
     on_turn_on:
       - switch.turn_on: power_led
       - homeassistant.service:
-          service: "esphome.small_bathroom_shower_lightswitch_power_on"
+          service: "esphome.small_bathroom_shower_light_power_on"
     on_turn_off:
       - switch.turn_off: power_led
       - homeassistant.service:
-          service: "esphome.small_bathroom_shower_lightswitch_power_off"
+          service: "esphome.small_bathroom_shower_light_power_off"

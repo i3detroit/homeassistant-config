@@ -7,3 +7,4 @@ substitutions:
   pretty_name: "Laser Zone Ceiling Fan Switch"
   ui_name: "Laser Zone Ceiling Fan"
   icon: "mdi:fan"
+  ip_address: "10.13.107.160"

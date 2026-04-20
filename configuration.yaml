@@ -40,7 +40,9 @@ homeassistant:
       trusted_networks:
         - 10.13.0.0/22
       trusted_users:
-        10.13.0.0/22: !secret i3_member_userid
+        10.13.0.0/22: 
+          - !secret i3_member_userid
+          - 24b5f1a4ed6b43d9991c432a1cff21e9
     - type: homeassistant
 
 influxdb:

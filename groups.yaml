@@ -2,12 +2,13 @@ row_1_lights:
   name: "Light Row 1"
   icon: mdi:ceiling-light
   entities:
-    - light.light_001
+    - light.light_011
     - light.light_002
     - light.light_003
-    - light.light_004
-    - light.light_058
-    - light.light_105
+    - light.light_023
+    # - light.light_004 moved to laser
+    # - light.light_058 moved to leather
+    # - light.light_105 moved to new elab
 
 row_2_lights:
   name: "Light Row 2"
@@ -28,6 +29,7 @@ row_3_lights:
     - light.light_012
     - light.light_013
     - light.light_014
+    - light.light_105
 
 row_4_lights:
   name: "Light Row 4"
@@ -46,14 +48,16 @@ row_5_lights:
     - light.light_020
     - light.light_021
     - light.light_022
-    - light.light_023
+    # - light.light_023 moved to row 1
     - light.light_024
     - light.light_025
     - light.light_026
+    - light.light_004
+    - light.light_058
     - light.laser_lanterns
 
 machine_shop_lights:
-  name: "Machine Shop Lights"
+  name: "Paint Zone Lights"
   icon: mdi:ceiling-light
   entities:
     - light.light_029
@@ -293,6 +297,9 @@ all_normal_lights:
     - light.light_064
     - light.light_065
     - light.light_088
+    - light.light_058
+    - light.light_105
+    - light.light_072
 
 laser_devices:
   name: Laser Zone Devices for Shutdown
@@ -312,3 +319,38 @@ shutdown:
     - switch.air_compressor
     - group.laser_devices
     - switch.disco_ball
+
+esptome_trackers:
+  name: ESPHome trackers
+  entities:
+    - sensor.a_side_lightswitch_east_01_uptime
+    - sensor.a_side_lightswitch_east_02_uptime
+    - sensor.a_side_lightswitch_east_03_uptime
+    - sensor.a_side_lightswitch_west_01_uptime
+    - sensor.a_side_lightswitch_west_02_uptime
+    - sensor.a_side_lightswitch_west_03_uptime
+    - sensor.a_side_main_keypad_watchdog_uptime
+    - sensor.a_side_ne_shop_thermostat_uptime
+    - sensor.b_side_alarm_panel_uptime
+    - sensor.b_side_lightswitch_01_uptime
+    - sensor.b_side_lightswitch_02_uptime
+    - sensor.b_side_lightswitch_03_uptime
+    - sensor.b_side_lightswitch_04_uptime
+    - sensor.b_side_office_east_lightswitch_uptime
+    - sensor.b_side_office_keypad_watchdog_uptime
+    - sensor.b_side_office_west_lightswitch_uptime
+    - sensor.classroom_east_alt_switch_uptime
+    - sensor.disco_button_uptime
+    - sensor.dooridor_lightswitch_uptime
+    - sensor.fab_lab_sensor_cluster_uptime
+    - sensor.front_door_status_controller_uptime
+    - sensor.glass_door_monitor_uptime
+    - sensor.hallway_alt_switch_uptime
+    - sensor.large_bathroom_exhaust_fan_uptime
+    - sensor.large_bathroom_lightswitch_uptime
+    - sensor.machine_shop_lightswitch_01_uptime
+    - sensor.machine_shop_lightswitch_02_uptime
+    - sensor.paint_box_vent_fan_uptime
+    - sensor.small_bath_shower_lightswitch_uptime
+    - sensor.small_bathroom_exhaust_fan_uptime
+    - sensor.small_bathroom_lightswitch_uptime

@@ -14,13 +14,13 @@ emergency_lights_reset:
       - light.emergency_light_039
   - service: light.turn_on
     data:
-      brightness: 46
+      brightness: 66
     target:
       entity_id:
       - light.emergency_light_040
   - service: light.turn_on
     data:
-      brightness: 40
+      brightness: 60
     target:
       entity_id:
       - light.emergency_light_027
@@ -103,7 +103,7 @@ shutdown:
 out_of_household_paper_towels:
   alias: 'shopping-list: Out of household paper towels'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of household paper towels
@@ -112,7 +112,7 @@ out_of_household_paper_towels:
 shopping_list_out_of_green_tape:
   alias: 'shopping-list: Out of green tape'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of green tape
@@ -121,7 +121,7 @@ shopping_list_out_of_green_tape:
 shopping_list_out_of_sharpies:
   alias: 'shopping-list: Out of sharpies'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of sharpies
@@ -130,7 +130,7 @@ shopping_list_out_of_sharpies:
 shopping_list_out_of_blue_towels:
   alias: 'shopping-list: Out of blue towels'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of blue (shop) paper towels
@@ -139,7 +139,7 @@ shopping_list_out_of_blue_towels:
 shopping_list_out_of_toilet_paper:
   alias: 'shopping-list: Out of toilet paper'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of toilet paper
@@ -148,7 +148,7 @@ shopping_list_out_of_toilet_paper:
 shopping_list_out_of_plastic_knives:
   alias: 'shopping-list: Out of plastic knives'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of plastic knives
@@ -157,7 +157,7 @@ shopping_list_out_of_plastic_knives:
 shopping_list_out_of_paper_plates:
   alias: 'shopping-list: Out of paper plates'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of paper plates
@@ -166,7 +166,7 @@ shopping_list_out_of_paper_plates:
 shopping_list_out_of_paint_booth_filters:
   alias: 'shopping-list: Out of paint booth filters'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of paint booth filters
@@ -175,7 +175,7 @@ shopping_list_out_of_paint_booth_filters:
 shopping_list_out_of_bowls:
   alias: 'shopping-list: Out of bowls'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of bowls
@@ -184,7 +184,7 @@ shopping_list_out_of_bowls:
 shopping_list_out_of_chopsticks:
   alias: 'shopping-list: Out of chopsticks'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of chopsticks
@@ -193,7 +193,7 @@ shopping_list_out_of_chopsticks:
 shopping_list_out_of_centerpull_towels:
   alias: 'shopping-list: Out of centerpull towels'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of centerpull towels
@@ -202,7 +202,7 @@ shopping_list_out_of_centerpull_towels:
 shopping_list_out_of_towel_dispenser_towels:
   alias: 'shopping-list: Out of towel dispenser towels'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of towel dispenser towels
@@ -211,7 +211,7 @@ shopping_list_out_of_towel_dispenser_towels:
 shopping_list_out_of_33_gallon_trash_bags:
   alias: 'shopping-list: Out of 33 gallon trash bags'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of 33 gallon trash bags
@@ -220,7 +220,7 @@ shopping_list_out_of_33_gallon_trash_bags:
 shopping_list_out_of_kitchen_trash_bags:
   alias: 'shopping-list: Out of kitchen trash bags'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of kitchen trash bags
@@ -229,7 +229,7 @@ shopping_list_out_of_kitchen_trash_bags:
 shopping_list_out_of_small_gluesticks:
   alias: 'shopping-list: Out of small gluesticks'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of small gluesticks
@@ -238,7 +238,7 @@ shopping_list_out_of_small_gluesticks:
 shopping_list_out_of_large_gluesticks:
   alias: 'shopping-list: Out of large gluesticks'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of large gluesticks
@@ -247,7 +247,7 @@ shopping_list_out_of_large_gluesticks:
 shopping_list_out_of_foam_brushes:
   alias: 'shopping-list: Out of foam brushes'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of foam brushes
@@ -256,7 +256,7 @@ shopping_list_out_of_foam_brushes:
 shopping_list_out_of_plastic_forks:
   alias: 'shopping-list: Out of plastic forks'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of plastic forks
@@ -265,7 +265,7 @@ shopping_list_out_of_plastic_forks:
 shopping_list_out_of_plastic_spoons:
   alias: 'shopping-list: Out of plastic spoons'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of plastic spoons
@@ -274,7 +274,7 @@ shopping_list_out_of_plastic_spoons:
 shopping_list_out_of_plastic_cups:
   alias: 'shopping-list: Out of plastic cups'
   sequence:
-  - service: notify.hass_slack
+  - service: notify.i3detroit
     data:
       target: '#shopping-list'
       message: We're out of plastic cups
@@ -316,3 +316,90 @@ b_side_keypad_power_cycle:
     domain: switch
   mode: single
   icon: mdi:dialpad
+traffic_light_red:
+  alias: Traffic Light Green
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.lighttrafficred
+      - light.lighttrafficyellow
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.lighttrafficgreen
+  mode: single
+  icon: mdi:traffic-light
+traffic_light_red_2:
+  alias: Traffic Light Red
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.lighttrafficgreen
+      - light.lighttrafficyellow
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.lighttrafficred
+  mode: single
+  icon: mdi:traffic-light
+'1774154545938':
+  alias: Traffic Light Yellow
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.lighttrafficgreen
+      - light.lighttrafficred
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.lighttrafficyellow
+  mode: single
+  icon: mdi:traffic-light
+'1774154938809':
+  alias: Traffic Lights Off
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.lighttrafficgreen
+      - light.lighttrafficred
+      - light.lighttrafficyellow
+  mode: single
+  icon: mdi:traffic-light
+traffic_light_sequence:
+  alias: Traffic Light Sequence
+  sequence:
+  - repeat:
+      count: '32'
+      sequence:
+      - service: script.traffic_light_red
+        data: {}
+      - delay:
+          hours: 0
+          minutes: 2
+          seconds: 58
+          milliseconds: 0
+      - service: script.1774154545938
+        data: {}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 4
+          milliseconds: 0
+      - service: script.traffic_light_red_2
+        data: {}
+      - delay:
+          hours: 0
+          minutes: 1
+          seconds: 58
+          milliseconds: 0
+  - service: script.1774154938809
+    data: {}
+  mode: single

@@ -1,0 +1,346 @@
+<<: !include packages/esp_home_components.yaml
+
+substitutions:
+  pretty_name: "${laser_name} Status Lights"
+  ui_name: "${pretty_name}"
+  icon: "mdi:text-box-check"
+  led_pin: GPIO13
+    #chiller_off_led: chiller_off_led
+    #chiller_on_led: chiller_on_led
+    #exhaust_off_led: exhaust_off_led
+    #exhaust_on_led: exhaust_on_led
+    #exhaust_gate_open_led: exhaust_gate_open_led
+    #exhaust_gate_closed_led: exhaust_gate_closed_led
+    #air_compressor_off_led: air_compressor_off_led
+    #air_compressor_on_led: air_compressor_on_led
+    #ip_address: "10.13.107.256"
+
+esp8266:
+  #framework:
+  #  version: 2.7.4
+  board: d1_mini
+
+esphome:
+  name: "${device_name}"
+  build_path: "./build/${device_name}"
+  on_boot:
+    then:
+      - light.turn_off:
+          id: led_strip
+      - wait_until:
+          api.connected:
+      - delay: 5s
+      - if:
+          condition:
+            lambda: "return id(chiller_state).state == false;"
+          then:
+            - light.turn_on:
+                id: chiller_on_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: chiller_off_led
+          else:
+            - light.turn_on:
+                id: chiller_off_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: chiller_on_led
+      - if:
+          condition:
+            lambda: "return id(exhaust_fan_state).state == false;"
+          then:
+            - light.turn_on:
+                id: exhaust_on_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: exhaust_off_led
+          else:
+            - light.turn_on:
+                id: exhaust_off_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: exhaust_on_led
+      - if:
+          condition:
+            lambda: "return id(air_compressor_state).state == false;"
+          then:
+            - light.turn_on:
+                id: air_compressor_on_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: air_compressor_off_led
+          else:
+            - light.turn_on:
+                id: air_compressor_off_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: air_compressor_on_led
+      - if:
+          condition:
+            lambda: "return id(exhaust_gate_state).state == false;"
+          then:
+            - light.turn_on:
+                id: exhaust_gate_open_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: exhaust_gate_closed_led
+          else:
+            - light.turn_on:
+                id: exhaust_gate_closed_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: exhaust_gate_open_led
+
+light:
+  - platform: neopixelbus
+    id: led_strip
+    type: RGB
+    variant: WS2811
+    pin: ${led_pin}
+    num_leds: 8
+      #- platform: fastled_clockless
+      #  id: led_strip
+      #  chipset: WS2811
+      #  pin: ${led_pin}
+      #  num_leds: 8
+      #  rgb_order: RGB
+
+  - platform: partition
+    id: exhaust_gate_closed_led
+    name: "exhaust gate closed"
+    segments:
+      - id: led_strip
+        from: 0
+        to: 0
+  - platform: partition
+    id: exhaust_gate_open_led
+    name: "exhaust gate open"
+    segments:
+      - id: led_strip
+        from: 1
+        to: 1
+  - platform: partition
+    id: exhaust_off_led
+    name: "exhaust fan off"
+    segments:
+      - id: led_strip
+        from: 2
+        to: 2
+  - platform: partition
+    id: exhaust_on_led
+    name: "exhaust fan on"
+    segments:
+      - id: led_strip
+        from: 3
+        to: 3
+  - platform: partition
+    id: air_compressor_off_led
+    name: "air compressor off"
+    segments:
+      - id: led_strip
+        from: 4
+        to: 4
+  - platform: partition
+    id: air_compressor_on_led
+    name: "air compressor on"
+    segments:
+      - id: led_strip
+        from: 5
+        to: 5
+  - platform: partition
+    id: chiller_off_led
+    name: "chiller off"
+    segments:
+      - id: led_strip
+        from: 6
+        to: 6
+  - platform: partition
+    id: chiller_on_led
+    name: "chiller on"
+    segments:
+      - id: led_strip
+        from: 7
+        to: 7
+
+binary_sensor:
+  - id: chiller_state
+    platform: homeassistant
+    entity_id: "switch.${laser_name}_chiller"
+    on_press:
+      - light.turn_off:
+          id: chiller_on_led
+      - light.turn_on:
+          id: chiller_off_led
+          red: 10%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_off:
+          id: chiller_off_led
+      - light.turn_on:
+          id: chiller_on_led
+          red: 0%
+          green: 0%
+          blue: 10%
+  - id: exhaust_fan_state
+    platform: homeassistant
+    entity_id: "switch.laser_cutter_exhaust_fan"
+    on_press:
+      - light.turn_off:
+          id: exhaust_on_led
+      - light.turn_on:
+          id: exhaust_off_led
+          red: 10%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_off:
+          id: exhaust_off_led
+      - light.turn_on:
+          id: exhaust_on_led
+          red: 0%
+          green: 0%
+          blue: 10%
+  - id: exhaust_gate_state
+    platform: homeassistant
+    entity_id: "binary_sensor.${laser_name}_blast_gate"
+    on_press:
+      - light.turn_off:
+          id: exhaust_gate_open_led
+      - light.turn_on:
+          id: exhaust_gate_closed_led
+          red: 10%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_off:
+          id: exhaust_gate_closed_led
+      - light.turn_on:
+          id: exhaust_gate_open_led
+          red: 0%
+          green: 0%
+          blue: 10%
+  - id: air_compressor_state
+    platform: homeassistant
+    entity_id: "switch.air_compressor"
+    on_press:
+      - light.turn_off:
+          id: air_compressor_on_led
+      - light.turn_on:
+          id: air_compressor_off_led
+          red: 10%
+          green: 0%
+          blue: 0%
+    on_release:
+      - light.turn_off:
+          id: air_compressor_off_led
+      - light.turn_on:
+          id: air_compressor_on_led
+          red: 0%
+          green: 0%
+          blue: 10%
+  - id: laser_state
+    platform: homeassistant
+    entity_id: "switch.${laser_name}"
+    on_press:
+      - if:
+          condition:
+            lambda: "return id(chiller_state).state == true;"
+          then:
+            - light.turn_on:
+                id: chiller_off_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: chiller_on_led
+          else:
+            - light.turn_on:
+                id: chiller_on_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: chiller_off_led
+      - if:
+          condition:
+            lambda: "return id(exhaust_fan_state).state == true;"
+          then:
+            - light.turn_on:
+                id: exhaust_off_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: exhaust_on_led
+          else:
+            - light.turn_on:
+                id: exhaust_on_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: exhaust_off_led
+      - if:
+          condition:
+            lambda: "return id(air_compressor_state).state == true;"
+          then:
+            - light.turn_on:
+                id: air_compressor_off_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: air_compressor_on_led
+          else:
+            - light.turn_on:
+                id: air_compressor_on_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: air_compressor_off_led
+      - if:
+          condition:
+            lambda: "return id(exhaust_gate_state).state == true;"
+          then:
+            - light.turn_on:
+                id: exhaust_gate_closed_led
+                red: 0%
+                green: 0%
+                blue: 10%
+            - light.turn_off:
+                id: exhaust_gate_open_led
+          else:
+            - light.turn_on:
+                id: exhaust_gate_open_led
+                red: 10%
+                green: 0%
+                blue: 0%
+            - light.turn_off:
+                id: exhaust_gate_closed_led
+    on_release:
+      - light.turn_off: chiller_on_led
+      - light.turn_off: chiller_off_led
+      - light.turn_off: air_compressor_on_led
+      - light.turn_off: air_compressor_off_led
+      - light.turn_off: exhaust_on_led
+      - light.turn_off: exhaust_off_led
+      - light.turn_off: exhaust_gate_open_led
+      - light.turn_off: exhaust_gate_closed_led

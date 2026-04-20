@@ -1,7 +1,7 @@
 a_side_keypad_timed_out:
   alias: A-Side keypad timed out
   sequence:
-    - service: notify.hass_slack
+    - service: notify.i3detroit
       data:
         message: A-side keypad's heartbeat has timed out. Attempting to restart it...
     - service: script.turn_on
@@ -16,7 +16,7 @@ a_side_keypad_timed_out:
             - condition: template
               value_template: "{{ wait.trigger is none }}"
           sequence:
-            - service: notify.hass_slack
+            - service: notify.i3detroit
               data:
                 message: >-
                   A-side keypad did not come back online after restart. Someone
@@ -25,7 +25,7 @@ a_side_keypad_timed_out:
             - condition: template
               value_template: "{{ wait.trigger is not none }}"
           sequence:
-            - service: notify.hass_slack
+            - service: notify.i3detroit
               data:
                 message: A-side keypad is back online after restarting.
             - service: mqtt.publish
@@ -38,7 +38,7 @@ a_side_keypad_timed_out:
 b_side_keypad_timed_out:
   alias: b-side office keypad timed out
   sequence:
-    - service: notify.hass_slack
+    - service: notify.i3detroit
       data:
         message: B-side office keypad's heartbeat has timed out. Attempting to restart it...
     - service: script.turn_on
@@ -53,14 +53,14 @@ b_side_keypad_timed_out:
             - condition: template
               value_template: "{{ wait.trigger is none }}"
           sequence:
-            - service: notify.hass_slack
+            - service: notify.i3detroit
               data:
                 message: B-side office keypad did not come back online after restart. Someone should check on it. @mkfink
         - conditions:
             - condition: template
               value_template: "{{ wait.trigger is not none }}"
           sequence:
-            - service: notify.hass_slack
+            - service: notify.i3detroit
               data:
                 message: B-side office keypad is back online after restarting.
             - service: mqtt.publish
