@@ -1,5 +1,5 @@
 - id: '1623327623174'
-  alias: MQTT query on boot
+  alias: MQTT Query On Boot
   description: ''
   trigger:
   - platform: homeassistant
@@ -57,207 +57,6 @@
   - service: mqtt.publish
     data:
       topic: cmnd/i3/inside/large-bathroom/vent/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/001/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/002/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/003/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/004/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/005/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/006/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/007/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/008/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/009/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/010/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/011/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/012/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/013/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/014/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/015/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/016/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/017/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/018/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/019/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/020/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/021/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/022/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/023/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/024/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/025/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/026/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/027/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/028/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/029/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/030/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/031/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/032/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/033/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/034/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/035/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/036/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/037/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/038/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/039/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/040/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/041/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/042/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/043/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/044/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/045/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/046/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/047/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/048/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/049/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/050/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/051/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/052/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/053/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/054/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/055/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/056/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/057/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/058/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/059/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/060/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/061/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/062/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/063/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/064/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/065/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/066/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/lights/067/POWER
   - service: mqtt.publish
     data:
       topic: cmnd/i3/inside/infrastructure/air-compressor/POWER
@@ -591,7 +390,7 @@
     domain: switch
   mode: single
 - id: '1629339400804'
-  alias: Office lights all on/off
+  alias: Office Lights Toggle All
   description: ''
   trigger:
   - type: turned_on
@@ -617,6 +416,7 @@
       - service: homeassistant.turn_on
         target:
           entity_id: group.office_lights
+        data: {}
     - conditions:
       - condition: device
         type: is_on
@@ -627,6 +427,7 @@
       - service: homeassistant.turn_off
         target:
           entity_id: group.office_lights
+        data: {}
     default: []
   mode: single
 - id: '1630537956782'
@@ -1000,7 +801,7 @@
     domain: switch
   mode: single
 - id: '1735616484533'
-  alias: Turn on Recycle Notification Light
+  alias: Turn On Recycle Notification Light
   description: ''
   trigger:
   - platform: time
@@ -1018,7 +819,7 @@
       entity_id: switch.recycle_notification_light
   mode: single
 - id: '1735616564755'
-  alias: Turn off Recycle Notification Light
+  alias: Turn Off Recycle Notification Light
   description: ''
   trigger:
   - platform: time
@@ -1113,4 +914,130 @@
     data: {}
     target:
       entity_id: light.sewing_zone_accent_lights
+  mode: single
+- id: '1777580048451'
+  alias: Laser Cutter Exhaust On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.cyclops
+    - switch.wolverine
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.laser_zone_exhaust_fan
+  mode: single
+- id: '1777580438678'
+  alias: Laser Cutter Exhaust Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.cyclops
+    - switch.wolverine
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: switch.cyclops
+        state: 'off'
+      - condition: state
+        entity_id: switch.cyclops
+        state: unavailable
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: switch.wolverine
+        state: 'off'
+      - condition: state
+        entity_id: switch.wolverine
+        state: unavailable
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.laser_zone_exhaust_fan
+  mode: single
+- id: '1777580550368'
+  alias: Laser Cutter Air Compressor
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.cyclops
+    - switch.wolverine
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.air_compressor
+  mode: single
+- id: '1777580685213'
+  alias: Laser Cutter Chiller On (Cyclops)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.cyclops
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.cyclops_chiller
+  mode: single
+- id: '1777580687317'
+  alias: Laser Cutter Chiller Off (Cyclops)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.cyclops
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.cyclops_chiller
+  mode: single
+- id: '1777580776765'
+  alias: Laser Cutter Chiller Off (Wolverine)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.wolverine
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.wolverine_chiller
+  mode: single
+- id: '1777581153679'
+  alias: Laser Cutter Chiller On (Wolverine)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.wolverine
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.wolverine_chiller
   mode: single

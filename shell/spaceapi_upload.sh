@@ -10,7 +10,7 @@
 TOKEN=$(cat /config/shell/hass.token)
 # Get the space api json and format it pretty
 cd /tmp
-curl -X GET http://10.13.0.22/api/spaceapi -H 'Authorization: Bearer '$TOKEN | python3 -m json.tool > status.json
+curl -s -X GET http://10.13.0.22/api/spaceapi -H 'Authorization: Bearer '$TOKEN | python3 -m json.tool > status.json
 # Fix mangled characters
 sed -i 's/\\u00b0/°/g' status.json
 # Put the json file on the webserver

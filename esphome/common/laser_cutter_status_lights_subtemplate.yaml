@@ -1,0 +1,25 @@
+if:
+  condition:
+    binary_sensor.is_on: ${led_type}_state
+  then:
+    - logger.log:
+        format: "turning ${led_type} lights to on"
+        level: WARN
+    - light.turn_on:
+        id: ${led_type}_on_led
+        red: 0%
+        green: 100%
+        blue: 0%
+    - light.turn_off:
+        id: ${led_type}_off_led
+  else:
+    - logger.log:
+        format: "turning ${led_type} lights to off"
+        level: WARN
+    - light.turn_on:
+        id: ${led_type}_off_led
+        red: 100%
+        green: 0%
+        blue: 0%
+    - light.turn_off:
+        id: ${led_type}_on_led
