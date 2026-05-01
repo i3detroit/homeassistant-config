@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: Office
+- name: Office
   modes:
     - 'off'
     - heat

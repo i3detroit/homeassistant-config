@@ -1,8 +1,7 @@
 ########################################################################
 ### Fab Lab Chiller Power
 ########################################################################
-- platform: mqtt
-  name: "Fab Lab Chiller Power Draw"
+- name: "Fab Lab Chiller Power Draw"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Power"] }}'
   force_update: True
@@ -11,8 +10,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   
-- platform: mqtt
-  name: "Fab Lab Chiller Voltage"
+- name: "Fab Lab Chiller Voltage"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
   force_update: True
@@ -21,8 +19,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Fab Lab Chiller Current"
+- name: "Fab Lab Chiller Current"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Current"] }}'
   force_update: True
@@ -31,8 +28,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Fab Lab Chiller Energy Use Delta"
+- name: "Fab Lab Chiller Energy Use Delta"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Period"] }}'
   force_update: True
@@ -41,8 +37,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Fab Lab Chiller Energy Use Today"
+- name: "Fab Lab Chiller Energy Use Today"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Today"] }}'
   force_update: True
@@ -51,8 +46,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Fab Lab Chiller Energy Use Yesterday"
+- name: "Fab Lab Chiller Energy Use Yesterday"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
   force_update: True
@@ -61,8 +55,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Fab Lab Chiller Total Power"
+- name: "Fab Lab Chiller Total Power"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   force_update: True
@@ -71,8 +64,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Fab Lab Chiller Power Factor"
+- name: "Fab Lab Chiller Power Factor"
   state_topic: "tele/i3/inside/fablab/chiller/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Factor"] }}'
   force_update: True
@@ -83,8 +75,7 @@
 ########################################################################
 ### Chinesium Laser Power
 ########################################################################
-- platform: mqtt
-  name: "Chinesium Laser Power Draw"
+- name: "Chinesium Laser Power Draw"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Power"] }}'
   force_update: True
@@ -93,8 +84,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   
-- platform: mqtt
-  name: "Chinesium Laser Voltage"
+- name: "Chinesium Laser Voltage"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
   force_update: True
@@ -103,8 +93,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Chinesium Laser Current"
+- name: "Chinesium Laser Current"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Current"] }}'
   force_update: True
@@ -113,8 +102,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Chinesium Laser Energy Use Delta"
+- name: "Chinesium Laser Energy Use Delta"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Period"] }}'
   force_update: True
@@ -123,8 +111,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Chinesium Laser Energy Use Today"
+- name: "Chinesium Laser Energy Use Today"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Today"] }}'
   force_update: True
@@ -133,8 +120,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Chinesium Laser Energy Use Yesterday"
+- name: "Chinesium Laser Energy Use Yesterday"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
   force_update: True
@@ -143,8 +129,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Chinesium Laser Total Power"
+- name: "Chinesium Laser Total Power"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   force_update: True
@@ -153,8 +138,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Chinesium Laser Power Factor"
+- name: "Chinesium Laser Power Factor"
   state_topic: "tele/i3/inside/fablab/chinesium-laser/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Factor"] }}'
   force_update: True

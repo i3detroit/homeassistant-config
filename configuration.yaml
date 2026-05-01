@@ -16,6 +16,12 @@ mqtt:
   will_message:
     topic: "tele/homeassistant/hass/LWT"
     payload: "Offline"
+  sensor: !include_dir_merge_list sensors
+  binary_sensor: !include_dir_merge_list binary_sensors
+  switch: !include_dir_merge_list switches
+  light: !include_dir_merge_list lights
+  fan: !include_dir_merge_list fans
+  climate: !include climate.yaml
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -23,12 +29,6 @@ automation old: !include_dir_merge_list automations
 script: !include scripts.yaml
 script old: !include_dir_merge_named scripts
 scene: !include scenes.yaml
-sensor: !include_dir_merge_list sensors
-binary_sensor: !include_dir_merge_list binary_sensors
-light: !include_dir_merge_list lights
-switch: !include_dir_merge_list switches
-fan: !include_dir_merge_list fans
-climate: !include climate.yaml
 template: !include_dir_merge_list templates
 
 notify: !include notify.yaml

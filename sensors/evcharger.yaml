@@ -1,17 +1,14 @@
-- platform: mqtt
-  name: "openEVSE Amps"
+- name: "openEVSE Amps"
   state_topic: "tele/i3/inside/commons/openevse/amp"
   unit_of_measurement: "milliamps"
   force_update: True
   
-- platform: mqtt
-  name: "openEVSE Watt Seconds"
+- name: "openEVSE Watt Seconds"
   state_topic: "tele/i3/inside/commons/openevse/wh"
   unit_of_measurement: "Watt seconds"
   force_update: True
   
-- platform: mqtt
-  name: "openEVSE State"
+- name: "openEVSE State"
   state_topic: "tele/i3/inside/commons/openevse/state"
   force_update: True
 

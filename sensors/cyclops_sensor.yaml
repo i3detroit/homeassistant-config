@@ -4,8 +4,7 @@
 ### on 2020-12-13 00:16:09.679060
 ########################################
 
-- platform: mqtt
-  name: 'Cyclops Total Start Time'
+- name: 'Cyclops Total Start Time'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["TotalStartTime"] }}'
   force_update: True
@@ -13,8 +12,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Total Energy'
+- name: 'Cyclops Total Energy'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   force_update: True
@@ -23,8 +21,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Energy Use Yesterday'
+- name: 'Cyclops Energy Use Yesterday'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
   force_update: True
@@ -33,8 +30,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Energy Use Today'
+- name: 'Cyclops Energy Use Today'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Today"] }}'
   force_update: True
@@ -43,8 +39,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Energy Use Delta'
+- name: 'Cyclops Energy Use Delta'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Period"] }}'
   force_update: True
@@ -53,8 +48,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Power Draw'
+- name: 'Cyclops Power Draw'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Power"] }}'
   force_update: True
@@ -63,8 +57,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Apparent Power Draw'
+- name: 'Cyclops Apparent Power Draw'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   force_update: True
@@ -73,8 +66,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Reactive Power Draw'
+- name: 'Cyclops Reactive Power Draw'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["ReactivePower"] }}'
   force_update: True
@@ -83,8 +75,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Power Factor'
+- name: 'Cyclops Power Factor'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Factor"] }}'
   force_update: True
@@ -92,8 +83,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Voltage'
+- name: 'Cyclops Voltage'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
   force_update: True
@@ -102,8 +92,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Cyclops Current'
+- name: 'Cyclops Current'
   state_topic: 'tele/i3/inside/laser-zone/cyclops/laser/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Current"] }}'
   force_update: True
@@ -111,4 +100,3 @@
   availability_topic: 'tele/i3/inside/laser-zone/cyclops/laser/LWT'
   payload_available: 'Online'
   payload_not_available: 'Offline'
-

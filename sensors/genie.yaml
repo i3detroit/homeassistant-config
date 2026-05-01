@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: "Genie Power Draw"
+- name: "Genie Power Draw"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Power"] }}'
   force_update: True
@@ -8,8 +7,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   
-- platform: mqtt
-  name: "Genie Voltage"
+- name: "Genie Voltage"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
   force_update: True
@@ -18,8 +16,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Genie Current"
+- name: "Genie Current"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Current"] }}'
   force_update: True
@@ -28,8 +25,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Genie Energy Use Delta"
+- name: "Genie Energy Use Delta"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Period"] }}'
   force_update: True
@@ -38,8 +34,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Genie Energy Use Today"
+- name: "Genie Energy Use Today"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Today"] }}'
   force_update: True
@@ -48,8 +43,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Genie Energy Use Yesterday"
+- name: "Genie Energy Use Yesterday"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
   force_update: True
@@ -58,8 +52,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Genie Total Power"
+- name: "Genie Total Power"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   force_update: True
@@ -68,8 +61,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Genie Power Factor"
+- name: "Genie Power Factor"
   state_topic: "tele/i3/inside/commons/genie-charging/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Factor"] }}'
   force_update: True

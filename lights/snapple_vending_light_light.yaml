@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: Snapple Vending Light
+- name: Snapple Vending Light
   effect_list:
     - 2
     - 3

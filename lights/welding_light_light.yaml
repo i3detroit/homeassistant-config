@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: 'Welding Light'
+- name: 'Welding Light'
   state_topic: 'stat/i3/inside/lights/028/POWER'
   command_topic: 'cmnd/i3/inside/lights/028/POWER'
   json_attributes_topic: 'tele/i3/inside/lights/028/STATE'

@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: 'Vinyl Light'
+- name: 'Vinyl Light'
   state_topic: 'stat/i3/inside/lights/036/POWER'
   command_topic: 'cmnd/i3/inside/lights/036/POWER'
   json_attributes_topic: 'tele/i3/inside/lights/036/STATE'

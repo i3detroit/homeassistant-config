@@ -19,13 +19,11 @@
 #           No
 #         {%- endif %}
 
-- platform: mqtt
-  name: "Water Cooler Flow Counts"
+- name: "Water Cooler Flow Counts"
   state_topic: "stat/i3/inside/commons/water-cooler/flow"
   force_update: True
 
-- platform: mqtt
-  name: "Front Door Panel Battery Voltage"
+- name: "Front Door Panel Battery Voltage"
   state_topic: "tele/i3/inside/commons/front-door-indicator/batteryVoltage"
   unit_of_measurement: "V"
   force_update: True
@@ -42,8 +40,7 @@
 #           off
 #         {%- endif %}
 
-- platform: mqtt
-  name: "Compressed Air Line Pressure 01"
+- name: "Compressed Air Line Pressure 01"
   state_topic: "stat/i3/inside/sensors/air-line-pressure-01/pressure"
   unit_of_measurement: "psi"
   force_update: True
@@ -51,8 +48,7 @@
   payload_available: "Online"
   payload_not_available: "Offline"
 
-- platform: mqtt
-  name: "Compressed Air Line Pressure 02"
+- name: "Compressed Air Line Pressure 02"
   state_topic: "stat/i3/inside/sensors/air-line-pressure-02/pressure"
   unit_of_measurement: "psi"
   force_update: True
@@ -71,14 +67,12 @@
     - "time_utc"
     - "beat"
 
-- platform: mqtt
-  name: "A-Side scanned uid"
+- name: "A-Side scanned uid"
   state_topic: "i3/doors/a-side-main/send"
   value_template: '{{ value_json["uid"] }}'
   force_update: True
 
-- platform: mqtt
-  name: "B-Side scanned uid"
+- name: "B-Side scanned uid"
   state_topic: "i3/doors/b-side-office/send"
   value_template: '{{ value_json["uid"] }}'
   force_update: True

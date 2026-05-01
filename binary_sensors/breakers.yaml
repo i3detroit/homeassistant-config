@@ -1,5 +1,4 @@
-- platform: template
-  sensors:
+- sensors:
     office_subpanel_breaker_7:
       friendly_name: "Office Subpanel Breaker 7"
       device_class: problem

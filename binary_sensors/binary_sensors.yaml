@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: "Glass Door Lock Sensor"
+- name: "Glass Door Lock Sensor"
   state_topic: "stat/i3/inside/classroom/glass-door/lock"
   # on means open, off means closed
   payload_on: "UNLOCKED"
@@ -10,8 +9,7 @@
   device_class: lock
   force_update: True
 
-- platform: mqtt
-  name: "Glass Door Open Sensor"
+- name: "Glass Door Open Sensor"
   state_topic: "stat/i3/inside/classroom/glass-door/open"
   # on means open, off means closed
   payload_on: "OPEN"
@@ -34,32 +32,28 @@
 #   device_class: opening
 #   force_update: True
 
-- platform: mqtt
-  name: "Machine Shop Motion Sensor"
+- name: "Machine Shop Motion Sensor"
   state_topic: "stat/i3/inside/machine-shop/motion-sensor/motion"
   payload_on: "ON"
   payload_off: "OFF"
   device_class: motion
   force_update: True
 
-- platform: mqtt
-  name: "Large Bathroom Motion Sensor"
+- name: "Large Bathroom Motion Sensor"
   state_topic: "stat/i3/inside/large-bathroom/motion-sensor/motion"
   payload_on: "ON"
   payload_off: "OFF"
   device_class: motion
   force_update: True
 
-- platform: mqtt
-  name: "Small Bathroom Motion Sensor"
+- name: "Small Bathroom Motion Sensor"
   state_topic: "stat/i3/inside/small-bathroom/motion-sensor/motion"
   payload_on: "ON"
   payload_off: "OFF"
   device_class: motion
   force_update: True
 
-- platform: mqtt
-  name: "Snapple Vending Compressor Power"
+- name: "Snapple Vending Compressor Power"
   state_topic: "tele/i3/inside/commons/snapple-vending-compress/STATE"
   availability_topic: "tele/i3/inside/commons/snapple-vending-compress/LWT"
   value_template: '{{ value_json.POWER }}'
@@ -70,8 +64,7 @@
   device_class: power
   force_update: True
 
-- platform: mqtt
-  name: "Argon Tank Sensor"
+- name: "Argon Tank Sensor"
   state_topic: "stat/i3/inside/weld-zone/tank-sensors/argon"
   # on means open, off means closed
   payload_on: "OPEN"
@@ -79,16 +72,14 @@
   device_class: opening
   force_update: True
 
-- platform: mqtt
-  name: "Front Door Panel Power"
+- name: "Front Door Panel Power"
   state_topic: "tele/i3/inside/commons/front-door-indicator/LWT"
   payload_on: "Online"
   payload_off: "Offline"
   device_class: power
   force_update: True
 
-- platform: mqtt
-  name: "Front Door Lock"
+- name: "Front Door Lock"
   state_topic: "stat/i3/inside/commons/front-door/lock"
   # on means open, off means closed
   payload_on: "UNLOCKED"

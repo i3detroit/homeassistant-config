@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: "LightTrafficRed"
+- name: "LightTrafficRed"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER1"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER1"
   availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
@@ -8,8 +7,7 @@
   payload_on: "ON"
   payload_off: "OFF"
 
-- platform: mqtt
-  name: "LightTrafficYellow"
+- name: "LightTrafficYellow"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER2"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER2"
   availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
@@ -18,8 +16,7 @@
   payload_on: "ON"
   payload_off: "OFF"
 
-- platform: mqtt
-  name: "LightTrafficGreen"
+- name: "LightTrafficGreen"
   state_topic: "stat/i3/inside/commons/traffic-light/POWER3"
   command_topic: "cmnd/i3/inside/commons/traffic-light/POWER3"
   availability_topic: "tele/i3/inside/commons/traffic-light/LWT"
@@ -28,8 +25,7 @@
   payload_on: "ON"
   payload_off: "OFF"
 
-- platform: mqtt
-  name: Elab Arch North
+- name: Elab Arch North
   effect_list:
     - 2
     - 3
@@ -66,8 +62,7 @@
   payload_not_available: "Offline"
   on_command_type: "brightness"
 
-- platform: mqtt
-  name: Elab Arch South
+- name: Elab Arch South
   effect_list:
     - 2
     - 3

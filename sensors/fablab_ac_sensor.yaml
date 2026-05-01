@@ -1,5 +1,4 @@
-- platform: mqtt
-  name: 'Fablab AC Total Start Time'
+- name: 'Fablab AC Total Start Time'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["TotalStartTime"] }}'
   force_update: True
@@ -7,8 +6,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Total Energy'
+- name: 'Fablab AC Total Energy'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Total"] }}'
   force_update: True
@@ -17,8 +15,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Energy Use Yesterday'
+- name: 'Fablab AC Energy Use Yesterday'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
   force_update: True
@@ -27,8 +24,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Energy Use Today'
+- name: 'Fablab AC Energy Use Today'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Today"] }}'
   force_update: True
@@ -37,8 +33,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Energy Use Delta'
+- name: 'Fablab AC Energy Use Delta'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Period"] }}'
   force_update: True
@@ -47,8 +42,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Power Draw'
+- name: 'Fablab AC Power Draw'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Power"] }}'
   force_update: True
@@ -57,8 +51,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Apparent Power Draw'
+- name: 'Fablab AC Apparent Power Draw'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["ApparentPower"] }}'
   force_update: True
@@ -67,8 +60,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Reactive Power Draw'
+- name: 'Fablab AC Reactive Power Draw'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["ReactivePower"] }}'
   force_update: True
@@ -77,8 +69,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Power Factor'
+- name: 'Fablab AC Power Factor'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Factor"] }}'
   force_update: True
@@ -86,8 +77,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Voltage'
+- name: 'Fablab AC Voltage'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
   force_update: True
@@ -96,8 +86,7 @@
   payload_available: 'Online'
   payload_not_available: 'Offline'
 
-- platform: mqtt
-  name: 'Fablab AC Current'
+- name: 'Fablab AC Current'
   state_topic: 'tele/i3/inside/fablab/ac/SENSOR'
   value_template: '{{ value_json["ENERGY"]["Current"] }}'
   force_update: True
