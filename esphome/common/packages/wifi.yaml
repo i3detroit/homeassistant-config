@@ -2,7 +2,10 @@ wifi:
   networks:
     - ssid: !secret wifi_ssid_i3
       password: !secret wifi_pass_i3
-  #  use_address: "${ip_address}"
+#  use_address: "${ip_address}"
+#  INSTEAD OF ip_address in the top level device config, just do the merge config thing like this:
+#wifi:
+#  use_address: "10.13.107.251"
   reboot_timeout: 12h
   ap:
     ssid: "${pretty_name}"

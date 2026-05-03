@@ -76,11 +76,6 @@ paint_zone_lights:
   name: "Paint Zone Lights"
   icon: mdi:ceiling-light
   entities:
-
-paint_zone_lights:
-  name: "Paint Zone Lights"
-  icon: mdi:ceiling-light
-  entities:
     - light.light_029
     - light.light_030
     - light.light_031

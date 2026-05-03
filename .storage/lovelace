@@ -46,6 +46,7 @@
       },
       "views": [
         {
+          "theme": "Backend-selected",
           "title": "Home",
           "visible": [
             {
@@ -55,15 +56,34 @@
               "user": "c13c74138a344210a6a621c5e0d19dc3"
             },
             {
-              "user": "ff7ab356a33f4f379242067463126a32"
-            },
-            {
               "user": "90b63f479ed24cde8ef677d85f615260"
             },
             {
               "user": "a7e70d3c39dc46dea8761652dadb25b0"
+            },
+            {
+              "user": "a670f5a463a64225b813ad93a8034f2e"
+            },
+            {
+              "user": "dea7ac2834044919a3ef2322641b38c9"
+            },
+            {
+              "user": "7eef412918ec4d18a3860a6d61fcdcbe"
+            },
+            {
+              "user": "057c8f8ea1ff4713ae9f17a2f0dd7054"
+            },
+            {
+              "user": "62b6ee3f24b847e99e144580dcd94a72"
+            },
+            {
+              "user": "943fffa35e0d4b55bb636f4aef01348d"
+            },
+            {
+              "user": "1de1feba4ad14193af4e1308d86f846a"
             }
           ],
+          "path": "home",
           "badges": [],
           "cards": [
             {
@@ -85,7 +105,13 @@
                   "entity": "group.row_5_lights"
                 },
                 {
-                  "entity": "group.machine_shop_lights"
+                  "entity": "group.elab_lights"
+                },
+                {
+                  "entity": "group.sewing_zone_lights"
+                },
+                {
+                  "entity": "group.paint_zone_lights"
                 },
                 {
                   "entity": "group.misc_lights"
@@ -116,27 +142,85 @@
               "state_color": true
             },
             {
-              "type": "thermostat",
-              "entity": "climate.office",
-              "name": "Office Thermostat"
+              "type": "glance",
+              "entities": [
+                {
+                  "entity": "binary_sensor.air_compressor_power",
+                  "name": "Air Compressor"
+                },
+                {
+                  "entity": "binary_sensor.cyclops_power",
+                  "name": "Cyclops"
+                },
+                {
+                  "entity": "binary_sensor.wolverine_power",
+                  "name": "Wolverine"
+                },
+                {
+                  "entity": "sensor.genie_charge_state",
+                  "name": "Genie"
+                }
+              ],
+              "title": "Equipment Status",
+              "columns": 3,
+              "show_icon": true
             },
             {
               "type": "entities",
               "entities": [
                 {
-                  "entity": "switch.commons_ceiling_fan"
+                  "entity": "light.fairy_lights"
                 },
                 {
-                  "entity": "switch.laser_zone_ceiling_fan"
+                  "entity": "light.laser_lanterns"
                 },
                 {
-                  "entity": "switch.machine_shop_ceiling_fan",
-                  "icon": "mdi:fan",
-                  "name": "Machine Shop Ceiling Fan"
+                  "entity": "light.swirly_lights_1"
+                },
+                {
+                  "entity": "light.swirly_lights_2"
+                },
+                {
+                  "entity": "script.traffic_light_red"
+                },
+                {
+                  "entity": "script.traffic_light_yellow"
+                },
+                {
+                  "entity": "script.traffic_light_green"
+                },
+                {
+                  "entity": "script.traffic_light_sequence"
+                },
+                {
+                  "entity": "script.traffic_light_off"
+                },
+                {
+                  "entity": "switch.disco_ball"
+                },
+                {
+                  "entity": "light.disco_spotlights",
+                  "icon": "mdi:spotlight-beam"
+                },
+                {
+                  "entity": "switch.chandelier_01",
+                  "name": "Chandelier 1"
+                },
+                {
+                  "entity": "switch.chandelier_02",
+                  "name": "Chandelier 2"
+                },
+                {
+                  "entity": "light.welding_helmet_lights"
+                },
+                {
+                  "entity": "light.mural_blacklight"
+                },
+                {
+                  "entity": "light.treehouse_light"
                 }
               ],
-              "state_color": true,
-              "title": "Ceiling Fans"
+              "title": "Decor"
             },
             {
               "type": "entities",
@@ -177,28 +261,22 @@
               "title": "Doors"
             },
             {
-              "type": "glance",
+              "type": "entities",
               "entities": [
                 {
-                  "entity": "binary_sensor.air_compressor_power",
-                  "name": "Air Compressor"
+                  "entity": "switch.commons_ceiling_fan"
                 },
                 {
-                  "entity": "binary_sensor.cyclops_power",
-                  "name": "Cyclops"
+                  "entity": "switch.laser_zone_ceiling_fan"
                 },
                 {
-                  "entity": "binary_sensor.wolverine_power",
-                  "name": "Wolverine"
-                },
-                {
-                  "entity": "sensor.genie_charge_state",
-                  "name": "Genie"
+                  "entity": "switch.machine_shop_ceiling_fan",
+                  "icon": "mdi:fan",
+                  "name": "Machine Shop Ceiling Fan"
                 }
               ],
-              "title": "Equipment Status",
-              "columns": 3,
-              "show_icon": true
+              "state_color": true,
+              "title": "Ceiling Fans"
             },
             {
               "type": "entities",
@@ -210,7 +288,7 @@
                 },
                 {
                   "entity": "switch.sewing_vent_fan",
-                  "name": "Sewing and eLab Hallway"
+                  "name": "Sewing/E-Lab Hallway"
                 },
                 {
                   "entity": "switch.machine_shop_exhaust_fan",
@@ -220,56 +298,11 @@
               ],
               "title": "Roof Exhaust Fans",
               "state_color": true
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "light.fairy_lights"
-                },
-                {
-                  "entity": "light.laser_lanterns"
-                },
-                {
-                  "entity": "light.swirly_lights_01"
-                },
-                {
-                  "entity": "light.swirly_lights_02"
-                },
-                {
-                  "entity": "light.lighttrafficred"
-                },
-                {
-                  "entity": "light.lighttrafficyellow"
-                },
-                {
-                  "entity": "light.lighttrafficgreen"
-                },
-                {
-                  "entity": "switch.disco_ball"
-                },
-                {
-                  "entity": "light.disco_spotlights",
-                  "icon": "mdi:spotlight-beam"
-                },
-                {
-                  "entity": "switch.chandelier_01"
-                },
-                {
-                  "entity": "switch.chandelier_02"
-                },
-                {
-                  "entity": "light.welding_helmet_lights"
-                },
-                {
-                  "entity": "light.mural_blacklight"
-                }
-              ],
-              "title": "Decor"
             }
           ]
         },
         {
+          "theme": "Backend-selected",
           "icon": "mdi:lightbulb",
           "visible": [
             {
@@ -279,15 +312,35 @@
               "user": "c13c74138a344210a6a621c5e0d19dc3"
             },
             {
-              "user": "ff7ab356a33f4f379242067463126a32"
-            },
-            {
               "user": "90b63f479ed24cde8ef677d85f615260"
             },
             {
               "user": "a7e70d3c39dc46dea8761652dadb25b0"
+            },
+            {
+              "user": "7eef412918ec4d18a3860a6d61fcdcbe"
+            },
+            {
+              "user": "a670f5a463a64225b813ad93a8034f2e"
+            },
+            {
+              "user": "dea7ac2834044919a3ef2322641b38c9"
+            },
+            {
+              "user": "057c8f8ea1ff4713ae9f17a2f0dd7054"
+            },
+            {
+              "user": "943fffa35e0d4b55bb636f4aef01348d"
+            },
+            {
+              "user": "62b6ee3f24b847e99e144580dcd94a72"
+            },
+            {
+              "user": "1de1feba4ad14193af4e1308d86f846a"
             }
           ],
+          "path": "lights",
+          "title": "Lights",
           "badges": [],
           "cards": [
             {
@@ -330,7 +383,7 @@
                 },
                 {
                   "entity": "light.light_009",
-                  "name": "Sewing/eLab Hall"
+                  "name": "Sewing/E-Lab Hall"
                 }
               ],
               "title": "A-Side Lights Row 2",
@@ -350,14 +403,6 @@
                 {
                   "entity": "light.light_012",
                   "name": "Commons 2"
-                },
-                {
-                  "entity": "light.light_013",
-                  "name": "eLab 1"
-                },
-                {
-                  "entity": "light.light_105",
-                  "name": "eLab 2"
                 }
               ],
               "title": "A-Side Lights Row 3",
@@ -376,11 +421,11 @@
                 },
                 {
                   "entity": "light.light_017",
-                  "name": "Injection Moulding 1"
+                  "name": "Injection Molding 1"
                 },
                 {
                   "entity": "light.light_018",
-                  "name": "Injection Moulding 2"
+                  "name": "Injection Molding 2"
                 },
                 {
                   "entity": "light.light_019",
@@ -436,29 +481,6 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "light.light_030",
-                  "name": "Oven"
-                },
-                {
-                  "entity": "light.light_032",
-                  "name": "Over Paint Booth"
-                },
-                {
-                  "entity": "light.light_034",
-                  "name": "Flamables"
-                },
-                {
-                  "entity": "light.light_035",
-                  "name": "Paint Box"
-                }
-              ],
-              "title": "A-Side Paint Zone Lights",
-              "state_color": true
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
                   "entity": "light.red_pallet_rack_light",
                   "name": "Red Pallet Rack Light (Leather/Laser)"
                 },
@@ -481,7 +503,49 @@
                   "name": "Big Light 2"
                 }
               ],
-              "title": "A-Side Misc. Lights",
+              "title": "A-Side Misc Lights",
+              "state_color": true
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.e_lab_set_a_lights",
+                  "name": "Set A Lights"
+                },
+                {
+                  "entity": "light.e_lab_set_b_lights",
+                  "name": "Set B Lights"
+                },
+                {
+                  "entity": "light.e_lab_bench_lights",
+                  "name": "Bench Lights"
+                }
+              ],
+              "title": "A-Side Electronics Lab",
+              "state_color": true
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.light_030",
+                  "name": "Oven"
+                },
+                {
+                  "entity": "light.light_032",
+                  "name": "Over Paint Booth"
+                },
+                {
+                  "entity": "light.light_034",
+                  "name": "Flamables"
+                },
+                {
+                  "entity": "light.light_035",
+                  "name": "Paint Box"
+                }
+              ],
+              "title": "A-Side Paint Zone",
               "state_color": true
             },
             {
@@ -497,20 +561,23 @@
                 "light.small_bathroom_light",
                 "light.small_bathroom_shower_light"
               ],
-              "title": "A-Side Office Lights",
+              "title": "A-Side Office",
               "state_color": true
             },
             {
               "type": "entities",
               "entities": [
                 {
-                  "entity": "light.sewing_zone_main_lights"
+                  "entity": "light.sewing_zone_main_lights",
+                  "name": "Main Lights"
                 },
                 {
-                  "entity": "light.sewing_zone_accent_lights"
+                  "entity": "light.sewing_zone_accent_lights",
+                  "name": "Accent Lights"
                 },
                 {
-                  "entity": "switch.sewing_zone_fitting_room_light"
+                  "entity": "switch.sewing_zone_fitting_room_light",
+                  "name": "Fitting Room Lights"
                 }
               ],
               "title": "A-Side Sewing Zone",
@@ -541,10 +608,10 @@
                 },
                 {
                   "entity": "light.light_093",
-                  "name": "Media Blaster"
+                  "name": "Sand Blaster"
                 }
               ],
-              "title": "B-Side Auto Zone Lights",
+              "title": "B-Side Auto Zone",
               "state_color": true
             },
             {
@@ -572,7 +639,7 @@
                 },
                 {
                   "entity": "light.light_060",
-                  "name": "Saw Stop"
+                  "name": "Table Saw"
                 },
                 {
                   "entity": "light.light_061",
@@ -595,7 +662,7 @@
                   "name": "Dust Collector 1"
                 }
               ],
-              "title": "B-Side Wood Shop Lights",
+              "title": "B-Side Wood Shop",
               "state_color": true
             },
             {
@@ -642,11 +709,11 @@
                 },
                 {
                   "entity": "light.light_079",
-                  "name": "CNC Plasma Cutter (East)"
+                  "name": "Plasma Cutter (East)"
                 },
                 {
                   "entity": "light.light_104",
-                  "name": "CNC Plasma Cutter (West)"
+                  "name": "Plasma Cutter (West)"
                 },
                 {
                   "entity": "light.light_106",
@@ -657,7 +724,7 @@
                   "name": "Pallet Rack"
                 }
               ],
-              "title": "B-Side Welding Lights",
+              "title": "B-Side Welding Zone",
               "state_color": true
             },
             {
@@ -670,25 +737,22 @@
                   "entity": "light.laser_lanterns"
                 },
                 {
-                  "entity": "light.swirly_lights_01"
+                  "entity": "light.swirly_lights_1"
                 },
                 {
-                  "entity": "light.swirly_lights_02"
+                  "entity": "light.swirly_lights_2"
                 },
                 {
-                  "entity": "script.1774154938809"
+                  "entity": "light.lighttrafficred",
+                  "name": "Traffic Light Red"
                 },
                 {
-                  "entity": "script.traffic_light_sequence"
+                  "entity": "light.lighttrafficyellow",
+                  "name": "Traffic Light Yellow"
                 },
                 {
-                  "entity": "script.traffic_light_red_2"
-                },
-                {
-                  "entity": "script.1774154545938"
-                },
-                {
-                  "entity": "script.traffic_light_red"
+                  "entity": "light.lighttrafficgreen",
+                  "name": "Traffic Light Green"
                 },
                 {
                   "entity": "switch.disco_ball"
@@ -697,10 +761,12 @@
                   "entity": "light.disco_spotlights"
                 },
                 {
-                  "entity": "switch.chandelier_01"
+                  "entity": "switch.chandelier_01",
+                  "name": "Chandelier 1"
                 },
                 {
-                  "entity": "switch.chandelier_02"
+                  "entity": "switch.chandelier_02",
+                  "name": "Chandelier 2"
                 },
                 {
                   "entity": "light.welding_helmet_lights"
@@ -714,18 +780,18 @@
               "entities": [
                 {
                   "entity": "light.light_070",
-                  "name": "HAAS (South)"
+                  "name": "Haas (South)"
                 },
                 {
                   "entity": "light.light_092",
-                  "name": "HAAS (North)"
+                  "name": "Haas (North)"
                 },
                 {
                   "entity": "light.light_082",
                   "name": "Workbench"
                 }
               ],
-              "title": "B-Side CNC Zone Lights",
+              "title": "B-Side CNC Zone",
               "state_color": true
             },
             {
@@ -760,7 +826,7 @@
                   "name": "Belt Sander"
                 }
               ],
-              "title": "B-Side Machine Shop Lights",
+              "title": "B-Side Machine Shop",
               "state_color": true
             },
             {
@@ -809,26 +875,30 @@
             {
               "type": "entities",
               "entities": [
-                "switch.b_side_office_lights",
                 {
-                  "entity": "light.light_052",
-                  "name": "Cleaning"
-                },
-                {
-                  "entity": "light.light_054_2",
-                  "name": "Treehouse"
+                  "entity": "switch.b_side_office_lights",
+                  "name": "Glass Zone"
                 },
                 {
                   "entity": "light.light_071",
                   "name": "Tool Crib"
+                },
+                {
+                  "entity": "light.light_052",
+                  "name": "Lower Treehouse"
+                },
+                {
+                  "entity": "light.light_054",
+                  "name": "Upper Treehouse"
                 }
               ],
-              "title": "B-Side Other Lights",
+              "title": "B-Side Misc Lights",
               "state_color": true
             }
           ]
         },
         {
+          "theme": "Backend-selected",
           "visible": [
             {
               "user": "90b63f479ed24cde8ef677d85f615260"
@@ -838,9 +908,29 @@
             },
             {
               "user": "c13c74138a344210a6a621c5e0d19dc3"
+            },
+            {
+              "user": "62b6ee3f24b847e99e144580dcd94a72"
+            },
+            {
+              "user": "943fffa35e0d4b55bb636f4aef01348d"
+            },
+            {
+              "user": "057c8f8ea1ff4713ae9f17a2f0dd7054"
+            },
+            {
+              "user": "dea7ac2834044919a3ef2322641b38c9"
+            },
+            {
+              "user": "a670f5a463a64225b813ad93a8034f2e"
+            },
+            {
+              "user": "7eef412918ec4d18a3860a6d61fcdcbe"
             }
           ],
           "icon": "mdi:nuke",
+          "title": "Advanced",
+          "path": "advanced",
           "badges": [],
           "cards": [
             {
@@ -891,20 +981,6 @@
               "state_color": true
             },
             {
-              "type": "entity",
-              "entity": "automation.a_side_keypad_heartbeat",
-              "attribute": "last_triggered",
-              "name": "A-Side keypad heartbeat last triggered",
-              "icon": "mdi:alpha-a-box"
-            },
-            {
-              "type": "entity",
-              "entity": "automation.b_side_keypad_heartbeat",
-              "attribute": "last_triggered",
-              "name": "B-Side keypad heartbeat last triggered",
-              "icon": "mdi:alpha-b-box"
-            },
-            {
               "type": "entities",
               "entities": [
                 {
@@ -931,7 +1007,8 @@
           ]
         },
         {
-          "path": "",
+          "theme": "Backend-selected",
+          "path": "grafana",
           "title": "Grafana",
           "icon": "mdi:chart-areaspline",
           "type": "panel",
@@ -943,13 +1020,31 @@
               "user": "c13c74138a344210a6a621c5e0d19dc3"
             },
             {
-              "user": "ff7ab356a33f4f379242067463126a32"
-            },
-            {
               "user": "90b63f479ed24cde8ef677d85f615260"
             },
             {
               "user": "a7e70d3c39dc46dea8761652dadb25b0"
+            },
+            {
+              "user": "7eef412918ec4d18a3860a6d61fcdcbe"
+            },
+            {
+              "user": "a670f5a463a64225b813ad93a8034f2e"
+            },
+            {
+              "user": "dea7ac2834044919a3ef2322641b38c9"
+            },
+            {
+              "user": "057c8f8ea1ff4713ae9f17a2f0dd7054"
+            },
+            {
+              "user": "943fffa35e0d4b55bb636f4aef01348d"
+            },
+            {
+              "user": "62b6ee3f24b847e99e144580dcd94a72"
+            },
+            {
+              "user": "1de1feba4ad14193af4e1308d86f846a"
             }
           ],
           "badges": [],
@@ -962,33 +1057,55 @@
           ]
         },
         {
+          "theme": "Backend-selected",
           "icon": "mdi:map",
           "visible": [
             {
-              "user": "90b63f479ed24cde8ef677d85f615260"
+              "user": "057c8f8ea1ff4713ae9f17a2f0dd7054"
             },
             {
-              "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+              "user": "1de1feba4ad14193af4e1308d86f846a"
             },
             {
-              "user": "c13c74138a344210a6a621c5e0d19dc3"
+              "user": "24b5f1a4ed6b43d9991c432a1cff21e9"
             },
             {
               "user": "a7e70d3c39dc46dea8761652dadb25b0"
             },
             {
-              "user": "24b5f1a4ed6b43d9991c432a1cff21e9"
+              "user": "90b63f479ed24cde8ef677d85f615260"
+            },
+            {
+              "user": "62b6ee3f24b847e99e144580dcd94a72"
+            },
+            {
+              "user": "943fffa35e0d4b55bb636f4aef01348d"
+            },
+            {
+              "user": "c13c74138a344210a6a621c5e0d19dc3"
+            },
+            {
+              "user": "dea7ac2834044919a3ef2322641b38c9"
+            },
+            {
+              "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+            },
+            {
+              "user": "a670f5a463a64225b813ad93a8034f2e"
+            },
+            {
+              "user": "7eef412918ec4d18a3860a6d61fcdcbe"
             }
           ],
           "type": "panel",
-          "path": "map",
           "title": "map",
+          "path": "map",
           "badges": [],
           "cards": [
             {
               "type": "picture-elements",
-              "image": "local/ha_floorplan_light.png",
-              "dark_mode_image": "local/ha_floorplan_dark.png",
+              "image": "local/ha_floorplan.svg",
+              "dark_mode_image": "local/ha_floorplan.svg",
               "elements": [
                 {
                   "type": "service-button",
@@ -1004,7 +1121,7 @@
                   "type": "conditional",
                   "conditions": [
                     {
-                      "entity": "group.all_normal_lights",
+                      "entity": "group.all_normal_light_groups",
                       "state": "on"
                     }
                   ],
@@ -1012,7 +1129,7 @@
                     {
                       "type": "state-label",
                       "prefix": "Any lights: ",
-                      "entity": "group.all_normal_lights",
+                      "entity": "group.all_normal_light_groups",
                       "style": {
                         "top": "18%",
                         "left": "82%",
@@ -1028,7 +1145,7 @@
                   "type": "conditional",
                   "conditions": [
                     {
-                      "entity": "group.all_normal_lights",
+                      "entity": "group.all_normal_light_groups",
                       "state": "off"
                     }
                   ],
@@ -1036,7 +1153,7 @@
                     {
                       "type": "state-label",
                       "prefix": "Any lights: ",
-                      "entity": "group.all_normal_lights",
+                      "entity": "group.all_normal_light_groups",
                       "style": {
                         "top": "18%",
                         "left": "82%",
@@ -1049,7 +1166,7 @@
                 },
                 {
                   "type": "state-icon",
-                  "entity": "group.all_normal_lights",
+                  "entity": "group.all_normal_light_groups",
                   "style": {
                     "top": "18%",
                     "left": "81.3%",
@@ -1815,9 +1932,9 @@
                   "title": "Air Compressor",
                   "entity": "binary_sensor.air_compressor_power",
                   "style": {
-                    "top": "9%",
-                    "left": "60.5%",
-                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                    "top": "8.5%",
+                    "left": "53.5%",
+                    "transform": "translate(-50%, -50%) scale(1.25)"
                   }
                 },
                 {
@@ -1862,7 +1979,37 @@
                   "entity": "light.light_002",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "60%",
+                    "top": "61%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "switch.sewing_zone_fitting_room_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21.5%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.sewing_zone_main_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "30.5%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.sewing_zone_accent_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "39.5%",
                     "left": "75%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -1879,11 +2026,11 @@
                 },
                 {
                   "type": "state-icon",
-                  "entity": "light.light_004",
+                  "entity": "light.light_022",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "32%",
-                    "left": "75%",
+                    "top": "53%",
+                    "left": "51%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -1919,16 +2066,6 @@
                 },
                 {
                   "type": "state-icon",
-                  "entity": "light.light_008",
-                  "icon": "mdi:lightbulb",
-                  "style": {
-                    "top": "39.5%",
-                    "left": "69.5%",
-                    "transform": "translate(-50%, -50%) scale(1, 1)"
-                  }
-                },
-                {
-                  "type": "state-icon",
                   "entity": "light.light_009",
                   "icon": "mdi:lightbulb",
                   "style": {
@@ -1952,7 +2089,7 @@
                   "entity": "light.light_072",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "60%",
+                    "top": "61%",
                     "left": "62%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -1969,21 +2106,31 @@
                 },
                 {
                   "type": "state-icon",
-                  "entity": "light.light_013",
+                  "entity": "light.e_lab_bench_lights",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "32%",
-                    "left": "62%",
+                    "top": "33.5%",
+                    "left": "63%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
                 {
                   "type": "state-icon",
-                  "entity": "light.light_014",
+                  "entity": "light.e_lab_set_a_lights",
                   "icon": "mdi:lightbulb",
                   "style": {
                     "top": "21%",
-                    "left": "63.5%",
+                    "left": "63%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.e_lab_set_b_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "27%",
+                    "left": "63%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -1992,7 +2139,7 @@
                   "entity": "light.light_015",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "60%",
+                    "top": "61%",
                     "left": "56.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2012,7 +2159,7 @@
                   "entity": "light.light_017",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "26%",
+                    "top": "33.5%",
                     "left": "56.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2022,7 +2169,7 @@
                   "entity": "light.light_018",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "17%",
+                    "top": "21.5%",
                     "left": "56.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2032,7 +2179,7 @@
                   "entity": "light.light_019",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "9%",
+                    "top": "10%",
                     "left": "56.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2052,14 +2199,14 @@
                   "entity": "light.light_021",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "60%",
+                    "top": "61%",
                     "left": "50.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
                 {
                   "type": "state-icon",
-                  "entity": "light.light_022",
+                  "entity": "light.light_004",
                   "icon": "mdi:lightbulb",
                   "style": {
                     "top": "45.5%",
@@ -2072,8 +2219,8 @@
                   "entity": "light.light_023",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "32%",
-                    "left": "50.5%",
+                    "top": "53%",
+                    "left": "75%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -2082,7 +2229,7 @@
                   "entity": "light.light_024",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "26%",
+                    "top": "33.5%",
                     "left": "50.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2092,7 +2239,7 @@
                   "entity": "light.light_025",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "9%",
+                    "top": "10%",
                     "left": "50.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2102,18 +2249,8 @@
                   "entity": "light.light_026",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "14%",
-                    "left": "52%",
-                    "transform": "translate(-50%, -50%) scale(1, 1)"
-                  }
-                },
-                {
-                  "type": "state-icon",
-                  "entity": "light.light_029",
-                  "icon": "mdi:lightbulb",
-                  "style": {
-                    "top": "16%",
-                    "left": "75%",
+                    "top": "21.5%",
+                    "left": "50.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -2122,18 +2259,8 @@
                   "entity": "light.light_030",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "8%",
-                    "left": "76.55%",
-                    "transform": "translate(-50%, -50%) scale(1, 1)"
-                  }
-                },
-                {
-                  "type": "state-icon",
-                  "entity": "light.light_031",
-                  "icon": "mdi:lightbulb",
-                  "style": {
-                    "top": "8%",
-                    "left": "67.4%",
+                    "top": "8.5%",
+                    "left": "69.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -2142,18 +2269,8 @@
                   "entity": "light.light_032",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "8%",
-                    "left": "71.5%",
-                    "transform": "translate(-50%, -50%) scale(1, 1)"
-                  }
-                },
-                {
-                  "type": "state-icon",
-                  "entity": "light.light_033",
-                  "icon": "mdi:lightbulb",
-                  "style": {
-                    "top": "8%",
-                    "left": "63.5%",
+                    "top": "8.5%",
+                    "left": "75%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -2162,8 +2279,8 @@
                   "entity": "light.light_034",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "16%",
-                    "left": "63.5%",
+                    "top": "14.5%",
+                    "left": "65.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -2172,8 +2289,8 @@
                   "entity": "light.light_035",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "16%",
-                    "left": "61%",
+                    "top": "8.5%",
+                    "left": "62%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -2182,7 +2299,7 @@
                   "entity": "light.vinyl_light",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "52.6%",
+                    "top": "53%",
                     "left": "49.5%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2692,7 +2809,7 @@
                   "entity": "light.light_050",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "30%",
+                    "top": "28%",
                     "left": "12%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2792,7 +2909,7 @@
                   "entity": "light.light_088",
                   "icon": "mdi:lightbulb",
                   "style": {
-                    "top": "30%",
+                    "top": "28%",
                     "left": "17%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
@@ -2803,7 +2920,7 @@
                   "icon": "mdi:lightbulb",
                   "style": {
                     "top": "28%",
-                    "left": "23%",
+                    "left": "22%",
                     "transform": "translate(-50%, -50%) scale(1, 1)"
                   }
                 },
@@ -2919,6 +3036,27 @@
             },
             {
               "user": "a7e70d3c39dc46dea8761652dadb25b0"
+            },
+            {
+              "user": "7eef412918ec4d18a3860a6d61fcdcbe"
+            },
+            {
+              "user": "a670f5a463a64225b813ad93a8034f2e"
+            },
+            {
+              "user": "057c8f8ea1ff4713ae9f17a2f0dd7054"
+            },
+            {
+              "user": "dea7ac2834044919a3ef2322641b38c9"
+            },
+            {
+              "user": "62b6ee3f24b847e99e144580dcd94a72"
+            },
+            {
+              "user": "943fffa35e0d4b55bb636f4aef01348d"
+            },
+            {
+              "user": "1de1feba4ad14193af4e1308d86f846a"
             }
           ],
           "badges": [],
@@ -3154,53 +3292,41 @@
           ]
         },
         {
-          "icon": "",
-          "visible": [
-            {
-              "user": "90b63f479ed24cde8ef677d85f615260"
-            }
-          ],
-          "type": "panel",
-          "title": "test",
-          "badges": [],
-          "cards": [
-            {
-              "type": "picture-elements",
-              "image": "local/ha_floorplan_light.png",
-              "dark_mode_image": "local/ha_floorplan_dark.png",
-              "elements": [
-                {
-                  "type": "service-button",
-                  "title": "Things for shutdown",
-                  "service": "home-assistant.turn_off",
-                  "style": {
-                    "left": "84%",
-                    "top": "14%",
-                    "transform": "translate(0%, -50%) scale(1.9, 1.9)"
-                  }
-                },
-                {
-                  "type": "state-label",
-                  "prefix": "Any lights: ",
-                  "entity": "group.all_normal_lights",
-                  "style": {
-                    "top": "18%",
-                    "left": "82%",
-                    "font-size": "22px",
-                    "font-weight": "bold",
-                    "color-active": "rgb(253,216,53)",
-                    "color-inactive": "rgb(100, 100, 100)",
-                    "transform": "translate(0%, -50%)"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
           "title": "Shopping List",
           "path": "shopping-list",
           "icon": "mdi:basket",
+          "visible": [
+            {
+              "user": "7eef412918ec4d18a3860a6d61fcdcbe"
+            },
+            {
+              "user": "a670f5a463a64225b813ad93a8034f2e"
+            },
+            {
+              "user": "dea7ac2834044919a3ef2322641b38c9"
+            },
+            {
+              "user": "6b7f0a40ee874bfebf94d6b4937a2845"
+            },
+            {
+              "user": "057c8f8ea1ff4713ae9f17a2f0dd7054"
+            },
+            {
+              "user": "c13c74138a344210a6a621c5e0d19dc3"
+            },
+            {
+              "user": "943fffa35e0d4b55bb636f4aef01348d"
+            },
+            {
+              "user": "90b63f479ed24cde8ef677d85f615260"
+            },
+            {
+              "user": "62b6ee3f24b847e99e144580dcd94a72"
+            },
+            {
+              "user": "1de1feba4ad14193af4e1308d86f846a"
+            }
+          ],
           "badges": [],
           "cards": [
             {

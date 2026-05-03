@@ -1,0 +1,59 @@
+- name: "Office Thermostat Ambient Temperature"
+  state_topic: "tele/i3/inside/office/thermostat/sensors"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.temperature }}'
+  force_update: True
+
+- name: "Office Thermostat Ambient Pressure"
+  state_topic: "tele/i3/inside/office/thermostat/sensors"
+  unit_of_measurement: "Pa"
+  value_template: '{{ value_json.pressure }}'
+  force_update: True
+
+- name: "Office Thermostat Ambient Humidity"
+  state_topic: "tele/i3/inside/office/thermostat/sensors"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.humidity }}'
+  force_update: True
+
+- name: "Office Thermostat Target Temperature"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.target }}'
+  force_update: True
+
+- name: "Office Thermostat Requested State"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.mode }}'
+  force_update: True
+
+- name: "Office Thermostat Requested Fan State"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.fan }}'
+  force_update: True
+
+- name: "Office Thermostat Swing"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.swing }}'
+  force_update: True
+
+- name: "Office Thermostat Timeout"
+  state_topic: "tele/i3/inside/office/thermostat/input"
+  value_template: '{{ value_json.timeout }}'
+  unit_of_measurement: "ms"
+  force_update: True
+
+- name: "Office Thermostat Active State"
+  state_topic: "tele/i3/inside/office/thermostat/output"
+  value_template: '{{ value_json.state }}'
+  force_update: True
+
+- name: "Office Thermostat Active Fan State"
+  state_topic: "tele/i3/inside/office/thermostat/output"
+  value_template: '{{ value_json.fan }}'
+  force_update: True
+
+# - name: "Office Thermostat Power Source"
+#   state_topic: "tele/i3/inside/office/thermostat/sensors"
+#   value_template: '{{ value_json.powerSource }}'
+#   force_update: True
