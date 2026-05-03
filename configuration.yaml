@@ -9,13 +9,6 @@ tts:
   - platform: google_translate
 
 mqtt:
-  broker: 10.13.0.22
-  birth_message:
-    topic: "tele/homeassistant/hass/LWT"
-    payload: "Online"
-  will_message:
-    topic: "tele/homeassistant/hass/LWT"
-    payload: "Offline"
   sensor: !include_dir_merge_list sensors
   binary_sensor: !include_dir_merge_list binary_sensors
   switch: !include_dir_merge_list switches
