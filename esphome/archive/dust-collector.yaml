@@ -1,5 +1,5 @@
 esphome:
-  name: dustcollector
+  name: "dust-collector"
   friendly_name: "Dust Collector"
 
 esp8266:
@@ -10,13 +10,7 @@ esp8266:
 logger:
   baud_rate: 0
 
-web_server:
-  port: 80
-
-# Enable Home Assistant API
 api:
-  encryption:
-    key: "mTy4Dwu60uxMZK4acOVhGejMuie1eQewAi8bW/XiXS4="
   services:
   - service: start_collector
     variables: {}
@@ -26,20 +20,6 @@ api:
     variables: {}
     then:
       - script.execute: script_stop_collector
-
-ota:
-  password: "36633bc24acbc4b42a66dfe998652b8d"
-
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: "Dustcollector Fallback Hotspot"
-    password: "6VjGTBcQ8pu6"
-
-captive_portal:
 
 substitutions:
   btn_debounce_on: 50ms

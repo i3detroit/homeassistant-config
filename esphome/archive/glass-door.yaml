@@ -6,10 +6,10 @@ packages:
   base: !include common/packages/esp_home_components.yaml
 
 substitutions:
-  device_name: "glass_door"
+  device_name: "glass-door"
   pretty_name: "Glass Door"
   ui_name: "${pretty_name}"
-  target_name: "front_door_status_controller"
+  target_name: "front-door-status-controller"
   ip_address: "10.13.107.100"
 
 esphome:
