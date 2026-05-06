@@ -13,7 +13,7 @@ substitutions:
   ip_address: "10.13.107.96"
 
 binary_sensor:
-  - name: "${pretty_name} Button 1"
+  - name: "Button 1"
     platform: gpio
     pin:
       number: 13
@@ -22,7 +22,7 @@ binary_sensor:
     on_press:
       - homeassistant.service:
           service: ${target_1_on}
-  - name: "${pretty_name} Button 2"
+  - name: "Button 2"
     platform: gpio
     pin:
       number: 12

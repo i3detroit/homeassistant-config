@@ -11,7 +11,7 @@ status_led:
 binary_sensor:
   - platform: gpio
     id: button
-    name: "${pretty_name} Button"
+    name: "Button"
     pin:
       number: GPIO13
       mode: INPUT_PULLUP

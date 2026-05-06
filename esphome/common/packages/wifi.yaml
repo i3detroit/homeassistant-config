@@ -13,10 +13,10 @@ wifi:
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "${pretty_name} IP Address"
+      name: "IP Address"
     ssid:
-      name: "${pretty_name} Connected SSID"
+      name: "Connected SSID"
     bssid:
-      name: "${pretty_name} Connected BSSID"
+      name: "Connected BSSID"
     mac_address:
-      name: "${pretty_name} MAC Address"
+      name: "MAC Address"

@@ -8,7 +8,7 @@ status_led:
     inverted: True
 
 binary_sensor:
-  - name: "${pretty_name} Button"
+  - name: "Button"
     platform: gpio
     pin:
       number: 13

@@ -60,14 +60,14 @@ sensor:
   - platform: bme280
     temperature:
       id: temp
-      name: "${pretty_name} Temperature"
+      name: "Temperature"
       oversampling: 16x
       filters:
         - offset: -2.0
     pressure:
-      name: "${pretty_name} Pressure"
+      name: "Pressure"
     humidity:
-      name: "${pretty_name} Humidity"
+      name: "Humidity"
     address: 0x76
     update_interval: 10s
 

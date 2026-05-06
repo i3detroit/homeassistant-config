@@ -9,7 +9,7 @@ substitutions:
 
 #overriding common/treatlife_ss01s_no_relay.yaml
 binary_sensor:
-  - name: "${pretty_name} Button"
+  - name: "Button"
     platform: gpio
     pin:
       number: 13

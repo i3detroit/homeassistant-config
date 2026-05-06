@@ -15,7 +15,7 @@ tuya:
 
 light:
   - platform: "tuya"
-    name: "${pretty_name} Dimmer"
+    name: "Dimmer"
     dimmer_datapoint: 2
     min_value_datapoint: 3
     switch_datapoint: 1

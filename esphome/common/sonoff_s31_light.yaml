@@ -18,7 +18,7 @@ status_led:
     inverted: True
 
 binary_sensor:
-  - name: "${pretty_name} Button"
+  - name: "Button"
     platform: gpio
     pin:
       number: 0
@@ -27,7 +27,7 @@ binary_sensor:
     on_press:
       - light.toggle: light_1
   - platform: status
-    name: "${pretty_name} Status"
+    name: "Status"
 
 output:
   - platform: gpio
@@ -46,9 +46,9 @@ light:
 sensor:
   - platform: cse7766
     current:
-      name: "${pretty_name} Current"
+      name: "Current"
     voltage:
-      name: "${pretty_name} Voltage"
+      name: "Voltage"
     power:
-      name: "${pretty_name} Power"
+      name: "Power"
     update_interval: 10s

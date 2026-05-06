@@ -10,12 +10,12 @@ output:
 
 light:
   - platform: binary
-    name: "${pretty_name} LED"
+    name: "LED"
     output: led_1_output
     id: led_1
 
 binary_sensor:
-  - name: "${pretty_name} Button"
+  - name: "Button"
     platform: gpio
     pin:
       number: 4

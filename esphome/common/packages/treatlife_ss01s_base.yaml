@@ -8,7 +8,7 @@ status_led:
     inverted: True
 
 switch:
-  - name: "${pretty_name} LED"
+  - name: "LED"
     id: power_led
     platform: gpio
     pin:

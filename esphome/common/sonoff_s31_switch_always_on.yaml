@@ -3,7 +3,7 @@
 <<: !include sonoff_s31_switch.yaml
 
 binary_sensor:
-  - name: "${pretty_name} Button"
+  - name: "Button"
     platform: gpio
     pin:
       number: 0

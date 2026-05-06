@@ -3,7 +3,7 @@ packages:
   base_components: !include packages/esp_home_components.yaml
 
 binary_sensor:
-  - name: "${pretty_name} Button 1"
+  - name: "Button 1"
     platform: gpio
     pin:
       number: 13
@@ -14,7 +14,7 @@ binary_sensor:
           service: homeassistant.turn_on
           data:
             entity_id: "${target_1}"
-  - name: "${pretty_name} Button 2"
+  - name: "Button 2"
     platform: gpio
     pin:
       number: 12
@@ -25,7 +25,7 @@ binary_sensor:
           service: homeassistant.turn_off
           data:
             entity_id: "${target_1}"
-  - name: "${pretty_name} Button 3"
+  - name: "Button 3"
     platform: gpio
     pin:
       number: 14
@@ -36,7 +36,7 @@ binary_sensor:
           service: homeassistant.turn_on
           data:
             entity_id: "${target_2}"
-  - name: "${pretty_name} Button 4"
+  - name: "Button 4"
     platform: gpio
     pin:
       number: 5
@@ -47,7 +47,7 @@ binary_sensor:
           service: homeassistant.turn_off
           data:
             entity_id: "${target_2}"
-  - name: "${pretty_name} Button 5"
+  - name: "Button 5"
     platform: gpio
     pin:
       number: 4
@@ -58,7 +58,7 @@ binary_sensor:
           service: homeassistant.turn_on
           data:
             entity_id: "${target_3}"
-  - name: "${pretty_name} Button 6"
+  - name: "Button 6"
     platform: gpio
     pin:
       number: 2
