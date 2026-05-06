@@ -1,24 +1,22 @@
 wifi:
   networks:
-    - ssid: !secret wifi_ssid_i3
-      password: !secret wifi_pass_i3
-#  use_address: "${ip_address}"
-#  INSTEAD OF ip_address in the top level device config, just do the merge config thing like this:
-#wifi:
-#  use_address: "10.13.107.251"
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_password
+  min_auth_mode: WPA2
+  use_address: "${ip_address}"
   reboot_timeout: 12h
   ap:
     ssid: "${pretty_name}"
-    password: !secret wifi_pass_i3
+    password: !secret wifi_password
     ap_timeout: 5min
 
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "${pretty_name} Address"
+      name: "${pretty_name} IP Address"
     ssid:
       name: "${pretty_name} Connected SSID"
     bssid:
       name: "${pretty_name} Connected BSSID"
     mac_address:
-      name: "${pretty_name} Mac Wifi Address"
+      name: "${pretty_name} MAC Address"
