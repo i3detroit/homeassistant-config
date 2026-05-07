@@ -16,7 +16,6 @@ mqtt:
   fan: !include_dir_merge_list fans
   climate: !include climate.yaml
 
-group: !include groups.yaml
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
 script: !include scripts.yaml
