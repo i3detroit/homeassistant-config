@@ -1,0 +1,9 @@
+packages:
+  package: !include common/treatlife_ss01s_fan.yaml
+
+substitutions:
+  device_name: "large-bathroom-exhaust-switch"
+  pretty_name: "Large Bathroom Exhaust Switch"
+  ui_name: "Fan"
+  icon: "mdi:fan"
+  ip_address: "10.13.107.211"

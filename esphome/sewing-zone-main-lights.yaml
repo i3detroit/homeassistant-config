@@ -1,0 +1,9 @@
+packages:
+  package: !include common/treatlife_ss01s_light_restore_on.yaml
+
+substitutions:
+  device_name: "sewing-zone-main-lights"
+  pretty_name: "Sewing Zone Main Lights"
+  ui_name: "Lights"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.23"

@@ -8,3 +8,8 @@ binary_sensor:
       number: 13
       mode: INPUT_PULLUP
       inverted: True
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data: 
+            entity_id: "${target_1}"

@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_basic_light.yaml
+
+substitutions:
+  device_name: "overhead-light-41"
+  pretty_name: "Overhead Light 41"
+  ui_name: "Light"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.169"

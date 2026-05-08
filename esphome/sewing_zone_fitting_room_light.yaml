@@ -1,8 +1,0 @@
-packages:
-  package: !include common/treatlife_3way_ss02.yaml
-
-substitutions:
-  device_name: "sewing_zone_fitting_room_light"
-  pretty_name: "Sewing Zone Fitting Room Light"
-  ui_name: "Sewing Zone Fitting Room Light"
-  icon: "mdi:lightbulb"

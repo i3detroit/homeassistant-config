@@ -1,0 +1,9 @@
+packages:
+  package: !include common/treatlife_ss01s_fan.yaml
+
+substitutions:
+  device_name: "machine-shop-exhaust-switch"
+  pretty_name: "Machine Shop Exhaust Switch"
+  ui_name: "Fan"
+  icon: "mdi:fan"
+  ip_address: "10.13.107.218"

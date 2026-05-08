@@ -1,0 +1,9 @@
+packages:
+  package: !include common/treatlife_3way_ss02.yaml
+
+substitutions:
+  device_name: "sewing-zone-fitting-room-light"
+  pretty_name: "Sewing Zone Fitting Room Light"
+  ui_name: "Light"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.15"

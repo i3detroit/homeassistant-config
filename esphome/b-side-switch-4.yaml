@@ -1,0 +1,10 @@
+packages:
+  package: !include common/button_box_6_long_press.yaml
+
+substitutions:
+  device_name: "b-side-switch-4"
+  pretty_name: "B-Side Switch 4"
+  target_1: "light.b_side_lights"
+  target_2: "light.wood_shop_lights"
+  target_3: "light.ceramics_jewelry_lights"
+  ip_address: "10.13.107.173"

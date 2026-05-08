@@ -1,9 +1,0 @@
-packages:
-  package: !include common/sonoff_basic_light_restore_off.yaml
-
-substitutions:
-  device_name: "big_light_002"
-  pretty_name: "Big Light 002"
-  ui_name: "Big Light 002"
-  icon: "mdi:lightbulb"
-

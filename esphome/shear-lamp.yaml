@@ -4,6 +4,6 @@ packages:
 substitutions:
   device_name: "shear-lamp"
   pretty_name: "Shear Lamp"
-  ui_name: "${pretty_name}"
-  icon: "mdi:lightbulb"
-  ip_address: 10.13.107.152
+  ui_name: "Lamp"
+  icon: "mdi:lamp"
+  ip_address: "10.13.107.152"

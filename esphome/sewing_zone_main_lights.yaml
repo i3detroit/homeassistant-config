@@ -1,9 +1,0 @@
-packages:
-  package: !include common/treatlife_ss01s_light_restore_on.yaml
-
-
-substitutions:
-  device_name: "sewing_zone_main_lights"
-  pretty_name: "Sewing Zone Main Lights"
-  ui_name: "Sewing Zone Main Lights"
-  icon: "mdi:lightbulb"

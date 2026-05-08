@@ -1,8 +1,0 @@
-<<: !include common/treatlife_ss01s_light.yaml
-
-substitutions:
-  device_name: "elab_seta_lightswitch"
-  pretty_name: "E-Lab Set A Lightswitch"
-  ui_name: "E-Lab Set A Lights"
-  icon: "mdi:lightbulb"
-  ip_address: 10.13.107.151

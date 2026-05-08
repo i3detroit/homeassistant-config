@@ -8,10 +8,10 @@ packages:
 #  - GPIO pin numbers
 
 substitutions:
-  device_name: air-compressor
+  device_name: "air-compressor"
   pretty_name: "Air Compressor"
   ui_name: "${pretty_name}"
-  ip_address: 10.13.107.256
+  ip_address: "10.13.107.256"
   # Outputs
   compressor_power_on_pin: GPIOx
   compressor_power_off_pin: GPIOx
@@ -38,7 +38,7 @@ ads1115:
 
 sensor:
   - platform: ads1115
-    name: "Air Compressor State ADC"
+    name: "State ADC"
     multiplexer: "${compressor_state_pin}"
     gain: 1
     id: air_compressor_state_adc
@@ -59,7 +59,7 @@ sensor:
 
 binary_sensor:
   - platform: template
-    name: Air Compressor State
+    name: "State"
     lambda: |-
       if (id(air_compressor_state_adc) > 0.5){
         return true;
@@ -70,7 +70,7 @@ binary_sensor:
 
 switch:
   - platform: gpio
-    name: Air Compressor Power On
+    name: "Air Compressor Power On"
     id: compressor_power_on_switch
     pin: "${compressor_power_on_pin}"
     interlock: [compressor_power_off_switch]

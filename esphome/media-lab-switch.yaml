@@ -1,0 +1,9 @@
+packages:
+  package: !include common/treatlife_ss01s_light.yaml
+
+substitutions:
+  device_name: "media-lab-switch"
+  pretty_name: "Media Lab Switch"
+  ui_name: "Lights"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.159"

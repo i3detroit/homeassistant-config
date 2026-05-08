@@ -5,4 +5,4 @@ substitutions:
   device_name: "disco-button"
   pretty_name: "Disco Button"
   target_1: "switch.disco_ball"
-  ip_address: 10.13.107.234
+  ip_address: "10.13.107.234"

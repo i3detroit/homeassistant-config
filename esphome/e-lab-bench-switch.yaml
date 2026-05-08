@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_light.yaml
+
+substitutions:
+  device_name: "e-lab-bench-switch"
+  pretty_name: "E-Lab Bench Switch"
+  ui_name: "Lights"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.118"

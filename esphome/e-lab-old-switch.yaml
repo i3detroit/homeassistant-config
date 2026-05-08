@@ -1,0 +1,9 @@
+packages:
+  package: !include common/treatlife_ss01s_light.yaml
+
+substitutions:
+  device_name: "e-lab-old-switch"
+  pretty_name: "E-Lab Old Switch"
+  ui_name: "Lights"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.189"

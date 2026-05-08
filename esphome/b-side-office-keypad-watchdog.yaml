@@ -4,6 +4,6 @@ packages:
 substitutions:
   device_name: "b-side-office-keypad-watchdog"
   pretty_name: "B-Side Office Keypad Watchdog"
-  ui_name: "${pretty_name}"
+  ui_name: "Watchdog"
   icon: "mdi:dog-side"
   ip_address: !secret b_side_kp_watchdog_ip

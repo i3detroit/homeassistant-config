@@ -1,7 +1,0 @@
-packages:
-  package: !include common/button_box_2.yaml
-
-substitutions:
-  device_name: "sewing_zone_lightswitch_accent"
-  pretty_name: "Sewing Zone Accent Lightswitch"
-  target_1: "light.sewing_zone_accent_lights"

@@ -1,9 +1,0 @@
-packages:
-  package: !include common/treatlife_ss01s_light.yaml
-
-
-substitutions:
-  device_name: "sewing_zone_accent_lights"
-  pretty_name: "Sewing Zone Accent Lights"
-  ui_name: "Sewing Zone Accent Lights"
-  icon: "mdi:lightbulb"

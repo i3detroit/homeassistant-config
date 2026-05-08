@@ -1,0 +1,12 @@
+packages:
+# device is electrodragon; programming via pin header does not work
+
+  package: !include common/electrodragon_light.yaml
+
+
+substitutions:
+  device_name: "overhead-light-16"
+  pretty_name: "Overhead Light 16"
+  ui_name: "Light"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.129"

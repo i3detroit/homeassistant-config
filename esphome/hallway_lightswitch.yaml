@@ -1,8 +1,0 @@
-<<: !include common/treatlife_ss01s_light.yaml
-
-substitutions:
-  device_name: "hallway_lightswitch"
-  pretty_name: "Hallway Lightswitch"
-  ui_name: "Hallway Lights"
-  icon: "mdi:lightbulb"
-  ip_address: "10.13.107.26"

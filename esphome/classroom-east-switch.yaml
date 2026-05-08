@@ -1,0 +1,8 @@
+<<: !include common/treatlife_ss01s_light.yaml
+
+substitutions:
+  device_name: "classroom-east-switch"
+  pretty_name: "Classroom East Switch"
+  ui_name: "Lights"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.136"

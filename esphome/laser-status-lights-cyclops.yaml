@@ -1,0 +1,7 @@
+packages:
+  package: !include common/laser_cutter_status_lights.yaml
+
+# broken!
+substitutions:
+  laser_name: "Cyclops"
+  device_name: "laser-status-lights-cyclops"

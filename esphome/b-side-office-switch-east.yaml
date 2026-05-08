@@ -1,0 +1,9 @@
+packages:
+  package: !include common/treatlife_3way_ss02.yaml
+
+substitutions:
+  device_name: "b-side-office-east-switch"
+  pretty_name: "B-Side Office East Switch"
+  ui_name: "Lights"
+  icon: "mdi:lightbulb"
+  ip_address: "10.13.107.209"

@@ -1,0 +1,9 @@
+packages:
+  package: !include common/button_box_4_long_press.yaml
+
+substitutions:
+  device_name: "a-side-switch-west-1"
+  pretty_name: "A-Side Switch West 1"
+  target_1: "light.row_4_lights"
+  target_2: "light.row_5_lights"
+  ip_address: "10.13.107.94"

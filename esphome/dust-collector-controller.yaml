@@ -1,0 +1,46 @@
+# See https://www.i3detroit.org/wiki/Dust_Collector_Automation
+
+packages:
+  base: !include common/packages/esp_home_components.yaml
+  board: !include common/packages/board_d1_mini.yaml
+
+substitutions:
+  device_name: "dust-collector-controller"
+  pretty_name: "Dust Collector Controller"
+  ui_name: "${pretty_name}"
+  ip_address: "10.13.107.120"
+
+api:
+  services:
+    - service: dc_on
+      then:
+        - switch.turn_on:
+            id: relay_dc_on
+        - delay: 500ms
+        - switch.turn_off:
+            id: relay_dc_on
+    - service: dc_off
+      then:
+        - switch.turn_on:
+            id: relay_dc_off
+        - delay: 500ms
+        - switch.turn_off:
+            id: relay_dc_off
+
+switch:
+  - name: "On Switch"
+    id: relay_dc_on
+    icon: mdi:fan
+    platform: gpio
+    pin:
+      number: GPIO5
+      inverted: True
+    restore_mode: ALWAYS_OFF
+  - name: "Off Switch"
+    id: relay_dc_off
+    icon: mdi:fan
+    platform: gpio
+    pin:
+      number: GPIO4
+      inverted: True
+    restore_mode: ALWAYS_OFF

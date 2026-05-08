@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_s31_light.yaml
+
+substitutions:
+  device_name: "mural-blacklight"
+  pretty_name: "Mural Blacklight"
+  ui_name: "Light"
+  icon: "mdi:light-flood-down"
+  ip_address: "10.13.107.147"

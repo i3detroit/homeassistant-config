@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_bn.yaml
+
+substitutions:
+  device_name: "overhead-light-38"
+  pretty_name: "Emergency Light 38"
+  ui_name: "Emergency Light 38"
+  icon: "mdi:lightbulb"
+  # ip_address: ""
