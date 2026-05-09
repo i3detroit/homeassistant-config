@@ -11,6 +11,7 @@ logger:
 uart:
   rx_pin: RX
   baud_rate: 4800
+  parity: EVEN
 
 status_led:
   pin:
@@ -45,10 +46,15 @@ light:
 
 sensor:
   - platform: cse7766
-    current:
-      name: "Current"
     voltage:
       name: "Voltage"
+      filters:
+        - throttle_average: 60s
+    current:
+      name: "Current"
+      filters:
+        - throttle_average: 60s
     power:
-      name: "Power"
-    update_interval: 10s
+      name: "Power Draw"
+      filters:
+        - throttle_average: 60s

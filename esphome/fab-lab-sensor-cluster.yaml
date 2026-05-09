@@ -5,7 +5,7 @@ packages:
 substitutions:
   device_name: "fab-lab-sensor-cluster"
   pretty_name: "Fab Lab Sensor Cluster"
-  ui_name: "${pretty_name}"
+  ui_name: "Sensors"
   ip_address: "10.13.107.92"
 
 logger:
@@ -25,7 +25,7 @@ sensor:
   - platform: pmsx003
     type: PMSX003
     pm_1_0:
-      name: "${location} PM <1.0µm Concentration"
+      name: "PM <1.0µm Concentration"
       accuracy_decimals: 2
       icon: mdi:molecule
       filters:
@@ -33,7 +33,7 @@ sensor:
             window_size: 20
             send_every: 20
     pm_2_5:
-      name: "${location} PM <2.5µm Concentration"
+      name: "PM <2.5µm Concentration"
       accuracy_decimals: 2
       icon: mdi:molecule
       filters:
@@ -41,7 +41,7 @@ sensor:
             window_size: 20
             send_every: 20
     pm_10_0:
-      name: "${location} PM <10.0µm Concentration"
+      name: "PM <10.0µm Concentration"
       accuracy_decimals: 2
       icon: mdi:molecule
       filters:
@@ -49,21 +49,21 @@ sensor:
             window_size: 20
             send_every: 20
 
-  - platform: bme280
-    temperature:
-      name: "${location} Temperature"
-      accuracy_decimals: 2
-    pressure:
-      name: "${location} Pressure"
-      accuracy_decimals: 2
-    humidity:
-      name: "${location} Humidity"
-      accuracy_decimals: 2
-    address: 0x76
-    update_interval: 60s
+  # - platform: bme280
+  #   temperature:
+  #     name: "Temperature"
+  #     accuracy_decimals: 2
+  #   pressure:
+  #     name: "Pressure"
+  #     accuracy_decimals: 2
+  #   humidity:
+  #     name: "Humidity"
+  #     accuracy_decimals: 2
+  #   address: 0x76
+  #   update_interval: 60s
 
-  - platform: bh1750
-    name: "${location} Illuminance"
-    address: 0x23
-    # measurement_duration: 69
-    update_interval: 60s
+  # - platform: bh1750
+  #   name: "Illuminance"
+  #   address: 0x23
+  #   # measurement_duration: 60
+  #   update_interval: 60s

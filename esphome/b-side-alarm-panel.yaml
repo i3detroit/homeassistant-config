@@ -5,7 +5,7 @@ packages:
 substitutions:
   device_name: "b-side-alarm-panel"
   pretty_name: "B-Side Alarm Panel"
-  ui_name: "${pretty_name}"
+  ui_name: "Alarm Panel"
   ip_address: "10.13.107.228"
 
 i2c:
@@ -21,7 +21,8 @@ binary_sensor:
     name: "B-Side Office Motion"
     device_class: motion
     filters:
-      - delayed_on: 100ms
+      - delayed_on: 1s
+      - delayed_off: 1s
     pin:
       mcp23xxx: mcp23017_hub
       number: 0
@@ -31,7 +32,8 @@ binary_sensor:
     name: "B-Side Courtyard Door Motion"
     device_class: motion
     filters:
-      - delayed_on: 100ms
+      - delayed_on: 1s
+      - delayed_off: 1s
     pin:
       mcp23xxx: mcp23017_hub
       number: 1
@@ -41,7 +43,8 @@ binary_sensor:
     name: "B-Side Rear Shop Motion"
     device_class: motion
     filters:
-      - delayed_on: 100ms
+      - delayed_on: 1s
+      - delayed_off: 1s
     pin:
       mcp23xxx: mcp23017_hub
       number: 2

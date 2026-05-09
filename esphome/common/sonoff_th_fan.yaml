@@ -4,25 +4,27 @@ packages:
 
 status_led:
   pin:
-    number: 13
+    number: GPIO14
     inverted: True
+
+output:
 
 binary_sensor:
   - name: "Button"
     platform: gpio
     pin:
-      number: 0
+      number: 4
       mode: INPUT_PULLUP
-      inverted: True
+      inverted: False
     on_press:
       - switch.toggle: relay_1
 
 switch:
-  - name: "${ui_name}"
-    id: relay_1
-    icon: "${icon}"
-    platform: gpio
+  - platform: gpio
     pin:
       number: 12
       inverted: False
-    restore_mode: RESTORE_DEFAULT_ON
+    id: relay_1
+    name: "${ui_name}"
+    icon: "${icon}"
+    restore_mode: RESTORE_DEFAULT_OFF

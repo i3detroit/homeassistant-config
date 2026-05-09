@@ -1,5 +1,5 @@
 packages:
-  package: !include common/sonoff_sv.yaml
+  package: !include common/sonoff_sv_light.yaml
   
 substitutions:
   device_name: "chandelier-2"

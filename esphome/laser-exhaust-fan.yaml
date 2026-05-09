@@ -1,0 +1,9 @@
+packages:
+  package: !include common/sonoff_sv_switch.yaml
+
+substitutions:
+  device_name: "laser-exhaust-fan"
+  pretty_name: "Laser Exhaust Fan"
+  ui_name: "Fan"
+  icon: "mdi:fan"
+  ip_address: "10.13.107.121"

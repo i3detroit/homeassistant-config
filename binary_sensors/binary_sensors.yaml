@@ -1,25 +1,3 @@
-- name: "Glass Door Lock Sensor"
-  state_topic: "stat/i3/inside/classroom/glass-door/lock"
-  # on means open, off means closed
-  payload_on: "UNLOCKED"
-  payload_off: "LOCKED"
-  # availability_topic: ""
-  # payload_available: "online"
-  # payload_not_available: "offline"
-  device_class: lock
-  force_update: True
-
-- name: "Glass Door Open Sensor"
-  state_topic: "stat/i3/inside/classroom/glass-door/open"
-  # on means open, off means closed
-  payload_on: "OPEN"
-  payload_off: "CLOSED"
-  # availability_topic: "stat/i3/classroom/glassDoor/lock"
-  # payload_available: "online"
-  # payload_not_available: "offline"
-  device_class: door
-  force_update: True
-
 # - name: "Garage Door Lock Sensor"
 #   state_topic: "stat/i3/inside/commons/garage-door/lock"
 #   # on means open, off means closed

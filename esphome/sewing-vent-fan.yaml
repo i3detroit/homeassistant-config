@@ -1,9 +1,0 @@
-packages:
-  package: !include common/sonoff_th.yaml
-  
-substitutions:
-  device_name: "sewing-vent-fan"
-  pretty_name: "Sewing Vent Fan"
-  ui_name: "Fan"
-  icon: "mdi:fan"
-  ip_address: "10.13.107.75"

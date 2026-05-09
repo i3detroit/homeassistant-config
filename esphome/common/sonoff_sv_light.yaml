@@ -1,0 +1,31 @@
+packages:
+  board: !include packages/board_esp01_1m.yaml
+  base_components: !include packages/esp_home_components.yaml
+
+status_led:
+  pin:
+    number: 13
+    inverted: True
+
+binary_sensor:
+  - name: "Button"
+    platform: gpio
+    pin:
+      number: 0
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - switch.toggle: relay_1
+
+output:
+  - platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    id: relay_1
+
+light:
+  - name: "${ui_name}"
+    icon: "${icon}"
+    output: relay_1
+    restore_mode: RESTORE_DEFAULT_OFF

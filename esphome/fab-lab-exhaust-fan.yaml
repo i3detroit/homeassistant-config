@@ -2,8 +2,8 @@ packages:
   package: !include common/sonoff_basic_switch.yaml
   
 substitutions:
-  device_name: "fab-lab-vent-fan"
-  pretty_name: "Fab Lab Vent Fan"
+  device_name: "fab-lab-exhaust-fan"
+  pretty_name: "Fab Lab Exhaust Fan"
   ui_name: "Fan"
   icon: "mdi:fan"
-  ip_address: "10.13.107.256"
+  ip_address: "10.13.107.110"

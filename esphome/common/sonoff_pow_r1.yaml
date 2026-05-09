@@ -31,26 +31,20 @@ sensor:
     sel_pin: 5
     cf_pin: 14
     cf1_pin: 13
-    update_interval: 2s
+    update_interval: 60s
     current:
       id: current
       name: "Current"
     voltage:
       name: "Voltage"
     power:
-      name: "Power"
+      name: "Power Draw"
       id: power
-      on_value_range:
-        - above: 4.0
-          then:
-            - light.turn_on: led
-        - below: 3.0
-          then:
-            - light.turn_off: led
 
 switch:
   - platform: template
-    name: "Relay"
+    name: "${ui_name}"
+    icon: "${icon}"
     optimistic: true
     id: fakebutton
     turn_on_action:
@@ -65,13 +59,14 @@ switch:
 
 output:
   - platform: esp8266_pwm
-    id: pow_blue_led
+    id: led_gpio
     pin:
       number: GPIO15
       inverted: True
 
 light:
   - platform: monochromatic
-    name: "Blue LED"
-    output: pow_blue_led
+    name: "LED"
+    output: led_gpio
     id: led
+    internal: true

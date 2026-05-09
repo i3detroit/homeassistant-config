@@ -2,8 +2,8 @@ packages:
   package: !include common/sonoff_basic_light.yaml
 
 substitutions:
-  device_name: "red_pallet_rack_light"
+  device_name: "red-pallet-rack-light"
   pretty_name: "Red Pallet Rack Light"
-  ui_name: "Red Pallet Rack Light"
+  ui_name: "Light"
   icon: "mdi:lightbulb"
   ip_address: "10.13.107.212"

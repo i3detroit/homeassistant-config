@@ -1,19 +1,13 @@
 packages:
-  # board: !include common/packages/board_d1_mini.yaml
+  board: !include common/packages/board_d1_mini.yaml
   base_components: !include common/packages/esp_home_components.yaml
 
 substitutions:
-  device_name: "welding_helmet_lights"
+  device_name: "welding-helmet-lights"
   pretty_name: "Welding Helmet Lights"
-  ui_name: "Welding Helmet Lights"
-  
-esphome:
-  name: "${device_name}"
-  build_path: "./build/${device_name}"
-  
-esp8266:
-  board: d1_mini
- 
+  ui_name: "Lights"
+  ip_address: "10.13.107.118"
+
 # light:
 #   - platform: fastled_clockless
 #     chipset: WS2812B
@@ -30,4 +24,3 @@ esp8266:
 #           name: Rainbow
 #           width: 48
 #       - random:
-

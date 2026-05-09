@@ -11,7 +11,8 @@ substitutions:
   device_name: "air-compressor"
   pretty_name: "Air Compressor"
   ui_name: "${pretty_name}"
-  ip_address: "10.13.107.256"
+  ip_address: "10.13.107.45"
+
   # Outputs
   compressor_power_on_pin: GPIOx
   compressor_power_off_pin: GPIOx
@@ -19,10 +20,12 @@ substitutions:
   valve_1_off_pin: GPIOx
   valve_2_on_pin: GPIOx
   valve_2_off_pin: GPIOx
+
   # Inputs (on ads1115)
   compressor_state_pin: A0_GND
   pressure_sensor_1_pin: A1_GND
   pressure_sensor_2_pin: A2_GND
+  
   # I2C
   sda_pin: GPIO4
   scl_pin: GPIO5

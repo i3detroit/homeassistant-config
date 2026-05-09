@@ -7,7 +7,6 @@ i3Detroit is a hackerspace in Ferndale, MI. This is our Home Assistant (and ESPH
   * ESPHome - adds GUI for configuring and flashign devices from right in Home Assistant
   * File editor - allows editing any config files in Home Assistant UI
   * SSH & Web Terminal (Community Add-on) - Can be useful to have a terminal right in the UI
-  * Mosquitto broker - For any MQTT devices. We still have some devices running Tasmota or custom programs
   * InfluxDB - DB for logging
   * Grafana - Data visualization
   * Google Drive Backup for HA snapshots (https://github.com/sabeechen/hassio-google-drive-backup)
@@ -69,23 +68,6 @@ packages: []
 init_commands:
   - /data/.dotfiles/setup.sh
 ```
-
-### Mosquitto Broker
-We use this with custom and Tasmota devices, some of which are set up with the default Tasmota MQTT user/pass and some no user/pass. This presents some problems for the default configuration of this add-on which does not like unknown connections. So the important part of the add-on config yaml:
-```
-logins:
-  - username: DVES_USER
-    password: DVES_PASS
-```
-Then we must create two files:
-* `/share/mosquitto/acl.conf` with contents `acl_file /share/mosquitto/accesscontrollist`
-* `/share/mosquitto/accesscontrollist` with contents:
-```
-topic readwrite #
-user DVES_USER
-topic readwrite #
-```
-In the latter file, line 1 enables read/write access to anonymous users. Lines 2 and 3 give read/write access to the default Tasmota MQTT username. In our experience, simply enabling anonymous users with the first line causes the broker to reject any named users.
 
 ## Neat & Notable Stuff
 ### Map of the building showing shutdown status
