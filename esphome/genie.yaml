@@ -7,7 +7,6 @@ substitutions:
   ui_name: "${pretty_name}"
   icon: "mdi:oil-lamp"
   restore_mode: ALWAYS_ON
-  ip_address: "10.13.107.240"
 
 text_sensor:
   - platform: template

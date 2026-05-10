@@ -6,7 +6,6 @@ substitutions:
   device_name: "traffic-light"
   pretty_name: "Traffic Light"
   icon: "mdi:traffic-light"
-  ip_address: "10.13.107.106"
 
 status_led:
   pin:

@@ -14,7 +14,6 @@ substitutions:
   device_name: "front_door_status_controller"
   pretty_name: "Front Door Status Controller"
   ui_name: "${pretty_name}"
-  ip_address: "10.13.107.197"
 
 esphome:
   name: "${device_name}"

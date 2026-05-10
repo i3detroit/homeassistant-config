@@ -3,9 +3,8 @@ wifi:
     - ssid: !secret wifi_ssid
       password: !secret wifi_password
   min_auth_mode: WPA2
-  # don't use unless dns fails
-  # use_address: "${ip_address}"
-  reboot_timeout: 12h
+  domain: ".iot.i3.lc"
+  reboot_timeout: 3h
   ap:
     ssid: "${pretty_name}"
     password: !secret wifi_password

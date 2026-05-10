@@ -6,4 +6,3 @@ substitutions:
   pretty_name: "Sewing Zone Main Lights"
   ui_name: "Lights"
   icon: "mdi:lightbulb"
-  ip_address: "10.13.107.23"

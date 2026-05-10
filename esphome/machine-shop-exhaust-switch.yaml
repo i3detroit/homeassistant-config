@@ -6,4 +6,3 @@ substitutions:
   pretty_name: "Machine Shop Exhaust Switch"
   ui_name: "Fan"
   icon: "mdi:fan"
-  ip_address: "10.13.107.218"

@@ -6,4 +6,3 @@ substitutions:
   pretty_name: "A-Side Main Keypad Watchdog"
   ui_name: "Watchdog"
   icon: "mdi:dog-side"
-  ip_address: !secret a_side_kp_watchdog_ip

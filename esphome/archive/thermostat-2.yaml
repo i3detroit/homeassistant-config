@@ -5,4 +5,3 @@ substitutions:
   device_name: "thermostat-2"
   pretty_name: "Thermostat 2"
   ui_name: "Thermostat"
-  ip_address: "10.13.107.x"

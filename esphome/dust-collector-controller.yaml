@@ -8,7 +8,6 @@ substitutions:
   device_name: "dust-collector-controller"
   pretty_name: "Dust Collector Controller"
   ui_name: "${pretty_name}"
-  ip_address: "10.13.107.120"
 
 api:
   services:

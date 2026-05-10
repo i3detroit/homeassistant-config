@@ -6,4 +6,3 @@ substitutions:
   pretty_name: "Paint Zone Switch"
   target_1: "light.paint_zone_lights"
   target_2: "light.paint_zone_lights"
-  ip_address: "10.13.107.251"

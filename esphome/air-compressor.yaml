@@ -11,7 +11,6 @@ substitutions:
   device_name: "air-compressor"
   pretty_name: "Air Compressor"
   ui_name: "${pretty_name}"
-  ip_address: "10.13.107.45"
 
   # Outputs
   compressor_power_on_pin: GPIOx

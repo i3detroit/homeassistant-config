@@ -5,4 +5,3 @@ substitutions:
   device_name: "sewing-zone-south-main-switch"
   pretty_name: "Sewing Zone South Main Switch"
   target_1: "light.sewing_zone_main_lights_lights"
-  ip_address: "10.13.107.125"

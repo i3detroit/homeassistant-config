@@ -6,7 +6,6 @@ substitutions:
   device_name: "welding-helmet-lights"
   pretty_name: "Welding Helmet Lights"
   ui_name: "Lights"
-  ip_address: "10.13.107.118"
 
 # light:
 #   - platform: fastled_clockless

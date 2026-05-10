@@ -6,4 +6,3 @@ substitutions:
   pretty_name: "Emergency Light 38"
   ui_name: "Emergency Light 38"
   icon: "mdi:lightbulb"
-  # ip_address: ""

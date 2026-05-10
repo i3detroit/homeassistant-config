@@ -6,4 +6,3 @@ substitutions:
   pretty_name: "Fairy Lights"
   ui_name: "Lights"
   icon: "mdi:string-lights"
-  ip_address: "10.13.107.253"

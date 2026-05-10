@@ -12,7 +12,6 @@ substitutions:
   pretty_name: "Small Bathroom Shower Switch"
   ui_name: "Light"
   icon: "mdi:lightbulb"
-  ip_address: "10.13.107.215"
 
 api:
   services:

@@ -7,4 +7,3 @@ substitutions:
   target_1: "light.b_side_lights"
   target_2: "light.wood_shop_lights"
   target_3: "light.ceramics_jewelry_lights"
-  ip_address: "10.13.107.239"

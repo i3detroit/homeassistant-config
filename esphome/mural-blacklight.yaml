@@ -6,4 +6,3 @@ substitutions:
   pretty_name: "Mural Blacklight"
   ui_name: "Light"
   icon: "mdi:light-flood-down"
-  ip_address: "10.13.107.147"
