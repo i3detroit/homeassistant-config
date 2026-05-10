@@ -209,130 +209,9 @@
 - id: '1628099948333'
   alias: Large Bathroom Fan Timeout
   description: ''
-  trigger:
-  - platform: device
-    type: turned_on
-    device_id: 9934d59d904e351e98e5a4316e2569f7
-    entity_id: switch.large_bathroom_exhaust_fan
-    domain: switch
-    for:
-      hours: 0
-      minutes: 5
-      seconds: 0
-      milliseconds: 0
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 9934d59d904e351e98e5a4316e2569f7
-    entity_id: switch.large_bathroom_exhaust_fan
-    domain: switch
-  mode: single
-- id: '1628115715834'
-  alias: Dooridor and Hall Lights Sync
-  description: ''
-  trigger:
-  - platform: device
-    type: turned_on
-    device_id: b5f81dc5a6ecf22d42a2d360866a13a4
-    entity_id: light.classroom_east_lights
-    domain: light
-  - platform: device
-    type: turned_off
-    device_id: b5f81dc5a6ecf22d42a2d360866a13a4
-    entity_id: light.classroom_east_lights
-    domain: light
-  condition: []
-  action:
-  - service: light.turn_{{ trigger.to_state.state }}
-    target:
-      entity_id: light.dooridor_light
-  mode: single
-- id: '1628116035884'
-  alias: Classroom Lights Sync
-  description: ''
-  trigger:
-  - type: turned_on
-    platform: device
-    device_id: 96c207da5a46f5aa1a9bb0389635181d
-    entity_id: binary_sensor.classroom_east_alt_switch_button
-    domain: binary_sensor
-  condition: []
-  action:
-  - choose:
-    - conditions:
-      - condition: device
-        type: is_on
-        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
-        entity_id: light.classroom_east_lights
-        domain: light
-      sequence:
-      - type: turn_off
-        device_id: 6236b48b4ccbaae89aa7ee6b525d2210
-        entity_id: light.hallway_lights
-        domain: light
-      - type: turn_off
-        device_id: d6ad15cf2b2f2802c956b427dddd9191
-        entity_id: light.classroom_west_lights
-        domain: light
-      - type: turn_off
-        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
-        entity_id: light.classroom_east_lights
-        domain: light
-    - conditions:
-      - condition: device
-        type: is_off
-        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
-        entity_id: light.classroom_east_lights
-        domain: light
-      sequence:
-      - type: turn_on
-        device_id: d6ad15cf2b2f2802c956b427dddd9191
-        entity_id: light.classroom_west_lights
-        domain: light
-      - type: turn_on
-        device_id: 6236b48b4ccbaae89aa7ee6b525d2210
-        entity_id: light.hallway_lights
-        domain: light
-      - type: turn_on
-        device_id: b5f81dc5a6ecf22d42a2d360866a13a4
-        entity_id: light.classroom_east_lights
-        domain: light
-    default: []
-  mode: single
-- id: '1628116933429'
-  alias: Disco Mode
-  description: ''
-  trigger:
-  - platform: device
-    type: changed_states
-    device_id: 7bae24579d11e6c6ead62d594938c066
-    entity_id: switch.disco_ball
-    domain: switch
-  condition: []
-  action:
-  - service: homeassistant.turn_{{ trigger.to_state.state }}
-    target:
-      entity_id:
-      - light.swirly_lights_01
-      - light.swirly_lights_02
-      - switch.chandelier_01
-      - switch.chandelier_02
-      - light.fairy_lights
-      - light.disco_spotlights
-  mode: single
-- id: '1628117264623'
-  alias: Craft Room Lights Button
-  description: ''
-  trigger:
-  - platform: mqtt
-    topic: cmnd/i3/inside/craftroom/light/power
-    payload: '2'
-  condition: []
-  action:
-  - type: toggle
-    device_id: e8dbe6d72d480979dea9f4cdbc8e2582
-    entity_id: light.craft_room_lights
-    domain: light
+  triggers: []
+  conditions: []
+  actions: []
   mode: single
 - id: '1628203562056'
   alias: Small Bathroom Motion ON
@@ -369,291 +248,24 @@
     domain: light
   mode: single
 - id: '1628203747980'
-  alias: Small bathroom fan timeout
+  alias: Small Bathroom Fan Timeout
   description: ''
-  trigger:
-  - platform: device
-    type: turned_on
-    device_id: 98e2b3734333f134187dcd38172f7aeb
-    entity_id: switch.small_bathroom_exhaust_fan
-    domain: switch
-    for:
-      hours: 0
-      minutes: 5
-      seconds: 0
-      milliseconds: 0
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 98e2b3734333f134187dcd38172f7aeb
-    entity_id: switch.small_bathroom_exhaust_fan
-    domain: switch
-  mode: single
-- id: '1629339400804'
-  alias: Office Lights Toggle All
-  description: ''
-  trigger:
+  triggers:
   - type: turned_on
-    platform: device
-    device_id: 96c207da5a46f5aa1a9bb0389635181d
-    entity_id: binary_sensor.classroom_east_alt_switch_button
-    domain: binary_sensor
+    device_id: b9d21c33e17b82294cf7249ffe34c02b
+    entity_id: aef868112cc9a79e59bf204d7bb04b81
+    domain: switch
+    trigger: device
     for:
       hours: 0
-      minutes: 0
-      seconds: 2
-      milliseconds: 0
-  condition: []
-  action:
-  - choose:
-    - conditions:
-      - condition: device
-        type: is_off
-        device_id: 657457c2cc4fda77bf057a97ca632c78
-        entity_id: light.elab_lights
-        domain: light
-      sequence:
-      - service: homeassistant.turn_on
-        target:
-          entity_id: group.office_lights
-        data: {}
-    - conditions:
-      - condition: device
-        type: is_on
-        device_id: 657457c2cc4fda77bf057a97ca632c78
-        entity_id: light.elab_lights
-        domain: light
-      sequence:
-      - service: homeassistant.turn_off
-        target:
-          entity_id: group.office_lights
-        data: {}
-    default: []
-  mode: single
-- id: '1630537956782'
-  alias: AP Disconnected - Mezzanine
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.mezzanineap
-    from: home
-    to: not_home
-    for: 00:04:00
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: Mezzanine AP is disconnected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_down_mezzanine
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_connected_mezzanine
-  mode: single
-- id: '1630538145102'
-  alias: AP Connected - Mezzanine
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.mezzanineap
-    from: not_home
-    to: home
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: Mezzanine AP is connected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_connected_mezzanine
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_down_mezzanine
-  mode: single
-- id: '1630538194340'
-  alias: AP Connected - Office
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.officeap
-    from: not_home
-    to: home
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: Office AP is connected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_connected_office
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_office
-  mode: single
-- id: '1630538221304'
-  alias: AP Disconnected - Office
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.officeap
-    from: home
-    to: not_home
-    for: 00:04:00
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: Office AP is disconnected
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_connected_office
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_office
-  mode: single
-- id: '1630538259777'
-  alias: AP Connected - Tool Crib
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.toolcribap
-    from: not_home
-    to: home
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: Tool Crib AP is connected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_connected_tool_crib
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_tool_crib
-  mode: single
-- id: '1630538286564'
-  alias: AP Disconnected - Tool Crib
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.toolcribap
-    from: home
-    to: not_home
-    for: 00:04:00
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: Tool Crib AP is disconnected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_tool_crib
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_connected_tool_crib
-  mode: single
-- id: '1630538328496'
-  alias: AP Connected - B-Side South
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.bsidesouthap
-    from: not_home
-    to: home
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: B-Side South AP is connected
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_b_side_south
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_connected_b_side_south
-  mode: single
-- id: '1630538348128'
-  alias: AP Disconnected - B-Side South
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.bsidesouthap
-    from: home
-    to: not_home
-    for: 00:04:00
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: B-Side South AP is disconnected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_b_side_south
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_connected_b_side_south
-  mode: single
-- id: '1630538371738'
-  alias: AP Connected - B-Side North
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.bsidenorthap
-    from: not_home
-    to: home
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: B-Side North AP is connected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_connected_b_side_north
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_b_side_north
-  mode: single
-- id: '1630538395298'
-  alias: AP Disconnected - B-Side North
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: device_tracker.bsidenorthap
-    from: home
-    to: not_home
-    for: 00:04:00
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: B-Side North AP is disconnected
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.ap_disconnected_b_side_north
-  - service: automation.turn_on
-    data: {}
-    target:
-      entity_id: automation.ap_connected_b_side_north
+      minutes: 20
+      seconds: 0
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: b9d21c33e17b82294cf7249ffe34c02b
+    entity_id: aef868112cc9a79e59bf204d7bb04b81
+    domain: switch
   mode: single
 - id: '1638201213002'
   alias: Complain if genie not plugged in
@@ -768,38 +380,6 @@
       target: '@mkfink'
       message: Test message
   mode: single
-- id: '1655771700966'
-  alias: Disco button on
-  description: ''
-  trigger:
-  - type: turned_on
-    platform: device
-    device_id: 9c725eb4c87b8738d76a02e76fb04a56
-    entity_id: binary_sensor.disco_button_button_1
-    domain: binary_sensor
-  condition: []
-  action:
-  - type: turn_on
-    device_id: 7bae24579d11e6c6ead62d594938c066
-    entity_id: switch.disco_ball
-    domain: switch
-  mode: single
-- id: '1655771741240'
-  alias: Disco button off
-  description: ''
-  trigger:
-  - type: turned_on
-    platform: device
-    device_id: 9c725eb4c87b8738d76a02e76fb04a56
-    entity_id: binary_sensor.disco_button_button_2
-    domain: binary_sensor
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 7bae24579d11e6c6ead62d594938c066
-    entity_id: switch.disco_ball
-    domain: switch
-  mode: single
 - id: '1735616484533'
   alias: Turn On Recycle Notification Light
   description: ''
@@ -836,134 +416,60 @@
     target:
       entity_id: switch.recycle_notification_light
   mode: single
-- id: '1760310093672'
-  alias: Sewing Zone Accent Lights On
-  description: ''
-  trigger:
-  - type: turned_on
-    platform: device
-    device_id: f070c5b7fecf740ab06b08b4668b52c4
-    entity_id: binary_sensor.dust_collector_buttons_01_button_1
-    domain: binary_sensor
-  - type: turned_on
-    platform: device
-    device_id: ae92f26108a9915b1540372deafe09ba
-    entity_id: binary_sensor.dust_collector_buttons_06_button_1
-    domain: binary_sensor
-  - type: turned_on
-    platform: device
-    device_id: f070c5b7fecf740ab06b08b4668b52c4
-    entity_id: binary_sensor.dust_collector_buttons_01_button_1
-    domain: binary_sensor
-  condition: []
-  action:
-  - service: light.turn_on
-    data: {}
-    target:
-      entity_id: light.sewing_zone_accent_lights
-  mode: single
-- id: '1760310189626'
-  alias: Sewing Zone Main Lights Off
-  description: ''
-  trigger:
-  - type: turned_on
-    platform: device
-    device_id: 5a86d553d161d3a9133adde231778a0d
-    entity_id: binary_sensor.dust_collector_buttons_03_button_2
-    domain: binary_sensor
-  condition: []
-  action:
-  - service: light.turn_off
-    data: {}
-    target:
-      entity_id: light.sewing_zone_main_lights
-  mode: single
-- id: '1767468901331'
-  alias: Sewing Zone Main Lights On
-  description: ''
-  trigger:
-  - type: turned_on
-    platform: device
-    device_id: 5a86d553d161d3a9133adde231778a0d
-    entity_id: binary_sensor.dust_collector_buttons_03_button_1
-    domain: binary_sensor
-  condition: []
-  action:
-  - service: light.turn_on
-    data: {}
-    target:
-      entity_id: light.sewing_zone_main_lights
-  mode: single
-- id: '1767469208346'
-  alias: Sewing Zone Accent Lights Off
-  description: ''
-  trigger:
-  - type: turned_on
-    platform: device
-    device_id: ae92f26108a9915b1540372deafe09ba
-    entity_id: binary_sensor.dust_collector_buttons_06_button_2
-    domain: binary_sensor
-  - type: turned_on
-    platform: device
-    device_id: f070c5b7fecf740ab06b08b4668b52c4
-    entity_id: binary_sensor.dust_collector_buttons_01_button_2
-    domain: binary_sensor
-  condition: []
-  action:
-  - service: light.turn_off
-    data: {}
-    target:
-      entity_id: light.sewing_zone_accent_lights
-  mode: single
 - id: '1777580048451'
   alias: Laser Cutter Exhaust On
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - switch.cyclops
-    - switch.wolverine
-    to: 'on'
-  condition: []
-  action:
-  - service: switch.turn_on
-    data: {}
+  triggers:
+  - entity_id:
+    - switch.cyclops_cyclops
+    - switch.wolverine_wolverine
+    to:
+    - 'on'
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
     target:
-      entity_id: switch.laser_zone_exhaust_fan
+      entity_id: switch.laser_exhaust_fan_fan
+    action: switch.turn_on
   mode: single
 - id: '1777580438678'
   alias: Laser Cutter Exhaust Off
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - switch.cyclops
     - switch.wolverine
     to: 'off'
-  condition:
+    trigger: state
+  conditions:
   - condition: and
     conditions:
     - condition: or
       conditions:
       - condition: state
-        entity_id: switch.cyclops
-        state: 'off'
+        entity_id: switch.cyclops_cyclops
+        state:
+        - 'off'
       - condition: state
-        entity_id: switch.cyclops
-        state: unavailable
+        entity_id: switch.cyclops_cyclops
+        state:
+        - unavailable
     - condition: or
       conditions:
       - condition: state
-        entity_id: switch.wolverine
-        state: 'off'
+        entity_id: switch.wolverine_wolverine
+        state:
+        - 'off'
       - condition: state
-        entity_id: switch.wolverine
-        state: unavailable
-  action:
-  - service: switch.turn_off
-    data: {}
+        entity_id: switch.wolverine_wolverine
+        state:
+        - unavailable
+  actions:
+  - data: {}
     target:
-      entity_id: switch.laser_zone_exhaust_fan
+      entity_id: switch.laser_exhaust_fan_fan
+    action: switch.turn_off
   mode: single
 - id: '1777580550368'
   alias: Laser Cutter Air Compressor
@@ -984,60 +490,64 @@
 - id: '1777580685213'
   alias: Laser Cutter Chiller On (Cyclops)
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - switch.cyclops
-    to: 'on'
-  condition: []
-  action:
-  - service: switch.turn_on
-    data: {}
+  triggers:
+  - entity_id:
+    - switch.cyclops_cyclops
+    to:
+    - 'on'
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
     target:
-      entity_id: switch.cyclops_chiller
+      entity_id: switch.cyclops_chiller_power
+    action: switch.turn_on
   mode: single
 - id: '1777580687317'
   alias: Laser Cutter Chiller Off (Cyclops)
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - switch.cyclops
-    to: 'off'
-  condition: []
-  action:
-  - service: switch.turn_off
-    data: {}
+  triggers:
+  - entity_id:
+    - switch.cyclops_cyclops
+    to:
+    - 'off'
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
+    action: switch.turn_off
     target:
-      entity_id: switch.cyclops_chiller
+      entity_id: switch.cyclops_chiller_power
   mode: single
 - id: '1777580776765'
   alias: Laser Cutter Chiller Off (Wolverine)
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - switch.wolverine
-    to: 'off'
-  condition: []
-  action:
-  - service: switch.turn_off
-    data: {}
+  triggers:
+  - entity_id:
+    - switch.wolverine_wolverine
+    to:
+    - 'off'
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
     target:
-      entity_id: switch.wolverine_chiller
+      entity_id: switch.wolverine_chiller_power
+    action: switch.turn_off
   mode: single
 - id: '1777581153679'
   alias: Laser Cutter Chiller On (Wolverine)
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - switch.wolverine
-    to: 'on'
-  condition: []
-  action:
-  - service: switch.turn_on
-    data: {}
+  triggers:
+  - entity_id:
+    - switch.wolverine_wolverine
+    to:
+    - 'on'
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
     target:
-      entity_id: switch.wolverine_chiller
+      entity_id: switch.wolverine_chiller_power
+    action: switch.turn_on
   mode: single

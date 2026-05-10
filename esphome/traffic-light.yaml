@@ -1,0 +1,68 @@
+packages:
+  board: !include common/packages/board_esp01_1m.yaml
+  base_components: !include common/packages/esp_home_components.yaml
+
+substitutions:
+  device_name: "traffic-light"
+  pretty_name: "Traffic Light"
+  icon: "mdi:traffic-light"
+  ip_address: "10.13.107.106"
+
+status_led:
+  pin:
+    number: 16
+    inverted: True
+
+binary_sensor:
+  - name: "Button"
+    platform: gpio
+    pin:
+      number: 0
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.toggle: light_1
+      - light.toggle: light_2
+      - light.toggle: light_3
+
+output:
+  - platform: gpio
+    pin:
+      number: 12
+      inverted: True
+    id: relay_1
+  - platform: gpio
+    pin:
+      number: 5
+      inverted: True
+    id: relay_2
+  - platform: gpio
+    pin:
+      number: 4
+      inverted: True
+    id: relay_3
+  # - platform: gpio
+  #   pin:
+  #     number: 15
+  #     inverted: True
+  #   id: relay_4
+
+light:
+  - platform: binary
+    name: "Red Light"
+    icon: "${icon}"
+    id: light_1
+    output: relay_1
+    restore_mode: RESTORE_DEFAULT_OFF
+  - platform: binary
+    name: "Yellow Light"
+    icon: "${icon}"
+    id: light_2
+    output: relay_2
+    restore_mode: RESTORE_DEFAULT_OFF
+  - platform: binary
+    name: "Green Light"
+    icon: "${icon}"
+    id: light_3
+    output: relay_3
+    restore_mode: RESTORE_DEFAULT_OFF

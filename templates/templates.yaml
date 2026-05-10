@@ -1,8 +1,0 @@
-- binary_sensor:
-  - name: "Air Compressor Power"
-    state: "{{ states('switch.air_compressor') }}"
-    icon: mdi:engine
-- binary_sensor:
-  - name: "Air Compressor Valve"
-    state: "{{ states('switch.air_compressor_valve') }}"
-    icon: mdi:flash

@@ -2,26 +2,24 @@
 default_config:
 
 http:
-  server_port: 80
+  server_port: 8123
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
 
 # Text to speech
 tts:
   - platform: google_translate
 
-mqtt:
-  sensor: !include_dir_merge_list sensors
-  binary_sensor: !include_dir_merge_list binary_sensors
-  switch: !include_dir_merge_list switches
-  light: !include_dir_merge_list lights
-  fan: !include_dir_merge_list fans
-  climate: !include climate.yaml
+#mqtt:
+#  climate: !include climate.yaml
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
 script: !include scripts.yaml
 script old: !include_dir_merge_named scripts
-scene: !include scenes.yaml
-template: !include_dir_merge_list templates
+# sensor: !include_dir_merge_list sensors
 
 notify: !include notify.yaml
 spaceapi: !include spaceapi.yaml

@@ -2,7 +2,7 @@ packages:
   thermostat: !include common/thermostat_heat_only.yaml
 
 substitutions:
-  device_name: "thermostat-1"
-  pretty_name: "A-Side NE Shop Thermostat"
-  ui_name: "Thermostat"
+  device_name: "thermostat"
+  pretty_name: "Thermostat"
+  ui_name: "${pretty_name}"
   ip_address: "10.13.107.67"

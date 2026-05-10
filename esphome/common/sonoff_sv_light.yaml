@@ -15,7 +15,7 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: True
     on_press:
-      - switch.toggle: relay_1
+      - light.toggle: light_1
 
 output:
   - platform: gpio
@@ -25,7 +25,9 @@ output:
     id: relay_1
 
 light:
-  - name: "${ui_name}"
+  - platform: binary
+    name: "${ui_name}"
     icon: "${icon}"
+    id: light_1
     output: relay_1
     restore_mode: RESTORE_DEFAULT_OFF

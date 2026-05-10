@@ -34,64 +34,6 @@ emergency_lights_reset:
       - light.emergency_light_062
     data: {}
   mode: single
-blink_traffic_light_green:
-  alias: Blink Traffic Light Green
-  sequence:
-  - service: light.turn_off
-    entity_id:
-    - light.lighttrafficgreen
-  - delay:
-      milliseconds: 500
-  - service: light.turn_on
-    entity_id:
-    - light.lighttrafficgreen
-  - delay:
-      milliseconds: 500
-  - service: light.turn_off
-    entity_id:
-    - light.lighttrafficgreen
-blink_traffic_light_yellow:
-  alias: Blink Traffic Light yellow
-  sequence:
-  - service: light.turn_off
-    entity_id:
-    - light.lighttrafficyellow
-  - delay:
-      milliseconds: 500
-  - service: light.turn_on
-    entity_id:
-    - light.lighttrafficyellow
-  - delay:
-      milliseconds: 500
-  - service: light.turn_off
-    entity_id:
-    - light.lighttrafficyellow
-blink_traffic_light_red:
-  alias: Blink Traffic Light red
-  sequence:
-  - service: light.turn_off
-    entity_id:
-    - light.lighttrafficred
-  - delay:
-      milliseconds: 500
-  - service: light.turn_on
-    entity_id:
-    - light.lighttrafficred
-  - delay:
-      milliseconds: 500
-  - service: light.turn_off
-    entity_id:
-    - light.lighttrafficred
-reset_snapple_rgb:
-  alias: Reset Snapple RGB to White
-  sequence:
-  - service: light.turn_on
-    entity_id: light.snapple_vending_light
-    data:
-      rgb_color:
-      - 255
-      - 227
-      - 217
 shutdown:
   sequence:
   - service: homeassistant.turn_off
@@ -319,58 +261,55 @@ b_side_keypad_power_cycle:
 traffic_light_red:
   alias: Traffic Light Green
   sequence:
-  - service: light.turn_off
-    data: {}
+  - data: {}
     target:
       entity_id:
-      - light.lighttrafficred
-      - light.lighttrafficyellow
-  - service: light.turn_on
-    data: {}
+      - light.traffic_light_red_light
+      - light.traffic_light_yellow_light
+    action: light.turn_off
+  - data: {}
     target:
-      entity_id: light.lighttrafficgreen
+      entity_id: light.traffic_light_green_light
+    action: light.turn_on
   mode: single
   icon: mdi:traffic-light
 traffic_light_red_2:
   alias: Traffic Light Red
   sequence:
-  - service: light.turn_off
-    data: {}
+  - data: {}
     target:
       entity_id:
-      - light.lighttrafficgreen
-      - light.lighttrafficyellow
-  - service: light.turn_on
-    data: {}
+      - light.traffic_light_green_light
+      - light.traffic_light_yellow_light
+    action: light.turn_off
+  - data: {}
     target:
-      entity_id: light.lighttrafficred
+      entity_id: light.traffic_light_red_light
+    action: light.turn_on
   mode: single
   icon: mdi:traffic-light
 '1774154545938':
   alias: Traffic Light Yellow
   sequence:
-  - service: light.turn_off
-    data: {}
+  - data: {}
     target:
       entity_id:
-      - light.lighttrafficgreen
-      - light.lighttrafficred
-  - service: light.turn_on
-    data: {}
+      - light.traffic_light_green_light
+      - light.traffic_light_red_light
+    action: light.turn_off
+  - data: {}
     target:
-      entity_id: light.lighttrafficyellow
+      entity_id: light.traffic_light_yellow_light
+    action: light.turn_on
   mode: single
   icon: mdi:traffic-light
 '1774154938809':
   alias: Traffic Lights Off
   sequence:
-  - service: light.turn_off
-    data: {}
+  - data: {}
+    action: light.turn_off
     target:
-      entity_id:
-      - light.lighttrafficgreen
-      - light.lighttrafficred
-      - light.lighttrafficyellow
+      device_id: 565ecb1faaa9fdaf6f4b0dbc6434655b
   mode: single
   icon: mdi:traffic-light
 traffic_light_sequence:

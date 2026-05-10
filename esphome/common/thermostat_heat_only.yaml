@@ -57,7 +57,7 @@ display:
       it.printf(4, "%.1fC", id(temp).state);
 
 sensor:
-  - platform: bme280
+  - platform: bme280_i2c
     temperature:
       id: temp
       name: "Temperature"
@@ -87,11 +87,14 @@ climate:
     name: "${pretty_name}"
     id: _thermostat
     sensor: temp
-    default_target_temperature_low: ${default_temperature}
+    preset:
+      - name: "Default"
+        default_target_temperature_low: ${default_temperature}
+        mode: heat
+    default_preset: "Default"
     heat_deadband: 0.5 °C
     heat_overrun: 0.5 °C
     startup_delay: true
-    default_mode: heat
     min_heating_off_time: 5s  # These should probably be like 30-60s
     min_heating_run_time: 5s  # 5s is just for testing
     min_idle_time: 5s

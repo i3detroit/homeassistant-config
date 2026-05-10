@@ -18,22 +18,6 @@
     - service: script.turn_on
       entity_id: script.emergency_lights_reset
 
-- alias: Classroom sign on at sunset
-  trigger:
-  - platform: sun
-    event: sunset
-  action:
-    service: switch.turn_on
-    entity_id: switch.classroom_sign
-
-- alias: Classroom sign off at sunrise
-  trigger:
-  - platform: sun
-    event: sunrise
-  action:
-    service: switch.turn_off
-    entity_id: switch.classroom_sign
-
 - alias: Machine Shop Motion ON 
   trigger:
     platform: state
