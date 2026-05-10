@@ -10,7 +10,7 @@ packages:
 substitutions:
   device_name: "air-compressor"
   pretty_name: "Air Compressor"
-  ui_name: "${pretty_name}"
+  ui_name: "Relay"
 
   # Outputs
   compressor_power_on_pin: GPIOx

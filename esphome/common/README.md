@@ -2,9 +2,14 @@
 
 ## Naming conventions
 
-* Always use dashes, not underscores, in `device_name` to prevent mDNS issues
-* Match the YAML filename to `device_name`
+`device_name`: Used as hostname
+`pretty_name`: Used as HA device name
+`ui_name`: Used to template entity name (sometimes optional)
+
+* Always use dashes, not underscores, in `device_name` to prevent DNS issues
+* Match the YAML filename to `device_name` and make it a lowercase, dash-separated version of `pretty_name`
 * Don't duplicate the name across entities (sensors, controls, etc) only keep it at the device's `pretty_name`
+* If the device has a physical switch, `ui_name` can be "Light" or "Switch" if it's not a switch, otherwise it's "Relay"
 
 ## Generic config files
 * `wifi.yaml`: wifi connection info, referencing secrets.yaml

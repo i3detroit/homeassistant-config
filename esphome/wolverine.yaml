@@ -4,5 +4,5 @@ packages:
 substitutions:
   device_name: "wolverine"
   pretty_name: "Wolverine"
-  ui_name: "${pretty_name}"
+  ui_name: "Relay"
   icon: "mdi:printer-3d-nozzle"

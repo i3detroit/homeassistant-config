@@ -4,7 +4,7 @@ packages:
 substitutions:
   device_name: "genie"
   pretty_name: "Genie"
-  ui_name: "${pretty_name}"
+  ui_name: "Relay"
   icon: "mdi:oil-lamp"
   restore_mode: ALWAYS_ON
 

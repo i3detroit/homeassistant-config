@@ -4,5 +4,5 @@ packages:
 substitutions:
   device_name: "disco-ball"
   pretty_name: "Disco Ball"
-  ui_name: "${pretty_name}"
+  ui_name: "Relay"
   icon: "mdi:shimmer"

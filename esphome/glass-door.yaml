@@ -9,7 +9,6 @@ packages:
 substitutions:
   device_name: "glass-door"
   pretty_name: "Glass Door"
-  ui_name: "${pretty_name}"
   # target_name: "front-door-status-controller"
 
 # esphome:
