@@ -18,26 +18,20 @@ state:
   entity_id: "sensor.open_for_tours"
 sensors:
   temperature:
-    - "sensor.ground_cluster_temperature"
-    - "sensor.ceiling_cluster_temperature"
-    - "sensor.fablab_cluster_temperature"
-    - "sensor.office_thermostat_ambient_temperature"
-  humidity:
-    - "sensor.ground_cluster_humidity"
-    - "sensor.ceiling_cluster_humidity"
-    - "sensor.fablab_cluster_humidity"
-    - "sensor.office_thermostat_ambient_humidity"
-  barometer:
-    - "sensor.ground_cluster_pressure_kpa"
-    - "sensor.ceiling_cluster_pressure_kpa"
-    - "sensor.fablab_cluster_pressure_kpa"
-    - "sensor.office_thermostat_pressure_kpa"
-  compressed_air:
-    - "sensor.compressed_air_line_pressure_01"
-    - "sensor.compressed_air_line_pressure_02"
+    - "sensor.thermostat_temperature"
+#   - "sensor.fablab_cluster_temperature"
+# compressed_air:
+#   - "sensor.compressed_air_line_pressure_01"
+  3d_printers:
+    - "sensor.kastor_progress"
+    - "sensor.kastor_print_start"
+    - "sensor.kastor_print_finish"
+    - "sensor.polydeukes_progress"
+    - "sensor.polydeukes_print_start"
+    - "sensor.polydeukes_print_finish"
   laser_cutters:
-    - "binary_sensor.cyclops_power"
-    - "binary_sensor.wolverine_power"
+    - "sensor.cyclops_power"
+    - "sensor.wolverine_power"
   last_updated:
     - "sensor.date_time_iso"
 # projects:

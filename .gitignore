@@ -14,5 +14,4 @@ secrets.yaml
 blueprints
 .vscode
 custom_components
-ssh
-shell/hass.token
+.ssh
