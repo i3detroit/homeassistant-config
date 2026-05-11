@@ -1,0 +1,121 @@
+packages:
+  board: !include common/packages/board_esp01_1m.yaml
+  base_components: !include common/packages/esp_home_components.yaml
+
+# Still need to set correct values for:
+#  - pressure sensor offset/multiply
+#  - power state from ADC
+#  - GPIO pin numbers
+
+substitutions:
+  device_name: "air-compressor"
+  pretty_name: "Air Compressor"
+  ui_name: "Relay"
+
+  # Outputs
+  compressor_power_on_pin: GPIOx
+  compressor_power_off_pin: GPIOx
+  valve_1_on_pin: GPIOx
+  valve_1_off_pin: GPIOx
+  valve_2_on_pin: GPIOx
+  valve_2_off_pin: GPIOx
+
+  # Inputs (on ads1115)
+  compressor_state_pin: A0_GND
+  pressure_sensor_1_pin: A1_GND
+  pressure_sensor_2_pin: A2_GND
+  
+  # I2C
+  sda_pin: GPIO4
+  scl_pin: GPIO5
+  ads115_addr: "0x48"
+
+i2c:
+  sda: "${sda_pin}"
+  scl: "${scl_pin}"
+  scan: true
+
+ads1115:
+  - address: "${ads1115_addr}"
+
+sensor:
+  - platform: ads1115
+    name: "State ADC"
+    multiplexer: "${compressor_state_pin}"
+    gain: 1
+    id: air_compressor_state_adc
+  - platform: ads1115
+    name: "Pressure Sensor 1"
+    multiplexer: "${pressure_sensor_1_pin}"
+    gain: 1
+    filter:
+      - offset: -22.735
+      - multiply: 0.2123
+  - platform: ads1115
+    name: "Pressure Sensor 2"
+    multiplexer: "${pressure_sensor_2_pin}"
+    gain: 1
+    filter:
+      - offset: -19.747
+      - multiply: 0.1781
+
+binary_sensor:
+  - platform: template
+    name: "State"
+    lambda: |-
+      if (id(air_compressor_state_adc) > 0.5){
+        return true;
+      } else {
+        return false;
+      }
+    device_class: power
+
+switch:
+  - platform: gpio
+    name: "Air Compressor Power On"
+    id: compressor_power_on_switch
+    pin: "${compressor_power_on_pin}"
+    interlock: [compressor_power_off_switch]
+    on_turn_on:
+      - delay: 100ms
+      - switch.turn_off: compressor_power_on_switch
+  - platform: gpio
+    name: Air Compressor Power Off
+    id: compressor_power_off_switch
+    pin: "${compressor_power_off_pin}"
+    interlock: [compressor_power_on_switch]
+    on_turn_on:
+      - delay: 100ms
+      - switch.turn_off: compressor_power_off_switch
+  - platform: gpio
+    name: Air Valve 1 Power On
+    id: valve_1_power_on_switch
+    pin: "${valve_1_power_on_pin}"
+    interlock: [valve_1_power_off_switch]
+    on_turn_on:
+      - delay: 100ms
+      - switch.turn_off: valve_1_power_on_switch
+  - platform: gpio
+    name: Air Valve 1 Power Off
+    id: valve_1_power_off_switch
+    pin: "${valve_1_power_off_pin}"
+    interlock: [valve_1_power_on_switch]
+    on_turn_on:
+      - delay: 100ms
+      - switch.turn_off: valve_1_power_off_switch
+  - platform: gpio
+    name: Air Valve 2 Power On
+    id: valve_2_power_on_switch
+    pin: "${valve_2_power_on_pin}"
+    interlock: [valve_2_power_off_switch]
+    on_turn_on:
+      - delay: 100ms
+      - switch.turn_off: valve_2_power_on_switch
+  - platform: gpio
+    name: Air Valve 2 Power Off
+    id: valve_2_power_off_switch
+    pin: "${valve_2_power_off_pin}"
+    interlock: [valve_2_power_on_switch]
+    on_turn_on:
+      - delay: 100ms
+      - switch.turn_off: valve_2_power_off_switch
