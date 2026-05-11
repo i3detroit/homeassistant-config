@@ -48,18 +48,18 @@ sensor:
             window_size: 20
             send_every: 20
 
-  # - platform: bme280
-  #   temperature:
-  #     name: "Temperature"
-  #     accuracy_decimals: 2
-  #   pressure:
-  #     name: "Pressure"
-  #     accuracy_decimals: 2
-  #   humidity:
-  #     name: "Humidity"
-  #     accuracy_decimals: 2
-  #   address: 0x76
-  #   update_interval: 60s
+  - platform: bme280_i2c
+    temperature:
+      name: "Temperature"
+      accuracy_decimals: 2
+    pressure:
+      name: "Pressure"
+      accuracy_decimals: 2
+    humidity:
+      name: "Humidity"
+      accuracy_decimals: 2
+    address: 0x76
+    update_interval: 60s
 
   # - platform: bh1750
   #   name: "Illuminance"
