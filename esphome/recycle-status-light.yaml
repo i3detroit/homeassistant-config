@@ -1,0 +1,8 @@
+packages:
+  package: !include common/sonoff_4ch_light.yaml
+
+substitutions:
+  device_name: "recycle-status-light"
+  pretty_name: "Recycle Status Light"
+  ui_name: "Light"
+  icon: "mdi:lightbulb"

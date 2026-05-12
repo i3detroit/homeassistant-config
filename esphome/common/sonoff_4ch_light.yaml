@@ -1,0 +1,85 @@
+packages:
+  board: !include packages/board_esp01_1m.yaml
+  base_components: !include packages/esp_home_components.yaml
+
+status_led:
+  pin:
+    number: GPIO13
+    inverted: True
+
+binary_sensor:
+  - platform: gpio
+    name: "Button 1"
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.toggle: light_1
+  - platform: gpio
+    name: "Button 2"
+    pin:
+      number: GPIO9
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.toggle: light_2
+  - platform: gpio
+    name: "Button 3"
+    pin:
+      number: GPIO10
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.toggle: light_3
+  - platform: gpio
+    name: "Button 4"
+    pin:
+      number: GPIO14
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.toggle: light_4
+
+  - platform: status
+    name: "Status"
+
+output:
+  - platform: gpio
+    pin:
+      number: GPIO12
+    id: relay_1
+  - platform: gpio
+    pin:
+      number: GPIO5
+    id: relay_2
+  - platform: gpio
+    pin:
+      number: GPIO4
+    id: relay_3
+  - platform: gpio
+    pin:
+      number: GPIO15
+    id: relay_4
+
+light:
+  - platform: binary
+    name: "${ui_name} 1"
+    icon: "${icon}"
+    id: light_1
+    output: relay_1
+  - platform: binary
+    name: "${ui_name} 2"
+    icon: "${icon}"
+    id: light_2
+    output: relay_2
+  - platform: binary
+    name: "${ui_name} 3"
+    icon: "${icon}"
+    id: light_3
+    output: relay_3
+  - platform: binary
+    name: "${ui_name} 4"
+    icon: "${icon}"
+    id: light_4
+    output: relay_4
