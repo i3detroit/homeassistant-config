@@ -1,162 +1,3 @@
-- id: '1623327623174'
-  alias: MQTT Query On Boot
-  description: ''
-  trigger:
-  - platform: homeassistant
-    event: start
-  condition: []
-  action:
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/classroom/glass-door/lock
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/classroom/glass-door/open
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/snapple-vending-light/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/accent/chandelier-01/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/accent/chandelier-02/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/classroom/sign/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/cnc/vent/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/cnc/light/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/disco/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/ceiling-fans/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/garage-door/lock
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/front-door/lock
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/south-vent/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/fablab/vent/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/infrastructure/compressor-valve/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/large-bathroom/light/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/large-bathroom/vent/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/infrastructure/air-compressor/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/ceiling-fan/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/vent-fan/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/machine-shop/ceiling-fan/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/media-lab/lights/POWER
-  - service: mqtt.publish
-    data:
-      topic: tele/i3/inside/commons/openevse/query
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/paint-box/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/traffic-light/POWER1
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/traffic-light/POWER2
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/traffic-light/POWER3
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/bumblebee/chiller/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/wolverine/chiller/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/blast-gate-monitor/query
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/craftroom/light/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/elab/light/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/hallway/light/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/bumblebee/laser/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/wolverine/laser/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/classroom/lights-east/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/classroom/lights-west/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/dooridor/lights/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/notification-lights/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/small-bathroom/vent/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/small-bathroom/shower-light/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/elab/accent/arch-north/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/elab/accent/arch-south/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/office/thermostat/target
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/genie-charging/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/siren/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/laser-zone/accent/lanterns/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/commons/fairy-lights/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/fablab/chinesium/POWER
-  - service: mqtt.publish
-    data:
-      topic: cmnd/i3/inside/office/thermostat/query
-  mode: single
 - id: '1627008032755'
   alias: SpaceAPI Upload
   description: upload our spaceapi output to the i3detroit.org webserver
@@ -209,9 +50,22 @@
 - id: '1628099948333'
   alias: Large Bathroom Fan Timeout
   description: ''
-  triggers: []
+  triggers:
+  - type: turned_on
+    device_id: 63dc87c9aa968153af473c8b1322e097
+    entity_id: 5f19a1d0a86adc2a01c5d705503d863e
+    domain: switch
+    trigger: device
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
   conditions: []
-  actions: []
+  actions:
+  - type: turn_off
+    device_id: 63dc87c9aa968153af473c8b1322e097
+    entity_id: 5f19a1d0a86adc2a01c5d705503d863e
+    domain: switch
   mode: single
 - id: '1628203562056'
   alias: Small Bathroom Motion ON
@@ -267,36 +121,6 @@
     entity_id: aef868112cc9a79e59bf204d7bb04b81
     domain: switch
   mode: single
-- id: '1638201213002'
-  alias: Complain if genie not plugged in
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - sensor.genie_charge_state
-    for:
-      hours: 6
-      minutes: 0
-      seconds: 0
-    to: unavailable
-  - platform: state
-    entity_id:
-    - sensor.genie_charge_state
-    to: not plugged in
-    for:
-      hours: 6
-      minutes: 0
-      seconds: 0
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: The genie has been unplugged for over 6 hours
-  - service: automation.turn_on
-    target:
-      entity_id: automation.notify_that_genie_is_plugged_in_again
-    data: {}
-  mode: single
 - id: '1638201355599'
   alias: Notify that genie is plugged in again
   trigger:
@@ -341,88 +165,45 @@
       entity_id: automation.notify_that_genie_is_plugged_in_again
     data: {}
   mode: single
-- id: '1649818626943'
-  alias: Thermostat Reset A-Side NE
-  description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: climate.a_side_ne_shop_thermostat
-    attribute: temperature
-    above: '10'
-    for:
-      hours: 3
-      minutes: 0
-      seconds: 0
-  condition: []
-  action:
-  - service: esphome.thermostat_a_ne_idle_reset
-  mode: single
-- id: '1651522520211'
-  alias: Key monitor
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: sensor.a_side_scanned_uid
-    to: '3980923'
-  - platform: state
-    entity_id: sensor.a_side_scanned_uid
-    to: '3562045'
-  - platform: state
-    entity_id: sensor.b_side_scanned_uid
-    to: '3980923'
-  - platform: state
-    entity_id: sensor.b_side_scanned_uid
-    to: '3562045'
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      target: '@mkfink'
-      message: Test message
-  mode: single
 - id: '1735616484533'
-  alias: Turn On Recycle Notification Light
+  alias: Recycle Status Light On
   description: ''
-  trigger:
-  - platform: time
-    at: '18:00:05'
-  condition:
-  - condition: time
-    before: '19:00:00'
+  triggers:
+  - at: '18:00:00'
+    trigger: time
     weekday:
     - wed
-    after: '17:00:00'
-  action:
-  - service: switch.turn_on
-    data: {}
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
     target:
-      entity_id: switch.recycle_notification_light
+      entity_id: light.recycle_status_light_light_1
+    data: {}
   mode: single
 - id: '1735616564755'
-  alias: Turn Off Recycle Notification Light
+  alias: Recycle Status Light Off
   description: ''
-  trigger:
-  - platform: time
-    at: 08:00:05
-  condition:
-  - condition: time
-    before: 09:00:00
+  triggers:
+  - at: 08:00:00
+    trigger: time
     weekday:
     - thu
-    after: 08:00:00
-  action:
-  - service: switch.turn_off
-    data: {}
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
     target:
-      entity_id: switch.recycle_notification_light
+      entity_id: light.recycle_status_light_light_1
+    data: {}
   mode: single
 - id: '1777580048451'
   alias: Laser Cutter Exhaust On
   description: ''
   triggers:
   - entity_id:
-    - switch.cyclops_cyclops
-    - switch.wolverine_wolverine
+    - switch.cyclops_relay
+    - switch.wolverine_relay
     to:
     - 'on'
     trigger: state
@@ -445,26 +226,14 @@
   conditions:
   - condition: and
     conditions:
-    - condition: or
-      conditions:
-      - condition: state
-        entity_id: switch.cyclops_cyclops
-        state:
-        - 'off'
-      - condition: state
-        entity_id: switch.cyclops_cyclops
-        state:
-        - unavailable
-    - condition: or
-      conditions:
-      - condition: state
-        entity_id: switch.wolverine_wolverine
-        state:
-        - 'off'
-      - condition: state
-        entity_id: switch.wolverine_wolverine
-        state:
-        - unavailable
+    - condition: state
+      entity_id: switch.cyclops_cyclops
+      state:
+      - 'off'
+    - condition: state
+      entity_id: switch.wolverine_wolverine
+      state:
+      - 'off'
   actions:
   - data: {}
     target:
@@ -492,7 +261,7 @@
   description: ''
   triggers:
   - entity_id:
-    - switch.cyclops_cyclops
+    - switch.cyclops_relay
     to:
     - 'on'
     trigger: state
@@ -508,7 +277,7 @@
   description: ''
   triggers:
   - entity_id:
-    - switch.cyclops_cyclops
+    - switch.cyclops_relay
     to:
     - 'off'
     trigger: state
@@ -524,7 +293,7 @@
   description: ''
   triggers:
   - entity_id:
-    - switch.wolverine_wolverine
+    - switch.wolverine_relay
     to:
     - 'off'
     trigger: state
@@ -540,7 +309,7 @@
   description: ''
   triggers:
   - entity_id:
-    - switch.wolverine_wolverine
+    - switch.wolverine_relay
     to:
     - 'on'
     trigger: state
@@ -550,4 +319,42 @@
     target:
       entity_id: switch.wolverine_chiller_power
     action: switch.turn_on
+  mode: single
+- id: '1778440316741'
+  alias: Keep Genie Relay On
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - switch.genie_relay
+    to:
+    - 'off'
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  conditions: []
+  actions:
+  - action: switch.turn_on
+    metadata: {}
+    target:
+      entity_id: switch.genie_relay
+    data: {}
+  mode: single
+- id: '1778440877192'
+  alias: Emergency Lights Reset
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.all_normal_light_groups
+    to:
+    - 'off'
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id: light.emergency_lights
+    data: {}
   mode: single
