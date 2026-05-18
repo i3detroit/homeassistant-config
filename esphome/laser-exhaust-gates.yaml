@@ -1,0 +1,23 @@
+packages: 
+  board: !include common/packages/board_d1_mini.yaml
+  base_components: !include common/packages/esp_home_components.yaml
+
+substitutions:
+  device_name: "laser-exhaust-gates"
+  pretty_name: "Laser Exhaust Gates"
+
+binary_sensor:
+  - name: "Wolverine Gate"
+    id: button_1
+    platform: gpio
+    pin:
+      number: 12
+      mode: INPUT_PULLUP
+      inverted: true
+  - name: "Cyclops Gate"
+    id: button_2
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: true

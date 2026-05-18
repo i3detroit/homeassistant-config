@@ -1,144 +1,96 @@
-<<: !include packages/esp_home_components.yaml
+packages: 
+  board: !include packages/board_d1_mini.yaml
+  base_components: !include packages/esp_home_components.yaml
 
 substitutions:
   pretty_name: "${laser_name} Status Lights"
   ui_name: "${pretty_name}"
   icon: "mdi:text-box-check"
-  led_pin: GPIO13
 
-esp8266:
-  board: d1_mini
-
-esphome:
-  name: "${device_name}"
-  build_path: "./build/${device_name}"
-  on_boot:
-    then:
-      - light.turn_off:
-          id: led_strip
+web_server:
+  include_internal: true
 
 light:
   - platform: neopixelbus
     id: led_strip
     type: GRB
     variant: WS2811
-    pin: ${led_pin}
+    pin: GPIO13
     num_leds: 8
-
+    internal: true
   - platform: partition
-    id: exhaust_gate_off_led
-    name: "exhaust gate closed"
+    id: chiller_led
+    name: "Chiller"
     segments:
       - id: led_strip
         from: 0
         to: 0
+    internal: true
   - platform: partition
-    id: exhaust_gate_on_led
-    name: "exhaust gate open"
+    id: exhaust_fan_led
+    name: "Exhaust Fan"
     segments:
       - id: led_strip
         from: 1
         to: 1
+    internal: true
   - platform: partition
-    id: exhaust_fan_off_led
-    name: "exhaust fan off"
+    id: exhaust_gate_led
+    name: "Exhaust Gate"
     segments:
       - id: led_strip
         from: 2
         to: 2
+    internal: true
   - platform: partition
-    id: exhaust_fan_on_led
-    name: "exhaust fan on"
+    id: air_compressor_led
+    name: "Air Compressor"
     segments:
       - id: led_strip
         from: 3
         to: 3
+    internal: true
   - platform: partition
-    id: air_compressor_off_led
-    name: "air compressor off"
+    id: air_compressor_valve_led
+    name: "Air Compressor Valve"
     segments:
       - id: led_strip
         from: 4
         to: 4
-  - platform: partition
-    id: air_compressor_on_led
-    name: "air compressor on"
-    segments:
-      - id: led_strip
-        from: 5
-        to: 5
-  - platform: partition
-    id: chiller_off_led
-    name: "chiller off"
-    segments:
-      - id: led_strip
-        from: 6
-        to: 6
-  - platform: partition
-    id: chiller_on_led
-    name: "chiller on"
-    segments:
-      - id: led_strip
-        from: 7
-        to: 7
+    restore_mode: ALWAYS_OFF
+    internal: true
 
-sensor:
-  - id: exhaust_gate_raw
-    platform: homeassistant
-    entity_id: "sensor.${laser_name}_blast_gate"
 binary_sensor:
-  - id: chiller_state
-    platform: homeassistant
-    entity_id: "switch.${laser_name}_chiller"
-  - id: exhaust_fan_state
-    platform: homeassistant
-    entity_id: "switch.laser_zone_exhaust_fan"
-    on_state:
-      - logger.log:
-          format: "exhaust fan state change"
-          level: WARN
-      - if:
-          condition:
-            binary_sensor.is_on: laser_state
-          then:
-            - logger.log:
-                format: "exhaust fan state change laser on"
-                level: WARN
-            - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: exhaust_fan } }
-          else:
-            - logger.log:
-                format: "exhaust fan state change laser off"
-                level: WARN
-            - light.turn_off: exhaust_fan_on_led
-            - light.turn_off: exhaust_fan_off_led
-  - id: exhaust_gate_state
-    platform: template
-    lambda: return id(exhaust_gate_raw).state == "open"
-
-  - id: air_compressor_state
-    platform: homeassistant
-    entity_id: "switch.air_compressor"
-
   - id: laser_state
     platform: homeassistant
-    entity_id: "switch.${laser_name}"
-    on_press:
-      - logger.log:
-          format: "turning laser state on"
-          level: WARN
+    entity_id: "switch.${laser_name}_relay"
+    on_state:
       - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: chiller } }
-      - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: air_compressor } }
       - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: exhaust_fan } }
       - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: exhaust_gate } }
-    on_release:
-      - logger.log:
-          format: "turning laser state off"
-          level: WARN
-      - light.turn_off: chiller_on_led
-      - light.turn_off: chiller_off_led
-      - light.turn_off: air_compressor_on_led
-      - light.turn_off: air_compressor_off_led
-      - light.turn_off: exhaust_fan_on_led
-      - light.turn_off: exhaust_fan_off_led
-      - light.turn_off: exhaust_gate_on_led
-      - light.turn_off: exhaust_gate_off_led
+      - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: air_compressor } }
+    internal: true
+  - id: chiller_state
+    platform: homeassistant
+    entity_id: "switch.${laser_name}_chiller_power"
+    on_state:
+      - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: chiller } }
+    internal: true
+  - id: exhaust_fan_state
+    platform: homeassistant
+    entity_id: "switch.laser_exhaust_fan_fan"
+    on_state:
+      - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: exhaust_fan } }
+    internal: true
+  - id: exhaust_gate_state
+    platform: homeassistant
+    entity_id: "binary_sensor.laser_exhaust_gates_${laser_name}_gate"
+    on_state:
+      - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: exhaust_gate } }
+    internal: true
+  - id: air_compressor_state
+    platform: homeassistant
+    entity_id: "switch.air_compressor_relay"
+    on_state:
+      - !include { file: laser_cutter_status_lights_subtemplate.yaml, vars: { led_type: air_compressor } }
+    internal: true
