@@ -2,7 +2,7 @@ packages:
   package: !include common/sonoff_sv_light.yaml
   
 substitutions:
-  device_name: "chandelier-2"
-  pretty_name: "Chandelier 2"
+  device_name: "chandelier"
+  pretty_name: "Chandelier"
   ui_name: "Light"
   icon: "mdi:chandelier"
