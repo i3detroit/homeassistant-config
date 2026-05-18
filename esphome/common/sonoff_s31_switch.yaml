@@ -26,13 +26,13 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: True
     on_press:
-      - switch.toggle: relay_1
+      - switch.toggle: relay
   - platform: status
     name: "Status"
 
 switch:
   - name: "${ui_name}"
-    id: relay_1
+    id: relay
     icon: "${icon}"
     platform: gpio
     pin:
@@ -43,14 +43,17 @@ switch:
 sensor:
   - platform: cse7766
     voltage:
+      id: voltage
       name: "Voltage"
       filters:
         - throttle_average: 60s
     current:
+      id: current
       name: "Current"
       filters:
         - throttle_average: 60s
     power:
+      id: power_draw
       name: "Power Draw"
       filters:
         - throttle_average: 60s

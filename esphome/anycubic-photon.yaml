@@ -1,0 +1,24 @@
+packages:
+  package: !include common/sonoff_s31_switch.yaml
+
+substitutions:
+  device_name: "anycubic-photon"
+  pretty_name: "Anycubic Photon"
+  ui_name: "Relay"
+  icon: "mdi:power"
+
+text_sensor:
+  - platform: template
+    id: state
+    name: "State"
+    icon: "mdi:printer-3d"
+    lambda: |-
+      if (!id(relay).state) {
+        return {"Disabled"};
+      } else if (isnan(id(power_draw).state)) {
+        return {"Unplugged"};
+      } else if (id(power_draw).state > 15) {
+        return {"Running"};
+      } else {
+        return {"Idle"};
+      }

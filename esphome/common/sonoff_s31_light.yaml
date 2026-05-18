@@ -26,7 +26,7 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: True
     on_press:
-      - light.toggle: light_1
+      - light.toggle: light
   - platform: status
     name: "Status"
 
@@ -35,26 +35,29 @@ output:
     pin:
       number: 12
       inverted: False
-    id: relay_1
+    id: relay
 
 light:
   - platform: binary
     name: "${ui_name}"
-    id: light_1
-    output: relay_1
+    id: light
+    output: relay
     restore_mode: RESTORE_DEFAULT_OFF
 
 sensor:
   - platform: cse7766
     voltage:
+      id: voltage
       name: "Voltage"
       filters:
         - throttle_average: 60s
     current:
+      id: current
       name: "Current"
       filters:
         - throttle_average: 60s
     power:
+      id: power_draw
       name: "Power Draw"
       filters:
         - throttle_average: 60s
