@@ -6,6 +6,7 @@ packages:
 substitutions:
   device_name: "air-compressor"
   pretty_name: "Air Compressor"
+  icon: "mdi:engine"
 
 web_server:
   include_internal: true
@@ -22,6 +23,7 @@ binary_sensor:
 
 switch:
   - name: "Relay"
+    icon: "${icon}"
     id: relay
     platform: template
     lambda: |-

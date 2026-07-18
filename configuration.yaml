@@ -19,7 +19,6 @@ tts:
 
 automation: !include automations.yaml
 script: !include scripts.yaml
-notify: !include notify.yaml
 spaceapi: !include spaceapi.yaml
 
 homeassistant:
@@ -34,12 +33,7 @@ homeassistant:
     - type: homeassistant
 
 influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: homeassistant
-  password: homeassistant
-  max_retries: 3
+  measurement_attr: entity_id
   default_measurement: state
 
 shell_command:

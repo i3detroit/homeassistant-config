@@ -1,0 +1,8 @@
+packages:
+  package: !include common/sonoff_basic_fan.yaml
+
+substitutions:
+  device_name: "storage-zone-air-purifier"
+  pretty_name: "Storage Zone Air Purifier"
+  ui_name: "Fan"
+  icon: "mdi:fan"

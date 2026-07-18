@@ -2,9 +2,6 @@ packages:
   board: !include packages/board_esp01_1m.yaml
   base_components: !include packages/esp_home_components.yaml
 
-substitutions:
-  restore_mode: RESTORE_DEFAULT_ON
-
 binary_sensor:
   - platform: gpio
     pin:
@@ -46,7 +43,6 @@ switch:
   - platform: gpio
     id: relay
     pin: GPIO12
-    restore_mode: ${restore_mode}
 
 output:
   - platform: esp8266_pwm

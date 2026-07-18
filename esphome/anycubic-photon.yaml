@@ -7,6 +7,11 @@ substitutions:
   ui_name: "Relay"
   icon: "mdi:power"
 
+esphome:
+  on_boot:
+    then:
+      - switch.turn_on: relay
+
 text_sensor:
   - platform: template
     id: state
@@ -17,8 +22,10 @@ text_sensor:
         return {"Disabled"};
       } else if (isnan(id(power_draw).state)) {
         return {"Unplugged"};
-      } else if (id(power_draw).state > 15) {
+      } else if (id(power_draw).state > 35) {
         return {"Running"};
+      } else if (id(power_draw).state > 5) {
+        return {"Waiting"};
       } else {
         return {"Idle"};
       }

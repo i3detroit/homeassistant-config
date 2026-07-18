@@ -80,7 +80,7 @@ binary_sensor:
       mode: INPUT_PULLUP
       inverted: False
   - platform: gpio
-    name: "A-B Front Door"
+    name: "A-B South Door"
     device_class: door
     filters:
       - delayed_on: 100ms

@@ -1,8 +1,0 @@
-packages:
-  package: !include common/sonoff_basic_switch.yaml
-  
-substitutions:
-  device_name: "paint-box-vent-fan"
-  pretty_name: "Paint Box Vent Fan"
-  ui_name: "Fan"
-  icon: "mdi:fan"

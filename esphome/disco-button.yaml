@@ -4,4 +4,4 @@ packages:
 substitutions:
   device_name: "disco-button"
   pretty_name: "Disco Button"
-  target_1: "switch.disco_ball_disco_ball"
+  target_1: "switch.disco_ball_relay"

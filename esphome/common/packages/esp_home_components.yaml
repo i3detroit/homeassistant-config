@@ -9,11 +9,16 @@ ota:
 web_server:
   port: 80
   version: 3
+  auth:
+    username: esphome
+    password: !secret ota_password
 
 esphome:
   friendly_name: "${pretty_name}"
 
 api:
+  encryption:
+    key: !secret api_encryption_key
 
 packages:
   wifi: !include wifi.yaml

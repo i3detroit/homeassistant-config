@@ -6,7 +6,11 @@ substitutions:
   pretty_name: "Genie"
   ui_name: "Relay"
   icon: "mdi:oil-lamp"
-  restore_mode: ALWAYS_ON
+
+esphome:
+  on_boot:
+    then:
+      - switch.turn_on: relay
 
 text_sensor:
   - platform: template

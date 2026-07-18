@@ -1,0 +1,11 @@
+packages:
+  board: !include packages/board_d1_mini.yaml
+  base_components: !include packages/esp_home_components.yaml
+
+binary_sensor:
+  - name: "${ui_name}"
+    icon: "${icon}"
+    platform: gpio
+    pin:
+      number: 1
+      mode: INPUT_PULLUP
