@@ -1,4 +1,4 @@
-traffic_light_red:
+traffic_light_green:
   alias: Traffic Light Green
   sequence:
   - data: {}
@@ -13,7 +13,7 @@ traffic_light_red:
     action: light.turn_on
   mode: single
   icon: mdi:traffic-light
-traffic_light_red_2:
+traffic_light_red:
   alias: Traffic Light Red
   sequence:
   - data: {}
@@ -28,7 +28,7 @@ traffic_light_red_2:
     action: light.turn_on
   mode: single
   icon: mdi:traffic-light
-'1774154545938':
+traffic_light_yellow:
   alias: Traffic Light Yellow
   sequence:
   - data: {}
@@ -43,7 +43,7 @@ traffic_light_red_2:
     action: light.turn_on
   mode: single
   icon: mdi:traffic-light
-'1774154938809':
+traffic_light_off:
   alias: Traffic Lights Off
   sequence:
   - data: {}
@@ -82,3 +82,58 @@ traffic_light_sequence:
   - service: script.1774154938809
     data: {}
   mode: single
+restart_a_side_keypad:
+  sequence:
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      entity_id: switch.a_side_main_keypad_watchdog_watchdog
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - action: switch.turn_on
+    metadata: {}
+    target:
+      entity_id: switch.a_side_main_keypad_watchdog_watchdog
+    data: {}
+  alias: Restart A-Side Keypad
+  description: ''
+restart_b_side_keypad:
+  sequence:
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      entity_id: switch.b_side_office_keypad_watchdog_watchdog
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - action: switch.turn_on
+    metadata: {}
+    target:
+      entity_id: switch.b_side_office_keypad_watchdog_watchdog
+    data: {}
+  alias: Restart B-Side Keypad
+  description: ''
+set_tool_crib_led_matrix_motd:
+  sequence:
+  - action: input_text.set_value
+    metadata: {}
+    target:
+      entity_id: input_text.tool_crib_led_matrix_motd
+    data:
+      value: '{{ text }}'
+  fields:
+    text:
+      selector:
+        text:
+          multiline: true
+      name: Text
+      required: true
+  alias: Set Tool Crib LED Matrix MOTD
+  description: ''

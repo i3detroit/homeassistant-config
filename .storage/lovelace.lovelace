@@ -125,6 +125,9 @@
                   "type": "entities",
                   "entities": [
                     {
+                      "entity": "scene.twilight_mode"
+                    },
+                    {
                       "entity": "light.fairy_lights_lights",
                       "name": {
                         "type": "device"
@@ -2773,7 +2776,7 @@
                   "show_name": true,
                   "show_icon": true,
                   "type": "button",
-                  "entity": "script.new_script",
+                  "entity": "script.set_tool_crib_led_matrix_motd",
                   "icon_height": "32px",
                   "color": "dark-grey",
                   "show_state": false,

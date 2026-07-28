@@ -8,45 +8,6 @@
   action:
   - service: shell_command.spaceapi_upload
   mode: single
-- id: '1628099784943'
-  alias: Large Bathroom Motion ON
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.large_bathroom_motion_sensor
-    to: 'on'
-  condition:
-  - condition: device
-    type: is_off
-    device_id: 535a24966a688f9ddabfd042b92ad6a3
-    entity_id: light.large_bathroom_light
-    domain: light
-    for:
-      hours: 0
-      minutes: 0
-      seconds: 5
-      milliseconds: 0
-  action:
-  - type: turn_on
-    device_id: 535a24966a688f9ddabfd042b92ad6a3
-    entity_id: light.large_bathroom_light
-    domain: light
-  mode: single
-- id: '1628099880959'
-  alias: Large Bathroom Motion OFF
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.large_bathroom_motion_sensor
-    to: 'off'
-    for: 00:10:00
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 535a24966a688f9ddabfd042b92ad6a3
-    entity_id: light.large_bathroom_light
-    domain: light
-  mode: single
 - id: '1628099948333'
   alias: Large Bathroom Fan Timeout
   description: ''
@@ -66,40 +27,6 @@
     device_id: 63dc87c9aa968153af473c8b1322e097
     entity_id: 5f19a1d0a86adc2a01c5d705503d863e
     domain: switch
-  mode: single
-- id: '1628203562056'
-  alias: Small Bathroom Motion ON
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.small_bathroom_motion_sensor
-    to: 'on'
-  condition:
-  - condition: device
-    type: is_off
-    device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
-    entity_id: light.small_bathroom_light
-    domain: light
-  action:
-  - type: turn_on
-    device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
-    entity_id: light.small_bathroom_light
-    domain: light
-  mode: single
-- id: '1628203629710'
-  alias: Small Bathroom Motion OFF
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.small_bathroom_motion_sensor
-    to: 'off'
-    for: 0:10:00
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 698058789b64ea8af8cb2c0f0fc2a5c6
-    entity_id: light.small_bathroom_light
-    domain: light
   mode: single
 - id: '1628203747980'
   alias: Small Bathroom Fan Timeout
@@ -123,47 +50,54 @@
   mode: single
 - id: '1638201355599'
   alias: Notify that genie is plugged in again
-  trigger:
-  - platform: state
-    entity_id: sensor.genie_charge_state
-    to: Plugged in
-  - platform: state
-    entity_id: sensor.genie_charge_state
-    to: Charging
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: The genie is plugged in again
-  - service: automation.turn_off
-    target:
+  triggers:
+  - entity_id:
+    - sensor.genie_charger_state
+    to:
+    - Charging
+    trigger: state
+  conditions: []
+  actions:
+  - data:
+      message: The Genie is plugged in again!
+    action: notify.i3detroit
+  - target:
       entity_id: automation.notify_that_genie_is_plugged_in_again
+    action: automation.turn_off
+    data:
+      stop_actions: true
   mode: single
 - id: '1638231960434'
-  alias: Complain more if genie not plugged in
+  alias: Complain If Genie Unplugged
   description: ''
-  trigger:
-  - platform: state
-    entity_id: sensor.genie_charge_state
-    to: Not plugged in
-    for: '24:00:00'
-  - platform: state
-    entity_id:
-    - sensor.genie_charge_state
-    to: unavailable
+  triggers:
+  - entity_id:
+    - sensor.genie_charger_state
+    to:
+    - Unplugged
     for:
       hours: 24
       minutes: 0
       seconds: 0
-  condition: []
-  action:
-  - service: notify.i3detroit
-    data:
-      message: Seriously, plug in the genie. It's been 24 hours. @mkfink @abzman
-  - service: automation.turn_on
-    target:
+    trigger: state
+  - entity_id:
+    - sensor.genie_charger_state
+    to:
+    - unavailable
+    for:
+      hours: 24
+      minutes: 0
+      seconds: 0
+    trigger: state
+  conditions: []
+  actions:
+  - data:
+      message: Seriously, plug in the Genie. It's been 24 hours.
+    action: notify.i3detroit
+  - target:
       entity_id: automation.notify_that_genie_is_plugged_in_again
     data: {}
+    action: automation.turn_on
   mode: single
 - id: '1735616484533'
   alias: Recycle Status Light On
@@ -243,18 +177,19 @@
 - id: '1777580550368'
   alias: Laser Cutter Air Compressor
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - switch.cyclops
-    - switch.wolverine
-    to: 'on'
-  condition: []
-  action:
-  - service: switch.turn_on
-    data: {}
+  triggers:
+  - entity_id:
+    - switch.cyclops_relay
+    - switch.wolverine_relay
+    to:
+    - 'on'
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
     target:
-      entity_id: switch.air_compressor
+      entity_id: switch.air_compressor_relay
+    action: switch.turn_on
   mode: single
 - id: '1777580685213'
   alias: Laser Cutter Chiller On (Cyclops)
@@ -331,7 +266,7 @@
     - 'off'
     for:
       hours: 0
-      minutes: 15
+      minutes: 10
       seconds: 0
   conditions: []
   actions:
@@ -356,5 +291,100 @@
     metadata: {}
     target:
       entity_id: light.emergency_lights
+    data: {}
+  mode: single
+- id: '1780293007403'
+  alias: Large Bathroom Motion On
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.large_bathroom_motion_sensor_motion
+    to:
+    - 'on'
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id: light.large_bathroom_switch_light
+    data: {}
+  mode: single
+- id: '1780293040036'
+  alias: Large Bathroom Motion Off
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - switch.large_bathroom_motion_sensor_motion
+    to:
+    - 'off'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    target:
+      entity_id: light.large_bathroom_switch_light
+    data: {}
+  mode: single
+- id: '1780293069586'
+  alias: Small Bathroom Motion On
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.small_bathroom_motion_sensor_motion
+    to:
+    - 'on'
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    target:
+      entity_id: light.small_bathroom_switch_light
+    data: {}
+  mode: single
+- id: '1780293129716'
+  alias: Small Bathroom Motion Off
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.small_bathroom_motion_sensor_motion
+    to:
+    - 'off'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    target:
+      entity_id: light.small_bathroom_switch_light
+    data: {}
+  mode: single
+- id: '1784427923664'
+  alias: Exhaust Off When Unhealthy AQI
+  description: ''
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.airnow_air_quality_index
+    above: 101
+  conditions: []
+  actions:
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      entity_id:
+      - switch.machine_shop_exhaust_switch_fan
+      - switch.sewing_hall_vent_fan_fan
+      - switch.a_side_south_vent_fan_fan
     data: {}
   mode: single

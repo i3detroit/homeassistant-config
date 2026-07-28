@@ -1,0 +1,93 @@
+- id: '1785170969099'
+  name: Twilight Mode
+  entities:
+    light.fairy_lights_lights:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Fairy Lights Lights
+      supported_features: 8
+      state: 'on'
+    light.treehouse_light_light:
+      supported_color_modes:
+      - onoff
+      friendly_name: Treehouse Light Light
+      supported_features: 8
+      state: 'on'
+    light.row_1_lights:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.overhead_light_11_light
+      - light.overhead_light_2_light
+      - light.overhead_light_3_light
+      - light.overhead_light_23_light
+      friendly_name: Row 1 Lights
+      supported_features: 8
+      state: 'off'
+    light.row_2_lights:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.overhead_light_5_light
+      - light.overhead_light_6_light
+      - light.overhead_light_7_light
+      - light.overhead_light_9_light
+      friendly_name: Row 2 Lights
+      supported_features: 8
+      state: 'off'
+    light.row_3_lights:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.overhead_light_10_light
+      - light.overhead_light_72_light
+      - light.overhead_light_12_light
+      friendly_name: Row 3 Lights
+      supported_features: 8
+      state: 'off'
+    light.row_4_lights:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.overhead_light_15_light
+      - light.overhead_light_16_light
+      - light.overhead_light_17_light
+      - light.overhead_light_18_light
+      - light.overhead_light_19_light
+      friendly_name: Row 4 Lights
+      supported_features: 8
+      state: 'off'
+    light.row_5_lights:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      entity_id:
+      - light.overhead_light_4_light
+      - light.overhead_light_20_light
+      - light.overhead_light_21_light
+      - light.overhead_light_22_light
+      - light.overhead_light_24_light
+      - light.overhead_light_25_light
+      - light.overhead_light_26_light
+      - light.overhead_light_58_light
+      - light.laser_lanterns_lanterns
+      friendly_name: Row 5 Lights
+      supported_features: 8
+      state: 'off'
+  metadata:
+    light.row_1_lights:
+      entity_only: true
+    light.row_2_lights:
+      entity_only: true
+    light.row_3_lights:
+      entity_only: true
+    light.row_4_lights:
+      entity_only: true
+    light.row_5_lights:
+      entity_only: true
+  icon: mdi:creation
