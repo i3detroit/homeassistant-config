@@ -1,0 +1,3114 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.lovelace",
+  "data": {
+    "config": {
+      "kiosk_mode": {
+        "user_settings": [
+          {
+            "users": [
+              "kiosk"
+            ],
+            "kiosk": true,
+            "hide_sidebar": true,
+            "hide_header": true
+          }
+        ]
+      },
+      "button_card_templates": {
+        "shopping-item": {
+          "layout": "icon_name",
+          "size": "20%",
+          "styles": {
+            "name": [
+              {
+                "align-self": "middle"
+              },
+              {
+                "justify-self": "left"
+              }
+            ],
+            "icon": [
+              {
+                "color": "var(--primary-text-color)"
+              }
+            ]
+          },
+          "tap_action": {
+            "action": "call-service",
+            "service": "script.turn_on",
+            "service_data": {
+              "entity_id": "entity"
+            }
+          }
+        }
+      },
+      "views": [
+        {
+          "title": "Home",
+          "visible": [
+            {
+              "user": "f60b2be1ffe64c55a79f0835a9591b19"
+            },
+            {
+              "user": "222def901895450bb7b9834c88567294"
+            },
+            {
+              "user": "fcf149e442e649f189ad5ba8f07a6217"
+            },
+            {
+              "user": "04a58e49f3fb45c78bc50659df8fd3e3"
+            }
+          ],
+          "badges": [],
+          "cards": [],
+          "type": "sections",
+          "path": "home",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.row_1_lights"
+                    },
+                    {
+                      "entity": "light.row_2_lights"
+                    },
+                    {
+                      "entity": "light.row_3_lights"
+                    },
+                    {
+                      "entity": "light.row_4_lights"
+                    },
+                    {
+                      "entity": "light.row_5_lights"
+                    },
+                    {
+                      "entity": "light.e_lab_lights"
+                    },
+                    {
+                      "entity": "light.sewing_zone_lights"
+                    },
+                    {
+                      "entity": "light.paint_zone_lights"
+                    },
+                    {
+                      "entity": "light.big_light_1_light",
+                      "name": "Big Light 1"
+                    },
+                    {
+                      "entity": "light.big_light_2_light",
+                      "name": "Big Light 2"
+                    },
+                    {
+                      "entity": "light.office_lights"
+                    },
+                    {
+                      "entity": "light.b_side_lights",
+                      "name": "B-Side Main Lights"
+                    },
+                    {
+                      "entity": "light.wood_shop_lights"
+                    },
+                    {
+                      "entity": "light.ceramics_jewelry_lights"
+                    }
+                  ],
+                  "title": "Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.fairy_lights_lights",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.laser_lanterns_lanterns",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.swirly_light_1_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.swirly_light_2_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "script.traffic_light_red"
+                    },
+                    {
+                      "entity": "script.traffic_light_yellow"
+                    },
+                    {
+                      "entity": "script.traffic_light_green"
+                    },
+                    {
+                      "entity": "script.traffic_light_sequence"
+                    },
+                    {
+                      "entity": "script.traffic_light_off"
+                    },
+                    {
+                      "entity": "switch.disco_ball_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.disco_spotlights_spotlights",
+                      "icon": "mdi:spotlight-beam",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.chandelier_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.treehouse_light_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.mural_blacklight_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    }
+                  ],
+                  "title": "Decor"
+                }
+              ],
+              "column_span": 2
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "**The outdoor AQI is currently unhealthy or hazardous, please keep all garage doors closed and exhaust fans turned off.**",
+                  "visibility": [
+                    {
+                      "condition": "numeric_state",
+                      "above": 101,
+                      "entity": "sensor.airnow_air_quality_index"
+                    }
+                  ]
+                },
+                {
+                  "type": "glance",
+                  "entities": [
+                    {
+                      "entity": "switch.air_compressor_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "switch.cyclops_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "switch.wolverine_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "sensor.genie_charger_state",
+                      "name": {
+                        "type": "device"
+                      }
+                    }
+                  ],
+                  "title": "Equipment Status",
+                  "columns": 3,
+                  "show_icon": true
+                },
+                {
+                  "type": "entities",
+                  "state_color": true,
+                  "entities": [
+                    {
+                      "entity": "binary_sensor.glass_door_open",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "binary_sensor.glass_door_lock",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "binary_sensor.b_side_alarm_panel_b_side_office_front_door",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "binary_sensor.b_side_alarm_panel_b_side_garage_door",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "binary_sensor.b_side_alarm_panel_b_side_courtyard_door",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "binary_sensor.b_side_alarm_panel_b_side_back_door",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "binary_sensor.b_side_alarm_panel_a_b_south_door",
+                      "name": {
+                        "type": "entity"
+                      }
+                    }
+                  ],
+                  "title": "Doors"
+                }
+              ]
+            }
+          ],
+          "max_columns": 3,
+          "icon": "mdi:home",
+          "header": {}
+        },
+        {
+          "icon": "mdi:lightbulb",
+          "visible": [
+            {
+              "user": "222def901895450bb7b9834c88567294"
+            },
+            {
+              "user": "fcf149e442e649f189ad5ba8f07a6217"
+            },
+            {
+              "user": "f60b2be1ffe64c55a79f0835a9591b19"
+            },
+            {
+              "user": "04a58e49f3fb45c78bc50659df8fd3e3"
+            }
+          ],
+          "badges": [],
+          "cards": [],
+          "type": "sections",
+          "title": "Lights",
+          "path": "lights",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_11_light",
+                      "name": "Lounge"
+                    },
+                    {
+                      "entity": "light.overhead_light_2_light",
+                      "name": "Craft 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_23_light",
+                      "name": "Craft 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_3_light",
+                      "name": "Craft 3"
+                    }
+                  ],
+                  "title": "A-Side Lights Row 1",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_5_light",
+                      "name": "Entry"
+                    },
+                    {
+                      "entity": "light.overhead_light_6_light",
+                      "name": "Commons 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_7_light",
+                      "name": "Commons 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_9_light",
+                      "name": "Sewing/E-Lab Hall"
+                    }
+                  ],
+                  "title": "A-Side Lights Row 2",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_10_light",
+                      "name": "Vending"
+                    },
+                    {
+                      "entity": "light.overhead_light_72_light",
+                      "name": "Commons 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_12_light",
+                      "name": "Commons 2"
+                    }
+                  ],
+                  "title": "A-Side Lights Row 3",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_15_light",
+                      "name": "Kitchen Pathway"
+                    },
+                    {
+                      "entity": "light.overhead_light_16_light",
+                      "name": "Treehouse Pathway"
+                    },
+                    {
+                      "entity": "light.overhead_light_17_light",
+                      "name": "Injection Molding 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_18_light",
+                      "name": "Injection Molding 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_19_light",
+                      "name": "Air Compressor Hallway"
+                    }
+                  ],
+                  "title": "A-Side Lights Row 4",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_20_light",
+                      "name": "Infrastructure"
+                    },
+                    {
+                      "entity": "light.overhead_light_58_light",
+                      "name": "Leather 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_21_light",
+                      "name": "Leather 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_22_light",
+                      "name": "Laser 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_4_light",
+                      "name": "Laser 2"
+                    },
+                    {
+                      "entity": "light.laser_lanterns_lanterns",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.overhead_light_24_light",
+                      "name": "Member Storage 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_26_light",
+                      "name": "Member Storage 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_25_light",
+                      "name": "Large Project Storage"
+                    }
+                  ],
+                  "title": "A-Side Lights Row 5",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_30_light",
+                      "name": "Oven"
+                    },
+                    {
+                      "entity": "light.overhead_light_32_light",
+                      "name": "Over Paint Booth"
+                    },
+                    {
+                      "entity": "light.overhead_light_34_light",
+                      "name": "Flamables Cabinet"
+                    }
+                  ],
+                  "title": "A-Side Paint Zone Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.classroom_east_switch_lights",
+                      "name": "Classroom East"
+                    },
+                    {
+                      "entity": "light.classroom_west_switch_lights",
+                      "name": "Classroom West"
+                    },
+                    {
+                      "entity": "light.hallway_switch_lights",
+                      "name": "Hallway"
+                    },
+                    {
+                      "entity": "light.dooridor_switch_light",
+                      "name": "Dooridor"
+                    },
+                    {
+                      "entity": "light.server_room_switch_lights",
+                      "name": "Server Room"
+                    },
+                    {
+                      "entity": "light.media_lab_switch_lights",
+                      "name": "Media Lab"
+                    },
+                    {
+                      "entity": "light.e_lab_old_switch_lights",
+                      "name": "Electronics Lab"
+                    },
+                    {
+                      "entity": "light.small_bathroom_switch_light",
+                      "name": "Small Bathroom"
+                    },
+                    {
+                      "entity": "light.small_bathroom_shower_switch_light",
+                      "name": "Small Bathroom Shower"
+                    }
+                  ],
+                  "title": "A-Side Office Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.red_pallet_rack_light_light",
+                      "name": "Red Pallet Rack Light"
+                    },
+                    {
+                      "entity": "light.treehouse_light_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.large_bathroom_switch_light",
+                      "name": "Large Bathroom Light"
+                    },
+                    {
+                      "entity": "light.recycle_status_light_light_1",
+                      "icon": "mdi:lightbulb",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.big_light_1_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.big_light_2_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    }
+                  ],
+                  "title": "A-Side Misc Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.sewing_zone_main_lights_lights",
+                      "name": "Main Lights"
+                    },
+                    {
+                      "entity": "light.sewing_zone_accent_lights_lights",
+                      "name": "Accent Lights"
+                    },
+                    {
+                      "entity": "switch.sewing_zone_fitting_room_light_light",
+                      "name": "Fitting Room Light"
+                    }
+                  ],
+                  "title": "A-Side Sewing Zone",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.fairy_lights_lights",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.laser_lanterns_lanterns",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.swirly_light_1_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.swirly_light_2_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "script.traffic_light_off"
+                    },
+                    {
+                      "entity": "script.traffic_light_sequence"
+                    },
+                    {
+                      "entity": "script.traffic_light_green"
+                    },
+                    {
+                      "entity": "script.traffic_light_yellow"
+                    },
+                    {
+                      "entity": "script.traffic_light_red"
+                    },
+                    {
+                      "entity": "switch.disco_ball_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.disco_spotlights_spotlights",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.chandelier_light",
+                      "name": {
+                        "type": "device"
+                      }
+                    }
+                  ],
+                  "title": "Decor",
+                  "state_color": true
+                }
+              ],
+              "column_span": 1
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_78_light",
+                      "name": "Bay Door"
+                    },
+                    {
+                      "entity": "light.overhead_light_77_light",
+                      "name": "Lift (North)"
+                    },
+                    {
+                      "entity": "light.overhead_light_73_light",
+                      "name": "Lift (South)"
+                    },
+                    {
+                      "entity": "light.overhead_light_84_light",
+                      "name": "Auto Zone Workbench"
+                    },
+                    {
+                      "entity": "light.overhead_light_85_light",
+                      "name": "Tire Changer"
+                    },
+                    {
+                      "entity": "light.overhead_light_93_light",
+                      "name": "Media Blaster"
+                    }
+                  ],
+                  "title": "B-Side Auto Zone Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_41_light",
+                      "name": "Avid CNC 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_55_light",
+                      "name": "Avid CNC 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_50_light",
+                      "name": "Small CNC 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_88_light",
+                      "name": "Small CNC 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_59_light",
+                      "name": "Miter Saw"
+                    },
+                    {
+                      "entity": "light.overhead_light_60_light",
+                      "name": "Saw Stop"
+                    },
+                    {
+                      "entity": "light.overhead_light_61_light",
+                      "name": "Panel Saw"
+                    },
+                    {
+                      "entity": "light.overhead_light_63_light",
+                      "name": "Planer / Jointer"
+                    },
+                    {
+                      "entity": "light.overhead_light_64_light",
+                      "name": "Belt Sander"
+                    },
+                    {
+                      "entity": "light.overhead_light_51_light",
+                      "name": "Dust Collector 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_65_light",
+                      "name": "Dust Collector 2"
+                    }
+                  ],
+                  "title": "B-Side Wood Shop Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_47_light",
+                      "name": "Jewelry (East)"
+                    },
+                    {
+                      "entity": "light.overhead_light_49_light",
+                      "name": "Jewelry (West)"
+                    },
+                    {
+                      "entity": "light.overhead_light_48_light",
+                      "name": "Ceramics (East)"
+                    },
+                    {
+                      "entity": "light.overhead_light_46_light",
+                      "name": "Ceramics (West)"
+                    }
+                  ],
+                  "title": "B-Side Ceramics & Jewelry Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_100_light",
+                      "name": "Shear"
+                    },
+                    {
+                      "entity": "light.overhead_light_69_light",
+                      "name": "Welding Table (South)"
+                    },
+                    {
+                      "entity": "light.overhead_light_80_light",
+                      "name": "Welding Table (North)"
+                    },
+                    {
+                      "entity": "light.overhead_light_103_light",
+                      "name": "Tubing Bender"
+                    },
+                    {
+                      "entity": "light.overhead_light_79_light",
+                      "name": "CNC Plasma Cutter (East)"
+                    },
+                    {
+                      "entity": "light.overhead_light_104_light",
+                      "name": "CNC Plasma Cutter (West)"
+                    },
+                    {
+                      "entity": "light.overhead_light_106_light",
+                      "name": "Welding Entry"
+                    },
+                    {
+                      "entity": "light.overhead_light_75_light",
+                      "name": "Pallet Rack"
+                    }
+                  ],
+                  "title": "B-Side Welding Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_70_light",
+                      "name": "HAAS (South)"
+                    },
+                    {
+                      "entity": "light.overhead_light_92_light",
+                      "name": "HAAS (North)"
+                    },
+                    {
+                      "entity": "light.overhead_light_82_light",
+                      "name": "Workbench"
+                    }
+                  ],
+                  "title": "B-Side CNC Zone Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_95_light",
+                      "name": "Acer Lathe"
+                    },
+                    {
+                      "entity": "light.overhead_light_83_light",
+                      "name": "Edlund Drill Press"
+                    },
+                    {
+                      "entity": "light.overhead_light_91_light",
+                      "name": "Monarch Lathe"
+                    },
+                    {
+                      "entity": "light.overhead_light_97_light",
+                      "name": "Horizontal Band Saw"
+                    },
+                    {
+                      "entity": "light.overhead_light_99_light",
+                      "name": "Punches / Mini Mill"
+                    },
+                    {
+                      "entity": "light.overhead_light_101_light",
+                      "name": "Bridgeport Mill"
+                    },
+                    {
+                      "entity": "light.overhead_light_102_light",
+                      "name": "Belt Sander"
+                    }
+                  ],
+                  "title": "B-Side Machine Shop Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.overhead_light_76_light",
+                      "name": "Welding Walkway 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_81_light",
+                      "name": "Welding Walkway 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_74_light",
+                      "name": "Jewelry Walkway"
+                    },
+                    {
+                      "entity": "light.overhead_light_86_light",
+                      "name": "Kiln Walkway"
+                    },
+                    {
+                      "entity": "light.overhead_light_87_light",
+                      "name": "Woodshop Walkway 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_89_light",
+                      "name": "Woodshop Walkway 2"
+                    },
+                    {
+                      "entity": "light.overhead_light_90_light",
+                      "name": "Woodshop Walkway 3"
+                    },
+                    {
+                      "entity": "light.overhead_light_98_light",
+                      "name": "Tool Crib Walkway 1"
+                    },
+                    {
+                      "entity": "light.overhead_light_96_light",
+                      "name": "Tool Crib Walkway 2"
+                    }
+                  ],
+                  "title": "B-Side Walkway Lights",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.classroom_west_switch_lights",
+                      "name": "Office"
+                    },
+                    {
+                      "entity": "light.overhead_light_52_light",
+                      "name": "Cleaning"
+                    },
+                    {
+                      "entity": "light.overhead_light_54_light",
+                      "name": "Treehouse"
+                    },
+                    {
+                      "entity": "light.overhead_light_71_light",
+                      "name": "Tool Crib"
+                    }
+                  ],
+                  "title": "B-Side Other Lights",
+                  "state_color": true
+                }
+              ],
+              "column_span": 1
+            }
+          ],
+          "max_columns": 2
+        },
+        {
+          "icon": "mdi:map",
+          "visible": [
+            {
+              "user": "222def901895450bb7b9834c88567294"
+            },
+            {
+              "user": "fcf149e442e649f189ad5ba8f07a6217"
+            },
+            {
+              "user": "f60b2be1ffe64c55a79f0835a9591b19"
+            },
+            {
+              "user": "04a58e49f3fb45c78bc50659df8fd3e3"
+            }
+          ],
+          "type": "panel",
+          "path": "map",
+          "title": "Map",
+          "badges": [],
+          "cards": [
+            {
+              "type": "picture-elements",
+              "image": "local/ha_floorplan.svg",
+              "dark_mode_image": "local/ha_floorplan.svg",
+              "elements": [
+                {
+                  "type": "service-button",
+                  "title": "Shutdown Checklist",
+                  "style": {
+                    "left": "82%",
+                    "top": "10%",
+                    "transform": "translate(0%, -50%)"
+                  },
+                  "action": "homeassistant.turn_off",
+                  "data": {},
+                  "target": {
+                    "entity_id": "light.all_normal_light_groups"
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "light.all_normal_light_groups",
+                      "state": "on"
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "22%",
+                        "--label-badge-red": "var(--state-active-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "light.all_normal_light_groups",
+                      "name": "Any Light"
+                    }
+                  ],
+                  "title": "All Lights (On)"
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "light.all_normal_light_groups",
+                      "state_not": "on"
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "22%",
+                        "--label-badge-red": "var(--state-icon-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "light.all_normal_light_groups",
+                      "name": "Any Light"
+                    }
+                  ],
+                  "title": "All Lights (Off)"
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "switch.all_equipment",
+                      "state": "on"
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "38%",
+                        "--label-badge-red": "var(--state-active-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "switch.all_equipment",
+                      "name": "Any Equipment"
+                    }
+                  ],
+                  "title": "All Equipment (On)"
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "switch.all_equipment",
+                      "state_not": "on"
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "38%",
+                        "--label-badge-red": "var(--state-icon-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "switch.all_equipment",
+                      "name": "Any Equipment"
+                    }
+                  ],
+                  "title": "All Equipment (Off)"
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "or",
+                      "conditions": [
+                        {
+                          "condition": "state",
+                          "entity": "sensor.genie_charger_state",
+                          "state": "Charging"
+                        },
+                        {
+                          "condition": "state",
+                          "entity": "sensor.genie_charger_state",
+                          "state": "Plugged In"
+                        }
+                      ]
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "54%",
+                        "--label-badge-red": "var(--state-active-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "sensor.genie_charger_state",
+                      "name": "Genie Charger"
+                    }
+                  ],
+                  "title": "Genie (On)"
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "and",
+                      "conditions": [
+                        {
+                          "condition": "state",
+                          "entity": "sensor.genie_charger_state",
+                          "state_not": "Charging"
+                        },
+                        {
+                          "condition": "state",
+                          "entity": "sensor.genie_charger_state",
+                          "state_not": "Plugged In"
+                        }
+                      ]
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "54%",
+                        "--label-badge-red": "var(--state-icon-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "sensor.genie_charger_state",
+                      "name": "Genie Charger"
+                    }
+                  ],
+                  "title": "Genie (Off)"
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "light.recycle_status_light_light_1",
+                      "state": "on"
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "70%",
+                        "--label-badge-red": "var(--state-active-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "light.recycle_status_light_light_1",
+                      "name": "Recycling/Trash"
+                    }
+                  ],
+                  "title": "Recycling/Trash (On)"
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "light.recycle_status_light_light_1",
+                      "state_not": "on"
+                    }
+                  ],
+                  "elements": [
+                    {
+                      "type": "state-badge",
+                      "style": {
+                        "left": "88%",
+                        "top": "70%",
+                        "--label-badge-red": "var(--state-icon-color)",
+                        "--label-badge-text-color": "var(--label-badge-red)"
+                      },
+                      "entity": "light.recycle_status_light_light_1",
+                      "name": "Recycling/Trash"
+                    }
+                  ],
+                  "title": "Recycling/Trash (Off)"
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "switch.laser_exhaust_fan_fan",
+                  "style": {
+                    "top": "42%",
+                    "left": "50%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "switch.air_compressor_relay",
+                  "style": {
+                    "top": "8.5%",
+                    "left": "53.5%",
+                    "transform": "translate(-50%, -50%) scale(1.25)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "binary_sensor.b_side_alarm_panel_a_b_south_door",
+                  "style": {
+                    "top": "75%",
+                    "left": "46.5%",
+                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "binary_sensor.b_side_alarm_panel_b_side_garage_door",
+                  "style": {
+                    "top": "85%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "binary_sensor.b_side_alarm_panel_b_side_office_front_door",
+                  "style": {
+                    "top": "85%",
+                    "left": "36.5%",
+                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "binary_sensor.b_side_alarm_panel_b_side_courtyard_door",
+                  "style": {
+                    "top": "64%",
+                    "left": "26.5%",
+                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "binary_sensor.glass_door_open",
+                  "style": {
+                    "top": "92.5%",
+                    "left": "66%",
+                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "binary_sensor.glass_door_lock",
+                  "style": {
+                    "top": "92.5%",
+                    "left": "68%",
+                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_11_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "76%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_2_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "61%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "switch.sewing_zone_fitting_room_light_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21.5%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.sewing_zone_main_lights_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "30.5%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.sewing_zone_accent_lights_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "39.5%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_3_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "45.5%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_22_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "53%",
+                    "left": "51%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_5_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "80%",
+                    "left": "69.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_6_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "66.5%",
+                    "left": "69.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_7_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "53%",
+                    "left": "69.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_9_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "26%",
+                    "left": "69.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_10_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "70%",
+                    "left": "62%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_72_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "58%",
+                    "left": "62%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_12_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "45.5%",
+                    "left": "62%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.e_lab_bench_switch_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "33.5%",
+                    "left": "63%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.e_lab_switch_1_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21%",
+                    "left": "63%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.e_lab_switch_2_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "27%",
+                    "left": "63%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_15_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "63.5%",
+                    "left": "56.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_16_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "39.5%",
+                    "left": "56.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_17_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "33.5%",
+                    "left": "56.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_18_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21.5%",
+                    "left": "56.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_19_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "10%",
+                    "left": "56.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_20_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "72%",
+                    "left": "50.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_58_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "66%",
+                    "left": "50.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_21_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "60%",
+                    "left": "50.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_4_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "45.5%",
+                    "left": "50.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_23_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "53%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_24_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "33.5%",
+                    "left": "50.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_25_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "10%",
+                    "left": "50.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_26_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21.5%",
+                    "left": "50.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_30_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "8.5%",
+                    "left": "69.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_32_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "8.5%",
+                    "left": "75%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_34_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "14.5%",
+                    "left": "65.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_35_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "8.5%",
+                    "left": "62%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.red_pallet_rack_light_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "53%",
+                    "left": "49.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.treehouse_light_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "52%",
+                    "left": "57.3%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_78_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "80%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_73_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "74.16%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_77_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "68.33%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_84_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "62.5%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_85_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "56.67%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_94_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "50.83%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_74_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "45%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_86_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "39.17%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_89_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "33.33%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_90_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "27.5%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_87_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21.66%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_96_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "15.833%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_67_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "10%",
+                    "left": "32.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_81_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "74.16%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_104_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "68.33%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_103_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "62.5%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_106_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "56.67%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_100_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "50.83%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_102_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "45%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_99_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "39.17%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_101_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "33.33%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_95_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "27.5%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_93_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21.66%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_98_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "15.833%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_71_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "10%",
+                    "left": "38%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_76_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "74.16%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_79_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "68.33%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_69_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "62.5%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_80_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "56.67%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_75_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "50.83%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_97_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "45%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_83_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "39.17%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_91_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "33.33%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_82_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "27.5%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_70_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "21.66%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_92_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "15.833%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_68_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "10%",
+                    "left": "43%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_48_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "36%",
+                    "left": "25%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_46_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "36%",
+                    "left": "18%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_47_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "43%",
+                    "left": "25%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_49_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "43%",
+                    "left": "18%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.classroom_east_switch_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "78%",
+                    "left": "64.6%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.classroom_west_switch_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "78%",
+                    "left": "61.4%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.dooridor_switch_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "87.8%",
+                    "left": "66%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.media_lab_switch_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "90%",
+                    "left": "62%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.e_lab_old_switch_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "90%",
+                    "left": "53%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.small_bathroom_switch_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "78%",
+                    "left": "54.85%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "switch.b_side_office_west_switch_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "80.6%",
+                    "left": "40.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.server_room_switch_lights",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "78%",
+                    "left": "57.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_50_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "28%",
+                    "left": "12%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_41_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "20%",
+                    "left": "12%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_51_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "12%",
+                    "left": "12%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_55_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "20%",
+                    "left": "17%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_59_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "20%",
+                    "left": "27%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_60_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "12%",
+                    "left": "27%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_61_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "28.9%",
+                    "left": "31%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_63_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "12%",
+                    "left": "21.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_64_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "20%",
+                    "left": "21.5%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_65_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "12%",
+                    "left": "17%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_88_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "28%",
+                    "left": "17%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_52_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "28%",
+                    "left": "22%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.overhead_light_54_light",
+                  "icon": "mdi:lightbulb",
+                  "style": {
+                    "top": "28%",
+                    "left": "26%",
+                    "transform": "translate(-50%, -50%) scale(1, 1)"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "style": {
+                    "font-size": "3.5em",
+                    "line-height": 1,
+                    "font-weight": 500,
+                    "top": "calc(90% - 7rem)",
+                    "left": "5%",
+                    "transform": "none"
+                  },
+                  "entity": "sensor.time"
+                },
+                {
+                  "type": "state-label",
+                  "style": {
+                    "font-size": "2em",
+                    "line-height": 1,
+                    "font-weight": 300,
+                    "top": "calc(90% - 2.5rem)",
+                    "left": "5%",
+                    "transform": "none",
+                    "opacity": 0.8
+                  },
+                  "entity": "sensor.date"
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "binary_sensor.b_side_alarm_panel_b_side_back_door",
+                  "style": {
+                    "top": "4%",
+                    "left": "10%",
+                    "transform": "translate(-50%, -50%) scale(1.5, 1.5)"
+                  }
+                }
+              ]
+            }
+          ],
+          "show_icon_and_title": false
+        },
+        {
+          "icon": "mdi:sun-thermometer",
+          "visible": [
+            {
+              "user": "222def901895450bb7b9834c88567294"
+            },
+            {
+              "user": "fcf149e442e649f189ad5ba8f07a6217"
+            },
+            {
+              "user": "04a58e49f3fb45c78bc50659df8fd3e3"
+            },
+            {
+              "user": "f60b2be1ffe64c55a79f0835a9591b19"
+            }
+          ],
+          "badges": [],
+          "cards": [],
+          "type": "sections",
+          "title": "Temperature",
+          "path": "temperature",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Thermostats",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "thermostat",
+                  "entity": "climate.thermostat_thermostat",
+                  "name": [
+                    {
+                      "type": "text",
+                      "text": "Commons"
+                    },
+                    {
+                      "type": "device"
+                    }
+                  ]
+                }
+              ],
+              "column_span": 1
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Temperature",
+                  "heading_style": "title"
+                },
+                {
+                  "show_current": true,
+                  "show_forecast": false,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_home",
+                  "forecast_type": "hourly",
+                  "round_temperature": false
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.thermostat_temperature",
+                      "name": "Temperature"
+                    },
+                    {
+                      "entity": "sensor.thermostat_humidity",
+                      "name": "Humidity"
+                    },
+                    {
+                      "entity": "sensor.thermostat_pressure",
+                      "name": "Pressure"
+                    }
+                  ],
+                  "title": "Commons Thermostat",
+                  "show_header_toggle": false,
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.thermostat_temperature",
+                    "detail": 2
+                  }
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.fab_lab_sensor_cluster_temperature",
+                      "name": "Temperature"
+                    },
+                    {
+                      "entity": "sensor.fab_lab_sensor_cluster_humidity",
+                      "name": "Humidity"
+                    },
+                    {
+                      "entity": "sensor.fab_lab_sensor_cluster_pressure",
+                      "name": "Pressure"
+                    }
+                  ],
+                  "title": "Fab Lab Sensors",
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.fab_lab_sensor_cluster_temperature",
+                    "detail": 2
+                  }
+                }
+              ],
+              "column_span": 1
+            }
+          ],
+          "max_columns": 2
+        },
+        {
+          "icon": "mdi:air-filter",
+          "visible": [
+            {
+              "user": "222def901895450bb7b9834c88567294"
+            },
+            {
+              "user": "fcf149e442e649f189ad5ba8f07a6217"
+            },
+            {
+              "user": "04a58e49f3fb45c78bc50659df8fd3e3"
+            },
+            {
+              "user": "f60b2be1ffe64c55a79f0835a9591b19"
+            }
+          ],
+          "badges": [],
+          "cards": [],
+          "type": "sections",
+          "title": "Air Quality",
+          "path": "air-quality",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title",
+                  "heading": "Fans & Purifiers"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "fan.vending_air_purifier_fan",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "fan.treehouse_air_purifier_fan",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "fan.storage_zone_storage_zone_air_purifier_fan",
+                      "name": {
+                        "type": "device"
+                      },
+                      "icon": ""
+                    },
+                    {
+                      "entity": "fan.air_purifier_2_fan",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "fan.air_purifier_5_fan",
+                      "name": {
+                        "type": "device"
+                      }
+                    }
+                  ],
+                  "title": "Air Purifiers",
+                  "show_header_toggle": true,
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "switch.commons_ceiling_fan_switch_fans",
+                      "name": "Commons Ceiling Fan"
+                    },
+                    {
+                      "entity": "switch.a_side_south_vent_fan_fan",
+                      "icon": "mdi:fan",
+                      "name": "South A-Side Exhaust"
+                    },
+                    {
+                      "entity": "switch.sewing_hall_vent_fan_fan",
+                      "name": "Sewing/E-Lab Hallway Exhaust"
+                    },
+                    {
+                      "entity": "switch.laser_exhaust_fan_fan",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "switch.fab_lab_exhaust_fan_fan",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "switch.machine_shop_exhaust_switch_fan",
+                      "icon": "mdi:fan",
+                      "name": "Machine Shop Exhaust"
+                    }
+                  ],
+                  "title": "Exhaust Fans",
+                  "state_color": true
+                }
+              ],
+              "column_span": 1
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title",
+                  "heading": "Air Quality Monitoring"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.airnow_air_quality_index",
+                  "icon": "mdi:weather-dust",
+                  "name": "Local AQI",
+                  "state_color": false,
+                  "visibility": [
+                    {
+                      "condition": "numeric_state",
+                      "below": 50
+                    }
+                  ],
+                  "unit": "Good"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.airnow_air_quality_index",
+                  "icon": "mdi:weather-dust",
+                  "name": "Local AQI",
+                  "state_color": false,
+                  "visibility": [
+                    {
+                      "condition": "numeric_state",
+                      "above": 51,
+                      "below": 100
+                    }
+                  ],
+                  "unit": "Moderate"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.airnow_air_quality_index",
+                  "icon": "mdi:weather-dust",
+                  "name": "Local AQI",
+                  "state_color": false,
+                  "visibility": [
+                    {
+                      "condition": "numeric_state",
+                      "above": 101,
+                      "below": 150
+                    }
+                  ],
+                  "unit": "Unhealthy*"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.airnow_air_quality_index",
+                  "icon": "mdi:weather-dust",
+                  "name": "Local AQI",
+                  "state_color": false,
+                  "visibility": [
+                    {
+                      "condition": "numeric_state",
+                      "above": 151,
+                      "below": 200
+                    }
+                  ],
+                  "unit": "Unhealthy"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.airnow_air_quality_index",
+                  "icon": "mdi:weather-dust",
+                  "name": "Local AQI",
+                  "state_color": false,
+                  "visibility": [
+                    {
+                      "condition": "numeric_state",
+                      "above": 201,
+                      "below": 300
+                    }
+                  ],
+                  "unit": "Very Unhealthy"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.airnow_air_quality_index",
+                  "icon": "mdi:weather-dust",
+                  "name": "Local AQI",
+                  "state_color": false,
+                  "visibility": [
+                    {
+                      "condition": "numeric_state",
+                      "above": 301
+                    }
+                  ],
+                  "unit": "Hazardous"
+                },
+                {
+                  "type": "entity",
+                  "entity": "sensor.airnow_pm2_5",
+                  "icon": "mdi:weather-dust",
+                  "name": "Local PM2.5"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.fab_lab_sensor_cluster_pm_10_0mm_concentration",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.fab_lab_sensor_cluster_pm_2_5mm_concentration",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.fab_lab_sensor_cluster_pm_1_0mm_concentration",
+                      "name": {
+                        "type": "entity"
+                      }
+                    }
+                  ],
+                  "title": "Fab Lab Sensors",
+                  "show_header_toggle": false,
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.fab_lab_sensor_cluster_pm_2_5mm_concentration",
+                    "detail": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "max_columns": 2
+        },
+        {
+          "type": "sections",
+          "title": "Printers",
+          "path": "printers",
+          "icon": "mdi:printer-3d",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "3D Printers",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.kastor"
+                    },
+                    {
+                      "entity": "sensor.kastor_progress"
+                    },
+                    {
+                      "entity": "sensor.kastor_print_start"
+                    },
+                    {
+                      "entity": "sensor.kastor_print_finish"
+                    }
+                  ],
+                  "title": "Prusa MK4S Kastór"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.polydeukes"
+                    },
+                    {
+                      "entity": "sensor.polydeukes_progress"
+                    },
+                    {
+                      "entity": "sensor.polydeukes_print_start"
+                    },
+                    {
+                      "entity": "sensor.polydeukes_print_finish"
+                    }
+                  ],
+                  "title": "Prusa MK4S Polydeukés"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.tiamat"
+                    },
+                    {
+                      "entity": "sensor.tiamat_progress"
+                    },
+                    {
+                      "entity": "sensor.tiamat_print_start"
+                    },
+                    {
+                      "entity": "sensor.tiamat_print_finish"
+                    }
+                  ],
+                  "title": "Prusa XL Tiamat"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "switch.anycubic_photon_relay"
+                    },
+                    {
+                      "entity": "sensor.anycubic_photon_state"
+                    },
+                    {
+                      "entity": "sensor.anycubic_photon_power_draw"
+                    },
+                    {
+                      "entity": "sensor.anycubic_photon_current"
+                    }
+                  ],
+                  "title": "Anycubic Photon M7"
+                }
+              ],
+              "column_span": 2
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "2D Printers",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.media_lab_hp_laserjet_m712"
+                    },
+                    {
+                      "entity": "sensor.media_lab_hp_laserjet_m712_black_cartridge"
+                    },
+                    {
+                      "entity": "sensor.media_lab_hp_laserjet_m712_maintenance_kit"
+                    }
+                  ],
+                  "title": "HP LaserJet M712"
+                }
+              ]
+            }
+          ],
+          "cards": [],
+          "max_columns": 2
+        },
+        {
+          "type": "sections",
+          "path": "miscellaneous",
+          "title": "Miscellaneous",
+          "icon": "mdi:hammer-screwdriver",
+          "cards": [],
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "tile",
+                  "grid_options": {
+                    "columns": "full"
+                  },
+                  "entity": "input_text.tool_crib_led_matrix_motd",
+                  "color": "grey",
+                  "show_entity_picture": false,
+                  "hide_state": false,
+                  "vertical": true,
+                  "features_position": "bottom"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "script.new_script",
+                  "icon_height": "32px",
+                  "color": "dark-grey",
+                  "show_state": false,
+                  "icon": "mdi:lead-pencil",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "max_columns": 1,
+          "badges": [
+            {
+              "type": "entity",
+              "entity": "sensor.date"
+            },
+            {
+              "type": "entity",
+              "show_name": false,
+              "show_state": true,
+              "show_icon": true,
+              "entity": "sensor.time"
+            }
+          ]
+        },
+        {
+          "title": "Shopping List",
+          "path": "shopping-list",
+          "icon": "mdi:basket",
+          "badges": [],
+          "cards": [
+            {
+              "type": "markdown",
+              "content": "### Press if we're out of something\n---"
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_green_tape",
+                  "name": "Green Tape",
+                  "styles": {
+                    "icon": [
+                      {
+                        "color": "green"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_sharpies",
+                  "name": "Sharpies"
+                }
+              ]
+            },
+            {
+              "type": "markdown",
+              "content": "### It will send a message to _#shopping-list_ on slack\n---"
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_plastic_forks",
+                  "name": "Plastic Forks"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_plastic_spoons",
+                  "name": "Plastic Spoons"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_plastic_knives",
+                  "name": "Plastic Knives"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_chopsticks",
+                  "name": "Chopsticks"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.out_of_household_paper_towels",
+                  "name": "Paper Towels"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_blue_towels",
+                  "name": "Blue Shop Towels",
+                  "styles": {
+                    "icon": [
+                      {
+                        "color": "dodgerblue"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_centerpull_towels",
+                  "name": "Centerpull Towels"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_towel_dispenser_towels",
+                  "name": "Towel Dispenser Paper Towels"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_toilet_paper",
+                  "name": "Toilet Paper"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_paper_plates",
+                  "name": "Paper Plates"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_bowls",
+                  "name": "Bowls"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_plastic_cups",
+                  "name": "Plastic Cups"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_large_gluesticks",
+                  "name": "Large Hot Glue Sticks"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_small_gluesticks",
+                  "name": "Small Hot Glue Sticks"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_foam_brushes",
+                  "name": "Foam Brushes"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_paint_booth_filters",
+                  "name": "Paint Booth Filters"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_33_gallon_trash_bags",
+                  "name": "33 Gallon Trash Bags"
+                },
+                {
+                  "type": "custom:button-card",
+                  "template": "shopping-item",
+                  "entity": "script.shopping_list_out_of_kitchen_trash_bags",
+                  "name": "Kitchen Trash Bags"
+                }
+              ]
+            }
+          ],
+          "visible": [
+            {
+              "user": "222def901895450bb7b9834c88567294"
+            },
+            {
+              "user": "fcf149e442e649f189ad5ba8f07a6217"
+            },
+            {
+              "user": "04a58e49f3fb45c78bc50659df8fd3e3"
+            }
+          ]
+        },
+        {
+          "visible": [
+            {
+              "user": "222def901895450bb7b9834c88567294"
+            },
+            {
+              "user": "fcf149e442e649f189ad5ba8f07a6217"
+            },
+            {
+              "user": "04a58e49f3fb45c78bc50659df8fd3e3"
+            }
+          ],
+          "icon": "mdi:nuke",
+          "badges": [],
+          "cards": [],
+          "type": "sections",
+          "title": "Emergency",
+          "path": "emergency",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "light.emergency_light_27_emergency_light_27",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.emergency_light_40_emergency_light_40",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.emergency_light_56_emergency_light_56",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "light.emergency_light_62_emergency_light_62",
+                      "name": {
+                        "type": "device"
+                      }
+                    }
+                  ],
+                  "title": "Emergency Lights"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "switch.air_compressor_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "switch.cyclops_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "switch.wolverine_relay",
+                      "name": {
+                        "type": "device"
+                      }
+                    },
+                    {
+                      "entity": "switch.laser_exhaust_fan_fan",
+                      "name": {
+                        "type": "device"
+                      }
+                    }
+                  ],
+                  "show_header_toggle": false,
+                  "title": "Please don't break things",
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "script.restart_a_side_keypad"
+                    },
+                    {
+                      "entity": "script.restart_b_side_keypad"
+                    },
+                    {
+                      "entity": "switch.a_side_main_keypad_watchdog_watchdog",
+                      "name": {
+                        "type": "device"
+                      },
+                      "icon": "mdi:alpha-a-box"
+                    },
+                    {
+                      "entity": "switch.b_side_office_keypad_watchdog_watchdog",
+                      "name": {
+                        "type": "device"
+                      },
+                      "icon": "mdi:alpha-b-box"
+                    }
+                  ],
+                  "title": "Door Controller Reboot"
+                }
+              ],
+              "column_span": 3
+            }
+          ],
+          "max_columns": 3
+        }
+      ]
+    }
+  }
+}

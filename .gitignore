@@ -3,8 +3,8 @@ home-assistant_v2.db*
 *.lock*
 .cache
 .cloud
-.storage
-!.storage/lovelace
+.storage/*
+!.storage/lovelace.lovelace
 secrets.yaml
 *.token
 www/*
