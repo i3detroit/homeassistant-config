@@ -1,5 +1,5 @@
 packages:
-  package: !include common/treatlife_3way_ss02.yaml
+  package: !include common/treatlife_3way_light.yaml
 
 substitutions:
   device_name: "sewing-zone-fitting-room-light"

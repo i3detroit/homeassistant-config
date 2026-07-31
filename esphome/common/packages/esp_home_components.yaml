@@ -12,6 +12,8 @@ web_server:
   auth:
     username: esphome
     password: !secret ota_password
+    type: digest # remove/optional after 2027.1.0
+  include_internal: True
 
 esphome:
   friendly_name: "${pretty_name}"
@@ -25,6 +27,6 @@ packages:
   wifi_signal: !include wifi_signal.yaml
   uptime: !include uptime.yaml
 
-switch:
+button:
   - platform: restart
     name: "Restart"

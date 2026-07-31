@@ -1,0 +1,62 @@
+packages: 
+  board: !include packages/treatlife_ss01s_base.yaml
+
+binary_sensor:
+  - platform: gpio
+    name: "Button"
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - light.toggle: light_1
+  - platform: gpio
+    id: power_sensor
+    pin:
+      number: 14
+      inverted: True
+    filters:
+      - delayed_off: 50ms
+    on_press:
+      - light.turn_on: light_1
+    on_release:
+      - light.turn_off: light_1
+    internal: True
+
+switch:
+  - platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    id: relay_raw
+    internal: True
+
+output:
+  - platform: template
+    id: relay_3way
+    type: binary
+    write_action:
+      - if:
+          condition:
+            lambda: return state;
+          then:
+            - switch.turn_on: power_led
+            - if:
+                condition:
+                  binary_sensor.is_off: power_sensor
+                then:
+                  - switch.toggle: relay_raw
+          else:
+            - switch.turn_off: power_led
+            - if:
+                condition:
+                  binary_sensor.is_on: power_sensor
+                then:
+                  - switch.toggle: relay_raw
+
+light:
+  - platform: binary
+    name: "${ui_name}"
+    icon: "${icon}"
+    id: light_1
+    output: relay_3way
