@@ -1,0 +1,11 @@
+packages:
+  package: !include common/airgradient_outdoor.yaml
+
+substitutions:
+  device_name: "exterior-airgradient"
+  pretty_name: "Exterior AirGradient"
+  # https://www.airgradient.com/documentation/kb/pm-batch-correction-factors
+  # PMS5003T-202502082993
+  pm_2_5_scaling_factor: "0.02719"
+  pm_2_5_intercept: "true"
+  co2_offset: "40"

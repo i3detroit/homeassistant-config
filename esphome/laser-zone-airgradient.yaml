@@ -1,0 +1,11 @@
+packages:
+  package: !include common/airgradient_indoor.yaml
+
+substitutions:
+  device_name: "laser-zone-airgradient"
+  pretty_name: "Laser Zone AirGradient"
+  # https://www.airgradient.com/documentation/kb/pm-batch-correction-factors
+  # PMS5003-2025121807127
+  pm_2_5_scaling_factor: "0.016522"
+  pm_2_5_intercept: "true"
+  co2_offset: "40"
