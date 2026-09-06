@@ -1,0 +1,205 @@
+packages:
+  base_components: !include packages/esp_home_components.yaml
+
+esphome:
+  name: "${device_name}"
+
+bk72xx:
+  board: cbu
+
+logger:
+  baud_rate: 0
+
+binary_sensor:
+  - platform: gpio
+    id: button_1
+    name: "Button 1"
+    pin:
+      number: P23
+      inverted: true
+      mode: INPUT_PULLUP
+    on_click:
+      - logger.log: "single click"
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data:
+            entity_id: "${target_1}"
+    on_double_click:
+      - logger.log: "double click"
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data:
+            entity_id: "${target_1_half}"
+  - platform: gpio
+    id: button_2
+    name: "Button 2"
+    pin:
+      number: P9
+      inverted: true
+      mode: INPUT_PULLUP
+    on_click:
+      - logger.log: "single click"
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data:
+            entity_id: "${target_2}"
+    on_double_click:
+      - logger.log: "double click"
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data:
+            entity_id: "${target_2_half}"
+  - platform: gpio
+    id: button_3
+    name: "Button 3"
+    pin:
+      number: P28
+      inverted: true
+      mode: INPUT_PULLUP
+    on_click:
+      - logger.log: "single click"
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data:
+            entity_id: "${target_3}"
+    on_double_click:
+      - logger.log: "double click"
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data:
+            entity_id: "${target_3_half}"
+  - platform: gpio
+    id: button_4
+    name: "Button 4"
+    pin:
+      number: P8
+      inverted: true
+      mode: INPUT_PULLUP
+    on_press:
+      - homeassistant.service:
+          service: homeassistant.toggle
+          data:
+            entity_id: "${target_4}"
+  - platform: homeassistant
+    id: target_1
+    entity_id: "${target_1}"
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: target_1
+            then:
+              - switch.turn_on: relay_1
+            else:
+              - switch.turn_off: relay_1
+    internal: true
+  - platform: homeassistant
+    id: target_2
+    entity_id: "${target_2}"
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: target_2
+            then:
+              - switch.turn_on: relay_2
+            else:
+              - switch.turn_off: relay_2
+    internal: true
+  - platform: homeassistant
+    id: target_3
+    entity_id: "${target_3}"
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: target_3
+            then:
+              - switch.turn_on: relay_3
+            else:
+              - switch.turn_off: relay_3
+    internal: true
+  - platform: homeassistant
+    id: target_4
+    entity_id: "${target_4}"
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: target_4
+            then:
+              - switch.turn_on: relay_4
+            else:
+              - switch.turn_off: relay_4
+    internal: true
+
+output:
+  - platform: gpio
+    id: output_led_1
+    pin: P14
+  - platform: gpio
+    id: output_led_2
+    pin: P20
+  - platform: gpio
+    id: output_led_3
+    pin: P16
+  - platform: gpio
+    id: output_led_4
+    pin: P22
+
+light:
+  - platform: binary
+    id: power_led_1
+    output: output_led_1
+    internal: true
+  - platform: binary
+    id: power_led_2
+    output: output_led_2
+    internal: true
+  - platform: binary
+    id: power_led_3
+    output: output_led_3
+    internal: true
+  - platform: binary
+    id: power_led_4
+    output: output_led_4
+    internal: true
+
+switch:
+  - platform: gpio
+    id: relay_1
+    name: Relay 1
+    pin: P24
+    on_turn_on:
+      - light.turn_off: power_led_1
+    on_turn_off:
+      - light.turn_on: power_led_1
+    internal: true
+  - platform: gpio
+    id: relay_2
+    name: Relay 2
+    pin: P26
+    on_turn_on:
+      - light.turn_off: power_led_2
+    on_turn_off:
+      - light.turn_on: power_led_2
+    internal: true
+  - platform: gpio
+    id: relay_3
+    name: Relay 3
+    pin: P6
+    on_turn_on:
+      - light.turn_off: power_led_3
+    on_turn_off:
+      - light.turn_on: power_led_3
+    internal: true
+  - platform: gpio
+    id: relay_4
+    name: Relay 4
+    pin: P7
+    on_turn_on:
+      - light.turn_off: power_led_4
+    on_turn_off:
+      - light.turn_on: power_led_4
+    internal: true
+

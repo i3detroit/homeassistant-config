@@ -388,3 +388,29 @@
       - switch.a_side_south_vent_fan_fan
     data: {}
   mode: single
+- id: '1785465502607'
+  alias: Air Purifiers Reset
+  description: ''
+  triggers:
+  - trigger: time
+    at: 09:00:00
+    weekday:
+    - sun
+    - mon
+    - wed
+    - tue
+    - thu
+    - fri
+    - sat
+  conditions: []
+  actions:
+  - action: fan.turn_on
+    metadata: {}
+    target:
+      entity_id:
+      - fan.vending_air_purifier_fan
+      - fan.storage_zone_storage_zone_air_purifier_fan
+      - fan.treehouse_air_purifier_fan
+      - fan.wood_shop_air_purifier_fan
+    data: {}
+  mode: single

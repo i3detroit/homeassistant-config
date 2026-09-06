@@ -965,7 +965,7 @@
                   "action": "homeassistant.turn_off",
                   "data": {},
                   "target": {
-                    "entity_id": "light.all_normal_light_groups"
+                    "entity_id": "light.all_light_groups"
                   }
                 },
                 {
@@ -973,7 +973,7 @@
                   "conditions": [
                     {
                       "condition": "state",
-                      "entity": "light.all_normal_light_groups",
+                      "entity": "light.all_light_groups",
                       "state": "on"
                     }
                   ],
@@ -986,7 +986,7 @@
                         "--label-badge-red": "var(--state-active-color)",
                         "--label-badge-text-color": "var(--label-badge-red)"
                       },
-                      "entity": "light.all_normal_light_groups",
+                      "entity": "light.all_light_groups",
                       "name": "Any Light"
                     }
                   ],
@@ -997,7 +997,7 @@
                   "conditions": [
                     {
                       "condition": "state",
-                      "entity": "light.all_normal_light_groups",
+                      "entity": "light.all_light_groups",
                       "state_not": "on"
                     }
                   ],
@@ -1010,7 +1010,7 @@
                         "--label-badge-red": "var(--state-icon-color)",
                         "--label-badge-text-color": "var(--label-badge-red)"
                       },
-                      "entity": "light.all_normal_light_groups",
+                      "entity": "light.all_light_groups",
                       "name": "Any Light"
                     }
                   ],
@@ -1274,7 +1274,7 @@
                 },
                 {
                   "type": "state-icon",
-                  "entity": "switch.sewing_zone_fitting_room_light_light",
+                  "entity": "light.sewing_zone_fitting_room_light_light",
                   "icon": "mdi:lightbulb",
                   "style": {
                     "top": "21.5%",
@@ -2084,7 +2084,7 @@
                 },
                 {
                   "type": "state-icon",
-                  "entity": "switch.b_side_office_west_switch_lights",
+                  "entity": "light.b_side_office_west_switch_lights",
                   "icon": "mdi:lightbulb",
                   "style": {
                     "top": "80.6%",
@@ -2439,13 +2439,13 @@
                       "icon": ""
                     },
                     {
-                      "entity": "fan.air_purifier_2_fan",
+                      "entity": "fan.wood_shop_air_purifier_fan",
                       "name": {
                         "type": "device"
                       }
                     },
                     {
-                      "entity": "fan.air_purifier_5_fan",
+                      "entity": "fan.air_purifier_2_fan",
                       "name": {
                         "type": "device"
                       }
@@ -2501,7 +2501,7 @@
                 {
                   "type": "heading",
                   "heading_style": "title",
-                  "heading": "Air Quality Monitoring"
+                  "heading": "Outdoor Air Quality"
                 },
                 {
                   "type": "entity",
@@ -2595,7 +2595,77 @@
                   "type": "entity",
                   "entity": "sensor.airnow_pm2_5",
                   "icon": "mdi:weather-dust",
-                  "name": "Local PM2.5"
+                  "name": "Local PM 2.5"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.exterior_airgradient_co2",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.exterior_airgradient_pm_0_3",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.exterior_airgradient_pm_1_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.exterior_airgradient_pm_2_5",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.exterior_airgradient_pm_2_5_aqi",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.exterior_airgradient_pm_10_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.exterior_airgradient_voc_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.exterior_airgradient_nox_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    }
+                  ],
+                  "title": "Exterior AirGradient",
+                  "show_header_toggle": false,
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.exterior_airgradient_pm_2_5_aqi",
+                    "detail": 2
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title",
+                  "heading": "Indoor Air Quality"
                 },
                 {
                   "type": "entities",
@@ -2624,7 +2694,256 @@
                   "header": {
                     "type": "graph",
                     "entity": "sensor.fab_lab_sensor_cluster_pm_2_5mm_concentration",
-                    "detail": 1
+                    "detail": 2
+                  }
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.paint_zone_airgradient_co2",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.paint_zone_airgradient_pm_0_3",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.paint_zone_airgradient_pm_1_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.paint_zone_airgradient_pm_2_5",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.paint_zone_airgradient_pm_2_5_aqi",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.paint_zone_airgradient_pm_10_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.paint_zone_airgradient_voc_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.paint_zone_airgradient_nox_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    }
+                  ],
+                  "title": "Paint Zone AirGradient",
+                  "show_header_toggle": false,
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.paint_zone_airgradient_pm_2_5_aqi",
+                    "detail": 2
+                  }
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.laser_zone_airgradient_co2",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.laser_zone_airgradient_pm_0_3",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.laser_zone_airgradient_pm_1_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.laser_zone_airgradient_pm_2_5",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.laser_zone_airgradient_pm_2_5_aqi",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.laser_zone_airgradient_pm_10_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.laser_zone_airgradient_voc_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.laser_zone_airgradient_nox_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    }
+                  ],
+                  "title": "Laser Zone AirGradient",
+                  "show_header_toggle": false,
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.laser_zone_airgradient_pm_2_5_aqi",
+                    "detail": 2
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.wood_shop_airgradient_co2",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.wood_shop_airgradient_pm_0_3",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.wood_shop_airgradient_pm_1_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.wood_shop_airgradient_pm_2_5",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.wood_shop_airgradient_pm_2_5_aqi",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.wood_shop_airgradient_pm_10_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.wood_shop_airgradient_voc_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.wood_shop_airgradient_nox_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    }
+                  ],
+                  "title": "Wood Shop AirGradient",
+                  "show_header_toggle": false,
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.wood_shop_airgradient_pm_2_5_aqi",
+                    "detail": 2
+                  }
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.welding_zone_airgradient_co2",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.welding_zone_airgradient_pm_0_3",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.welding_zone_airgradient_pm_1_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.welding_zone_airgradient_pm_2_5",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.welding_zone_airgradient_pm_2_5_aqi",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.welding_zone_airgradient_pm_10_0",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.welding_zone_airgradient_voc_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    },
+                    {
+                      "entity": "sensor.welding_zone_airgradient_nox_index",
+                      "name": {
+                        "type": "entity"
+                      }
+                    }
+                  ],
+                  "title": "Welding Zone AirGradient",
+                  "show_header_toggle": false,
+                  "header": {
+                    "type": "graph",
+                    "entity": "sensor.welding_zone_airgradient_pm_2_5_aqi",
+                    "detail": 2
                   }
                 }
               ]

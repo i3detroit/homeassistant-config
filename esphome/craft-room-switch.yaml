@@ -1,8 +1,0 @@
-packages:
-  package: !include common/treatlife_ss01s_light.yaml
-
-substitutions:
-  device_name: "craft-room-switch"
-  pretty_name: "Craft Room Switch"
-  ui_name: "Lights"
-  icon: "mdi:lightbulb"

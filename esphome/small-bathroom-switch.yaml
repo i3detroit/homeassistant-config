@@ -25,7 +25,6 @@ light:
     name: "${ui_name}"
     id: light_1
     output: relay_1
-    restore_mode: RESTORE_DEFAULT_OFF
     on_turn_on:
       - switch.turn_on: power_led
       - homeassistant.service:

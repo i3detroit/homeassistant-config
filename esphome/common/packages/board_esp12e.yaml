@@ -1,0 +1,10 @@
+esphome:
+  name: "${device_name}"
+  build_path: "./build/${device_name}"
+
+esp8266:
+  early_pin_init: false
+  board: esp12e
+
+wifi:
+  min_auth_mode: WPA2
